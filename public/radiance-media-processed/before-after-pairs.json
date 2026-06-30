@@ -1,0 +1,2848 @@
+{
+  "generatedAt": "2026-06-30T04:03:32.201Z",
+  "pairs": [
+    {
+      "pairKey": "hair-transplant-case001",
+      "caseId": "case001",
+      "category": "hair-transplant",
+      "treatmentCategory": "hair-transplant",
+      "title": "Hair transplant case 001 angle after",
+      "patientLabel": "Case 001",
+      "timeGap": "",
+      "disclaimer": "",
+      "consentConfirmed": true,
+      "publish": true,
+      "featured": false,
+      "sortOrder": 0,
+      "frontBefore": {
+        "id": "radiance-ba-hair-transplant-case001-front-before",
+        "role": "front-before",
+        "beforeAfterRole": "frontBefore",
+        "originalFilename": "radiance-ba-hair-transplant-case001-front-before.jpg",
+        "originalRelativePath": "originals/03-before-after/case001/radiance-ba-hair-transplant-case001-front-before.jpg",
+        "desktop": {
+          "webp": "hero-desktop/radiance-ba-hair-transplant-case001-front-before.webp",
+          "avif": "hero-desktop/radiance-ba-hair-transplant-case001-front-before.avif",
+          "width": 2400,
+          "height": 1400
+        },
+        "mobile": {
+          "webp": "hero-mobile/radiance-ba-hair-transplant-case001-front-before.webp",
+          "avif": "hero-mobile/radiance-ba-hair-transplant-case001-front-before.avif",
+          "width": 1200,
+          "height": 1500
+        },
+        "thumb": {
+          "webp": "thumb/radiance-ba-hair-transplant-case001-front-before.webp",
+          "avif": "thumb/radiance-ba-hair-transplant-case001-front-before.avif",
+          "width": 500,
+          "height": 500
+        },
+        "landscape": {
+          "webp": "landscape/radiance-ba-hair-transplant-case001-front-before.webp",
+          "avif": "landscape/radiance-ba-hair-transplant-case001-front-before.avif",
+          "width": 1200,
+          "height": 800
+        },
+        "portrait": {
+          "webp": "portrait/radiance-ba-hair-transplant-case001-front-before.webp",
+          "avif": "portrait/radiance-ba-hair-transplant-case001-front-before.avif",
+          "width": 900,
+          "height": 1200
+        },
+        "square": {
+          "webp": "square/radiance-ba-hair-transplant-case001-front-before.webp",
+          "avif": "square/radiance-ba-hair-transplant-case001-front-before.avif",
+          "width": 1000,
+          "height": 1000
+        },
+        "altText": "hair transplant case 001 front before",
+        "caption": "Hair transplant case 001 front before",
+        "blurDataUrl": "data:image/jpeg;base64,/9j/2wBDABISEhITEhQWFhQcHhseHCkmIiImKT4sMCwwLD5eO0U7O0U7XlNlUk1SZVOWdmhodpatkYqRrdK8vNL/+///////2wBDARISEhITEhQWFhQcHhseHCkmIiImKT4sMCwwLD5eO0U7O0U7XlNlUk1SZVOWdmhodpatkYqRrdK8vNL/+///////wgARCAAYABgDASIAAhEBAxEB/8QAGAABAAMBAAAAAAAAAAAAAAAAAAMFBgL/xAAWAQEBAQAAAAAAAAAAAAAAAAACAwH/2gAMAwEAAhADEAAAAL7K7OvD7TtMedLzvg5//8QAIxAAAgICAQMFAQAAAAAAAAAAAQIDBAAREgUhMhMiMUJRYf/aAAgBAQABPwC3Ma1d5eBYjQC/pOJf6pI6OJvc76CfXK8z2KySOnBtkMP6p1koDRsGPbDTh7aI3vPCqFB+BkrkocNXqRdU9c8N7wMeGj4kds//xAAdEQACAQQDAAAAAAAAAAAAAAABAgADECEiMUFC/9oACAECAQE/AGLdC1VV0x6AhVTyJ//EABwRAQACAQUAAAAAAAAAAAAAAAEAAgMQEiExQv/aAAgBAwEBPwChV7dMVk38+VhZJ//Z"
+      },
+      "frontAfter": {
+        "id": "radiance-ba-hair-transplant-case001-front-after",
+        "role": "front-after",
+        "beforeAfterRole": "frontAfter",
+        "originalFilename": "radiance-ba-hair-transplant-case001-front-after.jpg",
+        "originalRelativePath": "originals/03-before-after/case001/radiance-ba-hair-transplant-case001-front-after.jpg",
+        "desktop": {
+          "webp": "hero-desktop/radiance-ba-hair-transplant-case001-front-after.webp",
+          "avif": "hero-desktop/radiance-ba-hair-transplant-case001-front-after.avif",
+          "width": 2400,
+          "height": 1400
+        },
+        "mobile": {
+          "webp": "hero-mobile/radiance-ba-hair-transplant-case001-front-after.webp",
+          "avif": "hero-mobile/radiance-ba-hair-transplant-case001-front-after.avif",
+          "width": 1200,
+          "height": 1500
+        },
+        "thumb": {
+          "webp": "thumb/radiance-ba-hair-transplant-case001-front-after.webp",
+          "avif": "thumb/radiance-ba-hair-transplant-case001-front-after.avif",
+          "width": 500,
+          "height": 500
+        },
+        "landscape": {
+          "webp": "landscape/radiance-ba-hair-transplant-case001-front-after.webp",
+          "avif": "landscape/radiance-ba-hair-transplant-case001-front-after.avif",
+          "width": 1200,
+          "height": 800
+        },
+        "portrait": {
+          "webp": "portrait/radiance-ba-hair-transplant-case001-front-after.webp",
+          "avif": "portrait/radiance-ba-hair-transplant-case001-front-after.avif",
+          "width": 900,
+          "height": 1200
+        },
+        "square": {
+          "webp": "square/radiance-ba-hair-transplant-case001-front-after.webp",
+          "avif": "square/radiance-ba-hair-transplant-case001-front-after.avif",
+          "width": 1000,
+          "height": 1000
+        },
+        "altText": "hair transplant case 001 front after",
+        "caption": "Hair transplant case 001 front after",
+        "blurDataUrl": "data:image/jpeg;base64,/9j/2wBDABISEhITEhQWFhQcHhseHCkmIiImKT4sMCwwLD5eO0U7O0U7XlNlUk1SZVOWdmhodpatkYqRrdK8vNL/+///////2wBDARISEhITEhQWFhQcHhseHCkmIiImKT4sMCwwLD5eO0U7O0U7XlNlUk1SZVOWdmhodpatkYqRrdK8vNL/+///////wgARCAAYABgDASIAAhEBAxEB/8QAGQABAAMBAQAAAAAAAAAAAAAAAAMFBgIE/8QAFwEAAwEAAAAAAAAAAAAAAAAAAQIEA//aAAwDAQACEAMQAAAA0mY00IfhKKeKkL4rQPn/AP/EACQQAAICAQIFBQAAAAAAAAAAAAECAxEABAUSEyFCUSIkMmGB/9oACAEBAAE/AHZY0eRzSqCSfoZPu+5ozOul4Yu20zb9fFroI5LCt3r4yVUeGVH+LKQc9tylHWqAzTRQRwhYlXhsnJ5WYE3kmjd3kbnFfUa8/mQSNHVHP//EABoRAAIDAQEAAAAAAAAAAAAAAAECAAMxERD/2gAIAQIBAT8AYkczyytSqjmMIURtUT//xAAbEQEAAQUBAAAAAAAAAAAAAAACAQADEBExgf/aAAgBAwEBPwAGFvvmLVxFKd9M1DZ4pr//2Q=="
+      },
+      "angleBefore": {
+        "id": "radiance-ba-hair-transplant-case001-angle-before",
+        "role": "angle-before",
+        "beforeAfterRole": "angleBefore",
+        "originalFilename": "radiance-ba-hair-transplant-case001-angle-before.jpg",
+        "originalRelativePath": "originals/03-before-after/case001/radiance-ba-hair-transplant-case001-angle-before.jpg",
+        "desktop": {
+          "webp": "hero-desktop/radiance-ba-hair-transplant-case001-angle-before.webp",
+          "avif": "hero-desktop/radiance-ba-hair-transplant-case001-angle-before.avif",
+          "width": 2400,
+          "height": 1400
+        },
+        "mobile": {
+          "webp": "hero-mobile/radiance-ba-hair-transplant-case001-angle-before.webp",
+          "avif": "hero-mobile/radiance-ba-hair-transplant-case001-angle-before.avif",
+          "width": 1200,
+          "height": 1500
+        },
+        "thumb": {
+          "webp": "thumb/radiance-ba-hair-transplant-case001-angle-before.webp",
+          "avif": "thumb/radiance-ba-hair-transplant-case001-angle-before.avif",
+          "width": 500,
+          "height": 500
+        },
+        "landscape": {
+          "webp": "landscape/radiance-ba-hair-transplant-case001-angle-before.webp",
+          "avif": "landscape/radiance-ba-hair-transplant-case001-angle-before.avif",
+          "width": 1200,
+          "height": 800
+        },
+        "portrait": {
+          "webp": "portrait/radiance-ba-hair-transplant-case001-angle-before.webp",
+          "avif": "portrait/radiance-ba-hair-transplant-case001-angle-before.avif",
+          "width": 900,
+          "height": 1200
+        },
+        "square": {
+          "webp": "square/radiance-ba-hair-transplant-case001-angle-before.webp",
+          "avif": "square/radiance-ba-hair-transplant-case001-angle-before.avif",
+          "width": 1000,
+          "height": 1000
+        },
+        "altText": "hair transplant case 001 angle before",
+        "caption": "Hair transplant case 001 angle before",
+        "blurDataUrl": "data:image/jpeg;base64,/9j/2wBDABISEhITEhQWFhQcHhseHCkmIiImKT4sMCwwLD5eO0U7O0U7XlNlUk1SZVOWdmhodpatkYqRrdK8vNL/+///////2wBDARISEhITEhQWFhQcHhseHCkmIiImKT4sMCwwLD5eO0U7O0U7XlNlUk1SZVOWdmhodpatkYqRrdK8vNL/+///////wgARCAAYABgDASIAAhEBAxEB/8QAGAABAQEBAQAAAAAAAAAAAAAAAAYEBQL/xAAVAQEBAAAAAAAAAAAAAAAAAAADAv/aAAwDAQACEAMQAAAApZyj4cLreVnonxJ7YYv/xAAjEAACAgICAgEFAAAAAAAAAAABAgMRAAQFEhMhFTEzQ1GB/9oACAEBAAE/AJ2kihkdEDMB6BNDNufe1I12G32c39vqAucZv/I6zv0p0amzY2PBC0hXsBV5yUupsCKPrVtZOcVBBrwz+L8kt1+qzZqVJIj9CmLw4VlYysa9hTmsRAiRk21nt/c//8QAHBEBAAIBBQAAAAAAAAAAAAAAAQACAxASEyGR/9oACAECAQE/ALqJ3pkqcXk2gBP/xAAbEQEAAgIDAAAAAAAAAAAAAAABAAIDIROBkf/aAAgBAwEBPwClRHXcdLMa8nsVVZ//2Q=="
+      },
+      "angleAfter": {
+        "id": "radiance-ba-hair-transplant-case001-angle-after",
+        "role": "angle-after",
+        "beforeAfterRole": "angleAfter",
+        "originalFilename": "radiance-ba-hair-transplant-case001-angle-after.jpg",
+        "originalRelativePath": "originals/03-before-after/case001/radiance-ba-hair-transplant-case001-angle-after.jpg",
+        "desktop": {
+          "webp": "hero-desktop/radiance-ba-hair-transplant-case001-angle-after.webp",
+          "avif": "hero-desktop/radiance-ba-hair-transplant-case001-angle-after.avif",
+          "width": 2400,
+          "height": 1400
+        },
+        "mobile": {
+          "webp": "hero-mobile/radiance-ba-hair-transplant-case001-angle-after.webp",
+          "avif": "hero-mobile/radiance-ba-hair-transplant-case001-angle-after.avif",
+          "width": 1200,
+          "height": 1500
+        },
+        "thumb": {
+          "webp": "thumb/radiance-ba-hair-transplant-case001-angle-after.webp",
+          "avif": "thumb/radiance-ba-hair-transplant-case001-angle-after.avif",
+          "width": 500,
+          "height": 500
+        },
+        "landscape": {
+          "webp": "landscape/radiance-ba-hair-transplant-case001-angle-after.webp",
+          "avif": "landscape/radiance-ba-hair-transplant-case001-angle-after.avif",
+          "width": 1200,
+          "height": 800
+        },
+        "portrait": {
+          "webp": "portrait/radiance-ba-hair-transplant-case001-angle-after.webp",
+          "avif": "portrait/radiance-ba-hair-transplant-case001-angle-after.avif",
+          "width": 900,
+          "height": 1200
+        },
+        "square": {
+          "webp": "square/radiance-ba-hair-transplant-case001-angle-after.webp",
+          "avif": "square/radiance-ba-hair-transplant-case001-angle-after.avif",
+          "width": 1000,
+          "height": 1000
+        },
+        "altText": "hair transplant case 001 angle after",
+        "caption": "Hair transplant case 001 angle after",
+        "blurDataUrl": "data:image/jpeg;base64,/9j/2wBDABISEhITEhQWFhQcHhseHCkmIiImKT4sMCwwLD5eO0U7O0U7XlNlUk1SZVOWdmhodpatkYqRrdK8vNL/+///////2wBDARISEhITEhQWFhQcHhseHCkmIiImKT4sMCwwLD5eO0U7O0U7XlNlUk1SZVOWdmhodpatkYqRrdK8vNL/+///////wgARCAAYABgDASIAAhEBAxEB/8QAGAABAAMBAAAAAAAAAAAAAAAAAAMFBgT/xAAWAQEBAQAAAAAAAAAAAAAAAAACAwT/2gAMAwEAAhADEAAAANXidlShyoCPdQGrNZi0f//EACIQAQABBAICAgMAAAAAAAAAAAECAAMEEgUREyMVIUGBov/aAAgBAQABPwC6SR1Qlo9LWXyPN4czy3P2QNa4jlPkbc9463LabVkXfFCVzXvWK9VydyxkYjAAlc6Brg8KOJYyJE9t7n8xrNubLa/CdU4YTuIv1P1iqFYvrjEF6Cv/xAAbEQACAwADAAAAAAAAAAAAAAABAgADERBRUv/aAAgBAgEBPwBmwjhq0atNHUKJ5E//xAAbEQEAAgIDAAAAAAAAAAAAAAACAAEDURASIf/aAAgBAwEBPwAjtV8HIzkfu5TW7n//2Q=="
+      },
+      "before": null,
+      "after": null,
+      "images": {
+        "angleAfter": {
+          "id": "radiance-ba-hair-transplant-case001-angle-after",
+          "role": "angle-after",
+          "beforeAfterRole": "angleAfter",
+          "originalFilename": "radiance-ba-hair-transplant-case001-angle-after.jpg",
+          "originalRelativePath": "originals/03-before-after/case001/radiance-ba-hair-transplant-case001-angle-after.jpg",
+          "desktop": {
+            "webp": "hero-desktop/radiance-ba-hair-transplant-case001-angle-after.webp",
+            "avif": "hero-desktop/radiance-ba-hair-transplant-case001-angle-after.avif",
+            "width": 2400,
+            "height": 1400
+          },
+          "mobile": {
+            "webp": "hero-mobile/radiance-ba-hair-transplant-case001-angle-after.webp",
+            "avif": "hero-mobile/radiance-ba-hair-transplant-case001-angle-after.avif",
+            "width": 1200,
+            "height": 1500
+          },
+          "thumb": {
+            "webp": "thumb/radiance-ba-hair-transplant-case001-angle-after.webp",
+            "avif": "thumb/radiance-ba-hair-transplant-case001-angle-after.avif",
+            "width": 500,
+            "height": 500
+          },
+          "landscape": {
+            "webp": "landscape/radiance-ba-hair-transplant-case001-angle-after.webp",
+            "avif": "landscape/radiance-ba-hair-transplant-case001-angle-after.avif",
+            "width": 1200,
+            "height": 800
+          },
+          "portrait": {
+            "webp": "portrait/radiance-ba-hair-transplant-case001-angle-after.webp",
+            "avif": "portrait/radiance-ba-hair-transplant-case001-angle-after.avif",
+            "width": 900,
+            "height": 1200
+          },
+          "square": {
+            "webp": "square/radiance-ba-hair-transplant-case001-angle-after.webp",
+            "avif": "square/radiance-ba-hair-transplant-case001-angle-after.avif",
+            "width": 1000,
+            "height": 1000
+          },
+          "altText": "hair transplant case 001 angle after",
+          "caption": "Hair transplant case 001 angle after",
+          "blurDataUrl": "data:image/jpeg;base64,/9j/2wBDABISEhITEhQWFhQcHhseHCkmIiImKT4sMCwwLD5eO0U7O0U7XlNlUk1SZVOWdmhodpatkYqRrdK8vNL/+///////2wBDARISEhITEhQWFhQcHhseHCkmIiImKT4sMCwwLD5eO0U7O0U7XlNlUk1SZVOWdmhodpatkYqRrdK8vNL/+///////wgARCAAYABgDASIAAhEBAxEB/8QAGAABAAMBAAAAAAAAAAAAAAAAAAMFBgT/xAAWAQEBAQAAAAAAAAAAAAAAAAACAwT/2gAMAwEAAhADEAAAANXidlShyoCPdQGrNZi0f//EACIQAQABBAICAgMAAAAAAAAAAAECAAMEEgUREyMVIUGBov/aAAgBAQABPwC6SR1Qlo9LWXyPN4czy3P2QNa4jlPkbc9463LabVkXfFCVzXvWK9VydyxkYjAAlc6Brg8KOJYyJE9t7n8xrNubLa/CdU4YTuIv1P1iqFYvrjEF6Cv/xAAbEQACAwADAAAAAAAAAAAAAAABAgADERBRUv/aAAgBAgEBPwBmwjhq0atNHUKJ5E//xAAbEQEAAgIDAAAAAAAAAAAAAAACAAEDURASIf/aAAgBAwEBPwAjtV8HIzkfu5TW7n//2Q=="
+        },
+        "angleBefore": {
+          "id": "radiance-ba-hair-transplant-case001-angle-before",
+          "role": "angle-before",
+          "beforeAfterRole": "angleBefore",
+          "originalFilename": "radiance-ba-hair-transplant-case001-angle-before.jpg",
+          "originalRelativePath": "originals/03-before-after/case001/radiance-ba-hair-transplant-case001-angle-before.jpg",
+          "desktop": {
+            "webp": "hero-desktop/radiance-ba-hair-transplant-case001-angle-before.webp",
+            "avif": "hero-desktop/radiance-ba-hair-transplant-case001-angle-before.avif",
+            "width": 2400,
+            "height": 1400
+          },
+          "mobile": {
+            "webp": "hero-mobile/radiance-ba-hair-transplant-case001-angle-before.webp",
+            "avif": "hero-mobile/radiance-ba-hair-transplant-case001-angle-before.avif",
+            "width": 1200,
+            "height": 1500
+          },
+          "thumb": {
+            "webp": "thumb/radiance-ba-hair-transplant-case001-angle-before.webp",
+            "avif": "thumb/radiance-ba-hair-transplant-case001-angle-before.avif",
+            "width": 500,
+            "height": 500
+          },
+          "landscape": {
+            "webp": "landscape/radiance-ba-hair-transplant-case001-angle-before.webp",
+            "avif": "landscape/radiance-ba-hair-transplant-case001-angle-before.avif",
+            "width": 1200,
+            "height": 800
+          },
+          "portrait": {
+            "webp": "portrait/radiance-ba-hair-transplant-case001-angle-before.webp",
+            "avif": "portrait/radiance-ba-hair-transplant-case001-angle-before.avif",
+            "width": 900,
+            "height": 1200
+          },
+          "square": {
+            "webp": "square/radiance-ba-hair-transplant-case001-angle-before.webp",
+            "avif": "square/radiance-ba-hair-transplant-case001-angle-before.avif",
+            "width": 1000,
+            "height": 1000
+          },
+          "altText": "hair transplant case 001 angle before",
+          "caption": "Hair transplant case 001 angle before",
+          "blurDataUrl": "data:image/jpeg;base64,/9j/2wBDABISEhITEhQWFhQcHhseHCkmIiImKT4sMCwwLD5eO0U7O0U7XlNlUk1SZVOWdmhodpatkYqRrdK8vNL/+///////2wBDARISEhITEhQWFhQcHhseHCkmIiImKT4sMCwwLD5eO0U7O0U7XlNlUk1SZVOWdmhodpatkYqRrdK8vNL/+///////wgARCAAYABgDASIAAhEBAxEB/8QAGAABAQEBAQAAAAAAAAAAAAAAAAYEBQL/xAAVAQEBAAAAAAAAAAAAAAAAAAADAv/aAAwDAQACEAMQAAAApZyj4cLreVnonxJ7YYv/xAAjEAACAgICAgEFAAAAAAAAAAABAgMRAAQFEhMhFTEzQ1GB/9oACAEBAAE/AJ2kihkdEDMB6BNDNufe1I12G32c39vqAucZv/I6zv0p0amzY2PBC0hXsBV5yUupsCKPrVtZOcVBBrwz+L8kt1+qzZqVJIj9CmLw4VlYysa9hTmsRAiRk21nt/c//8QAHBEBAAIBBQAAAAAAAAAAAAAAAQACAxASEyGR/9oACAECAQE/ALqJ3pkqcXk2gBP/xAAbEQEAAgIDAAAAAAAAAAAAAAABAAIDIROBkf/aAAgBAwEBPwClRHXcdLMa8nsVVZ//2Q=="
+        },
+        "frontAfter": {
+          "id": "radiance-ba-hair-transplant-case001-front-after",
+          "role": "front-after",
+          "beforeAfterRole": "frontAfter",
+          "originalFilename": "radiance-ba-hair-transplant-case001-front-after.jpg",
+          "originalRelativePath": "originals/03-before-after/case001/radiance-ba-hair-transplant-case001-front-after.jpg",
+          "desktop": {
+            "webp": "hero-desktop/radiance-ba-hair-transplant-case001-front-after.webp",
+            "avif": "hero-desktop/radiance-ba-hair-transplant-case001-front-after.avif",
+            "width": 2400,
+            "height": 1400
+          },
+          "mobile": {
+            "webp": "hero-mobile/radiance-ba-hair-transplant-case001-front-after.webp",
+            "avif": "hero-mobile/radiance-ba-hair-transplant-case001-front-after.avif",
+            "width": 1200,
+            "height": 1500
+          },
+          "thumb": {
+            "webp": "thumb/radiance-ba-hair-transplant-case001-front-after.webp",
+            "avif": "thumb/radiance-ba-hair-transplant-case001-front-after.avif",
+            "width": 500,
+            "height": 500
+          },
+          "landscape": {
+            "webp": "landscape/radiance-ba-hair-transplant-case001-front-after.webp",
+            "avif": "landscape/radiance-ba-hair-transplant-case001-front-after.avif",
+            "width": 1200,
+            "height": 800
+          },
+          "portrait": {
+            "webp": "portrait/radiance-ba-hair-transplant-case001-front-after.webp",
+            "avif": "portrait/radiance-ba-hair-transplant-case001-front-after.avif",
+            "width": 900,
+            "height": 1200
+          },
+          "square": {
+            "webp": "square/radiance-ba-hair-transplant-case001-front-after.webp",
+            "avif": "square/radiance-ba-hair-transplant-case001-front-after.avif",
+            "width": 1000,
+            "height": 1000
+          },
+          "altText": "hair transplant case 001 front after",
+          "caption": "Hair transplant case 001 front after",
+          "blurDataUrl": "data:image/jpeg;base64,/9j/2wBDABISEhITEhQWFhQcHhseHCkmIiImKT4sMCwwLD5eO0U7O0U7XlNlUk1SZVOWdmhodpatkYqRrdK8vNL/+///////2wBDARISEhITEhQWFhQcHhseHCkmIiImKT4sMCwwLD5eO0U7O0U7XlNlUk1SZVOWdmhodpatkYqRrdK8vNL/+///////wgARCAAYABgDASIAAhEBAxEB/8QAGQABAAMBAQAAAAAAAAAAAAAAAAMFBgIE/8QAFwEAAwEAAAAAAAAAAAAAAAAAAQIEA//aAAwDAQACEAMQAAAA0mY00IfhKKeKkL4rQPn/AP/EACQQAAICAQIFBQAAAAAAAAAAAAECAxEABAUSEyFCUSIkMmGB/9oACAEBAAE/AHZY0eRzSqCSfoZPu+5ozOul4Yu20zb9fFroI5LCt3r4yVUeGVH+LKQc9tylHWqAzTRQRwhYlXhsnJ5WYE3kmjd3kbnFfUa8/mQSNHVHP//EABoRAAIDAQEAAAAAAAAAAAAAAAECAAMxERD/2gAIAQIBAT8AYkczyytSqjmMIURtUT//xAAbEQEAAQUBAAAAAAAAAAAAAAACAQADEBExgf/aAAgBAwEBPwAGFvvmLVxFKd9M1DZ4pr//2Q=="
+        },
+        "frontBefore": {
+          "id": "radiance-ba-hair-transplant-case001-front-before",
+          "role": "front-before",
+          "beforeAfterRole": "frontBefore",
+          "originalFilename": "radiance-ba-hair-transplant-case001-front-before.jpg",
+          "originalRelativePath": "originals/03-before-after/case001/radiance-ba-hair-transplant-case001-front-before.jpg",
+          "desktop": {
+            "webp": "hero-desktop/radiance-ba-hair-transplant-case001-front-before.webp",
+            "avif": "hero-desktop/radiance-ba-hair-transplant-case001-front-before.avif",
+            "width": 2400,
+            "height": 1400
+          },
+          "mobile": {
+            "webp": "hero-mobile/radiance-ba-hair-transplant-case001-front-before.webp",
+            "avif": "hero-mobile/radiance-ba-hair-transplant-case001-front-before.avif",
+            "width": 1200,
+            "height": 1500
+          },
+          "thumb": {
+            "webp": "thumb/radiance-ba-hair-transplant-case001-front-before.webp",
+            "avif": "thumb/radiance-ba-hair-transplant-case001-front-before.avif",
+            "width": 500,
+            "height": 500
+          },
+          "landscape": {
+            "webp": "landscape/radiance-ba-hair-transplant-case001-front-before.webp",
+            "avif": "landscape/radiance-ba-hair-transplant-case001-front-before.avif",
+            "width": 1200,
+            "height": 800
+          },
+          "portrait": {
+            "webp": "portrait/radiance-ba-hair-transplant-case001-front-before.webp",
+            "avif": "portrait/radiance-ba-hair-transplant-case001-front-before.avif",
+            "width": 900,
+            "height": 1200
+          },
+          "square": {
+            "webp": "square/radiance-ba-hair-transplant-case001-front-before.webp",
+            "avif": "square/radiance-ba-hair-transplant-case001-front-before.avif",
+            "width": 1000,
+            "height": 1000
+          },
+          "altText": "hair transplant case 001 front before",
+          "caption": "Hair transplant case 001 front before",
+          "blurDataUrl": "data:image/jpeg;base64,/9j/2wBDABISEhITEhQWFhQcHhseHCkmIiImKT4sMCwwLD5eO0U7O0U7XlNlUk1SZVOWdmhodpatkYqRrdK8vNL/+///////2wBDARISEhITEhQWFhQcHhseHCkmIiImKT4sMCwwLD5eO0U7O0U7XlNlUk1SZVOWdmhodpatkYqRrdK8vNL/+///////wgARCAAYABgDASIAAhEBAxEB/8QAGAABAAMBAAAAAAAAAAAAAAAAAAMFBgL/xAAWAQEBAQAAAAAAAAAAAAAAAAACAwH/2gAMAwEAAhADEAAAAL7K7OvD7TtMedLzvg5//8QAIxAAAgICAQMFAQAAAAAAAAAAAQIDBAAREgUhMhMiMUJRYf/aAAgBAQABPwC3Ma1d5eBYjQC/pOJf6pI6OJvc76CfXK8z2KySOnBtkMP6p1koDRsGPbDTh7aI3vPCqFB+BkrkocNXqRdU9c8N7wMeGj4kds//xAAdEQACAQQDAAAAAAAAAAAAAAABAgADECEiMUFC/9oACAECAQE/AGLdC1VV0x6AhVTyJ//EABwRAQACAQUAAAAAAAAAAAAAAAEAAgMQEiExQv/aAAgBAwEBPwChV7dMVk38+VhZJ//Z"
+        }
+      },
+      "extraImages": [],
+      "complete": true,
+      "recommendedWebsiteUsage": "Consent-led before/after preview for hair transplant; publish only after consent review",
+      "warnings": []
+    },
+    {
+      "pairKey": "hair-transplant-case002",
+      "caseId": "case002",
+      "category": "hair-transplant",
+      "treatmentCategory": "hair-transplant",
+      "title": "Hair transplant case 002 angle after",
+      "patientLabel": "Case 002",
+      "timeGap": "",
+      "disclaimer": "",
+      "consentConfirmed": true,
+      "publish": true,
+      "featured": false,
+      "sortOrder": 0,
+      "frontBefore": {
+        "id": "radiance-ba-hair-transplant-case002-front-before",
+        "role": "front-before",
+        "beforeAfterRole": "frontBefore",
+        "originalFilename": "radiance-ba-hair-transplant-case002-front-before.jpg",
+        "originalRelativePath": "originals/03-before-after/case002/radiance-ba-hair-transplant-case002-front-before.jpg",
+        "desktop": {
+          "webp": "hero-desktop/radiance-ba-hair-transplant-case002-front-before.webp",
+          "avif": "hero-desktop/radiance-ba-hair-transplant-case002-front-before.avif",
+          "width": 2400,
+          "height": 1400
+        },
+        "mobile": {
+          "webp": "hero-mobile/radiance-ba-hair-transplant-case002-front-before.webp",
+          "avif": "hero-mobile/radiance-ba-hair-transplant-case002-front-before.avif",
+          "width": 1200,
+          "height": 1500
+        },
+        "thumb": {
+          "webp": "thumb/radiance-ba-hair-transplant-case002-front-before.webp",
+          "avif": "thumb/radiance-ba-hair-transplant-case002-front-before.avif",
+          "width": 500,
+          "height": 500
+        },
+        "landscape": {
+          "webp": "landscape/radiance-ba-hair-transplant-case002-front-before.webp",
+          "avif": "landscape/radiance-ba-hair-transplant-case002-front-before.avif",
+          "width": 1200,
+          "height": 800
+        },
+        "portrait": {
+          "webp": "portrait/radiance-ba-hair-transplant-case002-front-before.webp",
+          "avif": "portrait/radiance-ba-hair-transplant-case002-front-before.avif",
+          "width": 900,
+          "height": 1200
+        },
+        "square": {
+          "webp": "square/radiance-ba-hair-transplant-case002-front-before.webp",
+          "avif": "square/radiance-ba-hair-transplant-case002-front-before.avif",
+          "width": 1000,
+          "height": 1000
+        },
+        "altText": "hair transplant case 002 front before",
+        "caption": "Hair transplant case 002 front before",
+        "blurDataUrl": "data:image/jpeg;base64,/9j/2wBDABISEhITEhQWFhQcHhseHCkmIiImKT4sMCwwLD5eO0U7O0U7XlNlUk1SZVOWdmhodpatkYqRrdK8vNL/+///////2wBDARISEhITEhQWFhQcHhseHCkmIiImKT4sMCwwLD5eO0U7O0U7XlNlUk1SZVOWdmhodpatkYqRrdK8vNL/+///////wgARCAAYABgDASIAAhEBAxEB/8QAFwABAQEBAAAAAAAAAAAAAAAAAAYFAv/EABYBAQEBAAAAAAAAAAAAAAAAAAMBAv/aAAwDAQACEAMQAAAAssnSmjWncNnjy4koQhf/xAAiEAABAwMEAwEAAAAAAAAAAAABAgMRAAQSBRQhMRNRcWL/2gAIAQEAAT8Adc8TS3InEdUbq97C2qt3S8yhZTBI5HoirkTbPD81k9CUbtvLM+uqtI2zXyr7Ujg6hr5lW2fwCglEd5RzNWeoqZQ2gnJISAZr/8QAHBEAAgICAwAAAAAAAAAAAAAAAQIAEQMQEkFS/9oACAECAQE/AHJFVrKoASvU4Kep/8QAGxEBAAICAwAAAAAAAAAAAAAAAQACAxESMXL/2gAIAQMBAT8Ax1HeyPcxKt/M5JP/2Q=="
+      },
+      "frontAfter": {
+        "id": "radiance-ba-hair-transplant-case002-front-after",
+        "role": "front-after",
+        "beforeAfterRole": "frontAfter",
+        "originalFilename": "radiance-ba-hair-transplant-case002-front-after.jpg",
+        "originalRelativePath": "originals/03-before-after/case002/radiance-ba-hair-transplant-case002-front-after.jpg",
+        "desktop": {
+          "webp": "hero-desktop/radiance-ba-hair-transplant-case002-front-after.webp",
+          "avif": "hero-desktop/radiance-ba-hair-transplant-case002-front-after.avif",
+          "width": 2400,
+          "height": 1400
+        },
+        "mobile": {
+          "webp": "hero-mobile/radiance-ba-hair-transplant-case002-front-after.webp",
+          "avif": "hero-mobile/radiance-ba-hair-transplant-case002-front-after.avif",
+          "width": 1200,
+          "height": 1500
+        },
+        "thumb": {
+          "webp": "thumb/radiance-ba-hair-transplant-case002-front-after.webp",
+          "avif": "thumb/radiance-ba-hair-transplant-case002-front-after.avif",
+          "width": 500,
+          "height": 500
+        },
+        "landscape": {
+          "webp": "landscape/radiance-ba-hair-transplant-case002-front-after.webp",
+          "avif": "landscape/radiance-ba-hair-transplant-case002-front-after.avif",
+          "width": 1200,
+          "height": 800
+        },
+        "portrait": {
+          "webp": "portrait/radiance-ba-hair-transplant-case002-front-after.webp",
+          "avif": "portrait/radiance-ba-hair-transplant-case002-front-after.avif",
+          "width": 900,
+          "height": 1200
+        },
+        "square": {
+          "webp": "square/radiance-ba-hair-transplant-case002-front-after.webp",
+          "avif": "square/radiance-ba-hair-transplant-case002-front-after.avif",
+          "width": 1000,
+          "height": 1000
+        },
+        "altText": "hair transplant case 002 front after",
+        "caption": "Hair transplant case 002 front after",
+        "blurDataUrl": "data:image/jpeg;base64,/9j/2wBDABISEhITEhQWFhQcHhseHCkmIiImKT4sMCwwLD5eO0U7O0U7XlNlUk1SZVOWdmhodpatkYqRrdK8vNL/+///////2wBDARISEhITEhQWFhQcHhseHCkmIiImKT4sMCwwLD5eO0U7O0U7XlNlUk1SZVOWdmhodpatkYqRrdK8vNL/+///////wgARCAAYABgDASIAAhEBAxEB/8QAFwABAQEBAAAAAAAAAAAAAAAAAAYEBf/EABcBAAMBAAAAAAAAAAAAAAAAAAABAgP/2gAMAwEAAhADEAAAAKqc70tGlcxqiM4Q1qAf/8QAIxAAAQQBBAEFAAAAAAAAAAAAAQACAwQRBRIhIlETMUJhcf/aAAgBAQABPwAg9i5xI8Ia1qB7xabmJV7TbFaGYNI3tBx4UhBacqG3EG7BcDRlvw9vrKo268lWL0nA4bjAWs3pJbEkAkOxnX9KG4cZ4VexLWkbJE8tcF//xAAXEQEAAwAAAAAAAAAAAAAAAAACASAx/9oACAECAQE/AGpOU//EABcRAAMBAAAAAAAAAAAAAAAAAAECESD/2gAIAQMBAT8ARQ1px//Z"
+      },
+      "angleBefore": {
+        "id": "radiance-ba-hair-transplant-case002-angle-before",
+        "role": "angle-before",
+        "beforeAfterRole": "angleBefore",
+        "originalFilename": "radiance-ba-hair-transplant-case002-angle-before.jpg",
+        "originalRelativePath": "originals/03-before-after/case002/radiance-ba-hair-transplant-case002-angle-before.jpg",
+        "desktop": {
+          "webp": "hero-desktop/radiance-ba-hair-transplant-case002-angle-before.webp",
+          "avif": "hero-desktop/radiance-ba-hair-transplant-case002-angle-before.avif",
+          "width": 2400,
+          "height": 1400
+        },
+        "mobile": {
+          "webp": "hero-mobile/radiance-ba-hair-transplant-case002-angle-before.webp",
+          "avif": "hero-mobile/radiance-ba-hair-transplant-case002-angle-before.avif",
+          "width": 1200,
+          "height": 1500
+        },
+        "thumb": {
+          "webp": "thumb/radiance-ba-hair-transplant-case002-angle-before.webp",
+          "avif": "thumb/radiance-ba-hair-transplant-case002-angle-before.avif",
+          "width": 500,
+          "height": 500
+        },
+        "landscape": {
+          "webp": "landscape/radiance-ba-hair-transplant-case002-angle-before.webp",
+          "avif": "landscape/radiance-ba-hair-transplant-case002-angle-before.avif",
+          "width": 1200,
+          "height": 800
+        },
+        "portrait": {
+          "webp": "portrait/radiance-ba-hair-transplant-case002-angle-before.webp",
+          "avif": "portrait/radiance-ba-hair-transplant-case002-angle-before.avif",
+          "width": 900,
+          "height": 1200
+        },
+        "square": {
+          "webp": "square/radiance-ba-hair-transplant-case002-angle-before.webp",
+          "avif": "square/radiance-ba-hair-transplant-case002-angle-before.avif",
+          "width": 1000,
+          "height": 1000
+        },
+        "altText": "hair transplant case 002 angle before",
+        "caption": "Hair transplant case 002 angle before",
+        "blurDataUrl": "data:image/jpeg;base64,/9j/2wBDABISEhITEhQWFhQcHhseHCkmIiImKT4sMCwwLD5eO0U7O0U7XlNlUk1SZVOWdmhodpatkYqRrdK8vNL/+///////2wBDARISEhITEhQWFhQcHhseHCkmIiImKT4sMCwwLD5eO0U7O0U7XlNlUk1SZVOWdmhodpatkYqRrdK8vNL/+///////wgARCAAYABgDASIAAhEBAxEB/8QAGAABAAMBAAAAAAAAAAAAAAAAAAQFBgL/xAAWAQEBAQAAAAAAAAAAAAAAAAADAAL/2gAMAwEAAhADEAAAANTnrqkJprohR6E1Twpf/8QAIxAAAwACAgEDBQAAAAAAAAAAAQIDAAQFERMUISIxMjNBgf/aAAgBAQABPwC7OsmKEBv13m3bfjF6+ckrnC8jTflUV++eb7hIflCHvoE5tq/pnFXUE9e4zh9SGtOxk3ZZgG/mcnt+VKQXrrJT29npKEeJT9Achbx0oUf5Fs//xAAaEQEAAgMBAAAAAAAAAAAAAAABAAIDESFB/9oACAECAQE/AL2SxDpM9Qx7DpKgVDXk/8QAGREBAQEBAQEAAAAAAAAAAAAAAQIAEQMh/9oACAEDAQE/AIgZXJxTeCt8X5qVpd//2Q=="
+      },
+      "angleAfter": {
+        "id": "radiance-ba-hair-transplant-case002-angle-after",
+        "role": "angle-after",
+        "beforeAfterRole": "angleAfter",
+        "originalFilename": "radiance-ba-hair-transplant-case002-angle-after.jpg",
+        "originalRelativePath": "originals/03-before-after/case002/radiance-ba-hair-transplant-case002-angle-after.jpg",
+        "desktop": {
+          "webp": "hero-desktop/radiance-ba-hair-transplant-case002-angle-after.webp",
+          "avif": "hero-desktop/radiance-ba-hair-transplant-case002-angle-after.avif",
+          "width": 2400,
+          "height": 1400
+        },
+        "mobile": {
+          "webp": "hero-mobile/radiance-ba-hair-transplant-case002-angle-after.webp",
+          "avif": "hero-mobile/radiance-ba-hair-transplant-case002-angle-after.avif",
+          "width": 1200,
+          "height": 1500
+        },
+        "thumb": {
+          "webp": "thumb/radiance-ba-hair-transplant-case002-angle-after.webp",
+          "avif": "thumb/radiance-ba-hair-transplant-case002-angle-after.avif",
+          "width": 500,
+          "height": 500
+        },
+        "landscape": {
+          "webp": "landscape/radiance-ba-hair-transplant-case002-angle-after.webp",
+          "avif": "landscape/radiance-ba-hair-transplant-case002-angle-after.avif",
+          "width": 1200,
+          "height": 800
+        },
+        "portrait": {
+          "webp": "portrait/radiance-ba-hair-transplant-case002-angle-after.webp",
+          "avif": "portrait/radiance-ba-hair-transplant-case002-angle-after.avif",
+          "width": 900,
+          "height": 1200
+        },
+        "square": {
+          "webp": "square/radiance-ba-hair-transplant-case002-angle-after.webp",
+          "avif": "square/radiance-ba-hair-transplant-case002-angle-after.avif",
+          "width": 1000,
+          "height": 1000
+        },
+        "altText": "hair transplant case 002 angle after",
+        "caption": "Hair transplant case 002 angle after",
+        "blurDataUrl": "data:image/jpeg;base64,/9j/2wBDABISEhITEhQWFhQcHhseHCkmIiImKT4sMCwwLD5eO0U7O0U7XlNlUk1SZVOWdmhodpatkYqRrdK8vNL/+///////2wBDARISEhITEhQWFhQcHhseHCkmIiImKT4sMCwwLD5eO0U7O0U7XlNlUk1SZVOWdmhodpatkYqRrdK8vNL/+///////wgARCAAYABgDASIAAhEBAxEB/8QAGAABAQEBAQAAAAAAAAAAAAAAAAYEAwX/xAAXAQEBAQEAAAAAAAAAAAAAAAAAAgED/9oADAMBAAIQAxAAAACujaydjp6TGqMcua6g/8QAIhAAAgICAgICAwAAAAAAAAAAAQIDEQAEBRITMgYiQUJS/9oACAEBAAE/ALbNrmuWika9bqiP/FjOM5RN+N7To6ewwyEg0Pxkjl9Wfs6NEVPV1NXnC68GqJV8ytK/U1nyDddOmsjkWOz4s8gpHZvGT9gDV5LsvNL5PWqCgfqBn//EABgRAAMBAQAAAAAAAAAAAAAAAAABEQIS/9oACAECAQE/AN65gnSUkP/EABkRAQADAQEAAAAAAAAAAAAAAAEAAhIQEf/aAAgBAwEBPwClNaiI+MFOf//Z"
+      },
+      "before": null,
+      "after": null,
+      "images": {
+        "angleAfter": {
+          "id": "radiance-ba-hair-transplant-case002-angle-after",
+          "role": "angle-after",
+          "beforeAfterRole": "angleAfter",
+          "originalFilename": "radiance-ba-hair-transplant-case002-angle-after.jpg",
+          "originalRelativePath": "originals/03-before-after/case002/radiance-ba-hair-transplant-case002-angle-after.jpg",
+          "desktop": {
+            "webp": "hero-desktop/radiance-ba-hair-transplant-case002-angle-after.webp",
+            "avif": "hero-desktop/radiance-ba-hair-transplant-case002-angle-after.avif",
+            "width": 2400,
+            "height": 1400
+          },
+          "mobile": {
+            "webp": "hero-mobile/radiance-ba-hair-transplant-case002-angle-after.webp",
+            "avif": "hero-mobile/radiance-ba-hair-transplant-case002-angle-after.avif",
+            "width": 1200,
+            "height": 1500
+          },
+          "thumb": {
+            "webp": "thumb/radiance-ba-hair-transplant-case002-angle-after.webp",
+            "avif": "thumb/radiance-ba-hair-transplant-case002-angle-after.avif",
+            "width": 500,
+            "height": 500
+          },
+          "landscape": {
+            "webp": "landscape/radiance-ba-hair-transplant-case002-angle-after.webp",
+            "avif": "landscape/radiance-ba-hair-transplant-case002-angle-after.avif",
+            "width": 1200,
+            "height": 800
+          },
+          "portrait": {
+            "webp": "portrait/radiance-ba-hair-transplant-case002-angle-after.webp",
+            "avif": "portrait/radiance-ba-hair-transplant-case002-angle-after.avif",
+            "width": 900,
+            "height": 1200
+          },
+          "square": {
+            "webp": "square/radiance-ba-hair-transplant-case002-angle-after.webp",
+            "avif": "square/radiance-ba-hair-transplant-case002-angle-after.avif",
+            "width": 1000,
+            "height": 1000
+          },
+          "altText": "hair transplant case 002 angle after",
+          "caption": "Hair transplant case 002 angle after",
+          "blurDataUrl": "data:image/jpeg;base64,/9j/2wBDABISEhITEhQWFhQcHhseHCkmIiImKT4sMCwwLD5eO0U7O0U7XlNlUk1SZVOWdmhodpatkYqRrdK8vNL/+///////2wBDARISEhITEhQWFhQcHhseHCkmIiImKT4sMCwwLD5eO0U7O0U7XlNlUk1SZVOWdmhodpatkYqRrdK8vNL/+///////wgARCAAYABgDASIAAhEBAxEB/8QAGAABAQEBAQAAAAAAAAAAAAAAAAYEAwX/xAAXAQEBAQEAAAAAAAAAAAAAAAAAAgED/9oADAMBAAIQAxAAAACujaydjp6TGqMcua6g/8QAIhAAAgICAgICAwAAAAAAAAAAAQIDEQAEBRITMgYiQUJS/9oACAEBAAE/ALbNrmuWika9bqiP/FjOM5RN+N7To6ewwyEg0Pxkjl9Wfs6NEVPV1NXnC68GqJV8ytK/U1nyDddOmsjkWOz4s8gpHZvGT9gDV5LsvNL5PWqCgfqBn//EABgRAAMBAQAAAAAAAAAAAAAAAAABEQIS/9oACAECAQE/AN65gnSUkP/EABkRAQADAQEAAAAAAAAAAAAAAAEAAhIQEf/aAAgBAwEBPwClNaiI+MFOf//Z"
+        },
+        "angleBefore": {
+          "id": "radiance-ba-hair-transplant-case002-angle-before",
+          "role": "angle-before",
+          "beforeAfterRole": "angleBefore",
+          "originalFilename": "radiance-ba-hair-transplant-case002-angle-before.jpg",
+          "originalRelativePath": "originals/03-before-after/case002/radiance-ba-hair-transplant-case002-angle-before.jpg",
+          "desktop": {
+            "webp": "hero-desktop/radiance-ba-hair-transplant-case002-angle-before.webp",
+            "avif": "hero-desktop/radiance-ba-hair-transplant-case002-angle-before.avif",
+            "width": 2400,
+            "height": 1400
+          },
+          "mobile": {
+            "webp": "hero-mobile/radiance-ba-hair-transplant-case002-angle-before.webp",
+            "avif": "hero-mobile/radiance-ba-hair-transplant-case002-angle-before.avif",
+            "width": 1200,
+            "height": 1500
+          },
+          "thumb": {
+            "webp": "thumb/radiance-ba-hair-transplant-case002-angle-before.webp",
+            "avif": "thumb/radiance-ba-hair-transplant-case002-angle-before.avif",
+            "width": 500,
+            "height": 500
+          },
+          "landscape": {
+            "webp": "landscape/radiance-ba-hair-transplant-case002-angle-before.webp",
+            "avif": "landscape/radiance-ba-hair-transplant-case002-angle-before.avif",
+            "width": 1200,
+            "height": 800
+          },
+          "portrait": {
+            "webp": "portrait/radiance-ba-hair-transplant-case002-angle-before.webp",
+            "avif": "portrait/radiance-ba-hair-transplant-case002-angle-before.avif",
+            "width": 900,
+            "height": 1200
+          },
+          "square": {
+            "webp": "square/radiance-ba-hair-transplant-case002-angle-before.webp",
+            "avif": "square/radiance-ba-hair-transplant-case002-angle-before.avif",
+            "width": 1000,
+            "height": 1000
+          },
+          "altText": "hair transplant case 002 angle before",
+          "caption": "Hair transplant case 002 angle before",
+          "blurDataUrl": "data:image/jpeg;base64,/9j/2wBDABISEhITEhQWFhQcHhseHCkmIiImKT4sMCwwLD5eO0U7O0U7XlNlUk1SZVOWdmhodpatkYqRrdK8vNL/+///////2wBDARISEhITEhQWFhQcHhseHCkmIiImKT4sMCwwLD5eO0U7O0U7XlNlUk1SZVOWdmhodpatkYqRrdK8vNL/+///////wgARCAAYABgDASIAAhEBAxEB/8QAGAABAAMBAAAAAAAAAAAAAAAAAAQFBgL/xAAWAQEBAQAAAAAAAAAAAAAAAAADAAL/2gAMAwEAAhADEAAAANTnrqkJprohR6E1Twpf/8QAIxAAAwACAgEDBQAAAAAAAAAAAQIDAAQFERMUISIxMjNBgf/aAAgBAQABPwC7OsmKEBv13m3bfjF6+ckrnC8jTflUV++eb7hIflCHvoE5tq/pnFXUE9e4zh9SGtOxk3ZZgG/mcnt+VKQXrrJT29npKEeJT9Achbx0oUf5Fs//xAAaEQEAAgMBAAAAAAAAAAAAAAABAAIDESFB/9oACAECAQE/AL2SxDpM9Qx7DpKgVDXk/8QAGREBAQEBAQEAAAAAAAAAAAAAAQIAEQMh/9oACAEDAQE/AIgZXJxTeCt8X5qVpd//2Q=="
+        },
+        "frontAfter": {
+          "id": "radiance-ba-hair-transplant-case002-front-after",
+          "role": "front-after",
+          "beforeAfterRole": "frontAfter",
+          "originalFilename": "radiance-ba-hair-transplant-case002-front-after.jpg",
+          "originalRelativePath": "originals/03-before-after/case002/radiance-ba-hair-transplant-case002-front-after.jpg",
+          "desktop": {
+            "webp": "hero-desktop/radiance-ba-hair-transplant-case002-front-after.webp",
+            "avif": "hero-desktop/radiance-ba-hair-transplant-case002-front-after.avif",
+            "width": 2400,
+            "height": 1400
+          },
+          "mobile": {
+            "webp": "hero-mobile/radiance-ba-hair-transplant-case002-front-after.webp",
+            "avif": "hero-mobile/radiance-ba-hair-transplant-case002-front-after.avif",
+            "width": 1200,
+            "height": 1500
+          },
+          "thumb": {
+            "webp": "thumb/radiance-ba-hair-transplant-case002-front-after.webp",
+            "avif": "thumb/radiance-ba-hair-transplant-case002-front-after.avif",
+            "width": 500,
+            "height": 500
+          },
+          "landscape": {
+            "webp": "landscape/radiance-ba-hair-transplant-case002-front-after.webp",
+            "avif": "landscape/radiance-ba-hair-transplant-case002-front-after.avif",
+            "width": 1200,
+            "height": 800
+          },
+          "portrait": {
+            "webp": "portrait/radiance-ba-hair-transplant-case002-front-after.webp",
+            "avif": "portrait/radiance-ba-hair-transplant-case002-front-after.avif",
+            "width": 900,
+            "height": 1200
+          },
+          "square": {
+            "webp": "square/radiance-ba-hair-transplant-case002-front-after.webp",
+            "avif": "square/radiance-ba-hair-transplant-case002-front-after.avif",
+            "width": 1000,
+            "height": 1000
+          },
+          "altText": "hair transplant case 002 front after",
+          "caption": "Hair transplant case 002 front after",
+          "blurDataUrl": "data:image/jpeg;base64,/9j/2wBDABISEhITEhQWFhQcHhseHCkmIiImKT4sMCwwLD5eO0U7O0U7XlNlUk1SZVOWdmhodpatkYqRrdK8vNL/+///////2wBDARISEhITEhQWFhQcHhseHCkmIiImKT4sMCwwLD5eO0U7O0U7XlNlUk1SZVOWdmhodpatkYqRrdK8vNL/+///////wgARCAAYABgDASIAAhEBAxEB/8QAFwABAQEBAAAAAAAAAAAAAAAAAAYEBf/EABcBAAMBAAAAAAAAAAAAAAAAAAABAgP/2gAMAwEAAhADEAAAAKqc70tGlcxqiM4Q1qAf/8QAIxAAAQQBBAEFAAAAAAAAAAAAAQACAwQRBRIhIlETMUJhcf/aAAgBAQABPwAg9i5xI8Ia1qB7xabmJV7TbFaGYNI3tBx4UhBacqG3EG7BcDRlvw9vrKo268lWL0nA4bjAWs3pJbEkAkOxnX9KG4cZ4VexLWkbJE8tcF//xAAXEQEAAwAAAAAAAAAAAAAAAAACASAx/9oACAECAQE/AGpOU//EABcRAAMBAAAAAAAAAAAAAAAAAAECESD/2gAIAQMBAT8ARQ1px//Z"
+        },
+        "frontBefore": {
+          "id": "radiance-ba-hair-transplant-case002-front-before",
+          "role": "front-before",
+          "beforeAfterRole": "frontBefore",
+          "originalFilename": "radiance-ba-hair-transplant-case002-front-before.jpg",
+          "originalRelativePath": "originals/03-before-after/case002/radiance-ba-hair-transplant-case002-front-before.jpg",
+          "desktop": {
+            "webp": "hero-desktop/radiance-ba-hair-transplant-case002-front-before.webp",
+            "avif": "hero-desktop/radiance-ba-hair-transplant-case002-front-before.avif",
+            "width": 2400,
+            "height": 1400
+          },
+          "mobile": {
+            "webp": "hero-mobile/radiance-ba-hair-transplant-case002-front-before.webp",
+            "avif": "hero-mobile/radiance-ba-hair-transplant-case002-front-before.avif",
+            "width": 1200,
+            "height": 1500
+          },
+          "thumb": {
+            "webp": "thumb/radiance-ba-hair-transplant-case002-front-before.webp",
+            "avif": "thumb/radiance-ba-hair-transplant-case002-front-before.avif",
+            "width": 500,
+            "height": 500
+          },
+          "landscape": {
+            "webp": "landscape/radiance-ba-hair-transplant-case002-front-before.webp",
+            "avif": "landscape/radiance-ba-hair-transplant-case002-front-before.avif",
+            "width": 1200,
+            "height": 800
+          },
+          "portrait": {
+            "webp": "portrait/radiance-ba-hair-transplant-case002-front-before.webp",
+            "avif": "portrait/radiance-ba-hair-transplant-case002-front-before.avif",
+            "width": 900,
+            "height": 1200
+          },
+          "square": {
+            "webp": "square/radiance-ba-hair-transplant-case002-front-before.webp",
+            "avif": "square/radiance-ba-hair-transplant-case002-front-before.avif",
+            "width": 1000,
+            "height": 1000
+          },
+          "altText": "hair transplant case 002 front before",
+          "caption": "Hair transplant case 002 front before",
+          "blurDataUrl": "data:image/jpeg;base64,/9j/2wBDABISEhITEhQWFhQcHhseHCkmIiImKT4sMCwwLD5eO0U7O0U7XlNlUk1SZVOWdmhodpatkYqRrdK8vNL/+///////2wBDARISEhITEhQWFhQcHhseHCkmIiImKT4sMCwwLD5eO0U7O0U7XlNlUk1SZVOWdmhodpatkYqRrdK8vNL/+///////wgARCAAYABgDASIAAhEBAxEB/8QAFwABAQEBAAAAAAAAAAAAAAAAAAYFAv/EABYBAQEBAAAAAAAAAAAAAAAAAAMBAv/aAAwDAQACEAMQAAAAssnSmjWncNnjy4koQhf/xAAiEAABAwMEAwEAAAAAAAAAAAABAgMRAAQSBRQhMRNRcWL/2gAIAQEAAT8Adc8TS3InEdUbq97C2qt3S8yhZTBI5HoirkTbPD81k9CUbtvLM+uqtI2zXyr7Ujg6hr5lW2fwCglEd5RzNWeoqZQ2gnJISAZr/8QAHBEAAgICAwAAAAAAAAAAAAAAAQIAEQMQEkFS/9oACAECAQE/AHJFVrKoASvU4Kep/8QAGxEBAAICAwAAAAAAAAAAAAAAAQACAxESMXL/2gAIAQMBAT8Ax1HeyPcxKt/M5JP/2Q=="
+        }
+      },
+      "extraImages": [],
+      "complete": true,
+      "recommendedWebsiteUsage": "Consent-led before/after preview for hair transplant; publish only after consent review",
+      "warnings": []
+    },
+    {
+      "pairKey": "hair-transplant-case003",
+      "caseId": "case003",
+      "category": "hair-transplant",
+      "treatmentCategory": "hair-transplant",
+      "title": "Hair transplant case 003 angle after",
+      "patientLabel": "Case 003",
+      "timeGap": "",
+      "disclaimer": "",
+      "consentConfirmed": true,
+      "publish": true,
+      "featured": false,
+      "sortOrder": 0,
+      "frontBefore": {
+        "id": "radiance-ba-hair-transplant-case003-front-before",
+        "role": "front-before",
+        "beforeAfterRole": "frontBefore",
+        "originalFilename": "radiance-ba-hair-transplant-case003-front-before.jpg",
+        "originalRelativePath": "originals/03-before-after/case003/radiance-ba-hair-transplant-case003-front-before.jpg",
+        "desktop": {
+          "webp": "hero-desktop/radiance-ba-hair-transplant-case003-front-before.webp",
+          "avif": "hero-desktop/radiance-ba-hair-transplant-case003-front-before.avif",
+          "width": 2400,
+          "height": 1400
+        },
+        "mobile": {
+          "webp": "hero-mobile/radiance-ba-hair-transplant-case003-front-before.webp",
+          "avif": "hero-mobile/radiance-ba-hair-transplant-case003-front-before.avif",
+          "width": 1200,
+          "height": 1500
+        },
+        "thumb": {
+          "webp": "thumb/radiance-ba-hair-transplant-case003-front-before.webp",
+          "avif": "thumb/radiance-ba-hair-transplant-case003-front-before.avif",
+          "width": 500,
+          "height": 500
+        },
+        "landscape": {
+          "webp": "landscape/radiance-ba-hair-transplant-case003-front-before.webp",
+          "avif": "landscape/radiance-ba-hair-transplant-case003-front-before.avif",
+          "width": 1200,
+          "height": 800
+        },
+        "portrait": {
+          "webp": "portrait/radiance-ba-hair-transplant-case003-front-before.webp",
+          "avif": "portrait/radiance-ba-hair-transplant-case003-front-before.avif",
+          "width": 900,
+          "height": 1200
+        },
+        "square": {
+          "webp": "square/radiance-ba-hair-transplant-case003-front-before.webp",
+          "avif": "square/radiance-ba-hair-transplant-case003-front-before.avif",
+          "width": 1000,
+          "height": 1000
+        },
+        "altText": "hair transplant case 003 front before",
+        "caption": "Hair transplant case 003 front before",
+        "blurDataUrl": "data:image/jpeg;base64,/9j/2wBDABISEhITEhQWFhQcHhseHCkmIiImKT4sMCwwLD5eO0U7O0U7XlNlUk1SZVOWdmhodpatkYqRrdK8vNL/+///////2wBDARISEhITEhQWFhQcHhseHCkmIiImKT4sMCwwLD5eO0U7O0U7XlNlUk1SZVOWdmhodpatkYqRrdK8vNL/+///////wgARCAAYABgDASIAAhEBAxEB/8QAGQABAAIDAAAAAAAAAAAAAAAAAAUGAgME/8QAFgEBAQEAAAAAAAAAAAAAAAAAAwIB/9oADAMBAAIQAxAAAAC3wkpwmss0LPCjmXdBR//EACMQAAEDBAIBBQAAAAAAAAAAAAECAxEABBJBBRMhMTJhcYL/2gAIAQEAAT8AfeDDanCkmIgDZNKveXDshhjrpp0OISsAidHVXwzZSicQViVxONKSnqAN6AZieqrPwzjlkAowuIy+Yq8Cl2zgT7vVP2KVyDxhXd+NVxzmVkwdlEmv/8QAGBEBAAMBAAAAAAAAAAAAAAAAAQACIRH/2gAIAQIBAT8AtZHEhoS9TgwMJ//EABoRAQADAAMAAAAAAAAAAAAAAAEAAhEDITH/2gAIAQMBAT8ApWqdjExScdk0j6z/2Q=="
+      },
+      "frontAfter": {
+        "id": "radiance-ba-hair-transplant-case003-front-after",
+        "role": "front-after",
+        "beforeAfterRole": "frontAfter",
+        "originalFilename": "radiance-ba-hair-transplant-case003-front-after.jpg",
+        "originalRelativePath": "originals/03-before-after/case003/radiance-ba-hair-transplant-case003-front-after.jpg",
+        "desktop": {
+          "webp": "hero-desktop/radiance-ba-hair-transplant-case003-front-after.webp",
+          "avif": "hero-desktop/radiance-ba-hair-transplant-case003-front-after.avif",
+          "width": 2400,
+          "height": 1400
+        },
+        "mobile": {
+          "webp": "hero-mobile/radiance-ba-hair-transplant-case003-front-after.webp",
+          "avif": "hero-mobile/radiance-ba-hair-transplant-case003-front-after.avif",
+          "width": 1200,
+          "height": 1500
+        },
+        "thumb": {
+          "webp": "thumb/radiance-ba-hair-transplant-case003-front-after.webp",
+          "avif": "thumb/radiance-ba-hair-transplant-case003-front-after.avif",
+          "width": 500,
+          "height": 500
+        },
+        "landscape": {
+          "webp": "landscape/radiance-ba-hair-transplant-case003-front-after.webp",
+          "avif": "landscape/radiance-ba-hair-transplant-case003-front-after.avif",
+          "width": 1200,
+          "height": 800
+        },
+        "portrait": {
+          "webp": "portrait/radiance-ba-hair-transplant-case003-front-after.webp",
+          "avif": "portrait/radiance-ba-hair-transplant-case003-front-after.avif",
+          "width": 900,
+          "height": 1200
+        },
+        "square": {
+          "webp": "square/radiance-ba-hair-transplant-case003-front-after.webp",
+          "avif": "square/radiance-ba-hair-transplant-case003-front-after.avif",
+          "width": 1000,
+          "height": 1000
+        },
+        "altText": "hair transplant case 003 front after",
+        "caption": "Hair transplant case 003 front after",
+        "blurDataUrl": "data:image/jpeg;base64,/9j/2wBDABISEhITEhQWFhQcHhseHCkmIiImKT4sMCwwLD5eO0U7O0U7XlNlUk1SZVOWdmhodpatkYqRrdK8vNL/+///////2wBDARISEhITEhQWFhQcHhseHCkmIiImKT4sMCwwLD5eO0U7O0U7XlNlUk1SZVOWdmhodpatkYqRrdK8vNL/+///////wgARCAAYABgDASIAAhEBAxEB/8QAFwABAQEBAAAAAAAAAAAAAAAAAAQGBf/EABcBAQEBAQAAAAAAAAAAAAAAAAIDAAH/2gAMAwEAAhADEAAAAOtkd9MKwOu6MxAKk4y//8QAJRAAAQMEAAUFAAAAAAAAAAAAAQIEEQADBRIGEyEycRUxU3Lh/9oACAEBAAE/AM2XQZQ2HVawhXhVKxGSmNBH2rh6w4sWHKL3y06E2u/WFCibfLJNxUgx2ftNU62uiplRMxFZbOTu3a+CuvUL1yxvzV+0xIApjl3rY9F7JUZKVV//xAAZEQEAAwEBAAAAAAAAAAAAAAABAAIxEBH/2gAIAQIBAT8AspnkMI1Eef/EABoRAQACAwEAAAAAAAAAAAAAAAEAAhEhMjH/2gAIAQMBAT8ApUt7mW6ZygSoJsn/2Q=="
+      },
+      "angleBefore": {
+        "id": "radiance-ba-hair-transplant-case003-angle-before",
+        "role": "angle-before",
+        "beforeAfterRole": "angleBefore",
+        "originalFilename": "radiance-ba-hair-transplant-case003-angle-before.jpg",
+        "originalRelativePath": "originals/03-before-after/case003/radiance-ba-hair-transplant-case003-angle-before.jpg",
+        "desktop": {
+          "webp": "hero-desktop/radiance-ba-hair-transplant-case003-angle-before.webp",
+          "avif": "hero-desktop/radiance-ba-hair-transplant-case003-angle-before.avif",
+          "width": 2400,
+          "height": 1400
+        },
+        "mobile": {
+          "webp": "hero-mobile/radiance-ba-hair-transplant-case003-angle-before.webp",
+          "avif": "hero-mobile/radiance-ba-hair-transplant-case003-angle-before.avif",
+          "width": 1200,
+          "height": 1500
+        },
+        "thumb": {
+          "webp": "thumb/radiance-ba-hair-transplant-case003-angle-before.webp",
+          "avif": "thumb/radiance-ba-hair-transplant-case003-angle-before.avif",
+          "width": 500,
+          "height": 500
+        },
+        "landscape": {
+          "webp": "landscape/radiance-ba-hair-transplant-case003-angle-before.webp",
+          "avif": "landscape/radiance-ba-hair-transplant-case003-angle-before.avif",
+          "width": 1200,
+          "height": 800
+        },
+        "portrait": {
+          "webp": "portrait/radiance-ba-hair-transplant-case003-angle-before.webp",
+          "avif": "portrait/radiance-ba-hair-transplant-case003-angle-before.avif",
+          "width": 900,
+          "height": 1200
+        },
+        "square": {
+          "webp": "square/radiance-ba-hair-transplant-case003-angle-before.webp",
+          "avif": "square/radiance-ba-hair-transplant-case003-angle-before.avif",
+          "width": 1000,
+          "height": 1000
+        },
+        "altText": "hair transplant case 003 angle before",
+        "caption": "Hair transplant case 003 angle before",
+        "blurDataUrl": "data:image/jpeg;base64,/9j/2wBDABISEhITEhQWFhQcHhseHCkmIiImKT4sMCwwLD5eO0U7O0U7XlNlUk1SZVOWdmhodpatkYqRrdK8vNL/+///////2wBDARISEhITEhQWFhQcHhseHCkmIiImKT4sMCwwLD5eO0U7O0U7XlNlUk1SZVOWdmhodpatkYqRrdK8vNL/+///////wgARCAAYABgDASIAAhEBAxEB/8QAGAABAQEBAQAAAAAAAAAAAAAAAAYCBAX/xAAXAQADAQAAAAAAAAAAAAAAAAAAAgMB/9oADAMBAAIQAxAAAACpk6bw520weXfLg1ENX//EACMQAAEEAgIABwAAAAAAAAAAAAIBAwQRABIFMRMhMkFicZL/2gAIAQEAAT8AmPnHjm4Abl0I3VquTpfMCz4xStPg3nAcs/JdONINTOtwLJysqAI44Y+d0KIt5LFpU1bNaWvVnDQ9Jr0joAa1T7LOWEzjgTY7GB2iYpS1fFHQ09+7zi3CUn0tdKH9Z//EABwRAAICAgMAAAAAAAAAAAAAAAECAAMREiEiQf/aAAgBAgEBPwB3KkQcjMsUa7eysdFn/8QAHBEAAgICAwAAAAAAAAAAAAAAAQIAEQMSISIx/9oACAEDAQE/AEQMp9uMNSRMbG6viZD3af/Z"
+      },
+      "angleAfter": {
+        "id": "radiance-ba-hair-transplant-case003-angle-after",
+        "role": "angle-after",
+        "beforeAfterRole": "angleAfter",
+        "originalFilename": "radiance-ba-hair-transplant-case003-angle-after.jpg",
+        "originalRelativePath": "originals/03-before-after/case003/radiance-ba-hair-transplant-case003-angle-after.jpg",
+        "desktop": {
+          "webp": "hero-desktop/radiance-ba-hair-transplant-case003-angle-after.webp",
+          "avif": "hero-desktop/radiance-ba-hair-transplant-case003-angle-after.avif",
+          "width": 2400,
+          "height": 1400
+        },
+        "mobile": {
+          "webp": "hero-mobile/radiance-ba-hair-transplant-case003-angle-after.webp",
+          "avif": "hero-mobile/radiance-ba-hair-transplant-case003-angle-after.avif",
+          "width": 1200,
+          "height": 1500
+        },
+        "thumb": {
+          "webp": "thumb/radiance-ba-hair-transplant-case003-angle-after.webp",
+          "avif": "thumb/radiance-ba-hair-transplant-case003-angle-after.avif",
+          "width": 500,
+          "height": 500
+        },
+        "landscape": {
+          "webp": "landscape/radiance-ba-hair-transplant-case003-angle-after.webp",
+          "avif": "landscape/radiance-ba-hair-transplant-case003-angle-after.avif",
+          "width": 1200,
+          "height": 800
+        },
+        "portrait": {
+          "webp": "portrait/radiance-ba-hair-transplant-case003-angle-after.webp",
+          "avif": "portrait/radiance-ba-hair-transplant-case003-angle-after.avif",
+          "width": 900,
+          "height": 1200
+        },
+        "square": {
+          "webp": "square/radiance-ba-hair-transplant-case003-angle-after.webp",
+          "avif": "square/radiance-ba-hair-transplant-case003-angle-after.avif",
+          "width": 1000,
+          "height": 1000
+        },
+        "altText": "hair transplant case 003 angle after",
+        "caption": "Hair transplant case 003 angle after",
+        "blurDataUrl": "data:image/jpeg;base64,/9j/2wBDABISEhITEhQWFhQcHhseHCkmIiImKT4sMCwwLD5eO0U7O0U7XlNlUk1SZVOWdmhodpatkYqRrdK8vNL/+///////2wBDARISEhITEhQWFhQcHhseHCkmIiImKT4sMCwwLD5eO0U7O0U7XlNlUk1SZVOWdmhodpatkYqRrdK8vNL/+///////wgARCAAYABgDASIAAhEBAxEB/8QAFwABAQEBAAAAAAAAAAAAAAAAAAYFBP/EABYBAQEBAAAAAAAAAAAAAAAAAAEDAv/aAAwDAQACEAMQAAAAooi7wZ1k1KTtiChoA1//xAAgEAACAgIBBQEAAAAAAAAAAAABAgMEABESBRMhMUFh/9oACAEBAAE/AL0CWKssTsyhvoy/0xa7oK6uRrzvK/dht1yAVbuLrLMrxQuyZZuwEqvLmXYbJwRV2u0ZJX0qseP63sZ1261aqFT3KdZA+50aU7Un7nUp0dECupPLwF+az//EABkRAQEBAAMAAAAAAAAAAAAAAAEAAhESQf/aAAgBAgEBPwDSiQ9jmAUH2cGFyX//xAAZEQADAQEBAAAAAAAAAAAAAAAAAQIREjH/2gAIAQMBAT8AiU5elTy8PJ0VOlp//9k="
+      },
+      "before": null,
+      "after": null,
+      "images": {
+        "angleAfter": {
+          "id": "radiance-ba-hair-transplant-case003-angle-after",
+          "role": "angle-after",
+          "beforeAfterRole": "angleAfter",
+          "originalFilename": "radiance-ba-hair-transplant-case003-angle-after.jpg",
+          "originalRelativePath": "originals/03-before-after/case003/radiance-ba-hair-transplant-case003-angle-after.jpg",
+          "desktop": {
+            "webp": "hero-desktop/radiance-ba-hair-transplant-case003-angle-after.webp",
+            "avif": "hero-desktop/radiance-ba-hair-transplant-case003-angle-after.avif",
+            "width": 2400,
+            "height": 1400
+          },
+          "mobile": {
+            "webp": "hero-mobile/radiance-ba-hair-transplant-case003-angle-after.webp",
+            "avif": "hero-mobile/radiance-ba-hair-transplant-case003-angle-after.avif",
+            "width": 1200,
+            "height": 1500
+          },
+          "thumb": {
+            "webp": "thumb/radiance-ba-hair-transplant-case003-angle-after.webp",
+            "avif": "thumb/radiance-ba-hair-transplant-case003-angle-after.avif",
+            "width": 500,
+            "height": 500
+          },
+          "landscape": {
+            "webp": "landscape/radiance-ba-hair-transplant-case003-angle-after.webp",
+            "avif": "landscape/radiance-ba-hair-transplant-case003-angle-after.avif",
+            "width": 1200,
+            "height": 800
+          },
+          "portrait": {
+            "webp": "portrait/radiance-ba-hair-transplant-case003-angle-after.webp",
+            "avif": "portrait/radiance-ba-hair-transplant-case003-angle-after.avif",
+            "width": 900,
+            "height": 1200
+          },
+          "square": {
+            "webp": "square/radiance-ba-hair-transplant-case003-angle-after.webp",
+            "avif": "square/radiance-ba-hair-transplant-case003-angle-after.avif",
+            "width": 1000,
+            "height": 1000
+          },
+          "altText": "hair transplant case 003 angle after",
+          "caption": "Hair transplant case 003 angle after",
+          "blurDataUrl": "data:image/jpeg;base64,/9j/2wBDABISEhITEhQWFhQcHhseHCkmIiImKT4sMCwwLD5eO0U7O0U7XlNlUk1SZVOWdmhodpatkYqRrdK8vNL/+///////2wBDARISEhITEhQWFhQcHhseHCkmIiImKT4sMCwwLD5eO0U7O0U7XlNlUk1SZVOWdmhodpatkYqRrdK8vNL/+///////wgARCAAYABgDASIAAhEBAxEB/8QAFwABAQEBAAAAAAAAAAAAAAAAAAYFBP/EABYBAQEBAAAAAAAAAAAAAAAAAAEDAv/aAAwDAQACEAMQAAAAooi7wZ1k1KTtiChoA1//xAAgEAACAgIBBQEAAAAAAAAAAAABAgMEABESBRMhMUFh/9oACAEBAAE/AL0CWKssTsyhvoy/0xa7oK6uRrzvK/dht1yAVbuLrLMrxQuyZZuwEqvLmXYbJwRV2u0ZJX0qseP63sZ1261aqFT3KdZA+50aU7Un7nUp0dECupPLwF+az//EABkRAQEBAAMAAAAAAAAAAAAAAAEAAhESQf/aAAgBAgEBPwDSiQ9jmAUH2cGFyX//xAAZEQADAQEBAAAAAAAAAAAAAAAAAQIREjH/2gAIAQMBAT8AiU5elTy8PJ0VOlp//9k="
+        },
+        "angleBefore": {
+          "id": "radiance-ba-hair-transplant-case003-angle-before",
+          "role": "angle-before",
+          "beforeAfterRole": "angleBefore",
+          "originalFilename": "radiance-ba-hair-transplant-case003-angle-before.jpg",
+          "originalRelativePath": "originals/03-before-after/case003/radiance-ba-hair-transplant-case003-angle-before.jpg",
+          "desktop": {
+            "webp": "hero-desktop/radiance-ba-hair-transplant-case003-angle-before.webp",
+            "avif": "hero-desktop/radiance-ba-hair-transplant-case003-angle-before.avif",
+            "width": 2400,
+            "height": 1400
+          },
+          "mobile": {
+            "webp": "hero-mobile/radiance-ba-hair-transplant-case003-angle-before.webp",
+            "avif": "hero-mobile/radiance-ba-hair-transplant-case003-angle-before.avif",
+            "width": 1200,
+            "height": 1500
+          },
+          "thumb": {
+            "webp": "thumb/radiance-ba-hair-transplant-case003-angle-before.webp",
+            "avif": "thumb/radiance-ba-hair-transplant-case003-angle-before.avif",
+            "width": 500,
+            "height": 500
+          },
+          "landscape": {
+            "webp": "landscape/radiance-ba-hair-transplant-case003-angle-before.webp",
+            "avif": "landscape/radiance-ba-hair-transplant-case003-angle-before.avif",
+            "width": 1200,
+            "height": 800
+          },
+          "portrait": {
+            "webp": "portrait/radiance-ba-hair-transplant-case003-angle-before.webp",
+            "avif": "portrait/radiance-ba-hair-transplant-case003-angle-before.avif",
+            "width": 900,
+            "height": 1200
+          },
+          "square": {
+            "webp": "square/radiance-ba-hair-transplant-case003-angle-before.webp",
+            "avif": "square/radiance-ba-hair-transplant-case003-angle-before.avif",
+            "width": 1000,
+            "height": 1000
+          },
+          "altText": "hair transplant case 003 angle before",
+          "caption": "Hair transplant case 003 angle before",
+          "blurDataUrl": "data:image/jpeg;base64,/9j/2wBDABISEhITEhQWFhQcHhseHCkmIiImKT4sMCwwLD5eO0U7O0U7XlNlUk1SZVOWdmhodpatkYqRrdK8vNL/+///////2wBDARISEhITEhQWFhQcHhseHCkmIiImKT4sMCwwLD5eO0U7O0U7XlNlUk1SZVOWdmhodpatkYqRrdK8vNL/+///////wgARCAAYABgDASIAAhEBAxEB/8QAGAABAQEBAQAAAAAAAAAAAAAAAAYCBAX/xAAXAQADAQAAAAAAAAAAAAAAAAAAAgMB/9oADAMBAAIQAxAAAACpk6bw520weXfLg1ENX//EACMQAAEEAgIABwAAAAAAAAAAAAIBAwQRABIFMRMhMkFicZL/2gAIAQEAAT8AmPnHjm4Abl0I3VquTpfMCz4xStPg3nAcs/JdONINTOtwLJysqAI44Y+d0KIt5LFpU1bNaWvVnDQ9Jr0joAa1T7LOWEzjgTY7GB2iYpS1fFHQ09+7zi3CUn0tdKH9Z//EABwRAAICAgMAAAAAAAAAAAAAAAECAAMREiEiQf/aAAgBAgEBPwB3KkQcjMsUa7eysdFn/8QAHBEAAgICAwAAAAAAAAAAAAAAAQIAEQMSISIx/9oACAEDAQE/AEQMp9uMNSRMbG6viZD3af/Z"
+        },
+        "frontAfter": {
+          "id": "radiance-ba-hair-transplant-case003-front-after",
+          "role": "front-after",
+          "beforeAfterRole": "frontAfter",
+          "originalFilename": "radiance-ba-hair-transplant-case003-front-after.jpg",
+          "originalRelativePath": "originals/03-before-after/case003/radiance-ba-hair-transplant-case003-front-after.jpg",
+          "desktop": {
+            "webp": "hero-desktop/radiance-ba-hair-transplant-case003-front-after.webp",
+            "avif": "hero-desktop/radiance-ba-hair-transplant-case003-front-after.avif",
+            "width": 2400,
+            "height": 1400
+          },
+          "mobile": {
+            "webp": "hero-mobile/radiance-ba-hair-transplant-case003-front-after.webp",
+            "avif": "hero-mobile/radiance-ba-hair-transplant-case003-front-after.avif",
+            "width": 1200,
+            "height": 1500
+          },
+          "thumb": {
+            "webp": "thumb/radiance-ba-hair-transplant-case003-front-after.webp",
+            "avif": "thumb/radiance-ba-hair-transplant-case003-front-after.avif",
+            "width": 500,
+            "height": 500
+          },
+          "landscape": {
+            "webp": "landscape/radiance-ba-hair-transplant-case003-front-after.webp",
+            "avif": "landscape/radiance-ba-hair-transplant-case003-front-after.avif",
+            "width": 1200,
+            "height": 800
+          },
+          "portrait": {
+            "webp": "portrait/radiance-ba-hair-transplant-case003-front-after.webp",
+            "avif": "portrait/radiance-ba-hair-transplant-case003-front-after.avif",
+            "width": 900,
+            "height": 1200
+          },
+          "square": {
+            "webp": "square/radiance-ba-hair-transplant-case003-front-after.webp",
+            "avif": "square/radiance-ba-hair-transplant-case003-front-after.avif",
+            "width": 1000,
+            "height": 1000
+          },
+          "altText": "hair transplant case 003 front after",
+          "caption": "Hair transplant case 003 front after",
+          "blurDataUrl": "data:image/jpeg;base64,/9j/2wBDABISEhITEhQWFhQcHhseHCkmIiImKT4sMCwwLD5eO0U7O0U7XlNlUk1SZVOWdmhodpatkYqRrdK8vNL/+///////2wBDARISEhITEhQWFhQcHhseHCkmIiImKT4sMCwwLD5eO0U7O0U7XlNlUk1SZVOWdmhodpatkYqRrdK8vNL/+///////wgARCAAYABgDASIAAhEBAxEB/8QAFwABAQEBAAAAAAAAAAAAAAAAAAQGBf/EABcBAQEBAQAAAAAAAAAAAAAAAAIDAAH/2gAMAwEAAhADEAAAAOtkd9MKwOu6MxAKk4y//8QAJRAAAQMEAAUFAAAAAAAAAAAAAQIEEQADBRIGEyEycRUxU3Lh/9oACAEBAAE/AM2XQZQ2HVawhXhVKxGSmNBH2rh6w4sWHKL3y06E2u/WFCibfLJNxUgx2ftNU62uiplRMxFZbOTu3a+CuvUL1yxvzV+0xIApjl3rY9F7JUZKVV//xAAZEQEAAwEBAAAAAAAAAAAAAAABAAIxEBH/2gAIAQIBAT8AspnkMI1Eef/EABoRAQACAwEAAAAAAAAAAAAAAAEAAhEhMjH/2gAIAQMBAT8ApUt7mW6ZygSoJsn/2Q=="
+        },
+        "frontBefore": {
+          "id": "radiance-ba-hair-transplant-case003-front-before",
+          "role": "front-before",
+          "beforeAfterRole": "frontBefore",
+          "originalFilename": "radiance-ba-hair-transplant-case003-front-before.jpg",
+          "originalRelativePath": "originals/03-before-after/case003/radiance-ba-hair-transplant-case003-front-before.jpg",
+          "desktop": {
+            "webp": "hero-desktop/radiance-ba-hair-transplant-case003-front-before.webp",
+            "avif": "hero-desktop/radiance-ba-hair-transplant-case003-front-before.avif",
+            "width": 2400,
+            "height": 1400
+          },
+          "mobile": {
+            "webp": "hero-mobile/radiance-ba-hair-transplant-case003-front-before.webp",
+            "avif": "hero-mobile/radiance-ba-hair-transplant-case003-front-before.avif",
+            "width": 1200,
+            "height": 1500
+          },
+          "thumb": {
+            "webp": "thumb/radiance-ba-hair-transplant-case003-front-before.webp",
+            "avif": "thumb/radiance-ba-hair-transplant-case003-front-before.avif",
+            "width": 500,
+            "height": 500
+          },
+          "landscape": {
+            "webp": "landscape/radiance-ba-hair-transplant-case003-front-before.webp",
+            "avif": "landscape/radiance-ba-hair-transplant-case003-front-before.avif",
+            "width": 1200,
+            "height": 800
+          },
+          "portrait": {
+            "webp": "portrait/radiance-ba-hair-transplant-case003-front-before.webp",
+            "avif": "portrait/radiance-ba-hair-transplant-case003-front-before.avif",
+            "width": 900,
+            "height": 1200
+          },
+          "square": {
+            "webp": "square/radiance-ba-hair-transplant-case003-front-before.webp",
+            "avif": "square/radiance-ba-hair-transplant-case003-front-before.avif",
+            "width": 1000,
+            "height": 1000
+          },
+          "altText": "hair transplant case 003 front before",
+          "caption": "Hair transplant case 003 front before",
+          "blurDataUrl": "data:image/jpeg;base64,/9j/2wBDABISEhITEhQWFhQcHhseHCkmIiImKT4sMCwwLD5eO0U7O0U7XlNlUk1SZVOWdmhodpatkYqRrdK8vNL/+///////2wBDARISEhITEhQWFhQcHhseHCkmIiImKT4sMCwwLD5eO0U7O0U7XlNlUk1SZVOWdmhodpatkYqRrdK8vNL/+///////wgARCAAYABgDASIAAhEBAxEB/8QAGQABAAIDAAAAAAAAAAAAAAAAAAUGAgME/8QAFgEBAQEAAAAAAAAAAAAAAAAAAwIB/9oADAMBAAIQAxAAAAC3wkpwmss0LPCjmXdBR//EACMQAAEDBAIBBQAAAAAAAAAAAAECAxEABBJBBRMhMTJhcYL/2gAIAQEAAT8AfeDDanCkmIgDZNKveXDshhjrpp0OISsAidHVXwzZSicQViVxONKSnqAN6AZieqrPwzjlkAowuIy+Yq8Cl2zgT7vVP2KVyDxhXd+NVxzmVkwdlEmv/8QAGBEBAAMBAAAAAAAAAAAAAAAAAQACIRH/2gAIAQIBAT8AtZHEhoS9TgwMJ//EABoRAQADAAMAAAAAAAAAAAAAAAEAAhEDITH/2gAIAQMBAT8ApWqdjExScdk0j6z/2Q=="
+        },
+        "topAfter": {
+          "id": "radiance-ba-hair-transplant-case003-top-after",
+          "role": "top-after",
+          "beforeAfterRole": "topAfter",
+          "originalFilename": "radiance-ba-hair-transplant-case003-top-after.jpg",
+          "originalRelativePath": "originals/03-before-after/case003/radiance-ba-hair-transplant-case003-top-after.jpg",
+          "desktop": {
+            "webp": "hero-desktop/radiance-ba-hair-transplant-case003-top-after.webp",
+            "avif": "hero-desktop/radiance-ba-hair-transplant-case003-top-after.avif",
+            "width": 2400,
+            "height": 1400
+          },
+          "mobile": {
+            "webp": "hero-mobile/radiance-ba-hair-transplant-case003-top-after.webp",
+            "avif": "hero-mobile/radiance-ba-hair-transplant-case003-top-after.avif",
+            "width": 1200,
+            "height": 1500
+          },
+          "thumb": {
+            "webp": "thumb/radiance-ba-hair-transplant-case003-top-after.webp",
+            "avif": "thumb/radiance-ba-hair-transplant-case003-top-after.avif",
+            "width": 500,
+            "height": 500
+          },
+          "landscape": {
+            "webp": "landscape/radiance-ba-hair-transplant-case003-top-after.webp",
+            "avif": "landscape/radiance-ba-hair-transplant-case003-top-after.avif",
+            "width": 1200,
+            "height": 800
+          },
+          "portrait": {
+            "webp": "portrait/radiance-ba-hair-transplant-case003-top-after.webp",
+            "avif": "portrait/radiance-ba-hair-transplant-case003-top-after.avif",
+            "width": 900,
+            "height": 1200
+          },
+          "square": {
+            "webp": "square/radiance-ba-hair-transplant-case003-top-after.webp",
+            "avif": "square/radiance-ba-hair-transplant-case003-top-after.avif",
+            "width": 1000,
+            "height": 1000
+          },
+          "altText": "hair transplant case 003 top after",
+          "caption": "Hair transplant case 003 top after",
+          "blurDataUrl": "data:image/jpeg;base64,/9j/2wBDABISEhITEhQWFhQcHhseHCkmIiImKT4sMCwwLD5eO0U7O0U7XlNlUk1SZVOWdmhodpatkYqRrdK8vNL/+///////2wBDARISEhITEhQWFhQcHhseHCkmIiImKT4sMCwwLD5eO0U7O0U7XlNlUk1SZVOWdmhodpatkYqRrdK8vNL/+///////wgARCAAYABgDASIAAhEBAxEB/8QAGAABAQEBAQAAAAAAAAAAAAAAAAYDBQH/xAAWAQEBAQAAAAAAAAAAAAAAAAABAgD/2gAMAwEAAhADEAAAAPJeq5xe7ltVPHhsA3//xAAlEAACAQIFAwUAAAAAAAAAAAABAgQAAwUGERIhEyJRFTEyQWH/2gAIAQEAAT8AzK/fFT8Y0QfPvWWSTJveBarH7+25GtMvZ8q9GjEdVcStdEHmklGNKZozbVU6DnXcBWNwmmWrTI6qUP3V+PejNsurpQ1J4HFf/8QAFxEBAQEBAAAAAAAAAAAAAAAAARAREv/aAAgBAgEBPwBcivQT/8QAGREBAQEAAwAAAAAAAAAAAAAAAQACEzEy/9oACAEDAQE/ADClxr0ljy2b/9k="
+        },
+        "topBefore": {
+          "id": "radiance-ba-hair-transplant-case003-top-before",
+          "role": "top-before",
+          "beforeAfterRole": "topBefore",
+          "originalFilename": "radiance-ba-hair-transplant-case003-top-before.jpg",
+          "originalRelativePath": "originals/03-before-after/case003/radiance-ba-hair-transplant-case003-top-before.jpg",
+          "desktop": {
+            "webp": "hero-desktop/radiance-ba-hair-transplant-case003-top-before.webp",
+            "avif": "hero-desktop/radiance-ba-hair-transplant-case003-top-before.avif",
+            "width": 2400,
+            "height": 1400
+          },
+          "mobile": {
+            "webp": "hero-mobile/radiance-ba-hair-transplant-case003-top-before.webp",
+            "avif": "hero-mobile/radiance-ba-hair-transplant-case003-top-before.avif",
+            "width": 1200,
+            "height": 1500
+          },
+          "thumb": {
+            "webp": "thumb/radiance-ba-hair-transplant-case003-top-before.webp",
+            "avif": "thumb/radiance-ba-hair-transplant-case003-top-before.avif",
+            "width": 500,
+            "height": 500
+          },
+          "landscape": {
+            "webp": "landscape/radiance-ba-hair-transplant-case003-top-before.webp",
+            "avif": "landscape/radiance-ba-hair-transplant-case003-top-before.avif",
+            "width": 1200,
+            "height": 800
+          },
+          "portrait": {
+            "webp": "portrait/radiance-ba-hair-transplant-case003-top-before.webp",
+            "avif": "portrait/radiance-ba-hair-transplant-case003-top-before.avif",
+            "width": 900,
+            "height": 1200
+          },
+          "square": {
+            "webp": "square/radiance-ba-hair-transplant-case003-top-before.webp",
+            "avif": "square/radiance-ba-hair-transplant-case003-top-before.avif",
+            "width": 1000,
+            "height": 1000
+          },
+          "altText": "hair transplant case 003 top before",
+          "caption": "Hair transplant case 003 top before",
+          "blurDataUrl": "data:image/jpeg;base64,/9j/2wBDABISEhITEhQWFhQcHhseHCkmIiImKT4sMCwwLD5eO0U7O0U7XlNlUk1SZVOWdmhodpatkYqRrdK8vNL/+///////2wBDARISEhITEhQWFhQcHhseHCkmIiImKT4sMCwwLD5eO0U7O0U7XlNlUk1SZVOWdmhodpatkYqRrdK8vNL/+///////wgARCAAYABgDASIAAhEBAxEB/8QAGAABAQEBAQAAAAAAAAAAAAAAAAUGAgf/xAAXAQEAAwAAAAAAAAAAAAAAAAACAAED/9oADAMBAAIQAxAAAACpjfRs0NKCmQ5kDFIXP//EACIQAAIBAwMFAQAAAAAAAAAAAAECAwAEEQUhQQYSExUiUf/aAAgBAQABPwDqO2aZLZ8/Kd9fAA2yxNdOQvAt2r8shFairSQhUGWDA4/a9M4k8gt3JznFaeTHbqrjDEkmppQs5UnmntI2nTBfxqS3bnbNGVYwm/Nf/8QAGREBAQEAAwAAAAAAAAAAAAAAAREAAhAx/9oACAECAQE/AOSj44sLoMvX/8QAGREAAwEBAQAAAAAAAAAAAAAAAQIRABAx/9oACAEDAQE/AFUEejNKZqRZz//Z"
+        }
+      },
+      "extraImages": [
+        {
+          "id": "radiance-ba-hair-transplant-case003-top-after",
+          "role": "top-after",
+          "beforeAfterRole": "topAfter",
+          "originalFilename": "radiance-ba-hair-transplant-case003-top-after.jpg",
+          "originalRelativePath": "originals/03-before-after/case003/radiance-ba-hair-transplant-case003-top-after.jpg",
+          "desktop": {
+            "webp": "hero-desktop/radiance-ba-hair-transplant-case003-top-after.webp",
+            "avif": "hero-desktop/radiance-ba-hair-transplant-case003-top-after.avif",
+            "width": 2400,
+            "height": 1400
+          },
+          "mobile": {
+            "webp": "hero-mobile/radiance-ba-hair-transplant-case003-top-after.webp",
+            "avif": "hero-mobile/radiance-ba-hair-transplant-case003-top-after.avif",
+            "width": 1200,
+            "height": 1500
+          },
+          "thumb": {
+            "webp": "thumb/radiance-ba-hair-transplant-case003-top-after.webp",
+            "avif": "thumb/radiance-ba-hair-transplant-case003-top-after.avif",
+            "width": 500,
+            "height": 500
+          },
+          "landscape": {
+            "webp": "landscape/radiance-ba-hair-transplant-case003-top-after.webp",
+            "avif": "landscape/radiance-ba-hair-transplant-case003-top-after.avif",
+            "width": 1200,
+            "height": 800
+          },
+          "portrait": {
+            "webp": "portrait/radiance-ba-hair-transplant-case003-top-after.webp",
+            "avif": "portrait/radiance-ba-hair-transplant-case003-top-after.avif",
+            "width": 900,
+            "height": 1200
+          },
+          "square": {
+            "webp": "square/radiance-ba-hair-transplant-case003-top-after.webp",
+            "avif": "square/radiance-ba-hair-transplant-case003-top-after.avif",
+            "width": 1000,
+            "height": 1000
+          },
+          "altText": "hair transplant case 003 top after",
+          "caption": "Hair transplant case 003 top after",
+          "blurDataUrl": "data:image/jpeg;base64,/9j/2wBDABISEhITEhQWFhQcHhseHCkmIiImKT4sMCwwLD5eO0U7O0U7XlNlUk1SZVOWdmhodpatkYqRrdK8vNL/+///////2wBDARISEhITEhQWFhQcHhseHCkmIiImKT4sMCwwLD5eO0U7O0U7XlNlUk1SZVOWdmhodpatkYqRrdK8vNL/+///////wgARCAAYABgDASIAAhEBAxEB/8QAGAABAQEBAQAAAAAAAAAAAAAAAAYDBQH/xAAWAQEBAQAAAAAAAAAAAAAAAAABAgD/2gAMAwEAAhADEAAAAPJeq5xe7ltVPHhsA3//xAAlEAACAQIFAwUAAAAAAAAAAAABAgQAAwUGERIhEyJRFTEyQWH/2gAIAQEAAT8AzK/fFT8Y0QfPvWWSTJveBarH7+25GtMvZ8q9GjEdVcStdEHmklGNKZozbVU6DnXcBWNwmmWrTI6qUP3V+PejNsurpQ1J4HFf/8QAFxEBAQEBAAAAAAAAAAAAAAAAARAREv/aAAgBAgEBPwBcivQT/8QAGREBAQEAAwAAAAAAAAAAAAAAAQACEzEy/9oACAEDAQE/ADClxr0ljy2b/9k="
+        },
+        {
+          "id": "radiance-ba-hair-transplant-case003-top-before",
+          "role": "top-before",
+          "beforeAfterRole": "topBefore",
+          "originalFilename": "radiance-ba-hair-transplant-case003-top-before.jpg",
+          "originalRelativePath": "originals/03-before-after/case003/radiance-ba-hair-transplant-case003-top-before.jpg",
+          "desktop": {
+            "webp": "hero-desktop/radiance-ba-hair-transplant-case003-top-before.webp",
+            "avif": "hero-desktop/radiance-ba-hair-transplant-case003-top-before.avif",
+            "width": 2400,
+            "height": 1400
+          },
+          "mobile": {
+            "webp": "hero-mobile/radiance-ba-hair-transplant-case003-top-before.webp",
+            "avif": "hero-mobile/radiance-ba-hair-transplant-case003-top-before.avif",
+            "width": 1200,
+            "height": 1500
+          },
+          "thumb": {
+            "webp": "thumb/radiance-ba-hair-transplant-case003-top-before.webp",
+            "avif": "thumb/radiance-ba-hair-transplant-case003-top-before.avif",
+            "width": 500,
+            "height": 500
+          },
+          "landscape": {
+            "webp": "landscape/radiance-ba-hair-transplant-case003-top-before.webp",
+            "avif": "landscape/radiance-ba-hair-transplant-case003-top-before.avif",
+            "width": 1200,
+            "height": 800
+          },
+          "portrait": {
+            "webp": "portrait/radiance-ba-hair-transplant-case003-top-before.webp",
+            "avif": "portrait/radiance-ba-hair-transplant-case003-top-before.avif",
+            "width": 900,
+            "height": 1200
+          },
+          "square": {
+            "webp": "square/radiance-ba-hair-transplant-case003-top-before.webp",
+            "avif": "square/radiance-ba-hair-transplant-case003-top-before.avif",
+            "width": 1000,
+            "height": 1000
+          },
+          "altText": "hair transplant case 003 top before",
+          "caption": "Hair transplant case 003 top before",
+          "blurDataUrl": "data:image/jpeg;base64,/9j/2wBDABISEhITEhQWFhQcHhseHCkmIiImKT4sMCwwLD5eO0U7O0U7XlNlUk1SZVOWdmhodpatkYqRrdK8vNL/+///////2wBDARISEhITEhQWFhQcHhseHCkmIiImKT4sMCwwLD5eO0U7O0U7XlNlUk1SZVOWdmhodpatkYqRrdK8vNL/+///////wgARCAAYABgDASIAAhEBAxEB/8QAGAABAQEBAQAAAAAAAAAAAAAAAAUGAgf/xAAXAQEAAwAAAAAAAAAAAAAAAAACAAED/9oADAMBAAIQAxAAAACpjfRs0NKCmQ5kDFIXP//EACIQAAIBAwMFAQAAAAAAAAAAAAECAwAEEQUhQQYSExUiUf/aAAgBAQABPwDqO2aZLZ8/Kd9fAA2yxNdOQvAt2r8shFairSQhUGWDA4/a9M4k8gt3JznFaeTHbqrjDEkmppQs5UnmntI2nTBfxqS3bnbNGVYwm/Nf/8QAGREBAQEAAwAAAAAAAAAAAAAAAREAAhAx/9oACAECAQE/AOSj44sLoMvX/8QAGREAAwEBAQAAAAAAAAAAAAAAAQIRABAx/9oACAEDAQE/AFUEejNKZqRZz//Z"
+        }
+      ],
+      "complete": true,
+      "recommendedWebsiteUsage": "Consent-led before/after preview for hair transplant; publish only after consent review",
+      "warnings": []
+    },
+    {
+      "pairKey": "hair-transplant-case004",
+      "caseId": "case004",
+      "category": "hair-transplant",
+      "treatmentCategory": "hair-transplant",
+      "title": "Hair Transplant",
+      "patientLabel": "Case 004",
+      "timeGap": "",
+      "disclaimer": "",
+      "consentConfirmed": true,
+      "publish": true,
+      "featured": false,
+      "sortOrder": 0,
+      "frontBefore": {
+        "id": "radiance-ba-hair-transplant-case004-before-7e3373ce",
+        "role": "before",
+        "beforeAfterRole": "before",
+        "originalFilename": "bfore1.png",
+        "originalRelativePath": "originals/03-before-after/case004/bfore1.png",
+        "desktop": {
+          "webp": "hero-desktop/radiance-ba-hair-transplant-case004-before-7e3373ce.webp",
+          "avif": "hero-desktop/radiance-ba-hair-transplant-case004-before-7e3373ce.avif",
+          "width": 2400,
+          "height": 1400
+        },
+        "mobile": {
+          "webp": "hero-mobile/radiance-ba-hair-transplant-case004-before-7e3373ce.webp",
+          "avif": "hero-mobile/radiance-ba-hair-transplant-case004-before-7e3373ce.avif",
+          "width": 1200,
+          "height": 1500
+        },
+        "thumb": {
+          "webp": "thumb/radiance-ba-hair-transplant-case004-before-7e3373ce.webp",
+          "avif": "thumb/radiance-ba-hair-transplant-case004-before-7e3373ce.avif",
+          "width": 500,
+          "height": 500
+        },
+        "landscape": {
+          "webp": "landscape/radiance-ba-hair-transplant-case004-before-7e3373ce.webp",
+          "avif": "landscape/radiance-ba-hair-transplant-case004-before-7e3373ce.avif",
+          "width": 1200,
+          "height": 800
+        },
+        "portrait": {
+          "webp": "portrait/radiance-ba-hair-transplant-case004-before-7e3373ce.webp",
+          "avif": "portrait/radiance-ba-hair-transplant-case004-before-7e3373ce.avif",
+          "width": 900,
+          "height": 1200
+        },
+        "square": {
+          "webp": "square/radiance-ba-hair-transplant-case004-before-7e3373ce.webp",
+          "avif": "square/radiance-ba-hair-transplant-case004-before-7e3373ce.avif",
+          "width": 1000,
+          "height": 1000
+        },
+        "altText": "Hair Transplant - Radiance Clinics",
+        "caption": "",
+        "blurDataUrl": "data:image/jpeg;base64,/9j/2wBDABISEhITEhQWFhQcHhseHCkmIiImKT4sMCwwLD5eO0U7O0U7XlNlUk1SZVOWdmhodpatkYqRrdK8vNL/+///////2wBDARISEhITEhQWFhQcHhseHCkmIiImKT4sMCwwLD5eO0U7O0U7XlNlUk1SZVOWdmhodpatkYqRrdK8vNL/+///////wgARCAAYABgDASIAAhEBAxEB/8QAGQABAQADAQAAAAAAAAAAAAAAAAUBAwQG/8QAFgEBAQEAAAAAAAAAAAAAAAAAAwIE/9oADAMBAAIQAxAAAACtH7sm11oWXlZpC0Auf//EACIQAAICAgEEAwEAAAAAAAAAAAECAwQABRETITJBIjFCcf/aAAgBAQABPwDebZ6Cxxw8dV8p7DczxNMLg7N4MuU55J6kUsqBHI+S5vqazz1pT6QrlRK4i4YkDj8j3lNohAwjkZwD+gAe/wDMOznvyOHYIoHKIMaxaqIVPdfoMM1e46HEEkarEzeXvP/EABsRAAEEAwAAAAAAAAAAAAAAAAEAAhEhEDEz/9oACAECAQE/AHPihtCwndIx/8QAGxEAAgIDAQAAAAAAAAAAAAAAAREAAwITITH/2gAIAQMBAT8ArrfT5MgiRK3qb6IzP//Z"
+      },
+      "frontAfter": {
+        "id": "radiance-ba-hair-transplant-case004-front-after",
+        "role": "front-after",
+        "beforeAfterRole": "frontAfter",
+        "originalFilename": "radiance-ba-hair-transplant-case004-front-after.jpg",
+        "originalRelativePath": "originals/03-before-after/case004/radiance-ba-hair-transplant-case004-front-after.jpg",
+        "desktop": {
+          "webp": "hero-desktop/radiance-ba-hair-transplant-case004-front-after.webp",
+          "avif": "hero-desktop/radiance-ba-hair-transplant-case004-front-after.avif",
+          "width": 2400,
+          "height": 1400
+        },
+        "mobile": {
+          "webp": "hero-mobile/radiance-ba-hair-transplant-case004-front-after.webp",
+          "avif": "hero-mobile/radiance-ba-hair-transplant-case004-front-after.avif",
+          "width": 1200,
+          "height": 1500
+        },
+        "thumb": {
+          "webp": "thumb/radiance-ba-hair-transplant-case004-front-after.webp",
+          "avif": "thumb/radiance-ba-hair-transplant-case004-front-after.avif",
+          "width": 500,
+          "height": 500
+        },
+        "landscape": {
+          "webp": "landscape/radiance-ba-hair-transplant-case004-front-after.webp",
+          "avif": "landscape/radiance-ba-hair-transplant-case004-front-after.avif",
+          "width": 1200,
+          "height": 800
+        },
+        "portrait": {
+          "webp": "portrait/radiance-ba-hair-transplant-case004-front-after.webp",
+          "avif": "portrait/radiance-ba-hair-transplant-case004-front-after.avif",
+          "width": 900,
+          "height": 1200
+        },
+        "square": {
+          "webp": "square/radiance-ba-hair-transplant-case004-front-after.webp",
+          "avif": "square/radiance-ba-hair-transplant-case004-front-after.avif",
+          "width": 1000,
+          "height": 1000
+        },
+        "altText": "hair transplant case 004 front after",
+        "caption": "Hair transplant case 004 front after",
+        "blurDataUrl": "data:image/jpeg;base64,/9j/2wBDABISEhITEhQWFhQcHhseHCkmIiImKT4sMCwwLD5eO0U7O0U7XlNlUk1SZVOWdmhodpatkYqRrdK8vNL/+///////2wBDARISEhITEhQWFhQcHhseHCkmIiImKT4sMCwwLD5eO0U7O0U7XlNlUk1SZVOWdmhodpatkYqRrdK8vNL/+///////wgARCAAYABgDASIAAhEBAxEB/8QAGAABAAMBAAAAAAAAAAAAAAAAAAMFBgT/xAAWAQEBAQAAAAAAAAAAAAAAAAABAgP/2gAMAwEAAhADEAAAAMp2SaGNMeKi3iBuwn//xAAiEAEAAgICAQQDAAAAAAAAAAABAgMABAUSERMUImEhMUH/2gAIAQEAAT8AriySMTyr4DLaLNb53a7Af12+Q5NiyeucOVO9V6o+AX8IZy0KLdCZ6kl+wyypp6k07MRTOP4uF+lds2v8SozY09+uNcLp9ofTmlxemUw9xUSnbn//xAAYEQACAwAAAAAAAAAAAAAAAAAAAQIRMf/aAAgBAgEBPwCbpoWE8sR//8QAGhEAAwEAAwAAAAAAAAAAAAAAAAECEQMhQf/aAAgBAwEBPwCJ1MpYzj7rD1n/2Q=="
+      },
+      "angleBefore": null,
+      "angleAfter": null,
+      "before": {
+        "id": "radiance-ba-hair-transplant-case004-before-7e3373ce",
+        "role": "before",
+        "beforeAfterRole": "before",
+        "originalFilename": "bfore1.png",
+        "originalRelativePath": "originals/03-before-after/case004/bfore1.png",
+        "desktop": {
+          "webp": "hero-desktop/radiance-ba-hair-transplant-case004-before-7e3373ce.webp",
+          "avif": "hero-desktop/radiance-ba-hair-transplant-case004-before-7e3373ce.avif",
+          "width": 2400,
+          "height": 1400
+        },
+        "mobile": {
+          "webp": "hero-mobile/radiance-ba-hair-transplant-case004-before-7e3373ce.webp",
+          "avif": "hero-mobile/radiance-ba-hair-transplant-case004-before-7e3373ce.avif",
+          "width": 1200,
+          "height": 1500
+        },
+        "thumb": {
+          "webp": "thumb/radiance-ba-hair-transplant-case004-before-7e3373ce.webp",
+          "avif": "thumb/radiance-ba-hair-transplant-case004-before-7e3373ce.avif",
+          "width": 500,
+          "height": 500
+        },
+        "landscape": {
+          "webp": "landscape/radiance-ba-hair-transplant-case004-before-7e3373ce.webp",
+          "avif": "landscape/radiance-ba-hair-transplant-case004-before-7e3373ce.avif",
+          "width": 1200,
+          "height": 800
+        },
+        "portrait": {
+          "webp": "portrait/radiance-ba-hair-transplant-case004-before-7e3373ce.webp",
+          "avif": "portrait/radiance-ba-hair-transplant-case004-before-7e3373ce.avif",
+          "width": 900,
+          "height": 1200
+        },
+        "square": {
+          "webp": "square/radiance-ba-hair-transplant-case004-before-7e3373ce.webp",
+          "avif": "square/radiance-ba-hair-transplant-case004-before-7e3373ce.avif",
+          "width": 1000,
+          "height": 1000
+        },
+        "altText": "Hair Transplant - Radiance Clinics",
+        "caption": "",
+        "blurDataUrl": "data:image/jpeg;base64,/9j/2wBDABISEhITEhQWFhQcHhseHCkmIiImKT4sMCwwLD5eO0U7O0U7XlNlUk1SZVOWdmhodpatkYqRrdK8vNL/+///////2wBDARISEhITEhQWFhQcHhseHCkmIiImKT4sMCwwLD5eO0U7O0U7XlNlUk1SZVOWdmhodpatkYqRrdK8vNL/+///////wgARCAAYABgDASIAAhEBAxEB/8QAGQABAQADAQAAAAAAAAAAAAAAAAUBAwQG/8QAFgEBAQEAAAAAAAAAAAAAAAAAAwIE/9oADAMBAAIQAxAAAACtH7sm11oWXlZpC0Auf//EACIQAAICAgEEAwEAAAAAAAAAAAECAwQABRETITJBIjFCcf/aAAgBAQABPwDebZ6Cxxw8dV8p7DczxNMLg7N4MuU55J6kUsqBHI+S5vqazz1pT6QrlRK4i4YkDj8j3lNohAwjkZwD+gAe/wDMOznvyOHYIoHKIMaxaqIVPdfoMM1e46HEEkarEzeXvP/EABsRAAEEAwAAAAAAAAAAAAAAAAEAAhEhEDEz/9oACAECAQE/AHPihtCwndIx/8QAGxEAAgIDAQAAAAAAAAAAAAAAAREAAwITITH/2gAIAQMBAT8ArrfT5MgiRK3qb6IzP//Z"
+      },
+      "after": {
+        "id": "radiance-ba-hair-transplant-case004-after",
+        "role": "after",
+        "beforeAfterRole": "after",
+        "originalFilename": "after1.jpg",
+        "originalRelativePath": "originals/03-before-after/case004/after1.jpg",
+        "desktop": {
+          "webp": "hero-desktop/radiance-ba-hair-transplant-case004-after.webp",
+          "avif": "hero-desktop/radiance-ba-hair-transplant-case004-after.avif",
+          "width": 2400,
+          "height": 1400
+        },
+        "mobile": {
+          "webp": "hero-mobile/radiance-ba-hair-transplant-case004-after.webp",
+          "avif": "hero-mobile/radiance-ba-hair-transplant-case004-after.avif",
+          "width": 1200,
+          "height": 1500
+        },
+        "thumb": {
+          "webp": "thumb/radiance-ba-hair-transplant-case004-after.webp",
+          "avif": "thumb/radiance-ba-hair-transplant-case004-after.avif",
+          "width": 500,
+          "height": 500
+        },
+        "landscape": {
+          "webp": "landscape/radiance-ba-hair-transplant-case004-after.webp",
+          "avif": "landscape/radiance-ba-hair-transplant-case004-after.avif",
+          "width": 1200,
+          "height": 800
+        },
+        "portrait": {
+          "webp": "portrait/radiance-ba-hair-transplant-case004-after.webp",
+          "avif": "portrait/radiance-ba-hair-transplant-case004-after.avif",
+          "width": 900,
+          "height": 1200
+        },
+        "square": {
+          "webp": "square/radiance-ba-hair-transplant-case004-after.webp",
+          "avif": "square/radiance-ba-hair-transplant-case004-after.avif",
+          "width": 1000,
+          "height": 1000
+        },
+        "altText": "Hair Transplant - Radiance Clinics",
+        "caption": "",
+        "blurDataUrl": "data:image/jpeg;base64,/9j/2wBDABISEhITEhQWFhQcHhseHCkmIiImKT4sMCwwLD5eO0U7O0U7XlNlUk1SZVOWdmhodpatkYqRrdK8vNL/+///////2wBDARISEhITEhQWFhQcHhseHCkmIiImKT4sMCwwLD5eO0U7O0U7XlNlUk1SZVOWdmhodpatkYqRrdK8vNL/+///////wgARCAAYABgDASIAAhEBAxEB/8QAGgABAQACAwAAAAAAAAAAAAAAAAUBAgMEBv/EABcBAAMBAAAAAAAAAAAAAAAAAAECAwD/2gAMAwEAAhADEAAAAPPZuapSCrKSu9cA4wu//8QAJBAAAgEDAgYDAAAAAAAAAAAAAQIDAAQREiIFEyFBUWEUYnH/2gAIAQEAAT8Aw7SRqoJ79KlEm5XVlbxjIpWyimrfhzwRc+RgJNOVSiXcxbU3jIOonP5V/wAM+NHzo2zH39VJODdrE2AcHHsUlnFbzyTKAAQNP180GW6tXiB6ElQa/8QAGBEBAAMBAAAAAAAAAAAAAAAAAQACEDH/2gAIAQIBAT8Aso81Z//EABgRAQADAQAAAAAAAAAAAAAAAAEAAhAR/9oACAEDAQE/AKAi90n/2Q=="
+      },
+      "images": {
+        "after": {
+          "id": "radiance-ba-hair-transplant-case004-after",
+          "role": "after",
+          "beforeAfterRole": "after",
+          "originalFilename": "after1.jpg",
+          "originalRelativePath": "originals/03-before-after/case004/after1.jpg",
+          "desktop": {
+            "webp": "hero-desktop/radiance-ba-hair-transplant-case004-after.webp",
+            "avif": "hero-desktop/radiance-ba-hair-transplant-case004-after.avif",
+            "width": 2400,
+            "height": 1400
+          },
+          "mobile": {
+            "webp": "hero-mobile/radiance-ba-hair-transplant-case004-after.webp",
+            "avif": "hero-mobile/radiance-ba-hair-transplant-case004-after.avif",
+            "width": 1200,
+            "height": 1500
+          },
+          "thumb": {
+            "webp": "thumb/radiance-ba-hair-transplant-case004-after.webp",
+            "avif": "thumb/radiance-ba-hair-transplant-case004-after.avif",
+            "width": 500,
+            "height": 500
+          },
+          "landscape": {
+            "webp": "landscape/radiance-ba-hair-transplant-case004-after.webp",
+            "avif": "landscape/radiance-ba-hair-transplant-case004-after.avif",
+            "width": 1200,
+            "height": 800
+          },
+          "portrait": {
+            "webp": "portrait/radiance-ba-hair-transplant-case004-after.webp",
+            "avif": "portrait/radiance-ba-hair-transplant-case004-after.avif",
+            "width": 900,
+            "height": 1200
+          },
+          "square": {
+            "webp": "square/radiance-ba-hair-transplant-case004-after.webp",
+            "avif": "square/radiance-ba-hair-transplant-case004-after.avif",
+            "width": 1000,
+            "height": 1000
+          },
+          "altText": "Hair Transplant - Radiance Clinics",
+          "caption": "",
+          "blurDataUrl": "data:image/jpeg;base64,/9j/2wBDABISEhITEhQWFhQcHhseHCkmIiImKT4sMCwwLD5eO0U7O0U7XlNlUk1SZVOWdmhodpatkYqRrdK8vNL/+///////2wBDARISEhITEhQWFhQcHhseHCkmIiImKT4sMCwwLD5eO0U7O0U7XlNlUk1SZVOWdmhodpatkYqRrdK8vNL/+///////wgARCAAYABgDASIAAhEBAxEB/8QAGgABAQACAwAAAAAAAAAAAAAAAAUBAgMEBv/EABcBAAMBAAAAAAAAAAAAAAAAAAECAwD/2gAMAwEAAhADEAAAAPPZuapSCrKSu9cA4wu//8QAJBAAAgEDAgYDAAAAAAAAAAAAAQIDAAQREiIFEyFBUWEUYnH/2gAIAQEAAT8Aw7SRqoJ79KlEm5XVlbxjIpWyimrfhzwRc+RgJNOVSiXcxbU3jIOonP5V/wAM+NHzo2zH39VJODdrE2AcHHsUlnFbzyTKAAQNP180GW6tXiB6ElQa/8QAGBEBAAMBAAAAAAAAAAAAAAAAAQACEDH/2gAIAQIBAT8Aso81Z//EABgRAQADAQAAAAAAAAAAAAAAAAEAAhAR/9oACAEDAQE/AKAi90n/2Q=="
+        },
+        "before": {
+          "id": "radiance-ba-hair-transplant-case004-before-7e3373ce",
+          "role": "before",
+          "beforeAfterRole": "before",
+          "originalFilename": "bfore1.png",
+          "originalRelativePath": "originals/03-before-after/case004/bfore1.png",
+          "desktop": {
+            "webp": "hero-desktop/radiance-ba-hair-transplant-case004-before-7e3373ce.webp",
+            "avif": "hero-desktop/radiance-ba-hair-transplant-case004-before-7e3373ce.avif",
+            "width": 2400,
+            "height": 1400
+          },
+          "mobile": {
+            "webp": "hero-mobile/radiance-ba-hair-transplant-case004-before-7e3373ce.webp",
+            "avif": "hero-mobile/radiance-ba-hair-transplant-case004-before-7e3373ce.avif",
+            "width": 1200,
+            "height": 1500
+          },
+          "thumb": {
+            "webp": "thumb/radiance-ba-hair-transplant-case004-before-7e3373ce.webp",
+            "avif": "thumb/radiance-ba-hair-transplant-case004-before-7e3373ce.avif",
+            "width": 500,
+            "height": 500
+          },
+          "landscape": {
+            "webp": "landscape/radiance-ba-hair-transplant-case004-before-7e3373ce.webp",
+            "avif": "landscape/radiance-ba-hair-transplant-case004-before-7e3373ce.avif",
+            "width": 1200,
+            "height": 800
+          },
+          "portrait": {
+            "webp": "portrait/radiance-ba-hair-transplant-case004-before-7e3373ce.webp",
+            "avif": "portrait/radiance-ba-hair-transplant-case004-before-7e3373ce.avif",
+            "width": 900,
+            "height": 1200
+          },
+          "square": {
+            "webp": "square/radiance-ba-hair-transplant-case004-before-7e3373ce.webp",
+            "avif": "square/radiance-ba-hair-transplant-case004-before-7e3373ce.avif",
+            "width": 1000,
+            "height": 1000
+          },
+          "altText": "Hair Transplant - Radiance Clinics",
+          "caption": "",
+          "blurDataUrl": "data:image/jpeg;base64,/9j/2wBDABISEhITEhQWFhQcHhseHCkmIiImKT4sMCwwLD5eO0U7O0U7XlNlUk1SZVOWdmhodpatkYqRrdK8vNL/+///////2wBDARISEhITEhQWFhQcHhseHCkmIiImKT4sMCwwLD5eO0U7O0U7XlNlUk1SZVOWdmhodpatkYqRrdK8vNL/+///////wgARCAAYABgDASIAAhEBAxEB/8QAGQABAQADAQAAAAAAAAAAAAAAAAUBAwQG/8QAFgEBAQEAAAAAAAAAAAAAAAAAAwIE/9oADAMBAAIQAxAAAACtH7sm11oWXlZpC0Auf//EACIQAAICAgEEAwEAAAAAAAAAAAECAwQABRETITJBIjFCcf/aAAgBAQABPwDebZ6Cxxw8dV8p7DczxNMLg7N4MuU55J6kUsqBHI+S5vqazz1pT6QrlRK4i4YkDj8j3lNohAwjkZwD+gAe/wDMOznvyOHYIoHKIMaxaqIVPdfoMM1e46HEEkarEzeXvP/EABsRAAEEAwAAAAAAAAAAAAAAAAEAAhEhEDEz/9oACAECAQE/AHPihtCwndIx/8QAGxEAAgIDAQAAAAAAAAAAAAAAAREAAwITITH/2gAIAQMBAT8ArrfT5MgiRK3qb6IzP//Z"
+        },
+        "frontAfter": {
+          "id": "radiance-ba-hair-transplant-case004-front-after",
+          "role": "front-after",
+          "beforeAfterRole": "frontAfter",
+          "originalFilename": "radiance-ba-hair-transplant-case004-front-after.jpg",
+          "originalRelativePath": "originals/03-before-after/case004/radiance-ba-hair-transplant-case004-front-after.jpg",
+          "desktop": {
+            "webp": "hero-desktop/radiance-ba-hair-transplant-case004-front-after.webp",
+            "avif": "hero-desktop/radiance-ba-hair-transplant-case004-front-after.avif",
+            "width": 2400,
+            "height": 1400
+          },
+          "mobile": {
+            "webp": "hero-mobile/radiance-ba-hair-transplant-case004-front-after.webp",
+            "avif": "hero-mobile/radiance-ba-hair-transplant-case004-front-after.avif",
+            "width": 1200,
+            "height": 1500
+          },
+          "thumb": {
+            "webp": "thumb/radiance-ba-hair-transplant-case004-front-after.webp",
+            "avif": "thumb/radiance-ba-hair-transplant-case004-front-after.avif",
+            "width": 500,
+            "height": 500
+          },
+          "landscape": {
+            "webp": "landscape/radiance-ba-hair-transplant-case004-front-after.webp",
+            "avif": "landscape/radiance-ba-hair-transplant-case004-front-after.avif",
+            "width": 1200,
+            "height": 800
+          },
+          "portrait": {
+            "webp": "portrait/radiance-ba-hair-transplant-case004-front-after.webp",
+            "avif": "portrait/radiance-ba-hair-transplant-case004-front-after.avif",
+            "width": 900,
+            "height": 1200
+          },
+          "square": {
+            "webp": "square/radiance-ba-hair-transplant-case004-front-after.webp",
+            "avif": "square/radiance-ba-hair-transplant-case004-front-after.avif",
+            "width": 1000,
+            "height": 1000
+          },
+          "altText": "hair transplant case 004 front after",
+          "caption": "Hair transplant case 004 front after",
+          "blurDataUrl": "data:image/jpeg;base64,/9j/2wBDABISEhITEhQWFhQcHhseHCkmIiImKT4sMCwwLD5eO0U7O0U7XlNlUk1SZVOWdmhodpatkYqRrdK8vNL/+///////2wBDARISEhITEhQWFhQcHhseHCkmIiImKT4sMCwwLD5eO0U7O0U7XlNlUk1SZVOWdmhodpatkYqRrdK8vNL/+///////wgARCAAYABgDASIAAhEBAxEB/8QAGAABAAMBAAAAAAAAAAAAAAAAAAMFBgT/xAAWAQEBAQAAAAAAAAAAAAAAAAABAgP/2gAMAwEAAhADEAAAAMp2SaGNMeKi3iBuwn//xAAiEAEAAgICAQQDAAAAAAAAAAABAgMABAUSERMUImEhMUH/2gAIAQEAAT8AriySMTyr4DLaLNb53a7Af12+Q5NiyeucOVO9V6o+AX8IZy0KLdCZ6kl+wyypp6k07MRTOP4uF+lds2v8SozY09+uNcLp9ofTmlxemUw9xUSnbn//xAAYEQACAwAAAAAAAAAAAAAAAAAAAQIRMf/aAAgBAgEBPwCbpoWE8sR//8QAGhEAAwEAAwAAAAAAAAAAAAAAAAECEQMhQf/aAAgBAwEBPwCJ1MpYzj7rD1n/2Q=="
+        }
+      },
+      "extraImages": [],
+      "complete": false,
+      "recommendedWebsiteUsage": "Consent-led before/after preview for hair transplant; publish only after consent review",
+      "warnings": [
+        "Missing angle before and angle after image."
+      ]
+    },
+    {
+      "pairKey": "hair-transplant-case005",
+      "caseId": "case005",
+      "category": "hair-transplant",
+      "treatmentCategory": "hair-transplant",
+      "title": "Hair transplant case 005 front after",
+      "patientLabel": "Case 005",
+      "timeGap": "",
+      "disclaimer": "",
+      "consentConfirmed": true,
+      "publish": true,
+      "featured": false,
+      "sortOrder": 0,
+      "frontBefore": {
+        "id": "radiance-ba-hair-transplant-case005-front-before",
+        "role": "front-before",
+        "beforeAfterRole": "frontBefore",
+        "originalFilename": "radiance-ba-hair-transplant-case005-front-before.jpg",
+        "originalRelativePath": "originals/03-before-after/case005/radiance-ba-hair-transplant-case005-front-before.jpg",
+        "desktop": {
+          "webp": "hero-desktop/radiance-ba-hair-transplant-case005-front-before.webp",
+          "avif": "hero-desktop/radiance-ba-hair-transplant-case005-front-before.avif",
+          "width": 2400,
+          "height": 1400
+        },
+        "mobile": {
+          "webp": "hero-mobile/radiance-ba-hair-transplant-case005-front-before.webp",
+          "avif": "hero-mobile/radiance-ba-hair-transplant-case005-front-before.avif",
+          "width": 1200,
+          "height": 1500
+        },
+        "thumb": {
+          "webp": "thumb/radiance-ba-hair-transplant-case005-front-before.webp",
+          "avif": "thumb/radiance-ba-hair-transplant-case005-front-before.avif",
+          "width": 500,
+          "height": 500
+        },
+        "landscape": {
+          "webp": "landscape/radiance-ba-hair-transplant-case005-front-before.webp",
+          "avif": "landscape/radiance-ba-hair-transplant-case005-front-before.avif",
+          "width": 1200,
+          "height": 800
+        },
+        "portrait": {
+          "webp": "portrait/radiance-ba-hair-transplant-case005-front-before.webp",
+          "avif": "portrait/radiance-ba-hair-transplant-case005-front-before.avif",
+          "width": 900,
+          "height": 1200
+        },
+        "square": {
+          "webp": "square/radiance-ba-hair-transplant-case005-front-before.webp",
+          "avif": "square/radiance-ba-hair-transplant-case005-front-before.avif",
+          "width": 1000,
+          "height": 1000
+        },
+        "altText": "hair transplant case 005 front before",
+        "caption": "Hair transplant case 005 front before",
+        "blurDataUrl": "data:image/jpeg;base64,/9j/2wBDABISEhITEhQWFhQcHhseHCkmIiImKT4sMCwwLD5eO0U7O0U7XlNlUk1SZVOWdmhodpatkYqRrdK8vNL/+///////2wBDARISEhITEhQWFhQcHhseHCkmIiImKT4sMCwwLD5eO0U7O0U7XlNlUk1SZVOWdmhodpatkYqRrdK8vNL/+///////wgARCAAYABgDASIAAhEBAxEB/8QAGAABAQEBAQAAAAAAAAAAAAAAAAUEBgP/xAAVAQEBAAAAAAAAAAAAAAAAAAADAv/aAAwDAQACEAMQAAAA0+0WkTW2dZy+TJvtApf/xAAhEAACAQQCAgMAAAAAAAAAAAABAwIABAUSESITMVFisv/aAAgBAQABPwDK5NqHwtkHU67TlVk5jVSJedx80hpcvYjggkGsnbNOSfMfTWrDSSwZ9SAdj7q1XARl33EjyOmlZvyLaJAkApIFW9+xMvZrDgm0NyZbFs/zX//EABgRAQEBAQEAAAAAAAAAAAAAAAECADER/9oACAECAQE/ALrS0hzALXuOb//EABsRAQEBAAIDAAAAAAAAAAAAAAECAAMRITFB/9oACAEDAQE/AOOPvWoCn3lZITU+d//Z"
+      },
+      "frontAfter": {
+        "id": "radiance-ba-hair-transplant-case005-front-after",
+        "role": "front-after",
+        "beforeAfterRole": "frontAfter",
+        "originalFilename": "radiance-ba-hair-transplant-case005-front-after.jpg",
+        "originalRelativePath": "originals/03-before-after/case005/radiance-ba-hair-transplant-case005-front-after.jpg",
+        "desktop": {
+          "webp": "hero-desktop/radiance-ba-hair-transplant-case005-front-after.webp",
+          "avif": "hero-desktop/radiance-ba-hair-transplant-case005-front-after.avif",
+          "width": 2400,
+          "height": 1400
+        },
+        "mobile": {
+          "webp": "hero-mobile/radiance-ba-hair-transplant-case005-front-after.webp",
+          "avif": "hero-mobile/radiance-ba-hair-transplant-case005-front-after.avif",
+          "width": 1200,
+          "height": 1500
+        },
+        "thumb": {
+          "webp": "thumb/radiance-ba-hair-transplant-case005-front-after.webp",
+          "avif": "thumb/radiance-ba-hair-transplant-case005-front-after.avif",
+          "width": 500,
+          "height": 500
+        },
+        "landscape": {
+          "webp": "landscape/radiance-ba-hair-transplant-case005-front-after.webp",
+          "avif": "landscape/radiance-ba-hair-transplant-case005-front-after.avif",
+          "width": 1200,
+          "height": 800
+        },
+        "portrait": {
+          "webp": "portrait/radiance-ba-hair-transplant-case005-front-after.webp",
+          "avif": "portrait/radiance-ba-hair-transplant-case005-front-after.avif",
+          "width": 900,
+          "height": 1200
+        },
+        "square": {
+          "webp": "square/radiance-ba-hair-transplant-case005-front-after.webp",
+          "avif": "square/radiance-ba-hair-transplant-case005-front-after.avif",
+          "width": 1000,
+          "height": 1000
+        },
+        "altText": "hair transplant case 005 front after",
+        "caption": "Hair transplant case 005 front after",
+        "blurDataUrl": "data:image/jpeg;base64,/9j/2wBDABISEhITEhQWFhQcHhseHCkmIiImKT4sMCwwLD5eO0U7O0U7XlNlUk1SZVOWdmhodpatkYqRrdK8vNL/+///////2wBDARISEhITEhQWFhQcHhseHCkmIiImKT4sMCwwLD5eO0U7O0U7XlNlUk1SZVOWdmhodpatkYqRrdK8vNL/+///////wgARCAAYABgDASIAAhEBAxEB/8QAGAABAQEBAQAAAAAAAAAAAAAAAAUEAwb/xAAWAQEBAQAAAAAAAAAAAAAAAAACAwH/2gAMAwEAAhADEAAAAOvnLIPW2FkOIBWhWX//xAAiEAACAgIBBAMBAAAAAAAAAAABAgMEABEFEhMhYSIxQnH/2gAIAQEAAT8A5rlTWVIa7/NxsvkRvWpCEmYn25zhnuL3ltygp+dtnM0xNcquxIVkKZx0UMDSIdFg336ysIQZO20m23tXKnWv5jXZbknS+lUeVXJZJ61hj78HOKuxmd+sHrk8B8//xAAbEQACAgMBAAAAAAAAAAAAAAABAgAREkNRcf/aAAgBAgEBPwB2x9i2wBsTZXRFn//EABsRAAMBAAMBAAAAAAAAAAAAAAECEQASM0FR/9oACAEDAQE/AETlD5nisRDh134cTTv/2Q=="
+      },
+      "angleBefore": null,
+      "angleAfter": null,
+      "before": null,
+      "after": null,
+      "images": {
+        "frontAfter": {
+          "id": "radiance-ba-hair-transplant-case005-front-after",
+          "role": "front-after",
+          "beforeAfterRole": "frontAfter",
+          "originalFilename": "radiance-ba-hair-transplant-case005-front-after.jpg",
+          "originalRelativePath": "originals/03-before-after/case005/radiance-ba-hair-transplant-case005-front-after.jpg",
+          "desktop": {
+            "webp": "hero-desktop/radiance-ba-hair-transplant-case005-front-after.webp",
+            "avif": "hero-desktop/radiance-ba-hair-transplant-case005-front-after.avif",
+            "width": 2400,
+            "height": 1400
+          },
+          "mobile": {
+            "webp": "hero-mobile/radiance-ba-hair-transplant-case005-front-after.webp",
+            "avif": "hero-mobile/radiance-ba-hair-transplant-case005-front-after.avif",
+            "width": 1200,
+            "height": 1500
+          },
+          "thumb": {
+            "webp": "thumb/radiance-ba-hair-transplant-case005-front-after.webp",
+            "avif": "thumb/radiance-ba-hair-transplant-case005-front-after.avif",
+            "width": 500,
+            "height": 500
+          },
+          "landscape": {
+            "webp": "landscape/radiance-ba-hair-transplant-case005-front-after.webp",
+            "avif": "landscape/radiance-ba-hair-transplant-case005-front-after.avif",
+            "width": 1200,
+            "height": 800
+          },
+          "portrait": {
+            "webp": "portrait/radiance-ba-hair-transplant-case005-front-after.webp",
+            "avif": "portrait/radiance-ba-hair-transplant-case005-front-after.avif",
+            "width": 900,
+            "height": 1200
+          },
+          "square": {
+            "webp": "square/radiance-ba-hair-transplant-case005-front-after.webp",
+            "avif": "square/radiance-ba-hair-transplant-case005-front-after.avif",
+            "width": 1000,
+            "height": 1000
+          },
+          "altText": "hair transplant case 005 front after",
+          "caption": "Hair transplant case 005 front after",
+          "blurDataUrl": "data:image/jpeg;base64,/9j/2wBDABISEhITEhQWFhQcHhseHCkmIiImKT4sMCwwLD5eO0U7O0U7XlNlUk1SZVOWdmhodpatkYqRrdK8vNL/+///////2wBDARISEhITEhQWFhQcHhseHCkmIiImKT4sMCwwLD5eO0U7O0U7XlNlUk1SZVOWdmhodpatkYqRrdK8vNL/+///////wgARCAAYABgDASIAAhEBAxEB/8QAGAABAQEBAQAAAAAAAAAAAAAAAAUEAwb/xAAWAQEBAQAAAAAAAAAAAAAAAAACAwH/2gAMAwEAAhADEAAAAOvnLIPW2FkOIBWhWX//xAAiEAACAgIBBAMBAAAAAAAAAAABAgMEABEFEhMhYSIxQnH/2gAIAQEAAT8A5rlTWVIa7/NxsvkRvWpCEmYn25zhnuL3ltygp+dtnM0xNcquxIVkKZx0UMDSIdFg336ysIQZO20m23tXKnWv5jXZbknS+lUeVXJZJ61hj78HOKuxmd+sHrk8B8//xAAbEQACAgMBAAAAAAAAAAAAAAABAgAREkNRcf/aAAgBAgEBPwB2x9i2wBsTZXRFn//EABsRAAMBAAMBAAAAAAAAAAAAAAECEQASM0FR/9oACAEDAQE/AETlD5nisRDh134cTTv/2Q=="
+        },
+        "frontBefore": {
+          "id": "radiance-ba-hair-transplant-case005-front-before",
+          "role": "front-before",
+          "beforeAfterRole": "frontBefore",
+          "originalFilename": "radiance-ba-hair-transplant-case005-front-before.jpg",
+          "originalRelativePath": "originals/03-before-after/case005/radiance-ba-hair-transplant-case005-front-before.jpg",
+          "desktop": {
+            "webp": "hero-desktop/radiance-ba-hair-transplant-case005-front-before.webp",
+            "avif": "hero-desktop/radiance-ba-hair-transplant-case005-front-before.avif",
+            "width": 2400,
+            "height": 1400
+          },
+          "mobile": {
+            "webp": "hero-mobile/radiance-ba-hair-transplant-case005-front-before.webp",
+            "avif": "hero-mobile/radiance-ba-hair-transplant-case005-front-before.avif",
+            "width": 1200,
+            "height": 1500
+          },
+          "thumb": {
+            "webp": "thumb/radiance-ba-hair-transplant-case005-front-before.webp",
+            "avif": "thumb/radiance-ba-hair-transplant-case005-front-before.avif",
+            "width": 500,
+            "height": 500
+          },
+          "landscape": {
+            "webp": "landscape/radiance-ba-hair-transplant-case005-front-before.webp",
+            "avif": "landscape/radiance-ba-hair-transplant-case005-front-before.avif",
+            "width": 1200,
+            "height": 800
+          },
+          "portrait": {
+            "webp": "portrait/radiance-ba-hair-transplant-case005-front-before.webp",
+            "avif": "portrait/radiance-ba-hair-transplant-case005-front-before.avif",
+            "width": 900,
+            "height": 1200
+          },
+          "square": {
+            "webp": "square/radiance-ba-hair-transplant-case005-front-before.webp",
+            "avif": "square/radiance-ba-hair-transplant-case005-front-before.avif",
+            "width": 1000,
+            "height": 1000
+          },
+          "altText": "hair transplant case 005 front before",
+          "caption": "Hair transplant case 005 front before",
+          "blurDataUrl": "data:image/jpeg;base64,/9j/2wBDABISEhITEhQWFhQcHhseHCkmIiImKT4sMCwwLD5eO0U7O0U7XlNlUk1SZVOWdmhodpatkYqRrdK8vNL/+///////2wBDARISEhITEhQWFhQcHhseHCkmIiImKT4sMCwwLD5eO0U7O0U7XlNlUk1SZVOWdmhodpatkYqRrdK8vNL/+///////wgARCAAYABgDASIAAhEBAxEB/8QAGAABAQEBAQAAAAAAAAAAAAAAAAUEBgP/xAAVAQEBAAAAAAAAAAAAAAAAAAADAv/aAAwDAQACEAMQAAAA0+0WkTW2dZy+TJvtApf/xAAhEAACAQQCAgMAAAAAAAAAAAABAwIABAUSESITMVFisv/aAAgBAQABPwDK5NqHwtkHU67TlVk5jVSJedx80hpcvYjggkGsnbNOSfMfTWrDSSwZ9SAdj7q1XARl33EjyOmlZvyLaJAkApIFW9+xMvZrDgm0NyZbFs/zX//EABgRAQEBAQEAAAAAAAAAAAAAAAECADER/9oACAECAQE/ALrS0hzALXuOb//EABsRAQEBAAIDAAAAAAAAAAAAAAECAAMRITFB/9oACAEDAQE/AOOPvWoCn3lZITU+d//Z"
+        },
+        "topAfter": {
+          "id": "radiance-ba-hair-transplant-case005-top-after",
+          "role": "top-after",
+          "beforeAfterRole": "topAfter",
+          "originalFilename": "radiance-ba-hair-transplant-case005-top-after.jpg",
+          "originalRelativePath": "originals/03-before-after/case005/radiance-ba-hair-transplant-case005-top-after.jpg",
+          "desktop": {
+            "webp": "hero-desktop/radiance-ba-hair-transplant-case005-top-after.webp",
+            "avif": "hero-desktop/radiance-ba-hair-transplant-case005-top-after.avif",
+            "width": 2400,
+            "height": 1400
+          },
+          "mobile": {
+            "webp": "hero-mobile/radiance-ba-hair-transplant-case005-top-after.webp",
+            "avif": "hero-mobile/radiance-ba-hair-transplant-case005-top-after.avif",
+            "width": 1200,
+            "height": 1500
+          },
+          "thumb": {
+            "webp": "thumb/radiance-ba-hair-transplant-case005-top-after.webp",
+            "avif": "thumb/radiance-ba-hair-transplant-case005-top-after.avif",
+            "width": 500,
+            "height": 500
+          },
+          "landscape": {
+            "webp": "landscape/radiance-ba-hair-transplant-case005-top-after.webp",
+            "avif": "landscape/radiance-ba-hair-transplant-case005-top-after.avif",
+            "width": 1200,
+            "height": 800
+          },
+          "portrait": {
+            "webp": "portrait/radiance-ba-hair-transplant-case005-top-after.webp",
+            "avif": "portrait/radiance-ba-hair-transplant-case005-top-after.avif",
+            "width": 900,
+            "height": 1200
+          },
+          "square": {
+            "webp": "square/radiance-ba-hair-transplant-case005-top-after.webp",
+            "avif": "square/radiance-ba-hair-transplant-case005-top-after.avif",
+            "width": 1000,
+            "height": 1000
+          },
+          "altText": "hair transplant case 005 top after",
+          "caption": "Hair transplant case 005 top after",
+          "blurDataUrl": "data:image/jpeg;base64,/9j/2wBDABISEhITEhQWFhQcHhseHCkmIiImKT4sMCwwLD5eO0U7O0U7XlNlUk1SZVOWdmhodpatkYqRrdK8vNL/+///////2wBDARISEhITEhQWFhQcHhseHCkmIiImKT4sMCwwLD5eO0U7O0U7XlNlUk1SZVOWdmhodpatkYqRrdK8vNL/+///////wgARCAAYABgDASIAAhEBAxEB/8QAGQABAAMBAQAAAAAAAAAAAAAAAAQFBgMH/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAH/2gAMAwEAAhADEAAAANJR0sBfR2RFJwCWI//EACQQAAIBAwMDBQAAAAAAAAAAAAECAwAEMQUREiEycQYiQWRy/9oACAEBAAE/AL+/gsIucuT2oMtR9S/U6furW7hvIRLEfIOQa1y4E2qt790RVUVJ2A1oF0sVxMjuArx1ON359SdsVzLrtkio1MXn5r//xAAUEQEAAAAAAAAAAAAAAAAAAAAg/9oACAECAQE/AB//xAAXEQEAAwAAAAAAAAAAAAAAAAABABAx/9oACAEDAQE/ALdZ/9k="
+        },
+        "topBefore": {
+          "id": "radiance-ba-hair-transplant-case005-top-before",
+          "role": "top-before",
+          "beforeAfterRole": "topBefore",
+          "originalFilename": "radiance-ba-hair-transplant-case005-top-before.jpg",
+          "originalRelativePath": "originals/03-before-after/case005/radiance-ba-hair-transplant-case005-top-before.jpg",
+          "desktop": {
+            "webp": "hero-desktop/radiance-ba-hair-transplant-case005-top-before.webp",
+            "avif": "hero-desktop/radiance-ba-hair-transplant-case005-top-before.avif",
+            "width": 2400,
+            "height": 1400
+          },
+          "mobile": {
+            "webp": "hero-mobile/radiance-ba-hair-transplant-case005-top-before.webp",
+            "avif": "hero-mobile/radiance-ba-hair-transplant-case005-top-before.avif",
+            "width": 1200,
+            "height": 1500
+          },
+          "thumb": {
+            "webp": "thumb/radiance-ba-hair-transplant-case005-top-before.webp",
+            "avif": "thumb/radiance-ba-hair-transplant-case005-top-before.avif",
+            "width": 500,
+            "height": 500
+          },
+          "landscape": {
+            "webp": "landscape/radiance-ba-hair-transplant-case005-top-before.webp",
+            "avif": "landscape/radiance-ba-hair-transplant-case005-top-before.avif",
+            "width": 1200,
+            "height": 800
+          },
+          "portrait": {
+            "webp": "portrait/radiance-ba-hair-transplant-case005-top-before.webp",
+            "avif": "portrait/radiance-ba-hair-transplant-case005-top-before.avif",
+            "width": 900,
+            "height": 1200
+          },
+          "square": {
+            "webp": "square/radiance-ba-hair-transplant-case005-top-before.webp",
+            "avif": "square/radiance-ba-hair-transplant-case005-top-before.avif",
+            "width": 1000,
+            "height": 1000
+          },
+          "altText": "hair transplant case 005 top before",
+          "caption": "Hair transplant case 005 top before",
+          "blurDataUrl": "data:image/jpeg;base64,/9j/2wBDABISEhITEhQWFhQcHhseHCkmIiImKT4sMCwwLD5eO0U7O0U7XlNlUk1SZVOWdmhodpatkYqRrdK8vNL/+///////2wBDARISEhITEhQWFhQcHhseHCkmIiImKT4sMCwwLD5eO0U7O0U7XlNlUk1SZVOWdmhodpatkYqRrdK8vNL/+///////wgARCAAYABgDASIAAhEBAxEB/8QAFwABAQEBAAAAAAAAAAAAAAAAAAUEA//EABUBAQEAAAAAAAAAAAAAAAAAAAME/9oADAMBAAIQAxAAAACzglUie4gEHPyBpsBQ/8QAIxAAAgEEAgEFAQAAAAAAAAAAAQIEAAMFEhExEzJCUmFxgv/aAAgBAQABPwDI5QQ9LaJvefoUmUn+o+I/WtQpyTEYgauh4dKmbPlJRb2vqPwVaVRYZj3WKJXJtx01k81mF0nG981FJJU2+6w1nfzyP4Wv/8QAGREAAwEBAQAAAAAAAAAAAAAAAAECESES/9oACAECAQE/ALt+sRL1JlrpPJR//8QAGhEAAwADAQAAAAAAAAAAAAAAAAECAxEhEv/aAAgBAwEBPwCIlztlLzTRjfC+0z//2Q=="
+        }
+      },
+      "extraImages": [
+        {
+          "id": "radiance-ba-hair-transplant-case005-top-after",
+          "role": "top-after",
+          "beforeAfterRole": "topAfter",
+          "originalFilename": "radiance-ba-hair-transplant-case005-top-after.jpg",
+          "originalRelativePath": "originals/03-before-after/case005/radiance-ba-hair-transplant-case005-top-after.jpg",
+          "desktop": {
+            "webp": "hero-desktop/radiance-ba-hair-transplant-case005-top-after.webp",
+            "avif": "hero-desktop/radiance-ba-hair-transplant-case005-top-after.avif",
+            "width": 2400,
+            "height": 1400
+          },
+          "mobile": {
+            "webp": "hero-mobile/radiance-ba-hair-transplant-case005-top-after.webp",
+            "avif": "hero-mobile/radiance-ba-hair-transplant-case005-top-after.avif",
+            "width": 1200,
+            "height": 1500
+          },
+          "thumb": {
+            "webp": "thumb/radiance-ba-hair-transplant-case005-top-after.webp",
+            "avif": "thumb/radiance-ba-hair-transplant-case005-top-after.avif",
+            "width": 500,
+            "height": 500
+          },
+          "landscape": {
+            "webp": "landscape/radiance-ba-hair-transplant-case005-top-after.webp",
+            "avif": "landscape/radiance-ba-hair-transplant-case005-top-after.avif",
+            "width": 1200,
+            "height": 800
+          },
+          "portrait": {
+            "webp": "portrait/radiance-ba-hair-transplant-case005-top-after.webp",
+            "avif": "portrait/radiance-ba-hair-transplant-case005-top-after.avif",
+            "width": 900,
+            "height": 1200
+          },
+          "square": {
+            "webp": "square/radiance-ba-hair-transplant-case005-top-after.webp",
+            "avif": "square/radiance-ba-hair-transplant-case005-top-after.avif",
+            "width": 1000,
+            "height": 1000
+          },
+          "altText": "hair transplant case 005 top after",
+          "caption": "Hair transplant case 005 top after",
+          "blurDataUrl": "data:image/jpeg;base64,/9j/2wBDABISEhITEhQWFhQcHhseHCkmIiImKT4sMCwwLD5eO0U7O0U7XlNlUk1SZVOWdmhodpatkYqRrdK8vNL/+///////2wBDARISEhITEhQWFhQcHhseHCkmIiImKT4sMCwwLD5eO0U7O0U7XlNlUk1SZVOWdmhodpatkYqRrdK8vNL/+///////wgARCAAYABgDASIAAhEBAxEB/8QAGQABAAMBAQAAAAAAAAAAAAAAAAQFBgMH/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAH/2gAMAwEAAhADEAAAANJR0sBfR2RFJwCWI//EACQQAAIBAwMDBQAAAAAAAAAAAAECAwAEMQUREiEycQYiQWRy/9oACAEBAAE/AL+/gsIucuT2oMtR9S/U6furW7hvIRLEfIOQa1y4E2qt790RVUVJ2A1oF0sVxMjuArx1ON359SdsVzLrtkio1MXn5r//xAAUEQEAAAAAAAAAAAAAAAAAAAAg/9oACAECAQE/AB//xAAXEQEAAwAAAAAAAAAAAAAAAAABABAx/9oACAEDAQE/ALdZ/9k="
+        },
+        {
+          "id": "radiance-ba-hair-transplant-case005-top-before",
+          "role": "top-before",
+          "beforeAfterRole": "topBefore",
+          "originalFilename": "radiance-ba-hair-transplant-case005-top-before.jpg",
+          "originalRelativePath": "originals/03-before-after/case005/radiance-ba-hair-transplant-case005-top-before.jpg",
+          "desktop": {
+            "webp": "hero-desktop/radiance-ba-hair-transplant-case005-top-before.webp",
+            "avif": "hero-desktop/radiance-ba-hair-transplant-case005-top-before.avif",
+            "width": 2400,
+            "height": 1400
+          },
+          "mobile": {
+            "webp": "hero-mobile/radiance-ba-hair-transplant-case005-top-before.webp",
+            "avif": "hero-mobile/radiance-ba-hair-transplant-case005-top-before.avif",
+            "width": 1200,
+            "height": 1500
+          },
+          "thumb": {
+            "webp": "thumb/radiance-ba-hair-transplant-case005-top-before.webp",
+            "avif": "thumb/radiance-ba-hair-transplant-case005-top-before.avif",
+            "width": 500,
+            "height": 500
+          },
+          "landscape": {
+            "webp": "landscape/radiance-ba-hair-transplant-case005-top-before.webp",
+            "avif": "landscape/radiance-ba-hair-transplant-case005-top-before.avif",
+            "width": 1200,
+            "height": 800
+          },
+          "portrait": {
+            "webp": "portrait/radiance-ba-hair-transplant-case005-top-before.webp",
+            "avif": "portrait/radiance-ba-hair-transplant-case005-top-before.avif",
+            "width": 900,
+            "height": 1200
+          },
+          "square": {
+            "webp": "square/radiance-ba-hair-transplant-case005-top-before.webp",
+            "avif": "square/radiance-ba-hair-transplant-case005-top-before.avif",
+            "width": 1000,
+            "height": 1000
+          },
+          "altText": "hair transplant case 005 top before",
+          "caption": "Hair transplant case 005 top before",
+          "blurDataUrl": "data:image/jpeg;base64,/9j/2wBDABISEhITEhQWFhQcHhseHCkmIiImKT4sMCwwLD5eO0U7O0U7XlNlUk1SZVOWdmhodpatkYqRrdK8vNL/+///////2wBDARISEhITEhQWFhQcHhseHCkmIiImKT4sMCwwLD5eO0U7O0U7XlNlUk1SZVOWdmhodpatkYqRrdK8vNL/+///////wgARCAAYABgDASIAAhEBAxEB/8QAFwABAQEBAAAAAAAAAAAAAAAAAAUEA//EABUBAQEAAAAAAAAAAAAAAAAAAAME/9oADAMBAAIQAxAAAACzglUie4gEHPyBpsBQ/8QAIxAAAgEEAgEFAQAAAAAAAAAAAQIEAAMFEhExEzJCUmFxgv/aAAgBAQABPwDI5QQ9LaJvefoUmUn+o+I/WtQpyTEYgauh4dKmbPlJRb2vqPwVaVRYZj3WKJXJtx01k81mF0nG981FJJU2+6w1nfzyP4Wv/8QAGREAAwEBAQAAAAAAAAAAAAAAAAECESES/9oACAECAQE/ALt+sRL1JlrpPJR//8QAGhEAAwADAQAAAAAAAAAAAAAAAAECAxEhEv/aAAgBAwEBPwCIlztlLzTRjfC+0z//2Q=="
+        }
+      ],
+      "complete": false,
+      "recommendedWebsiteUsage": "Consent-led before/after preview for hair transplant; publish only after consent review",
+      "warnings": [
+        "Missing angle before and angle after image."
+      ]
+    },
+    {
+      "pairKey": "hair-transplant-case006",
+      "caseId": "case006",
+      "category": "hair-transplant",
+      "treatmentCategory": "hair-transplant",
+      "title": "Hair Transplant",
+      "patientLabel": "Case 006",
+      "timeGap": "",
+      "disclaimer": "",
+      "consentConfirmed": true,
+      "publish": true,
+      "featured": false,
+      "sortOrder": 0,
+      "frontBefore": {
+        "id": "radiance-ba-hair-transplant-case006-front-before",
+        "role": "front-before",
+        "beforeAfterRole": "frontBefore",
+        "originalFilename": "radiance-ba-hair-transplant-case006-front-before.jpg",
+        "originalRelativePath": "originals/03-before-after/case006/radiance-ba-hair-transplant-case006-front-before.jpg",
+        "desktop": {
+          "webp": "hero-desktop/radiance-ba-hair-transplant-case006-front-before.webp",
+          "avif": "hero-desktop/radiance-ba-hair-transplant-case006-front-before.avif",
+          "width": 2400,
+          "height": 1400
+        },
+        "mobile": {
+          "webp": "hero-mobile/radiance-ba-hair-transplant-case006-front-before.webp",
+          "avif": "hero-mobile/radiance-ba-hair-transplant-case006-front-before.avif",
+          "width": 1200,
+          "height": 1500
+        },
+        "thumb": {
+          "webp": "thumb/radiance-ba-hair-transplant-case006-front-before.webp",
+          "avif": "thumb/radiance-ba-hair-transplant-case006-front-before.avif",
+          "width": 500,
+          "height": 500
+        },
+        "landscape": {
+          "webp": "landscape/radiance-ba-hair-transplant-case006-front-before.webp",
+          "avif": "landscape/radiance-ba-hair-transplant-case006-front-before.avif",
+          "width": 1200,
+          "height": 800
+        },
+        "portrait": {
+          "webp": "portrait/radiance-ba-hair-transplant-case006-front-before.webp",
+          "avif": "portrait/radiance-ba-hair-transplant-case006-front-before.avif",
+          "width": 900,
+          "height": 1200
+        },
+        "square": {
+          "webp": "square/radiance-ba-hair-transplant-case006-front-before.webp",
+          "avif": "square/radiance-ba-hair-transplant-case006-front-before.avif",
+          "width": 1000,
+          "height": 1000
+        },
+        "altText": "hair transplant case 006 front before",
+        "caption": "Hair transplant case 006 front before",
+        "blurDataUrl": "data:image/jpeg;base64,/9j/2wBDABISEhITEhQWFhQcHhseHCkmIiImKT4sMCwwLD5eO0U7O0U7XlNlUk1SZVOWdmhodpatkYqRrdK8vNL/+///////2wBDARISEhITEhQWFhQcHhseHCkmIiImKT4sMCwwLD5eO0U7O0U7XlNlUk1SZVOWdmhodpatkYqRrdK8vNL/+///////wgARCAAYABgDASIAAhEBAxEB/8QAGAABAQEBAQAAAAAAAAAAAAAAAAUDBAb/xAAVAQEBAAAAAAAAAAAAAAAAAAAEA//aAAwDAQACEAMQAAAAsRfQRTqnOtc8rMvLAJP/AP/EACcQAAIBAwIDCQAAAAAAAAAAAAECAwAEEQUTEiFBFTEyQlJhcrHB/9oACAEBAAE/ANTdS0UZ92NXG2UYd3LlWjB+1ovi9XaWofjk3OIjy4/avEtCgaISAkHIfFaO1vb3WXmRS6cs073G/JLI5aQP9UbuSclfB6upp4y0hB6gYr//xAAbEQACAwEBAQAAAAAAAAAAAAABAgADIQQiMf/aAAgBAgEBPwBz6+xdE66kUK4GzmqRqtE//8QAHBEAAgIDAQEAAAAAAAAAAAAAAQIAAwQRIRIi/9oACAEDAQE/AK9eR8xxppi2u21J5MixxZwz/9k="
+      },
+      "frontAfter": {
+        "id": "radiance-ba-hair-transplant-case006-after",
+        "role": "after",
+        "beforeAfterRole": "after",
+        "originalFilename": "after.png",
+        "originalRelativePath": "originals/03-before-after/case006/after.png",
+        "desktop": {
+          "webp": "hero-desktop/radiance-ba-hair-transplant-case006-after.webp",
+          "avif": "hero-desktop/radiance-ba-hair-transplant-case006-after.avif",
+          "width": 2400,
+          "height": 1400
+        },
+        "mobile": {
+          "webp": "hero-mobile/radiance-ba-hair-transplant-case006-after.webp",
+          "avif": "hero-mobile/radiance-ba-hair-transplant-case006-after.avif",
+          "width": 1200,
+          "height": 1500
+        },
+        "thumb": {
+          "webp": "thumb/radiance-ba-hair-transplant-case006-after.webp",
+          "avif": "thumb/radiance-ba-hair-transplant-case006-after.avif",
+          "width": 500,
+          "height": 500
+        },
+        "landscape": {
+          "webp": "landscape/radiance-ba-hair-transplant-case006-after.webp",
+          "avif": "landscape/radiance-ba-hair-transplant-case006-after.avif",
+          "width": 1200,
+          "height": 800
+        },
+        "portrait": {
+          "webp": "portrait/radiance-ba-hair-transplant-case006-after.webp",
+          "avif": "portrait/radiance-ba-hair-transplant-case006-after.avif",
+          "width": 900,
+          "height": 1200
+        },
+        "square": {
+          "webp": "square/radiance-ba-hair-transplant-case006-after.webp",
+          "avif": "square/radiance-ba-hair-transplant-case006-after.avif",
+          "width": 1000,
+          "height": 1000
+        },
+        "altText": "Hair Transplant - Radiance Clinics",
+        "caption": "",
+        "blurDataUrl": "data:image/jpeg;base64,/9j/2wBDABISEhITEhQWFhQcHhseHCkmIiImKT4sMCwwLD5eO0U7O0U7XlNlUk1SZVOWdmhodpatkYqRrdK8vNL/+///////2wBDARISEhITEhQWFhQcHhseHCkmIiImKT4sMCwwLD5eO0U7O0U7XlNlUk1SZVOWdmhodpatkYqRrdK8vNL/+///////wgARCAAYABgDASIAAhEBAxEB/8QAGAABAQEBAQAAAAAAAAAAAAAAAAUDBgf/xAAWAQEBAQAAAAAAAAAAAAAAAAACAAP/2gAMAwEAAhADEAAAALHGegQc9Yi2Yk4FZhj/xAAkEAABAwMDBAMAAAAAAAAAAAACAQMEABESBRNRFDFCciEiQf/aAAgBAQABPwDX+qKIAR/M7HTsCQy1mZj61ohvDqkdB8lsXrU4QJsVJxQsvGVSW2jG4kqpb9TGtFYBJW5ccttamTXpLlzVe/wnFJLdeuiDjyVI8W/9chIBsC9lr//EABoRAAMBAAMAAAAAAAAAAAAAAAABAhEDEiH/2gAIAQIBAT8Au3LJeo5ZXXcJ8lH/xAAbEQACAgMBAAAAAAAAAAAAAAABAgARAxIhQf/aAAgBAwEBPwBEDD24y6mpiY3rfI3WM//Z"
+      },
+      "angleBefore": {
+        "id": "radiance-ba-hair-transplant-case006-angle-before",
+        "role": "angle-before",
+        "beforeAfterRole": "angleBefore",
+        "originalFilename": "radiance-ba-hair-transplant-case006-angle-before.jpg",
+        "originalRelativePath": "originals/03-before-after/case006/radiance-ba-hair-transplant-case006-angle-before.jpg",
+        "desktop": {
+          "webp": "hero-desktop/radiance-ba-hair-transplant-case006-angle-before.webp",
+          "avif": "hero-desktop/radiance-ba-hair-transplant-case006-angle-before.avif",
+          "width": 2400,
+          "height": 1400
+        },
+        "mobile": {
+          "webp": "hero-mobile/radiance-ba-hair-transplant-case006-angle-before.webp",
+          "avif": "hero-mobile/radiance-ba-hair-transplant-case006-angle-before.avif",
+          "width": 1200,
+          "height": 1500
+        },
+        "thumb": {
+          "webp": "thumb/radiance-ba-hair-transplant-case006-angle-before.webp",
+          "avif": "thumb/radiance-ba-hair-transplant-case006-angle-before.avif",
+          "width": 500,
+          "height": 500
+        },
+        "landscape": {
+          "webp": "landscape/radiance-ba-hair-transplant-case006-angle-before.webp",
+          "avif": "landscape/radiance-ba-hair-transplant-case006-angle-before.avif",
+          "width": 1200,
+          "height": 800
+        },
+        "portrait": {
+          "webp": "portrait/radiance-ba-hair-transplant-case006-angle-before.webp",
+          "avif": "portrait/radiance-ba-hair-transplant-case006-angle-before.avif",
+          "width": 900,
+          "height": 1200
+        },
+        "square": {
+          "webp": "square/radiance-ba-hair-transplant-case006-angle-before.webp",
+          "avif": "square/radiance-ba-hair-transplant-case006-angle-before.avif",
+          "width": 1000,
+          "height": 1000
+        },
+        "altText": "hair transplant case 006 angle before",
+        "caption": "Hair transplant case 006 angle before",
+        "blurDataUrl": "data:image/jpeg;base64,/9j/2wBDABISEhITEhQWFhQcHhseHCkmIiImKT4sMCwwLD5eO0U7O0U7XlNlUk1SZVOWdmhodpatkYqRrdK8vNL/+///////2wBDARISEhITEhQWFhQcHhseHCkmIiImKT4sMCwwLD5eO0U7O0U7XlNlUk1SZVOWdmhodpatkYqRrdK8vNL/+///////wgARCAAYABgDASIAAhEBAxEB/8QAGQABAAIDAAAAAAAAAAAAAAAAAAIEAwUG/8QAFgEBAQEAAAAAAAAAAAAAAAAAAwQC/9oADAMBAAIQAxAAAAC3Qv4Bo2CRC5CY2Aqm/8QAJBAAAgEDAwMFAAAAAAAAAAAAAQIDAAQRBRNBEiExFCJCkbH/2gAIAQEAAT8A1y5lUw26HCOpZ6NvFtMEPY1p07zWxiZyXjPnnFa3C8ggf4Jmo1RIwd7pHAWPrb9FWUUCO7Lulugd2wB9Cri4uJnR55Gb3eK9U8OVwG4DVBf3EM25E5YHyDzX/8QAHREAAQQCAwAAAAAAAAAAAAAAAgABAxIEIRFBYf/aAAgBAgEBPwAye3CHYsswBGUW8QwR0DXS/8QAGxEAAgIDAQAAAAAAAAAAAAAAAQIAAwQREnH/2gAIAQMBAT8ArUc7IjgBjqYtjGpjHuftvZ//2Q=="
+      },
+      "angleAfter": null,
+      "before": null,
+      "after": {
+        "id": "radiance-ba-hair-transplant-case006-after",
+        "role": "after",
+        "beforeAfterRole": "after",
+        "originalFilename": "after.png",
+        "originalRelativePath": "originals/03-before-after/case006/after.png",
+        "desktop": {
+          "webp": "hero-desktop/radiance-ba-hair-transplant-case006-after.webp",
+          "avif": "hero-desktop/radiance-ba-hair-transplant-case006-after.avif",
+          "width": 2400,
+          "height": 1400
+        },
+        "mobile": {
+          "webp": "hero-mobile/radiance-ba-hair-transplant-case006-after.webp",
+          "avif": "hero-mobile/radiance-ba-hair-transplant-case006-after.avif",
+          "width": 1200,
+          "height": 1500
+        },
+        "thumb": {
+          "webp": "thumb/radiance-ba-hair-transplant-case006-after.webp",
+          "avif": "thumb/radiance-ba-hair-transplant-case006-after.avif",
+          "width": 500,
+          "height": 500
+        },
+        "landscape": {
+          "webp": "landscape/radiance-ba-hair-transplant-case006-after.webp",
+          "avif": "landscape/radiance-ba-hair-transplant-case006-after.avif",
+          "width": 1200,
+          "height": 800
+        },
+        "portrait": {
+          "webp": "portrait/radiance-ba-hair-transplant-case006-after.webp",
+          "avif": "portrait/radiance-ba-hair-transplant-case006-after.avif",
+          "width": 900,
+          "height": 1200
+        },
+        "square": {
+          "webp": "square/radiance-ba-hair-transplant-case006-after.webp",
+          "avif": "square/radiance-ba-hair-transplant-case006-after.avif",
+          "width": 1000,
+          "height": 1000
+        },
+        "altText": "Hair Transplant - Radiance Clinics",
+        "caption": "",
+        "blurDataUrl": "data:image/jpeg;base64,/9j/2wBDABISEhITEhQWFhQcHhseHCkmIiImKT4sMCwwLD5eO0U7O0U7XlNlUk1SZVOWdmhodpatkYqRrdK8vNL/+///////2wBDARISEhITEhQWFhQcHhseHCkmIiImKT4sMCwwLD5eO0U7O0U7XlNlUk1SZVOWdmhodpatkYqRrdK8vNL/+///////wgARCAAYABgDASIAAhEBAxEB/8QAGAABAQEBAQAAAAAAAAAAAAAAAAUDBgf/xAAWAQEBAQAAAAAAAAAAAAAAAAACAAP/2gAMAwEAAhADEAAAALHGegQc9Yi2Yk4FZhj/xAAkEAABAwMDBAMAAAAAAAAAAAACAQMEABESBRNRFDFCciEiQf/aAAgBAQABPwDX+qKIAR/M7HTsCQy1mZj61ohvDqkdB8lsXrU4QJsVJxQsvGVSW2jG4kqpb9TGtFYBJW5ccttamTXpLlzVe/wnFJLdeuiDjyVI8W/9chIBsC9lr//EABoRAAMBAAMAAAAAAAAAAAAAAAABAhEDEiH/2gAIAQIBAT8Au3LJeo5ZXXcJ8lH/xAAbEQACAgMBAAAAAAAAAAAAAAABAgARAxIhQf/aAAgBAwEBPwBEDD24y6mpiY3rfI3WM//Z"
+      },
+      "images": {
+        "after": {
+          "id": "radiance-ba-hair-transplant-case006-after",
+          "role": "after",
+          "beforeAfterRole": "after",
+          "originalFilename": "after.png",
+          "originalRelativePath": "originals/03-before-after/case006/after.png",
+          "desktop": {
+            "webp": "hero-desktop/radiance-ba-hair-transplant-case006-after.webp",
+            "avif": "hero-desktop/radiance-ba-hair-transplant-case006-after.avif",
+            "width": 2400,
+            "height": 1400
+          },
+          "mobile": {
+            "webp": "hero-mobile/radiance-ba-hair-transplant-case006-after.webp",
+            "avif": "hero-mobile/radiance-ba-hair-transplant-case006-after.avif",
+            "width": 1200,
+            "height": 1500
+          },
+          "thumb": {
+            "webp": "thumb/radiance-ba-hair-transplant-case006-after.webp",
+            "avif": "thumb/radiance-ba-hair-transplant-case006-after.avif",
+            "width": 500,
+            "height": 500
+          },
+          "landscape": {
+            "webp": "landscape/radiance-ba-hair-transplant-case006-after.webp",
+            "avif": "landscape/radiance-ba-hair-transplant-case006-after.avif",
+            "width": 1200,
+            "height": 800
+          },
+          "portrait": {
+            "webp": "portrait/radiance-ba-hair-transplant-case006-after.webp",
+            "avif": "portrait/radiance-ba-hair-transplant-case006-after.avif",
+            "width": 900,
+            "height": 1200
+          },
+          "square": {
+            "webp": "square/radiance-ba-hair-transplant-case006-after.webp",
+            "avif": "square/radiance-ba-hair-transplant-case006-after.avif",
+            "width": 1000,
+            "height": 1000
+          },
+          "altText": "Hair Transplant - Radiance Clinics",
+          "caption": "",
+          "blurDataUrl": "data:image/jpeg;base64,/9j/2wBDABISEhITEhQWFhQcHhseHCkmIiImKT4sMCwwLD5eO0U7O0U7XlNlUk1SZVOWdmhodpatkYqRrdK8vNL/+///////2wBDARISEhITEhQWFhQcHhseHCkmIiImKT4sMCwwLD5eO0U7O0U7XlNlUk1SZVOWdmhodpatkYqRrdK8vNL/+///////wgARCAAYABgDASIAAhEBAxEB/8QAGAABAQEBAQAAAAAAAAAAAAAAAAUDBgf/xAAWAQEBAQAAAAAAAAAAAAAAAAACAAP/2gAMAwEAAhADEAAAALHGegQc9Yi2Yk4FZhj/xAAkEAABAwMDBAMAAAAAAAAAAAACAQMEABESBRNRFDFCciEiQf/aAAgBAQABPwDX+qKIAR/M7HTsCQy1mZj61ohvDqkdB8lsXrU4QJsVJxQsvGVSW2jG4kqpb9TGtFYBJW5ccttamTXpLlzVe/wnFJLdeuiDjyVI8W/9chIBsC9lr//EABoRAAMBAAMAAAAAAAAAAAAAAAABAhEDEiH/2gAIAQIBAT8Au3LJeo5ZXXcJ8lH/xAAbEQACAgMBAAAAAAAAAAAAAAABAgARAxIhQf/aAAgBAwEBPwBEDD24y6mpiY3rfI3WM//Z"
+        },
+        "angleBefore": {
+          "id": "radiance-ba-hair-transplant-case006-angle-before",
+          "role": "angle-before",
+          "beforeAfterRole": "angleBefore",
+          "originalFilename": "radiance-ba-hair-transplant-case006-angle-before.jpg",
+          "originalRelativePath": "originals/03-before-after/case006/radiance-ba-hair-transplant-case006-angle-before.jpg",
+          "desktop": {
+            "webp": "hero-desktop/radiance-ba-hair-transplant-case006-angle-before.webp",
+            "avif": "hero-desktop/radiance-ba-hair-transplant-case006-angle-before.avif",
+            "width": 2400,
+            "height": 1400
+          },
+          "mobile": {
+            "webp": "hero-mobile/radiance-ba-hair-transplant-case006-angle-before.webp",
+            "avif": "hero-mobile/radiance-ba-hair-transplant-case006-angle-before.avif",
+            "width": 1200,
+            "height": 1500
+          },
+          "thumb": {
+            "webp": "thumb/radiance-ba-hair-transplant-case006-angle-before.webp",
+            "avif": "thumb/radiance-ba-hair-transplant-case006-angle-before.avif",
+            "width": 500,
+            "height": 500
+          },
+          "landscape": {
+            "webp": "landscape/radiance-ba-hair-transplant-case006-angle-before.webp",
+            "avif": "landscape/radiance-ba-hair-transplant-case006-angle-before.avif",
+            "width": 1200,
+            "height": 800
+          },
+          "portrait": {
+            "webp": "portrait/radiance-ba-hair-transplant-case006-angle-before.webp",
+            "avif": "portrait/radiance-ba-hair-transplant-case006-angle-before.avif",
+            "width": 900,
+            "height": 1200
+          },
+          "square": {
+            "webp": "square/radiance-ba-hair-transplant-case006-angle-before.webp",
+            "avif": "square/radiance-ba-hair-transplant-case006-angle-before.avif",
+            "width": 1000,
+            "height": 1000
+          },
+          "altText": "hair transplant case 006 angle before",
+          "caption": "Hair transplant case 006 angle before",
+          "blurDataUrl": "data:image/jpeg;base64,/9j/2wBDABISEhITEhQWFhQcHhseHCkmIiImKT4sMCwwLD5eO0U7O0U7XlNlUk1SZVOWdmhodpatkYqRrdK8vNL/+///////2wBDARISEhITEhQWFhQcHhseHCkmIiImKT4sMCwwLD5eO0U7O0U7XlNlUk1SZVOWdmhodpatkYqRrdK8vNL/+///////wgARCAAYABgDASIAAhEBAxEB/8QAGQABAAIDAAAAAAAAAAAAAAAAAAIEAwUG/8QAFgEBAQEAAAAAAAAAAAAAAAAAAwQC/9oADAMBAAIQAxAAAAC3Qv4Bo2CRC5CY2Aqm/8QAJBAAAgEDAwMFAAAAAAAAAAAAAQIDAAQRBRNBEiExFCJCkbH/2gAIAQEAAT8A1y5lUw26HCOpZ6NvFtMEPY1p07zWxiZyXjPnnFa3C8ggf4Jmo1RIwd7pHAWPrb9FWUUCO7Lulugd2wB9Cri4uJnR55Gb3eK9U8OVwG4DVBf3EM25E5YHyDzX/8QAHREAAQQCAwAAAAAAAAAAAAAAAgABAxIEIRFBYf/aAAgBAgEBPwAye3CHYsswBGUW8QwR0DXS/8QAGxEAAgIDAQAAAAAAAAAAAAAAAQIAAwQREnH/2gAIAQMBAT8ArUc7IjgBjqYtjGpjHuftvZ//2Q=="
+        },
+        "frontBefore": {
+          "id": "radiance-ba-hair-transplant-case006-front-before",
+          "role": "front-before",
+          "beforeAfterRole": "frontBefore",
+          "originalFilename": "radiance-ba-hair-transplant-case006-front-before.jpg",
+          "originalRelativePath": "originals/03-before-after/case006/radiance-ba-hair-transplant-case006-front-before.jpg",
+          "desktop": {
+            "webp": "hero-desktop/radiance-ba-hair-transplant-case006-front-before.webp",
+            "avif": "hero-desktop/radiance-ba-hair-transplant-case006-front-before.avif",
+            "width": 2400,
+            "height": 1400
+          },
+          "mobile": {
+            "webp": "hero-mobile/radiance-ba-hair-transplant-case006-front-before.webp",
+            "avif": "hero-mobile/radiance-ba-hair-transplant-case006-front-before.avif",
+            "width": 1200,
+            "height": 1500
+          },
+          "thumb": {
+            "webp": "thumb/radiance-ba-hair-transplant-case006-front-before.webp",
+            "avif": "thumb/radiance-ba-hair-transplant-case006-front-before.avif",
+            "width": 500,
+            "height": 500
+          },
+          "landscape": {
+            "webp": "landscape/radiance-ba-hair-transplant-case006-front-before.webp",
+            "avif": "landscape/radiance-ba-hair-transplant-case006-front-before.avif",
+            "width": 1200,
+            "height": 800
+          },
+          "portrait": {
+            "webp": "portrait/radiance-ba-hair-transplant-case006-front-before.webp",
+            "avif": "portrait/radiance-ba-hair-transplant-case006-front-before.avif",
+            "width": 900,
+            "height": 1200
+          },
+          "square": {
+            "webp": "square/radiance-ba-hair-transplant-case006-front-before.webp",
+            "avif": "square/radiance-ba-hair-transplant-case006-front-before.avif",
+            "width": 1000,
+            "height": 1000
+          },
+          "altText": "hair transplant case 006 front before",
+          "caption": "Hair transplant case 006 front before",
+          "blurDataUrl": "data:image/jpeg;base64,/9j/2wBDABISEhITEhQWFhQcHhseHCkmIiImKT4sMCwwLD5eO0U7O0U7XlNlUk1SZVOWdmhodpatkYqRrdK8vNL/+///////2wBDARISEhITEhQWFhQcHhseHCkmIiImKT4sMCwwLD5eO0U7O0U7XlNlUk1SZVOWdmhodpatkYqRrdK8vNL/+///////wgARCAAYABgDASIAAhEBAxEB/8QAGAABAQEBAQAAAAAAAAAAAAAAAAUDBAb/xAAVAQEBAAAAAAAAAAAAAAAAAAAEA//aAAwDAQACEAMQAAAAsRfQRTqnOtc8rMvLAJP/AP/EACcQAAIBAwIDCQAAAAAAAAAAAAECAwAEEQUTEiFBFTEyQlJhcrHB/9oACAEBAAE/ANTdS0UZ92NXG2UYd3LlWjB+1ovi9XaWofjk3OIjy4/avEtCgaISAkHIfFaO1vb3WXmRS6cs073G/JLI5aQP9UbuSclfB6upp4y0hB6gYr//xAAbEQACAwEBAQAAAAAAAAAAAAABAgADIQQiMf/aAAgBAgEBPwBz6+xdE66kUK4GzmqRqtE//8QAHBEAAgIDAQEAAAAAAAAAAAAAAQIAAwQRIRIi/9oACAEDAQE/AK9eR8xxppi2u21J5MixxZwz/9k="
+        }
+      },
+      "extraImages": [],
+      "complete": false,
+      "recommendedWebsiteUsage": "Consent-led before/after preview for hair transplant; publish only after consent review",
+      "warnings": [
+        "Missing angle after image."
+      ]
+    },
+    {
+      "pairKey": "hair-transplant-case007",
+      "caseId": "case007",
+      "category": "hair-transplant",
+      "treatmentCategory": "hair-transplant",
+      "title": "Hair transplant case 007 angle after",
+      "patientLabel": "Case 007",
+      "timeGap": "",
+      "disclaimer": "",
+      "consentConfirmed": true,
+      "publish": true,
+      "featured": false,
+      "sortOrder": 0,
+      "frontBefore": null,
+      "frontAfter": null,
+      "angleBefore": {
+        "id": "radiance-ba-hair-transplant-case007-angle-before",
+        "role": "angle-before",
+        "beforeAfterRole": "angleBefore",
+        "originalFilename": "radiance-ba-hair-transplant-case007-angle-before.jpg",
+        "originalRelativePath": "originals/03-before-after/case007/radiance-ba-hair-transplant-case007-angle-before.jpg",
+        "desktop": {
+          "webp": "hero-desktop/radiance-ba-hair-transplant-case007-angle-before.webp",
+          "avif": "hero-desktop/radiance-ba-hair-transplant-case007-angle-before.avif",
+          "width": 2400,
+          "height": 1400
+        },
+        "mobile": {
+          "webp": "hero-mobile/radiance-ba-hair-transplant-case007-angle-before.webp",
+          "avif": "hero-mobile/radiance-ba-hair-transplant-case007-angle-before.avif",
+          "width": 1200,
+          "height": 1500
+        },
+        "thumb": {
+          "webp": "thumb/radiance-ba-hair-transplant-case007-angle-before.webp",
+          "avif": "thumb/radiance-ba-hair-transplant-case007-angle-before.avif",
+          "width": 500,
+          "height": 500
+        },
+        "landscape": {
+          "webp": "landscape/radiance-ba-hair-transplant-case007-angle-before.webp",
+          "avif": "landscape/radiance-ba-hair-transplant-case007-angle-before.avif",
+          "width": 1200,
+          "height": 800
+        },
+        "portrait": {
+          "webp": "portrait/radiance-ba-hair-transplant-case007-angle-before.webp",
+          "avif": "portrait/radiance-ba-hair-transplant-case007-angle-before.avif",
+          "width": 900,
+          "height": 1200
+        },
+        "square": {
+          "webp": "square/radiance-ba-hair-transplant-case007-angle-before.webp",
+          "avif": "square/radiance-ba-hair-transplant-case007-angle-before.avif",
+          "width": 1000,
+          "height": 1000
+        },
+        "altText": "hair transplant case 007 angle before",
+        "caption": "Hair transplant case 007 angle before",
+        "blurDataUrl": "data:image/jpeg;base64,/9j/2wBDABISEhITEhQWFhQcHhseHCkmIiImKT4sMCwwLD5eO0U7O0U7XlNlUk1SZVOWdmhodpatkYqRrdK8vNL/+///////2wBDARISEhITEhQWFhQcHhseHCkmIiImKT4sMCwwLD5eO0U7O0U7XlNlUk1SZVOWdmhodpatkYqRrdK8vNL/+///////wgARCAAYABgDASIAAhEBAxEB/8QAFwABAAMAAAAAAAAAAAAAAAAAAAMEBf/EABUBAQEAAAAAAAAAAAAAAAAAAAID/9oADAMBAAIQAxAAAADPrz6gpjrpipETcYpL/8QAIRAAAgEEAgIDAAAAAAAAAAAAAQIDAAQRIRJBFDEiMvH/2gAIAQEAAT8AJRF5McCvKB+qEjPQJrBdAxUqewaZEmAjZsBu6tY3hteERQuCRurgkyNllbQ2vqkeBpYlYAqWH7V2bmzLcH+DE6qK4Lab3X//xAAaEQACAgMAAAAAAAAAAAAAAAABAgAQERIi/9oACAECAQE/AHfWA5AMYdrX/8QAGxEAAgEFAAAAAAAAAAAAAAAAAQIAAxAREiL/2gAIAQMBAT8ASnvCMEiIeHt//9k="
+      },
+      "angleAfter": {
+        "id": "radiance-ba-hair-transplant-case007-angle-after",
+        "role": "angle-after",
+        "beforeAfterRole": "angleAfter",
+        "originalFilename": "radiance-ba-hair-transplant-case007-angle-after.jpg",
+        "originalRelativePath": "originals/03-before-after/case007/radiance-ba-hair-transplant-case007-angle-after.jpg",
+        "desktop": {
+          "webp": "hero-desktop/radiance-ba-hair-transplant-case007-angle-after.webp",
+          "avif": "hero-desktop/radiance-ba-hair-transplant-case007-angle-after.avif",
+          "width": 2400,
+          "height": 1400
+        },
+        "mobile": {
+          "webp": "hero-mobile/radiance-ba-hair-transplant-case007-angle-after.webp",
+          "avif": "hero-mobile/radiance-ba-hair-transplant-case007-angle-after.avif",
+          "width": 1200,
+          "height": 1500
+        },
+        "thumb": {
+          "webp": "thumb/radiance-ba-hair-transplant-case007-angle-after.webp",
+          "avif": "thumb/radiance-ba-hair-transplant-case007-angle-after.avif",
+          "width": 500,
+          "height": 500
+        },
+        "landscape": {
+          "webp": "landscape/radiance-ba-hair-transplant-case007-angle-after.webp",
+          "avif": "landscape/radiance-ba-hair-transplant-case007-angle-after.avif",
+          "width": 1200,
+          "height": 800
+        },
+        "portrait": {
+          "webp": "portrait/radiance-ba-hair-transplant-case007-angle-after.webp",
+          "avif": "portrait/radiance-ba-hair-transplant-case007-angle-after.avif",
+          "width": 900,
+          "height": 1200
+        },
+        "square": {
+          "webp": "square/radiance-ba-hair-transplant-case007-angle-after.webp",
+          "avif": "square/radiance-ba-hair-transplant-case007-angle-after.avif",
+          "width": 1000,
+          "height": 1000
+        },
+        "altText": "hair transplant case 007 angle after",
+        "caption": "Hair transplant case 007 angle after",
+        "blurDataUrl": "data:image/jpeg;base64,/9j/2wBDABISEhITEhQWFhQcHhseHCkmIiImKT4sMCwwLD5eO0U7O0U7XlNlUk1SZVOWdmhodpatkYqRrdK8vNL/+///////2wBDARISEhITEhQWFhQcHhseHCkmIiImKT4sMCwwLD5eO0U7O0U7XlNlUk1SZVOWdmhodpatkYqRrdK8vNL/+///////wgARCAAYABgDASIAAhEBAxEB/8QAGQABAAMBAQAAAAAAAAAAAAAAAAMEBQEG/8QAFQEBAQAAAAAAAAAAAAAAAAAAAgP/2gAMAwEAAhADEAAAAMTsHoi8pIRqWCbpCkv/xAAiEAACAgIBAwUAAAAAAAAAAAABAgADBBESEyFhIjEyQnH/2gAIAQEAAT8AVvOobUX7A/krtJ8RVFhVCdBiBuYOO2PTYqqhfl7HtM5mGQOXDfBfhKq6OdYsO9uNzLbMxHZ1JAJ1OoLfUezET//EABwRAAIBBQEAAAAAAAAAAAAAAAECAAMQERIyYf/aAAgBAgEBPwB6mkU5AMftPbf/xAAaEQADAAMBAAAAAAAAAAAAAAAAAQIDESJh/9oACAEDAQE/AIxuylptGN8X4bP/2Q=="
+      },
+      "before": null,
+      "after": null,
+      "images": {
+        "angleAfter": {
+          "id": "radiance-ba-hair-transplant-case007-angle-after",
+          "role": "angle-after",
+          "beforeAfterRole": "angleAfter",
+          "originalFilename": "radiance-ba-hair-transplant-case007-angle-after.jpg",
+          "originalRelativePath": "originals/03-before-after/case007/radiance-ba-hair-transplant-case007-angle-after.jpg",
+          "desktop": {
+            "webp": "hero-desktop/radiance-ba-hair-transplant-case007-angle-after.webp",
+            "avif": "hero-desktop/radiance-ba-hair-transplant-case007-angle-after.avif",
+            "width": 2400,
+            "height": 1400
+          },
+          "mobile": {
+            "webp": "hero-mobile/radiance-ba-hair-transplant-case007-angle-after.webp",
+            "avif": "hero-mobile/radiance-ba-hair-transplant-case007-angle-after.avif",
+            "width": 1200,
+            "height": 1500
+          },
+          "thumb": {
+            "webp": "thumb/radiance-ba-hair-transplant-case007-angle-after.webp",
+            "avif": "thumb/radiance-ba-hair-transplant-case007-angle-after.avif",
+            "width": 500,
+            "height": 500
+          },
+          "landscape": {
+            "webp": "landscape/radiance-ba-hair-transplant-case007-angle-after.webp",
+            "avif": "landscape/radiance-ba-hair-transplant-case007-angle-after.avif",
+            "width": 1200,
+            "height": 800
+          },
+          "portrait": {
+            "webp": "portrait/radiance-ba-hair-transplant-case007-angle-after.webp",
+            "avif": "portrait/radiance-ba-hair-transplant-case007-angle-after.avif",
+            "width": 900,
+            "height": 1200
+          },
+          "square": {
+            "webp": "square/radiance-ba-hair-transplant-case007-angle-after.webp",
+            "avif": "square/radiance-ba-hair-transplant-case007-angle-after.avif",
+            "width": 1000,
+            "height": 1000
+          },
+          "altText": "hair transplant case 007 angle after",
+          "caption": "Hair transplant case 007 angle after",
+          "blurDataUrl": "data:image/jpeg;base64,/9j/2wBDABISEhITEhQWFhQcHhseHCkmIiImKT4sMCwwLD5eO0U7O0U7XlNlUk1SZVOWdmhodpatkYqRrdK8vNL/+///////2wBDARISEhITEhQWFhQcHhseHCkmIiImKT4sMCwwLD5eO0U7O0U7XlNlUk1SZVOWdmhodpatkYqRrdK8vNL/+///////wgARCAAYABgDASIAAhEBAxEB/8QAGQABAAMBAQAAAAAAAAAAAAAAAAMEBQEG/8QAFQEBAQAAAAAAAAAAAAAAAAAAAgP/2gAMAwEAAhADEAAAAMTsHoi8pIRqWCbpCkv/xAAiEAACAgIBAwUAAAAAAAAAAAABAgADBBESEyFhIjEyQnH/2gAIAQEAAT8AVvOobUX7A/krtJ8RVFhVCdBiBuYOO2PTYqqhfl7HtM5mGQOXDfBfhKq6OdYsO9uNzLbMxHZ1JAJ1OoLfUezET//EABwRAAIBBQEAAAAAAAAAAAAAAAECAAMQERIyYf/aAAgBAgEBPwB6mkU5AMftPbf/xAAaEQADAAMBAAAAAAAAAAAAAAAAAQIDESJh/9oACAEDAQE/AIxuylptGN8X4bP/2Q=="
+        },
+        "angleBefore": {
+          "id": "radiance-ba-hair-transplant-case007-angle-before",
+          "role": "angle-before",
+          "beforeAfterRole": "angleBefore",
+          "originalFilename": "radiance-ba-hair-transplant-case007-angle-before.jpg",
+          "originalRelativePath": "originals/03-before-after/case007/radiance-ba-hair-transplant-case007-angle-before.jpg",
+          "desktop": {
+            "webp": "hero-desktop/radiance-ba-hair-transplant-case007-angle-before.webp",
+            "avif": "hero-desktop/radiance-ba-hair-transplant-case007-angle-before.avif",
+            "width": 2400,
+            "height": 1400
+          },
+          "mobile": {
+            "webp": "hero-mobile/radiance-ba-hair-transplant-case007-angle-before.webp",
+            "avif": "hero-mobile/radiance-ba-hair-transplant-case007-angle-before.avif",
+            "width": 1200,
+            "height": 1500
+          },
+          "thumb": {
+            "webp": "thumb/radiance-ba-hair-transplant-case007-angle-before.webp",
+            "avif": "thumb/radiance-ba-hair-transplant-case007-angle-before.avif",
+            "width": 500,
+            "height": 500
+          },
+          "landscape": {
+            "webp": "landscape/radiance-ba-hair-transplant-case007-angle-before.webp",
+            "avif": "landscape/radiance-ba-hair-transplant-case007-angle-before.avif",
+            "width": 1200,
+            "height": 800
+          },
+          "portrait": {
+            "webp": "portrait/radiance-ba-hair-transplant-case007-angle-before.webp",
+            "avif": "portrait/radiance-ba-hair-transplant-case007-angle-before.avif",
+            "width": 900,
+            "height": 1200
+          },
+          "square": {
+            "webp": "square/radiance-ba-hair-transplant-case007-angle-before.webp",
+            "avif": "square/radiance-ba-hair-transplant-case007-angle-before.avif",
+            "width": 1000,
+            "height": 1000
+          },
+          "altText": "hair transplant case 007 angle before",
+          "caption": "Hair transplant case 007 angle before",
+          "blurDataUrl": "data:image/jpeg;base64,/9j/2wBDABISEhITEhQWFhQcHhseHCkmIiImKT4sMCwwLD5eO0U7O0U7XlNlUk1SZVOWdmhodpatkYqRrdK8vNL/+///////2wBDARISEhITEhQWFhQcHhseHCkmIiImKT4sMCwwLD5eO0U7O0U7XlNlUk1SZVOWdmhodpatkYqRrdK8vNL/+///////wgARCAAYABgDASIAAhEBAxEB/8QAFwABAAMAAAAAAAAAAAAAAAAAAAMEBf/EABUBAQEAAAAAAAAAAAAAAAAAAAID/9oADAMBAAIQAxAAAADPrz6gpjrpipETcYpL/8QAIRAAAgEEAgIDAAAAAAAAAAAAAQIDAAQRIRJBFDEiMvH/2gAIAQEAAT8AJRF5McCvKB+qEjPQJrBdAxUqewaZEmAjZsBu6tY3hteERQuCRurgkyNllbQ2vqkeBpYlYAqWH7V2bmzLcH+DE6qK4Lab3X//xAAaEQACAgMAAAAAAAAAAAAAAAABAgAQERIi/9oACAECAQE/AHfWA5AMYdrX/8QAGxEAAgEFAAAAAAAAAAAAAAAAAQIAAxAREiL/2gAIAQMBAT8ASnvCMEiIeHt//9k="
+        },
+        "topAfter": {
+          "id": "radiance-ba-hair-transplant-case007-top-after",
+          "role": "top-after",
+          "beforeAfterRole": "topAfter",
+          "originalFilename": "radiance-ba-hair-transplant-case007-top-after.jpg",
+          "originalRelativePath": "originals/03-before-after/case007/radiance-ba-hair-transplant-case007-top-after.jpg",
+          "desktop": {
+            "webp": "hero-desktop/radiance-ba-hair-transplant-case007-top-after.webp",
+            "avif": "hero-desktop/radiance-ba-hair-transplant-case007-top-after.avif",
+            "width": 2400,
+            "height": 1400
+          },
+          "mobile": {
+            "webp": "hero-mobile/radiance-ba-hair-transplant-case007-top-after.webp",
+            "avif": "hero-mobile/radiance-ba-hair-transplant-case007-top-after.avif",
+            "width": 1200,
+            "height": 1500
+          },
+          "thumb": {
+            "webp": "thumb/radiance-ba-hair-transplant-case007-top-after.webp",
+            "avif": "thumb/radiance-ba-hair-transplant-case007-top-after.avif",
+            "width": 500,
+            "height": 500
+          },
+          "landscape": {
+            "webp": "landscape/radiance-ba-hair-transplant-case007-top-after.webp",
+            "avif": "landscape/radiance-ba-hair-transplant-case007-top-after.avif",
+            "width": 1200,
+            "height": 800
+          },
+          "portrait": {
+            "webp": "portrait/radiance-ba-hair-transplant-case007-top-after.webp",
+            "avif": "portrait/radiance-ba-hair-transplant-case007-top-after.avif",
+            "width": 900,
+            "height": 1200
+          },
+          "square": {
+            "webp": "square/radiance-ba-hair-transplant-case007-top-after.webp",
+            "avif": "square/radiance-ba-hair-transplant-case007-top-after.avif",
+            "width": 1000,
+            "height": 1000
+          },
+          "altText": "hair transplant case 007 top after",
+          "caption": "Hair transplant case 007 top after",
+          "blurDataUrl": "data:image/jpeg;base64,/9j/2wBDABISEhITEhQWFhQcHhseHCkmIiImKT4sMCwwLD5eO0U7O0U7XlNlUk1SZVOWdmhodpatkYqRrdK8vNL/+///////2wBDARISEhITEhQWFhQcHhseHCkmIiImKT4sMCwwLD5eO0U7O0U7XlNlUk1SZVOWdmhodpatkYqRrdK8vNL/+///////wgARCAAYABgDASIAAhEBAxEB/8QAFwABAQEBAAAAAAAAAAAAAAAAAAUGAv/EABYBAQEBAAAAAAAAAAAAAAAAAAEDAv/aAAwDAQACEAMQAAAAsw5vI65lyVIYbris/wD/xAAmEAABBAIBAQkBAAAAAAAAAAABAgMFEgARBFETFCEjMTJBQmKi/9oACAEBAAE/AJSXHCKWm0hbp/kYJ6RtbTVelcj5ZHO22pNHemS90SnJt9l7GdmQzv5OQ+1SjH5sTkkjvKbhIuj0xgurcooEDGWUcfzG/cvw30Gf/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECIQMQkf/aAAgBAgEBPwB6zVwjUUf/xAAbEQABBAMAAAAAAAAAAAAAAAABAAIhcQMQEf/aAAgBAwEBPwADWKeWnS42v//Z"
+        },
+        "topBefore": {
+          "id": "radiance-ba-hair-transplant-case007-top-before",
+          "role": "top-before",
+          "beforeAfterRole": "topBefore",
+          "originalFilename": "radiance-ba-hair-transplant-case007-top-before.jpg",
+          "originalRelativePath": "originals/03-before-after/case007/radiance-ba-hair-transplant-case007-top-before.jpg",
+          "desktop": {
+            "webp": "hero-desktop/radiance-ba-hair-transplant-case007-top-before.webp",
+            "avif": "hero-desktop/radiance-ba-hair-transplant-case007-top-before.avif",
+            "width": 2400,
+            "height": 1400
+          },
+          "mobile": {
+            "webp": "hero-mobile/radiance-ba-hair-transplant-case007-top-before.webp",
+            "avif": "hero-mobile/radiance-ba-hair-transplant-case007-top-before.avif",
+            "width": 1200,
+            "height": 1500
+          },
+          "thumb": {
+            "webp": "thumb/radiance-ba-hair-transplant-case007-top-before.webp",
+            "avif": "thumb/radiance-ba-hair-transplant-case007-top-before.avif",
+            "width": 500,
+            "height": 500
+          },
+          "landscape": {
+            "webp": "landscape/radiance-ba-hair-transplant-case007-top-before.webp",
+            "avif": "landscape/radiance-ba-hair-transplant-case007-top-before.avif",
+            "width": 1200,
+            "height": 800
+          },
+          "portrait": {
+            "webp": "portrait/radiance-ba-hair-transplant-case007-top-before.webp",
+            "avif": "portrait/radiance-ba-hair-transplant-case007-top-before.avif",
+            "width": 900,
+            "height": 1200
+          },
+          "square": {
+            "webp": "square/radiance-ba-hair-transplant-case007-top-before.webp",
+            "avif": "square/radiance-ba-hair-transplant-case007-top-before.avif",
+            "width": 1000,
+            "height": 1000
+          },
+          "altText": "hair transplant case 007 top before",
+          "caption": "Hair transplant case 007 top before",
+          "blurDataUrl": "data:image/jpeg;base64,/9j/2wBDABISEhITEhQWFhQcHhseHCkmIiImKT4sMCwwLD5eO0U7O0U7XlNlUk1SZVOWdmhodpatkYqRrdK8vNL/+///////2wBDARISEhITEhQWFhQcHhseHCkmIiImKT4sMCwwLD5eO0U7O0U7XlNlUk1SZVOWdmhodpatkYqRrdK8vNL/+///////wgARCAAYABgDASIAAhEBAxEB/8QAFwABAQEBAAAAAAAAAAAAAAAAAAQGBf/EABcBAQEBAQAAAAAAAAAAAAAAAAIBAAP/2gAMAwEAAhADEAAAAIZtRkh0raQh0OaKXib/xAAgEAACAgICAgMAAAAAAAAAAAABAgADBREEEyFBUVJi/9oACAEBAAE/AM+72ZZk+iIFnXYE0zCYDk9OSUE6VwytM9x0KLyEGnQhGaAXi7fr5ImNx3FSpbnr293ncsKXVurAEHYIgxfGRizElF8hZ2KK0C/nQn//xAAaEQEAAQUAAAAAAAAAAAAAAAABAAIQERIh/9oACAECAQE/AKmHSaimS3//xAAZEQEAAwEBAAAAAAAAAAAAAAABAAIRIRD/2gAIAQMBAT8AocjxYWTcfP/Z"
+        }
+      },
+      "extraImages": [
+        {
+          "id": "radiance-ba-hair-transplant-case007-top-after",
+          "role": "top-after",
+          "beforeAfterRole": "topAfter",
+          "originalFilename": "radiance-ba-hair-transplant-case007-top-after.jpg",
+          "originalRelativePath": "originals/03-before-after/case007/radiance-ba-hair-transplant-case007-top-after.jpg",
+          "desktop": {
+            "webp": "hero-desktop/radiance-ba-hair-transplant-case007-top-after.webp",
+            "avif": "hero-desktop/radiance-ba-hair-transplant-case007-top-after.avif",
+            "width": 2400,
+            "height": 1400
+          },
+          "mobile": {
+            "webp": "hero-mobile/radiance-ba-hair-transplant-case007-top-after.webp",
+            "avif": "hero-mobile/radiance-ba-hair-transplant-case007-top-after.avif",
+            "width": 1200,
+            "height": 1500
+          },
+          "thumb": {
+            "webp": "thumb/radiance-ba-hair-transplant-case007-top-after.webp",
+            "avif": "thumb/radiance-ba-hair-transplant-case007-top-after.avif",
+            "width": 500,
+            "height": 500
+          },
+          "landscape": {
+            "webp": "landscape/radiance-ba-hair-transplant-case007-top-after.webp",
+            "avif": "landscape/radiance-ba-hair-transplant-case007-top-after.avif",
+            "width": 1200,
+            "height": 800
+          },
+          "portrait": {
+            "webp": "portrait/radiance-ba-hair-transplant-case007-top-after.webp",
+            "avif": "portrait/radiance-ba-hair-transplant-case007-top-after.avif",
+            "width": 900,
+            "height": 1200
+          },
+          "square": {
+            "webp": "square/radiance-ba-hair-transplant-case007-top-after.webp",
+            "avif": "square/radiance-ba-hair-transplant-case007-top-after.avif",
+            "width": 1000,
+            "height": 1000
+          },
+          "altText": "hair transplant case 007 top after",
+          "caption": "Hair transplant case 007 top after",
+          "blurDataUrl": "data:image/jpeg;base64,/9j/2wBDABISEhITEhQWFhQcHhseHCkmIiImKT4sMCwwLD5eO0U7O0U7XlNlUk1SZVOWdmhodpatkYqRrdK8vNL/+///////2wBDARISEhITEhQWFhQcHhseHCkmIiImKT4sMCwwLD5eO0U7O0U7XlNlUk1SZVOWdmhodpatkYqRrdK8vNL/+///////wgARCAAYABgDASIAAhEBAxEB/8QAFwABAQEBAAAAAAAAAAAAAAAAAAUGAv/EABYBAQEBAAAAAAAAAAAAAAAAAAEDAv/aAAwDAQACEAMQAAAAsw5vI65lyVIYbris/wD/xAAmEAABBAIBAQkBAAAAAAAAAAABAgMFEgARBFETFCEjMTJBQmKi/9oACAEBAAE/AJSXHCKWm0hbp/kYJ6RtbTVelcj5ZHO22pNHemS90SnJt9l7GdmQzv5OQ+1SjH5sTkkjvKbhIuj0xgurcooEDGWUcfzG/cvw30Gf/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECIQMQkf/aAAgBAgEBPwB6zVwjUUf/xAAbEQABBAMAAAAAAAAAAAAAAAABAAIhcQMQEf/aAAgBAwEBPwADWKeWnS42v//Z"
+        },
+        {
+          "id": "radiance-ba-hair-transplant-case007-top-before",
+          "role": "top-before",
+          "beforeAfterRole": "topBefore",
+          "originalFilename": "radiance-ba-hair-transplant-case007-top-before.jpg",
+          "originalRelativePath": "originals/03-before-after/case007/radiance-ba-hair-transplant-case007-top-before.jpg",
+          "desktop": {
+            "webp": "hero-desktop/radiance-ba-hair-transplant-case007-top-before.webp",
+            "avif": "hero-desktop/radiance-ba-hair-transplant-case007-top-before.avif",
+            "width": 2400,
+            "height": 1400
+          },
+          "mobile": {
+            "webp": "hero-mobile/radiance-ba-hair-transplant-case007-top-before.webp",
+            "avif": "hero-mobile/radiance-ba-hair-transplant-case007-top-before.avif",
+            "width": 1200,
+            "height": 1500
+          },
+          "thumb": {
+            "webp": "thumb/radiance-ba-hair-transplant-case007-top-before.webp",
+            "avif": "thumb/radiance-ba-hair-transplant-case007-top-before.avif",
+            "width": 500,
+            "height": 500
+          },
+          "landscape": {
+            "webp": "landscape/radiance-ba-hair-transplant-case007-top-before.webp",
+            "avif": "landscape/radiance-ba-hair-transplant-case007-top-before.avif",
+            "width": 1200,
+            "height": 800
+          },
+          "portrait": {
+            "webp": "portrait/radiance-ba-hair-transplant-case007-top-before.webp",
+            "avif": "portrait/radiance-ba-hair-transplant-case007-top-before.avif",
+            "width": 900,
+            "height": 1200
+          },
+          "square": {
+            "webp": "square/radiance-ba-hair-transplant-case007-top-before.webp",
+            "avif": "square/radiance-ba-hair-transplant-case007-top-before.avif",
+            "width": 1000,
+            "height": 1000
+          },
+          "altText": "hair transplant case 007 top before",
+          "caption": "Hair transplant case 007 top before",
+          "blurDataUrl": "data:image/jpeg;base64,/9j/2wBDABISEhITEhQWFhQcHhseHCkmIiImKT4sMCwwLD5eO0U7O0U7XlNlUk1SZVOWdmhodpatkYqRrdK8vNL/+///////2wBDARISEhITEhQWFhQcHhseHCkmIiImKT4sMCwwLD5eO0U7O0U7XlNlUk1SZVOWdmhodpatkYqRrdK8vNL/+///////wgARCAAYABgDASIAAhEBAxEB/8QAFwABAQEBAAAAAAAAAAAAAAAAAAQGBf/EABcBAQEBAQAAAAAAAAAAAAAAAAIBAAP/2gAMAwEAAhADEAAAAIZtRkh0raQh0OaKXib/xAAgEAACAgICAgMAAAAAAAAAAAABAgADBREEEyFBUVJi/9oACAEBAAE/AM+72ZZk+iIFnXYE0zCYDk9OSUE6VwytM9x0KLyEGnQhGaAXi7fr5ImNx3FSpbnr293ncsKXVurAEHYIgxfGRizElF8hZ2KK0C/nQn//xAAaEQEAAQUAAAAAAAAAAAAAAAABAAIQERIh/9oACAECAQE/AKmHSaimS3//xAAZEQEAAwEBAAAAAAAAAAAAAAABAAIRIRD/2gAIAQMBAT8AocjxYWTcfP/Z"
+        }
+      ],
+      "complete": false,
+      "recommendedWebsiteUsage": "Consent-led before/after preview for hair transplant; publish only after consent review",
+      "warnings": [
+        "Missing front before and front after image."
+      ]
+    }
+  ],
+  "warnings": [
+    "hair-transplant-case004: missing angle before and angle after image.",
+    "hair-transplant-case005: missing angle before and angle after image.",
+    "hair-transplant-case006: missing angle after image.",
+    "hair-transplant-case007: missing front before and front after image."
+  ]
+}
