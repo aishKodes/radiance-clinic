@@ -1,36 +1,96 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Radiance Clinics Frontend
 
-## Getting Started
+Premium Next.js App Router frontend for Radiance Clinics, Bhubaneswar. The site is designed to run on Vercel and fetch content from the future PHP + MySQL public API, while keeping polished local fallback content when the API is not available.
 
-First, run the development server:
+## Stack
+
+- Next.js 16 App Router
+- TypeScript
+- Tailwind CSS
+- Framer Motion
+- Lenis smooth scrolling
+- `react-compare-slider` before/after sliders
+- Custom public API integration via `NEXT_PUBLIC_API_BASE_URL`
+
+## Setup
+
+```bash
+npm install
+cp .env.example .env.local
+npm run dev
+```
+
+Open `http://localhost:3000`.
+
+## Environment Variables
+
+All variables are optional for local fallback rendering unless noted.
+
+```bash
+NEXT_PUBLIC_SITE_URL=https://radianceclinics.com
+NEXT_PUBLIC_API_BASE_URL=https://api.radianceclinics.com
+GOOGLE_GENERATIVE_AI_API_KEY=
+GEMINI_API_KEY=
+```
+
+- `NEXT_PUBLIC_SITE_URL`: Used for metadata, canonical URLs, and sitemap output.
+- `NEXT_PUBLIC_API_BASE_URL`: Public API origin. If missing or unreachable, the frontend renders from `src/data/fallback.ts` and `src/data/seed.ts`.
+- `GOOGLE_GENERATIVE_AI_API_KEY` or `GEMINI_API_KEY`: Optional server-side Gemini key for `/api/assistant`. If missing, the assistant uses a safe rules-based fallback.
+
+Do not commit `.env`, `.env.local`, or any real secret values.
+
+## Commands
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm run lint
+npm run build
+npm run start
+npm run process:media
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+`npm run process:media` processes approved local clinic media with Sharp. Raw media folders are intentionally ignored by Git.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Media
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Keep optimized frontend assets in `public/`, especially:
 
-## Learn More
+- `public/radiance-media-processed/`
+- `public/radiance-skin-before-after-separated/`
+- logo and favicon assets in `public/`
 
-To learn more about Next.js, take a look at the following resources:
+Do not commit raw source media:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- `radiance-media-raw/`
+- `raw-media/`
+- `public/radiance-media-raw/`
+- `public/raw-media/`
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+The production site should not depend on raw folders. It should use optimized public media, API media URLs, or fallback data.
 
-## Deploy on Vercel
+## Deployment On Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. Push this repository to GitHub.
+2. Import the repository in Vercel as a Next.js project.
+3. Set environment variables in Vercel Project Settings:
+   - `NEXT_PUBLIC_SITE_URL`
+   - `NEXT_PUBLIC_API_BASE_URL` when the Hostinger API is live
+   - `GOOGLE_GENERATIVE_AI_API_KEY` or `GEMINI_API_KEY` only if Gemini responses are desired
+4. Use the default build command:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+npm run build
+```
+
+The site is safe to deploy before the backend is live. Missing API content falls back to local data, the booking form shows WhatsApp/call fallback options if the lead API is unavailable, and the assistant falls back to medically responsible rules-based replies without an AI key.
+
+## Production Checks
+
+Before deployment:
+
+```bash
+npm run lint
+npm run build
+```
+
+The homepage, before/after sliders, chatbot, booking modal, metadata, sitemap, logo, and favicon should work without a live backend.
