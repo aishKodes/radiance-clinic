@@ -24,9 +24,6 @@ const defaultAssistantSettings: AssistantSettings = {
   quickPrompts: ["Hair transplant", "Book consultation"],
 };
 
-const medicalRefusal =
-  "I can help with general service information and appointment requests, but I cannot diagnose or provide medical advice. A consultation with the clinic team is the right next step.";
-
 const whatsappFallback = "https://wa.me/919937000000";
 
 export function ChatbotDock({
@@ -36,7 +33,6 @@ export function ChatbotDock({
 }) {
   const [open, setOpen] = useState(false);
   const [input, setInput] = useState("");
-  const [status, setStatus] = useState<"idle" | "sending">("idle");
   const [leadStatus, setLeadStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
   const [leadMessage, setLeadMessage] = useState("");
   const [showCallbackCta, setShowCallbackCta] = useState(false);
@@ -95,7 +91,7 @@ export function ChatbotDock({
     if (!open) return;
 
     scrollToLatest();
-  }, [messages, status, showCallbackCta, showLeadForm, leadMessage, open]);
+  }, [messages, showCallbackCta, showLeadForm, leadMessage, open]);
 
   useEffect(() => {
     if (!open) return;
@@ -114,10 +110,10 @@ export function ChatbotDock({
     };
   }, [open]);
 
-  async function sendMessage(content: string) {
+  function sendMessage(content: string) {
     const cleanContent = content.trim();
 
-    if (!cleanContent || status === "sending") return;
+    if (!cleanContent) return;
 
     const nextMessages: ChatMessage[] = [
       ...messages,
@@ -128,61 +124,13 @@ export function ChatbotDock({
     setInput("");
     setShowLeadForm(false);
     setShowCallbackCta(false);
-
-    if (asksForMedicalAdvice(cleanContent)) {
-      setMessages((current) => [
-        ...current,
-        { role: "assistant", content: medicalRefusal },
-      ]);
-      setShowCallbackCta(true);
-      return;
-    }
-
-    setStatus("sending");
-
-    try {
-      const response = await fetch("/api/assistant", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          messages: nextMessages.slice(-10),
-          lead: {
-            name: lead.name || undefined,
-            phone: lead.phone || undefined,
-            concern: lead.concern || undefined,
-          },
-        }),
-      });
-
-      if (!response.ok) {
-        throw new Error("Assistant request failed.");
-      }
-
-      const data = (await response.json()) as { reply?: string };
-
-      setMessages((current) => [
-        ...current,
-        {
-          role: "assistant",
-          content:
-            data.reply ||
-            "I can help with services, appointments and general clinic guidance.",
-        },
-      ]);
-      setShowCallbackCta(true);
-    } catch {
-      setMessages((current) => [
-        ...current,
-        {
-          role: "assistant",
-          content:
-            "I could not connect for a moment. You can still request a callback or use WhatsApp.",
-        },
-      ]);
-      setShowCallbackCta(true);
-    } finally {
-      setStatus("idle");
-    }
+    setLeadStatus("idle");
+    setLeadMessage("");
+    setMessages((current) => [
+      ...current,
+      { role: "assistant", content: simpleAssistantReply(cleanContent) },
+    ]);
+    setShowCallbackCta(true);
   }
 
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
@@ -291,13 +239,6 @@ export function ChatbotDock({
                 </div>
               ))}
 
-              {status === "sending" ? (
-                <div className="mr-8 inline-flex items-center gap-2 rounded-full bg-white/78 px-3 py-2 text-[0.66rem] font-bold uppercase tracking-[0.14em] text-[var(--ink)]/52 shadow-sm">
-                  <Loader2 className="h-3.5 w-3.5 animate-spin" />
-                  Typing
-                </div>
-              ) : null}
-
               {showCallbackCta ? (
                 <div className="rounded-[1.1rem] border border-[var(--ink)]/10 bg-white/62 p-3">
                   <p className="text-xs font-bold leading-5 text-[var(--ink)]/68">
@@ -391,15 +332,11 @@ export function ChatbotDock({
               />
               <button
                 type="submit"
-                disabled={status === "sending" || !input.trim()}
+                disabled={!input.trim()}
                 className="grid h-12 w-12 shrink-0 place-items-center rounded-full bg-[var(--ink)] text-[var(--ivory)] transition hover:scale-105 disabled:cursor-not-allowed disabled:opacity-60"
                 aria-label="Send message"
               >
-                {status === "sending" ? (
-                  <Loader2 className="h-4 w-4 animate-spin" />
-                ) : (
-                  <Send className="h-4 w-4" />
-                )}
+                <Send className="h-4 w-4" />
               </button>
             </form>
           </footer>
@@ -424,8 +361,20 @@ export function ChatbotDock({
   );
 }
 
-function asksForMedicalAdvice(value: string) {
-  return /(diagnos|diagnose|prescrib|prescription|medicine|dosage|tablet|medical advice|what should i take|treat at home)/i.test(
-    value,
-  );
+function simpleAssistantReply(question: string) {
+  const normalized = question.toLowerCase();
+
+  if (/hair|transplant|prp|gfc|scalp|bald|thinning|fall/.test(normalized)) {
+    return "Radiance Clinics can help with hair transplant planning, PRP/GFC scalp therapy and hair-fall evaluation. A doctor-led consultation is the right next step to review suitability, timeline and cost.";
+  }
+
+  if (/laser|hair removal|hair reduction|pigment|melasma|acne|scar|skin|pores|botox|filler|ageing|aging|rejuvenation/.test(normalized)) {
+    return "Radiance Clinics offers skin, laser and aesthetic treatments including laser hair removal, acne scar care, pigmentation plans, skin rejuvenation, Botox, fillers and anti-ageing care. Suitability is confirmed during consultation.";
+  }
+
+  if (/book|appointment|callback|call|visit|contact|price|cost|fee/.test(normalized)) {
+    return "You can request a callback and the clinic team will help with appointment timing, treatment category and next steps.";
+  }
+
+  return "I can help with Radiance Clinics services, appointments and general treatment guidance. For diagnosis, prescriptions or suitability, the clinic team should review your concern in a consultation.";
 }

@@ -91,7 +91,11 @@ type PairPayload = {
   pairs?: {
     pairKey: string;
     caseId: string;
+    category?: "hair" | "skin" | string;
+    conditionName?: string;
+    publicTitle?: string;
     treatmentCategory?: string;
+    treatment?: string;
     title?: string;
     patientLabel?: string;
     timeGap?: string;
@@ -122,9 +126,19 @@ function isPublished(item: ManifestItem) {
 const categoryAliases: Record<string, string> = {
   "awards-certificates": "recognition",
   "awards-recognition": "recognition",
+  gallery: "gallery",
+  "gallery-raw": "gallery",
+  "new-gallery": "gallery",
+  "clinic-gallery": "clinic-ambience",
+  "doctor-gallery": "doctor",
   "clinic-interior": "clinic-ambience",
   clinic: "clinic-ambience",
   hair: "before-after",
+  "hair-before-after": "hair-before-after",
+  "skin-before-after": "skin-before-after",
+  "generic-service-card": "generic-service-card",
+  "hero-support": "hero-support",
+  "category-tab-visual": "category-tab-visual",
 };
 
 const preferredIds: Record<string, string[]> = {
@@ -471,12 +485,12 @@ function requiredImage(
 
   return {
     src: placeholderFallback,
-    alt: "Radiance Clinics media placeholder",
+    alt: "Radiance Clinics treatment visual",
     desktopUrl: placeholderFallback,
     mobileUrl: placeholderFallback,
     thumbnailUrl: placeholderFallback,
     fallbackUrl: placeholderFallback,
-    altText: "Radiance Clinics media placeholder",
+    altText: "Radiance Clinics treatment visual",
     blurDataUrl: tinyBlur,
     focalPoint: { x: 0.5, y: 0.5 },
     type: "image",
@@ -486,7 +500,7 @@ function requiredImage(
   } satisfies CmsImage;
 }
 
-function placeholderImage(label = "Radiance Clinics media placeholder"): CmsImage {
+function placeholderImage(label = "Radiance Clinics treatment visual"): CmsImage {
   return {
     src: placeholderFallback,
     alt: label,
@@ -506,7 +520,7 @@ function placeholderImage(label = "Radiance Clinics media placeholder"): CmsImag
 
 function requiredPriorityImage(
   candidates: Array<CmsImage | undefined>,
-  label = "Radiance Clinics media placeholder",
+  label = "Radiance Clinics treatment visual",
 ): CmsImage {
   return candidates.find(Boolean) || placeholderImage(label);
 }
@@ -690,10 +704,14 @@ function strictBeforeAfterCases() {
       const primaryView = views[0];
       const secondaryView = views[1];
       const additionalViews = additionalViewsForPair(pair, usedIds);
-      const numericCase = pair.caseId.match(/\d+/)?.[0] || "";
-      const caseNumber = numericCase.slice(-2).padStart(2, "0");
-      const treatmentTitle = titleFromSlug(pair.treatmentCategory || "Hair Transplant");
-      const exampleLabel = `Hair Transformation Example ${caseNumber}`;
+      const category = pair.category === "skin" ? "skin" : "hair";
+      const treatmentTitle =
+        pair.treatment ||
+        titleFromSlug(pair.treatmentCategory || (category === "skin" ? "Skin Treatment" : "Hair Transplant"));
+      const exampleLabel =
+        pair.publicTitle ||
+        pair.title ||
+        (category === "skin" ? "Skin Improvement Example" : "Hair Transformation Example");
 
       return {
         slug: normalize(`${pair.treatmentCategory || "hair-transplant"}-${pair.caseId}`),
@@ -701,17 +719,19 @@ function strictBeforeAfterCases() {
         title: exampleLabel,
         patientLabel: exampleLabel,
         treatment: treatmentTitle,
-        treatmentCategory: pair.treatmentCategory || "hair-transplant",
+        treatmentCategory: pair.treatmentCategory || (category === "skin" ? "skin-treatment" : "hair-transplant"),
         timeGap: pair.timeGap || "Timeline discussed during consultation",
         note:
-          "A consent-confirmed hair transformation example shown with context.",
+          category === "skin"
+            ? "A consent-confirmed skin improvement example shown with context."
+            : "A consent-confirmed hair transformation example shown with context.",
         resultSummary:
           "Matched before-and-after images are shown for education and consultation discussion.",
         disclaimer:
           pair.disclaimer ||
           "Results vary by diagnosis, donor quality, biology, timeline and maintenance. Images must be interpreted with clinical context.",
         patientConsentConfirmed: true,
-        faceBlurRequired: true,
+        faceBlurRequired: category === "hair",
         featured: pair.featured,
         frontBeforeImage: primaryView.before,
         frontAfterImage: primaryView.after,
@@ -939,7 +959,184 @@ export const realHeroImages = [
   return self.findIndex((candidate) => (candidate.id || candidate.src) === key) === index;
 });
 
-export const realClinicGallery: GalleryImage[] = [
+function galleryLabelFor(item: ManifestItem) {
+  const text = itemSearchText(item);
+
+  if (/certificate|badge|threebest|threebestrated|award|recognition|anil-kapoor|ceremony|trophy/.test(text)) {
+    return "Recognition";
+  }
+
+  if (/press|newspaper|media-feature|media-mention|clipping|social/.test(text)) {
+    return "Media Mention";
+  }
+
+  if (/procedure|treatment-room|equipment|laser|machine|skin-treatment|transplant-setup/.test(text)) {
+    return "Treatment Room";
+  }
+
+  if (/doctor|satyarth|consultation|cabin|with-patient/.test(text)) {
+    return "Consultation";
+  }
+
+  if (/patient|waiting|lounge|comfort|reception/.test(text)) {
+    return "Patient Care";
+  }
+
+  return "Clinic Interior";
+}
+
+function galleryTitleFor(item: ManifestItem, label: string) {
+  const text = itemSearchText(item);
+
+  if (/doctor-hero|hero-primary|satyarth-portrait/.test(text)) return "Dr. Satyarth Prakash";
+  if (/consultation|with-patient|doctor-cabin|cabin/.test(text)) return "Doctor Consultation";
+  if (/procedure|treatment-room|equipment|laser|machine/.test(text)) return "Treatment Room";
+  if (/reception/.test(text)) return "Reception Lounge";
+  if (/waiting|lounge|comfort/.test(text)) return "Patient Care Lounge";
+  if (/interior|ambience/.test(text)) return "Clinic Interior";
+  if (/exterior|board|signage/.test(text)) return "Clinic Entrance";
+  if (/threebest|threebestrated|best-business/.test(text)) return "ThreeBestRated Recognition";
+  if (/certificate/.test(text)) return item.title || titleFromSlug(item.subject || item.id);
+  if (/anil-kapoor|award|ceremony|recognition/.test(text)) return "Recognition Moment";
+  if (/press|newspaper|media-feature|clipping|social/.test(text)) return "Media Mention";
+
+  const rawTitle =
+    item.title ||
+    item.subject ||
+    item.role ||
+    item.normalizedBasename ||
+    pathBasename(item.originalFilename || item.filename || item.id);
+  const title = titleFromSlug(rawTitle)
+    .replace(/\bRadiance\b/g, "")
+    .replace(/\bClinics?\b/g, "Clinic")
+    .replace(/\b0+\d+\b/g, "")
+    .replace(/\s+/g, " ")
+    .trim();
+
+  return title || label;
+}
+
+function galleryCaptionFor(item: ManifestItem, label: string, title: string) {
+  if (item.caption) return item.caption;
+
+  if (label === "Consultation") {
+    return "Doctor-led consultation and assessment at Radiance Clinics.";
+  }
+
+  if (label === "Clinic Interior") {
+    return `${title} at Radiance Clinics.`;
+  }
+
+  if (label === "Treatment Room") {
+    return "Clinical treatment-room spaces used for planned skin, hair, laser and aesthetic care.";
+  }
+
+  if (label === "Recognition") {
+    return "Recognition moments and certificates from Radiance Clinics.";
+  }
+
+  if (label === "Patient Care") {
+    return "Patient care spaces designed for comfort, privacy and clear communication.";
+  }
+
+  return "Media and event mentions connected to Radiance Clinics.";
+}
+
+function galleryVariantFor(item: ManifestItem, label: string): VariantKey {
+  const text = itemSearchText(item);
+
+  if (
+    item.displayMode === "contain" ||
+    /certificate|badge|threebest|threebestrated|press|newspaper|clipping/.test(text)
+  ) {
+    return "square";
+  }
+
+  if (label === "Consultation" && /doctor|satyarth|portrait|hero/.test(text)) {
+    return "portrait";
+  }
+
+  return "landscape";
+}
+
+function galleryPriority(item: ManifestItem) {
+  const label = galleryLabelFor(item);
+  const labelRank =
+    {
+      Consultation: 0,
+      "Clinic Interior": 1,
+      "Treatment Room": 2,
+      "Patient Care": 3,
+      Recognition: 4,
+      "Media Mention": 5,
+    }[label] ?? 8;
+  const text = itemSearchText(item);
+  const primaryBoost = /doctor-hero|hero-primary|satyarth/.test(text) ? -500 : 0;
+  const featureBoost = item.featured ? -120 : 0;
+
+  return labelRank * 1000 + primaryBoost + featureBoost + sequenceRank(item);
+}
+
+function galleryItemsFromManifest(): GalleryImage[] {
+  const sourceItems = [
+    ...itemsByCategory("gallery"),
+    ...itemsByCategory("doctor"),
+    ...itemsByCategory("clinic-ambience"),
+    ...itemsByCategory("equipment"),
+    ...itemsByCategory("recognition"),
+    ...itemsByCategory("press-newspaper"),
+    ...itemsByCategory("social-media").filter((item) =>
+      /consultation|recognition|clinic|doctor|event|media/.test(itemSearchText(item)),
+    ),
+    ...itemsByCategory("hero").filter((item) =>
+      /doctor|consultation|clinic|interior|patient|recognition|anil|gallery/.test(itemSearchText(item)),
+    ),
+    ...itemsByCategory("hero-support").filter((item) =>
+      /doctor|consultation|clinic|patient|gallery/.test(itemSearchText(item)),
+    ),
+    ...itemsByCategory("logo-brand").filter((item) =>
+      /badge|threebest|threebestrated|recognition/.test(itemSearchText(item)),
+    ),
+  ].filter((item) => {
+    const sourceText = [
+      item.id,
+      item.filename,
+      item.originalFilename,
+      item.rawRelativePath,
+      item.originalRelativePath,
+      item.category,
+      item.role,
+      item.usage,
+      item.subject,
+    ]
+      .map(normalize)
+      .join(" ");
+
+    return (
+      item.publish !== false &&
+      !/before-after|case\d+|(^|[-\s])(before|after|bfore)([-\s]|$)|transformation|skin-before-after|hair-before-after/.test(sourceText)
+    );
+  });
+
+  return dedupeMediaItems(sourceItems)
+    .sort((a, b) => galleryPriority(a) - galleryPriority(b) || String(a.id).localeCompare(String(b.id)))
+    .map((item, index) => {
+      const label = galleryLabelFor(item);
+      const title = galleryTitleFor(item, label);
+      const image = cmsImage(item, galleryVariantFor(item, label));
+
+      return {
+        title,
+        category: label,
+        caption: galleryCaptionFor(item, label, title),
+        image,
+        usageLocation: "inside-radiance-clinics",
+        sortOrder: index + 1,
+      };
+    });
+}
+
+const fallbackClinicGallery: GalleryImage[] = [
   {
     title: "Evening Arrival",
     category: "Clinic exterior",
@@ -981,6 +1178,9 @@ export const realClinicGallery: GalleryImage[] = [
     sortOrder: 50,
   },
 ];
+
+export const realClinicGallery: GalleryImage[] =
+  galleryItemsFromManifest().length ? galleryItemsFromManifest() : fallbackClinicGallery;
 
 export const realEquipmentGallery: GalleryImage[] = [
   {
@@ -1118,17 +1318,16 @@ export const realRecognitionItems: RecognitionItem[] =
 
 const legacyCases: BeforeAfterCase[] = [
   {
-    slug: "hair-transformation-case001",
-    caseId: "case001",
-    title: "Front, angle and crown documentation",
-    patientLabel: "Case 001",
+    slug: "hair-transplant-front-angle-crown",
+    title: "Hair Transplant Transformation",
+    patientLabel: "Hair Transplant Transformation",
     treatment: "Hair Transplant",
     treatmentCategory: "hair-transplant",
-    timeGap: "Timeline recorded in clinic file",
+    timeGap: "Timeline reviewed during consultation",
     note:
-      "A consent-aware multi-angle case layout prepared for matched front, angle and crown review.",
+      "A consent-aware multi-angle transformation layout prepared for matched front, angle and crown review.",
     resultSummary:
-      "Structured hairline and density documentation for consultation discussion.",
+      "Structured hairline and density images for consultation discussion.",
     disclaimer:
       "Results vary by diagnosis, donor quality, biology, timeline and maintenance. Images must be interpreted with clinical context.",
     patientConsentConfirmed: true,
@@ -1146,17 +1345,16 @@ const legacyCases: BeforeAfterCase[] = [
     ],
   },
   {
-    slug: "hair-transformation-case002",
-    caseId: "case002",
-    title: "Crown and portrait documentation",
-    patientLabel: "Case 002",
+    slug: "hair-transplant-crown-portrait",
+    title: "Hair Transplant Transformation",
+    patientLabel: "Hair Transplant Transformation",
     treatment: "Hair Transplant",
     treatmentCategory: "hair-transplant",
-    timeGap: "Timeline recorded in clinic file",
+    timeGap: "Timeline reviewed during consultation",
     note:
-      "Crown and portrait angles can be configured per case from admin with consent and timeline details.",
+      "Crown and portrait angles are shown with consent and consultation context.",
     resultSummary:
-      "Designed to make crown-pattern documentation easier to compare without exaggerated claims.",
+      "Designed to make crown-pattern improvement easier to compare without exaggerated claims.",
     disclaimer:
       "Public visuals are educational and do not guarantee any specific result.",
     patientConsentConfirmed: true,
@@ -1180,15 +1378,14 @@ const legacyCases: BeforeAfterCase[] = [
     ],
   },
   {
-    slug: "hair-transformation-case003",
-    caseId: "case003",
-    title: "Hairline density documentation",
-    patientLabel: "Case 003",
+    slug: "hairline-density-improvement",
+    title: "Hair Transplant Transformation",
+    patientLabel: "Hair Transplant Transformation",
     treatment: "Hair Restoration",
     treatmentCategory: "hair-transplant",
-    timeGap: "Timeline recorded in clinic file",
+    timeGap: "Timeline reviewed during consultation",
     note: "A clinic-provided anonymized set for hairline and density review.",
-    resultSummary: "Front and side documentation prepared for consultation discussion.",
+    resultSummary: "Front and side views prepared for consultation discussion.",
     disclaimer: "Results vary. Public visuals require consent and clinical interpretation.",
     patientConsentConfirmed: true,
     faceBlurRequired: true,
@@ -1201,15 +1398,14 @@ const legacyCases: BeforeAfterCase[] = [
     afterImage: requiredImage("before-after", "case003-front-after", "hair-case-portrait-25-portrait-of-a-man-with-beard", "portrait"),
   },
   {
-    slug: "hair-transformation-case004",
-    caseId: "case004",
-    title: "Profile and top-view documentation",
-    patientLabel: "Case 004",
+    slug: "hair-transplant-profile-top-view",
+    title: "Hair Transplant Transformation",
+    patientLabel: "Hair Transplant Transformation",
     treatment: "Hair Transplant",
     treatmentCategory: "hair-transplant",
-    timeGap: "Timeline recorded in clinic file",
-    note: "A multi-view case prepared for front, side and top-view browsing.",
-    resultSummary: "Case photos are organized to avoid misleading single-image comparison.",
+    timeGap: "Timeline reviewed during consultation",
+    note: "A multi-view transformation prepared for front, side and top-view browsing.",
+    resultSummary: "Images are organized to avoid misleading single-image comparison.",
     disclaimer: "Outcomes differ by biology, planning, aftercare and timeline.",
     patientConsentConfirmed: true,
     faceBlurRequired: true,
@@ -1222,13 +1418,12 @@ const legacyCases: BeforeAfterCase[] = [
     afterImage: requiredImage("before-after", "case004-front-after", "hair-case-portrait-28-portrait-of-a-young-man-with-beard", "portrait"),
   },
   {
-    slug: "hair-transformation-case005",
-    caseId: "case005",
-    title: "Natural density documentation",
-    patientLabel: "Case 005",
+    slug: "natural-hair-density-improvement",
+    title: "Hair Transplant Transformation",
+    patientLabel: "Hair Transplant Transformation",
     treatment: "Hair Restoration",
     treatmentCategory: "hair-transplant",
-    timeGap: "Timeline recorded in clinic file",
+    timeGap: "Timeline reviewed during consultation",
     note: "A privacy-aware set for hair restoration discussion.",
     resultSummary: "Multiple angles help avoid over-reading a single view.",
     disclaimer: "No website image can replace diagnosis or doctor-led expectation setting.",
@@ -1243,15 +1438,14 @@ const legacyCases: BeforeAfterCase[] = [
     afterImage: requiredImage("before-after", "case005-front-after", "hair-case-portrait-23-neutral-profile-portrait-with-subtle-details", "portrait"),
   },
   {
-    slug: "hair-transformation-case006",
-    caseId: "case006",
-    title: "Crown pattern documentation",
-    patientLabel: "Case 006",
+    slug: "crown-pattern-improvement",
+    title: "Hair Transplant Transformation",
+    patientLabel: "Hair Transplant Transformation",
     treatment: "Hair Transplant",
     treatmentCategory: "hair-transplant",
-    timeGap: "Timeline recorded in clinic file",
-    note: "A case set prepared for crown and front pattern discussion.",
-    resultSummary: "Additional image slots can carry sixth-angle views from admin.",
+    timeGap: "Timeline reviewed during consultation",
+    note: "A transformation set prepared for crown and front pattern discussion.",
+    resultSummary: "Additional image views can support consultation discussion.",
     disclaimer: "Results vary and cannot be guaranteed from image viewing.",
     patientConsentConfirmed: true,
     faceBlurRequired: true,

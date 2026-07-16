@@ -1,0 +1,11 @@
+condition,stage,png_filename,jpg_filename,webp_filename,dimensions
+Beard Transplant,before,01-beard-transplant/before_beard_transplant.png,01-beard-transplant/before_beard_transplant.jpg,01-beard-transplant/before_beard_transplant.webp,1200x1500
+Beard Transplant,after,01-beard-transplant/after_beard_transplant.png,01-beard-transplant/after_beard_transplant.jpg,01-beard-transplant/after_beard_transplant.webp,1200x1500
+Receding Hairline,before,02-receding-hairline/before_receding_hairline.png,02-receding-hairline/before_receding_hairline.jpg,02-receding-hairline/before_receding_hairline.webp,1200x1500
+Receding Hairline,after,02-receding-hairline/after_receding_hairline.png,02-receding-hairline/after_receding_hairline.jpg,02-receding-hairline/after_receding_hairline.webp,1200x1500
+Female Pattern Hair Loss,before,03-female-pattern-hair-loss/before_female_pattern_hair_loss.png,03-female-pattern-hair-loss/before_female_pattern_hair_loss.jpg,03-female-pattern-hair-loss/before_female_pattern_hair_loss.webp,1200x1500
+Female Pattern Hair Loss,after,03-female-pattern-hair-loss/after_female_pattern_hair_loss.png,03-female-pattern-hair-loss/after_female_pattern_hair_loss.jpg,03-female-pattern-hair-loss/after_female_pattern_hair_loss.webp,1200x1500
+Crown Hair Transplant,before,04-crown-hair-transplant/before_crown_hair_transplant.png,04-crown-hair-transplant/before_crown_hair_transplant.jpg,04-crown-hair-transplant/before_crown_hair_transplant.webp,1200x1500
+Crown Hair Transplant,after,04-crown-hair-transplant/after_crown_hair_transplant.png,04-crown-hair-transplant/after_crown_hair_transplant.jpg,04-crown-hair-transplant/after_crown_hair_transplant.webp,1200x1500
+Frontal and Mid-Scalp Hair Transplant,before,05-frontal-mid-scalp-hair-transplant/before_frontal_mid_scalp_hair_transplant.png,05-frontal-mid-scalp-hair-transplant/before_frontal_mid_scalp_hair_transplant.jpg,05-frontal-mid-scalp-hair-transplant/before_frontal_mid_scalp_hair_transplant.webp,1200x1500
+Frontal and Mid-Scalp Hair Transplant,after,05-frontal-mid-scalp-hair-transplant/after_frontal_mid_scalp_hair_transplant.png,05-frontal-mid-scalp-hair-transplant/after_frontal_mid_scalp_hair_transplant.jpg,05-frontal-mid-scalp-hair-transplant/after_frontal_mid_scalp_hair_transplant.webp,1200x1500

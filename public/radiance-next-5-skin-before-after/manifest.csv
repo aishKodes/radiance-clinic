@@ -1,0 +1,11 @@
+condition,stage,png,jpg,webp,dimensions
+uneven-skin-tone,before,01-uneven-skin-tone/before_uneven_skin_tone.png,01-uneven-skin-tone/before_uneven_skin_tone.jpg,01-uneven-skin-tone/before_uneven_skin_tone.webp,1200x1500
+uneven-skin-tone,after,01-uneven-skin-tone/after_uneven_skin_tone.png,01-uneven-skin-tone/after_uneven_skin_tone.jpg,01-uneven-skin-tone/after_uneven_skin_tone.webp,1200x1500
+rosacea-redness,before,02-rosacea-redness/before_rosacea_redness.png,02-rosacea-redness/before_rosacea_redness.jpg,02-rosacea-redness/before_rosacea_redness.webp,1200x1500
+rosacea-redness,after,02-rosacea-redness/after_rosacea_redness.png,02-rosacea-redness/after_rosacea_redness.jpg,02-rosacea-redness/after_rosacea_redness.webp,1200x1500
+facial-mole,before,03-facial-mole/before_facial_mole.png,03-facial-mole/before_facial_mole.jpg,03-facial-mole/before_facial_mole.webp,1200x1500
+facial-mole,after,03-facial-mole/after_facial_mole.png,03-facial-mole/after_facial_mole.jpg,03-facial-mole/after_facial_mole.webp,1200x1500
+oily-skin,before,04-oily-skin/before_oily_skin.png,04-oily-skin/before_oily_skin.jpg,04-oily-skin/before_oily_skin.webp,1200x1500
+oily-skin,after,04-oily-skin/after_oily_skin.png,04-oily-skin/after_oily_skin.jpg,04-oily-skin/after_oily_skin.webp,1200x1500
+skin-tags,before,05-skin-tags/before_skin_tags.png,05-skin-tags/before_skin_tags.jpg,05-skin-tags/before_skin_tags.webp,1200x1500
+skin-tags,after,05-skin-tags/after_skin_tags.png,05-skin-tags/after_skin_tags.jpg,05-skin-tags/after_skin_tags.webp,1200x1500

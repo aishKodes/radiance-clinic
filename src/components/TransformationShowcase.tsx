@@ -13,7 +13,7 @@ import type {
 } from "@/types/cms";
 
 const RESULT_DISCLAIMER =
-  "Results vary by individual. Images are shared with consent. A consultation is required to understand suitability.";
+  "Results vary by individual. Images are shared with consent. A consultation is required.";
 
 type TransformationShowcaseProps = {
   title: string;
@@ -60,10 +60,11 @@ export function TransformationShowcase({
   const current = visibleTransformations[activeSafeIndex];
   const pairs = current ? getComparePairs(current).slice(0, 2) : [];
   const additionalImages = current ? getAdditionalImages(current, pairs) : [];
+  const disclaimer = current?.disclaimer || RESULT_DISCLAIMER;
   const selectorItemRefs = useRef<Array<HTMLButtonElement | null>>([]);
   const emptyMessage =
     category === "skin"
-      ? "Skin result gallery coming soon."
+      ? "Skin improvement examples will be added soon."
       : "More transformation images will be added soon.";
 
   useEffect(() => {
@@ -128,7 +129,7 @@ export function TransformationShowcase({
 
       <div className="relative z-10 rounded-[2rem] bg-[linear-gradient(145deg,rgba(16,16,20,0.98),rgba(20,21,29,0.96))] p-4 sm:p-5 lg:p-6">
         <div className="grid gap-6 lg:grid-cols-[18rem_minmax(0,1fr)]">
-          <aside className="relative z-20 min-w-0 rounded-[1.6rem] border border-white/12 bg-white/[0.07] p-4 backdrop-blur-xl lg:sticky lg:top-28 lg:self-start">
+          <aside className="relative z-20 min-w-0 rounded-[1.6rem] border border-white/12 bg-white/[0.07] p-4 backdrop-blur-xl lg:self-start">
             <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-white/14 bg-white/10 px-3 py-2 text-[0.64rem] font-extrabold uppercase tracking-[0.18em] text-[var(--champagne)]">
               <ShieldCheck className="h-4 w-4" />
               Consent-aware
@@ -141,7 +142,7 @@ export function TransformationShowcase({
             <div
               data-lenis-prevent-wheel
               data-lenis-prevent-touch
-              className="transformation-selector-scroll relative z-20 mt-6 flex max-w-full scroll-smooth gap-3 overflow-x-auto overscroll-x-contain pb-5 lg:block lg:max-h-[620px] lg:space-y-3 lg:overflow-y-auto lg:overflow-x-hidden lg:overscroll-contain lg:pb-8 lg:pr-3"
+              className="transformation-selector-scroll relative z-20 mt-6 flex max-w-full scroll-smooth gap-3 overflow-x-auto overscroll-x-contain pb-5 lg:max-h-[34rem] lg:flex-col lg:overflow-y-auto lg:overflow-x-hidden lg:overscroll-contain lg:pb-4 lg:pr-2"
             >
               {visibleTransformations.map((item, index) => (
                 <SelectorCard
@@ -244,7 +245,7 @@ export function TransformationShowcase({
 
             <div className="grid gap-3 sm:grid-cols-[1fr_auto] sm:items-center">
               <p className="rounded-3xl border border-white/12 bg-white/[0.07] p-4 text-sm leading-6 text-white/62">
-                {RESULT_DISCLAIMER}
+                {disclaimer}
               </p>
               <div className="grid gap-2 rounded-3xl border border-white/12 bg-white/[0.07] p-4 text-sm text-white/70 sm:min-w-56">
                 <InfoLine label="Treatment" value={current.treatment} />
@@ -285,7 +286,7 @@ function SelectorCard({
       type="button"
       onClick={onClick}
       className={cn(
-        "relative z-20 grid min-w-[15.5rem] shrink-0 cursor-pointer grid-cols-[4rem_1fr] gap-3 rounded-[1.25rem] border p-3 text-left transition last:mr-4 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--aqua)] lg:mb-3 lg:min-w-0 lg:shrink lg:last:mb-8 lg:last:mr-0",
+        "relative z-20 grid min-w-[15.5rem] shrink-0 cursor-pointer grid-cols-[4rem_1fr] gap-3 rounded-[1.25rem] border p-3 text-left transition last:mr-4 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--aqua)] lg:min-w-0 lg:w-full lg:last:mr-0",
         active
           ? "border-[var(--champagne)] bg-white/14 text-white shadow-[0_16px_45px_rgba(0,0,0,0.18)]"
           : "border-white/10 bg-white/[0.06] text-white/62 hover:bg-white/10",
@@ -312,7 +313,7 @@ function SelectorCard({
       </span>
       <span className="min-w-0">
         <span className="block truncate text-[0.62rem] font-extrabold uppercase tracking-[0.18em]">
-          Example {String(index + 1).padStart(2, "0")}
+          {item.treatment || (category === "hair" ? "Hair" : "Skin")}
         </span>
         <span className="mt-2 block truncate text-sm font-extrabold text-white">
           {displayTitle(item, category, index)}
@@ -369,6 +370,16 @@ function InfoLine({ label, value }: { label: string; value: string }) {
 }
 
 function getComparePairs(item: Transformation): ComparePair[] {
+  if (item.beforeAfterPairs?.length) {
+    return item.beforeAfterPairs
+      .filter((pair) => imageHasSource(pair.before) && imageHasSource(pair.after))
+      .map((pair, index) => ({
+        viewLabel: pair.viewLabel || (index === 0 ? "Front View" : "Second View"),
+        before: pair.before,
+        after: pair.after,
+      }));
+  }
+
   return [
     imageHasSource(item.frontBefore) && imageHasSource(item.frontAfter)
       ? {
@@ -394,6 +405,7 @@ function getAdditionalImages(item: Transformation, pairs: ComparePair[]) {
   const seen = new Set<string>();
   const raw = [
     ...(item.additionalImages || []),
+    ...(item.beforeAfterPairs || []).flatMap((pair) => [pair.before, pair.after]),
     item.frontBefore,
     item.frontAfter,
     item.angleBefore,
@@ -413,6 +425,15 @@ function displayTitle(
   category: TransformationCategory,
   index: number,
 ) {
+  if (item.conditionName) {
+    if (category === "hair") return `${item.conditionName} Transformation`;
+    return `${item.conditionName} Improvement`;
+  }
+
+  if (item.publicTitle && !/^case\s*\d+$/i.test(item.publicTitle)) {
+    return item.publicTitle;
+  }
+
   if (item.title && !/^case\s*\d+$/i.test(item.title)) {
     return item.title;
   }

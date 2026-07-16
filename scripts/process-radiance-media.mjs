@@ -28,6 +28,11 @@ const variants = [
 const categoryAliases = new Map([
   ["01-hero", "hero"],
   ["hero", "hero"],
+  ["gallery", "gallery"],
+  ["new-gallery", "gallery"],
+  ["gallery-raw", "gallery"],
+  ["clinic-gallery", "clinic-ambience"],
+  ["doctor-gallery", "doctor"],
   ["02-doctor", "doctor"],
   ["01-doctor", "doctor"],
   ["doctor", "doctor"],
@@ -71,6 +76,30 @@ const categoryAliases = new Map([
   ["07-videos", "videos"],
   ["video", "videos"],
   ["videos", "videos"],
+  ["generic", "generic-service-card"],
+  ["generic-card", "generic-service-card"],
+  ["generic-cards", "generic-service-card"],
+  ["card", "generic-service-card"],
+  ["cards", "generic-service-card"],
+  ["service", "generic-service-card"],
+  ["services", "generic-service-card"],
+  ["service-card", "generic-service-card"],
+  ["service-cards", "generic-service-card"],
+  ["premium-visuals", "generic-service-card"],
+  ["radiance-premium-visuals", "generic-service-card"],
+  ["hero-support", "hero-support"],
+  ["category-tab", "category-tab-visual"],
+  ["category-tabs", "category-tab-visual"],
+  ["category-visual", "category-tab-visual"],
+  ["category-visuals", "category-tab-visual"],
+  ["skin-before-after", "skin-before-after"],
+  ["skin-before-after-separated", "skin-before-after"],
+  ["radiance-skin-before-after-separated", "skin-before-after"],
+  ["radiance-skin-before-after-separated-2", "skin-before-after"],
+  ["radiance-next-5-skin-before-after", "skin-before-after"],
+  ["hair-before-after", "hair-before-after"],
+  ["radiance-hair-before-after", "hair-before-after"],
+  ["radiance-additional-hair-before-after", "hair-before-after"],
 ]);
 
 const detectedTypes = {
@@ -85,6 +114,12 @@ const detectedTypes = {
   "press-newspaper": "press",
   team: "team-photo",
   videos: "video-asset",
+  gallery: "clinic-gallery",
+  "generic-service-card": "generic_service_card",
+  "skin-before-after": "skin_before_after",
+  "hair-before-after": "hair_before_after",
+  "hero-support": "hero_support",
+  "category-tab-visual": "category_tab_visual",
 };
 
 const help = `Usage:
@@ -173,6 +208,269 @@ function titleFromSlug(value) {
     .filter(Boolean)
     .map((part) => `${part.charAt(0).toUpperCase()}${part.slice(1)}`)
     .join(" ");
+}
+
+const conditionAliases = [
+  { pattern: /^(acne-scar|acne-scars|acne-scar-treatment)$/, slug: "acne-scars", name: "Acne Scars", treatment: "Acne Scar Treatment" },
+  { pattern: /^acne$/, slug: "acne", name: "Acne", treatment: "Acne Treatment" },
+  { pattern: /^(pigmentation|pigmentation-removal|pigmentation-melasma|laser-pigmentation|laser-pigmentation-treatment)$/, slug: "pigmentation", name: "Pigmentation", treatment: "Pigmentation Treatment" },
+  { pattern: /^melasma$/, slug: "melasma", name: "Melasma", treatment: "Pigmentation Treatment" },
+  { pattern: /^(hair-transplant|crown-hair-transplant|frontal-mid-scalp-hair-transplant)$/, slug: "hair-transplant", name: "Hair Transplant", treatment: "Hair Transplant" },
+  { pattern: /^(fue|fue-hair-transplant)$/, slug: "fue-hair-transplant", name: "FUE Hair Transplant", treatment: "FUE Hair Transplant" },
+  { pattern: /^(prp|gfc|prp-therapy|gfc-therapy|prp-hair-therapy|prp-gfc|prp-gfc-therapy|prp-gfc-scalp-therapy)$/, slug: "prp-gfc-therapy", name: "PRP / GFC Therapy", treatment: "PRP / GFC Therapy" },
+  { pattern: /^(laser-hair-removal|laser-hair-reduction|underarm-laser-reduction)$/, slug: "laser-hair-removal", name: "Laser Hair Removal", treatment: "Laser Hair Removal" },
+  { pattern: /^(anti-ageing|anti-aging|anti-ageing-service|anti-aging-service)$/, slug: "anti-ageing", name: "Anti Ageing", treatment: "Anti Ageing" },
+  { pattern: /^(botox-fillers|botox-and-fillers|botox|dermal-fillers|injectable-aesthetics)$/, slug: "botox-fillers", name: "Botox & Fillers", treatment: "Botox & Fillers" },
+  { pattern: /^(skin-rejuvenation|skin-rejuvenation-service|uneven-skin-tone|open-pores|oily-skin|dull-skin)$/, slug: "skin-rejuvenation", name: "Skin Rejuvenation", treatment: "Skin Rejuvenation" },
+  { pattern: /^hair-fall$/, slug: "hair-fall", name: "Hair Fall", treatment: "Hair Fall Treatment" },
+  { pattern: /^beard-transplant$/, slug: "beard-transplant", name: "Beard Transplant", treatment: "Hair Transplant" },
+  { pattern: /^receding-hairline$/, slug: "receding-hairline", name: "Receding Hairline", treatment: "Hair Transplant" },
+  { pattern: /^female-pattern-hair-loss$/, slug: "female-pattern-hair-loss", name: "Female Pattern Hair Loss", treatment: "Hair Restoration" },
+  { pattern: /^male-temporal-recession$/, slug: "male-temporal-recession", name: "Male Temporal Recession", treatment: "Hair Transplant" },
+  { pattern: /^male-diffuse-frontal-thinning$/, slug: "male-diffuse-frontal-thinning", name: "Male Diffuse Frontal Thinning", treatment: "Hair Restoration" },
+  { pattern: /^female-frontal-hairline-thinning$/, slug: "female-frontal-hairline-thinning", name: "Female Frontal Hairline Thinning", treatment: "Hair Restoration" },
+  { pattern: /^advanced-male-pattern-baldness$/, slug: "advanced-male-pattern-baldness", name: "Advanced Male Pattern Baldness", treatment: "Hair Transplant" },
+  { pattern: /^female-widening-part$/, slug: "female-widening-part", name: "Female Widening Part", treatment: "Hair Restoration" },
+  { pattern: /^dark-circles$/, slug: "dark-circles", name: "Dark Circles", treatment: "Under Eye Rejuvenation" },
+  { pattern: /^rosacea-redness$/, slug: "rosacea-redness", name: "Rosacea / Redness", treatment: "Redness Treatment" },
+  { pattern: /^facial-mole$/, slug: "facial-mole", name: "Facial Mole", treatment: "Mole Treatment" },
+  { pattern: /^skin-tags$/, slug: "skin-tags", name: "Skin Tags", treatment: "Skin Tag Treatment" },
+  { pattern: /^bridal-dermatology$/, slug: "bridal-dermatology", name: "Bridal Dermatology", treatment: "Bridal Dermatology" },
+  { pattern: /^under-eye-rejuvenation$/, slug: "under-eye-rejuvenation", name: "Under Eye Rejuvenation", treatment: "Under Eye Rejuvenation" },
+  { pattern: /^skin-skin$/, slug: "skin", name: "Skin", treatment: "Skin Treatment" },
+  { pattern: /^skin$/, slug: "skin", name: "Skin", treatment: "Skin Treatment Options" },
+  { pattern: /^hair$/, slug: "hair", name: "Hair", treatment: "Hair Treatment Options" },
+  { pattern: /^laser$/, slug: "laser", name: "Laser", treatment: "Laser Treatment Options" },
+  { pattern: /^aesthetics$/, slug: "aesthetics", name: "Aesthetics", treatment: "Aesthetic Treatment Options" },
+];
+
+const viewAliases = new Map([
+  ["front", "front"],
+  ["frontal", "front"],
+  ["side", "side"],
+  ["angle", "side"],
+  ["angled", "side"],
+  ["second", "second"],
+  ["top", "crown"],
+  ["crown", "crown"],
+  ["closeup", "closeup"],
+  ["close-up", "closeup"],
+  ["profile", "side"],
+]);
+
+const subjectStopTokens = new Set([
+  "radiance",
+  "ba",
+  "before",
+  "after",
+  "bfore",
+  "front",
+  "frontal",
+  "side",
+  "angle",
+  "angled",
+  "second",
+  "top",
+  "crown",
+  "closeup",
+  "close",
+  "up",
+  "view",
+  "case",
+  "card",
+  "cards",
+  "service",
+  "services",
+  "condition",
+  "conditions",
+  "treatment",
+  "treatments",
+  "category",
+  "tab",
+  "visual",
+  "example",
+  "set",
+]);
+
+function normalizeCondition(value) {
+  const normalized = stripNumberPrefix(slugify(value || ""));
+  const direct = conditionAliases.find((item) => item.pattern.test(normalized));
+
+  if (direct) return direct;
+
+  if (/^fue(?:-|$)/.test(normalized)) {
+    return conditionAliases.find((item) => item.slug === "fue-hair-transplant");
+  }
+
+  if (/(^|-)prp(-|$)|(^|-)gfc(-|$)/.test(normalized)) {
+    return conditionAliases.find((item) => item.slug === "prp-gfc-therapy");
+  }
+
+  if (/laser-hair-(removal|reduction)/.test(normalized)) {
+    return conditionAliases.find((item) => item.slug === "laser-hair-removal");
+  }
+
+  if (/botox.*filler|filler.*botox/.test(normalized)) {
+    return conditionAliases.find((item) => item.slug === "botox-fillers");
+  }
+
+  if (/skin-rejuvenation|uneven-skin-tone|open-pores|oily-skin|dull-skin/.test(normalized)) {
+    return conditionAliases.find((item) => item.slug === "skin-rejuvenation");
+  }
+
+  return {
+    slug: normalized,
+    name: titleFromSlug(normalized),
+    treatment: titleFromSlug(normalized),
+    unknown: Boolean(normalized),
+  };
+}
+
+function phaseFromTokens(tokens) {
+  const phaseToken = [...tokens].reverse().find((token) =>
+    token === "before" ||
+    token === "after" ||
+    /^before\d*$/i.test(token) ||
+    /^after\d*$/i.test(token) ||
+    /^bfore\d*$/i.test(token),
+  );
+
+  if (!phaseToken) return { phase: "", phaseToken: "" };
+  return {
+    phase: /^after/i.test(phaseToken) ? "after" : "before",
+    phaseToken,
+  };
+}
+
+function viewFromTokens(tokens) {
+  const viewToken = tokens.find((token) => viewAliases.has(token));
+  return viewToken ? viewAliases.get(viewToken) : "primary";
+}
+
+function viewLabel(view) {
+  if (view === "front" || view === "primary") return "Front View";
+  if (view === "side" || view === "second") return "Side View / Second View";
+  if (view === "crown") return "Crown View";
+  if (view === "closeup") return "Close-up View";
+  return titleFromSlug(view);
+}
+
+function roleForView(view, phase) {
+  if (view === "primary") return phase;
+  if (view === "side" || view === "second") return `angle-${phase}`;
+  return `${view}-${phase}`;
+}
+
+function subjectFromTokens(tokens) {
+  const subjectTokens = tokens.filter((token) => {
+    if (!token || /^\d+$/.test(token) || /^[a-z]?\d+$/i.test(token)) return false;
+    if (/^case[a-z0-9]+$/i.test(token)) return false;
+    return !subjectStopTokens.has(token);
+  });
+
+  return subjectTokens.join("-");
+}
+
+function folderSubject(relativePathParts) {
+  const folders = relativePathParts.slice(0, -1).map((part) => stripNumberPrefix(slugify(part)));
+  const preferred = [...folders].reverse().find((part) => {
+    if (!part || /^case[a-z0-9]+$/i.test(part)) return false;
+    if (isKnownCategory(canonicalCategory(part))) return false;
+    if (/before-after|separated|additional|next|premium|visuals|webp|jpg|png/.test(part)) return false;
+    return true;
+  });
+
+  return preferred || "";
+}
+
+function inferTransformationCategory(subjectSlug, combinedText) {
+  if (/laser-hair-(removal|reduction)/.test(subjectSlug) || /skin|acne|pigmentation|melasma|mole|wart|tag|rosacea|pores|circle|rejuvenation|anti-age|botox|filler/.test(combinedText)) {
+    return "skin";
+  }
+
+  if (/hair|fue|prp|gfc|beard|bald|scalp|crown|thinning|recession|hairline|transplant/.test(combinedText)) {
+    return "hair";
+  }
+
+  return "";
+}
+
+function publicTitleFor(category, conditionName, treatment) {
+  const normalized = slugify(conditionName);
+
+  if (category === "hair") {
+    if (/fall|thinning|pattern|widening/.test(normalized)) return "Hair Fall Improvement";
+    if (/prp|gfc/.test(slugify(treatment))) return "PRP / GFC Hair Therapy Example";
+    return "Hair Transplant Transformation";
+  }
+
+  if (normalized === "acne-scars") return "Acne Scar Improvement";
+  if (normalized === "pigmentation") return "Pigmentation Improvement";
+  if (normalized === "melasma") return "Melasma Improvement";
+  if (/laser-hair-removal/.test(normalized)) return "Laser Hair Reduction Example";
+  if (/rejuvenation|pores|tone|oily|dull/.test(normalized)) return "Skin Rejuvenation Example";
+  if (/anti-ageing/.test(normalized)) return "Anti Ageing Example";
+
+  return "Skin Improvement Example";
+}
+
+function organizedClassification(stem, relativePathParts) {
+  const pathText = slugify(relativePathParts.join("-"));
+  const stemText = slugify(stem);
+  const combined = `${pathText}-${stemText}`;
+
+  if (/preview|contact-sheet|contactsheet/.test(combined)) {
+    return "generic-service-card";
+  }
+
+  const hasBeforeAfter =
+    /(^|-)before-after(-|$)|(^|-)before(-|$)|(^|-)after(-|$)|(^|-)bfore/.test(combined);
+  const hasSkin =
+    /skin|acne|pigmentation|melasma|laser-hair|anti-age|botox|filler|mole|wart|tag|rosacea|pores|circle|rejuvenation|tone|oily/.test(
+      combined,
+    );
+  const hasHair =
+    /hair|fue|prp|gfc|beard|bald|scalp|crown|thinning|recession|hairline|transplant/.test(
+      combined,
+    );
+
+  if (hasBeforeAfter && (/laser-hair-(removal|reduction)/.test(combined) || (hasSkin && !hasHair))) {
+    return "skin-before-after";
+  }
+
+  if (hasBeforeAfter && hasHair) {
+    return "hair-before-after";
+  }
+
+  if (/doctor-gallery|(^|-)doctor(-|$)|satyarth|consultation/.test(combined)) {
+    return "doctor";
+  }
+
+  if (/clinic-gallery|media-clinic|clinic-ambience|clinic-interior|reception|waiting|lounge|treatment-room/.test(combined)) {
+    return "clinic-ambience";
+  }
+
+  if (/awards-recognition|award|recognition|certificate|badge|press|newspaper|media-mention/.test(combined)) {
+    return /press|newspaper|media-mention/.test(combined) ? "press-newspaper" : "recognition";
+  }
+
+  if (/(^|-)gallery(-|$)|new-gallery|gallery-raw/.test(combined)) {
+    return "gallery";
+  }
+
+  if (/hero|smiling|happy-patient|patient-hero|doctor-consultation/.test(combined)) {
+    return "hero-support";
+  }
+
+  if (/category|tab-background|treatment-tab/.test(combined)) {
+    return "category-tab-visual";
+  }
+
+  if (/generic|card|service|premium-visuals|condition|bridal|under-eye/.test(combined)) {
+    return "generic-service-card";
+  }
+
+  return "";
 }
 
 function parseBoolean(value, fallback = false) {
@@ -279,11 +577,12 @@ function parseCsv(text) {
   });
 }
 
-async function loadManifestMetadata(inputRoot) {
-  const candidates = [
-    path.join(inputRoot, "media-manifest.csv"),
-    path.join(inputRoot, "manifest.csv"),
-  ];
+async function loadManifestMetadata(manifestRoots) {
+  const roots = Array.isArray(manifestRoots) ? manifestRoots : [manifestRoots];
+  const candidates = roots.flatMap((root) => [
+    path.join(root, "media-manifest.csv"),
+    path.join(root, "manifest.csv"),
+  ]);
   const byFilename = new Map();
   const byRelativePath = new Map();
   const byStem = new Map();
@@ -294,20 +593,52 @@ async function loadManifestMetadata(inputRoot) {
 
     loadedFiles.push(candidate);
     const rows = parseCsv(await readFile(candidate, "utf8"));
-    for (const row of rows) {
-      const filename =
-        row.filename ||
-        row.file_name ||
-        row.new_filename ||
-        row.original_filename ||
-        row.original_generated_filename ||
-        "";
-      const relativePath = row.relative_path || row.raw_relative_path || row.path || "";
-      const stem = slugify(path.parse(filename).name || filename);
+    const manifestDir = path.dirname(candidate);
 
-      if (filename) byFilename.set(filename.toLowerCase(), row);
-      if (relativePath) byRelativePath.set(normalizeSlashes(relativePath).toLowerCase(), row);
-      if (stem) byStem.set(stem, row);
+    for (const row of rows) {
+      const filenames = [
+        row.filename ||
+          row.file_name ||
+          row.new_filename ||
+          row.original_filename ||
+          row.original_generated_filename ||
+          "",
+        row.jpg_filename,
+        row.webp_filename,
+        row.png_filename,
+        row.jpg,
+        row.webp,
+        row.png,
+      ].filter(Boolean);
+      const relativePaths = [
+        row.relative_path,
+        row.raw_relative_path,
+        row.path,
+        ...filenames,
+      ].filter(Boolean);
+
+      if (row.condition && !row.title) row.title = row.condition;
+      if (row.recommended_use && !row.usage) row.usage = row.recommended_use;
+      if (row.stage && !row.phase) row.phase = row.stage;
+
+      for (const filename of filenames) {
+        const basename = path.basename(filename).toLowerCase();
+        const stem = slugify(path.parse(filename).name || filename);
+
+        if (basename) byFilename.set(basename, row);
+        if (filename) byFilename.set(filename.toLowerCase(), row);
+        if (stem) byStem.set(stem, row);
+      }
+
+      for (const relativePath of relativePaths) {
+        const normalized = normalizeSlashes(relativePath).toLowerCase();
+        const fullFromManifest = normalizeSlashes(
+          path.relative(process.cwd(), path.join(manifestDir, relativePath)),
+        ).toLowerCase();
+
+        if (normalized) byRelativePath.set(normalized, row);
+        if (fullFromManifest) byRelativePath.set(fullFromManifest, row);
+      }
     }
   }
 
@@ -316,12 +647,14 @@ async function loadManifestMetadata(inputRoot) {
 
 function metadataForFile(metadataIndex, info) {
   const filename = info.originalFilename.toLowerCase();
+  const basename = path.basename(filename);
   const relative = info.rawRelativePath.toLowerCase();
   const stem = slugify(path.parse(info.originalFilename).name);
 
   return (
     metadataIndex.byRelativePath.get(relative) ||
     metadataIndex.byFilename.get(filename) ||
+    metadataIndex.byFilename.get(basename) ||
     metadataIndex.byStem.get(stem) ||
     {}
   );
@@ -385,6 +718,75 @@ async function walkImages(rootDir) {
 
   await walk(rootDir);
   return files.sort((a, b) => a.localeCompare(b));
+}
+
+async function discoverSupplementalFolders({ inputRoot, publicRoot, outRoot }) {
+  const roots = [];
+  const seen = new Set([path.resolve(inputRoot), path.resolve(outRoot)]);
+
+  async function addRoot(root) {
+    if (!existsSync(root)) return;
+
+    const absolutePath = path.resolve(root);
+    if (seen.has(absolutePath)) return;
+    if (absolutePath.startsWith(path.resolve(outRoot))) return;
+
+    roots.push(absolutePath);
+    seen.add(absolutePath);
+  }
+
+  const requestedGalleryRoots = [
+    path.join(inputRoot, "gallery"),
+    path.join(inputRoot, "clinic-gallery"),
+    path.join(inputRoot, "doctor-gallery"),
+    path.join(inputRoot, "new-gallery"),
+    path.join(inputRoot, "05-clinic-ambience"),
+    path.join(inputRoot, "04-awards-recognition"),
+    path.join(publicRoot, "media", "gallery"),
+    path.join(publicRoot, "media", "clinic-gallery"),
+    path.join(publicRoot, "media", "recognition"),
+    path.join(publicRoot, "media", "clinic"),
+    path.join(publicRoot, "gallery-raw"),
+  ];
+
+  for (const root of requestedGalleryRoots) {
+    await addRoot(root);
+  }
+
+  async function addMatchingChildren(root) {
+    if (!existsSync(root)) return;
+
+    const entries = await readdir(root, { withFileTypes: true });
+
+    for (const entry of entries) {
+      if (!entry.isDirectory()) continue;
+
+      const absolutePath = path.resolve(root, entry.name);
+      if (seen.has(absolutePath)) continue;
+      if (absolutePath.startsWith(path.resolve(outRoot))) continue;
+      if (entry.name.startsWith(".")) continue;
+
+      const folderText = slugify(entry.name);
+      const matches =
+        /gallery|clinic|doctor|recognition|award|certificate|press|newspaper|generic|card|service|premium-visuals|skin.*before.*after|before.*after.*skin|hair.*before.*after|before.*after.*hair/.test(
+          folderText,
+        );
+
+      if (!matches) continue;
+
+      await addRoot(absolutePath);
+    }
+  }
+
+  await addMatchingChildren(inputRoot);
+  await addMatchingChildren(publicRoot);
+
+  return roots.sort((a, b) => a.localeCompare(b));
+}
+
+function isSameOrInside(parent, child) {
+  const relative = path.relative(path.resolve(parent), path.resolve(child));
+  return relative === "" || (!relative.startsWith("..") && !path.isAbsolute(relative));
 }
 
 function firstExisting(paths) {
@@ -563,25 +965,14 @@ function parseBeforeAfter(stem, relativePathParts) {
   }
 
   const tokens = normalizedStem.split("-");
-  const phaseToken = tokens.find((token) =>
-    token === "before" ||
-    token === "after" ||
-    /^before\d*$/i.test(token) ||
-    /^after\d*$/i.test(token) ||
-    /^bfore\d*$/i.test(token),
-  );
-  const phase = phaseToken
-    ? /^after/i.test(phaseToken)
-      ? "after"
-      : "before"
-    : "";
+  const { phase, phaseToken } = phaseFromTokens(tokens);
   const caseIndex = tokens.findIndex((token) => /^case[a-z0-9]+$/i.test(token));
   const beforeAfterRoot = relativePathParts.findIndex(
-    (part) => canonicalCategory(part) === "before-after",
+    (part) => ["before-after", "skin-before-after", "hair-before-after"].includes(canonicalCategory(part)),
   );
   const caseFolder = relativePathParts.find((part) => /^case[a-z0-9]+$/i.test(slugify(part)));
   const folderAfterRoot =
-    beforeAfterRoot >= 0 && relativePathParts[beforeAfterRoot + 1]
+    beforeAfterRoot >= 0 && beforeAfterRoot + 1 < relativePathParts.length - 1
       ? canonicalCategory(relativePathParts[beforeAfterRoot + 1])
       : "";
   const folderSubject =
@@ -589,25 +980,36 @@ function parseBeforeAfter(stem, relativePathParts) {
       ? folderAfterRoot
       : "";
 
-  if (!phase || (caseIndex < 0 && !caseFolder)) {
+  if (!phase) {
     return null;
   }
 
-  const caseId = caseIndex >= 0 ? tokens[caseIndex] : slugify(caseFolder);
+  const folderSubjectFallback = folderSubject || folderSubjectFromManifestPath(relativePathParts);
+  const caseId = caseIndex >= 0 ? tokens[caseIndex] : caseFolder ? slugify(caseFolder) : "";
   const phaseIndex = phaseToken ? tokens.indexOf(phaseToken) : tokens.lastIndexOf(phase);
   const viewTokens =
     caseIndex >= 0
       ? tokens.slice(caseIndex + 1, phaseIndex)
-      : tokens.slice(0, phaseIndex).filter((token) => !/^b?fore\d*$/i.test(token) && !/^after\d*$/i.test(token));
-  const view = viewTokens.join("-") || "primary";
-  const role = view === "primary" ? phase : `${view}-${phase}`;
+      : tokens
+          .slice(0, phaseIndex)
+          .filter((token) => !/^b?fore\d*$/i.test(token) && !/^after\d*$/i.test(token));
+  const view = viewFromTokens(viewTokens.length ? viewTokens : tokens);
+  const role = roleForView(view, phase);
   const subjectTokens =
     caseIndex >= 0
       ? tokens
           .slice(tokens[0] === "radiance" ? 1 : 0, caseIndex)
           .filter((token) => token !== "ba" && token !== "before" && token !== "after")
-      : [];
-  const subject = folderSubject || subjectTokens.join("-") || "hair-transplant";
+      : tokens.slice(0, phaseIndex >= 0 ? phaseIndex : tokens.length);
+  const rawSubject =
+    folderSubjectFallback ||
+    subjectFromTokens(subjectTokens) ||
+    subjectFromTokens(tokens) ||
+    "before-after";
+  const condition = normalizeCondition(rawSubject);
+  const subject = condition.slug || rawSubject;
+  const folderKey = slugify(relativePathParts.slice(0, -1).join("-"));
+  const pairKey = caseId ? `${subject}-${caseId}` : `${subject}-${folderKey || "default"}`;
 
   return {
     subject,
@@ -615,9 +1017,17 @@ function parseBeforeAfter(stem, relativePathParts) {
     caseId,
     beforeAfterRole: camelCaseRole(role),
     beforeAfterView: view,
+    beforeAfterViewLabel: viewLabel(view),
     beforeAfterPhase: phase,
-    pairKey: `${subject}-${caseId}`,
+    pairKey,
+    conditionName: condition.name,
+    treatment: condition.treatment,
+    conditionUnknown: Boolean(condition.unknown),
   };
+}
+
+function folderSubjectFromManifestPath(relativePathParts) {
+  return folderSubject(relativePathParts);
 }
 
 function normalizeStandardRole({ category, role, usage, subject, stem }) {
@@ -713,17 +1123,21 @@ function parseMediaInfo(filePath, inputRoot) {
   const dirCategory =
     relativePathParts.length > 1 ? canonicalCategory(relativePathParts[0] || "") : "general";
   const parseWarnings = [];
+  const organizedCategory = organizedClassification(stem, relativePathParts);
+  const isPreviewSheet = /preview|contact-sheet|contactsheet/.test(slugify(stem));
   const isBeforeAfter =
-    dirCategory === "before-after" ||
-    stemTokens.includes("ba") ||
-    stemTokens.includes("before") ||
-    stemTokens.includes("after");
+    !isPreviewSheet &&
+    (["before-after", "skin-before-after", "hair-before-after"].includes(dirCategory) ||
+      ["skin-before-after", "hair-before-after"].includes(organizedCategory) ||
+      stemTokens.includes("ba") ||
+      stemTokens.includes("before") ||
+      stemTokens.includes("after"));
 
   if (isBeforeAfter) {
     const beforeAfter = parseBeforeAfter(stem, relativePathParts);
     if (!beforeAfter) {
       parseWarnings.push(
-        `${normalizeSlashes(relativePath)}: before/after filename could not be parsed into treatment, case id, view and before/after role.`,
+        `${normalizeSlashes(relativePath)}: before/after filename could not be parsed into treatment, view and before/after role.`,
       );
     }
     const subject =
@@ -732,23 +1146,50 @@ function parseMediaInfo(filePath, inputRoot) {
       "before-after";
     const role = beforeAfter?.usage || "case";
     const caseId = beforeAfter?.caseId || "";
+    const category =
+      organizedCategory === "skin-before-after" || organizedCategory === "hair-before-after"
+        ? organizedCategory
+        : "before-after";
+    const transformationCategory =
+      category === "skin-before-after"
+        ? "skin"
+        : category === "hair-before-after"
+          ? "hair"
+          : inferTransformationCategory(subject, slugify([subject, relativePath].join("-"))) || "hair";
+    const condition = beforeAfter?.conditionName
+      ? normalizeCondition(beforeAfter.conditionName)
+      : normalizeCondition(subject);
+    const conditionName = condition.name || titleFromSlug(subject);
+    const treatment = beforeAfter?.treatment || condition.treatment || conditionName;
+
+    if (condition.unknown) {
+      parseWarnings.push(
+        `${normalizeSlashes(relativePath)}: unknown condition name "${conditionName}" was parsed from filename/folder; add a normalization alias if this should be public-facing.`,
+      );
+    }
 
     return {
       originalFilename: parsed.base,
       rawRelativePath: normalizeSlashes(relativePath),
-      category: "before-after",
-      detectedType: detectedTypes["before-after"],
+      category,
+      detectedType: detectedTypes[category] || detectedTypes["before-after"],
+      mediaClassification: detectedTypes[category] || detectedTypes["before-after"],
+      transformationCategory,
       subject,
+      conditionName,
+      publicTitle: publicTitleFor(transformationCategory, conditionName, treatment),
+      treatment,
       usage: role,
       role,
       sequence: "",
       caseId,
       beforeAfterRole: beforeAfter?.beforeAfterRole || null,
       beforeAfterView: beforeAfter?.beforeAfterView || null,
+      beforeAfterViewLabel: beforeAfter?.beforeAfterViewLabel || null,
       beforeAfterPhase: beforeAfter?.beforeAfterPhase || null,
       pairKey: beforeAfter?.pairKey || (caseId ? `${subject}-${caseId}` : ""),
-      baseSlug: slugify(beforeAfter ? `radiance-ba-${subject}-${caseId}-${role}` : stem),
-      recommendedWebsiteUsage: recommendedWebsiteUsage("before-after", role, subject),
+      baseSlug: slugify(beforeAfter ? `radiance-ba-${subject}-${caseId || beforeAfter.pairKey}-${role}` : stem),
+      recommendedWebsiteUsage: recommendedWebsiteUsage(category, role, subject),
       parseWarnings,
     };
   }
@@ -762,7 +1203,9 @@ function parseMediaInfo(filePath, inputRoot) {
   const categoryFromName = canonicalCategory(categoryToken);
   let category = "general";
 
-  if (certificateLike && !isKnownCategory(dirCategory)) {
+  if (organizedCategory && isKnownCategory(organizedCategory)) {
+    category = organizedCategory;
+  } else if (certificateLike && !isKnownCategory(dirCategory)) {
     category = "recognition";
     parseWarnings.push(
       `${normalizeSlashes(relativePath)}: certificate-like filename was classified as recognition; rename to radiance-certificate-... for cleaner parsing.`,
@@ -850,12 +1293,36 @@ function parseMediaInfo(filePath, inputRoot) {
     sequenceNumber = 1;
   }
 
+  const parsedCondition = ["generic-service-card", "category-tab-visual", "hero-support"].includes(category)
+    ? normalizeCondition(subject || role)
+    : null;
+
+  if (
+    parsedCondition?.unknown &&
+    category !== "hero-support" &&
+    !/preview|contact-sheet|visuals-preview/.test(slugify(stem))
+  ) {
+    parseWarnings.push(
+      `${normalizeSlashes(relativePath)}: unknown condition name "${parsedCondition.name}" was parsed from filename/folder; add a normalization alias if this should be public-facing.`,
+    );
+  }
+
   return {
     originalFilename: parsed.base,
     rawRelativePath: normalizeSlashes(relativePath),
     category,
     detectedType: detectedTypes[category] || "image",
+    mediaClassification: detectedTypes[category] || "image",
     subject,
+    conditionName: parsedCondition?.name || "",
+    publicTitle: parsedCondition
+      ? publicTitleFor(
+          inferTransformationCategory(parsedCondition.slug, slugify([subject, role, relativePath].join("-"))) || "skin",
+          parsedCondition.name,
+          parsedCondition.treatment,
+        )
+      : "",
+    treatment: parsedCondition?.treatment || "",
     usage,
     role,
     sequence,
@@ -884,7 +1351,13 @@ function defaultUsage(category) {
       "press-newspaper": "press",
       team: "team-section",
       videos: "video-thumbnail",
+      gallery: "clinic-gallery",
       "logo-brand": "brand-system",
+      "generic-service-card": "premium-service-card",
+      "hero-support": "homepage-hero-support",
+      "category-tab-visual": "treatment-category-tab",
+      "skin-before-after": "skin-before-after",
+      "hair-before-after": "hair-before-after",
     }[category] || "website"
   );
 }
@@ -916,6 +1389,30 @@ function recommendedWebsiteUsage(category, usage, subject) {
 
   if (category === "before-after") {
     return `Consent-led before/after preview for ${subject.replaceAll("-", " ")}; publish only after consent review`;
+  }
+
+  if (category === "hair-before-after") {
+    return `Hair Transformation Examples for ${subject.replaceAll("-", " ")}`;
+  }
+
+  if (category === "skin-before-after") {
+    return `Skin Improvement Examples for ${subject.replaceAll("-", " ")}`;
+  }
+
+  if (category === "generic-service-card") {
+    return "Premium homepage service cards and treatment option cards";
+  }
+
+  if (category === "hero-support") {
+    return "Homepage hero support visual";
+  }
+
+  if (category === "gallery") {
+    return "Inside Radiance Clinics gallery";
+  }
+
+  if (category === "category-tab-visual") {
+    return "Homepage treatment category tabs";
   }
 
   if (category === "recognition") {
@@ -986,6 +1483,8 @@ async function ensureOutputDirs(outRoot) {
 }
 
 async function writeVariant(inputPath, outputPath, variant, format) {
+  if (existsSync(outputPath)) return;
+
   const base = sharp(inputPath, { failOn: "none" })
     .rotate()
     .resize({
@@ -1081,8 +1580,29 @@ async function processImage({ filePath, inputRoot, outRoot, usedSlugs, metadataI
     manifestMeta.consent_confirmed ??
       manifestMeta.patient_consent_confirmed ??
       manifestMeta.consent,
-    false,
+    ["before-after", "skin-before-after", "hair-before-after"].includes(category),
   );
+  const normalizedCondition = normalizeCondition(
+    manifestMeta.condition || info.conditionName || subject || role || slug,
+  );
+  const hasConditionName = Boolean(info.conditionName || manifestMeta.condition);
+  const conditionName = hasConditionName ? normalizedCondition.name : "";
+  const treatment =
+    manifestMeta.treatment || info.treatment || (conditionName ? normalizedCondition.treatment : "");
+  const transformationCategory =
+    info.transformationCategory ||
+    (conditionName
+      ? inferTransformationCategory(
+          normalizedCondition.slug,
+          slugify([subject, role, info.rawRelativePath].join("-")),
+        )
+      : "");
+  const publicTitle =
+    manifestMeta.public_title ||
+    info.publicTitle ||
+    (conditionName && transformationCategory
+      ? publicTitleFor(transformationCategory, conditionName, treatment)
+      : "");
 
   return {
     id: slug,
@@ -1093,7 +1613,12 @@ async function processImage({ filePath, inputRoot, outRoot, usedSlugs, metadataI
     category,
     detectedType: detectedTypes[category] || info.detectedType,
     type: detectedTypes[category] || info.detectedType,
+    mediaClassification: info.mediaClassification || detectedTypes[category] || info.detectedType,
+    transformationCategory,
     subject,
+    conditionName,
+    publicTitle,
+    treatment,
     usage: manifestMeta.usage || info.usage,
     role,
     title: manifestMeta.title || displayTitle,
@@ -1124,6 +1649,7 @@ async function processImage({ filePath, inputRoot, outRoot, usedSlugs, metadataI
     caseId: info.caseId || null,
     beforeAfterRole: info.beforeAfterRole,
     beforeAfterView: info.beforeAfterView || null,
+    beforeAfterViewLabel: info.beforeAfterViewLabel || null,
     beforeAfterPhase: info.beforeAfterPhase || null,
     beforeAfterPairKey: info.pairKey || null,
     width: dimensions.width,
@@ -1151,6 +1677,9 @@ function pairImagePayload(item) {
     id: item.id,
     role: item.role,
     beforeAfterRole: item.beforeAfterRole,
+    beforeAfterView: item.beforeAfterView,
+    beforeAfterViewLabel: item.beforeAfterViewLabel,
+    beforeAfterPhase: item.beforeAfterPhase,
     originalFilename: item.originalFilename,
     originalRelativePath: item.originalRelativePath,
     desktop: item.generated.heroDesktop,
@@ -1168,27 +1697,47 @@ function pairImagePayload(item) {
 function buildBeforeAfterPairs(manifest) {
   const pairMap = new Map();
   const warnings = [];
-  const requiredRoles = ["frontBefore", "frontAfter", "angleBefore", "angleAfter"];
+  const supportedCategories = new Set(["before-after", "skin-before-after", "hair-before-after"]);
 
   for (const item of manifest) {
-    if (item.category !== "before-after" || !item.caseId || !item.beforeAfterRole) {
+    if (!supportedCategories.has(item.category) || !item.beforeAfterPhase) {
       continue;
     }
 
-    const key = item.beforeAfterPairKey || `${item.subject}-${item.caseId}`;
+    const inferredCategory =
+      item.transformationCategory ||
+      (item.category === "skin-before-after"
+        ? "skin"
+        : item.category === "hair-before-after"
+          ? "hair"
+          : inferTransformationCategory(item.subject, slugify([item.subject, item.rawRelativePath].join("-"))) || "hair");
+    const condition = normalizeCondition(item.conditionName || item.subject);
+    const conditionName = item.conditionName || condition.name || titleFromSlug(item.subject);
+    const treatment = item.treatment || condition.treatment || conditionName;
+    const key = item.beforeAfterPairKey || `${inferredCategory}-${condition.slug || item.subject}-${item.caseId || "set"}`;
     const pair = pairMap.get(key) || {
+      id: key,
       pairKey: key,
-      caseId: item.caseId,
-      category: item.subject,
+      caseId: item.caseId || key,
+      category: inferredCategory,
+      conditionName,
+      publicTitle: item.publicTitle || publicTitleFor(inferredCategory, conditionName, treatment),
+      treatment,
       treatmentCategory: item.subject,
-      title: item.title || titleFromSlug(`${item.subject} ${item.caseId}`),
-      patientLabel: `Case ${String(item.caseId).replace(/^case/i, "").toUpperCase()}`,
+      title: item.publicTitle || publicTitleFor(inferredCategory, conditionName, treatment),
+      patientLabel: item.publicTitle || publicTitleFor(inferredCategory, conditionName, treatment),
       timeGap: item.timeGap || "",
-      disclaimer: item.disclaimer || "",
+      disclaimer:
+        item.disclaimer ||
+        "Results vary by individual. Images are shared with consent. A consultation is required.",
       consentConfirmed: false,
       publish: true,
       featured: false,
       sortOrder: item.sortOrder || 0,
+      views: {},
+      beforeAfterPairs: [],
+      additionalImages: [],
+      duplicateImages: [],
       frontBefore: null,
       frontAfter: null,
       angleBefore: null,
@@ -1202,7 +1751,32 @@ function buildBeforeAfterPairs(manifest) {
     };
 
     const imagePayload = pairImagePayload(item);
-    pair.images[item.beforeAfterRole] = imagePayload;
+    const view = item.beforeAfterView || "primary";
+    const viewGroup = pair.views[view] || {
+      view,
+      viewLabel: item.beforeAfterViewLabel || viewLabel(view),
+      before: null,
+      after: null,
+      duplicates: [],
+    };
+    const phase = item.beforeAfterPhase === "after" ? "after" : "before";
+    const existing = viewGroup[phase];
+
+    if (existing) {
+      const selected = preferPairImage(existing, imagePayload);
+      const duplicate = selected === existing ? imagePayload : existing;
+      viewGroup[phase] = selected;
+      viewGroup.duplicates.push(duplicate);
+      pair.duplicateImages.push(duplicate);
+      warnings.push(
+        `${key}: duplicate ${viewGroup.viewLabel} ${phase} image "${duplicate.originalFilename}" kept in manifest; selected "${selected.originalFilename}" for the public pair.`,
+      );
+    } else {
+      viewGroup[phase] = imagePayload;
+    }
+
+    pair.views[view] = viewGroup;
+    pair.images[item.beforeAfterRole || `${view}-${phase}`] = imagePayload;
 
     if (Object.prototype.hasOwnProperty.call(pair, item.beforeAfterRole)) {
       pair[item.beforeAfterRole] = imagePayload;
@@ -1225,15 +1799,45 @@ function buildBeforeAfterPairs(manifest) {
 
   const pairs = Array.from(pairMap.values())
     .map((pair) => {
-      if (!pair.frontBefore && pair.before) pair.frontBefore = pair.before;
-      if (!pair.frontAfter && pair.after) pair.frontAfter = pair.after;
+      const orderedViews = Object.values(pair.views).sort(compareViewGroups);
+      const completeViews = [];
+      const additionalImages = [];
 
-      const missing = requiredRoles
-        .filter((role) => !pair[role])
-        .map((role) => role.replace(/[A-Z]/g, (match) => ` ${match.toLowerCase()}`));
+      for (const view of orderedViews) {
+        if (view.before && view.after) {
+          completeViews.push({
+            viewLabel: view.viewLabel,
+            before: view.before,
+            after: view.after,
+          });
+          continue;
+        }
 
-      if (missing.length) {
-        warnings.push(`${pair.pairKey}: missing ${missing.join(" and ")} image.`);
+        if (view.before || view.after) {
+          const missing = view.before ? "after" : "before";
+          const present = view.before || view.after;
+          warnings.push(`${pair.pairKey}: unpaired ${view.viewLabel} image is missing ${missing}.`);
+          additionalImages.push(present);
+        }
+      }
+
+      const primary = completeViews[0];
+      const secondary = completeViews[1];
+      const crown = completeViews.find((view) => /crown|top/i.test(view.viewLabel));
+
+      pair.beforeAfterPairs = completeViews;
+      pair.additionalImages = [...additionalImages, ...pair.duplicateImages];
+      pair.frontBefore = pair.frontBefore || primary?.before || null;
+      pair.frontAfter = pair.frontAfter || primary?.after || null;
+      pair.angleBefore = pair.angleBefore || secondary?.before || null;
+      pair.angleAfter = pair.angleAfter || secondary?.after || null;
+      pair.topBefore = pair.topBefore || crown?.before || null;
+      pair.topAfter = pair.topAfter || crown?.after || null;
+      if (!pair.before && pair.frontBefore) pair.before = pair.frontBefore;
+      if (!pair.after && pair.frontAfter) pair.after = pair.frontAfter;
+
+      if (!completeViews.length) {
+        warnings.push(`${pair.pairKey}: no valid before/after transformation pair was found.`);
       }
 
       if (!pair.consentConfirmed) {
@@ -1244,13 +1848,43 @@ function buildBeforeAfterPairs(manifest) {
 
       return {
         ...pair,
-        complete: missing.length === 0,
-        warnings: missing.length ? [`Missing ${missing.join(" and ")} image.`] : [],
+        complete: completeViews.length > 0,
+        warnings: completeViews.length ? [] : ["Missing a complete before/after image pair."],
       };
     })
     .sort((a, b) => a.sortOrder - b.sortOrder || a.pairKey.localeCompare(b.pairKey));
 
   return { pairs, warnings };
+}
+
+function imageExtensionPriority(image) {
+  const filename = String(image.originalFilename || "").toLowerCase();
+  if (filename.endsWith(".webp")) return 5;
+  if (filename.endsWith(".avif")) return 4;
+  if (filename.endsWith(".jpg") || filename.endsWith(".jpeg")) return 3;
+  if (filename.endsWith(".png")) return 2;
+  return 1;
+}
+
+function preferPairImage(current, candidate) {
+  return imageExtensionPriority(candidate) > imageExtensionPriority(current)
+    ? candidate
+    : current;
+}
+
+function compareViewGroups(a, b) {
+  const priority = {
+    primary: 0,
+    front: 0,
+    side: 1,
+    second: 1,
+    angle: 1,
+    crown: 2,
+    top: 2,
+    closeup: 3,
+  };
+
+  return (priority[a.view] ?? 10) - (priority[b.view] ?? 10) || a.view.localeCompare(b.view);
 }
 
 function duplicateWarnings(manifest) {
@@ -1336,12 +1970,29 @@ async function main() {
 
   await ensureOutputDirs(outRoot);
 
+  const publicRoot = path.resolve("public");
+  const supplementalFolders = await discoverSupplementalFolders({
+    inputRoot,
+    publicRoot,
+    outRoot,
+  });
   const sourceFiles = (await walkImages(inputRoot)).map((filePath) => ({
     filePath,
     inputRoot,
   }));
   const enhancedCertificatesRoot = path.resolve("public/radiance-certificates-enhanced");
-  const publicRoot = path.resolve("public");
+
+  for (const folder of supplementalFolders) {
+    if (isSameOrInside(inputRoot, folder)) continue;
+
+    const files = await walkImages(folder);
+    sourceFiles.push(
+      ...files.map((filePath) => ({
+        filePath,
+        inputRoot: publicRoot,
+      })),
+    );
+  }
 
   if (existsSync(enhancedCertificatesRoot) && !enhancedCertificatesRoot.startsWith(inputRoot)) {
     const certificateFiles = await walkImages(enhancedCertificatesRoot);
@@ -1357,12 +2008,19 @@ async function main() {
     throw new Error(`No supported images found in ${inputRoot}`);
   }
 
-  const metadataIndex = await loadManifestMetadata(inputRoot);
+  const metadataIndex = await loadManifestMetadata([
+    inputRoot,
+    ...supplementalFolders,
+    enhancedCertificatesRoot,
+  ]);
 
   console.log("Radiance media pipeline");
   console.log(`Input: ${inputRoot}`);
   console.log(`Output: ${outRoot}`);
   console.log(`Images found: ${sourceFiles.length}`);
+  console.log(
+    `Supplemental folders: ${supplementalFolders.length ? supplementalFolders.join(", ") : "none"}`,
+  );
   console.log(`CSV manifests: ${metadataIndex.loadedFiles.length ? metadataIndex.loadedFiles.join(", ") : "none"}`);
   console.log("");
 

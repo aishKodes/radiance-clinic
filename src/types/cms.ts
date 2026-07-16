@@ -144,9 +144,18 @@ export type CmsTransformationCategory = "hair" | "skin";
 export type CmsTransformation = {
   id: string;
   title: string;
+  category?: CmsTransformationCategory;
+  conditionName?: string;
+  publicTitle?: string;
   subtitle?: string;
   treatment: string;
   timeGap?: string;
+  disclaimer?: string;
+  beforeAfterPairs?: {
+    viewLabel: string;
+    before: CmsImage;
+    after: CmsImage;
+  }[];
   frontBefore?: CmsImage;
   frontAfter?: CmsImage;
   angleBefore?: CmsImage;

@@ -1,64 +1,134 @@
-import Link from "next/link";
-import {ArrowUpRight, Orbit, Sparkles} from "lucide-react";
-import {treatmentUniverse} from "@/data/seed";
-import {cn} from "@/lib/utils";
+"use client";
 
-const colorMap = {
-  bronze:
-    "from-[var(--champagne)]/24 via-white/72 to-[var(--bronze)]/10 text-[var(--bronze)]",
-  aqua: "from-[var(--aqua)]/14 via-white/72 to-[var(--aqua)]/8 text-[var(--aqua)]",
-  coral:
-    "from-[var(--coral)]/14 via-white/72 to-[var(--coral)]/8 text-[var(--coral)]",
-  orchid:
-    "from-[var(--orchid)]/12 via-white/72 to-[var(--orchid)]/7 text-[var(--orchid)]",
+import Image from "next/image";
+import Link from "next/link";
+import { ArrowUpRight } from "lucide-react";
+import { useState } from "react";
+import { treatmentCategoryTabs } from "@/data/homepage-media";
+import { cn } from "@/lib/utils";
+
+const tabAccent = {
+  skin: "border-[var(--orchid)]/30 bg-[var(--orchid)]/10 text-[var(--ink)]",
+  hair: "border-[var(--bronze)]/34 bg-[var(--champagne)]/18 text-[var(--ink)]",
+  laser: "border-[var(--aqua)]/34 bg-[var(--aqua)]/10 text-[var(--ink)]",
+  aesthetics: "border-[var(--coral)]/34 bg-[var(--coral)]/10 text-[var(--ink)]",
 };
 
 export function TreatmentUniverseSection() {
+  const [activeId, setActiveId] = useState(treatmentCategoryTabs[0]?.id || "skin");
+  const active =
+    treatmentCategoryTabs.find((item) => item.id === activeId) ||
+    treatmentCategoryTabs[0];
+
+  if (!active) return null;
+
   return (
-    <div className="relative">
-      <div className="absolute left-1/2 top-1/2 hidden h-[31rem] w-[31rem] -translate-x-1/2 -translate-y-1/2 rounded-full border border-[var(--ink)]/8 lg:block" />
-      <div className="absolute left-1/2 top-1/2 hidden h-[20rem] w-[20rem] -translate-x-1/2 -translate-y-1/2 rounded-full border border-[var(--bronze)]/14 lg:block" />
-      <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-7 lg:grid-rows-2">
-        {treatmentUniverse.map((item, index) => (
-          <Link
-            key={item.title}
-            href={item.href}
+    <div className="grid gap-6 lg:grid-cols-[18rem_minmax(0,1fr)]">
+      <div
+        data-lenis-prevent-wheel
+        data-lenis-prevent-touch
+        className="flex gap-3 overflow-x-auto pb-2 lg:block lg:space-y-3 lg:overflow-visible lg:pb-0"
+        role="tablist"
+        aria-label="Treatment categories"
+      >
+        {treatmentCategoryTabs.map((tab) => (
+          <button
+            key={tab.id}
+            type="button"
+            role="tab"
+            id={`treatment-tab-trigger-${tab.id}`}
+            aria-selected={active.id === tab.id}
+            aria-controls={`treatment-tab-${tab.id}`}
+            onClick={() => setActiveId(tab.id)}
             className={cn(
-              "gradient-border group relative min-h-64 overflow-hidden rounded-[1.6rem] bg-gradient-to-br p-6 shadow-[0_22px_70px_rgba(15,16,22,0.07)] backdrop-blur-xl transition duration-500 hover:-translate-y-1 hover:shadow-[0_30px_100px_rgba(15,16,22,0.12)]",
-              colorMap[item.accent],
-              index === 0 && "lg:col-span-3",
-              index === 1 && "lg:col-span-2",
-              index === 2 && "lg:col-span-2",
-              index === 3 && "lg:col-span-2",
-              index === 4 && "lg:col-span-2",
-              index === 5 && "lg:col-span-2",
-              index === 6 && "lg:col-span-1",
+              "min-w-[11rem] rounded-[1.2rem] border px-5 py-4 text-left transition hover:-translate-y-0.5 lg:w-full",
+              active.id === tab.id
+                ? tabAccent[tab.id]
+                : "border-[var(--ink)]/10 bg-white/54 text-[var(--ink)]/58 hover:bg-white/76",
             )}
           >
-            <div className="absolute -right-10 -top-10 h-32 w-32 rounded-full bg-current/10 blur-2xl transition duration-500 group-hover:scale-110" />
-            <div className="relative z-10 flex h-full flex-col">
-              <div className="mb-10 flex items-center justify-between">
-                <span className="grid h-12 w-12 place-items-center rounded-2xl bg-white/72 text-[var(--ink)] shadow-sm">
-                  {index % 2 === 0 ? (
-                    <Orbit className="h-5 w-5" />
-                  ) : (
-                    <Sparkles className="h-5 w-5" />
-                  )}
-                </span>
-                <ArrowUpRight className="h-5 w-5 text-[var(--ink)]/46 transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
-              </div>
-              <p className="text-[0.65rem] font-extrabold uppercase tracking-[0.22em] text-[var(--ink)]/42">
-                Treatment Option
-              </p>
-              <h3 className="mt-3 font-serif text-4xl leading-[0.92] text-[var(--ink)]">
-                {item.title}
-              </h3>
-              <p className="mt-5 max-w-sm flex-1 text-sm leading-7 text-[var(--ink)]/62">
-                {item.text}
-              </p>
-            </div>
-          </Link>
+            <span className="block text-[0.64rem] font-extrabold uppercase tracking-[0.2em]">
+              Treatment Options
+            </span>
+            <span className="mt-2 block text-lg font-extrabold">
+              {tab.label}
+            </span>
+          </button>
         ))}
+      </div>
+
+      <div className="min-w-0">
+        {treatmentCategoryTabs.map((tab) => {
+          const isActive = active.id === tab.id;
+
+          return (
+            <div
+              key={tab.id}
+              id={`treatment-tab-${tab.id}`}
+              role="tabpanel"
+              aria-labelledby={`treatment-tab-trigger-${tab.id}`}
+              hidden={!isActive}
+              className={cn(
+                "overflow-hidden rounded-[1.8rem] border border-[var(--ink)]/10 bg-white/64 shadow-[0_24px_86px_rgba(15,16,22,0.08)] backdrop-blur-xl",
+                !isActive && "hidden",
+              )}
+            >
+              <div className="grid lg:grid-cols-[0.9fr_1.1fr]">
+                <div className="relative min-h-[18rem] bg-[var(--mist)] lg:min-h-[31rem]">
+                  {tab.image ? (
+                    <Image
+                      src={tab.image.src}
+                      alt={tab.image.altText || tab.image.alt}
+                      fill
+                      sizes="(min-width: 1024px) 42vw, 100vw"
+                      placeholder={tab.image.blurDataUrl ? "blur" : "empty"}
+                      blurDataURL={tab.image.blurDataUrl}
+                      className="object-cover"
+                    />
+                  ) : (
+                    <div className="grid h-full place-items-center bg-[linear-gradient(135deg,#fbf7f0,#eef7f8)]">
+                      <span className="rounded-full border border-[var(--ink)]/10 bg-white/70 px-4 py-2 text-xs font-extrabold uppercase tracking-[0.18em] text-[var(--ink)]/54">
+                        Radiance Clinics
+                      </span>
+                    </div>
+                  )}
+                  <div className="absolute inset-0 bg-[linear-gradient(180deg,transparent,rgba(15,16,22,0.58))]" />
+                  <div className="absolute inset-x-5 bottom-5 text-white">
+                    <p className="text-[0.64rem] font-extrabold uppercase tracking-[0.22em] text-[var(--champagne)]">
+                      {tab.label}
+                    </p>
+                    <h3 className="mt-2 font-serif text-4xl leading-none">
+                      {tab.title}
+                    </h3>
+                  </div>
+                </div>
+
+                <div className="p-5 sm:p-7 lg:p-8">
+                  <p className="max-w-xl text-sm leading-7 text-[var(--ink)]/66">
+                    {tab.description}
+                  </p>
+                  <div className="mt-7 grid gap-3 sm:grid-cols-2">
+                    {tab.procedures.map((procedure) => (
+                      <div
+                        key={procedure}
+                        className="rounded-[1.1rem] border border-[var(--ink)]/10 bg-[var(--ivory)]/72 px-4 py-3 text-sm font-extrabold text-[var(--ink)] shadow-sm"
+                      >
+                        {procedure}
+                      </div>
+                    ))}
+                  </div>
+                  <Link
+                    href="/treatments"
+                    className="mt-8 inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-[var(--ink)]/10 bg-[var(--ink)] px-6 py-3 text-sm font-extrabold uppercase tracking-[0.16em] text-[var(--ivory)] transition hover:-translate-y-0.5"
+                  >
+                    Explore Treatments
+                    <ArrowUpRight className="h-4 w-4" />
+                  </Link>
+                </div>
+              </div>
+            </div>
+          );
+        })}
       </div>
     </div>
   );

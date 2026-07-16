@@ -5,10 +5,11 @@ import { PremiumButton } from "@/components/PremiumButton";
 import { SectionHeader } from "@/components/SectionHeader";
 import { StickyConsultationCard } from "@/components/StickyConsultationCard";
 import { TransformationShowcase } from "@/components/TransformationShowcase";
-import { skinTransformations as fallbackSkinTransformations } from "@/data/seed";
-import { getBeforeAfterCases } from "@/data/site";
+import {
+  hairTransformationExamples,
+  skinTransformationExamples,
+} from "@/data/homepage-media";
 import { webPageJsonLd } from "@/lib/schema";
-import { beforeAfterCasesToTransformations } from "@/lib/transformations";
 
 export const metadata: Metadata = {
   title: "Before & After",
@@ -19,10 +20,7 @@ export const metadata: Metadata = {
   },
 };
 
-export default async function BeforeAfterPage() {
-  const beforeAfterCases = await getBeforeAfterCases();
-  const hairTransformations = beforeAfterCasesToTransformations(beforeAfterCases);
-
+export default function BeforeAfterPage() {
   return (
     <>
       <JsonLd
@@ -87,17 +85,17 @@ export default async function BeforeAfterPage() {
           <TransformationShowcase
             eyebrow="Hair Transformation Examples"
             title="Hair Transformation Examples"
-            description="Explore selected hair restoration examples shared with consent. Results vary by individual and consultation is required."
+            description="Selected hair restoration examples shared with consent. Results vary by individual and consultation is required."
             category="hair"
-            transformations={hairTransformations}
+            transformations={hairTransformationExamples}
           />
           <div className="mt-12">
             <TransformationShowcase
               eyebrow="Skin Improvement Examples"
               title="Skin Improvement Examples"
-              description="Selected skin improvement examples will be added as clinic-approved images become available."
+              description="Selected examples for skin concerns such as acne scars, pigmentation, melasma and rejuvenation, shared with consent."
               category="skin"
-              transformations={fallbackSkinTransformations}
+              transformations={skinTransformationExamples}
             />
           </div>
           <PremiumButton href="/contact" className="mt-10">

@@ -516,8 +516,7 @@ export const videoItems: VideoItem[] = [
     title: "Hair Restoration Planning",
     label: "Doctor Explains",
     description:
-      "Educational placeholder for Radiance video content on diagnosis-first restoration planning.",
-    youtubeId: "placeholder",
+      "Doctor-led guidance on diagnosis-first hair restoration planning.",
     href: "https://www.youtube.com/",
     thumbnail: radianceMedia.doctorConsultation,
   },
@@ -526,7 +525,6 @@ export const videoItems: VideoItem[] = [
     label: "Our Videos",
     description:
       "A patient-friendly video space for safety, preparation and aftercare guidance.",
-    youtubeId: "placeholder",
     href: "https://www.youtube.com/",
     thumbnail: radianceMedia.equipmentRoomTwo,
   },
@@ -535,7 +533,6 @@ export const videoItems: VideoItem[] = [
     label: "Patient Education",
     description:
       "A short-form education slot for recent posts by Dr. Satyarth Prakash.",
-    youtubeId: "placeholder",
     href: "https://www.youtube.com/",
     thumbnail: radianceMedia.doctorProfile,
   },
@@ -543,8 +540,7 @@ export const videoItems: VideoItem[] = [
     title: "Aesthetic Consultation",
     label: "Community",
     description:
-      "Placeholder for reels or videos that explain what happens before treatment.",
-    youtubeId: "placeholder",
+      "Videos that explain what happens before aesthetic treatment planning.",
     href: "https://www.youtube.com/",
     thumbnail: radianceMedia.clinicReception,
   },
@@ -661,12 +657,12 @@ export const doctorProfile: DoctorProfile = {
 };
 
 export const homepageContent: HomepageContent = {
-  heroEyebrow: "Hair • Skin • Laser • Aesthetic Care",
-  heroTitle: "Advanced Hair, Skin & Aesthetic Care in Bhubaneswar",
+  heroEyebrow: "20+ Years of Excellence | US FDA Approved Technology | Expert Dermatologists",
+  heroTitle: "Advanced Skin, Hair & Aesthetic Clinic",
   heroSubtitle:
     "Doctor-led hair transplant, skin, laser and aesthetic treatments by Dr. Satyarth Prakash at Radiance Clinics, Bhubaneswar.",
-  primaryCta: { label: "Book Consultation", href: "/contact" },
-  secondaryCta: { label: "Explore Treatments", href: "/treatments" },
+  primaryCta: { label: "Book Appointment", href: "/contact" },
+  secondaryCta: { label: "WhatsApp", href: `https://wa.me/${clinic.whatsapp}` },
   assistantTeaser: {
     label: "Chat Now",
     text: "Ask about treatments or request a consultation.",

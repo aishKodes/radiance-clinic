@@ -1,8 +1,7 @@
 "use client";
 
-import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
-import { ArrowDown, MessageCircle, Play } from "lucide-react";
+import { ArrowDown, MessageCircle, Phone, Play } from "lucide-react";
 import {
   AnimatedAuroraBackground,
   FloatingSkinCells,
@@ -16,93 +15,12 @@ import {
 import { HeroMediaCollage } from "@/components/HeroMediaCollage";
 import { OpenBookingButton } from "@/components/OpenBookingButton";
 import { PremiumButton } from "@/components/PremiumButton";
-import type { ClinicSettings, CmsImage, HomepageContent } from "@/types/cms";
+import type { ClinicSettings, HomepageContent } from "@/types/cms";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
   visible: { opacity: 1, y: 0 },
 };
-
-function imagePosition(image: CmsImage) {
-  const focal = image.focalPoint || { x: 0.5, y: 0.5 };
-  return `${focal.x * 100}% ${focal.y * 100}%`;
-}
-
-function imageSearchText(image: CmsImage) {
-  return `${image.filename || ""} ${image.role || ""} ${image.category || ""} ${image.altText || ""} ${image.alt || ""}`;
-}
-
-function isDoctorOrRecognitionVisual(image: CmsImage) {
-  return /doctor-hero|doctor-image|hero-primary|hero-secondary|anil|award|recognition|event|badge|threebest|threebestrated/i.test(
-    imageSearchText(image),
-  );
-}
-
-function heroHighlightImages(images: CmsImage[]) {
-  const clinicImages = images.filter(
-    (image) =>
-      !isDoctorOrRecognitionVisual(image) &&
-      /hero-gallery|clinic|reception|interior|consultation|treatment|happy-patient|patient/i.test(
-        imageSearchText(image),
-      ),
-  );
-
-  return (clinicImages.length ? clinicImages : images.filter((image) => !isDoctorOrRecognitionVisual(image))).slice(0, 3);
-}
-
-function HeroClinicHighlights({ images }: { images: CmsImage[] }) {
-  const highlights = heroHighlightImages(images);
-
-  if (!highlights.length) return null;
-
-  return (
-    <motion.div
-      variants={fadeUp}
-      className="mt-5 hidden max-w-2xl rounded-[1.8rem] border border-white/58 bg-white/50 p-3 shadow-[0_20px_62px_rgba(16,16,20,0.08)] backdrop-blur-xl lg:block"
-    >
-      <div className="grid grid-cols-3 gap-2">
-        {highlights.map((image, index) => (
-          <div
-            key={image.id || image.src || index}
-            className="relative aspect-[4/3] overflow-hidden rounded-[1.15rem] bg-[var(--mist)]"
-          >
-            <Image
-              src={image.src || image.desktopUrl}
-              alt={image.altText || image.alt}
-              fill
-              sizes="(min-width: 1024px) 190px, 33vw"
-              placeholder={image.blurDataUrl ? "blur" : "empty"}
-              blurDataURL={image.blurDataUrl}
-              className="object-cover"
-              style={{ objectPosition: imagePosition(image) }}
-            />
-          </div>
-        ))}
-      </div>
-      <div className="px-2 pb-1 pt-4">
-        <p className="text-[0.64rem] font-extrabold uppercase tracking-[0.22em] text-[var(--bronze)]">
-          Clinic highlights
-        </p>
-        <p className="mt-2 max-w-xl text-sm leading-6 text-[var(--ink)]/62">
-          A calm, modern Bhubaneswar clinic environment for consultation,
-          treatment planning and doctor-led care.
-        </p>
-        <div className="mt-4 grid gap-2 sm:grid-cols-3">
-          {["Comfort-first clinic", "Private planning", "Doctor-led care"].map(
-            (item) => (
-              <span
-                key={item}
-                className="rounded-full border border-[var(--ink)]/10 bg-white/56 px-3 py-2 text-center text-[0.62rem] font-extrabold uppercase tracking-[0.14em] text-[var(--ink)]/52"
-              >
-                {item}
-              </span>
-            ),
-          )}
-        </div>
-      </div>
-    </motion.div>
-  );
-}
 
 export function LuxuryHero({
   homepage = seedHomepageContent,
@@ -173,17 +91,20 @@ export function LuxuryHero({
             <OpenBookingButton source="homepage_booking">
               {homepage.primaryCta.label}
             </OpenBookingButton>
-            <PremiumButton href={homepage.secondaryCta.href} variant="outline">
-              {homepage.secondaryCta.label}
-            </PremiumButton>
-            <button
-              type="button"
-              onClick={() => window.dispatchEvent(new Event("radiance:open-chat"))}
-              className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-[var(--ink)]/10 bg-white/68 px-6 py-3 text-sm font-extrabold uppercase tracking-[0.16em] text-[var(--ink)] shadow-[0_18px_55px_rgba(15,16,22,0.08)] backdrop-blur-xl transition hover:-translate-y-0.5 hover:bg-white"
+            <PremiumButton
+              href={`https://wa.me/${settings.whatsapp}`}
+              variant="outline"
+              icon={MessageCircle}
             >
-              Chat Now
-              <MessageCircle className="h-4 w-4" />
-            </button>
+              WhatsApp
+            </PremiumButton>
+            <PremiumButton
+              href={`tel:${settings.phone}`}
+              variant="outline"
+              icon={Phone}
+            >
+              Call Now
+            </PremiumButton>
           </motion.div>
 
           <motion.div
@@ -226,7 +147,6 @@ export function LuxuryHero({
               );
             })}
           </motion.div>
-          <HeroClinicHighlights images={heroImages} />
         </motion.div>
 
         <motion.div

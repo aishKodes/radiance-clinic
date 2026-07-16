@@ -56,7 +56,7 @@ export function beforeAfterCaseToTransformation(
     subtitle:
       item.resultSummary ||
       item.note ||
-      "Consent-confirmed hair restoration photography for consultation discussion.",
+      "Consent-confirmed hair restoration images for consultation discussion.",
     treatment: item.treatment || "Hair Restoration",
     timeGap: item.timeGap || "Timeline discussed during consultation",
     frontBefore: views[0]?.before,

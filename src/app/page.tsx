@@ -26,20 +26,23 @@ import { RecognitionCarousel } from "@/components/RecognitionCarousel";
 import {Reveal} from "@/components/Reveal";
 import {SectionHeader} from "@/components/SectionHeader";
 import { SocialCommunitySection } from "@/components/SocialCommunitySection";
-import {TreatmentCard} from "@/components/TreatmentCard";
 import {TreatmentUniverseSection} from "@/components/TreatmentUniverseSection";
 import { TransformationShowcase } from "@/components/TransformationShowcase";
 import {WhyChooseRadiance} from "@/components/WhyChooseRadiance";
-import { skinTransformations as fallbackSkinTransformations } from "@/data/seed";
+import {
+  doctorPatientHeroImage,
+  hairTransformationExamples,
+  premiumHeroSupportImages,
+  premiumServiceCards,
+  skinTransformationExamples,
+} from "@/data/homepage-media";
 import {
   faqJsonLd,
   medicalClinicJsonLd,
   webPageJsonLd,
 } from "@/lib/schema";
-import { beforeAfterCasesToTransformations } from "@/lib/transformations";
 import {
   getArticles,
-  getBeforeAfterCases,
   getClinicSettings,
   getDoctorProfile,
   getGalleryImages,
@@ -51,7 +54,6 @@ import {
   getSocialLinks,
   getSocialStats,
   getTestimonials,
-  getTreatments,
   getVideoItems,
 } from "@/data/site";
 
@@ -60,10 +62,8 @@ export default async function Home() {
     settings,
     homepage,
     doctor,
-    treatments,
     articles,
     testimonials,
-    beforeAfterCases,
     heroImages,
     proofStats,
     videos,
@@ -76,10 +76,8 @@ export default async function Home() {
     getClinicSettings(),
     getHomepageContent(),
     getDoctorProfile(),
-    getTreatments(),
     getArticles(),
     getTestimonials(),
-    getBeforeAfterCases(),
     getHeroImages(),
     getProofStats(),
     getVideoItems(),
@@ -90,9 +88,19 @@ export default async function Home() {
     getReviewSummary(),
   ]);
 
-  const featuredTreatments = treatments.slice(0, 8);
+  const featuredTreatments = premiumServiceCards;
   const recentArticles = articles.slice(0, 3);
-  const hairTransformations = beforeAfterCasesToTransformations(beforeAfterCases);
+  const seenHeroImages = new Set<string>();
+  const homepageHeroImages = [
+    ...heroImages,
+    ...premiumHeroSupportImages,
+    doctorPatientHeroImage,
+  ].filter((image) => {
+    const key = image.id || image.src;
+    if (!key || seenHeroImages.has(key)) return false;
+    seenHeroImages.add(key);
+    return true;
+  });
 
   return (
     <>
@@ -115,7 +123,7 @@ export default async function Home() {
           primaryCta: homepage.primaryCta,
           secondaryCta: homepage.secondaryCta,
           assistantTeaser: homepage.assistantTeaser,
-          heroImages,
+          heroImages: homepageHeroImages,
           stats: homepage.stats,
         }}
         settings={settings}
@@ -157,9 +165,9 @@ export default async function Home() {
             <TransformationShowcase
               eyebrow="Hair Transformation Examples"
               title="Hair Transformation Examples"
-              description="Explore selected hair restoration examples shared with consent. Results vary by individual and consultation is required."
+              description="Selected hair restoration examples shared with consent. Results vary by individual and consultation is required."
               category="hair"
-              transformations={hairTransformations}
+              transformations={hairTransformationExamples}
             />
           </Reveal>
 
@@ -167,9 +175,9 @@ export default async function Home() {
             <TransformationShowcase
               eyebrow="Skin Improvement Examples"
               title="Skin Improvement Examples"
-              description="Selected skin improvement examples will be added as clinic-approved images become available."
+              description="Selected examples for skin concerns such as acne scars, pigmentation, melasma and rejuvenation, shared with consent."
               category="skin"
-              transformations={fallbackSkinTransformations}
+              transformations={skinTransformationExamples}
             />
           </Reveal>
         </div>
@@ -214,10 +222,42 @@ export default async function Home() {
               Explore all treatments
             </PremiumButton>
           </div>
-          <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
             {featuredTreatments.map((treatment, index) => (
-              <Reveal key={treatment.slug} delay={index * 0.04}>
-                <TreatmentCard treatment={treatment} featured={index === 0} />
+              <Reveal key={treatment.title} delay={index * 0.04}>
+                <Link
+                  href={`/treatments/${treatment.cluster}/${treatment.slug}`}
+                  className="group block h-full overflow-hidden rounded-[1.4rem] border border-[var(--ink)]/10 bg-white/72 shadow-[0_22px_76px_rgba(15,16,22,0.08)] backdrop-blur-xl transition duration-500 hover:-translate-y-1 hover:shadow-[0_30px_96px_rgba(15,16,22,0.12)]"
+                >
+                  {treatment.image ? (
+                    <div className="relative aspect-[4/3] overflow-hidden bg-[var(--mist)]">
+                      <Image
+                        src={treatment.image.src}
+                        alt={treatment.image.altText || treatment.image.alt}
+                        fill
+                        sizes="(min-width: 1280px) 25vw, (min-width: 768px) 50vw, 100vw"
+                        placeholder={treatment.image.blurDataUrl ? "blur" : "empty"}
+                        blurDataURL={treatment.image.blurDataUrl}
+                        className="object-cover transition duration-700 group-hover:scale-105"
+                      />
+                      <div className="absolute inset-0 bg-[linear-gradient(180deg,transparent,rgba(15,16,22,0.36))]" />
+                    </div>
+                  ) : null}
+                  <div className="p-5">
+                    <h3 className="text-xl font-extrabold text-[var(--ink)]">
+                      {treatment.title}
+                    </h3>
+                    <p className="mt-3 min-h-12 text-sm leading-6 text-[var(--ink)]/64">
+                      {treatment.summary}
+                    </p>
+                    <div className="mt-6 flex items-center justify-between border-t border-[var(--ink)]/10 pt-4">
+                      <span className="text-xs font-extrabold uppercase tracking-[0.18em] text-[var(--bronze)]">
+                        Learn More
+                      </span>
+                      <ArrowUpRight className="h-4 w-4 text-[var(--ink)] transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+                    </div>
+                  </div>
+                </Link>
               </Reveal>
             ))}
           </div>
@@ -234,7 +274,7 @@ export default async function Home() {
               <SectionHeader
                 eyebrow="Recognition"
                 title="Recognition & Trust"
-                description="Moments, certificates and recognitions from Radiance Clinics' journey in hair, skin and aesthetic care."
+                description="Moments, certificates and recognitions from Radiance Clinics' work in hair, skin and aesthetic care."
               />
           </Reveal>
           <Reveal delay={0.08}>
@@ -286,7 +326,7 @@ export default async function Home() {
           <div className="mb-14 grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
             <Reveal>
               <SectionHeader
-                eyebrow="Patient journey"
+                eyebrow="Care process"
                 title="A calmer path from concern to clinical plan."
                 description="From first callback to consultation, assessment, treatment planning and review, the experience is designed to feel clear and reassuring."
               />
@@ -296,7 +336,7 @@ export default async function Home() {
                 <CalendarCheck className="mb-4 h-6 w-6 text-[var(--bronze)]" />
                 <p className="text-sm leading-7 text-[var(--ink)]/62">
                   Consultation, mapping, procedure planning and maintenance are
-                  handled as a careful patient journey, not a rushed package sale.
+                  handled as a careful care process, not a rushed package sale.
                 </p>
               </div>
             </Reveal>
@@ -335,9 +375,9 @@ export default async function Home() {
         <div className="relative z-10 mx-auto max-w-7xl">
           <Reveal className="mb-14">
               <SectionHeader
-                eyebrow="Clinic ambience"
-                title="Designed for comfort, privacy and doctor-led care."
-                description="A calm, modern clinic environment for consultation, treatment planning and care."
+                eyebrow="Clinic Gallery"
+                title="Inside Radiance Clinics"
+                description="A closer look at the clinic environment, doctor-led consultations, recognition moments and patient care spaces."
               />
           </Reveal>
           <ClinicAmbienceGallery images={galleryImages} />

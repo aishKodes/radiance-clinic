@@ -23,54 +23,54 @@ function placeholderImage({
     focalPoint: { x: 0.5, y: 0.5 },
     placeholder: true,
     placeholderAllowed: true,
-    credit: "Temporary Pexels placeholder",
+    credit: "Editorial reference image",
   };
 }
 
 export const placeholderImages = {
   clinicTexture: placeholderImage({
     src: "https://images.pexels.com/photos/10521230/pexels-photo-10521230.jpeg?auto=compress&cs=tinysrgb&w=1600",
-    alt: "Placeholder aesthetic clinic detail image",
-    caption: "Temporary editorial clinic texture image.",
+    alt: "Refined aesthetic clinic detail image",
+    caption: "Editorial clinic texture image.",
   }),
   skinLaser: placeholderImage({
     src: "https://images.pexels.com/photos/16571739/pexels-photo-16571739.jpeg?auto=compress&cs=tinysrgb&w=1600",
-    alt: "Placeholder premium laser and skin care visual",
-    caption: "Temporary skin and laser treatment visual.",
+    alt: "Premium laser and skin care visual",
+    caption: "Skin and laser treatment visual.",
   }),
   hairRestoration: placeholderImage({
     src: "https://images.pexels.com/photos/11024139/pexels-photo-11024139.jpeg?auto=compress&cs=tinysrgb&w=1600",
-    alt: "Placeholder hair restoration consultation visual",
-    caption: "Temporary hair restoration and consultation visual.",
+    alt: "Hair restoration consultation visual",
+    caption: "Hair restoration and consultation visual.",
   }),
   treatmentRoom: placeholderImage({
     src: "https://images.pexels.com/photos/7108264/pexels-photo-7108264.jpeg?auto=compress&cs=tinysrgb&w=1600",
-    alt: "Placeholder treatment room image",
-    caption: "Temporary clinic room and care environment image.",
+    alt: "Treatment room image",
+    caption: "Clinic room and care environment image.",
   }),
   knowledge: placeholderImage({
     src: "https://images.pexels.com/photos/7446690/pexels-photo-7446690.jpeg?auto=compress&cs=tinysrgb&w=1600",
-    alt: "Placeholder clinical knowledge article visual",
-    caption: "Temporary knowledge library editorial image.",
+    alt: "Clinical knowledge article visual",
+    caption: "Knowledge library editorial image.",
   }),
   aestheticCare: placeholderImage({
     src: "https://images.pexels.com/photos/5619463/pexels-photo-5619463.jpeg?auto=compress&cs=tinysrgb&w=1600",
-    alt: "Placeholder aesthetic dermatology visual",
-    caption: "Temporary aesthetic dermatology visual.",
+    alt: "Aesthetic dermatology visual",
+    caption: "Aesthetic dermatology visual.",
   }),
   clinicAmbience: placeholderImage({
     src: "https://images.pexels.com/photos/10521230/pexels-photo-10521230.jpeg?auto=compress&cs=tinysrgb&w=1600",
-    alt: "Temporary placeholder for Radiance Clinics ambience photography",
-    caption: "Temporary ambience image; replace with original Radiance photography.",
+    alt: "Radiance Clinics ambience visual",
+    caption: "Clinic ambience image.",
   }),
   equipment: placeholderImage({
     src: "https://images.pexels.com/photos/16571739/pexels-photo-16571739.jpeg?auto=compress&cs=tinysrgb&w=1600",
-    alt: "Temporary placeholder for clinic equipment and treatment technology",
-    caption: "Temporary equipment image; replace from the custom admin gallery.",
+    alt: "Clinic equipment and treatment technology",
+    caption: "Clinic equipment image.",
   }),
   consultation: placeholderImage({
     src: "https://images.pexels.com/photos/7108264/pexels-photo-7108264.jpeg?auto=compress&cs=tinysrgb&w=1600",
-    alt: "Temporary placeholder for consultation and patient care experience",
-    caption: "Temporary consultation visual for the clinic journey.",
+    alt: "Consultation and patient care experience",
+    caption: "Consultation visual for patient care.",
   }),
 } satisfies Record<string, MediaAsset>;
