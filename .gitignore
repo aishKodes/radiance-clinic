@@ -32,6 +32,22 @@ public/radiance-media-raw/
 public/raw-media/
 **/radiance-media-raw/
 **/raw-media/
+originals/
+radiance-media-processed/originals/
+radiance-media-processed/raw/
+public/radiance-media-processed/originals/
+public/radiance-media-processed/raw/
+
+# heavy source/design/video formats
+*.psd
+*.ai
+*.zip
+*.mov
+*.mp4
+*.heic
+*.HEIC
+*.tiff
+*.TIFF
 
 # debug
 npm-debug.log*
