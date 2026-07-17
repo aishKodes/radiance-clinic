@@ -1,6 +1,9 @@
 import type { NextConfig } from "next";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
 
 const apiBaseUrl = process.env.NEXT_PUBLIC_API_BASE_URL;
+const projectRoot = path.dirname(fileURLToPath(import.meta.url));
 const apiImagePattern = (() => {
   if (!apiBaseUrl) return null;
 
@@ -18,6 +21,9 @@ const apiImagePattern = (() => {
 })();
 
 const nextConfig: NextConfig = {
+  turbopack: {
+    root: projectRoot,
+  },
   images: {
     remotePatterns: [
       {

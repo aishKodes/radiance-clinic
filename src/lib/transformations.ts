@@ -49,16 +49,35 @@ export function beforeAfterCaseToTransformation(
   );
   const additionalImages = getAdditionalImages(item, used);
   const number = transformationNumber(item.caseId || item.slug, index);
+  const category = inferTransformationCategory(item);
+  const conditionName =
+    item.conditionName ||
+    titleFromSlug(item.treatmentCategory || item.treatment || item.title || item.slug);
+  const publicTitle =
+    item.patientLabel ||
+    item.title ||
+    transformationFallbackTitle(category || "hair", index);
 
   return {
     id: item.caseId || item.slug || `hair-transformation-${number}`,
-    title: `Hair Transformation Example ${number}`,
+    title: item.title || publicTitle,
+    category,
+    conditionName,
+    publicTitle,
     subtitle:
       item.resultSummary ||
       item.note ||
-      "Consent-confirmed hair restoration images for consultation discussion.",
+      "Consent-confirmed treatment images for consultation discussion.",
     treatment: item.treatment || "Hair Restoration",
     timeGap: item.timeGap || "Timeline discussed during consultation",
+    disclaimer:
+      item.disclaimer ||
+      "Results vary by individual. Images are shared with consent. A consultation is required.",
+    beforeAfterPairs: views.map((view) => ({
+      viewLabel: view.label,
+      before: view.before,
+      after: view.after,
+    })),
     frontBefore: views[0]?.before,
     frontAfter: views[0]?.after,
     angleBefore: views[1]?.before,
@@ -178,6 +197,46 @@ function transformationNumber(value: string | undefined, index: number) {
   return digits
     ? digits.slice(-2).padStart(2, "0")
     : String(index + 1).padStart(2, "0");
+}
+
+function titleFromSlug(value: string | undefined) {
+  return String(value || "")
+    .toLowerCase()
+    .replace(/&/g, " and ")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "")
+    .split("-")
+    .filter(Boolean)
+    .map((part) => {
+      if (part === "and") return "and";
+      if (part === "prp") return "PRP";
+      if (part === "gfc") return "GFC";
+      if (part === "fue") return "FUE";
+      return `${part.charAt(0).toUpperCase()}${part.slice(1)}`;
+    })
+    .join(" ");
+}
+
+function inferTransformationCategory(
+  item: BeforeAfterCase,
+): TransformationCategory | undefined {
+  const text = `${item.slug} ${item.caseId || ""} ${item.title} ${item.conditionName || ""} ${
+    item.treatmentCategory || ""
+  } ${item.treatment}`.toLowerCase();
+
+  if (
+    /skin|acne|scar|pigmentation|melasma|mole|wart|tag|rosacea|redness|pore|circle|rejuvenation|tone|oily|laser/.test(
+      text,
+    )
+  ) {
+    return "skin";
+  }
+
+  if (/hair|fue|prp|gfc|beard|bald|scalp|crown|thinning|recession|hairline|transplant/.test(text)) {
+    return "hair";
+  }
+
+  return undefined;
 }
 
 function imageHasSource(image?: CmsImage): image is CmsImage {

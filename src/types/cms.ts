@@ -105,6 +105,7 @@ export type CmsBeforeAfterCase = {
   title: string;
   caseId?: string;
   treatmentCategory?: string;
+  conditionName?: string;
   patientLabel?: string;
   treatment: string;
   note: string;

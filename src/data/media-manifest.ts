@@ -717,6 +717,7 @@ function strictBeforeAfterCases() {
         slug: normalize(`${pair.treatmentCategory || "hair-transplant"}-${pair.caseId}`),
         caseId: pair.caseId,
         title: exampleLabel,
+        conditionName: pair.conditionName,
         patientLabel: exampleLabel,
         treatment: treatmentTitle,
         treatmentCategory: pair.treatmentCategory || (category === "skin" ? "skin-treatment" : "hair-transplant"),

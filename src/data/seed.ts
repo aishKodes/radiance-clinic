@@ -50,10 +50,7 @@ import {
   realSocialLinks,
   realSocialStats,
 } from "@/data/real-media";
-import {
-  beforeAfterCasesToTransformations,
-  localPublicImage,
-} from "@/lib/transformations";
+import { beforeAfterCasesToTransformations } from "@/lib/transformations";
 
 export const clinic: ClinicSettings = {
   name: "Radiance Clinics",
@@ -396,43 +393,14 @@ export const testimonials: Testimonial[] = [
 
 export const beforeAfterCases: BeforeAfterCase[] = realBeforeAfterCases;
 
-export const hairTransformations: Transformation[] =
-  beforeAfterCasesToTransformations(beforeAfterCases);
+const allTransformations = beforeAfterCasesToTransformations(beforeAfterCases);
 
-const skinBeforeAfterBase = "/radiance-skin-before-after-separated";
+export const hairTransformations: Transformation[] = allTransformations.filter(
+  (item) => item.category === "hair",
+);
 
-export const skinTransformations: Transformation[] = Array.from(
-  { length: 6 },
-  (_, index) => {
-    const caseNumber = String(index + 1).padStart(3, "0");
-    const displayNumber = String(index + 1).padStart(2, "0");
-    const baseName = `radiance-skin-before-after-skin-case${caseNumber}`;
-
-    return {
-      id: `skin-case-${caseNumber}`,
-      title: `Skin Improvement Example ${displayNumber}`,
-      subtitle:
-        "A clinic-approved skin improvement image pair prepared for consultation discussion.",
-      treatment: "Skin Improvement",
-      timeGap: "Timeline discussed during consultation",
-      frontBefore: localPublicImage({
-        src: `${skinBeforeAfterBase}/${baseName}-before.jpg`,
-        alt: `Skin improvement example ${displayNumber} before`,
-        id: `${baseName}-before`,
-        category: "skin-before-after",
-        role: "front-before",
-      }),
-      frontAfter: localPublicImage({
-        src: `${skinBeforeAfterBase}/${baseName}-after.jpg`,
-        alt: `Skin improvement example ${displayNumber} after`,
-        id: `${baseName}-after`,
-        category: "skin-before-after",
-        role: "front-after",
-      }),
-      additionalImages: [],
-      consentConfirmed: true,
-    };
-  },
+export const skinTransformations: Transformation[] = allTransformations.filter(
+  (item) => item.category === "skin",
 );
 
 export const proofStats: ProofStat[] = [

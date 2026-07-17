@@ -31,7 +31,7 @@ export const fallbackMediaRequirements: MediaRequirement[] = [
     requestKey: "doctor-editorial-portrait",
     title: "Editorial doctor portrait",
     description:
-      "Replace abstract doctor areas with real approved photography of Dr. Satyarth Prakash.",
+      "Replace abstract doctor areas with a real approved portrait of Dr. Satyarth Prakash.",
     idealDimension: "2400x3000",
     minimumDimension: "1400x1800",
     orientation: "Portrait",

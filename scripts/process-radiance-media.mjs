@@ -25,6 +25,9 @@ const variants = [
   { key: "thumb", dir: "thumb", width: 500, height: 500 },
 ];
 
+const generatedFormats = ["webp"];
+const sourceFormatFolders = new Set(["jpg", "jpeg", "png", "webp", "avif", "tif", "tiff"]);
+
 const categoryAliases = new Map([
   ["01-hero", "hero"],
   ["hero", "hero"],
@@ -128,7 +131,7 @@ const help = `Usage:
 
 Defaults:
   --input radiance-media-raw
-  --out   radiance-media-processed
+  --out   public/radiance-media-processed
 
 Required raw structure:
   radiance-media-raw/
@@ -156,7 +159,7 @@ Accepted image formats:
 
 function parseArgs(argv) {
   const args = {
-    input: "public/radiance-media-raw",
+    input: "radiance-media-raw",
     out: "public/radiance-media-processed",
   };
 
@@ -723,6 +726,7 @@ async function walkImages(rootDir) {
 async function discoverSupplementalFolders({ inputRoot, publicRoot, outRoot }) {
   const roots = [];
   const seen = new Set([path.resolve(inputRoot), path.resolve(outRoot)]);
+  const localRawRoot = path.resolve("raw-media");
 
   async function addRoot(root) {
     if (!existsSync(root)) return;
@@ -747,6 +751,11 @@ async function discoverSupplementalFolders({ inputRoot, publicRoot, outRoot }) {
     path.join(publicRoot, "media", "recognition"),
     path.join(publicRoot, "media", "clinic"),
     path.join(publicRoot, "gallery-raw"),
+    path.join(localRawRoot, "gallery"),
+    path.join(localRawRoot, "clinic-gallery"),
+    path.join(localRawRoot, "doctor-gallery"),
+    path.join(localRawRoot, "new-gallery"),
+    path.join(localRawRoot, "gallery-raw"),
   ];
 
   for (const root of requestedGalleryRoots) {
@@ -779,6 +788,7 @@ async function discoverSupplementalFolders({ inputRoot, publicRoot, outRoot }) {
   }
 
   await addMatchingChildren(inputRoot);
+  await addMatchingChildren(localRawRoot);
   await addMatchingChildren(publicRoot);
 
   return roots.sort((a, b) => a.localeCompare(b));
@@ -860,7 +870,7 @@ async function generateBrandingAssets({ inputRoot, publicRoot, warnings }) {
 
   if (!logoSource && !existsSync(iconSource)) {
     warnings.push(
-      "No Radiance logo source found. Add radiance-logo-primary or radiance-logo-mark to public/radiance-media-raw/08-logo-brand.",
+      "No Radiance logo source found. Add radiance-logo-primary or radiance-logo-mark to radiance-media-raw/08-logo-brand.",
     );
     return;
   }
@@ -1380,7 +1390,7 @@ function recommendedWebsiteUsage(category, usage, subject) {
   if (category === "clinic-ambience") {
     return normalizedUsage.includes("wide")
       ? "Homepage hero collage, clinic ambience gallery, contact page"
-      : "Clinic ambience gallery, patient journey and contact page";
+      : "Clinic ambience gallery, patient care and contact page";
   }
 
   if (category === "equipment") {
@@ -1474,7 +1484,6 @@ function sizeWarnings(width, height, relativePath) {
 
 async function ensureOutputDirs(outRoot) {
   await mkdir(outRoot, { recursive: true });
-  await mkdir(path.join(outRoot, "originals"), { recursive: true });
   await mkdir(path.join(outRoot, "blur"), { recursive: true });
 
   for (const variant of variants) {
@@ -1500,7 +1509,7 @@ async function writeVariant(inputPath, outputPath, variant, format) {
     return;
   }
 
-  await base.avif({ quality: 70, effort: 6 }).toFile(outputPath);
+  throw new Error(`Unsupported generated image format: ${format}`);
 }
 
 async function processImage({ filePath, inputRoot, outRoot, usedSlugs, metadataIndex }) {
@@ -1526,23 +1535,21 @@ async function processImage({ filePath, inputRoot, outRoot, usedSlugs, metadataI
     );
   }
 
-  const originalRelative = normalizeSlashes(path.join("originals", safeRelativePath(info.rawRelativePath)));
-  const originalOutputPath = path.join(outRoot, originalRelative);
-  await mkdir(path.dirname(originalOutputPath), { recursive: true });
-  await copyFile(filePath, originalOutputPath);
+  const originalRelative = "";
 
   const generated = {};
 
   for (const variant of variants) {
-    const webpRelative = normalizeSlashes(path.join(variant.dir, `${slug}.webp`));
-    const avifRelative = normalizeSlashes(path.join(variant.dir, `${slug}.avif`));
+    const formatEntries = {};
 
-    await writeVariant(filePath, path.join(outRoot, webpRelative), variant, "webp");
-    await writeVariant(filePath, path.join(outRoot, avifRelative), variant, "avif");
+    for (const format of generatedFormats) {
+      const relativePath = normalizeSlashes(path.join(variant.dir, `${slug}.${format}`));
+      await writeVariant(filePath, path.join(outRoot, relativePath), variant, format);
+      formatEntries[format] = relativePath;
+    }
 
     generated[variant.key] = {
-      webp: webpRelative,
-      avif: avifRelative,
+      ...formatEntries,
       width: variant.width,
       height: variant.height,
     };
@@ -1669,6 +1676,58 @@ async function processImage({ filePath, inputRoot, outRoot, usedSlugs, metadataI
     },
     recommendedWebsiteUsage: recommendedWebsiteUsage(category, manifestMeta.usage || info.usage, subject),
     warnings,
+  };
+}
+
+function sourceExtensionPriority(filePath) {
+  const ext = path.extname(filePath).toLowerCase();
+
+  if (ext === ".webp") return 60;
+  if (ext === ".jpg" || ext === ".jpeg") return 50;
+  if (ext === ".png") return 40;
+  if (ext === ".svg") return 30;
+  if (ext === ".avif") return 20;
+  if (ext === ".tif" || ext === ".tiff") return 10;
+  return 0;
+}
+
+function sourceDedupeKey(source) {
+  const relativePath = normalizeSlashes(path.relative(source.inputRoot, source.filePath));
+  const parsed = path.parse(relativePath);
+  const dirParts = parsed.dir
+    .split("/")
+    .filter(Boolean)
+    .filter((part, index, parts) => {
+      const isLastDir = index === parts.length - 1;
+      return !(isLastDir && sourceFormatFolders.has(part.toLowerCase()));
+    });
+  const stem = slugify(parsed.name) || parsed.name;
+  return normalizeSlashes(path.join(...dirParts, stem)).toLowerCase();
+}
+
+function dedupeSourceFiles(sourceFiles) {
+  const byKey = new Map();
+  let duplicates = 0;
+
+  for (const source of sourceFiles) {
+    const key = sourceDedupeKey(source);
+    const existing = byKey.get(key);
+
+    if (!existing) {
+      byKey.set(key, source);
+      continue;
+    }
+
+    duplicates += 1;
+
+    if (sourceExtensionPriority(source.filePath) > sourceExtensionPriority(existing.filePath)) {
+      byKey.set(key, source);
+    }
+  }
+
+  return {
+    files: Array.from(byKey.values()).sort((a, b) => a.filePath.localeCompare(b.filePath)),
+    duplicates,
   };
 }
 
@@ -1976,11 +2035,15 @@ async function main() {
     publicRoot,
     outRoot,
   });
-  const sourceFiles = (await walkImages(inputRoot)).map((filePath) => ({
+  const rawSourceFiles = (await walkImages(inputRoot)).map((filePath) => ({
     filePath,
     inputRoot,
   }));
-  const enhancedCertificatesRoot = path.resolve("public/radiance-certificates-enhanced");
+  const sourceFiles = [...rawSourceFiles];
+  const enhancedCertificatesRoot = firstExisting([
+    path.resolve("raw-media/radiance-certificates-enhanced"),
+    path.resolve("public/radiance-certificates-enhanced"),
+  ]);
 
   for (const folder of supplementalFolders) {
     if (isSameOrInside(inputRoot, folder)) continue;
@@ -1989,17 +2052,17 @@ async function main() {
     sourceFiles.push(
       ...files.map((filePath) => ({
         filePath,
-        inputRoot: publicRoot,
+        inputRoot: path.dirname(folder),
       })),
     );
   }
 
-  if (existsSync(enhancedCertificatesRoot) && !enhancedCertificatesRoot.startsWith(inputRoot)) {
+  if (enhancedCertificatesRoot && existsSync(enhancedCertificatesRoot) && !enhancedCertificatesRoot.startsWith(inputRoot)) {
     const certificateFiles = await walkImages(enhancedCertificatesRoot);
     sourceFiles.push(
       ...certificateFiles.map((filePath) => ({
         filePath,
-        inputRoot: publicRoot,
+        inputRoot: path.dirname(enhancedCertificatesRoot),
       })),
     );
   }
@@ -2008,16 +2071,20 @@ async function main() {
     throw new Error(`No supported images found in ${inputRoot}`);
   }
 
+  const dedupedSources = dedupeSourceFiles(sourceFiles);
+
   const metadataIndex = await loadManifestMetadata([
     inputRoot,
     ...supplementalFolders,
-    enhancedCertificatesRoot,
+    enhancedCertificatesRoot || "",
   ]);
 
   console.log("Radiance media pipeline");
   console.log(`Input: ${inputRoot}`);
   console.log(`Output: ${outRoot}`);
   console.log(`Images found: ${sourceFiles.length}`);
+  console.log(`Images after dedupe: ${dedupedSources.files.length}`);
+  console.log(`Duplicate source variants skipped: ${dedupedSources.duplicates}`);
   console.log(
     `Supplemental folders: ${supplementalFolders.length ? supplementalFolders.join(", ") : "none"}`,
   );
@@ -2032,7 +2099,7 @@ async function main() {
 
   await generateBrandingAssets({ inputRoot, publicRoot, warnings });
 
-  for (const source of sourceFiles) {
+  for (const source of dedupedSources.files) {
     const { filePath, inputRoot: sourceInputRoot } = source;
     const relativePath = normalizeSlashes(path.relative(sourceInputRoot, filePath));
 
@@ -2073,9 +2140,8 @@ async function main() {
       directory: variant.dir,
       width: variant.width,
       height: variant.height,
-      formats: ["webp", "avif"],
+      formats: generatedFormats,
       webpQuality: 88,
-      avifQuality: 70,
     })),
     items: manifest.sort(
       (a, b) => a.sortOrder - b.sortOrder || a.category.localeCompare(b.category) || a.id.localeCompare(b.id),
