@@ -1223,6 +1223,13 @@ export async function getClinicSettings(): Promise<ClinicSettings> {
     region: firstString(settings, ["region", "state"]) || fallbackData.siteSettings.region,
     address: firstString(settings, ["address", "street_address"]) || fallbackData.siteSettings.address,
     phone: firstString(settings, ["phone", "phone_number"]) || fallbackData.siteSettings.phone,
+    secondaryPhone:
+      firstString(settings, [
+        "secondaryPhone",
+        "secondary_phone",
+        "alternatePhone",
+        "alternate_phone",
+      ]) || fallbackData.siteSettings.secondaryPhone,
     whatsapp: firstString(settings, ["whatsapp", "whatsapp_number"]) || fallbackData.siteSettings.whatsapp,
     email: firstString(settings, ["email"]) || fallbackData.siteSettings.email,
     doctor: firstString(settings, ["doctor", "doctor_name"]) || fallbackData.siteSettings.doctor,

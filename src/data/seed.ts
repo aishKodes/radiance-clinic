@@ -59,8 +59,9 @@ export const clinic: ClinicSettings = {
   region: "Odisha",
   address:
     "Radiance Clinics, Bhubaneswar, Odisha, India",
-  phone: "+91 99370 00000",
-  whatsapp: "919937000000",
+  phone: "+91 92383 21888",
+  secondaryPhone: "+91 92381 22550",
+  whatsapp: "919238321888",
   email: "care@radianceclinics.in",
   doctor: "Dr. Satyarth Prakash",
   tagline: "Doctor-led hair, skin, laser and aesthetic care.",
@@ -485,7 +486,7 @@ export const videoItems: VideoItem[] = [
     label: "Doctor Explains",
     description:
       "Doctor-led guidance on diagnosis-first hair restoration planning.",
-    href: "https://www.youtube.com/",
+    href: "https://youtube.com/@radianceclinics?si=MwbMHVfdlLk2C95l",
     thumbnail: radianceMedia.doctorConsultation,
   },
   {
@@ -493,23 +494,23 @@ export const videoItems: VideoItem[] = [
     label: "Our Videos",
     description:
       "A patient-friendly video space for safety, preparation and aftercare guidance.",
-    href: "https://www.youtube.com/",
+    href: "https://youtube.com/@radianceclinics?si=MwbMHVfdlLk2C95l",
     thumbnail: radianceMedia.equipmentRoomTwo,
   },
   {
     title: "Acne Scar Consultation",
     label: "Patient Education",
     description:
-      "A short-form education slot for recent posts by Dr. Satyarth Prakash.",
-    href: "https://www.youtube.com/",
+      "Doctor-led guidance on consultation, treatment selection and realistic expectations.",
+    href: "https://youtube.com/@radianceclinics?si=MwbMHVfdlLk2C95l",
     thumbnail: radianceMedia.doctorProfile,
   },
   {
     title: "Aesthetic Consultation",
     label: "Community",
     description:
-      "Videos that explain what happens before aesthetic treatment planning.",
-    href: "https://www.youtube.com/",
+      "Videos explaining assessment, planning and aftercare for aesthetic treatments.",
+    href: "https://youtube.com/@radianceclinics?si=MwbMHVfdlLk2C95l",
     thumbnail: radianceMedia.clinicReception,
   },
 ];

@@ -24,7 +24,7 @@ const defaultAssistantSettings: AssistantSettings = {
   quickPrompts: ["Hair transplant", "Book consultation"],
 };
 
-const whatsappFallback = "https://wa.me/919937000000";
+const whatsappFallback = "https://wa.me/919238321888";
 
 export function ChatbotDock({
   settings = defaultAssistantSettings,

@@ -19,11 +19,21 @@ export default async function ContactPage() {
   const clinic = await getClinicSettings();
   const contactCards = [
     {
-      label: "Call",
+      label: "Call clinic",
       value: clinic.phone,
       href: `tel:${clinic.phone.replace(/\s/g, "")}`,
       icon: Phone,
     },
+    ...(clinic.secondaryPhone
+      ? [
+          {
+            label: "Alternate number",
+            value: clinic.secondaryPhone,
+            href: `tel:${clinic.secondaryPhone.replace(/\s/g, "")}`,
+            icon: Phone,
+          },
+        ]
+      : []),
     {
       label: "WhatsApp",
       value: "Start consultation chat",
@@ -72,7 +82,7 @@ export default async function ContactPage() {
       </section>
 
       <section className="bg-[#FBF7EF] px-5 py-20 sm:px-8 lg:py-28">
-        <div className="mx-auto grid max-w-7xl gap-5 md:grid-cols-3">
+        <div className="mx-auto grid max-w-7xl gap-5 md:grid-cols-2 lg:grid-cols-4">
           {contactCards.map((item) => {
             const Icon = item.icon;
             return (

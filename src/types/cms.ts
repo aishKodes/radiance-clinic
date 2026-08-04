@@ -326,6 +326,7 @@ export type CmsSiteSettings = {
   region: string;
   address: string;
   phone: string;
+  secondaryPhone?: string;
   whatsapp: string;
   email: string;
   doctor: string;

@@ -111,6 +111,35 @@ export function LuxuryHero({
               Call Now
             </PremiumButton>
           </motion.div>
+          <motion.div
+            variants={fadeUp}
+            className="mt-4 grid min-w-0 gap-1.5 text-sm font-bold text-[var(--ink)]/58 sm:flex sm:flex-wrap sm:items-center sm:gap-x-3"
+          >
+            <span className="text-[0.66rem] font-extrabold uppercase tracking-[0.14em] text-[var(--bronze)]">
+              Clinic numbers
+            </span>
+            <span className="flex min-w-0 flex-wrap items-center gap-x-3 gap-y-1">
+              <a
+                href={`tel:${settings.phone.replace(/\s/g, "")}`}
+                className="transition hover:text-[var(--ink)]"
+              >
+                {settings.phone}
+              </a>
+              {settings.secondaryPhone ? (
+                <>
+                  <span aria-hidden="true" className="text-[var(--ink)]/24">
+                    /
+                  </span>
+                  <a
+                    href={`tel:${settings.secondaryPhone.replace(/\s/g, "")}`}
+                    className="transition hover:text-[var(--ink)]"
+                  >
+                    {settings.secondaryPhone}
+                  </a>
+                </>
+              ) : null}
+            </span>
+          </motion.div>
 
           <motion.div
             variants={fadeUp}

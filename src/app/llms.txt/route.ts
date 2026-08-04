@@ -56,6 +56,9 @@ export async function GET() {
     "",
     "## Contact",
     `- Phone: ${clinic.phone || "Contact page"}`,
+    ...(clinic.secondaryPhone
+      ? [`- Alternate phone: ${clinic.secondaryPhone}`]
+      : []),
     `- WhatsApp: ${clinic.whatsapp || "Contact page"}`,
     `- Address: ${clinic.address || `${clinic.city}, ${clinic.region}`}`,
   ];

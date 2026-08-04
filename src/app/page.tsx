@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowUpRight, CalendarCheck, Quote, ShieldCheck } from "lucide-react";
+import { ArrowUpRight, CalendarCheck, ShieldCheck } from "lucide-react";
 import {
   AnimatedAuroraBackground,
   ContourMeshOverlay,
@@ -26,6 +26,7 @@ import { TreatmentUniverseSection } from "@/components/TreatmentUniverseSection"
 import { TransformationShowcase } from "@/components/TransformationShowcase";
 import { WhyChooseRadiance } from "@/components/WhyChooseRadiance";
 import {
+  anilKapoorRecognitionImage,
   doctorPatientHeroImage,
   hairTransformationExamples,
   premiumHeroSupportImages,
@@ -46,9 +47,9 @@ import {
   getReviewSummary,
   getSocialLinks,
   getSocialStats,
-  getTestimonials,
   getVideoItems,
 } from "@/data/site";
+import type { CmsImage } from "@/types/cms";
 
 export const metadata: Metadata = {
   title: {
@@ -70,13 +71,27 @@ export const metadata: Metadata = {
   },
 };
 
+function isAnilKapoorImage(image?: CmsImage) {
+  const evidence = [
+    image?.id,
+    image?.filename,
+    image?.src,
+    image?.desktopUrl,
+    image?.alt,
+    image?.altText,
+  ]
+    .filter(Boolean)
+    .join(" ");
+
+  return /anil[-_\s]+kapoor/i.test(evidence);
+}
+
 export default async function Home() {
   const [
     settings,
     homepage,
     doctor,
     articles,
-    testimonials,
     heroImages,
     proofStats,
     videos,
@@ -90,7 +105,6 @@ export default async function Home() {
     getHomepageContent(),
     getDoctorProfile(),
     getArticles(),
-    getTestimonials(),
     getHeroImages(),
     getProofStats(),
     getVideoItems(),
@@ -105,7 +119,7 @@ export default async function Home() {
   const recentArticles = articles.slice(0, 3);
   const seenHeroImages = new Set<string>();
   const homepageHeroImages = [
-    ...heroImages,
+    ...heroImages.filter((image) => !isAnilKapoorImage(image)),
     ...premiumHeroSupportImages,
     doctorPatientHeroImage,
   ].filter((image) => {
@@ -114,6 +128,12 @@ export default async function Home() {
     seenHeroImages.add(key);
     return true;
   });
+  const supportingRecognitionItems = recognitionItems.filter(
+    (item) => !isAnilKapoorImage(item.image || item.badge),
+  );
+  const clinicGalleryImages = galleryImages.filter(
+    (item) => !isAnilKapoorImage(item.image),
+  );
 
   return (
     <>
@@ -300,8 +320,34 @@ export default async function Home() {
               description="Moments, certificates and recognitions from Radiance Clinics' work in hair, skin and aesthetic care."
             />
           </Reveal>
-          <Reveal delay={0.08}>
-            <RecognitionCarousel items={recognitionItems} />
+          <Reveal delay={0.06}>
+            <article className="grid min-w-0 overflow-hidden rounded-[1.4rem] bg-[var(--ink)] text-[var(--ivory)] shadow-[0_32px_110px_rgba(15,16,22,0.18)] sm:rounded-[2rem] lg:grid-cols-[1.2fr_0.8fr] lg:items-stretch">
+              <div className="relative min-h-[22rem] overflow-hidden bg-[var(--ink)] sm:min-h-[30rem] lg:min-h-[34rem]">
+                <Image
+                  src={anilKapoorRecognitionImage.src}
+                  alt={anilKapoorRecognitionImage.alt}
+                  fill
+                  sizes="(min-width: 1024px) 60vw, 100vw"
+                  className="object-cover object-center"
+                />
+                <div className="absolute inset-0 bg-[linear-gradient(180deg,transparent_58%,rgba(15,16,22,0.48))] lg:bg-[linear-gradient(90deg,transparent_70%,rgba(15,16,22,0.28))]" />
+              </div>
+              <div className="flex flex-col justify-center p-6 sm:p-9 lg:p-10">
+                <p className="text-xs font-extrabold uppercase tracking-[0.24em] text-[var(--aqua)]">
+                  Event recognition
+                </p>
+                <h3 className="mt-4 font-serif text-4xl leading-[0.94] sm:text-5xl">
+                  A recognition moment with Anil Kapoor.
+                </h3>
+                <p className="mt-6 text-sm leading-7 text-white/66">
+                  Dr. Satyarth Prakash at a public recognition event with actor
+                  Anil Kapoor, marking a memorable professional milestone.
+                </p>
+              </div>
+            </article>
+          </Reveal>
+          <Reveal delay={0.1} className="mt-6">
+            <RecognitionCarousel items={supportingRecognitionItems} />
           </Reveal>
         </div>
       </section>
@@ -312,9 +358,9 @@ export default async function Home() {
         <div className="relative z-10 mx-auto max-w-7xl">
           <Reveal className="mb-9 sm:mb-14">
             <SectionHeader
-              eyebrow="Official channels"
-              title="Follow Radiance Clinics"
-              description="Watch treatment explainers, patient stories and clinic updates across Radiance Clinics' official channels."
+              eyebrow="Videos, articles & reviews"
+              title="Stay informed between visits."
+              description="Preview doctor-led videos, read treatment guidance and visit patient-review channels before booking."
             />
           </Reveal>
           <SocialCommunitySection
@@ -322,6 +368,7 @@ export default async function Home() {
             stats={socialStats}
             reviewSummary={reviewSummary}
             videos={videos}
+            articles={recentArticles}
           />
         </div>
       </section>
@@ -406,103 +453,7 @@ export default async function Home() {
               description="A closer look at the clinic environment, doctor-led consultations, recognition moments and patient care spaces."
             />
           </Reveal>
-          <ClinicAmbienceGallery images={galleryImages} />
-        </div>
-      </section>
-
-      <section className="relative isolate overflow-hidden bg-[var(--ivory)] px-4 py-16 sm:px-8 sm:py-20 lg:py-32">
-        <AnimatedAuroraBackground className="z-0 opacity-30" />
-        <div className="relative z-10 mx-auto max-w-7xl">
-          <div className="flex flex-col justify-between gap-8 lg:flex-row lg:items-end">
-            <Reveal>
-              <SectionHeader
-                eyebrow="Knowledge library"
-                title="Learn before you book."
-                description="Doctor-reviewed articles help patients understand treatment options, safety, preparation and realistic expectations."
-              />
-            </Reveal>
-            <PremiumButton href="/knowledge" variant="outline">
-              Open library
-            </PremiumButton>
-          </div>
-          <div
-            data-lenis-prevent-touch
-            className="mobile-scroll-row mt-9 flex min-w-0 snap-x snap-mandatory gap-4 overflow-x-auto overscroll-x-contain pb-3 sm:mt-12 md:grid md:grid-cols-3 md:overflow-visible md:pb-0"
-          >
-            {recentArticles.map((article, index) => (
-              <Reveal
-                key={article.slug}
-                delay={index * 0.05}
-                className="w-[82vw] max-w-[20rem] shrink-0 snap-start md:w-auto md:max-w-none"
-              >
-                <Link
-                  href={`/knowledge/${article.slug}`}
-                  className="group flex h-full min-w-0 flex-col overflow-hidden rounded-[1.4rem] border border-[var(--ink)]/10 bg-white/60 p-4 shadow-[0_26px_90px_rgba(15,16,22,0.08)] backdrop-blur-xl transition duration-500 hover:-translate-y-1 sm:rounded-[2.1rem]"
-                >
-                  {article.image ? (
-                    <div className="relative h-56 overflow-hidden rounded-[1.6rem] bg-[var(--mist)]">
-                      <Image
-                        src={article.image.src}
-                        alt={article.image.alt}
-                        fill
-                        sizes="(min-width: 768px) 33vw, 100vw"
-                        className="object-cover transition duration-700 group-hover:scale-105"
-                      />
-                      <div className="absolute inset-0 bg-[linear-gradient(180deg,transparent,rgba(15,16,22,0.58))]" />
-                      <span className="absolute left-4 top-4 rounded-full border border-white/24 bg-white/16 px-3 py-1.5 text-[0.65rem] font-extrabold uppercase tracking-[0.18em] text-white backdrop-blur">
-                        Doctor-reviewed
-                      </span>
-                    </div>
-                  ) : null}
-                  <div className="flex flex-1 flex-col p-2 pt-6">
-                    <div className="mb-8 flex items-center justify-between">
-                      <span className="rounded-full border border-[var(--ink)]/10 px-3 py-1.5 text-xs font-bold uppercase tracking-[0.18em] text-[var(--ink)]/52">
-                        {article.category}
-                      </span>
-                      <ArrowUpRight className="h-5 w-5 text-[var(--bronze)] transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
-                    </div>
-                    <h3 className="font-serif text-3xl leading-none text-[var(--ink)]">
-                      {article.title}
-                    </h3>
-                    <p className="mt-5 flex-1 text-sm leading-7 text-[var(--ink)]/62">
-                      {article.excerpt}
-                    </p>
-                    <p className="mt-8 text-xs font-bold uppercase tracking-[0.18em] text-[var(--ink)]/45">
-                      Dr. Satyarth Prakash - {article.readTime}
-                    </p>
-                  </div>
-                </Link>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="relative isolate overflow-hidden bg-[var(--mist)] px-4 py-16 sm:px-8 sm:py-20 lg:py-32">
-        <SciencePatternOverlay className="z-0 opacity-28" />
-        <div className="relative z-10 mx-auto grid min-w-0 max-w-7xl gap-9 sm:gap-12 lg:grid-cols-[0.85fr_1.15fr]">
-          <Reveal>
-            <SectionHeader
-              eyebrow="Patient Stories"
-              title="Quiet confidence, not loud promises."
-              description="Testimonials focus on clarity, comfort and planning rather than guaranteed outcomes."
-            />
-          </Reveal>
-          <div className="grid gap-4">
-            {testimonials.map((testimonial, index) => (
-              <Reveal key={testimonial.quote} delay={index * 0.05}>
-                <figure className="rounded-[1.35rem] border border-[var(--ink)]/10 bg-white/58 p-5 shadow-[0_20px_70px_rgba(15,16,22,0.07)] backdrop-blur-xl sm:rounded-[2rem] sm:p-6">
-                  <Quote className="mb-6 h-6 w-6 text-[var(--bronze)]" />
-                  <blockquote className="text-xl leading-8 text-[var(--ink)]">
-                    &quot;{testimonial.quote}&quot;
-                  </blockquote>
-                  <figcaption className="mt-6 text-sm font-bold text-[var(--ink)]/56">
-                    {testimonial.name} - {testimonial.context}
-                  </figcaption>
-                </figure>
-              </Reveal>
-            ))}
-          </div>
+          <ClinicAmbienceGallery images={clinicGalleryImages} />
         </div>
       </section>
 

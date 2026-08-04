@@ -107,6 +107,14 @@ export const premiumHeroSupportImages = [
   }),
 ];
 
+export const anilKapoorRecognitionImage = imageFromPublic({
+  src: "/radiance-media-processed/landscape/radiance-hero-anil-kapoor-feature-01.webp",
+  alt: "Dr. Satyarth Prakash at a recognition event with Anil Kapoor",
+  id: "radiance-hero-anil-kapoor-feature-01",
+  category: "recognition",
+  role: "event-recognition-feature",
+});
+
 export const premiumServiceCards: Treatment[] = [
   serviceCard({
     title: "Hair Transplant",
@@ -204,8 +212,8 @@ export const treatmentCategoryTabs: TreatmentCategoryTab[] = [
       "Doctor-led care for acne, scars, pigmentation, redness, pores and skin quality.",
     href: "/skin-clinic-bhubaneswar",
     image: visualImage(
-      "radiance-skin-category.webp",
-      "Skin treatments",
+      "radiance-skin-rejuvenation-service.webp",
+      "Skin consultation and rejuvenation treatment",
       "category-tab-visual",
     ),
     procedures: [
@@ -228,11 +236,13 @@ export const treatmentCategoryTabs: TreatmentCategoryTab[] = [
     description:
       "Hair transplant, hair fall and regenerative scalp support planned around diagnosis.",
     href: "/hair-transplant-bhubaneswar",
-    image: visualImage(
-      "radiance-hair-category.webp",
-      "Hair treatments",
-      "category-tab-visual",
-    ),
+    image: imageFromPublic({
+      src: "/radiance-media-processed/landscape/radiance-doctor-satyarth-consultation-01new.webp",
+      alt: "Hair restoration consultation with Dr. Satyarth Prakash",
+      id: "radiance-doctor-satyarth-consultation-01new",
+      category: "doctor-consultation",
+      role: "category-tab-visual",
+    }),
     procedures: [
       "Hair Transplant",
       "FUE Hair Transplant",
@@ -253,11 +263,13 @@ export const treatmentCategoryTabs: TreatmentCategoryTab[] = [
     description:
       "Skin-type aware laser treatments with preparation, aftercare and realistic planning.",
     href: "/laser-hair-removal-bhubaneswar",
-    image: visualImage(
-      "radiance-laser-category.webp",
-      "Laser treatments",
-      "category-tab-visual",
-    ),
+    image: imageFromPublic({
+      src: "/radiance-media-processed/landscape/radiance-equipment-laser-machines-01.webp",
+      alt: "Laser treatment equipment at Radiance Clinics",
+      id: "radiance-equipment-laser-machines-01",
+      category: "clinic-equipment",
+      role: "category-tab-visual",
+    }),
     procedures: [
       "Laser Hair Removal",
       "Laser Toning",
@@ -279,8 +291,8 @@ export const treatmentCategoryTabs: TreatmentCategoryTab[] = [
       "Subtle facial rejuvenation and injectable planning focused on balance and restraint.",
     href: "/treatments/aesthetic-dermatology/injectable-aesthetics",
     image: visualImage(
-      "radiance-aesthetics-category.webp",
-      "Aesthetic treatments",
+      "radiance-botox-fillers-service.webp",
+      "Doctor-led injectable aesthetic treatment",
       "category-tab-visual",
     ),
     procedures: [

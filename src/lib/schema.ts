@@ -16,7 +16,7 @@ export function medicalClinicJsonLd(
     "@type": "MedicalClinic",
     name: settings.legalName,
     url: siteUrl,
-    telephone: settings.phone,
+    telephone: [settings.phone, settings.secondaryPhone].filter(Boolean),
     email: settings.email,
     address: {
       "@type": "PostalAddress",
@@ -117,7 +117,7 @@ export function medicalServiceJsonLd({
       "@type": "MedicalClinic",
       name: settings.legalName,
       url: siteUrl,
-      telephone: settings.phone,
+      telephone: [settings.phone, settings.secondaryPhone].filter(Boolean),
       address: {
         "@type": "PostalAddress",
         streetAddress: settings.address,

@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import {
   ArrowUpRight,
+  BookOpenText,
   BriefcaseBusiness,
   Camera,
   MapPin,
@@ -9,8 +10,10 @@ import {
   MonitorPlay,
   Play,
   ShieldCheck,
+  Star,
 } from "lucide-react";
 import type {
+  Article,
   ReviewSummary,
   SocialLink,
   SocialStat,
@@ -39,18 +42,24 @@ export function SocialCommunitySection({
   stats,
   reviewSummary,
   videos,
+  articles,
 }: {
   links: SocialLink[];
   stats: SocialStat[];
   reviewSummary: ReviewSummary;
   videos: VideoItem[];
+  articles: Article[];
 }) {
-  if (!links.length && !videos.length) {
+  if (!links.length && !videos.length && !articles.length) {
     return null;
   }
 
   const featured = links[0];
-  const support = links.slice(1);
+  const support = links.slice(1).filter((link) => link.platform !== "google");
+  const googleLink =
+    reviewSummary.googleMapsUrl ||
+    links.find((link) => link.platform === "google")?.url ||
+    "/reviews";
 
   return (
     <div className="grid min-w-0 gap-5 lg:grid-cols-[0.92fr_1.08fr] lg:items-stretch">
@@ -81,8 +90,8 @@ export function SocialCommunitySection({
                 Follow Radiance Clinics
               </h3>
               <p className="mt-5 max-w-xl text-sm leading-7 text-white/64">
-                Watch treatment explainers, patient stories and clinic updates
-                through official Radiance Clinics channels.
+                Watch treatment explainers and clinic updates through official
+                Radiance Clinics channels.
               </p>
               <Link
                 href={featured.url}
@@ -171,7 +180,7 @@ export function SocialCommunitySection({
                   Our Videos
                 </p>
                 <h3 className="mt-3 font-serif text-3xl leading-none text-[var(--ink)] sm:text-4xl">
-                  Education that makes booking feel easier.
+                  Doctor-led treatment guidance.
                 </h3>
               </div>
               <MonitorPlay className="hidden h-7 w-7 text-[var(--coral)] sm:block" />
@@ -219,6 +228,94 @@ export function SocialCommunitySection({
             </div>
           </div>
         ) : null}
+      </div>
+      <div className="grid min-w-0 gap-5 lg:col-span-2 lg:grid-cols-[1.3fr_0.7fr]">
+        {articles.length ? (
+          <section className="min-w-0 rounded-[1.4rem] border border-[var(--ink)]/10 bg-white/62 p-4 shadow-[0_24px_90px_rgba(15,16,22,0.08)] backdrop-blur-xl sm:rounded-[2rem] sm:p-6">
+            <div className="mb-5 flex items-end justify-between gap-4">
+              <div>
+                <p className="text-xs font-extrabold uppercase tracking-[0.22em] text-[var(--bronze)]">
+                  Doctor-reviewed articles
+                </p>
+                <h3 className="mt-3 font-serif text-3xl leading-none text-[var(--ink)] sm:text-4xl">
+                  Read before your consultation.
+                </h3>
+              </div>
+              <BookOpenText className="hidden h-7 w-7 text-[var(--aqua)] sm:block" />
+            </div>
+            <div className="grid gap-3 md:grid-cols-3">
+              {articles.slice(0, 3).map((article) => (
+                <Link
+                  key={article.slug}
+                  href={`/knowledge/${article.slug}`}
+                  className="group flex min-w-0 flex-col rounded-[1.15rem] border border-[var(--ink)]/10 bg-[var(--ivory)] p-4 transition hover:border-[var(--bronze)]/40 hover:bg-white"
+                >
+                  <p className="text-[0.62rem] font-extrabold uppercase tracking-[0.16em] text-[var(--bronze)]">
+                    {article.category}
+                  </p>
+                  <h4 className="mt-3 text-lg font-extrabold leading-6 text-[var(--ink)]">
+                    {article.title}
+                  </h4>
+                  <p className="mt-3 line-clamp-3 text-sm leading-6 text-[var(--ink)]/60">
+                    {article.excerpt}
+                  </p>
+                  <span className="mt-auto flex items-center gap-2 pt-5 text-xs font-extrabold uppercase tracking-[0.14em] text-[var(--ink)]/50">
+                    Read article
+                    <ArrowUpRight className="h-4 w-4 transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+                  </span>
+                </Link>
+              ))}
+            </div>
+            <Link
+              href="/knowledge"
+              className="mt-5 inline-flex items-center gap-2 text-xs font-extrabold uppercase tracking-[0.16em] text-[var(--bronze)]"
+            >
+              View all articles
+              <ArrowUpRight className="h-4 w-4" />
+            </Link>
+          </section>
+        ) : null}
+
+        <aside className="flex min-w-0 flex-col rounded-[1.4rem] bg-[var(--ink)] p-6 text-[var(--ivory)] shadow-[0_28px_100px_rgba(15,16,22,0.16)] sm:rounded-[2rem] sm:p-7">
+          <span className="grid h-12 w-12 place-items-center rounded-2xl bg-[var(--champagne)] text-[var(--ink)]">
+            <Star className="h-5 w-5 fill-current" />
+          </span>
+          <p className="mt-8 text-xs font-extrabold uppercase tracking-[0.22em] text-[var(--aqua)]">
+            Patient reviews
+          </p>
+          <h3 className="mt-3 font-serif text-4xl leading-none">
+            Read patient feedback on Google.
+          </h3>
+          <p className="mt-5 text-sm leading-7 text-white/64">
+            See patient feedback about consultations, clinic care and treatment
+            planning on the clinic&apos;s Google profile.
+          </p>
+          {reviewSummary.googleRating ? (
+            <p className="mt-5 font-mono text-2xl font-extrabold text-[var(--champagne)]">
+              {reviewSummary.googleRating} rating
+              {reviewSummary.googleReviewCount
+                ? ` · ${reviewSummary.googleReviewCount} reviews`
+                : ""}
+            </p>
+          ) : null}
+          <div className="mt-auto flex flex-col gap-3 pt-8 sm:flex-row lg:flex-col xl:flex-row">
+            <Link
+              href={googleLink}
+              target={googleLink.startsWith("http") ? "_blank" : undefined}
+              rel={googleLink.startsWith("http") ? "noreferrer" : undefined}
+              className="inline-flex min-h-11 items-center justify-center gap-2 rounded-full bg-white px-5 py-3 text-xs font-extrabold uppercase tracking-[0.14em] text-[var(--ink)] transition hover:bg-[var(--champagne)]"
+            >
+              Google Reviews
+              <ArrowUpRight className="h-4 w-4" />
+            </Link>
+            <Link
+              href="/reviews"
+              className="inline-flex min-h-11 items-center justify-center rounded-full border border-white/16 px-5 py-3 text-xs font-extrabold uppercase tracking-[0.14em] text-white transition hover:bg-white/10"
+            >
+              Reviews page
+            </Link>
+          </div>
+        </aside>
       </div>
     </div>
   );

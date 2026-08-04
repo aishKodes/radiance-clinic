@@ -39,6 +39,7 @@ type AssistantContext = {
     region: string;
     address: string;
     phone: string;
+    secondaryPhone?: string;
     whatsapp: string;
     email: string;
     hours: string;
@@ -100,6 +101,7 @@ export async function POST(request: Request) {
       region: settings.region,
       address: settings.address,
       phone: settings.phone,
+      secondaryPhone: settings.secondaryPhone,
       whatsapp: settings.whatsapp,
       email: settings.email,
       hours: settings.hours,
@@ -199,13 +201,13 @@ function rulesBasedReply(
 
   if (text.includes("book") || text.includes("appointment") || text.includes("consult")) {
     return addSafetyFooter(
-      `You can request a consultation with Radiance Clinics by calling ${clinic.phone} or using WhatsApp at +${clinic.whatsapp}. Share your name, phone number and concern, and the clinic team can guide the next step.`,
+      `You can request a consultation with Radiance Clinics by calling ${clinic.phone}${clinic.secondaryPhone ? ` or ${clinic.secondaryPhone}` : ""}, or by using WhatsApp at +${clinic.whatsapp}. Share your name, phone number and concern, and the clinic team can guide the next step.`,
     );
   }
 
   if (text.includes("whatsapp") || text.includes("call") || text.includes("phone")) {
     return addSafetyFooter(
-      `Radiance Clinics can be reached by phone at ${clinic.phone}. WhatsApp is available at +${clinic.whatsapp}. Clinic hours are ${clinic.hours}.`,
+      `Radiance Clinics can be reached by phone at ${clinic.phone}${clinic.secondaryPhone ? ` or ${clinic.secondaryPhone}` : ""}. WhatsApp is available at +${clinic.whatsapp}. Clinic hours are ${clinic.hours}.`,
     );
   }
 
