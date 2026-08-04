@@ -32,13 +32,13 @@ export function PremiumButton({
 }: PremiumButtonProps) {
   const content = (
     <>
-      <span>{children}</span>
-      <Icon className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5" />
+      <span className="min-w-0 text-center">{children}</span>
+      <Icon className="h-4 w-4 shrink-0 transition-transform duration-300 group-hover:translate-x-0.5" />
     </>
   );
 
   const classes = cn(
-    "group inline-flex min-h-12 items-center justify-center gap-3 rounded-full border px-6 py-3 text-sm font-extrabold tracking-[0.1em] uppercase transition duration-300 focus:outline-none focus:ring-2 focus:ring-[var(--aqua)]/50 focus:ring-offset-2 focus:ring-offset-[var(--ivory)]",
+    "group inline-flex min-h-12 max-w-full items-center justify-center gap-3 rounded-full border px-5 py-3 text-sm font-extrabold tracking-[0.08em] uppercase transition duration-300 focus:outline-none focus:ring-2 focus:ring-[var(--aqua)]/50 focus:ring-offset-2 focus:ring-offset-[var(--ivory)] sm:px-6 sm:tracking-[0.1em]",
     variants[variant],
     className,
   );

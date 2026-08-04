@@ -5,7 +5,6 @@ import { Fraunces, Manrope, Plus_Jakarta_Sans } from "next/font/google";
 import { BookingModal } from "@/components/BookingModal";
 import { DynamicChatbotDock } from "@/components/DynamicChatbotDock";
 import { FloatingCTA } from "@/components/FloatingCTA";
-import { LenisProvider } from "@/components/LenisProvider";
 import { SiteHeader } from "@/components/SiteHeader";
 import { fallbackData } from "@/data/fallback";
 import { getAssistantSettings, getClinicSettings } from "@/data/site";
@@ -54,8 +53,22 @@ export const metadata: Metadata = {
     locale: "en_IN",
     siteName: "Radiance Clinics",
   },
-  alternates: {
-    canonical: "/",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Radiance Clinics Bhubaneswar",
+    description:
+      "Doctor-led hair, skin, laser and aesthetic care in Bhubaneswar.",
   },
   icons: {
     icon: [
@@ -81,7 +94,11 @@ function resolveHeaderLogo() {
     { url: "/radiance-logo.png", mode: "mark" as const },
   ];
 
-  return candidates.find((candidate) => existsSync(publicFile(candidate.url.slice(1)))) || null;
+  return (
+    candidates.find((candidate) =>
+      existsSync(publicFile(candidate.url.slice(1))),
+    ) || null
+  );
 }
 
 export default async function RootLayout({
@@ -101,7 +118,6 @@ export default async function RootLayout({
       className={`${jakarta.variable} ${manrope.variable} ${fraunces.variable} h-full scroll-smooth antialiased`}
     >
       <body className="flex min-h-full flex-col bg-[var(--ivory)] text-[var(--ink)]">
-        <LenisProvider />
         <SiteHeader
           settings={clinicSettings}
           logoUrl={headerLogo?.url}

@@ -5,7 +5,11 @@ import { JsonLd } from "@/components/JsonLd";
 import { PremiumButton } from "@/components/PremiumButton";
 import { SectionHeader } from "@/components/SectionHeader";
 import { getClinicSettings, getReviews, reviewCategories } from "@/data/site";
-import { breadcrumbJsonLd, medicalClinicJsonLd, webPageJsonLd } from "@/lib/schema";
+import {
+  breadcrumbJsonLd,
+  medicalClinicJsonLd,
+  webPageJsonLd,
+} from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "Patient Reviews",
@@ -17,7 +21,10 @@ export const metadata: Metadata = {
 };
 
 export default async function ReviewsPage() {
-  const [reviews, clinic] = await Promise.all([getReviews(), getClinicSettings()]);
+  const [reviews, clinic] = await Promise.all([
+    getReviews(),
+    getClinicSettings(),
+  ]);
   const featured = reviews.filter((review) => review.featured).slice(0, 6);
   const visibleReviews = featured.length ? featured : reviews.slice(0, 9);
 
@@ -47,22 +54,21 @@ export default async function ReviewsPage() {
               Patient reviews
             </p>
             <h1 className="font-serif text-[clamp(4.6rem,10vw,9rem)] leading-[0.86] tracking-normal text-[var(--ink)]">
-              Verified experiences, kept medically responsible.
+              Patient experiences at Radiance Clinics.
             </h1>
             <p className="mt-7 max-w-3xl text-lg leading-8 text-[var(--ink)]/68">
-              Radiance Clinics publishes review content only when permission and
-              source context are recorded. These notes can support trust, but
-              they do not guarantee individual outcomes.
+              Read what patients have shared about consultations, clinic care
+              and treatment support. Individual experiences and results vary.
             </p>
           </div>
           <div className="rounded-[2.25rem] border border-white/60 bg-white/55 p-7 shadow-[0_30px_100px_rgba(16,16,20,0.11)] backdrop-blur-2xl">
             <ShieldCheck className="mb-8 h-7 w-7 text-[var(--aqua)]" />
             <p className="font-serif text-4xl leading-none text-[var(--ink)]">
-              No fake reviews. No copied claims.
+              Reviews shared with permission.
             </p>
             <p className="mt-5 text-sm leading-7 text-[var(--ink)]/62">
-              Source links, permission status and admin notes are managed in the
-              custom CMS before anything becomes public.
+              Published reviews reflect personal experiences and are not a
+              promise of the same treatment result for every patient.
             </p>
           </div>
         </div>
@@ -95,7 +101,7 @@ export default async function ReviewsPage() {
           <SectionHeader
             eyebrow="Published reviews"
             title="What patients have shared."
-            description="Every review shown here should have permission, source context and admin moderation recorded in the backend."
+            description="Patient comments are presented with consent and appropriate context. Experiences can differ according to the concern and treatment plan."
           />
           {visibleReviews.length ? (
             <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
@@ -110,9 +116,11 @@ export default async function ReviewsPage() {
                       {review.treatmentCategory.replaceAll("-", " ")}
                     </span>
                     <span className="inline-flex items-center gap-1 text-[var(--bronze)]">
-                      {Array.from({ length: Math.round(review.rating) }).map((_, index) => (
-                        <Star key={index} className="h-4 w-4 fill-current" />
-                      ))}
+                      {Array.from({ length: Math.round(review.rating) }).map(
+                        (_, index) => (
+                          <Star key={index} className="h-4 w-4 fill-current" />
+                        ),
+                      )}
                     </span>
                   </div>
                   <p className="flex-1 text-lg leading-8 text-[var(--ink)]/72">
@@ -131,12 +139,11 @@ export default async function ReviewsPage() {
             <div className="mt-10 rounded-[2.5rem] border border-[var(--ink)]/10 bg-white/60 p-8 shadow-[0_24px_90px_rgba(16,16,20,0.08)] backdrop-blur">
               <MessageCircle className="mb-8 h-7 w-7 text-[var(--aqua)]" />
               <h2 className="font-serif text-5xl leading-none text-[var(--ink)]">
-                Verified reviews will appear here after admin approval.
+                More patient reviews will be added after clinic review.
               </h2>
               <p className="mt-5 max-w-2xl text-sm leading-7 text-[var(--ink)]/64">
-                The CMS is ready for source-linked, permission-confirmed
-                reviews. Until then, visitors can contact the clinic directly
-                for consultation guidance.
+                Contact the clinic directly for consultation guidance and help
+                choosing the appropriate appointment.
               </p>
               <PremiumButton href="/contact" className="mt-8">
                 Contact Radiance Clinics

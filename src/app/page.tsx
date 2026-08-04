@@ -1,12 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import {
-  ArrowUpRight,
-  CalendarCheck,
-  Quote,
-  ShieldCheck,
-} from "lucide-react";
+import { ArrowUpRight, CalendarCheck, Quote, ShieldCheck } from "lucide-react";
 import {
   AnimatedAuroraBackground,
   ContourMeshOverlay,
@@ -16,20 +11,20 @@ import {
   SectionGlowMask,
 } from "@/components/BackgroundEffects";
 import { ClinicAmbienceGallery } from "@/components/ClinicAmbienceGallery";
-import {DoctorAuthority} from "@/components/DoctorAuthority";
-import {FAQAccordion} from "@/components/FAQAccordion";
-import {JsonLd} from "@/components/JsonLd";
-import {LuxuryHero} from "@/components/LuxuryHero";
-import {OpenChatButton} from "@/components/OpenChatButton";
+import { DoctorAuthority } from "@/components/DoctorAuthority";
+import { FAQAccordion } from "@/components/FAQAccordion";
+import { JsonLd } from "@/components/JsonLd";
+import { LuxuryHero } from "@/components/LuxuryHero";
+import { OpenChatButton } from "@/components/OpenChatButton";
 import { OpenBookingButton } from "@/components/OpenBookingButton";
-import {PremiumButton} from "@/components/PremiumButton";
+import { PremiumButton } from "@/components/PremiumButton";
 import { RecognitionCarousel } from "@/components/RecognitionCarousel";
-import {Reveal} from "@/components/Reveal";
-import {SectionHeader} from "@/components/SectionHeader";
+import { Reveal } from "@/components/Reveal";
+import { SectionHeader } from "@/components/SectionHeader";
 import { SocialCommunitySection } from "@/components/SocialCommunitySection";
-import {TreatmentUniverseSection} from "@/components/TreatmentUniverseSection";
+import { TreatmentUniverseSection } from "@/components/TreatmentUniverseSection";
 import { TransformationShowcase } from "@/components/TransformationShowcase";
-import {WhyChooseRadiance} from "@/components/WhyChooseRadiance";
+import { WhyChooseRadiance } from "@/components/WhyChooseRadiance";
 import {
   doctorPatientHeroImage,
   hairTransformationExamples,
@@ -37,11 +32,8 @@ import {
   premiumServiceCards,
   skinTransformationExamples,
 } from "@/data/homepage-media";
-import {
-  faqJsonLd,
-  medicalClinicJsonLd,
-  webPageJsonLd,
-} from "@/lib/schema";
+import { localLandingByTreatmentSlug } from "@/data/local-seo-pages";
+import { faqJsonLd, medicalClinicJsonLd, webPageJsonLd } from "@/lib/schema";
 import {
   getArticles,
   getClinicSettings,
@@ -60,7 +52,8 @@ import {
 
 export const metadata: Metadata = {
   title: {
-    absolute: "Radiance Clinics Bhubaneswar | Hair Transplant, Skin & Laser Clinic",
+    absolute:
+      "Radiance Clinics Bhubaneswar | Hair Transplant, Skin & Laser Clinic",
   },
   description:
     "Doctor-led hair transplant, hair restoration, skin, laser and aesthetic treatments by Dr. Satyarth Prakash at Radiance Clinics, Bhubaneswar.",
@@ -68,7 +61,8 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   openGraph: {
-    title: "Radiance Clinics Bhubaneswar | Hair Transplant, Skin & Laser Clinic",
+    title:
+      "Radiance Clinics Bhubaneswar | Hair Transplant, Skin & Laser Clinic",
     description:
       "Doctor-led hair transplant, hair restoration, skin, laser and aesthetic care in Bhubaneswar.",
     url: "/",
@@ -151,21 +145,21 @@ export default async function Home() {
       <section className="relative isolate overflow-hidden bg-[var(--mist)] px-5 py-12 sm:px-8">
         <SciencePatternOverlay className="z-0 opacity-30" />
         <LuxuryNoiseOverlay className="z-0" />
-        <div className="relative z-10 mx-auto grid max-w-7xl gap-3 md:grid-cols-4">
+        <div className="relative z-10 mx-auto grid min-w-0 max-w-7xl grid-cols-2 gap-3 md:grid-cols-4">
           {proofStats.map((stat, index) => (
             <Reveal key={stat.label} delay={index * 0.04}>
-              <div className="gradient-border h-full rounded-[2rem] bg-white/56 p-5 shadow-[0_22px_80px_rgba(15,16,22,0.08)] backdrop-blur-xl">
-                <p className="text-[0.62rem] font-extrabold uppercase tracking-[0.24em] text-[var(--bronze)]">
+              <div className="gradient-border h-full min-w-0 rounded-[1.35rem] bg-white/56 p-4 shadow-[0_22px_80px_rgba(15,16,22,0.08)] backdrop-blur-xl sm:rounded-[2rem] sm:p-5">
+                <p className="text-[0.58rem] font-extrabold uppercase leading-4 tracking-[0.14em] text-[var(--bronze)] sm:text-[0.62rem] sm:tracking-[0.24em]">
                   {stat.eyebrow || "Proof"}
                 </p>
-                <p className="mt-4 font-mono text-4xl font-extrabold leading-none text-[var(--ink)]">
+                <p className="mt-3 break-words font-mono text-2xl font-extrabold leading-none text-[var(--ink)] sm:mt-4 sm:text-4xl">
                   {stat.value}
                 </p>
-                <h3 className="mt-2 text-sm font-extrabold uppercase tracking-[0.16em] text-[var(--ink)]/62">
+                <h3 className="mt-2 text-[0.7rem] font-extrabold uppercase leading-5 tracking-[0.1em] text-[var(--ink)]/62 sm:text-sm sm:tracking-[0.16em]">
                   {stat.label}
                 </h3>
                 {stat.description ? (
-                  <p className="mt-4 text-sm leading-6 text-[var(--ink)]/58">
+                  <p className="mt-3 hidden text-sm leading-6 text-[var(--ink)]/58 sm:mt-4 sm:block">
                     {stat.description}
                   </p>
                 ) : null}
@@ -175,7 +169,7 @@ export default async function Home() {
         </div>
       </section>
 
-      <section className="relative isolate overflow-hidden bg-[var(--ink)] px-5 py-24 text-[var(--ivory)] sm:px-8 lg:py-32">
+      <section className="relative isolate overflow-hidden bg-[var(--ink)] px-4 py-16 text-[var(--ivory)] sm:px-8 sm:py-20 lg:py-32">
         <AnimatedAuroraBackground className="z-0 opacity-55" />
         <ContourMeshOverlay className="z-0 opacity-30" />
         <LuxuryNoiseOverlay className="z-0 opacity-20" />
@@ -190,7 +184,7 @@ export default async function Home() {
             />
           </Reveal>
 
-          <Reveal delay={0.1} className="mt-12">
+          <Reveal delay={0.1} className="mt-8 sm:mt-12">
             <TransformationShowcase
               eyebrow="Skin Improvement Examples"
               title="Skin Improvement Examples"
@@ -204,11 +198,9 @@ export default async function Home() {
 
       <section
         id="signature-treatments"
-        className="relative isolate overflow-hidden bg-[var(--ivory)] px-5 py-24 sm:px-8 lg:py-32"
+        className="relative isolate overflow-hidden bg-[var(--ivory)] px-4 py-16 sm:px-8 sm:py-20 lg:py-32"
       >
-        <AnimatedAuroraBackground className="z-0 opacity-42" />
         <SciencePatternOverlay className="z-0" />
-        <FloatingSkinCells className="z-0" />
         <LuxuryNoiseOverlay className="z-0" />
         <div className="relative z-10 mx-auto max-w-7xl">
           <Reveal>
@@ -219,17 +211,17 @@ export default async function Home() {
               align="center"
             />
           </Reveal>
-          <Reveal delay={0.08} className="mt-14">
+          <Reveal delay={0.08} className="mt-9 sm:mt-14">
             <TreatmentUniverseSection />
           </Reveal>
         </div>
       </section>
 
-      <section className="relative isolate overflow-hidden bg-[var(--mist)] px-5 py-24 sm:px-8 lg:py-32">
+      <section className="relative isolate overflow-hidden bg-[var(--mist)] px-4 py-16 sm:px-8 sm:py-20 lg:py-32">
         <SectionGlowMask className="z-0" />
         <ContourMeshOverlay className="z-0 opacity-28" />
         <div className="relative z-10 mx-auto max-w-7xl">
-          <div className="mb-12 flex flex-col justify-between gap-8 lg:flex-row lg:items-end">
+          <div className="mb-9 flex min-w-0 flex-col justify-between gap-6 sm:mb-12 sm:gap-8 lg:flex-row lg:items-end">
             <Reveal>
               <SectionHeader
                 eyebrow="Treatment Options"
@@ -241,12 +233,22 @@ export default async function Home() {
               Explore all treatments
             </PremiumButton>
           </div>
-          <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+          <div
+            data-lenis-prevent-touch
+            className="mobile-scroll-row flex min-w-0 snap-x snap-mandatory gap-4 overflow-x-auto overscroll-x-contain pb-3 md:grid md:grid-cols-2 md:overflow-visible md:pb-0 xl:grid-cols-4"
+          >
             {featuredTreatments.map((treatment, index) => (
-              <Reveal key={treatment.title} delay={index * 0.04}>
+              <Reveal
+                key={treatment.title}
+                delay={index * 0.04}
+                className="w-[82vw] max-w-[20rem] shrink-0 snap-start md:w-auto md:max-w-none"
+              >
                 <Link
-                  href={`/treatments/${treatment.cluster}/${treatment.slug}`}
-                  className="group block h-full overflow-hidden rounded-[1.4rem] border border-[var(--ink)]/10 bg-white/72 shadow-[0_22px_76px_rgba(15,16,22,0.08)] backdrop-blur-xl transition duration-500 hover:-translate-y-1 hover:shadow-[0_30px_96px_rgba(15,16,22,0.12)]"
+                  href={
+                    localLandingByTreatmentSlug[treatment.slug] ||
+                    `/treatments/${treatment.cluster}/${treatment.slug}`
+                  }
+                  className="group block h-full min-w-0 overflow-hidden rounded-[1.25rem] border border-[var(--ink)]/10 bg-white shadow-[0_22px_76px_rgba(15,16,22,0.08)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_30px_96px_rgba(15,16,22,0.12)] sm:rounded-[1.4rem]"
                 >
                   {treatment.image ? (
                     <div className="relative aspect-[4/3] overflow-hidden bg-[var(--mist)]">
@@ -255,7 +257,9 @@ export default async function Home() {
                         alt={treatment.image.altText || treatment.image.alt}
                         fill
                         sizes="(min-width: 1280px) 25vw, (min-width: 768px) 50vw, 100vw"
-                        placeholder={treatment.image.blurDataUrl ? "blur" : "empty"}
+                        placeholder={
+                          treatment.image.blurDataUrl ? "blur" : "empty"
+                        }
                         blurDataURL={treatment.image.blurDataUrl}
                         className="object-cover transition duration-700 group-hover:scale-105"
                       />
@@ -285,16 +289,16 @@ export default async function Home() {
 
       <DoctorAuthority doctor={doctor} />
 
-      <section className="relative isolate overflow-hidden bg-[var(--mist)] px-5 py-24 sm:px-8 lg:py-32">
+      <section className="relative isolate overflow-hidden bg-[var(--mist)] px-4 py-16 sm:px-8 sm:py-20 lg:py-32">
         <SectionGlowMask className="z-0 opacity-70" />
         <LuxuryNoiseOverlay className="z-0" />
         <div className="relative z-10 mx-auto max-w-7xl">
-          <Reveal className="mb-14">
-              <SectionHeader
-                eyebrow="Recognition"
-                title="Recognition & Trust"
-                description="Moments, certificates and recognitions from Radiance Clinics' work in hair, skin and aesthetic care."
-              />
+          <Reveal className="mb-9 sm:mb-14">
+            <SectionHeader
+              eyebrow="Recognition"
+              title="Recognition & Trust"
+              description="Moments, certificates and recognitions from Radiance Clinics' work in hair, skin and aesthetic care."
+            />
           </Reveal>
           <Reveal delay={0.08}>
             <RecognitionCarousel items={recognitionItems} />
@@ -302,16 +306,16 @@ export default async function Home() {
         </div>
       </section>
 
-      <section className="relative isolate overflow-hidden bg-[var(--ivory)] px-5 py-24 sm:px-8 lg:py-32">
+      <section className="relative isolate overflow-hidden bg-[var(--ivory)] px-4 py-16 sm:px-8 sm:py-20 lg:py-32">
         <AnimatedAuroraBackground className="z-0 opacity-38" />
         <LuxuryNoiseOverlay className="z-0" />
         <div className="relative z-10 mx-auto max-w-7xl">
-          <Reveal className="mb-14">
-              <SectionHeader
-                eyebrow="Official channels"
-                title="Follow Radiance Clinics"
-                description="Watch treatment explainers, patient stories and clinic updates across Radiance Clinics' official channels."
-              />
+          <Reveal className="mb-9 sm:mb-14">
+            <SectionHeader
+              eyebrow="Official channels"
+              title="Follow Radiance Clinics"
+              description="Watch treatment explainers, patient stories and clinic updates across Radiance Clinics' official channels."
+            />
           </Reveal>
           <SocialCommunitySection
             links={socialLinks}
@@ -322,27 +326,27 @@ export default async function Home() {
         </div>
       </section>
 
-      <section className="relative isolate overflow-hidden bg-[var(--mist)] px-5 py-24 sm:px-8 lg:py-32">
+      <section className="relative isolate overflow-hidden bg-[var(--mist)] px-4 py-16 sm:px-8 sm:py-20 lg:py-32">
         <SciencePatternOverlay className="z-0 opacity-34" />
         <div className="relative z-10 mx-auto max-w-7xl">
           <Reveal>
-              <SectionHeader
-                eyebrow="Why choose Radiance"
-                title="Why patients choose Radiance."
-                description="Doctor-led consultations, advanced equipment, privacy, clear aftercare and realistic guidance for hair, skin, laser and aesthetic concerns."
-                align="center"
-              />
+            <SectionHeader
+              eyebrow="Why choose Radiance"
+              title="Why patients choose Radiance."
+              description="Doctor-led consultations, advanced equipment, privacy, clear aftercare and realistic guidance for hair, skin, laser and aesthetic concerns."
+              align="center"
+            />
           </Reveal>
-          <Reveal delay={0.08} className="mt-14">
+          <Reveal delay={0.08} className="mt-9 sm:mt-14">
             <WhyChooseRadiance items={homepage.whyChoose} />
           </Reveal>
         </div>
       </section>
 
-      <section className="relative isolate overflow-hidden bg-[var(--ivory)] px-5 py-24 sm:px-8 lg:py-32">
+      <section className="relative isolate overflow-hidden bg-[var(--ivory)] px-4 py-16 sm:px-8 sm:py-20 lg:py-32">
         <SectionGlowMask className="z-0 opacity-80" />
         <div className="relative z-10 mx-auto max-w-7xl">
-          <div className="mb-14 grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
+          <div className="mb-9 grid min-w-0 gap-6 sm:mb-14 sm:gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
             <Reveal>
               <SectionHeader
                 eyebrow="Care process"
@@ -351,7 +355,7 @@ export default async function Home() {
               />
             </Reveal>
             <Reveal delay={0.08}>
-              <div className="rounded-[2rem] border border-[var(--ink)]/10 bg-white/60 p-5 shadow-[0_22px_80px_rgba(15,16,22,0.08)] backdrop-blur-xl">
+              <div className="rounded-[1.35rem] border border-[var(--ink)]/10 bg-white/60 p-5 shadow-[0_22px_80px_rgba(15,16,22,0.08)] backdrop-blur-xl sm:rounded-[2rem]">
                 <CalendarCheck className="mb-4 h-6 w-6 text-[var(--bronze)]" />
                 <p className="text-sm leading-7 text-[var(--ink)]/62">
                   Consultation, mapping, procedure planning and maintenance are
@@ -360,13 +364,13 @@ export default async function Home() {
               </div>
             </Reveal>
           </div>
-          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+          <div className="grid gap-4 min-[380px]:grid-cols-2 md:grid-cols-2 lg:grid-cols-4">
             {homepage.journey.map((step, index) => {
               const Icon = step.icon;
               return (
                 <Reveal key={step.title} delay={index * 0.05}>
-                  <div className="gradient-border h-full rounded-[2rem] bg-white/58 p-6 shadow-[0_24px_80px_rgba(15,16,22,0.08)] backdrop-blur-xl">
-                    <div className="mb-10 flex items-center justify-between">
+                  <div className="gradient-border h-full rounded-[1.35rem] bg-white/58 p-5 shadow-[0_24px_80px_rgba(15,16,22,0.08)] backdrop-blur-xl sm:rounded-[2rem] sm:p-6">
+                    <div className="mb-7 flex items-center justify-between sm:mb-10">
                       <span className="font-mono text-4xl font-extrabold text-[var(--bronze)]">
                         0{index + 1}
                       </span>
@@ -388,22 +392,25 @@ export default async function Home() {
         </div>
       </section>
 
-      <section className="relative isolate overflow-hidden bg-[var(--mist)] px-5 py-24 sm:px-8 lg:py-32">
+      <section
+        id="clinic-gallery"
+        className="relative isolate scroll-mt-28 overflow-hidden bg-[var(--mist)] px-4 py-16 sm:px-8 sm:py-20 lg:py-32"
+      >
         <ContourMeshOverlay className="z-0 opacity-30" />
         <LuxuryNoiseOverlay className="z-0" />
         <div className="relative z-10 mx-auto max-w-7xl">
-          <Reveal className="mb-14">
-              <SectionHeader
-                eyebrow="Clinic Gallery"
-                title="Inside Radiance Clinics"
-                description="A closer look at the clinic environment, doctor-led consultations, recognition moments and patient care spaces."
-              />
+          <Reveal className="mb-9 sm:mb-14">
+            <SectionHeader
+              eyebrow="Clinic Gallery"
+              title="Inside Radiance Clinics"
+              description="A closer look at the clinic environment, doctor-led consultations, recognition moments and patient care spaces."
+            />
           </Reveal>
           <ClinicAmbienceGallery images={galleryImages} />
         </div>
       </section>
 
-      <section className="relative isolate overflow-hidden bg-[var(--ivory)] px-5 py-24 sm:px-8 lg:py-32">
+      <section className="relative isolate overflow-hidden bg-[var(--ivory)] px-4 py-16 sm:px-8 sm:py-20 lg:py-32">
         <AnimatedAuroraBackground className="z-0 opacity-30" />
         <div className="relative z-10 mx-auto max-w-7xl">
           <div className="flex flex-col justify-between gap-8 lg:flex-row lg:items-end">
@@ -418,12 +425,19 @@ export default async function Home() {
               Open library
             </PremiumButton>
           </div>
-          <div className="mt-12 grid gap-5 md:grid-cols-3">
+          <div
+            data-lenis-prevent-touch
+            className="mobile-scroll-row mt-9 flex min-w-0 snap-x snap-mandatory gap-4 overflow-x-auto overscroll-x-contain pb-3 sm:mt-12 md:grid md:grid-cols-3 md:overflow-visible md:pb-0"
+          >
             {recentArticles.map((article, index) => (
-              <Reveal key={article.slug} delay={index * 0.05}>
+              <Reveal
+                key={article.slug}
+                delay={index * 0.05}
+                className="w-[82vw] max-w-[20rem] shrink-0 snap-start md:w-auto md:max-w-none"
+              >
                 <Link
                   href={`/knowledge/${article.slug}`}
-                  className="group flex h-full flex-col overflow-hidden rounded-[2.1rem] border border-[var(--ink)]/10 bg-white/60 p-4 shadow-[0_26px_90px_rgba(15,16,22,0.08)] backdrop-blur-xl transition duration-500 hover:-translate-y-1"
+                  className="group flex h-full min-w-0 flex-col overflow-hidden rounded-[1.4rem] border border-[var(--ink)]/10 bg-white/60 p-4 shadow-[0_26px_90px_rgba(15,16,22,0.08)] backdrop-blur-xl transition duration-500 hover:-translate-y-1 sm:rounded-[2.1rem]"
                 >
                   {article.image ? (
                     <div className="relative h-56 overflow-hidden rounded-[1.6rem] bg-[var(--mist)]">
@@ -464,11 +478,11 @@ export default async function Home() {
         </div>
       </section>
 
-      <section className="relative isolate overflow-hidden bg-[var(--mist)] px-5 py-24 sm:px-8 lg:py-32">
+      <section className="relative isolate overflow-hidden bg-[var(--mist)] px-4 py-16 sm:px-8 sm:py-20 lg:py-32">
         <SciencePatternOverlay className="z-0 opacity-28" />
-        <div className="relative z-10 mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.85fr_1.15fr]">
+        <div className="relative z-10 mx-auto grid min-w-0 max-w-7xl gap-9 sm:gap-12 lg:grid-cols-[0.85fr_1.15fr]">
           <Reveal>
-              <SectionHeader
+            <SectionHeader
               eyebrow="Patient Stories"
               title="Quiet confidence, not loud promises."
               description="Testimonials focus on clarity, comfort and planning rather than guaranteed outcomes."
@@ -477,7 +491,7 @@ export default async function Home() {
           <div className="grid gap-4">
             {testimonials.map((testimonial, index) => (
               <Reveal key={testimonial.quote} delay={index * 0.05}>
-                <figure className="rounded-[2rem] border border-[var(--ink)]/10 bg-white/58 p-6 shadow-[0_20px_70px_rgba(15,16,22,0.07)] backdrop-blur-xl">
+                <figure className="rounded-[1.35rem] border border-[var(--ink)]/10 bg-white/58 p-5 shadow-[0_20px_70px_rgba(15,16,22,0.07)] backdrop-blur-xl sm:rounded-[2rem] sm:p-6">
                   <Quote className="mb-6 h-6 w-6 text-[var(--bronze)]" />
                   <blockquote className="text-xl leading-8 text-[var(--ink)]">
                     &quot;{testimonial.quote}&quot;
@@ -492,8 +506,8 @@ export default async function Home() {
         </div>
       </section>
 
-      <section className="relative isolate overflow-hidden bg-[var(--ivory)] px-5 py-24 sm:px-8 lg:py-32">
-        <div className="relative z-10 mx-auto grid max-w-7xl gap-10 lg:grid-cols-2 lg:items-start">
+      <section className="relative isolate overflow-hidden bg-[var(--ivory)] px-4 py-16 sm:px-8 sm:py-20 lg:py-32">
+        <div className="relative z-10 mx-auto grid min-w-0 max-w-7xl gap-9 sm:gap-10 lg:grid-cols-2 lg:items-start">
           <Reveal>
             <SectionHeader
               eyebrow="Questions"
@@ -507,7 +521,7 @@ export default async function Home() {
         </div>
       </section>
 
-      <section className="relative isolate overflow-hidden bg-[var(--ink)] px-5 py-24 text-center text-[var(--ivory)] sm:px-8 lg:py-32">
+      <section className="relative isolate overflow-hidden bg-[var(--ink)] px-4 py-16 text-center text-[var(--ivory)] sm:px-8 sm:py-20 lg:py-32">
         <AnimatedAuroraBackground className="z-0 opacity-80" />
         <FloatingSkinCells className="z-0 opacity-60" />
         <ContourMeshOverlay className="z-0 opacity-24" />
@@ -516,7 +530,7 @@ export default async function Home() {
           <p className="mb-5 text-xs font-bold uppercase tracking-[0.34em] text-[var(--champagne)]">
             Radiance Clinics
           </p>
-          <h2 className="font-serif text-5xl leading-[0.92] tracking-normal sm:text-7xl">
+          <h2 className="font-serif text-4xl leading-[0.94] tracking-normal sm:text-7xl">
             Start with doctor-led clarity. Leave with a plan that feels precise.
           </h2>
           <p className="mx-auto mt-7 max-w-2xl text-lg leading-8 text-white/66">
@@ -534,12 +548,15 @@ export default async function Home() {
             >
               WhatsApp
             </PremiumButton>
-            <OpenBookingButton source="homepage_booking" className="border-white/20 bg-white/8 text-[var(--ivory)] hover:bg-white/14">
+            <OpenBookingButton
+              source="homepage_booking"
+              className="border-white/20 bg-white/8 text-[var(--ivory)] hover:bg-white/14"
+            >
               Book Consultation
             </OpenBookingButton>
             <OpenChatButton className="border-white/20 bg-white/8 text-[var(--ivory)] hover:bg-white/14" />
           </div>
-          <div className="mx-auto mt-10 flex max-w-3xl items-start gap-3 rounded-[2rem] border border-white/12 bg-white/[0.07] p-5 text-left text-sm leading-7 text-white/58 backdrop-blur-xl">
+          <div className="mx-auto mt-9 flex max-w-3xl items-start gap-3 rounded-[1.35rem] border border-white/12 bg-white/[0.07] p-4 text-left text-sm leading-7 text-white/58 backdrop-blur-xl sm:mt-10 sm:rounded-[2rem] sm:p-5">
             <ShieldCheck className="mt-1 h-5 w-5 shrink-0 text-[var(--champagne)]" />
             Treatment suitability, timelines and expected outcomes require an
             in-person or doctor-led consultation. The site and AI assistant are

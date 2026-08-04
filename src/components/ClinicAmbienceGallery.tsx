@@ -1,7 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import { useCallback, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
+import { createPortal } from "react-dom";
 import { ChevronLeft, ChevronRight, Maximize2, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import type { GalleryImage } from "@/types/cms";
@@ -44,7 +45,9 @@ function dedupeGalleryImages(images: GalleryImage[]) {
 
   return images.filter((item, index) => {
     const image = item.image;
-    const normalizedTitle = item.title.toLowerCase().replace(/[^a-z0-9]+/g, "-");
+    const normalizedTitle = item.title
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, "-");
     const basename = (image.normalizedBasename || image.filename || "")
       .toLowerCase()
       .replace(/\.[a-z0-9]+$/i, "")
@@ -62,7 +65,9 @@ function dedupeGalleryImages(images: GalleryImage[]) {
       /threebest|threebestrated|best-business/i.test(imageSearchText(item))
         ? "trust-badge:threebest"
         : "",
-      /anil-kapoor/i.test(imageSearchText(item)) ? "recognition:anil-kapoor" : "",
+      /anil-kapoor/i.test(imageSearchText(item))
+        ? "recognition:anil-kapoor"
+        : "",
       imageKey(item, index),
     ].filter(Boolean) as string[];
 
@@ -88,7 +93,9 @@ function imagePosition(item: GalleryImage) {
 }
 
 function imageSrc(item: GalleryImage) {
-  return item.image.src || item.image.desktopUrl || item.image.fallbackUrl || "";
+  return (
+    item.image.src || item.image.desktopUrl || item.image.fallbackUrl || ""
+  );
 }
 
 export function ClinicAmbienceGallery({ images }: { images: GalleryImage[] }) {
@@ -110,13 +117,33 @@ export function ClinicAmbienceGallery({ images }: { images: GalleryImage[] }) {
     });
   }, [visibleImages.length]);
 
+  useEffect(() => {
+    if (activeIndex === null) return;
+
+    const previousOverflow = document.body.style.overflow;
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") closeLightbox();
+    };
+
+    document.body.style.overflow = "hidden";
+    window.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [activeIndex, closeLightbox]);
+
   if (!visibleImages.length) {
     return null;
   }
 
   return (
     <>
-      <div className="grid grid-cols-2 gap-3 sm:gap-4 lg:auto-rows-[14rem] lg:grid-cols-4 lg:gap-5">
+      <div
+        data-lenis-prevent-touch
+        className="mobile-scroll-row flex w-full snap-x snap-mandatory gap-3 overflow-x-auto overscroll-x-contain pb-3 sm:grid sm:grid-cols-2 sm:gap-4 sm:overflow-visible sm:pb-0 lg:auto-rows-[14rem] lg:grid-cols-4 lg:gap-5"
+      >
         {visibleImages.map((item, index) => (
           <GalleryTile
             key={imageKey(item, index)}
@@ -127,74 +154,87 @@ export function ClinicAmbienceGallery({ images }: { images: GalleryImage[] }) {
         ))}
       </div>
 
-      {activeItem ? (
-        <div
-          className="fixed inset-0 z-[80] grid place-items-center bg-[rgba(15,16,22,0.86)] px-4 py-6 backdrop-blur-xl"
-          role="dialog"
-          aria-modal="true"
-          aria-label={activeItem.title}
-          onClick={closeLightbox}
-        >
-          <div
-            className="relative grid w-full max-w-6xl gap-4"
-            onClick={(event) => event.stopPropagation()}
-          >
-            <div className="flex items-center justify-between gap-3 text-white">
-              <div>
-                <p className="text-[0.66rem] font-extrabold uppercase tracking-[0.22em] text-[var(--champagne)]">
-                  {activeItem.category}
-                </p>
-                <h3 className="mt-2 font-serif text-3xl leading-none sm:text-4xl">
-                  {activeItem.title}
-                </h3>
+      {activeItem
+        ? createPortal(
+            <div
+              className="fixed inset-0 z-[80] grid place-items-center overflow-y-auto bg-[rgba(15,16,22,0.86)] px-3 py-4 backdrop-blur-xl sm:px-4 sm:py-6"
+              role="dialog"
+              aria-modal="true"
+              aria-label={activeItem.title}
+              onClick={closeLightbox}
+            >
+              <div
+                className="relative grid w-full max-w-6xl gap-4"
+                onClick={(event) => event.stopPropagation()}
+              >
+                <div className="flex items-center justify-between gap-3 text-white">
+                  <div>
+                    <p className="text-[0.66rem] font-extrabold uppercase tracking-[0.22em] text-[var(--champagne)]">
+                      {activeItem.category}
+                    </p>
+                    <h3 className="mt-2 font-serif text-3xl leading-none sm:text-4xl">
+                      {activeItem.title}
+                    </h3>
+                  </div>
+                  <button
+                    type="button"
+                    onClick={closeLightbox}
+                    className="grid h-11 w-11 shrink-0 place-items-center rounded-full border border-white/18 bg-white/10 text-white transition hover:bg-white/16"
+                    aria-label="Close gallery image"
+                  >
+                    <X className="h-5 w-5" />
+                  </button>
+                </div>
+
+                <div className="relative h-[min(62svh,42rem)] min-h-0 overflow-hidden rounded-[1.35rem] border border-white/16 bg-white/8 sm:rounded-[1.8rem]">
+                  <Image
+                    src={imageSrc(activeItem)}
+                    alt={
+                      activeItem.image.altText ||
+                      activeItem.image.alt ||
+                      activeItem.title
+                    }
+                    fill
+                    sizes="100vw"
+                    placeholder={
+                      activeItem.image.blurDataUrl ? "blur" : "empty"
+                    }
+                    blurDataURL={activeItem.image.blurDataUrl}
+                    className={cn(
+                      shouldContain(activeItem)
+                        ? "object-contain p-4 sm:p-8"
+                        : "object-cover",
+                    )}
+                    style={{ objectPosition: imagePosition(activeItem) }}
+                  />
+                </div>
+
+                <div className="flex items-center justify-between gap-3 text-white">
+                  <button
+                    type="button"
+                    onClick={showPrevious}
+                    className="inline-flex min-h-11 items-center gap-2 rounded-full border border-white/18 bg-white/10 px-4 py-2 text-xs font-extrabold uppercase tracking-[0.16em] transition hover:bg-white/16"
+                  >
+                    <ChevronLeft className="h-4 w-4" />
+                    Previous
+                  </button>
+                  <p className="hidden max-w-xl text-center text-sm leading-6 text-white/66 sm:block">
+                    {activeItem.caption}
+                  </p>
+                  <button
+                    type="button"
+                    onClick={showNext}
+                    className="inline-flex min-h-11 items-center gap-2 rounded-full border border-white/18 bg-white/10 px-4 py-2 text-xs font-extrabold uppercase tracking-[0.16em] transition hover:bg-white/16"
+                  >
+                    Next
+                    <ChevronRight className="h-4 w-4" />
+                  </button>
+                </div>
               </div>
-              <button
-                type="button"
-                onClick={closeLightbox}
-                className="grid h-11 w-11 shrink-0 place-items-center rounded-full border border-white/18 bg-white/10 text-white transition hover:bg-white/16"
-                aria-label="Close gallery image"
-              >
-                <X className="h-5 w-5" />
-              </button>
-            </div>
-
-            <div className="relative min-h-[68vh] overflow-hidden rounded-[1.8rem] border border-white/16 bg-white/8">
-              <Image
-                src={imageSrc(activeItem)}
-                alt={activeItem.image.altText || activeItem.image.alt || activeItem.title}
-                fill
-                sizes="100vw"
-                placeholder={activeItem.image.blurDataUrl ? "blur" : "empty"}
-                blurDataURL={activeItem.image.blurDataUrl}
-                className={cn(shouldContain(activeItem) ? "object-contain p-4 sm:p-8" : "object-cover")}
-                style={{ objectPosition: imagePosition(activeItem) }}
-              />
-            </div>
-
-            <div className="flex items-center justify-between gap-3 text-white">
-              <button
-                type="button"
-                onClick={showPrevious}
-                className="inline-flex min-h-11 items-center gap-2 rounded-full border border-white/18 bg-white/10 px-4 py-2 text-xs font-extrabold uppercase tracking-[0.16em] transition hover:bg-white/16"
-              >
-                <ChevronLeft className="h-4 w-4" />
-                Previous
-              </button>
-              <p className="hidden max-w-xl text-center text-sm leading-6 text-white/66 sm:block">
-                {activeItem.caption}
-              </p>
-              <button
-                type="button"
-                onClick={showNext}
-                className="inline-flex min-h-11 items-center gap-2 rounded-full border border-white/18 bg-white/10 px-4 py-2 text-xs font-extrabold uppercase tracking-[0.16em] transition hover:bg-white/16"
-              >
-                Next
-                <ChevronRight className="h-4 w-4" />
-              </button>
-            </div>
-          </div>
-        </div>
-      ) : null}
+            </div>,
+            document.body,
+          )
+        : null}
     </>
   );
 }
@@ -214,12 +254,13 @@ function GalleryTile({
   return (
     <button
       type="button"
+      data-gallery-tile={index}
       onClick={onOpen}
       className={cn(
-        "group relative min-h-0 overflow-hidden rounded-[1.1rem] border border-[var(--ink)]/10 bg-white text-left shadow-[0_24px_80px_rgba(15,16,22,0.1)] transition duration-500 hover:-translate-y-1 hover:shadow-[0_32px_110px_rgba(15,16,22,0.14)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--aqua)]",
+        "group relative min-h-0 shrink-0 snap-start overflow-hidden rounded-[1.1rem] border border-[var(--ink)]/10 bg-white text-left shadow-[0_24px_80px_rgba(15,16,22,0.1)] transition duration-500 hover:-translate-y-1 hover:shadow-[0_32px_110px_rgba(15,16,22,0.14)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--aqua)] sm:w-auto sm:shrink sm:snap-align-none",
         large
-          ? "col-span-2 min-h-[24rem] lg:row-span-2 lg:min-h-0"
-          : "min-h-[16rem] lg:min-h-0",
+          ? "min-h-[23rem] w-[84vw] max-w-[21rem] sm:col-span-2 sm:w-auto sm:max-w-none lg:row-span-2 lg:min-h-0"
+          : "min-h-[20rem] w-[72vw] max-w-[18rem] sm:min-h-[16rem] sm:w-auto sm:max-w-none lg:min-h-0",
       )}
     >
       <Image
@@ -259,7 +300,7 @@ function GalleryTile({
         <h3
           className={cn(
             "font-serif leading-none",
-            large ? "text-4xl sm:text-5xl" : "text-2xl",
+            large ? "text-3xl sm:text-5xl" : "text-2xl",
           )}
         >
           {item.title}

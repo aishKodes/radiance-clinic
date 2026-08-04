@@ -23,13 +23,28 @@
 }
 
 html {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: clip;
   background:
-    radial-gradient(circle at 10% 0%, rgba(31, 127, 143, 0.08), transparent 28%),
-    radial-gradient(circle at 90% 12%, rgba(156, 107, 52, 0.08), transparent 30%),
+    radial-gradient(
+      circle at 10% 0%,
+      rgba(31, 127, 143, 0.08),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 90% 12%,
+      rgba(156, 107, 52, 0.08),
+      transparent 30%
+    ),
     var(--ivory);
 }
 
 body {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  overflow-x: clip;
   background: var(--ivory);
   color: var(--ink);
   font-family: var(--font-jakarta), Arial, Helvetica, sans-serif;
@@ -37,6 +52,19 @@ body {
   text-rendering: geometricPrecision;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+main,
+main > section {
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+}
+
+img,
+video,
+canvas {
+  max-width: 100%;
 }
 
 ::selection {
@@ -62,7 +90,11 @@ p {
 .glass-card {
   border: 1px solid rgba(16, 16, 20, 0.1);
   background:
-    linear-gradient(135deg, rgba(255, 255, 255, 0.72), rgba(255, 255, 255, 0.34)),
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.72),
+      rgba(255, 255, 255, 0.34)
+    ),
     rgba(255, 247, 237, 0.58);
   box-shadow: 0 30px 100px rgba(16, 16, 20, 0.1);
   backdrop-filter: blur(24px);
@@ -84,7 +116,12 @@ p {
   inset: 0;
   border-radius: inherit;
   padding: 1px;
-  background: linear-gradient(135deg, rgba(156, 107, 52, 0.58), rgba(255, 255, 255, 0.66), rgba(31, 127, 143, 0.34));
+  background: linear-gradient(
+    135deg,
+    rgba(156, 107, 52, 0.58),
+    rgba(255, 255, 255, 0.66),
+    rgba(31, 127, 143, 0.34)
+  );
   -webkit-mask:
     linear-gradient(#000 0 0) content-box,
     linear-gradient(#000 0 0);
@@ -96,10 +133,18 @@ p {
 .science-pattern {
   background-image:
     radial-gradient(circle, rgba(15, 16, 22, 0.08) 1px, transparent 1.4px),
-    radial-gradient(circle at 12px 12px, rgba(31, 127, 143, 0.08) 2px, transparent 2.6px),
+    radial-gradient(
+      circle at 12px 12px,
+      rgba(31, 127, 143, 0.08) 2px,
+      transparent 2.6px
+    ),
     linear-gradient(rgba(31, 127, 143, 0.06) 1px, transparent 1px),
     linear-gradient(90deg, rgba(156, 107, 52, 0.05) 1px, transparent 1px);
-  background-size: 36px 36px, 72px 72px, 120px 120px, 120px 120px;
+  background-size:
+    36px 36px,
+    72px 72px,
+    120px 120px,
+    120px 120px;
   mask-image: radial-gradient(circle at 50% 20%, black, transparent 72%);
 }
 
@@ -115,15 +160,32 @@ p {
       rgba(31, 127, 143, 0.08) 0 1px,
       transparent 1px 32px
     ),
-    linear-gradient(115deg, transparent 0 42%, rgba(156, 107, 52, 0.06) 43%, transparent 44% 100%);
-  mask-image: linear-gradient(180deg, transparent, black 16%, black 72%, transparent);
+    linear-gradient(
+      115deg,
+      transparent 0 42%,
+      rgba(156, 107, 52, 0.06) 43%,
+      transparent 44% 100%
+    );
+  mask-image: linear-gradient(
+    180deg,
+    transparent,
+    black 16%,
+    black 72%,
+    transparent
+  );
 }
 
 .luxury-noise {
   background-image:
     radial-gradient(circle at 25% 25%, rgba(16, 16, 20, 0.08), transparent 1px),
-    radial-gradient(circle at 75% 75%, rgba(255, 255, 255, 0.3), transparent 1px);
-  background-size: 4px 4px, 5px 5px;
+    radial-gradient(
+      circle at 75% 75%,
+      rgba(255, 255, 255, 0.3),
+      transparent 1px
+    );
+  background-size:
+    4px 4px,
+    5px 5px;
   mix-blend-mode: multiply;
 }
 
@@ -145,6 +207,15 @@ p {
 .transformation-selector-scroll::-webkit-scrollbar-thumb {
   border-radius: 999px;
   background: rgba(217, 189, 130, 0.68);
+}
+
+.mobile-scroll-row {
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.mobile-scroll-row::-webkit-scrollbar {
+  display: none;
 }
 
 .aurora-orb {
@@ -209,7 +280,11 @@ p {
   border: 1px solid rgba(31, 127, 143, 0.12);
   border-radius: 48% 52% 46% 54%;
   background:
-    radial-gradient(circle at 35% 35%, rgba(255, 255, 255, 0.78), transparent 28%),
+    radial-gradient(
+      circle at 35% 35%,
+      rgba(255, 255, 255, 0.78),
+      transparent 28%
+    ),
     linear-gradient(135deg, rgba(31, 127, 143, 0.08), rgba(156, 107, 52, 0.08));
   box-shadow: 0 12px 36px rgba(31, 127, 143, 0.07);
   animation: cell-float 12s ease-in-out infinite;
@@ -237,6 +312,14 @@ p {
   }
 }
 
+@media (min-width: 1024px) {
+  .aurora-orb,
+  .section-glow,
+  .skin-cell {
+    animation: none;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -245,5 +328,18 @@ p {
     animation-iteration-count: 1 !important;
     scroll-behavior: auto !important;
     transition-duration: 0.001ms !important;
+  }
+}
+
+@media (max-width: 639px) {
+  .aurora-orb {
+    width: 24rem;
+    height: 24rem;
+    filter: blur(52px);
+  }
+
+  .section-glow {
+    width: 20rem;
+    height: 20rem;
   }
 }

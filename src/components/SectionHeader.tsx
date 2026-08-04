@@ -20,14 +20,14 @@ export function SectionHeader({
   return (
     <div
       className={cn(
-        "mx-auto max-w-3xl",
+        "mx-auto min-w-0 max-w-3xl",
         align === "center" ? "text-center" : "mx-0 text-left",
         className,
       )}
     >
       <p
         className={cn(
-          "mb-4 text-xs font-extrabold uppercase tracking-[0.34em]",
+          "mb-3 text-[0.68rem] font-extrabold uppercase leading-5 tracking-[0.22em] sm:mb-4 sm:text-xs sm:tracking-[0.34em]",
           inverse ? "text-[var(--champagne)]" : "text-[var(--aqua)]",
         )}
       >
@@ -35,7 +35,7 @@ export function SectionHeader({
       </p>
       <h2
         className={cn(
-          "font-serif text-4xl leading-[0.95] tracking-normal sm:text-5xl lg:text-6xl",
+          "font-serif text-[2.15rem] leading-[0.98] tracking-normal sm:text-5xl lg:text-6xl",
           inverse ? "text-[var(--ivory)]" : "text-[var(--ink)]",
         )}
       >
@@ -44,7 +44,7 @@ export function SectionHeader({
       {description ? (
         <p
           className={cn(
-            "mt-6 text-base leading-8 sm:text-lg",
+            "mt-5 text-[0.95rem] leading-7 sm:mt-6 sm:text-lg sm:leading-8",
             inverse ? "text-white/64" : "text-[var(--ink)]/68",
           )}
         >

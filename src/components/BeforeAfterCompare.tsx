@@ -123,8 +123,8 @@ export function BeforeAfterCompare({
           handle={
             <ReactCompareSliderHandle
               buttonStyle={{
-                width: "3.4rem",
-                height: "3.4rem",
+                width: "clamp(2.65rem, 12vw, 3.4rem)",
+                height: "clamp(2.65rem, 12vw, 3.4rem)",
                 border: "1px solid rgba(255,255,255,0.72)",
                 background:
                   "linear-gradient(135deg, rgba(255,255,255,0.94), rgba(233,201,143,0.92))",
@@ -152,11 +152,11 @@ export function BeforeAfterCompare({
         <CompareLabel>After</CompareLabel>
       </div>
 
-      <div className="pointer-events-none absolute inset-x-3 bottom-3 z-20 flex flex-wrap items-end justify-between gap-2 sm:inset-x-4 sm:bottom-4">
-        <span className="rounded-full border border-white/18 bg-[rgba(15,16,22,0.68)] px-3 py-1.5 text-[0.62rem] font-extrabold uppercase tracking-[0.18em] text-white shadow-[0_12px_30px_rgba(0,0,0,0.2)] backdrop-blur">
+      <div className="pointer-events-none absolute inset-x-2.5 bottom-2.5 z-20 flex flex-wrap items-end justify-between gap-2 sm:inset-x-4 sm:bottom-4">
+        <span className="rounded-full border border-white/18 bg-[rgba(15,16,22,0.68)] px-2.5 py-1.5 text-[0.56rem] font-extrabold uppercase tracking-[0.12em] text-white shadow-[0_12px_30px_rgba(0,0,0,0.2)] backdrop-blur sm:px-3 sm:text-[0.62rem] sm:tracking-[0.18em]">
           {viewLabel}
         </span>
-        <span className="max-w-[62%] rounded-full border border-white/14 bg-white/12 px-3 py-1.5 text-right text-[0.62rem] font-extrabold uppercase tracking-[0.14em] text-white/76 backdrop-blur">
+        <span className="max-w-[62%] truncate rounded-full border border-white/14 bg-white/12 px-2.5 py-1.5 text-right text-[0.56rem] font-extrabold uppercase tracking-[0.1em] text-white/76 backdrop-blur sm:px-3 sm:text-[0.62rem] sm:tracking-[0.14em]">
           {label}
         </span>
       </div>
@@ -215,7 +215,7 @@ function useClientMounted() {
 
 function CompareLabel({ children }: { children: string }) {
   return (
-    <span className="rounded-full border border-white/24 bg-[rgba(15,16,22,0.68)] px-3 py-1.5 text-[0.62rem] font-extrabold uppercase tracking-[0.18em] text-white shadow-[0_12px_34px_rgba(0,0,0,0.2)] backdrop-blur sm:px-4 sm:py-2 sm:text-[0.68rem]">
+    <span className="rounded-full border border-white/24 bg-[rgba(15,16,22,0.68)] px-2.5 py-1.5 text-[0.56rem] font-extrabold uppercase tracking-[0.14em] text-white shadow-[0_12px_34px_rgba(0,0,0,0.2)] backdrop-blur sm:px-4 sm:py-2 sm:text-[0.68rem] sm:tracking-[0.18em]">
       {children}
     </span>
   );

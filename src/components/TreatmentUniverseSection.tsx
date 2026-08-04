@@ -15,7 +15,9 @@ const tabAccent = {
 };
 
 export function TreatmentUniverseSection() {
-  const [activeId, setActiveId] = useState(treatmentCategoryTabs[0]?.id || "skin");
+  const [activeId, setActiveId] = useState(
+    treatmentCategoryTabs[0]?.id || "skin",
+  );
   const active =
     treatmentCategoryTabs.find((item) => item.id === activeId) ||
     treatmentCategoryTabs[0];
@@ -23,11 +25,11 @@ export function TreatmentUniverseSection() {
   if (!active) return null;
 
   return (
-    <div className="grid gap-6 lg:grid-cols-[18rem_minmax(0,1fr)]">
+    <div className="grid min-w-0 gap-6 lg:grid-cols-[18rem_minmax(0,1fr)]">
       <div
         data-lenis-prevent-wheel
         data-lenis-prevent-touch
-        className="flex gap-3 overflow-x-auto pb-2 lg:block lg:space-y-3 lg:overflow-visible lg:pb-0"
+        className="mobile-scroll-row flex w-full snap-x snap-mandatory gap-3 overflow-x-auto overscroll-x-contain pb-2 lg:block lg:space-y-3 lg:overflow-visible lg:pb-0"
         role="tablist"
         aria-label="Treatment categories"
       >
@@ -41,7 +43,7 @@ export function TreatmentUniverseSection() {
             aria-controls={`treatment-tab-${tab.id}`}
             onClick={() => setActiveId(tab.id)}
             className={cn(
-              "min-w-[11rem] rounded-[1.2rem] border px-5 py-4 text-left transition hover:-translate-y-0.5 lg:w-full",
+              "w-[10.5rem] shrink-0 snap-start rounded-[1.2rem] border px-4 py-3.5 text-left transition hover:-translate-y-0.5 sm:w-[11rem] sm:px-5 sm:py-4 lg:w-full",
               active.id === tab.id
                 ? tabAccent[tab.id]
                 : "border-[var(--ink)]/10 bg-white/54 text-[var(--ink)]/58 hover:bg-white/76",
@@ -69,7 +71,7 @@ export function TreatmentUniverseSection() {
               aria-labelledby={`treatment-tab-trigger-${tab.id}`}
               hidden={!isActive}
               className={cn(
-                "overflow-hidden rounded-[1.8rem] border border-[var(--ink)]/10 bg-white/64 shadow-[0_24px_86px_rgba(15,16,22,0.08)] backdrop-blur-xl",
+                "overflow-hidden rounded-[1.8rem] border border-[var(--ink)]/10 bg-white shadow-[0_24px_86px_rgba(15,16,22,0.08)]",
                 !isActive && "hidden",
               )}
             >
@@ -118,10 +120,10 @@ export function TreatmentUniverseSection() {
                     ))}
                   </div>
                   <Link
-                    href="/treatments"
-                    className="mt-8 inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-[var(--ink)]/10 bg-[var(--ink)] px-6 py-3 text-sm font-extrabold uppercase tracking-[0.16em] text-[var(--ivory)] transition hover:-translate-y-0.5"
+                    href={tab.href}
+                    className="mt-8 inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-full border border-[var(--ink)]/10 bg-[var(--ink)] px-6 py-3 text-center text-sm font-extrabold uppercase tracking-[0.12em] text-[var(--ivory)] transition hover:-translate-y-0.5 sm:w-auto sm:tracking-[0.16em]"
                   >
-                    Explore Treatments
+                    Explore {tab.label} Care
                     <ArrowUpRight className="h-4 w-4" />
                   </Link>
                 </div>

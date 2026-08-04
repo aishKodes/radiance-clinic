@@ -8,10 +8,7 @@ import {
   LuxuryNoiseOverlay,
   SciencePatternOverlay,
 } from "@/components/BackgroundEffects";
-import {
-  clinic,
-  homepageContent as seedHomepageContent,
-} from "@/data/seed";
+import { clinic, homepageContent as seedHomepageContent } from "@/data/seed";
 import { HeroMediaCollage } from "@/components/HeroMediaCollage";
 import { OpenBookingButton } from "@/components/OpenBookingButton";
 import { PremiumButton } from "@/components/PremiumButton";
@@ -40,20 +37,22 @@ export function LuxuryHero({
   settings?: ClinicSettings;
 }) {
   const reduceMotion = useReducedMotion();
-  const heroStats = homepage.stats.length ? homepage.stats : seedHomepageContent.stats;
+  const heroStats = homepage.stats.length
+    ? homepage.stats
+    : seedHomepageContent.stats;
   const heroImages = homepage.heroImages.length
     ? homepage.heroImages
     : seedHomepageContent.heroImages;
 
   return (
-    <section className="relative isolate scroll-mt-32 overflow-hidden bg-[var(--ivory)] px-5 pb-16 pt-[8.75rem] sm:px-8 sm:pt-[9.25rem] lg:pb-20 lg:pt-[8rem]">
+    <section className="relative isolate scroll-mt-32 overflow-hidden bg-[var(--ivory)] px-4 pb-14 pt-[7.5rem] sm:px-8 sm:pb-16 sm:pt-[9.25rem] lg:pb-20 lg:pt-[8rem]">
       <AnimatedAuroraBackground className="z-0" />
       <SciencePatternOverlay className="z-0" />
       <FloatingSkinCells className="z-0" />
       <LuxuryNoiseOverlay className="z-0" />
       <div className="pointer-events-none absolute inset-x-0 bottom-0 z-0 h-40 bg-gradient-to-t from-[var(--mist)] to-transparent" />
 
-      <div className="relative z-10 mx-auto grid max-w-7xl gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(25rem,0.92fr)] lg:items-start">
+      <div className="relative z-10 mx-auto grid w-full min-w-0 max-w-7xl gap-8 sm:gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(25rem,0.92fr)] lg:items-start">
         <motion.div
           initial={false}
           animate={reduceMotion ? undefined : "visible"}
@@ -62,19 +61,20 @@ export function LuxuryHero({
               transition: { staggerChildren: 0.1 },
             },
           }}
+          className="min-w-0"
         >
           <motion.div
             variants={fadeUp}
-            className="mb-6 inline-flex max-w-full items-center gap-3 rounded-full border border-white/60 bg-white/64 px-4 py-2 shadow-[0_16px_50px_rgba(16,16,20,0.08)] backdrop-blur-xl"
+            className="mb-5 flex w-full max-w-full items-start gap-3 rounded-2xl border border-white/60 bg-white/64 px-4 py-3 shadow-[0_16px_50px_rgba(16,16,20,0.08)] backdrop-blur-xl sm:mb-6 sm:inline-flex sm:w-auto sm:items-center sm:rounded-full sm:py-2"
           >
-            <span className="h-2 w-2 rounded-full bg-[var(--aqua)] shadow-[0_0_20px_var(--aqua)]" />
-            <span className="text-xs font-extrabold uppercase tracking-[0.24em] text-[var(--ink)]/64">
+            <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-[var(--aqua)] shadow-[0_0_20px_var(--aqua)] sm:mt-0" />
+            <span className="min-w-0 text-[0.68rem] font-extrabold uppercase leading-5 tracking-[0.12em] text-[var(--ink)]/64 sm:text-xs sm:tracking-[0.24em]">
               {homepage.heroEyebrow || "Hair • Skin • Laser • Aesthetic Care"}
             </span>
           </motion.div>
           <motion.h1
             variants={fadeUp}
-            className="max-w-4xl text-balance font-serif text-[clamp(2.75rem,5.9vw,4.8rem)] leading-[0.96] tracking-normal text-[var(--ink)]"
+            className="max-w-4xl text-balance font-serif text-[2.45rem] leading-[0.98] tracking-normal text-[var(--ink)] sm:text-[3.5rem] lg:text-[4.8rem]"
           >
             {homepage.heroTitle}
           </motion.h1>
@@ -86,15 +86,19 @@ export function LuxuryHero({
           </motion.p>
           <motion.div
             variants={fadeUp}
-            className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap"
+            className="mt-6 flex min-w-0 flex-col gap-3 sm:flex-row sm:flex-wrap lg:grid lg:grid-cols-2 xl:flex"
           >
-            <OpenBookingButton source="homepage_booking">
+            <OpenBookingButton
+              source="homepage_booking"
+              className="w-full sm:w-auto lg:col-span-2 xl:col-span-1"
+            >
               {homepage.primaryCta.label}
             </OpenBookingButton>
             <PremiumButton
               href={`https://wa.me/${settings.whatsapp}`}
               variant="outline"
               icon={MessageCircle}
+              className="w-full sm:w-auto"
             >
               WhatsApp
             </PremiumButton>
@@ -102,6 +106,7 @@ export function LuxuryHero({
               href={`tel:${settings.phone}`}
               variant="outline"
               icon={Phone}
+              className="w-full sm:w-auto"
             >
               Call Now
             </PremiumButton>
@@ -109,7 +114,7 @@ export function LuxuryHero({
 
           <motion.div
             variants={fadeUp}
-            className="mt-7 grid max-w-2xl grid-cols-2 gap-3"
+            className="mt-7 grid min-w-0 max-w-2xl grid-cols-2 gap-3"
           >
             {heroStats.map((stat) => {
               const isYouTube =
@@ -123,19 +128,27 @@ export function LuxuryHero({
                   href={stat.href}
                   target={stat.external ? "_blank" : undefined}
                   rel={stat.external ? "noreferrer" : undefined}
-                  aria-label={isYouTube ? "Watch Radiance Clinics on YouTube" : undefined}
-                  className="group min-h-[7.6rem] rounded-3xl border border-white/58 bg-white/62 p-4 shadow-[0_18px_55px_rgba(16,16,20,0.08)] backdrop-blur-xl transition hover:-translate-y-0.5 hover:bg-white/78"
+                  aria-label={
+                    isYouTube ? "Watch Radiance Clinics on YouTube" : undefined
+                  }
+                  className="group min-h-[6.75rem] min-w-0 rounded-[1.35rem] border border-white/58 bg-white/62 p-3.5 shadow-[0_18px_55px_rgba(16,16,20,0.08)] backdrop-blur-xl transition hover:-translate-y-0.5 hover:bg-white/78 sm:min-h-[7.6rem] sm:rounded-3xl sm:p-4"
                 >
                   {isYouTube ? (
                     <span className="inline-flex h-10 w-10 items-center justify-center rounded-2xl bg-[#FF0033] text-white shadow-[0_16px_40px_rgba(255,0,51,0.22)]">
                       <Play className="h-5 w-5 fill-current" />
                     </span>
                   ) : (
-                    <p className="font-mono text-xl font-extrabold leading-none text-[var(--ink)]">
+                    <p className="break-words font-mono text-lg font-extrabold leading-tight text-[var(--ink)] sm:text-xl sm:leading-none">
                       {stat.value}
                     </p>
                   )}
-                  <p className={isYouTube ? "mt-3 text-sm font-extrabold text-[var(--ink)]" : "mt-2 text-[0.66rem] font-bold uppercase tracking-[0.14em] text-[var(--ink)]/50"}>
+                  <p
+                    className={
+                      isYouTube
+                        ? "mt-3 text-sm font-extrabold text-[var(--ink)]"
+                        : "mt-2 text-[0.66rem] font-bold uppercase tracking-[0.14em] text-[var(--ink)]/50"
+                    }
+                  >
                     {isYouTube ? "YouTube Community" : stat.label}
                   </p>
                   {isYouTube ? (
@@ -153,7 +166,7 @@ export function LuxuryHero({
           initial={false}
           animate={reduceMotion ? undefined : { opacity: 1, scale: 1, y: 0 }}
           transition={{ duration: 0.75, ease: [0.22, 1, 0.36, 1] }}
-          className="relative z-10"
+          className="relative z-10 min-w-0"
         >
           <HeroMediaCollage
             images={heroImages}

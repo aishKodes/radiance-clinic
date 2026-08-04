@@ -106,6 +106,7 @@ type PairPayload = {
     disclaimer?: string;
     consentConfirmed?: boolean;
     publish?: boolean;
+    complete?: boolean;
     featured?: boolean;
     sortOrder?: number;
     frontBefore?: PairImage | null;
@@ -712,7 +713,12 @@ function additionalViewsForPair(
 
 function strictBeforeAfterCases() {
   return (beforeAfterPairs.pairs || [])
-    .filter((pair) => pair.publish !== false && pair.consentConfirmed === true)
+    .filter(
+      (pair) =>
+        pair.publish !== false &&
+        pair.consentConfirmed === true &&
+        pair.complete !== false,
+    )
     .map((pair): BeforeAfterCase | null => {
       const { views, usedIds } = comparisonViewsForPair(pair);
 

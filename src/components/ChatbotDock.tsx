@@ -33,7 +33,9 @@ export function ChatbotDock({
 }) {
   const [open, setOpen] = useState(false);
   const [input, setInput] = useState("");
-  const [leadStatus, setLeadStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
+  const [leadStatus, setLeadStatus] = useState<
+    "idle" | "sending" | "success" | "error"
+  >("idle");
   const [leadMessage, setLeadMessage] = useState("");
   const [showCallbackCta, setShowCallbackCta] = useState(false);
   const [showLeadForm, setShowLeadForm] = useState(false);
@@ -49,7 +51,6 @@ export function ChatbotDock({
     },
   ]);
   const messageListRef = useRef<HTMLDivElement>(null);
-  const bottomRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
   const suggestions = useMemo(
     () =>
@@ -79,11 +80,6 @@ export function ChatbotDock({
           behavior,
         });
       }
-
-      bottomRef.current?.scrollIntoView({
-        behavior,
-        block: "end",
-      });
     });
   }
 
@@ -155,7 +151,8 @@ export function ChatbotDock({
       phone: lead.phone.trim(),
       concern: lead.concern.trim(),
       source: "chat_callback",
-      page_url: typeof window !== "undefined" ? window.location.href : undefined,
+      page_url:
+        typeof window !== "undefined" ? window.location.href : undefined,
     };
 
     try {
@@ -179,7 +176,9 @@ export function ChatbotDock({
       setLead({ name: "", phone: "", concern: "" });
     } catch {
       setLeadStatus("error");
-      setLeadMessage("We could not send this right now. Please use WhatsApp as a fallback.");
+      setLeadMessage(
+        "We could not send this right now. Please use WhatsApp as a fallback.",
+      );
     }
   }
 
@@ -270,7 +269,11 @@ export function ChatbotDock({
                         }))
                       }
                       placeholder={
-                        field === "name" ? "Name" : field === "phone" ? "Phone" : "Concern"
+                        field === "name"
+                          ? "Name"
+                          : field === "phone"
+                            ? "Phone"
+                            : "Concern"
                       }
                       className="rounded-2xl border border-[var(--ink)]/10 bg-white/82 px-4 py-3 text-sm font-semibold text-[var(--ink)] outline-none transition placeholder:text-[var(--ink)]/36 focus:border-[var(--aqua)]/70"
                     />
@@ -302,8 +305,6 @@ export function ChatbotDock({
                   </button>
                 </form>
               ) : null}
-
-              <div ref={bottomRef} />
             </div>
           </div>
 
@@ -349,13 +350,19 @@ export function ChatbotDock({
           setOpen((value) => !value);
           window.setTimeout(() => inputRef.current?.focus(), 80);
         }}
-        className="pointer-events-auto flex min-h-12 items-center gap-2 rounded-full border border-white/50 bg-[rgba(15,16,22,0.92)] px-3.5 py-3 text-xs font-extrabold uppercase tracking-[0.12em] text-white shadow-[0_18px_70px_rgba(15,16,22,0.24)] backdrop-blur-xl transition hover:shadow-[0_22px_80px_rgba(15,16,22,0.3)]"
+        className="pointer-events-auto flex h-14 w-14 items-center justify-center rounded-full border border-white/50 bg-[rgba(15,16,22,0.92)] p-0 text-xs font-extrabold uppercase tracking-[0.12em] text-white shadow-[0_18px_70px_rgba(15,16,22,0.24)] backdrop-blur-xl transition hover:shadow-[0_22px_80px_rgba(15,16,22,0.3)] sm:h-auto sm:w-auto sm:min-h-12 sm:gap-2 sm:px-3.5 sm:py-3"
         aria-expanded={open}
       >
         <span className="grid h-8 w-8 place-items-center rounded-full bg-[linear-gradient(135deg,var(--aqua),var(--bronze))]">
-          {open ? <X className="h-4 w-4" /> : <MessageCircle className="h-4 w-4" />}
+          {open ? (
+            <X className="h-4 w-4" />
+          ) : (
+            <MessageCircle className="h-4 w-4" />
+          )}
         </span>
-        <span>{open ? "Close" : "Chat Now"}</span>
+        <span className="sr-only sm:not-sr-only">
+          {open ? "Close" : "Chat Now"}
+        </span>
       </button>
     </div>
   );
@@ -368,11 +375,19 @@ function simpleAssistantReply(question: string) {
     return "Radiance Clinics can help with hair transplant planning, PRP/GFC scalp therapy and hair-fall evaluation. A doctor-led consultation is the right next step to review suitability, timeline and cost.";
   }
 
-  if (/laser|hair removal|hair reduction|pigment|melasma|acne|scar|skin|pores|botox|filler|ageing|aging|rejuvenation/.test(normalized)) {
+  if (
+    /laser|hair removal|hair reduction|pigment|melasma|acne|scar|skin|pores|botox|filler|ageing|aging|rejuvenation/.test(
+      normalized,
+    )
+  ) {
     return "Radiance Clinics offers skin, laser and aesthetic treatments including laser hair removal, acne scar care, pigmentation plans, skin rejuvenation, Botox, fillers and anti-ageing care. Suitability is confirmed during consultation.";
   }
 
-  if (/book|appointment|callback|call|visit|contact|price|cost|fee/.test(normalized)) {
+  if (
+    /book|appointment|callback|call|visit|contact|price|cost|fee/.test(
+      normalized,
+    )
+  ) {
     return "You can request a callback and the clinic team will help with appointment timing, treatment category and next steps.";
   }
 

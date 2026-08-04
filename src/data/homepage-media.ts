@@ -30,6 +30,7 @@ export type TreatmentCategoryTab = {
   label: string;
   title: string;
   description: string;
+  href: string;
   image: CmsImage;
   procedures: string[];
 };
@@ -131,8 +132,7 @@ export const premiumServiceCards: Treatment[] = [
   }),
   serviceCard({
     title: "Acne & Acne Scar",
-    summary:
-      "Doctor-led care for active acne, marks and acne scar concerns.",
+    summary: "Doctor-led care for active acne, marks and acne scar concerns.",
     slug: "acne-scar-revision",
     cluster: "skin-laser",
     clusterLabel: "Skin",
@@ -174,8 +174,7 @@ export const premiumServiceCards: Treatment[] = [
   }),
   serviceCard({
     title: "PRP Therapy",
-    summary:
-      "Regenerative hair and scalp support using doctor-guided therapy.",
+    summary: "Regenerative hair and scalp support using doctor-guided therapy.",
     slug: "prp-gfc-scalp-therapy",
     cluster: "hair-restoration",
     clusterLabel: "Hair Restoration",
@@ -203,7 +202,12 @@ export const treatmentCategoryTabs: TreatmentCategoryTab[] = [
     title: "Skin Treatment Options",
     description:
       "Doctor-led care for acne, scars, pigmentation, redness, pores and skin quality.",
-    image: visualImage("radiance-skin-category.webp", "Skin treatments", "category-tab-visual"),
+    href: "/skin-clinic-bhubaneswar",
+    image: visualImage(
+      "radiance-skin-category.webp",
+      "Skin treatments",
+      "category-tab-visual",
+    ),
     procedures: [
       "Acne",
       "Acne Scars",
@@ -223,7 +227,12 @@ export const treatmentCategoryTabs: TreatmentCategoryTab[] = [
     title: "Hair Treatment Options",
     description:
       "Hair transplant, hair fall and regenerative scalp support planned around diagnosis.",
-    image: visualImage("radiance-hair-category.webp", "Hair treatments", "category-tab-visual"),
+    href: "/hair-transplant-bhubaneswar",
+    image: visualImage(
+      "radiance-hair-category.webp",
+      "Hair treatments",
+      "category-tab-visual",
+    ),
     procedures: [
       "Hair Transplant",
       "FUE Hair Transplant",
@@ -243,7 +252,12 @@ export const treatmentCategoryTabs: TreatmentCategoryTab[] = [
     title: "Laser Treatment Options",
     description:
       "Skin-type aware laser treatments with preparation, aftercare and realistic planning.",
-    image: visualImage("radiance-laser-category.webp", "Laser treatments", "category-tab-visual"),
+    href: "/laser-hair-removal-bhubaneswar",
+    image: visualImage(
+      "radiance-laser-category.webp",
+      "Laser treatments",
+      "category-tab-visual",
+    ),
     procedures: [
       "Laser Hair Removal",
       "Laser Toning",
@@ -263,6 +277,7 @@ export const treatmentCategoryTabs: TreatmentCategoryTab[] = [
     title: "Aesthetic Treatment Options",
     description:
       "Subtle facial rejuvenation and injectable planning focused on balance and restraint.",
+    href: "/treatments/aesthetic-dermatology/injectable-aesthetics",
     image: visualImage(
       "radiance-aesthetics-category.webp",
       "Aesthetic treatments",
@@ -283,12 +298,11 @@ export const treatmentCategoryTabs: TreatmentCategoryTab[] = [
   },
 ];
 
-const transformationExamples = beforeAfterCasesToTransformations(realBeforeAfterCases);
+const transformationExamples =
+  beforeAfterCasesToTransformations(realBeforeAfterCases);
 
-export const hairTransformationExamples: Transformation[] = transformationExamples.filter(
-  (item) => item.category === "hair",
-);
+export const hairTransformationExamples: Transformation[] =
+  transformationExamples.filter((item) => item.category === "hair");
 
-export const skinTransformationExamples: Transformation[] = transformationExamples.filter(
-  (item) => item.category === "skin",
-);
+export const skinTransformationExamples: Transformation[] =
+  transformationExamples.filter((item) => item.category === "skin");

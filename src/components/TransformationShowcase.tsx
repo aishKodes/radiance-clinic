@@ -37,7 +37,9 @@ export function TransformationShowcase({
   transformations,
 }: TransformationShowcaseProps) {
   const sectionId =
-    category === "hair" ? "hair-transplant-results" : "skin-improvement-results";
+    category === "hair"
+      ? "hair-transplant-results"
+      : "skin-improvement-results";
   const headingId = `${sectionId}-heading`;
   const visibleTransformations = useMemo(
     () =>
@@ -64,6 +66,7 @@ export function TransformationShowcase({
   const pairs = current ? getComparePairs(current).slice(0, 2) : [];
   const additionalImages = current ? getAdditionalImages(current, pairs) : [];
   const disclaimer = current?.disclaimer || RESULT_DISCLAIMER;
+  const selectorScrollRef = useRef<HTMLDivElement>(null);
   const selectorItemRefs = useRef<Array<HTMLButtonElement | null>>([]);
   const emptyMessage =
     category === "skin"
@@ -71,10 +74,21 @@ export function TransformationShowcase({
       : "More transformation images will be added soon.";
 
   useEffect(() => {
-    selectorItemRefs.current[activeSafeIndex]?.scrollIntoView({
-      behavior: "smooth",
-      block: "nearest",
-      inline: "nearest",
+    const container = selectorScrollRef.current;
+    const item = selectorItemRefs.current[activeSafeIndex];
+
+    if (!container || !item) return;
+
+    const horizontal = container.scrollWidth > container.clientWidth;
+    container.scrollTo({
+      left: horizontal
+        ? Math.max(
+            0,
+            item.offsetLeft - Math.round(container.clientWidth * 0.08),
+          )
+        : 0,
+      top: horizontal ? 0 : Math.max(0, item.offsetTop - 12),
+      behavior: activeSafeIndex === 0 ? "auto" : "smooth",
     });
   }, [activeSafeIndex]);
 
@@ -132,14 +146,14 @@ export function TransformationShowcase({
       id={sectionId}
       aria-labelledby={headingId}
       data-transformation-showcase={category}
-      className="relative overflow-visible rounded-[2.4rem] border border-white/12 bg-[rgba(255,255,255,0.08)] p-4 text-[var(--ivory)] shadow-[0_42px_140px_rgba(0,0,0,0.24)] backdrop-blur-xl sm:p-6 lg:p-7"
+      className="relative min-w-0 overflow-hidden rounded-[1.55rem] border border-white/12 bg-[rgba(255,255,255,0.08)] p-3 text-[var(--ivory)] shadow-[0_42px_140px_rgba(0,0,0,0.24)] backdrop-blur-xl sm:rounded-[2.4rem] sm:p-6 lg:p-7"
     >
       <div className="pointer-events-none absolute -left-28 top-24 z-0 h-72 w-72 rounded-full bg-[var(--aqua)]/18 blur-3xl" />
       <div className="pointer-events-none absolute -right-28 bottom-20 z-0 h-72 w-72 rounded-full bg-[var(--coral)]/14 blur-3xl" />
 
-      <div className="relative z-10 rounded-[2rem] bg-[linear-gradient(145deg,rgba(16,16,20,0.98),rgba(20,21,29,0.96))] p-4 sm:p-5 lg:p-6">
+      <div className="relative z-10 min-w-0 rounded-[1.3rem] bg-[linear-gradient(145deg,rgba(16,16,20,0.98),rgba(20,21,29,0.96))] p-3 sm:rounded-[2rem] sm:p-5 lg:p-6">
         <div className="grid gap-6 lg:grid-cols-[18rem_minmax(0,1fr)]">
-          <aside className="relative z-20 min-w-0 rounded-[1.6rem] border border-white/12 bg-white/[0.07] p-4 backdrop-blur-xl lg:self-start">
+          <aside className="relative z-20 min-w-0 rounded-[1.25rem] border border-white/12 bg-white/[0.07] p-3 backdrop-blur-xl sm:rounded-[1.6rem] sm:p-4 lg:self-start">
             <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-white/14 bg-white/10 px-3 py-2 text-[0.64rem] font-extrabold uppercase tracking-[0.18em] text-[var(--champagne)]">
               <ShieldCheck className="h-4 w-4" />
               Consent-aware
@@ -152,13 +166,14 @@ export function TransformationShowcase({
             </p>
 
             <div
+              ref={selectorScrollRef}
               data-lenis-prevent-wheel
               data-lenis-prevent-touch
-              className="transformation-selector-scroll relative z-20 mt-6 flex max-w-full scroll-smooth gap-3 overflow-x-auto overscroll-x-contain pb-5 lg:max-h-[34rem] lg:flex-col lg:overflow-y-auto lg:overflow-x-hidden lg:overscroll-contain lg:pb-4 lg:pr-2"
+              className="transformation-selector-scroll mobile-scroll-row relative z-20 mt-5 flex w-full max-w-full scroll-smooth snap-x snap-mandatory gap-3 overflow-x-auto overscroll-x-contain pb-3 lg:mt-6 lg:max-h-[34rem] lg:flex-col lg:snap-none lg:overflow-y-auto lg:overflow-x-hidden lg:overscroll-contain lg:pb-4 lg:pr-2"
             >
               {visibleTransformations.map((item, index) => (
                 <SelectorCard
-                  key={item.id}
+                  key={`${category}-${item.id}-${item.conditionName || item.treatment}-${index}`}
                   buttonRef={(node) => {
                     selectorItemRefs.current[index] = node;
                   }}
@@ -173,12 +188,12 @@ export function TransformationShowcase({
           </aside>
 
           <div className="relative z-10 grid min-w-0 gap-5">
-            <div className="grid gap-5 rounded-[1.6rem] border border-white/12 bg-white/[0.07] p-5 backdrop-blur-xl md:grid-cols-[1fr_auto] md:items-end">
+            <div className="grid min-w-0 gap-5 rounded-[1.25rem] border border-white/12 bg-white/[0.07] p-4 backdrop-blur-xl sm:rounded-[1.6rem] sm:p-5 md:grid-cols-[1fr_auto] md:items-end">
               <div>
                 <p className="text-[0.65rem] font-extrabold uppercase tracking-[0.22em] text-[var(--aqua)]">
                   {eyebrow}
                 </p>
-                <h3 className="mt-3 max-w-3xl font-serif text-4xl leading-none sm:text-5xl">
+                <h3 className="mt-3 max-w-3xl font-serif text-3xl leading-none sm:text-5xl">
                   {transformationHeading(current, category)}
                 </h3>
                 <p className="mt-3 text-sm font-bold text-white/78">
@@ -191,7 +206,7 @@ export function TransformationShowcase({
                   </p>
                 ) : null}
               </div>
-              <div className="flex items-center gap-3 md:justify-end">
+              <div className="flex min-w-0 items-center justify-between gap-3 sm:justify-start md:justify-end">
                 <button
                   type="button"
                   onClick={() =>
@@ -236,8 +251,18 @@ export function TransformationShowcase({
                   key={`${current.id}-${pair.viewLabel}`}
                   beforeImage={pair.before}
                   afterImage={pair.after}
-                  beforeAlt={transformationAltText(current, category, "before", pair.viewLabel)}
-                  afterAlt={transformationAltText(current, category, "after", pair.viewLabel)}
+                  beforeAlt={transformationAltText(
+                    current,
+                    category,
+                    "before",
+                    pair.viewLabel,
+                  )}
+                  afterAlt={transformationAltText(
+                    current,
+                    category,
+                    "after",
+                    pair.viewLabel,
+                  )}
                   label={displayTitle(current, category, activeSafeIndex)}
                   viewLabel={pair.viewLabel}
                   aspectRatio="4 / 5"
@@ -253,13 +278,17 @@ export function TransformationShowcase({
                   <AdditionalImageCard
                     key={image.id || image.src || `${current.id}-${index}`}
                     image={image}
-                    label={index === 0 ? "Additional View" : `Additional View ${index + 1}`}
+                    label={
+                      index === 0
+                        ? "Additional View"
+                        : `Additional View ${index + 1}`
+                    }
                   />
                 ))}
               </div>
             ) : null}
 
-            <div className="grid gap-3 sm:grid-cols-[1fr_auto] sm:items-center">
+            <div className="grid min-w-0 gap-3 sm:grid-cols-[1fr_auto] sm:items-center">
               <p className="rounded-3xl border border-white/12 bg-white/[0.07] p-4 text-sm leading-6 text-white/62">
                 {disclaimer}
               </p>
@@ -294,7 +323,8 @@ function SelectorCard({
   onClick: () => void;
 }) {
   const pairs = getComparePairs(item);
-  const thumb = pairs[0]?.after || pairs[0]?.before || item.additionalImages?.[0];
+  const thumb =
+    pairs[0]?.after || pairs[0]?.before || item.additionalImages?.[0];
 
   return (
     <button
@@ -302,18 +332,20 @@ function SelectorCard({
       type="button"
       onClick={onClick}
       className={cn(
-        "relative z-20 grid min-w-[15.5rem] shrink-0 cursor-pointer grid-cols-[4rem_1fr] gap-3 rounded-[1.25rem] border p-3 text-left transition last:mr-4 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--aqua)] lg:min-w-0 lg:w-full lg:last:mr-0",
+        "relative z-20 grid w-[15.5rem] shrink-0 snap-start cursor-pointer grid-cols-[3.25rem_minmax(0,1fr)] gap-3 rounded-[1.15rem] border p-3 text-left transition last:mr-2 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--aqua)] lg:w-full lg:snap-align-none lg:grid-cols-[4rem_minmax(0,1fr)] lg:last:mr-0",
         active
           ? "border-[var(--champagne)] bg-white/14 text-white shadow-[0_16px_45px_rgba(0,0,0,0.18)]"
           : "border-white/10 bg-white/[0.06] text-white/62 hover:bg-white/10",
       )}
       aria-pressed={active}
     >
-      <span className="relative h-16 w-16 overflow-hidden rounded-[1rem] bg-white/10">
+      <span className="relative h-[3.25rem] w-[3.25rem] overflow-hidden rounded-[0.85rem] bg-white/10 lg:h-16 lg:w-16 lg:rounded-[1rem]">
         {thumb ? (
           <Image
             src={imageSrc(thumb)}
-            alt={thumb.altText || thumb.alt || displayTitle(item, category, index)}
+            alt={
+              thumb.altText || thumb.alt || displayTitle(item, category, index)
+            }
             fill
             sizes="64px"
             placeholder={thumb.blurDataUrl ? "blur" : "empty"}
@@ -388,9 +420,12 @@ function InfoLine({ label, value }: { label: string; value: string }) {
 function getComparePairs(item: Transformation): ComparePair[] {
   if (item.beforeAfterPairs?.length) {
     return item.beforeAfterPairs
-      .filter((pair) => imageHasSource(pair.before) && imageHasSource(pair.after))
+      .filter(
+        (pair) => imageHasSource(pair.before) && imageHasSource(pair.after),
+      )
       .map((pair, index) => ({
-        viewLabel: pair.viewLabel || (index === 0 ? "Front View" : "Second View"),
+        viewLabel:
+          pair.viewLabel || (index === 0 ? "Front View" : "Second View"),
         before: pair.before,
         after: pair.after,
       }));
@@ -421,12 +456,17 @@ function getAdditionalImages(item: Transformation, pairs: ComparePair[]) {
   const seen = new Set<string>();
   const raw = [
     ...(item.additionalImages || []),
-    ...(item.beforeAfterPairs || []).flatMap((pair) => [pair.before, pair.after]),
+    ...(item.beforeAfterPairs || []).flatMap((pair) => [
+      pair.before,
+      pair.after,
+    ]),
     item.frontBefore,
     item.frontAfter,
     item.angleBefore,
     item.angleAfter,
-  ].filter((image): image is CmsImage => Boolean(image && imageHasSource(image)));
+  ].filter((image): image is CmsImage =>
+    Boolean(image && imageHasSource(image)),
+  );
 
   return raw.filter((image) => {
     const key = imageKey(image);

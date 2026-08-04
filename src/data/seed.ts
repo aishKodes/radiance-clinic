@@ -574,7 +574,7 @@ export const patientJourney = [
   },
   {
     title: "Precision Mapping",
-    text: "Photography, facial proportion, skin type or donor-zone evaluation guides the plan.",
+    text: "Clinical imaging, facial proportion, skin type or donor-zone evaluation guides the plan.",
     icon: Microscope,
   },
   {

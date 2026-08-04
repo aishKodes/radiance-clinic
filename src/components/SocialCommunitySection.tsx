@@ -10,7 +10,12 @@ import {
   Play,
   ShieldCheck,
 } from "lucide-react";
-import type { ReviewSummary, SocialLink, SocialStat, VideoItem } from "@/types/cms";
+import type {
+  ReviewSummary,
+  SocialLink,
+  SocialStat,
+  VideoItem,
+} from "@/types/cms";
 
 const iconMap = {
   instagram: Camera,
@@ -48,12 +53,12 @@ export function SocialCommunitySection({
   const support = links.slice(1);
 
   return (
-    <div className="grid gap-5 lg:grid-cols-[0.92fr_1.08fr] lg:items-stretch">
+    <div className="grid min-w-0 gap-5 lg:grid-cols-[0.92fr_1.08fr] lg:items-stretch">
       {featured ? (
-        <article className="gradient-border relative min-h-[38rem] overflow-hidden rounded-[2.8rem] bg-[var(--ink)] p-4 text-[var(--ivory)] shadow-[0_38px_130px_rgba(15,16,22,0.18)]">
+        <article className="gradient-border relative min-h-[31rem] min-w-0 overflow-hidden rounded-[1.45rem] bg-[var(--ink)] p-3 text-[var(--ivory)] shadow-[0_38px_130px_rgba(15,16,22,0.18)] sm:min-h-[38rem] sm:rounded-[2.8rem] sm:p-4">
           <div className="absolute -right-24 top-10 h-72 w-72 rounded-full bg-[var(--orchid)]/24 blur-3xl" />
           <div className="absolute -bottom-24 left-6 h-72 w-72 rounded-full bg-[var(--aqua)]/20 blur-3xl" />
-          <div className="relative h-full overflow-hidden rounded-[2.25rem] border border-white/12 bg-white/[0.06]">
+          <div className="relative h-full overflow-hidden rounded-[1.2rem] border border-white/12 bg-white/[0.06] sm:rounded-[2.25rem]">
             {featured.image ? (
               <Image
                 src={featured.image.desktopUrl || featured.image.src}
@@ -67,12 +72,12 @@ export function SocialCommunitySection({
               />
             ) : null}
             <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(15,16,22,0.12),rgba(15,16,22,0.86))]" />
-            <div className="absolute inset-x-5 bottom-5">
-              <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-white/18 bg-white/12 px-4 py-2 text-[0.64rem] font-extrabold uppercase tracking-[0.22em] text-[var(--champagne)] backdrop-blur">
+            <div className="absolute inset-x-4 bottom-4 sm:inset-x-5 sm:bottom-5">
+              <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-white/18 bg-white/12 px-3 py-2 text-[0.6rem] font-extrabold uppercase tracking-[0.14em] text-[var(--champagne)] backdrop-blur sm:mb-5 sm:px-4 sm:text-[0.64rem] sm:tracking-[0.22em]">
                 <ShieldCheck className="h-4 w-4" />
                 Official clinic channels
               </div>
-              <h3 className="font-serif text-6xl leading-[0.88]">
+              <h3 className="font-serif text-4xl leading-[0.94] sm:text-6xl sm:leading-[0.88]">
                 Follow Radiance Clinics
               </h3>
               <p className="mt-5 max-w-xl text-sm leading-7 text-white/64">
@@ -94,9 +99,10 @@ export function SocialCommunitySection({
       ) : null}
 
       <div className="grid gap-5">
-        <div className="grid gap-4 sm:grid-cols-2">
+        <div className="grid gap-4 min-[380px]:grid-cols-2">
           {support.map((link) => {
-            const Icon = iconMap[link.platform as keyof typeof iconMap] || ArrowUpRight;
+            const Icon =
+              iconMap[link.platform as keyof typeof iconMap] || ArrowUpRight;
             const stat = statFor(link.platform, stats);
             const value =
               link.platform === "google" && reviewSummary.googleRating
@@ -113,7 +119,7 @@ export function SocialCommunitySection({
                 }
                 target="_blank"
                 rel="noreferrer"
-                className="group relative min-h-[17rem] overflow-hidden rounded-[2rem] border border-[var(--ink)]/10 bg-white/62 p-4 shadow-[0_24px_90px_rgba(15,16,22,0.08)] backdrop-blur-xl transition duration-500 hover:-translate-y-1"
+                className="group relative min-h-[14rem] min-w-0 overflow-hidden rounded-[1.35rem] border border-[var(--ink)]/10 bg-white/62 p-4 shadow-[0_24px_90px_rgba(15,16,22,0.08)] backdrop-blur-xl transition duration-500 hover:-translate-y-1 sm:min-h-[17rem] sm:rounded-[2rem]"
               >
                 {link.image ? (
                   <Image
@@ -158,26 +164,32 @@ export function SocialCommunitySection({
         </div>
 
         {videos.length ? (
-          <div className="relative overflow-hidden rounded-[2.4rem] border border-[var(--ink)]/10 bg-white/58 p-5 shadow-[0_28px_100px_rgba(15,16,22,0.09)] backdrop-blur-xl">
+          <div className="relative min-w-0 overflow-hidden rounded-[1.4rem] border border-[var(--ink)]/10 bg-white/58 p-4 shadow-[0_28px_100px_rgba(15,16,22,0.09)] backdrop-blur-xl sm:rounded-[2.4rem] sm:p-5">
             <div className="mb-5 flex items-end justify-between gap-4">
               <div>
                 <p className="text-xs font-extrabold uppercase tracking-[0.26em] text-[var(--bronze)]">
                   Our Videos
                 </p>
-                <h3 className="mt-3 font-serif text-4xl leading-none text-[var(--ink)]">
+                <h3 className="mt-3 font-serif text-3xl leading-none text-[var(--ink)] sm:text-4xl">
                   Education that makes booking feel easier.
                 </h3>
               </div>
               <MonitorPlay className="hidden h-7 w-7 text-[var(--coral)] sm:block" />
             </div>
-            <div className="flex gap-4 overflow-x-auto pb-2">
+            <div
+              data-lenis-prevent-touch
+              className="mobile-scroll-row flex snap-x snap-mandatory gap-4 overflow-x-auto overscroll-x-contain pb-2"
+            >
               {videos.slice(0, 4).map((video) => (
                 <Link
                   key={video.title}
-                  href={video.href || "https://youtube.com/@radianceclinics?si=MwbMHVfdlLk2C95l"}
+                  href={
+                    video.href ||
+                    "https://youtube.com/@radianceclinics?si=MwbMHVfdlLk2C95l"
+                  }
                   target="_blank"
                   rel="noreferrer"
-                  className="group min-w-[18rem] overflow-hidden rounded-[1.7rem] border border-white/70 bg-white shadow-[0_18px_70px_rgba(15,16,22,0.08)]"
+                  className="group w-[15.5rem] shrink-0 snap-start overflow-hidden rounded-[1.35rem] border border-white/70 bg-white shadow-[0_18px_70px_rgba(15,16,22,0.08)] sm:w-[18rem] sm:rounded-[1.7rem]"
                 >
                   <div className="relative h-44 bg-[var(--mist)]">
                     {video.thumbnail ? (

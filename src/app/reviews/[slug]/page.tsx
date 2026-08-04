@@ -1,7 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowLeft, ArrowUpRight, ExternalLink, ShieldCheck, Star } from "lucide-react";
+import {
+  ArrowLeft,
+  ArrowUpRight,
+  ExternalLink,
+  ShieldCheck,
+  Star,
+} from "lucide-react";
 import { JsonLd } from "@/components/JsonLd";
 import { PremiumButton } from "@/components/PremiumButton";
 import {
@@ -12,11 +18,7 @@ import {
   isReviewCategory,
   reviewCategories,
 } from "@/data/site";
-import {
-  breadcrumbJsonLd,
-  reviewJsonLd,
-  webPageJsonLd,
-} from "@/lib/schema";
+import { breadcrumbJsonLd, reviewJsonLd, webPageJsonLd } from "@/lib/schema";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -107,9 +109,11 @@ export default async function ReviewRoutePage({ params }: Props) {
               Patient experience from {review.reviewerName}
             </h1>
             <div className="mt-8 flex items-center gap-1 text-[var(--bronze)]">
-              {Array.from({ length: Math.round(review.rating) }).map((_, index) => (
-                <Star key={index} className="h-5 w-5 fill-current" />
-              ))}
+              {Array.from({ length: Math.round(review.rating) }).map(
+                (_, index) => (
+                  <Star key={index} className="h-5 w-5 fill-current" />
+                ),
+              )}
             </div>
           </div>
           <div className="h-fit rounded-[2.25rem] border border-white/60 bg-white/55 p-7 shadow-[0_30px_100px_rgba(16,16,20,0.11)] backdrop-blur-2xl">
@@ -248,11 +252,11 @@ async function ReviewCategoryPage({ slug }: { slug: string }) {
           ) : (
             <div className="rounded-[2.5rem] border border-[var(--ink)]/10 bg-white/62 p-8 shadow-[0_30px_110px_rgba(16,16,20,0.1)] backdrop-blur">
               <h2 className="font-serif text-5xl leading-none text-[var(--ink)]">
-                No permission-confirmed reviews published in this category yet.
+                More reviews in this category will be added after clinic review.
               </h2>
               <p className="mt-5 max-w-2xl text-sm leading-7 text-[var(--ink)]/64">
-                The CMS is ready for source-linked review entries once the
-                clinic approves them for public display.
+                Contact Radiance Clinics for consultation guidance about this
+                treatment category.
               </p>
               <PremiumButton href="/contact" className="mt-8">
                 Contact the clinic

@@ -9,7 +9,7 @@ export const coreIndexableRoutes = [
   "/contact",
 ] as const;
 
-export const plannedLandingRoutes = [
+export const localLandingRoutes = [
   "/hair-transplant-bhubaneswar",
   "/skin-clinic-bhubaneswar",
   "/laser-hair-removal-bhubaneswar",
@@ -17,4 +17,4 @@ export const plannedLandingRoutes = [
   "/pigmentation-treatment-bhubaneswar",
 ] as const;
 
-export const plannedLandingRouteSet = new Set<string>(plannedLandingRoutes);
+export const localLandingRouteSet = new Set<string>(localLandingRoutes);

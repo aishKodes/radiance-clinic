@@ -41,9 +41,9 @@ export default async function TreatmentsPage() {
         <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[1fr_0.36fr]">
           <div>
             <SectionHeader
-              eyebrow="Treatment menu"
-              title="A curated clinic menu, not a package wall."
-              description="Explore protocols across hair restoration, skin and laser, aesthetic dermatology and event skin planning. Each route starts with suitability assessment."
+              eyebrow="Treatment options"
+              title="Treatments planned around your concern."
+              description="Explore doctor-led care across hair restoration, skin, laser and aesthetic dermatology. Every treatment pathway begins with an assessment of suitability."
             />
             <div className="mt-10 flex flex-wrap gap-3">
               {clusters.map(([slug, label]) => (
@@ -82,10 +82,7 @@ export default async function TreatmentsPage() {
                 {treatments
                   .filter((treatment) => treatment.cluster === cluster)
                   .map((treatment) => (
-                    <TreatmentCard
-                      key={treatment.slug}
-                      treatment={treatment}
-                    />
+                    <TreatmentCard key={treatment.slug} treatment={treatment} />
                   ))}
               </div>
             </div>

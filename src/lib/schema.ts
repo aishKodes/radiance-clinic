@@ -92,6 +92,43 @@ export function webPageJsonLd({
   };
 }
 
+export function medicalServiceJsonLd({
+  name,
+  description,
+  path,
+  settings = fallbackData.siteSettings,
+}: {
+  name: string;
+  description: string;
+  path: string;
+  settings?: ClinicSettings;
+}): JsonLd {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name,
+    description,
+    url: `${siteUrl}${path}`,
+    areaServed: {
+      "@type": "City",
+      name: settings.city,
+    },
+    provider: {
+      "@type": "MedicalClinic",
+      name: settings.legalName,
+      url: siteUrl,
+      telephone: settings.phone,
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: settings.address,
+        addressLocality: settings.city,
+        addressRegion: settings.region,
+        addressCountry: "IN",
+      },
+    },
+  };
+}
+
 export function articleJsonLd(article: Article): JsonLd {
   return {
     "@context": "https://schema.org",

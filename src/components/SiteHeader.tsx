@@ -76,14 +76,15 @@ export function SiteHeader({
             )}
           </Link>
 
-          <nav className="hidden items-center gap-1 lg:flex">
+          <nav className="hidden items-center gap-1 xl:flex">
             {navItems.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
                 className={cn(
                   "relative rounded-full px-4 py-2 text-sm font-bold text-[var(--ink)]/62 transition hover:bg-white/68 hover:text-[var(--ink)] after:absolute after:inset-x-5 after:bottom-1 after:h-px after:scale-x-0 after:bg-[linear-gradient(90deg,var(--aqua),var(--coral))] after:transition-transform hover:after:scale-x-100",
-                  pathname === item.href && "bg-white/76 text-[var(--ink)] shadow-sm after:scale-x-100",
+                  pathname === item.href &&
+                    "bg-white/76 text-[var(--ink)] shadow-sm after:scale-x-100",
                 )}
               >
                 {item.label}
@@ -91,7 +92,7 @@ export function SiteHeader({
             ))}
           </nav>
 
-          <div className="hidden items-center gap-3 lg:flex">
+          <div className="hidden items-center gap-3 xl:flex">
             <a
               href={`tel:${settings.phone.replace(/\s/g, "")}`}
               className="grid h-11 w-11 place-items-center rounded-full border border-[var(--ink)]/10 bg-white/60 text-[var(--ink)] transition hover:border-[var(--aqua)]/60"
@@ -105,7 +106,7 @@ export function SiteHeader({
           </div>
 
           <button
-            className="grid h-11 w-11 place-items-center rounded-full border border-[var(--ink)]/10 bg-white/70 text-[var(--ink)] lg:hidden"
+            className="grid h-11 w-11 place-items-center rounded-full border border-[var(--ink)]/10 bg-white/70 text-[var(--ink)] xl:hidden"
             onClick={() => setOpen((value) => !value)}
             aria-expanded={open}
             aria-label="Toggle navigation"
@@ -116,7 +117,7 @@ export function SiteHeader({
       </div>
 
       {open ? (
-        <div className="gradient-border mx-auto mt-3 max-w-7xl rounded-[2rem] bg-[rgba(255,247,237,0.94)] p-4 shadow-[0_24px_90px_rgba(16,16,20,0.16)] backdrop-blur-2xl lg:hidden">
+        <div className="gradient-border mx-auto mt-3 max-w-7xl rounded-[2rem] bg-[rgba(255,247,237,0.94)] p-4 shadow-[0_24px_90px_rgba(16,16,20,0.16)] backdrop-blur-2xl xl:hidden">
           <nav className="grid gap-1">
             {navItems.map((item) => (
               <Link
