@@ -12,7 +12,7 @@ import {
 import { webPageJsonLd } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: "Before & After",
+  title: "Hair Transplant & Skin Before and After Results",
   description:
     "Consent-led before and after examples at Radiance Clinics, Bhubaneswar, with realistic clinical context.",
   alternates: {
@@ -84,7 +84,7 @@ export default function BeforeAfterPage() {
         <div className="mx-auto max-w-7xl">
           <TransformationShowcase
             eyebrow="Hair Transformation Examples"
-            title="Hair Transformation Examples"
+            title="Hair Transplant Results & Hair Restoration Examples"
             description="Selected hair restoration examples shared with consent. Results vary by individual and consultation is required."
             category="hair"
             transformations={hairTransformationExamples}

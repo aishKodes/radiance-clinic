@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -56,6 +57,24 @@ import {
   getTestimonials,
   getVideoItems,
 } from "@/data/site";
+
+export const metadata: Metadata = {
+  title: {
+    absolute: "Radiance Clinics Bhubaneswar | Hair Transplant, Skin & Laser Clinic",
+  },
+  description:
+    "Doctor-led hair transplant, hair restoration, skin, laser and aesthetic treatments by Dr. Satyarth Prakash at Radiance Clinics, Bhubaneswar.",
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    title: "Radiance Clinics Bhubaneswar | Hair Transplant, Skin & Laser Clinic",
+    description:
+      "Doctor-led hair transplant, hair restoration, skin, laser and aesthetic care in Bhubaneswar.",
+    url: "/",
+    type: "website",
+  },
+};
 
 export default async function Home() {
   const [
@@ -164,7 +183,7 @@ export default async function Home() {
           <Reveal>
             <TransformationShowcase
               eyebrow="Hair Transformation Examples"
-              title="Hair Transformation Examples"
+              title="Hair Transplant Results & Hair Restoration Examples"
               description="Selected hair restoration examples shared with consent. Results vary by individual and consultation is required."
               category="hair"
               transformations={hairTransformationExamples}

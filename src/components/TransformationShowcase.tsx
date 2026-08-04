@@ -36,6 +36,9 @@ export function TransformationShowcase({
   category,
   transformations,
 }: TransformationShowcaseProps) {
+  const sectionId =
+    category === "hair" ? "hair-transplant-results" : "skin-improvement-results";
+  const headingId = `${sectionId}-heading`;
   const visibleTransformations = useMemo(
     () =>
       transformations.filter((item) => {
@@ -78,6 +81,8 @@ export function TransformationShowcase({
   if (!current) {
     return (
       <section
+        id={sectionId}
+        aria-labelledby={headingId}
         data-transformation-showcase={category}
         className="relative overflow-hidden rounded-[2.4rem] border border-white/12 bg-white/[0.075] p-5 text-[var(--ivory)] shadow-[0_34px_120px_rgba(0,0,0,0.2)] backdrop-blur-xl sm:p-8 lg:p-10"
       >
@@ -88,9 +93,12 @@ export function TransformationShowcase({
             <p className="text-xs font-extrabold uppercase tracking-[0.24em] text-[var(--champagne)]">
               {eyebrow}
             </p>
-            <h3 className="mt-4 max-w-2xl font-serif text-4xl leading-none sm:text-5xl">
+            <h2
+              id={headingId}
+              className="mt-4 max-w-2xl font-serif text-4xl leading-none sm:text-5xl"
+            >
               {emptyMessage}
-            </h3>
+            </h2>
             <p className="mt-5 max-w-2xl text-sm leading-7 text-white/66">
               {description}
             </p>
@@ -121,6 +129,8 @@ export function TransformationShowcase({
 
   return (
     <section
+      id={sectionId}
+      aria-labelledby={headingId}
       data-transformation-showcase={category}
       className="relative overflow-visible rounded-[2.4rem] border border-white/12 bg-[rgba(255,255,255,0.08)] p-4 text-[var(--ivory)] shadow-[0_42px_140px_rgba(0,0,0,0.24)] backdrop-blur-xl sm:p-6 lg:p-7"
     >
@@ -134,7 +144,9 @@ export function TransformationShowcase({
               <ShieldCheck className="h-4 w-4" />
               Consent-aware
             </div>
-            <h3 className="font-serif text-3xl leading-none">{title}</h3>
+            <h2 id={headingId} className="font-serif text-3xl leading-none">
+              {title}
+            </h2>
             <p className="mt-4 text-sm leading-6 text-white/62">
               {description}
             </p>
@@ -160,15 +172,19 @@ export function TransformationShowcase({
             </div>
           </aside>
 
-          <main className="relative z-10 grid min-w-0 gap-5">
+          <div className="relative z-10 grid min-w-0 gap-5">
             <div className="grid gap-5 rounded-[1.6rem] border border-white/12 bg-white/[0.07] p-5 backdrop-blur-xl md:grid-cols-[1fr_auto] md:items-end">
               <div>
                 <p className="text-[0.65rem] font-extrabold uppercase tracking-[0.22em] text-[var(--aqua)]">
                   {eyebrow}
                 </p>
                 <h3 className="mt-3 max-w-3xl font-serif text-4xl leading-none sm:text-5xl">
-                  {displayTitle(current, category, activeSafeIndex)}
+                  {transformationHeading(current, category)}
                 </h3>
+                <p className="mt-3 text-sm font-bold text-white/78">
+                  <span className="text-white/48">Condition: </span>
+                  {current.conditionName || current.treatment}
+                </p>
                 {current.subtitle ? (
                   <p className="mt-4 max-w-3xl text-sm leading-7 text-white/66">
                     {current.subtitle}
@@ -220,8 +236,8 @@ export function TransformationShowcase({
                   key={`${current.id}-${pair.viewLabel}`}
                   beforeImage={pair.before}
                   afterImage={pair.after}
-                  beforeAlt={`${displayTitle(current, category, activeSafeIndex)} before`}
-                  afterAlt={`${displayTitle(current, category, activeSafeIndex)} after`}
+                  beforeAlt={transformationAltText(current, category, "before", pair.viewLabel)}
+                  afterAlt={transformationAltText(current, category, "after", pair.viewLabel)}
                   label={displayTitle(current, category, activeSafeIndex)}
                   viewLabel={pair.viewLabel}
                   aspectRatio="4 / 5"
@@ -255,7 +271,7 @@ export function TransformationShowcase({
                 />
               </div>
             </div>
-          </main>
+          </div>
         </div>
       </div>
     </section>
@@ -439,6 +455,37 @@ function displayTitle(
   }
 
   return transformationFallbackTitle(category, index);
+}
+
+function transformationHeading(
+  item: Transformation,
+  category: TransformationCategory,
+) {
+  if (category === "hair") {
+    return /fue/i.test(item.treatment)
+      ? "FUE Hair Transplant Transformation Example"
+      : "Hair Transplant Transformation Example";
+  }
+
+  return `${item.conditionName || "Skin"} Improvement Example`;
+}
+
+function transformationAltText(
+  item: Transformation,
+  category: TransformationCategory,
+  phase: "before" | "after",
+  viewLabel: string,
+) {
+  const condition = item.conditionName || item.treatment;
+  const view = viewLabel ? `${viewLabel.toLowerCase()} ` : "";
+
+  if (category === "hair") {
+    return phase === "after"
+      ? `Hair transplant improvement example showing restored hair density after treatment at Radiance Clinics Bhubaneswar, ${view}${condition}`
+      : `Hair transplant ${view}example before treatment for ${condition} at Radiance Clinics Bhubaneswar`;
+  }
+
+  return `${condition} ${view}${phase} treatment example at Radiance Clinics Bhubaneswar`;
 }
 
 function imageHasSource(image?: CmsImage): image is CmsImage {

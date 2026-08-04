@@ -27,6 +27,14 @@ const variants = [
 
 const generatedFormats = ["webp"];
 const sourceFormatFolders = new Set(["jpg", "jpeg", "png", "webp", "avif", "tif", "tiff"]);
+const replacementAfterFolderNames = new Set([
+  "hair-after-replacements",
+  "hair-transplant-after-results-webp",
+]);
+const replacementTargetAliases = new Map([
+  ["female-hair-transplant", "female-pattern-hair-loss"],
+  ["receding-hairline-hair-transplant", "receding-hairline"],
+]);
 
 const categoryAliases = new Map([
   ["01-hero", "hero"],
@@ -362,6 +370,71 @@ function roleForView(view, phase) {
   if (view === "primary") return phase;
   if (view === "side" || view === "second") return `angle-${phase}`;
   return `${view}-${phase}`;
+}
+
+function isReplacementAfterPath(relativePathParts) {
+  return relativePathParts.some((part) =>
+    replacementAfterFolderNames.has(slugify(part)),
+  );
+}
+
+function replacementExampleNumber(tokens) {
+  const exampleIndex = tokens.findIndex((token) => token === "example");
+  if (exampleIndex >= 0 && /^\d+$/.test(tokens[exampleIndex + 1] || "")) {
+    return Number.parseInt(tokens[exampleIndex + 1], 10);
+  }
+
+  const exampleToken = tokens.find((token) => /^example\d+$/.test(token));
+  if (exampleToken) {
+    return Number.parseInt(exampleToken.replace("example", ""), 10);
+  }
+
+  const caseToken = tokens.find((token) => /^case\d+$/.test(token));
+  return caseToken ? Number.parseInt(caseToken.replace("case", ""), 10) : null;
+}
+
+function parseReplacementAfter(stem, relativePathParts) {
+  if (!isReplacementAfterPath(relativePathParts)) return null;
+
+  const tokens = slugify(stem).split("-").filter(Boolean);
+  const { phase } = phaseFromTokens(tokens);
+  if (phase !== "after") return null;
+
+  const exampleNumber = replacementExampleNumber(tokens);
+  const hasExplicitExample = exampleNumber !== null;
+  const view = viewFromTokens(tokens);
+  const conditionTokens = tokens.filter((token, index) => {
+    if (/^(before|after|replacement|result|results)$/.test(token)) return false;
+    if (/^v\d+$/.test(token) || /^case\d+$/.test(token) || /^example\d+$/.test(token)) {
+      return false;
+    }
+    if (token === "example") return false;
+    if (hasExplicitExample && /^\d+$/.test(token) && tokens[index - 1] === "example") {
+      return false;
+    }
+    if (hasExplicitExample && viewAliases.has(token)) return false;
+    return true;
+  });
+  const parsedTarget = conditionTokens.join("-");
+  const targetSlug = replacementTargetAliases.get(parsedTarget) || parsedTarget;
+  const condition = normalizeCondition(targetSlug);
+
+  return {
+    subject: condition.slug || targetSlug || "hair-transplant",
+    usage: roleForView(view, "after"),
+    caseId: "",
+    beforeAfterRole: camelCaseRole(roleForView(view, "after")),
+    beforeAfterView: view,
+    beforeAfterViewLabel: viewLabel(view),
+    beforeAfterPhase: "after",
+    pairKey: "",
+    conditionName: condition.name,
+    treatment: condition.treatment,
+    conditionUnknown: Boolean(condition.unknown),
+    replacementAfter: true,
+    replacementTargetSlug: targetSlug,
+    replacementExampleNumber: exampleNumber,
+  };
 }
 
 function subjectFromTokens(tokens) {
@@ -1139,12 +1212,14 @@ function parseMediaInfo(filePath, inputRoot) {
     !isPreviewSheet &&
     (["before-after", "skin-before-after", "hair-before-after"].includes(dirCategory) ||
       ["skin-before-after", "hair-before-after"].includes(organizedCategory) ||
+      isReplacementAfterPath(relativePathParts) ||
       stemTokens.includes("ba") ||
       stemTokens.includes("before") ||
       stemTokens.includes("after"));
 
   if (isBeforeAfter) {
-    const beforeAfter = parseBeforeAfter(stem, relativePathParts);
+    const replacementAfter = parseReplacementAfter(stem, relativePathParts);
+    const beforeAfter = replacementAfter || parseBeforeAfter(stem, relativePathParts);
     if (!beforeAfter) {
       parseWarnings.push(
         `${normalizeSlashes(relativePath)}: before/after filename could not be parsed into treatment, view and before/after role.`,
@@ -1198,7 +1273,16 @@ function parseMediaInfo(filePath, inputRoot) {
       beforeAfterViewLabel: beforeAfter?.beforeAfterViewLabel || null,
       beforeAfterPhase: beforeAfter?.beforeAfterPhase || null,
       pairKey: beforeAfter?.pairKey || (caseId ? `${subject}-${caseId}` : ""),
-      baseSlug: slugify(beforeAfter ? `radiance-ba-${subject}-${caseId || beforeAfter.pairKey}-${role}` : stem),
+      replacementAfter: Boolean(beforeAfter?.replacementAfter),
+      replacementTargetSlug: beforeAfter?.replacementTargetSlug || "",
+      replacementExampleNumber: beforeAfter?.replacementExampleNumber ?? null,
+      baseSlug: slugify(
+        beforeAfter?.replacementAfter
+          ? `radiance-ba-replacement-${beforeAfter.replacementTargetSlug}-${beforeAfter.replacementExampleNumber || "condition"}-${beforeAfter.beforeAfterView}-after`
+          : beforeAfter
+            ? `radiance-ba-${subject}-${caseId || beforeAfter.pairKey}-${role}`
+            : stem,
+      ),
       recommendedWebsiteUsage: recommendedWebsiteUsage(category, role, subject),
       parseWarnings,
     };
@@ -1462,11 +1546,26 @@ function rotatedDimensions(metadata) {
   };
 }
 
-function sizeWarnings(width, height, relativePath) {
+function sizeWarnings(width, height, relativePath, transformationCategory = "") {
   const warnings = [];
 
   if (!width || !height) {
     return [`${relativePath}: could not read dimensions.`];
+  }
+
+  if (transformationCategory) {
+    const portraitVariant = variants.find((variant) => variant.key === "portrait");
+    const targetWidth = portraitVariant?.width || 900;
+    const targetHeight = portraitVariant?.height || 1200;
+
+    if (width < targetWidth || height < targetHeight) {
+      warnings.push(
+        `${relativePath}: below transformation viewer target (${width}x${height}); ` +
+          `use at least ${targetWidth}x${targetHeight} to avoid upscaling.`,
+      );
+    }
+
+    return warnings;
   }
 
   if (width < 1200 || height < 800) {
@@ -1526,7 +1625,12 @@ async function processImage({ filePath, inputRoot, outRoot, usedSlugs, metadataI
   const dimensions = rotatedDimensions(metadata);
   const fileStats = await stat(filePath);
   const contentHash = await fileContentHash(filePath);
-  const warnings = sizeWarnings(dimensions.width, dimensions.height, info.rawRelativePath);
+  const warnings = sizeWarnings(
+    dimensions.width,
+    dimensions.height,
+    info.rawRelativePath,
+    info.transformationCategory,
+  );
   warnings.push(...(info.parseWarnings || []));
 
   if (!isKnownCategory(category)) {
@@ -1567,9 +1671,16 @@ async function processImage({ filePath, inputRoot, outRoot, usedSlugs, metadataI
   await writeFile(path.join(outRoot, blurTextRelative), `${blurPlaceholder}\n`);
 
   const displayTitle = titleFromSlug(subject || role || slug);
+  const transformationAlt =
+    info.transformationCategory === "hair" && info.beforeAfterPhase === "after"
+      ? "Hair transplant improvement example showing restored hair density after treatment at Radiance Clinics Bhubaneswar"
+      : info.transformationCategory === "hair" && info.beforeAfterPhase === "before"
+        ? "Hair transplant example before treatment at Radiance Clinics Bhubaneswar"
+        : "";
   const altText =
     manifestMeta.alt_text ||
     manifestMeta.alt ||
+    transformationAlt ||
     `${displayTitle} - Radiance Clinics`;
   const focalPointX = parseNumber(manifestMeta.focal_point_x ?? manifestMeta.focal_x, 0.5);
   const defaultFocalY =
@@ -1634,7 +1745,9 @@ async function processImage({ filePath, inputRoot, outRoot, usedSlugs, metadataI
     caption: manifestMeta.caption || "",
     displayMode,
     contentHash,
-    normalizedBasename: slugify(path.parse(info.originalFilename).name),
+    normalizedBasename: info.replacementAfter
+      ? slugify(`replacement-${path.parse(info.originalFilename).name}`)
+      : slugify(path.parse(info.originalFilename).name),
     focalPointX,
     focalPointY,
     focal_point_x: focalPointX,
@@ -1659,6 +1772,9 @@ async function processImage({ filePath, inputRoot, outRoot, usedSlugs, metadataI
     beforeAfterViewLabel: info.beforeAfterViewLabel || null,
     beforeAfterPhase: info.beforeAfterPhase || null,
     beforeAfterPairKey: info.pairKey || null,
+    replacementAfter: Boolean(info.replacementAfter),
+    replacementTargetSlug: info.replacementTargetSlug || null,
+    replacementExampleNumber: info.replacementExampleNumber ?? null,
     width: dimensions.width,
     height: dimensions.height,
     original: {
@@ -1739,8 +1855,12 @@ function pairImagePayload(item) {
     beforeAfterView: item.beforeAfterView,
     beforeAfterViewLabel: item.beforeAfterViewLabel,
     beforeAfterPhase: item.beforeAfterPhase,
+    replacementAfter: Boolean(item.replacementAfter),
     originalFilename: item.originalFilename,
     originalRelativePath: item.originalRelativePath,
+    rawRelativePath: item.rawRelativePath,
+    width: item.width,
+    height: item.height,
     desktop: item.generated.heroDesktop,
     mobile: item.generated.heroMobile,
     thumb: item.generated.thumb,
@@ -1756,10 +1876,16 @@ function pairImagePayload(item) {
 function buildBeforeAfterPairs(manifest) {
   const pairMap = new Map();
   const warnings = [];
+  const replacementItems = [];
   const supportedCategories = new Set(["before-after", "skin-before-after", "hair-before-after"]);
 
   for (const item of manifest) {
     if (!supportedCategories.has(item.category) || !item.beforeAfterPhase) {
+      continue;
+    }
+
+    if (item.replacementAfter) {
+      replacementItems.push(item);
       continue;
     }
 
@@ -1856,6 +1982,8 @@ function buildBeforeAfterPairs(manifest) {
     pairMap.set(key, pair);
   }
 
+  const replacementReport = applyAfterReplacements(pairMap, replacementItems, warnings);
+
   const pairs = Array.from(pairMap.values())
     .map((pair) => {
       const orderedViews = Object.values(pair.views).sort(compareViewGroups);
@@ -1886,12 +2014,12 @@ function buildBeforeAfterPairs(manifest) {
 
       pair.beforeAfterPairs = completeViews;
       pair.additionalImages = [...additionalImages, ...pair.duplicateImages];
-      pair.frontBefore = pair.frontBefore || primary?.before || null;
-      pair.frontAfter = pair.frontAfter || primary?.after || null;
-      pair.angleBefore = pair.angleBefore || secondary?.before || null;
-      pair.angleAfter = pair.angleAfter || secondary?.after || null;
-      pair.topBefore = pair.topBefore || crown?.before || null;
-      pair.topAfter = pair.topAfter || crown?.after || null;
+      pair.frontBefore = primary?.before || pair.frontBefore || null;
+      pair.frontAfter = primary?.after || pair.frontAfter || null;
+      pair.angleBefore = secondary?.before || pair.angleBefore || null;
+      pair.angleAfter = secondary?.after || pair.angleAfter || null;
+      pair.topBefore = crown?.before || pair.topBefore || null;
+      pair.topAfter = crown?.after || pair.topAfter || null;
       if (!pair.before && pair.frontBefore) pair.before = pair.frontBefore;
       if (!pair.after && pair.frontAfter) pair.after = pair.frontAfter;
 
@@ -1913,7 +2041,171 @@ function buildBeforeAfterPairs(manifest) {
     })
     .sort((a, b) => a.sortOrder - b.sortOrder || a.pairKey.localeCompare(b.pairKey));
 
-  return { pairs, warnings };
+  return { pairs, warnings, replacementReport };
+}
+
+function replacementPairText(pair) {
+  const imageText = Object.values(pair.views)
+    .flatMap((view) => [view.before, view.after])
+    .filter(Boolean)
+    .flatMap((image) => [
+      image.originalFilename,
+      image.originalRelativePath,
+      image.rawRelativePath,
+    ]);
+
+  return slugify(
+    [
+      pair.id,
+      pair.pairKey,
+      pair.caseId,
+      pair.conditionName,
+      pair.treatment,
+      pair.treatmentCategory,
+      ...imageText,
+    ].join(" "),
+  );
+}
+
+function exampleNumbersFromPair(pair) {
+  const text = replacementPairText(pair);
+  const numbers = new Set();
+
+  for (const match of text.matchAll(/(?:case|example)-?0*(\d+)|(?:^|-)0*(\d{1,3})(?=-|$)/g)) {
+    const value = Number.parseInt(match[1] || match[2], 10);
+    if (Number.isFinite(value)) numbers.add(value);
+  }
+
+  return numbers;
+}
+
+function pairHasReplacementView(pair, replacement) {
+  const view = replacement.beforeAfterView || "primary";
+  return Boolean(pair.views[view]?.after);
+}
+
+function findReplacementCandidates(pairMap, replacement) {
+  const targetSlug = slugify(replacement.replacementTargetSlug || replacement.subject);
+  const targetCondition = normalizeCondition(targetSlug);
+  const exampleNumber = replacement.replacementExampleNumber;
+  const eligible = Array.from(pairMap.values()).filter(
+    (pair) => pair.category === "hair" && pairHasReplacementView(pair, replacement),
+  );
+  const withExample = (pairs) =>
+    exampleNumber === null || exampleNumber === undefined
+      ? pairs
+      : pairs.filter((pair) => exampleNumbersFromPair(pair).has(exampleNumber));
+  const directMatches = withExample(
+    eligible.filter((pair) => replacementPairText(pair).includes(targetSlug)),
+  );
+
+  if (directMatches.length) return directMatches;
+
+  return withExample(
+    eligible.filter((pair) => {
+      const pairCondition = normalizeCondition(pair.conditionName || pair.treatmentCategory);
+      return pairCondition.slug === targetCondition.slug;
+    }),
+  );
+}
+
+function replacementMeetsViewerResolution(replacement) {
+  const portraitVariant = variants.find((variant) => variant.key === "portrait");
+  const requiredWidth = portraitVariant?.width || 900;
+  const requiredHeight = portraitVariant?.height || 1200;
+  const width = Number(replacement.width || 0);
+  const height = Number(replacement.height || 0);
+
+  return {
+    accepted:
+      width > requiredWidth &&
+      height > requiredHeight &&
+      width * height > requiredWidth * requiredHeight,
+    width,
+    height,
+    requiredWidth,
+    requiredHeight,
+  };
+}
+
+function replaceAfterReferences(pair, currentAfter, replacementAfter) {
+  for (const view of Object.values(pair.views)) {
+    if (view.after?.id === currentAfter.id) view.after = replacementAfter;
+  }
+
+  for (const [role, image] of Object.entries(pair.images)) {
+    if (image?.id === currentAfter.id) pair.images[role] = replacementAfter;
+  }
+
+  for (const role of ["frontAfter", "angleAfter", "topAfter", "after"]) {
+    if (pair[role]?.id === currentAfter.id) pair[role] = replacementAfter;
+  }
+}
+
+function applyAfterReplacements(pairMap, replacementItems, warnings) {
+  const replaced = [];
+  const unmatched = [];
+
+  for (const replacement of replacementItems) {
+    const candidates = findReplacementCandidates(pairMap, replacement);
+    const reportBase = {
+      filename: replacement.originalFilename,
+      replacementId: replacement.id,
+      target: replacement.replacementTargetSlug,
+      exampleNumber: replacement.replacementExampleNumber,
+      view: replacement.beforeAfterView || "primary",
+    };
+
+    if (candidates.length !== 1) {
+      const reason = candidates.length
+        ? `ambiguous match (${candidates.length} transformations)`
+        : "no exact existing transformation and view match";
+      unmatched.push({ ...reportBase, reason });
+      warnings.push(`Replacement after image "${replacement.originalFilename}" was not used: ${reason}.`);
+      continue;
+    }
+
+    const pair = candidates[0];
+    const view = replacement.beforeAfterView || "primary";
+    const currentAfter = pair.views[view]?.after;
+    const resolution = replacementMeetsViewerResolution(replacement);
+
+    if (!currentAfter) {
+      const reason = `matched transformation is missing an approved ${viewLabel(view)} after image`;
+      unmatched.push({ ...reportBase, pairKey: pair.pairKey, reason });
+      warnings.push(`Replacement after image "${replacement.originalFilename}" was not used: ${reason}.`);
+      continue;
+    }
+
+    if (!resolution.accepted) {
+      const reason =
+        `resolution ${resolution.width}x${resolution.height} does not exceed the ` +
+        `${resolution.requiredWidth}x${resolution.requiredHeight} viewer output`;
+      unmatched.push({ ...reportBase, pairKey: pair.pairKey, reason });
+      warnings.push(`Replacement after image "${replacement.originalFilename}" was not used: ${reason}.`);
+      continue;
+    }
+
+    const replacementAfter = pairImagePayload(replacement);
+    replaceAfterReferences(pair, currentAfter, replacementAfter);
+    pair.views[view].after = replacementAfter;
+    pair.replacementAfterImages = [
+      ...(pair.replacementAfterImages || []),
+      {
+        view,
+        previousAfterId: currentAfter.id,
+        replacementAfterId: replacementAfter.id,
+      },
+    ];
+    replaced.push({
+      ...reportBase,
+      pairKey: pair.pairKey,
+      previousAfterId: currentAfter.id,
+      resolution: `${resolution.width}x${resolution.height}`,
+    });
+  }
+
+  return { replaced, unmatched };
 }
 
 function imageExtensionPriority(image) {
@@ -1985,7 +2277,15 @@ function duplicateWarnings(manifest) {
   return warnings;
 }
 
-function printSummary({ processed, skipped, warnings, errors, outRoot, loadedManifestFiles }) {
+function printSummary({
+  processed,
+  skipped,
+  warnings,
+  errors,
+  outRoot,
+  loadedManifestFiles,
+  replacementReport,
+}) {
   console.log("");
   console.log("Radiance media processing complete.");
   console.log(`Output: ${outRoot}`);
@@ -1994,6 +2294,8 @@ function printSummary({ processed, skipped, warnings, errors, outRoot, loadedMan
   console.log(`CSV manifests: ${loadedManifestFiles.length ? loadedManifestFiles.join(", ") : "none"}`);
   console.log(`Warnings: ${warnings.length}`);
   console.log(`Errors: ${errors.length}`);
+  console.log(`Replacement after images used: ${replacementReport.replaced.length}`);
+  console.log(`Unmatched replacement after images: ${replacementReport.unmatched.length}`);
 
   if (warnings.length) {
     console.log("");
@@ -2146,6 +2448,7 @@ async function main() {
     items: manifest.sort(
       (a, b) => a.sortOrder - b.sortOrder || a.category.localeCompare(b.category) || a.id.localeCompare(b.id),
     ),
+    replacementAfterReport: beforeAfter.replacementReport,
     warnings,
     errors,
   };
@@ -2153,6 +2456,7 @@ async function main() {
   const beforeAfterPayload = {
     generatedAt: manifestPayload.generatedAt,
     pairs: beforeAfter.pairs,
+    replacementAfterReport: beforeAfter.replacementReport,
     warnings: beforeAfter.warnings,
   };
 
@@ -2166,6 +2470,7 @@ async function main() {
     errors,
     outRoot,
     loadedManifestFiles: metadataIndex.loadedFiles,
+    replacementReport: beforeAfter.replacementReport,
   });
 
   if (errors.length) {

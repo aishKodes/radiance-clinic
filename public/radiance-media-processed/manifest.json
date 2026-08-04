@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-07-17T02:44:21.125Z",
+  "generatedAt": "2026-08-04T10:03:12.306Z",
   "inputRoot": "/Users/aishwaryam/Desktop/radiance-work/radiance-clinics/radiance-media-raw",
   "outputRoot": "/Users/aishwaryam/Desktop/radiance-work/radiance-clinics/public/radiance-media-processed",
   "counts": {
-    "processed": 167,
+    "processed": 172,
     "skipped": 0,
-    "warnings": 225,
+    "warnings": 167,
     "errors": 0
   },
   "variants": [
@@ -89,8 +89,8 @@
       "usage": "after",
       "role": "after",
       "title": "After1",
-      "altText": "After1 - Radiance Clinics",
-      "alt_text": "After1 - Radiance Clinics",
+      "altText": "Hair transplant improvement example showing restored hair density after treatment at Radiance Clinics Bhubaneswar",
+      "alt_text": "Hair transplant improvement example showing restored hair density after treatment at Radiance Clinics Bhubaneswar",
       "caption": "",
       "displayMode": "cover",
       "contentHash": "e7df0e2962d6822f6dc7a9dd6a015ff11b072d34",
@@ -119,6 +119,9 @@
       "beforeAfterViewLabel": "Front View",
       "beforeAfterPhase": "after",
       "beforeAfterPairKey": "after1-case004",
+      "replacementAfter": false,
+      "replacementTargetSlug": null,
+      "replacementExampleNumber": null,
       "width": 3000,
       "height": 4000,
       "original": {
@@ -188,8 +191,8 @@
       "usage": "before",
       "role": "before",
       "title": "Before After",
-      "altText": "Before After - Radiance Clinics",
-      "alt_text": "Before After - Radiance Clinics",
+      "altText": "Hair transplant example before treatment at Radiance Clinics Bhubaneswar",
+      "alt_text": "Hair transplant example before treatment at Radiance Clinics Bhubaneswar",
       "caption": "",
       "displayMode": "cover",
       "contentHash": "01fe81269858e8653bd41c8651a3260a3d96ba2f",
@@ -218,6 +221,9 @@
       "beforeAfterViewLabel": "Front View",
       "beforeAfterPhase": "before",
       "beforeAfterPairKey": "before-after-case004",
+      "replacementAfter": false,
+      "replacementTargetSlug": null,
+      "replacementExampleNumber": null,
       "width": 1086,
       "height": 1448,
       "original": {
@@ -266,7 +272,6 @@
       },
       "recommendedWebsiteUsage": "Consent-led before/after preview for before after; publish only after consent review",
       "warnings": [
-        "03-before-after/case004/before.png: image is too small for premium web use (1086x1448); replace with a higher-resolution original if possible.",
         "03-before-after/case004/before.png: unknown condition name \"Before After\" was parsed from filename/folder; add a normalization alias if this should be public-facing."
       ]
     },
@@ -288,8 +293,8 @@
       "usage": "after",
       "role": "after",
       "title": "Before After",
-      "altText": "Before After - Radiance Clinics",
-      "alt_text": "Before After - Radiance Clinics",
+      "altText": "Hair transplant improvement example showing restored hair density after treatment at Radiance Clinics Bhubaneswar",
+      "alt_text": "Hair transplant improvement example showing restored hair density after treatment at Radiance Clinics Bhubaneswar",
       "caption": "",
       "displayMode": "cover",
       "contentHash": "23b872b719b15509067f565d3c8c74c98a50067e",
@@ -318,6 +323,9 @@
       "beforeAfterViewLabel": "Front View",
       "beforeAfterPhase": "after",
       "beforeAfterPairKey": "before-after-case006",
+      "replacementAfter": false,
+      "replacementTargetSlug": null,
+      "replacementExampleNumber": null,
       "width": 1024,
       "height": 1536,
       "original": {
@@ -366,7 +374,6 @@
       },
       "recommendedWebsiteUsage": "Consent-led before/after preview for before after; publish only after consent review",
       "warnings": [
-        "03-before-after/case006/after.png: image is too small for premium web use (1024x1536); replace with a higher-resolution original if possible.",
         "03-before-after/case006/after.png: unknown condition name \"Before After\" was parsed from filename/folder; add a normalization alias if this should be public-facing."
       ]
     },
@@ -388,8 +395,8 @@
       "usage": "before",
       "role": "before",
       "title": "Bfore1",
-      "altText": "Bfore1 - Radiance Clinics",
-      "alt_text": "Bfore1 - Radiance Clinics",
+      "altText": "Hair transplant example before treatment at Radiance Clinics Bhubaneswar",
+      "alt_text": "Hair transplant example before treatment at Radiance Clinics Bhubaneswar",
       "caption": "",
       "displayMode": "cover",
       "contentHash": "6dda154737a5baf307de2fa37770e85ec178f8df",
@@ -418,6 +425,9 @@
       "beforeAfterViewLabel": "Front View",
       "beforeAfterPhase": "before",
       "beforeAfterPairKey": "bfore1-case004",
+      "replacementAfter": false,
+      "replacementTargetSlug": null,
+      "replacementExampleNumber": null,
       "width": 1086,
       "height": 1448,
       "original": {
@@ -466,7 +476,6 @@
       },
       "recommendedWebsiteUsage": "Consent-led before/after preview for bfore1; publish only after consent review",
       "warnings": [
-        "03-before-after/case004/bfore1.png: image is too small for premium web use (1086x1448); replace with a higher-resolution original if possible.",
         "03-before-after/case004/bfore1.png: unknown condition name \"Bfore1\" was parsed from filename/folder; add a normalization alias if this should be public-facing."
       ]
     },
@@ -518,6 +527,9 @@
       "beforeAfterViewLabel": null,
       "beforeAfterPhase": "after",
       "beforeAfterPairKey": "hair-transplant-case001",
+      "replacementAfter": false,
+      "replacementTargetSlug": null,
+      "replacementExampleNumber": null,
       "width": 1254,
       "height": 1254,
       "original": {
@@ -565,9 +577,7 @@
         "textPath": "blur/radiance-ba-hair-transplant-case001-angle-after.txt"
       },
       "recommendedWebsiteUsage": "Consent-led before/after preview for hair transplant; publish only after consent review",
-      "warnings": [
-        "03-before-after/case001/radiance-ba-hair-transplant-case001-angle-after.jpg: below heroDesktop target (1254x1254); generated hero variants may be upscaled."
-      ]
+      "warnings": []
     },
     {
       "id": "radiance-ba-hair-transplant-case001-angle-before",
@@ -617,6 +627,9 @@
       "beforeAfterViewLabel": null,
       "beforeAfterPhase": "before",
       "beforeAfterPairKey": "hair-transplant-case001",
+      "replacementAfter": false,
+      "replacementTargetSlug": null,
+      "replacementExampleNumber": null,
       "width": 1254,
       "height": 1254,
       "original": {
@@ -664,9 +677,7 @@
         "textPath": "blur/radiance-ba-hair-transplant-case001-angle-before.txt"
       },
       "recommendedWebsiteUsage": "Consent-led before/after preview for hair transplant; publish only after consent review",
-      "warnings": [
-        "03-before-after/case001/radiance-ba-hair-transplant-case001-angle-before.jpg: below heroDesktop target (1254x1254); generated hero variants may be upscaled."
-      ]
+      "warnings": []
     },
     {
       "id": "radiance-ba-hair-transplant-case001-front-after",
@@ -716,6 +727,9 @@
       "beforeAfterViewLabel": null,
       "beforeAfterPhase": "after",
       "beforeAfterPairKey": "hair-transplant-case001",
+      "replacementAfter": false,
+      "replacementTargetSlug": null,
+      "replacementExampleNumber": null,
       "width": 1254,
       "height": 1254,
       "original": {
@@ -763,9 +777,7 @@
         "textPath": "blur/radiance-ba-hair-transplant-case001-front-after.txt"
       },
       "recommendedWebsiteUsage": "Consent-led before/after preview for hair transplant; publish only after consent review",
-      "warnings": [
-        "03-before-after/case001/radiance-ba-hair-transplant-case001-front-after.jpg: below heroDesktop target (1254x1254); generated hero variants may be upscaled."
-      ]
+      "warnings": []
     },
     {
       "id": "radiance-ba-hair-transplant-case001-front-before",
@@ -815,6 +827,9 @@
       "beforeAfterViewLabel": null,
       "beforeAfterPhase": "before",
       "beforeAfterPairKey": "hair-transplant-case001",
+      "replacementAfter": false,
+      "replacementTargetSlug": null,
+      "replacementExampleNumber": null,
       "width": 1254,
       "height": 1254,
       "original": {
@@ -862,9 +877,7 @@
         "textPath": "blur/radiance-ba-hair-transplant-case001-front-before.txt"
       },
       "recommendedWebsiteUsage": "Consent-led before/after preview for hair transplant; publish only after consent review",
-      "warnings": [
-        "03-before-after/case001/radiance-ba-hair-transplant-case001-front-before.jpg: below heroDesktop target (1254x1254); generated hero variants may be upscaled."
-      ]
+      "warnings": []
     },
     {
       "id": "radiance-ba-hair-transplant-case002-angle-after",
@@ -914,6 +927,9 @@
       "beforeAfterViewLabel": null,
       "beforeAfterPhase": "after",
       "beforeAfterPairKey": "hair-transplant-case002",
+      "replacementAfter": false,
+      "replacementTargetSlug": null,
+      "replacementExampleNumber": null,
       "width": 1254,
       "height": 1254,
       "original": {
@@ -961,9 +977,7 @@
         "textPath": "blur/radiance-ba-hair-transplant-case002-angle-after.txt"
       },
       "recommendedWebsiteUsage": "Consent-led before/after preview for hair transplant; publish only after consent review",
-      "warnings": [
-        "03-before-after/case002/radiance-ba-hair-transplant-case002-angle-after.jpg: below heroDesktop target (1254x1254); generated hero variants may be upscaled."
-      ]
+      "warnings": []
     },
     {
       "id": "radiance-ba-hair-transplant-case002-angle-before",
@@ -1013,6 +1027,9 @@
       "beforeAfterViewLabel": null,
       "beforeAfterPhase": "before",
       "beforeAfterPairKey": "hair-transplant-case002",
+      "replacementAfter": false,
+      "replacementTargetSlug": null,
+      "replacementExampleNumber": null,
       "width": 1254,
       "height": 1254,
       "original": {
@@ -1060,9 +1077,7 @@
         "textPath": "blur/radiance-ba-hair-transplant-case002-angle-before.txt"
       },
       "recommendedWebsiteUsage": "Consent-led before/after preview for hair transplant; publish only after consent review",
-      "warnings": [
-        "03-before-after/case002/radiance-ba-hair-transplant-case002-angle-before.jpg: below heroDesktop target (1254x1254); generated hero variants may be upscaled."
-      ]
+      "warnings": []
     },
     {
       "id": "radiance-ba-hair-transplant-case002-front-after",
@@ -1112,6 +1127,9 @@
       "beforeAfterViewLabel": null,
       "beforeAfterPhase": "after",
       "beforeAfterPairKey": "hair-transplant-case002",
+      "replacementAfter": false,
+      "replacementTargetSlug": null,
+      "replacementExampleNumber": null,
       "width": 1254,
       "height": 1254,
       "original": {
@@ -1159,9 +1177,7 @@
         "textPath": "blur/radiance-ba-hair-transplant-case002-front-after.txt"
       },
       "recommendedWebsiteUsage": "Consent-led before/after preview for hair transplant; publish only after consent review",
-      "warnings": [
-        "03-before-after/case002/radiance-ba-hair-transplant-case002-front-after.jpg: below heroDesktop target (1254x1254); generated hero variants may be upscaled."
-      ]
+      "warnings": []
     },
     {
       "id": "radiance-ba-hair-transplant-case002-front-before",
@@ -1211,6 +1227,9 @@
       "beforeAfterViewLabel": null,
       "beforeAfterPhase": "before",
       "beforeAfterPairKey": "hair-transplant-case002",
+      "replacementAfter": false,
+      "replacementTargetSlug": null,
+      "replacementExampleNumber": null,
       "width": 1254,
       "height": 1254,
       "original": {
@@ -1258,9 +1277,7 @@
         "textPath": "blur/radiance-ba-hair-transplant-case002-front-before.txt"
       },
       "recommendedWebsiteUsage": "Consent-led before/after preview for hair transplant; publish only after consent review",
-      "warnings": [
-        "03-before-after/case002/radiance-ba-hair-transplant-case002-front-before.jpg: below heroDesktop target (1254x1254); generated hero variants may be upscaled."
-      ]
+      "warnings": []
     },
     {
       "id": "radiance-ba-hair-transplant-case003-angle-after",
@@ -1310,6 +1327,9 @@
       "beforeAfterViewLabel": null,
       "beforeAfterPhase": "after",
       "beforeAfterPairKey": "hair-transplant-case003",
+      "replacementAfter": false,
+      "replacementTargetSlug": null,
+      "replacementExampleNumber": null,
       "width": 1086,
       "height": 1448,
       "original": {
@@ -1357,9 +1377,7 @@
         "textPath": "blur/radiance-ba-hair-transplant-case003-angle-after.txt"
       },
       "recommendedWebsiteUsage": "Consent-led before/after preview for hair transplant; publish only after consent review",
-      "warnings": [
-        "03-before-after/case003/radiance-ba-hair-transplant-case003-angle-after.jpg: image is too small for premium web use (1086x1448); replace with a higher-resolution original if possible."
-      ]
+      "warnings": []
     },
     {
       "id": "radiance-ba-hair-transplant-case003-angle-before",
@@ -1409,6 +1427,9 @@
       "beforeAfterViewLabel": null,
       "beforeAfterPhase": "before",
       "beforeAfterPairKey": "hair-transplant-case003",
+      "replacementAfter": false,
+      "replacementTargetSlug": null,
+      "replacementExampleNumber": null,
       "width": 1086,
       "height": 1448,
       "original": {
@@ -1456,9 +1477,7 @@
         "textPath": "blur/radiance-ba-hair-transplant-case003-angle-before.txt"
       },
       "recommendedWebsiteUsage": "Consent-led before/after preview for hair transplant; publish only after consent review",
-      "warnings": [
-        "03-before-after/case003/radiance-ba-hair-transplant-case003-angle-before.jpg: image is too small for premium web use (1086x1448); replace with a higher-resolution original if possible."
-      ]
+      "warnings": []
     },
     {
       "id": "radiance-ba-hair-transplant-case003-front-after",
@@ -1508,6 +1527,9 @@
       "beforeAfterViewLabel": null,
       "beforeAfterPhase": "after",
       "beforeAfterPairKey": "hair-transplant-case003",
+      "replacementAfter": false,
+      "replacementTargetSlug": null,
+      "replacementExampleNumber": null,
       "width": 1086,
       "height": 1448,
       "original": {
@@ -1555,9 +1577,7 @@
         "textPath": "blur/radiance-ba-hair-transplant-case003-front-after.txt"
       },
       "recommendedWebsiteUsage": "Consent-led before/after preview for hair transplant; publish only after consent review",
-      "warnings": [
-        "03-before-after/case003/radiance-ba-hair-transplant-case003-front-after.jpg: image is too small for premium web use (1086x1448); replace with a higher-resolution original if possible."
-      ]
+      "warnings": []
     },
     {
       "id": "radiance-ba-hair-transplant-case003-front-before",
@@ -1607,6 +1627,9 @@
       "beforeAfterViewLabel": null,
       "beforeAfterPhase": "before",
       "beforeAfterPairKey": "hair-transplant-case003",
+      "replacementAfter": false,
+      "replacementTargetSlug": null,
+      "replacementExampleNumber": null,
       "width": 1086,
       "height": 1448,
       "original": {
@@ -1654,9 +1677,7 @@
         "textPath": "blur/radiance-ba-hair-transplant-case003-front-before.txt"
       },
       "recommendedWebsiteUsage": "Consent-led before/after preview for hair transplant; publish only after consent review",
-      "warnings": [
-        "03-before-after/case003/radiance-ba-hair-transplant-case003-front-before.jpg: image is too small for premium web use (1086x1448); replace with a higher-resolution original if possible."
-      ]
+      "warnings": []
     },
     {
       "id": "radiance-ba-hair-transplant-case003-top-after",
@@ -1706,6 +1727,9 @@
       "beforeAfterViewLabel": null,
       "beforeAfterPhase": "after",
       "beforeAfterPairKey": "hair-transplant-case003",
+      "replacementAfter": false,
+      "replacementTargetSlug": null,
+      "replacementExampleNumber": null,
       "width": 1086,
       "height": 1448,
       "original": {
@@ -1753,9 +1777,7 @@
         "textPath": "blur/radiance-ba-hair-transplant-case003-top-after.txt"
       },
       "recommendedWebsiteUsage": "Consent-led before/after preview for hair transplant; publish only after consent review",
-      "warnings": [
-        "03-before-after/case003/radiance-ba-hair-transplant-case003-top-after.jpg: image is too small for premium web use (1086x1448); replace with a higher-resolution original if possible."
-      ]
+      "warnings": []
     },
     {
       "id": "radiance-ba-hair-transplant-case003-top-before",
@@ -1805,6 +1827,9 @@
       "beforeAfterViewLabel": null,
       "beforeAfterPhase": "before",
       "beforeAfterPairKey": "hair-transplant-case003",
+      "replacementAfter": false,
+      "replacementTargetSlug": null,
+      "replacementExampleNumber": null,
       "width": 1086,
       "height": 1448,
       "original": {
@@ -1852,9 +1877,7 @@
         "textPath": "blur/radiance-ba-hair-transplant-case003-top-before.txt"
       },
       "recommendedWebsiteUsage": "Consent-led before/after preview for hair transplant; publish only after consent review",
-      "warnings": [
-        "03-before-after/case003/radiance-ba-hair-transplant-case003-top-before.jpg: image is too small for premium web use (1086x1448); replace with a higher-resolution original if possible."
-      ]
+      "warnings": []
     },
     {
       "id": "radiance-ba-hair-transplant-case004-front-after",
@@ -1904,6 +1927,9 @@
       "beforeAfterViewLabel": null,
       "beforeAfterPhase": "after",
       "beforeAfterPairKey": "hair-transplant-case004",
+      "replacementAfter": false,
+      "replacementTargetSlug": null,
+      "replacementExampleNumber": null,
       "width": 1086,
       "height": 1448,
       "original": {
@@ -1951,9 +1977,7 @@
         "textPath": "blur/radiance-ba-hair-transplant-case004-front-after.txt"
       },
       "recommendedWebsiteUsage": "Consent-led before/after preview for hair transplant; publish only after consent review",
-      "warnings": [
-        "03-before-after/case004/radiance-ba-hair-transplant-case004-front-after.jpg: image is too small for premium web use (1086x1448); replace with a higher-resolution original if possible."
-      ]
+      "warnings": []
     },
     {
       "id": "radiance-ba-hair-transplant-case005-front-after",
@@ -2003,6 +2027,9 @@
       "beforeAfterViewLabel": null,
       "beforeAfterPhase": "after",
       "beforeAfterPairKey": "hair-transplant-case005",
+      "replacementAfter": false,
+      "replacementTargetSlug": null,
+      "replacementExampleNumber": null,
       "width": 1086,
       "height": 1448,
       "original": {
@@ -2050,9 +2077,7 @@
         "textPath": "blur/radiance-ba-hair-transplant-case005-front-after.txt"
       },
       "recommendedWebsiteUsage": "Consent-led before/after preview for hair transplant; publish only after consent review",
-      "warnings": [
-        "03-before-after/case005/radiance-ba-hair-transplant-case005-front-after.jpg: image is too small for premium web use (1086x1448); replace with a higher-resolution original if possible."
-      ]
+      "warnings": []
     },
     {
       "id": "radiance-ba-hair-transplant-case005-front-before",
@@ -2102,6 +2127,9 @@
       "beforeAfterViewLabel": null,
       "beforeAfterPhase": "before",
       "beforeAfterPairKey": "hair-transplant-case005",
+      "replacementAfter": false,
+      "replacementTargetSlug": null,
+      "replacementExampleNumber": null,
       "width": 1086,
       "height": 1448,
       "original": {
@@ -2149,9 +2177,7 @@
         "textPath": "blur/radiance-ba-hair-transplant-case005-front-before.txt"
       },
       "recommendedWebsiteUsage": "Consent-led before/after preview for hair transplant; publish only after consent review",
-      "warnings": [
-        "03-before-after/case005/radiance-ba-hair-transplant-case005-front-before.jpg: image is too small for premium web use (1086x1448); replace with a higher-resolution original if possible."
-      ]
+      "warnings": []
     },
     {
       "id": "radiance-ba-hair-transplant-case005-top-after",
@@ -2201,6 +2227,9 @@
       "beforeAfterViewLabel": null,
       "beforeAfterPhase": "after",
       "beforeAfterPairKey": "hair-transplant-case005",
+      "replacementAfter": false,
+      "replacementTargetSlug": null,
+      "replacementExampleNumber": null,
       "width": 1086,
       "height": 1448,
       "original": {
@@ -2248,9 +2277,7 @@
         "textPath": "blur/radiance-ba-hair-transplant-case005-top-after.txt"
       },
       "recommendedWebsiteUsage": "Consent-led before/after preview for hair transplant; publish only after consent review",
-      "warnings": [
-        "03-before-after/case005/radiance-ba-hair-transplant-case005-top-after.jpg: image is too small for premium web use (1086x1448); replace with a higher-resolution original if possible."
-      ]
+      "warnings": []
     },
     {
       "id": "radiance-ba-hair-transplant-case005-top-before",
@@ -2300,6 +2327,9 @@
       "beforeAfterViewLabel": null,
       "beforeAfterPhase": "before",
       "beforeAfterPairKey": "hair-transplant-case005",
+      "replacementAfter": false,
+      "replacementTargetSlug": null,
+      "replacementExampleNumber": null,
       "width": 1086,
       "height": 1448,
       "original": {
@@ -2347,9 +2377,7 @@
         "textPath": "blur/radiance-ba-hair-transplant-case005-top-before.txt"
       },
       "recommendedWebsiteUsage": "Consent-led before/after preview for hair transplant; publish only after consent review",
-      "warnings": [
-        "03-before-after/case005/radiance-ba-hair-transplant-case005-top-before.jpg: image is too small for premium web use (1086x1448); replace with a higher-resolution original if possible."
-      ]
+      "warnings": []
     },
     {
       "id": "radiance-ba-hair-transplant-case006-angle-before",
@@ -2399,6 +2427,9 @@
       "beforeAfterViewLabel": null,
       "beforeAfterPhase": "before",
       "beforeAfterPairKey": "hair-transplant-case006",
+      "replacementAfter": false,
+      "replacementTargetSlug": null,
+      "replacementExampleNumber": null,
       "width": 1024,
       "height": 1536,
       "original": {
@@ -2446,9 +2477,7 @@
         "textPath": "blur/radiance-ba-hair-transplant-case006-angle-before.txt"
       },
       "recommendedWebsiteUsage": "Consent-led before/after preview for hair transplant; publish only after consent review",
-      "warnings": [
-        "03-before-after/case006/radiance-ba-hair-transplant-case006-angle-before.jpg: image is too small for premium web use (1024x1536); replace with a higher-resolution original if possible."
-      ]
+      "warnings": []
     },
     {
       "id": "radiance-ba-hair-transplant-case006-front-before",
@@ -2498,6 +2527,9 @@
       "beforeAfterViewLabel": null,
       "beforeAfterPhase": "before",
       "beforeAfterPairKey": "hair-transplant-case006",
+      "replacementAfter": false,
+      "replacementTargetSlug": null,
+      "replacementExampleNumber": null,
       "width": 1024,
       "height": 1536,
       "original": {
@@ -2545,9 +2577,7 @@
         "textPath": "blur/radiance-ba-hair-transplant-case006-front-before.txt"
       },
       "recommendedWebsiteUsage": "Consent-led before/after preview for hair transplant; publish only after consent review",
-      "warnings": [
-        "03-before-after/case006/radiance-ba-hair-transplant-case006-front-before.jpg: image is too small for premium web use (1024x1536); replace with a higher-resolution original if possible."
-      ]
+      "warnings": []
     },
     {
       "id": "radiance-ba-hair-transplant-case007-angle-after",
@@ -2597,6 +2627,9 @@
       "beforeAfterViewLabel": null,
       "beforeAfterPhase": "after",
       "beforeAfterPairKey": "hair-transplant-case007",
+      "replacementAfter": false,
+      "replacementTargetSlug": null,
+      "replacementExampleNumber": null,
       "width": 1086,
       "height": 1448,
       "original": {
@@ -2644,9 +2677,7 @@
         "textPath": "blur/radiance-ba-hair-transplant-case007-angle-after.txt"
       },
       "recommendedWebsiteUsage": "Consent-led before/after preview for hair transplant; publish only after consent review",
-      "warnings": [
-        "03-before-after/case007/radiance-ba-hair-transplant-case007-angle-after.jpg: image is too small for premium web use (1086x1448); replace with a higher-resolution original if possible."
-      ]
+      "warnings": []
     },
     {
       "id": "radiance-ba-hair-transplant-case007-angle-before",
@@ -2696,6 +2727,9 @@
       "beforeAfterViewLabel": null,
       "beforeAfterPhase": "before",
       "beforeAfterPairKey": "hair-transplant-case007",
+      "replacementAfter": false,
+      "replacementTargetSlug": null,
+      "replacementExampleNumber": null,
       "width": 1086,
       "height": 1448,
       "original": {
@@ -2743,9 +2777,7 @@
         "textPath": "blur/radiance-ba-hair-transplant-case007-angle-before.txt"
       },
       "recommendedWebsiteUsage": "Consent-led before/after preview for hair transplant; publish only after consent review",
-      "warnings": [
-        "03-before-after/case007/radiance-ba-hair-transplant-case007-angle-before.jpg: image is too small for premium web use (1086x1448); replace with a higher-resolution original if possible."
-      ]
+      "warnings": []
     },
     {
       "id": "radiance-ba-hair-transplant-case007-top-after",
@@ -2795,6 +2827,9 @@
       "beforeAfterViewLabel": null,
       "beforeAfterPhase": "after",
       "beforeAfterPairKey": "hair-transplant-case007",
+      "replacementAfter": false,
+      "replacementTargetSlug": null,
+      "replacementExampleNumber": null,
       "width": 1086,
       "height": 1448,
       "original": {
@@ -2842,9 +2877,7 @@
         "textPath": "blur/radiance-ba-hair-transplant-case007-top-after.txt"
       },
       "recommendedWebsiteUsage": "Consent-led before/after preview for hair transplant; publish only after consent review",
-      "warnings": [
-        "03-before-after/case007/radiance-ba-hair-transplant-case007-top-after.jpg: image is too small for premium web use (1086x1448); replace with a higher-resolution original if possible."
-      ]
+      "warnings": []
     },
     {
       "id": "radiance-ba-hair-transplant-case007-top-before",
@@ -2894,6 +2927,9 @@
       "beforeAfterViewLabel": null,
       "beforeAfterPhase": "before",
       "beforeAfterPairKey": "hair-transplant-case007",
+      "replacementAfter": false,
+      "replacementTargetSlug": null,
+      "replacementExampleNumber": null,
       "width": 1086,
       "height": 1448,
       "original": {
@@ -2941,9 +2977,7 @@
         "textPath": "blur/radiance-ba-hair-transplant-case007-top-before.txt"
       },
       "recommendedWebsiteUsage": "Consent-led before/after preview for hair transplant; publish only after consent review",
-      "warnings": [
-        "03-before-after/case007/radiance-ba-hair-transplant-case007-top-before.jpg: image is too small for premium web use (1086x1448); replace with a higher-resolution original if possible."
-      ]
+      "warnings": []
     },
     {
       "id": "radiance-aesthetics-category",
@@ -2993,6 +3027,9 @@
       "beforeAfterViewLabel": null,
       "beforeAfterPhase": null,
       "beforeAfterPairKey": null,
+      "replacementAfter": false,
+      "replacementTargetSlug": null,
+      "replacementExampleNumber": null,
       "width": 1800,
       "height": 708,
       "original": {
@@ -3092,6 +3129,9 @@
       "beforeAfterViewLabel": null,
       "beforeAfterPhase": null,
       "beforeAfterPairKey": null,
+      "replacementAfter": false,
+      "replacementTargetSlug": null,
+      "replacementExampleNumber": null,
       "width": 1800,
       "height": 757,
       "original": {
@@ -3191,6 +3231,9 @@
       "beforeAfterViewLabel": null,
       "beforeAfterPhase": null,
       "beforeAfterPairKey": null,
+      "replacementAfter": false,
+      "replacementTargetSlug": null,
+      "replacementExampleNumber": null,
       "width": 1800,
       "height": 795,
       "original": {
@@ -3290,6 +3333,9 @@
       "beforeAfterViewLabel": null,
       "beforeAfterPhase": null,
       "beforeAfterPairKey": null,
+      "replacementAfter": false,
+      "replacementTargetSlug": null,
+      "replacementExampleNumber": null,
       "width": 1800,
       "height": 747,
       "original": {
@@ -3389,6 +3435,9 @@
       "beforeAfterViewLabel": null,
       "beforeAfterPhase": null,
       "beforeAfterPairKey": null,
+      "replacementAfter": false,
+      "replacementTargetSlug": null,
+      "replacementExampleNumber": null,
       "width": 1448,
       "height": 1086,
       "original": {
@@ -3488,6 +3537,9 @@
       "beforeAfterViewLabel": null,
       "beforeAfterPhase": null,
       "beforeAfterPairKey": null,
+      "replacementAfter": false,
+      "replacementTargetSlug": null,
+      "replacementExampleNumber": null,
       "width": 1448,
       "height": 1086,
       "original": {
@@ -3587,6 +3639,9 @@
       "beforeAfterViewLabel": null,
       "beforeAfterPhase": null,
       "beforeAfterPairKey": null,
+      "replacementAfter": false,
+      "replacementTargetSlug": null,
+      "replacementExampleNumber": null,
       "width": 941,
       "height": 1672,
       "original": {
@@ -3686,6 +3741,9 @@
       "beforeAfterViewLabel": null,
       "beforeAfterPhase": null,
       "beforeAfterPairKey": null,
+      "replacementAfter": false,
+      "replacementTargetSlug": null,
+      "replacementExampleNumber": null,
       "width": 1448,
       "height": 1086,
       "original": {
@@ -3785,6 +3843,9 @@
       "beforeAfterViewLabel": null,
       "beforeAfterPhase": null,
       "beforeAfterPairKey": null,
+      "replacementAfter": false,
+      "replacementTargetSlug": null,
+      "replacementExampleNumber": null,
       "width": 1448,
       "height": 1086,
       "original": {
@@ -3884,6 +3945,9 @@
       "beforeAfterViewLabel": null,
       "beforeAfterPhase": null,
       "beforeAfterPairKey": null,
+      "replacementAfter": false,
+      "replacementTargetSlug": null,
+      "replacementExampleNumber": null,
       "width": 1448,
       "height": 1086,
       "original": {
@@ -3983,6 +4047,9 @@
       "beforeAfterViewLabel": null,
       "beforeAfterPhase": null,
       "beforeAfterPairKey": null,
+      "replacementAfter": false,
+      "replacementTargetSlug": null,
+      "replacementExampleNumber": null,
       "width": 1448,
       "height": 1086,
       "original": {
@@ -4082,6 +4149,9 @@
       "beforeAfterViewLabel": null,
       "beforeAfterPhase": null,
       "beforeAfterPairKey": null,
+      "replacementAfter": false,
+      "replacementTargetSlug": null,
+      "replacementExampleNumber": null,
       "width": 1122,
       "height": 1402,
       "original": {
@@ -4182,6 +4252,9 @@
       "beforeAfterViewLabel": null,
       "beforeAfterPhase": null,
       "beforeAfterPairKey": null,
+      "replacementAfter": false,
+      "replacementTargetSlug": null,
+      "replacementExampleNumber": null,
       "width": 1122,
       "height": 1402,
       "original": {
@@ -4282,6 +4355,9 @@
       "beforeAfterViewLabel": null,
       "beforeAfterPhase": null,
       "beforeAfterPairKey": null,
+      "replacementAfter": false,
+      "replacementTargetSlug": null,
+      "replacementExampleNumber": null,
       "width": 1448,
       "height": 1086,
       "original": {
@@ -4381,6 +4457,9 @@
       "beforeAfterViewLabel": null,
       "beforeAfterPhase": null,
       "beforeAfterPairKey": null,
+      "replacementAfter": false,
+      "replacementTargetSlug": null,
+      "replacementExampleNumber": null,
       "width": 1086,
       "height": 1448,
       "original": {
@@ -4480,6 +4559,9 @@
       "beforeAfterViewLabel": null,
       "beforeAfterPhase": null,
       "beforeAfterPairKey": null,
+      "replacementAfter": false,
+      "replacementTargetSlug": null,
+      "replacementExampleNumber": null,
       "width": 1086,
       "height": 1448,
       "original": {
@@ -4580,6 +4662,9 @@
       "beforeAfterViewLabel": null,
       "beforeAfterPhase": null,
       "beforeAfterPairKey": null,
+      "replacementAfter": false,
+      "replacementTargetSlug": null,
+      "replacementExampleNumber": null,
       "width": 1448,
       "height": 1086,
       "original": {
@@ -4679,6 +4764,9 @@
       "beforeAfterViewLabel": null,
       "beforeAfterPhase": null,
       "beforeAfterPairKey": null,
+      "replacementAfter": false,
+      "replacementTargetSlug": null,
+      "replacementExampleNumber": null,
       "width": 1448,
       "height": 1086,
       "original": {
@@ -4778,6 +4866,9 @@
       "beforeAfterViewLabel": null,
       "beforeAfterPhase": null,
       "beforeAfterPairKey": null,
+      "replacementAfter": false,
+      "replacementTargetSlug": null,
+      "replacementExampleNumber": null,
       "width": 941,
       "height": 1672,
       "original": {
@@ -4877,6 +4968,9 @@
       "beforeAfterViewLabel": null,
       "beforeAfterPhase": null,
       "beforeAfterPairKey": null,
+      "replacementAfter": false,
+      "replacementTargetSlug": null,
+      "replacementExampleNumber": null,
       "width": 1086,
       "height": 1448,
       "original": {
@@ -4976,6 +5070,9 @@
       "beforeAfterViewLabel": null,
       "beforeAfterPhase": null,
       "beforeAfterPairKey": null,
+      "replacementAfter": false,
+      "replacementTargetSlug": null,
+      "replacementExampleNumber": null,
       "width": 1448,
       "height": 1086,
       "original": {
@@ -5075,6 +5172,9 @@
       "beforeAfterViewLabel": null,
       "beforeAfterPhase": null,
       "beforeAfterPairKey": null,
+      "replacementAfter": false,
+      "replacementTargetSlug": null,
+      "replacementExampleNumber": null,
       "width": 1448,
       "height": 1086,
       "original": {
@@ -5174,6 +5274,9 @@
       "beforeAfterViewLabel": null,
       "beforeAfterPhase": null,
       "beforeAfterPairKey": null,
+      "replacementAfter": false,
+      "replacementTargetSlug": null,
+      "replacementExampleNumber": null,
       "width": 1448,
       "height": 1086,
       "original": {
@@ -5273,6 +5376,9 @@
       "beforeAfterViewLabel": null,
       "beforeAfterPhase": null,
       "beforeAfterPairKey": null,
+      "replacementAfter": false,
+      "replacementTargetSlug": null,
+      "replacementExampleNumber": null,
       "width": 1448,
       "height": 1086,
       "original": {
@@ -5372,6 +5478,9 @@
       "beforeAfterViewLabel": null,
       "beforeAfterPhase": null,
       "beforeAfterPairKey": null,
+      "replacementAfter": false,
+      "replacementTargetSlug": null,
+      "replacementExampleNumber": null,
       "width": 2252,
       "height": 4000,
       "original": {
@@ -5472,6 +5581,9 @@
       "beforeAfterViewLabel": null,
       "beforeAfterPhase": null,
       "beforeAfterPairKey": null,
+      "replacementAfter": false,
+      "replacementTargetSlug": null,
+      "replacementExampleNumber": null,
       "width": 2252,
       "height": 4000,
       "original": {
@@ -5572,6 +5684,9 @@
       "beforeAfterViewLabel": null,
       "beforeAfterPhase": null,
       "beforeAfterPairKey": null,
+      "replacementAfter": false,
+      "replacementTargetSlug": null,
+      "replacementExampleNumber": null,
       "width": 2252,
       "height": 4000,
       "original": {
@@ -5672,6 +5787,9 @@
       "beforeAfterViewLabel": null,
       "beforeAfterPhase": null,
       "beforeAfterPairKey": null,
+      "replacementAfter": false,
+      "replacementTargetSlug": null,
+      "replacementExampleNumber": null,
       "width": 2252,
       "height": 4000,
       "original": {
@@ -5772,6 +5890,9 @@
       "beforeAfterViewLabel": null,
       "beforeAfterPhase": null,
       "beforeAfterPairKey": null,
+      "replacementAfter": false,
+      "replacementTargetSlug": null,
+      "replacementExampleNumber": null,
       "width": 2252,
       "height": 4000,
       "original": {
@@ -5872,6 +5993,9 @@
       "beforeAfterViewLabel": null,
       "beforeAfterPhase": null,
       "beforeAfterPairKey": null,
+      "replacementAfter": false,
+      "replacementTargetSlug": null,
+      "replacementExampleNumber": null,
       "width": 2252,
       "height": 4000,
       "original": {
@@ -5972,6 +6096,9 @@
       "beforeAfterViewLabel": null,
       "beforeAfterPhase": null,
       "beforeAfterPairKey": null,
+      "replacementAfter": false,
+      "replacementTargetSlug": null,
+      "replacementExampleNumber": null,
       "width": 2252,
       "height": 4000,
       "original": {
@@ -6072,6 +6199,9 @@
       "beforeAfterViewLabel": null,
       "beforeAfterPhase": null,
       "beforeAfterPairKey": null,
+      "replacementAfter": false,
+      "replacementTargetSlug": null,
+      "replacementExampleNumber": null,
       "width": 2252,
       "height": 4000,
       "original": {
@@ -6172,6 +6302,9 @@
       "beforeAfterViewLabel": null,
       "beforeAfterPhase": null,
       "beforeAfterPairKey": null,
+      "replacementAfter": false,
+      "replacementTargetSlug": null,
+      "replacementExampleNumber": null,
       "width": 4000,
       "height": 2252,
       "original": {
@@ -6271,6 +6404,9 @@
       "beforeAfterViewLabel": null,
       "beforeAfterPhase": null,
       "beforeAfterPairKey": null,
+      "replacementAfter": false,
+      "replacementTargetSlug": null,
+      "replacementExampleNumber": null,
       "width": 2252,
       "height": 4000,
       "original": {
@@ -6371,6 +6507,9 @@
       "beforeAfterViewLabel": null,
       "beforeAfterPhase": null,
       "beforeAfterPairKey": null,
+      "replacementAfter": false,
+      "replacementTargetSlug": null,
+      "replacementExampleNumber": null,
       "width": 4000,
       "height": 2252,
       "original": {
@@ -6470,6 +6609,9 @@
       "beforeAfterViewLabel": null,
       "beforeAfterPhase": null,
       "beforeAfterPairKey": null,
+      "replacementAfter": false,
+      "replacementTargetSlug": null,
+      "replacementExampleNumber": null,
       "width": 2252,
       "height": 4000,
       "original": {
@@ -6570,6 +6712,9 @@
       "beforeAfterViewLabel": null,
       "beforeAfterPhase": null,
       "beforeAfterPairKey": null,
+      "replacementAfter": false,
+      "replacementTargetSlug": null,
+      "replacementExampleNumber": null,
       "width": 1448,
       "height": 1086,
       "original": {
@@ -6669,6 +6814,9 @@
       "beforeAfterViewLabel": null,
       "beforeAfterPhase": null,
       "beforeAfterPairKey": null,
+      "replacementAfter": false,
+      "replacementTargetSlug": null,
+      "replacementExampleNumber": null,
       "width": 1300,
       "height": 1400,
       "original": {
@@ -6769,6 +6917,9 @@
       "beforeAfterViewLabel": null,
       "beforeAfterPhase": null,
       "beforeAfterPairKey": null,
+      "replacementAfter": false,
+      "replacementTargetSlug": null,
+      "replacementExampleNumber": null,
       "width": 1650,
       "height": 860,
       "original": {
@@ -6869,6 +7020,9 @@
       "beforeAfterViewLabel": null,
       "beforeAfterPhase": null,
       "beforeAfterPairKey": null,
+      "replacementAfter": false,
+      "replacementTargetSlug": null,
+      "replacementExampleNumber": null,
       "width": 1560,
       "height": 1020,
       "original": {
@@ -6969,6 +7123,9 @@
       "beforeAfterViewLabel": null,
       "beforeAfterPhase": null,
       "beforeAfterPairKey": null,
+      "replacementAfter": false,
+      "replacementTargetSlug": null,
+      "replacementExampleNumber": null,
       "width": 1650,
       "height": 860,
       "original": {
@@ -7069,6 +7226,9 @@
       "beforeAfterViewLabel": null,
       "beforeAfterPhase": null,
       "beforeAfterPairKey": null,
+      "replacementAfter": false,
+      "replacementTargetSlug": null,
+      "replacementExampleNumber": null,
       "width": 1650,
       "height": 860,
       "original": {
@@ -7169,6 +7329,9 @@
       "beforeAfterViewLabel": null,
       "beforeAfterPhase": null,
       "beforeAfterPairKey": null,
+      "replacementAfter": false,
+      "replacementTargetSlug": null,
+      "replacementExampleNumber": null,
       "width": 1800,
       "height": 1551,
       "original": {
@@ -7268,6 +7431,9 @@
       "beforeAfterViewLabel": null,
       "beforeAfterPhase": null,
       "beforeAfterPairKey": null,
+      "replacementAfter": false,
+      "replacementTargetSlug": null,
+      "replacementExampleNumber": null,
       "width": 1800,
       "height": 1431,
       "original": {
@@ -7367,6 +7533,9 @@
       "beforeAfterViewLabel": null,
       "beforeAfterPhase": null,
       "beforeAfterPairKey": null,
+      "replacementAfter": false,
+      "replacementTargetSlug": null,
+      "replacementExampleNumber": null,
       "width": 1800,
       "height": 1261,
       "original": {
@@ -7466,6 +7635,9 @@
       "beforeAfterViewLabel": null,
       "beforeAfterPhase": null,
       "beforeAfterPairKey": null,
+      "replacementAfter": false,
+      "replacementTargetSlug": null,
+      "replacementExampleNumber": null,
       "width": 1800,
       "height": 1261,
       "original": {
@@ -7565,6 +7737,9 @@
       "beforeAfterViewLabel": null,
       "beforeAfterPhase": null,
       "beforeAfterPairKey": null,
+      "replacementAfter": false,
+      "replacementTargetSlug": null,
+      "replacementExampleNumber": null,
       "width": 1800,
       "height": 1406,
       "original": {
@@ -7665,6 +7840,9 @@
       "beforeAfterViewLabel": null,
       "beforeAfterPhase": null,
       "beforeAfterPairKey": null,
+      "replacementAfter": false,
+      "replacementTargetSlug": null,
+      "replacementExampleNumber": null,
       "width": 1800,
       "height": 1551,
       "original": {
@@ -7764,6 +7942,9 @@
       "beforeAfterViewLabel": null,
       "beforeAfterPhase": null,
       "beforeAfterPairKey": null,
+      "replacementAfter": false,
+      "replacementTargetSlug": null,
+      "replacementExampleNumber": null,
       "width": 1800,
       "height": 1539,
       "original": {
@@ -7863,6 +8044,9 @@
       "beforeAfterViewLabel": null,
       "beforeAfterPhase": null,
       "beforeAfterPairKey": null,
+      "replacementAfter": false,
+      "replacementTargetSlug": null,
+      "replacementExampleNumber": null,
       "width": 1800,
       "height": 1450,
       "original": {
@@ -7962,6 +8146,9 @@
       "beforeAfterViewLabel": null,
       "beforeAfterPhase": null,
       "beforeAfterPairKey": null,
+      "replacementAfter": false,
+      "replacementTargetSlug": null,
+      "replacementExampleNumber": null,
       "width": 1800,
       "height": 1459,
       "original": {
@@ -8061,6 +8248,9 @@
       "beforeAfterViewLabel": null,
       "beforeAfterPhase": null,
       "beforeAfterPairKey": null,
+      "replacementAfter": false,
+      "replacementTargetSlug": null,
+      "replacementExampleNumber": null,
       "width": 1800,
       "height": 1729,
       "original": {
@@ -8160,6 +8350,9 @@
       "beforeAfterViewLabel": null,
       "beforeAfterPhase": null,
       "beforeAfterPairKey": null,
+      "replacementAfter": false,
+      "replacementTargetSlug": null,
+      "replacementExampleNumber": null,
       "width": 1800,
       "height": 1265,
       "original": {
@@ -8259,6 +8452,9 @@
       "beforeAfterViewLabel": null,
       "beforeAfterPhase": null,
       "beforeAfterPairKey": null,
+      "replacementAfter": false,
+      "replacementTargetSlug": null,
+      "replacementExampleNumber": null,
       "width": 1800,
       "height": 1286,
       "original": {
@@ -8358,6 +8554,9 @@
       "beforeAfterViewLabel": null,
       "beforeAfterPhase": null,
       "beforeAfterPairKey": null,
+      "replacementAfter": false,
+      "replacementTargetSlug": null,
+      "replacementExampleNumber": null,
       "width": 1800,
       "height": 1281,
       "original": {
@@ -8457,6 +8656,9 @@
       "beforeAfterViewLabel": null,
       "beforeAfterPhase": null,
       "beforeAfterPairKey": null,
+      "replacementAfter": false,
+      "replacementTargetSlug": null,
+      "replacementExampleNumber": null,
       "width": 1800,
       "height": 1551,
       "original": {
@@ -8557,6 +8759,9 @@
       "beforeAfterViewLabel": null,
       "beforeAfterPhase": null,
       "beforeAfterPairKey": null,
+      "replacementAfter": false,
+      "replacementTargetSlug": null,
+      "replacementExampleNumber": null,
       "width": 1560,
       "height": 1625,
       "original": {
@@ -8626,8 +8831,8 @@
       "usage": "after",
       "role": "after",
       "title": "Advanced Male Pattern Baldness",
-      "altText": "Advanced Male Pattern Baldness - Radiance Clinics",
-      "alt_text": "Advanced Male Pattern Baldness - Radiance Clinics",
+      "altText": "Hair transplant improvement example showing restored hair density after treatment at Radiance Clinics Bhubaneswar",
+      "alt_text": "Hair transplant improvement example showing restored hair density after treatment at Radiance Clinics Bhubaneswar",
       "caption": "",
       "displayMode": "cover",
       "contentHash": "d989c876e630c9dc8defa999fcdbe401b5d7d5ad",
@@ -8656,6 +8861,9 @@
       "beforeAfterViewLabel": "Front View",
       "beforeAfterPhase": "after",
       "beforeAfterPairKey": "advanced-male-pattern-baldness-radiance-additional-hair-before-after-04-advanced-male-pattern-baldness",
+      "replacementAfter": false,
+      "replacementTargetSlug": null,
+      "replacementExampleNumber": null,
       "width": 1200,
       "height": 1500,
       "original": {
@@ -8703,9 +8911,7 @@
         "textPath": "blur/radiance-ba-advanced-male-pattern-baldness-advanced-male-pattern-baldness-radiance-additional-hair-before-after-04-advanced-male-pattern-bal.txt"
       },
       "recommendedWebsiteUsage": "Hair Transformation Examples for advanced male pattern baldness",
-      "warnings": [
-        "radiance-additional-hair-before-after/04-advanced-male-pattern-baldness/after_advanced_male_pattern_baldness.webp: below heroDesktop target (1200x1500); generated hero variants may be upscaled."
-      ]
+      "warnings": []
     },
     {
       "id": "radiance-ba-advanced-male-pattern-baldness-advanced-male-pattern-baldness-radiance-additional-hair-before-after-04-advanced-male-pattern-bal-09045bcc",
@@ -8725,8 +8931,8 @@
       "usage": "before",
       "role": "before",
       "title": "Advanced Male Pattern Baldness",
-      "altText": "Advanced Male Pattern Baldness - Radiance Clinics",
-      "alt_text": "Advanced Male Pattern Baldness - Radiance Clinics",
+      "altText": "Hair transplant example before treatment at Radiance Clinics Bhubaneswar",
+      "alt_text": "Hair transplant example before treatment at Radiance Clinics Bhubaneswar",
       "caption": "",
       "displayMode": "cover",
       "contentHash": "8c1ce00302f7d83558e0ae81350a4fde50673b26",
@@ -8755,6 +8961,9 @@
       "beforeAfterViewLabel": "Front View",
       "beforeAfterPhase": "before",
       "beforeAfterPairKey": "advanced-male-pattern-baldness-radiance-additional-hair-before-after-04-advanced-male-pattern-baldness",
+      "replacementAfter": false,
+      "replacementTargetSlug": null,
+      "replacementExampleNumber": null,
       "width": 1200,
       "height": 1500,
       "original": {
@@ -8802,9 +9011,7 @@
         "textPath": "blur/radiance-ba-advanced-male-pattern-baldness-advanced-male-pattern-baldness-radiance-additional-hair-before-after-04-advanced-male-pattern-bal-09045bcc.txt"
       },
       "recommendedWebsiteUsage": "Hair Transformation Examples for advanced male pattern baldness",
-      "warnings": [
-        "radiance-additional-hair-before-after/04-advanced-male-pattern-baldness/before_advanced_male_pattern_baldness.webp: below heroDesktop target (1200x1500); generated hero variants may be upscaled."
-      ]
+      "warnings": []
     },
     {
       "id": "radiance-ba-beard-transplant-beard-transplant-radiance-hair-before-after-01-beard-transplant-after",
@@ -8824,8 +9031,8 @@
       "usage": "after",
       "role": "after",
       "title": "Beard Transplant",
-      "altText": "Beard Transplant - Radiance Clinics",
-      "alt_text": "Beard Transplant - Radiance Clinics",
+      "altText": "Hair transplant improvement example showing restored hair density after treatment at Radiance Clinics Bhubaneswar",
+      "alt_text": "Hair transplant improvement example showing restored hair density after treatment at Radiance Clinics Bhubaneswar",
       "caption": "",
       "displayMode": "cover",
       "contentHash": "1cb73730769a9c53ef7c1537e6eb1df46617b150",
@@ -8854,6 +9061,9 @@
       "beforeAfterViewLabel": "Front View",
       "beforeAfterPhase": "after",
       "beforeAfterPairKey": "beard-transplant-radiance-hair-before-after-01-beard-transplant",
+      "replacementAfter": false,
+      "replacementTargetSlug": null,
+      "replacementExampleNumber": null,
       "width": 1200,
       "height": 1500,
       "original": {
@@ -8901,9 +9111,7 @@
         "textPath": "blur/radiance-ba-beard-transplant-beard-transplant-radiance-hair-before-after-01-beard-transplant-after.txt"
       },
       "recommendedWebsiteUsage": "Hair Transformation Examples for beard transplant",
-      "warnings": [
-        "radiance-hair-before-after/01-beard-transplant/after_beard_transplant.webp: below heroDesktop target (1200x1500); generated hero variants may be upscaled."
-      ]
+      "warnings": []
     },
     {
       "id": "radiance-ba-beard-transplant-beard-transplant-radiance-hair-before-after-01-beard-transplant-before",
@@ -8923,8 +9131,8 @@
       "usage": "before",
       "role": "before",
       "title": "Beard Transplant",
-      "altText": "Beard Transplant - Radiance Clinics",
-      "alt_text": "Beard Transplant - Radiance Clinics",
+      "altText": "Hair transplant example before treatment at Radiance Clinics Bhubaneswar",
+      "alt_text": "Hair transplant example before treatment at Radiance Clinics Bhubaneswar",
       "caption": "",
       "displayMode": "cover",
       "contentHash": "d71458e242b667d998555cca93ccddda21f3aab3",
@@ -8953,6 +9161,9 @@
       "beforeAfterViewLabel": "Front View",
       "beforeAfterPhase": "before",
       "beforeAfterPairKey": "beard-transplant-radiance-hair-before-after-01-beard-transplant",
+      "replacementAfter": false,
+      "replacementTargetSlug": null,
+      "replacementExampleNumber": null,
       "width": 1200,
       "height": 1500,
       "original": {
@@ -9000,9 +9211,7 @@
         "textPath": "blur/radiance-ba-beard-transplant-beard-transplant-radiance-hair-before-after-01-beard-transplant-before.txt"
       },
       "recommendedWebsiteUsage": "Hair Transformation Examples for beard transplant",
-      "warnings": [
-        "radiance-hair-before-after/01-beard-transplant/before_beard_transplant.webp: below heroDesktop target (1200x1500); generated hero variants may be upscaled."
-      ]
+      "warnings": []
     },
     {
       "id": "radiance-ba-female-frontal-hairline-thinning-female-frontal-hairline-thinning-radiance-additional-hair-before-after-03-female-frontal-hairli",
@@ -9022,8 +9231,8 @@
       "usage": "front-after",
       "role": "front-after",
       "title": "Female Frontal Hairline Thinning",
-      "altText": "Female Frontal Hairline Thinning - Radiance Clinics",
-      "alt_text": "Female Frontal Hairline Thinning - Radiance Clinics",
+      "altText": "Hair transplant improvement example showing restored hair density after treatment at Radiance Clinics Bhubaneswar",
+      "alt_text": "Hair transplant improvement example showing restored hair density after treatment at Radiance Clinics Bhubaneswar",
       "caption": "",
       "displayMode": "cover",
       "contentHash": "03d7819ff75970c86582defcdb326b7be0a18d0e",
@@ -9052,6 +9261,9 @@
       "beforeAfterViewLabel": "Front View",
       "beforeAfterPhase": "after",
       "beforeAfterPairKey": "female-frontal-hairline-thinning-radiance-additional-hair-before-after-03-female-frontal-hairline-thinning",
+      "replacementAfter": false,
+      "replacementTargetSlug": null,
+      "replacementExampleNumber": null,
       "width": 1200,
       "height": 1500,
       "original": {
@@ -9099,9 +9311,7 @@
         "textPath": "blur/radiance-ba-female-frontal-hairline-thinning-female-frontal-hairline-thinning-radiance-additional-hair-before-after-03-female-frontal-hairli.txt"
       },
       "recommendedWebsiteUsage": "Hair Transformation Examples for female frontal hairline thinning",
-      "warnings": [
-        "radiance-additional-hair-before-after/03-female-frontal-hairline-thinning/after_female_frontal_hairline_thinning.webp: below heroDesktop target (1200x1500); generated hero variants may be upscaled."
-      ]
+      "warnings": []
     },
     {
       "id": "radiance-ba-female-frontal-hairline-thinning-female-frontal-hairline-thinning-radiance-additional-hair-before-after-03-female-frontal-hairli-7ed15fa3",
@@ -9121,8 +9331,8 @@
       "usage": "front-before",
       "role": "front-before",
       "title": "Female Frontal Hairline Thinning",
-      "altText": "Female Frontal Hairline Thinning - Radiance Clinics",
-      "alt_text": "Female Frontal Hairline Thinning - Radiance Clinics",
+      "altText": "Hair transplant example before treatment at Radiance Clinics Bhubaneswar",
+      "alt_text": "Hair transplant example before treatment at Radiance Clinics Bhubaneswar",
       "caption": "",
       "displayMode": "cover",
       "contentHash": "a2ca6493a947b51f9a69ef8304b543e92877f13a",
@@ -9151,6 +9361,9 @@
       "beforeAfterViewLabel": "Front View",
       "beforeAfterPhase": "before",
       "beforeAfterPairKey": "female-frontal-hairline-thinning-radiance-additional-hair-before-after-03-female-frontal-hairline-thinning",
+      "replacementAfter": false,
+      "replacementTargetSlug": null,
+      "replacementExampleNumber": null,
       "width": 1200,
       "height": 1500,
       "original": {
@@ -9198,9 +9411,7 @@
         "textPath": "blur/radiance-ba-female-frontal-hairline-thinning-female-frontal-hairline-thinning-radiance-additional-hair-before-after-03-female-frontal-hairli-7ed15fa3.txt"
       },
       "recommendedWebsiteUsage": "Hair Transformation Examples for female frontal hairline thinning",
-      "warnings": [
-        "radiance-additional-hair-before-after/03-female-frontal-hairline-thinning/before_female_frontal_hairline_thinning.webp: below heroDesktop target (1200x1500); generated hero variants may be upscaled."
-      ]
+      "warnings": []
     },
     {
       "id": "radiance-ba-female-pattern-hair-loss-female-pattern-hair-loss-radiance-hair-before-after-03-female-pattern-hair-loss-after",
@@ -9220,8 +9431,8 @@
       "usage": "after",
       "role": "after",
       "title": "Female Pattern Hair Loss",
-      "altText": "Female Pattern Hair Loss - Radiance Clinics",
-      "alt_text": "Female Pattern Hair Loss - Radiance Clinics",
+      "altText": "Hair transplant improvement example showing restored hair density after treatment at Radiance Clinics Bhubaneswar",
+      "alt_text": "Hair transplant improvement example showing restored hair density after treatment at Radiance Clinics Bhubaneswar",
       "caption": "",
       "displayMode": "cover",
       "contentHash": "8e85d723ccd4f03ffc16d2f32d5442a71d4cb5b7",
@@ -9250,6 +9461,9 @@
       "beforeAfterViewLabel": "Front View",
       "beforeAfterPhase": "after",
       "beforeAfterPairKey": "female-pattern-hair-loss-radiance-hair-before-after-03-female-pattern-hair-loss",
+      "replacementAfter": false,
+      "replacementTargetSlug": null,
+      "replacementExampleNumber": null,
       "width": 1200,
       "height": 1500,
       "original": {
@@ -9297,9 +9511,7 @@
         "textPath": "blur/radiance-ba-female-pattern-hair-loss-female-pattern-hair-loss-radiance-hair-before-after-03-female-pattern-hair-loss-after.txt"
       },
       "recommendedWebsiteUsage": "Hair Transformation Examples for female pattern hair loss",
-      "warnings": [
-        "radiance-hair-before-after/03-female-pattern-hair-loss/after_female_pattern_hair_loss.webp: below heroDesktop target (1200x1500); generated hero variants may be upscaled."
-      ]
+      "warnings": []
     },
     {
       "id": "radiance-ba-female-pattern-hair-loss-female-pattern-hair-loss-radiance-hair-before-after-03-female-pattern-hair-loss-before",
@@ -9319,8 +9531,8 @@
       "usage": "before",
       "role": "before",
       "title": "Female Pattern Hair Loss",
-      "altText": "Female Pattern Hair Loss - Radiance Clinics",
-      "alt_text": "Female Pattern Hair Loss - Radiance Clinics",
+      "altText": "Hair transplant example before treatment at Radiance Clinics Bhubaneswar",
+      "alt_text": "Hair transplant example before treatment at Radiance Clinics Bhubaneswar",
       "caption": "",
       "displayMode": "cover",
       "contentHash": "81fce27ec20dcd7c3d7601db705e01cc8dfd997f",
@@ -9349,6 +9561,9 @@
       "beforeAfterViewLabel": "Front View",
       "beforeAfterPhase": "before",
       "beforeAfterPairKey": "female-pattern-hair-loss-radiance-hair-before-after-03-female-pattern-hair-loss",
+      "replacementAfter": false,
+      "replacementTargetSlug": null,
+      "replacementExampleNumber": null,
       "width": 1200,
       "height": 1500,
       "original": {
@@ -9396,9 +9611,7 @@
         "textPath": "blur/radiance-ba-female-pattern-hair-loss-female-pattern-hair-loss-radiance-hair-before-after-03-female-pattern-hair-loss-before.txt"
       },
       "recommendedWebsiteUsage": "Hair Transformation Examples for female pattern hair loss",
-      "warnings": [
-        "radiance-hair-before-after/03-female-pattern-hair-loss/before_female_pattern_hair_loss.webp: below heroDesktop target (1200x1500); generated hero variants may be upscaled."
-      ]
+      "warnings": []
     },
     {
       "id": "radiance-ba-female-widening-part-female-widening-part-radiance-additional-hair-before-after-05-female-widening-part-after",
@@ -9418,8 +9631,8 @@
       "usage": "after",
       "role": "after",
       "title": "Female Widening Part",
-      "altText": "Female Widening Part - Radiance Clinics",
-      "alt_text": "Female Widening Part - Radiance Clinics",
+      "altText": "Hair transplant improvement example showing restored hair density after treatment at Radiance Clinics Bhubaneswar",
+      "alt_text": "Hair transplant improvement example showing restored hair density after treatment at Radiance Clinics Bhubaneswar",
       "caption": "",
       "displayMode": "cover",
       "contentHash": "948a4d616ee3bdbc556d5b75e1a5461d896ccd70",
@@ -9448,6 +9661,9 @@
       "beforeAfterViewLabel": "Front View",
       "beforeAfterPhase": "after",
       "beforeAfterPairKey": "female-widening-part-radiance-additional-hair-before-after-05-female-widening-part",
+      "replacementAfter": false,
+      "replacementTargetSlug": null,
+      "replacementExampleNumber": null,
       "width": 1200,
       "height": 1500,
       "original": {
@@ -9495,9 +9711,7 @@
         "textPath": "blur/radiance-ba-female-widening-part-female-widening-part-radiance-additional-hair-before-after-05-female-widening-part-after.txt"
       },
       "recommendedWebsiteUsage": "Hair Transformation Examples for female widening part",
-      "warnings": [
-        "radiance-additional-hair-before-after/05-female-widening-part/after_female_widening_part.webp: below heroDesktop target (1200x1500); generated hero variants may be upscaled."
-      ]
+      "warnings": []
     },
     {
       "id": "radiance-ba-female-widening-part-female-widening-part-radiance-additional-hair-before-after-05-female-widening-part-before",
@@ -9517,8 +9731,8 @@
       "usage": "before",
       "role": "before",
       "title": "Female Widening Part",
-      "altText": "Female Widening Part - Radiance Clinics",
-      "alt_text": "Female Widening Part - Radiance Clinics",
+      "altText": "Hair transplant example before treatment at Radiance Clinics Bhubaneswar",
+      "alt_text": "Hair transplant example before treatment at Radiance Clinics Bhubaneswar",
       "caption": "",
       "displayMode": "cover",
       "contentHash": "4c91895ec2708780f319d4d6e3fbec0063deb33a",
@@ -9547,6 +9761,9 @@
       "beforeAfterViewLabel": "Front View",
       "beforeAfterPhase": "before",
       "beforeAfterPairKey": "female-widening-part-radiance-additional-hair-before-after-05-female-widening-part",
+      "replacementAfter": false,
+      "replacementTargetSlug": null,
+      "replacementExampleNumber": null,
       "width": 1200,
       "height": 1500,
       "original": {
@@ -9594,9 +9811,7 @@
         "textPath": "blur/radiance-ba-female-widening-part-female-widening-part-radiance-additional-hair-before-after-05-female-widening-part-before.txt"
       },
       "recommendedWebsiteUsage": "Hair Transformation Examples for female widening part",
-      "warnings": [
-        "radiance-additional-hair-before-after/05-female-widening-part/before_female_widening_part.webp: below heroDesktop target (1200x1500); generated hero variants may be upscaled."
-      ]
+      "warnings": []
     },
     {
       "id": "radiance-ba-hair-transplant-hair-transplant-radiance-hair-before-after-04-crown-hair-transplant-crown-after",
@@ -9616,8 +9831,8 @@
       "usage": "crown-after",
       "role": "crown-after",
       "title": "Crown Hair Transplant",
-      "altText": "Hair Transplant - Radiance Clinics",
-      "alt_text": "Hair Transplant - Radiance Clinics",
+      "altText": "Hair transplant improvement example showing restored hair density after treatment at Radiance Clinics Bhubaneswar",
+      "alt_text": "Hair transplant improvement example showing restored hair density after treatment at Radiance Clinics Bhubaneswar",
       "caption": "",
       "displayMode": "cover",
       "contentHash": "dcdae10805ebb0384dec85c3184ce4326437c84e",
@@ -9646,6 +9861,9 @@
       "beforeAfterViewLabel": "Crown View",
       "beforeAfterPhase": "after",
       "beforeAfterPairKey": "hair-transplant-radiance-hair-before-after-04-crown-hair-transplant",
+      "replacementAfter": false,
+      "replacementTargetSlug": null,
+      "replacementExampleNumber": null,
       "width": 1200,
       "height": 1500,
       "original": {
@@ -9693,9 +9911,7 @@
         "textPath": "blur/radiance-ba-hair-transplant-hair-transplant-radiance-hair-before-after-04-crown-hair-transplant-crown-after.txt"
       },
       "recommendedWebsiteUsage": "Hair Transformation Examples for hair transplant",
-      "warnings": [
-        "radiance-hair-before-after/04-crown-hair-transplant/after_crown_hair_transplant.webp: below heroDesktop target (1200x1500); generated hero variants may be upscaled."
-      ]
+      "warnings": []
     },
     {
       "id": "radiance-ba-hair-transplant-hair-transplant-radiance-hair-before-after-04-crown-hair-transplant-crown-before",
@@ -9715,8 +9931,8 @@
       "usage": "crown-before",
       "role": "crown-before",
       "title": "Crown Hair Transplant",
-      "altText": "Hair Transplant - Radiance Clinics",
-      "alt_text": "Hair Transplant - Radiance Clinics",
+      "altText": "Hair transplant example before treatment at Radiance Clinics Bhubaneswar",
+      "alt_text": "Hair transplant example before treatment at Radiance Clinics Bhubaneswar",
       "caption": "",
       "displayMode": "cover",
       "contentHash": "02886443957d1215b06ac0fd70d8700749daf844",
@@ -9745,6 +9961,9 @@
       "beforeAfterViewLabel": "Crown View",
       "beforeAfterPhase": "before",
       "beforeAfterPairKey": "hair-transplant-radiance-hair-before-after-04-crown-hair-transplant",
+      "replacementAfter": false,
+      "replacementTargetSlug": null,
+      "replacementExampleNumber": null,
       "width": 1200,
       "height": 1500,
       "original": {
@@ -9792,9 +10011,7 @@
         "textPath": "blur/radiance-ba-hair-transplant-hair-transplant-radiance-hair-before-after-04-crown-hair-transplant-crown-before.txt"
       },
       "recommendedWebsiteUsage": "Hair Transformation Examples for hair transplant",
-      "warnings": [
-        "radiance-hair-before-after/04-crown-hair-transplant/before_crown_hair_transplant.webp: below heroDesktop target (1200x1500); generated hero variants may be upscaled."
-      ]
+      "warnings": []
     },
     {
       "id": "radiance-ba-hair-transplant-hair-transplant-radiance-hair-before-after-05-frontal-mid-scalp-hair-transplant-front-after",
@@ -9814,8 +10031,8 @@
       "usage": "front-after",
       "role": "front-after",
       "title": "Frontal and Mid-Scalp Hair Transplant",
-      "altText": "Hair Transplant - Radiance Clinics",
-      "alt_text": "Hair Transplant - Radiance Clinics",
+      "altText": "Hair transplant improvement example showing restored hair density after treatment at Radiance Clinics Bhubaneswar",
+      "alt_text": "Hair transplant improvement example showing restored hair density after treatment at Radiance Clinics Bhubaneswar",
       "caption": "",
       "displayMode": "cover",
       "contentHash": "642f5b3b1fcd85ce702e17fb0ea5c41f84d9e730",
@@ -9844,6 +10061,9 @@
       "beforeAfterViewLabel": "Front View",
       "beforeAfterPhase": "after",
       "beforeAfterPairKey": "hair-transplant-radiance-hair-before-after-05-frontal-mid-scalp-hair-transplant",
+      "replacementAfter": false,
+      "replacementTargetSlug": null,
+      "replacementExampleNumber": null,
       "width": 1200,
       "height": 1500,
       "original": {
@@ -9891,9 +10111,7 @@
         "textPath": "blur/radiance-ba-hair-transplant-hair-transplant-radiance-hair-before-after-05-frontal-mid-scalp-hair-transplant-front-after.txt"
       },
       "recommendedWebsiteUsage": "Hair Transformation Examples for hair transplant",
-      "warnings": [
-        "radiance-hair-before-after/05-frontal-mid-scalp-hair-transplant/after_frontal_mid_scalp_hair_transplant.webp: below heroDesktop target (1200x1500); generated hero variants may be upscaled."
-      ]
+      "warnings": []
     },
     {
       "id": "radiance-ba-hair-transplant-hair-transplant-radiance-hair-before-after-05-frontal-mid-scalp-hair-transplant-front-before",
@@ -9913,8 +10131,8 @@
       "usage": "front-before",
       "role": "front-before",
       "title": "Frontal and Mid-Scalp Hair Transplant",
-      "altText": "Hair Transplant - Radiance Clinics",
-      "alt_text": "Hair Transplant - Radiance Clinics",
+      "altText": "Hair transplant example before treatment at Radiance Clinics Bhubaneswar",
+      "alt_text": "Hair transplant example before treatment at Radiance Clinics Bhubaneswar",
       "caption": "",
       "displayMode": "cover",
       "contentHash": "30a4d9c7efdb6e74c382b53dfc973c2dc824f085",
@@ -9943,6 +10161,9 @@
       "beforeAfterViewLabel": "Front View",
       "beforeAfterPhase": "before",
       "beforeAfterPairKey": "hair-transplant-radiance-hair-before-after-05-frontal-mid-scalp-hair-transplant",
+      "replacementAfter": false,
+      "replacementTargetSlug": null,
+      "replacementExampleNumber": null,
       "width": 1200,
       "height": 1500,
       "original": {
@@ -9990,9 +10211,7 @@
         "textPath": "blur/radiance-ba-hair-transplant-hair-transplant-radiance-hair-before-after-05-frontal-mid-scalp-hair-transplant-front-before.txt"
       },
       "recommendedWebsiteUsage": "Hair Transformation Examples for hair transplant",
-      "warnings": [
-        "radiance-hair-before-after/05-frontal-mid-scalp-hair-transplant/before_frontal_mid_scalp_hair_transplant.webp: below heroDesktop target (1200x1500); generated hero variants may be upscaled."
-      ]
+      "warnings": []
     },
     {
       "id": "radiance-ba-male-diffuse-frontal-thinning-male-diffuse-frontal-thinning-radiance-additional-hair-before-after-02-male-diffuse-frontal-thinni",
@@ -10012,8 +10231,8 @@
       "usage": "front-after",
       "role": "front-after",
       "title": "Male Diffuse Frontal Thinning",
-      "altText": "Male Diffuse Frontal Thinning - Radiance Clinics",
-      "alt_text": "Male Diffuse Frontal Thinning - Radiance Clinics",
+      "altText": "Hair transplant improvement example showing restored hair density after treatment at Radiance Clinics Bhubaneswar",
+      "alt_text": "Hair transplant improvement example showing restored hair density after treatment at Radiance Clinics Bhubaneswar",
       "caption": "",
       "displayMode": "cover",
       "contentHash": "35233c76ae64d8d5c95f6cf9cc383d1533e72f3c",
@@ -10042,6 +10261,9 @@
       "beforeAfterViewLabel": "Front View",
       "beforeAfterPhase": "after",
       "beforeAfterPairKey": "male-diffuse-frontal-thinning-radiance-additional-hair-before-after-02-male-diffuse-frontal-thinning",
+      "replacementAfter": false,
+      "replacementTargetSlug": null,
+      "replacementExampleNumber": null,
       "width": 1200,
       "height": 1500,
       "original": {
@@ -10089,9 +10311,7 @@
         "textPath": "blur/radiance-ba-male-diffuse-frontal-thinning-male-diffuse-frontal-thinning-radiance-additional-hair-before-after-02-male-diffuse-frontal-thinni.txt"
       },
       "recommendedWebsiteUsage": "Hair Transformation Examples for male diffuse frontal thinning",
-      "warnings": [
-        "radiance-additional-hair-before-after/02-male-diffuse-frontal-thinning/after_male_diffuse_frontal_thinning.webp: below heroDesktop target (1200x1500); generated hero variants may be upscaled."
-      ]
+      "warnings": []
     },
     {
       "id": "radiance-ba-male-diffuse-frontal-thinning-male-diffuse-frontal-thinning-radiance-additional-hair-before-after-02-male-diffuse-frontal-thinni-51d4185d",
@@ -10111,8 +10331,8 @@
       "usage": "front-before",
       "role": "front-before",
       "title": "Male Diffuse Frontal Thinning",
-      "altText": "Male Diffuse Frontal Thinning - Radiance Clinics",
-      "alt_text": "Male Diffuse Frontal Thinning - Radiance Clinics",
+      "altText": "Hair transplant example before treatment at Radiance Clinics Bhubaneswar",
+      "alt_text": "Hair transplant example before treatment at Radiance Clinics Bhubaneswar",
       "caption": "",
       "displayMode": "cover",
       "contentHash": "2458a68a7a9b6067407d11de39198a663d66933e",
@@ -10141,6 +10361,9 @@
       "beforeAfterViewLabel": "Front View",
       "beforeAfterPhase": "before",
       "beforeAfterPairKey": "male-diffuse-frontal-thinning-radiance-additional-hair-before-after-02-male-diffuse-frontal-thinning",
+      "replacementAfter": false,
+      "replacementTargetSlug": null,
+      "replacementExampleNumber": null,
       "width": 1200,
       "height": 1500,
       "original": {
@@ -10188,9 +10411,7 @@
         "textPath": "blur/radiance-ba-male-diffuse-frontal-thinning-male-diffuse-frontal-thinning-radiance-additional-hair-before-after-02-male-diffuse-frontal-thinni-51d4185d.txt"
       },
       "recommendedWebsiteUsage": "Hair Transformation Examples for male diffuse frontal thinning",
-      "warnings": [
-        "radiance-additional-hair-before-after/02-male-diffuse-frontal-thinning/before_male_diffuse_frontal_thinning.webp: below heroDesktop target (1200x1500); generated hero variants may be upscaled."
-      ]
+      "warnings": []
     },
     {
       "id": "radiance-ba-male-temporal-recession-male-temporal-recession-radiance-additional-hair-before-after-01-male-temporal-recession-after",
@@ -10210,8 +10431,8 @@
       "usage": "after",
       "role": "after",
       "title": "Male Temporal Recession",
-      "altText": "Male Temporal Recession - Radiance Clinics",
-      "alt_text": "Male Temporal Recession - Radiance Clinics",
+      "altText": "Hair transplant improvement example showing restored hair density after treatment at Radiance Clinics Bhubaneswar",
+      "alt_text": "Hair transplant improvement example showing restored hair density after treatment at Radiance Clinics Bhubaneswar",
       "caption": "",
       "displayMode": "cover",
       "contentHash": "b970e0eec07793526abfa64d6f82cda9d9ddd1dc",
@@ -10240,6 +10461,9 @@
       "beforeAfterViewLabel": "Front View",
       "beforeAfterPhase": "after",
       "beforeAfterPairKey": "male-temporal-recession-radiance-additional-hair-before-after-01-male-temporal-recession",
+      "replacementAfter": false,
+      "replacementTargetSlug": null,
+      "replacementExampleNumber": null,
       "width": 1200,
       "height": 1500,
       "original": {
@@ -10287,9 +10511,7 @@
         "textPath": "blur/radiance-ba-male-temporal-recession-male-temporal-recession-radiance-additional-hair-before-after-01-male-temporal-recession-after.txt"
       },
       "recommendedWebsiteUsage": "Hair Transformation Examples for male temporal recession",
-      "warnings": [
-        "radiance-additional-hair-before-after/01-male-temporal-recession/after_male_temporal_recession.webp: below heroDesktop target (1200x1500); generated hero variants may be upscaled."
-      ]
+      "warnings": []
     },
     {
       "id": "radiance-ba-male-temporal-recession-male-temporal-recession-radiance-additional-hair-before-after-01-male-temporal-recession-before",
@@ -10309,8 +10531,8 @@
       "usage": "before",
       "role": "before",
       "title": "Male Temporal Recession",
-      "altText": "Male Temporal Recession - Radiance Clinics",
-      "alt_text": "Male Temporal Recession - Radiance Clinics",
+      "altText": "Hair transplant example before treatment at Radiance Clinics Bhubaneswar",
+      "alt_text": "Hair transplant example before treatment at Radiance Clinics Bhubaneswar",
       "caption": "",
       "displayMode": "cover",
       "contentHash": "d81b2144fbcdf42a090a4f17a82b7f6ee2cf9d0d",
@@ -10339,6 +10561,9 @@
       "beforeAfterViewLabel": "Front View",
       "beforeAfterPhase": "before",
       "beforeAfterPairKey": "male-temporal-recession-radiance-additional-hair-before-after-01-male-temporal-recession",
+      "replacementAfter": false,
+      "replacementTargetSlug": null,
+      "replacementExampleNumber": null,
       "width": 1200,
       "height": 1500,
       "original": {
@@ -10386,9 +10611,7 @@
         "textPath": "blur/radiance-ba-male-temporal-recession-male-temporal-recession-radiance-additional-hair-before-after-01-male-temporal-recession-before.txt"
       },
       "recommendedWebsiteUsage": "Hair Transformation Examples for male temporal recession",
-      "warnings": [
-        "radiance-additional-hair-before-after/01-male-temporal-recession/before_male_temporal_recession.webp: below heroDesktop target (1200x1500); generated hero variants may be upscaled."
-      ]
+      "warnings": []
     },
     {
       "id": "radiance-ba-receding-hairline-receding-hairline-radiance-hair-before-after-02-receding-hairline-after",
@@ -10408,8 +10631,8 @@
       "usage": "after",
       "role": "after",
       "title": "Receding Hairline",
-      "altText": "Receding Hairline - Radiance Clinics",
-      "alt_text": "Receding Hairline - Radiance Clinics",
+      "altText": "Hair transplant improvement example showing restored hair density after treatment at Radiance Clinics Bhubaneswar",
+      "alt_text": "Hair transplant improvement example showing restored hair density after treatment at Radiance Clinics Bhubaneswar",
       "caption": "",
       "displayMode": "cover",
       "contentHash": "1ac929e0857a7b541ad50caa071c2a75dde43436",
@@ -10438,6 +10661,9 @@
       "beforeAfterViewLabel": "Front View",
       "beforeAfterPhase": "after",
       "beforeAfterPairKey": "receding-hairline-radiance-hair-before-after-02-receding-hairline",
+      "replacementAfter": false,
+      "replacementTargetSlug": null,
+      "replacementExampleNumber": null,
       "width": 1200,
       "height": 1500,
       "original": {
@@ -10485,9 +10711,7 @@
         "textPath": "blur/radiance-ba-receding-hairline-receding-hairline-radiance-hair-before-after-02-receding-hairline-after.txt"
       },
       "recommendedWebsiteUsage": "Hair Transformation Examples for receding hairline",
-      "warnings": [
-        "radiance-hair-before-after/02-receding-hairline/after_receding_hairline.webp: below heroDesktop target (1200x1500); generated hero variants may be upscaled."
-      ]
+      "warnings": []
     },
     {
       "id": "radiance-ba-receding-hairline-receding-hairline-radiance-hair-before-after-02-receding-hairline-before",
@@ -10507,8 +10731,8 @@
       "usage": "before",
       "role": "before",
       "title": "Receding Hairline",
-      "altText": "Receding Hairline - Radiance Clinics",
-      "alt_text": "Receding Hairline - Radiance Clinics",
+      "altText": "Hair transplant example before treatment at Radiance Clinics Bhubaneswar",
+      "alt_text": "Hair transplant example before treatment at Radiance Clinics Bhubaneswar",
       "caption": "",
       "displayMode": "cover",
       "contentHash": "0f3928a8d2144887038b419bfb872e68481ec0d5",
@@ -10537,6 +10761,9 @@
       "beforeAfterViewLabel": "Front View",
       "beforeAfterPhase": "before",
       "beforeAfterPairKey": "receding-hairline-radiance-hair-before-after-02-receding-hairline",
+      "replacementAfter": false,
+      "replacementTargetSlug": null,
+      "replacementExampleNumber": null,
       "width": 1200,
       "height": 1500,
       "original": {
@@ -10584,9 +10811,507 @@
         "textPath": "blur/radiance-ba-receding-hairline-receding-hairline-radiance-hair-before-after-02-receding-hairline-before.txt"
       },
       "recommendedWebsiteUsage": "Hair Transformation Examples for receding hairline",
-      "warnings": [
-        "radiance-hair-before-after/02-receding-hairline/before_receding_hairline.webp: below heroDesktop target (1200x1500); generated hero variants may be upscaled."
-      ]
+      "warnings": []
+    },
+    {
+      "id": "radiance-ba-replacement-beard-transplant-condition-primary-after",
+      "filename": "after-beard-transplant.webp",
+      "originalFilename": "after-beard-transplant.webp",
+      "originalRelativePath": "",
+      "rawRelativePath": "radiance-hair-before-after/hair-transplant-after-results-webp/after-beard-transplant.webp",
+      "category": "hair-before-after",
+      "detectedType": "hair_before_after",
+      "type": "hair_before_after",
+      "mediaClassification": "hair_before_after",
+      "transformationCategory": "hair",
+      "subject": "beard-transplant",
+      "conditionName": "Beard Transplant",
+      "publicTitle": "Hair Transplant Transformation",
+      "treatment": "Hair Transplant",
+      "usage": "after",
+      "role": "after",
+      "title": "Beard Transplant",
+      "altText": "Hair transplant improvement example showing restored hair density after treatment at Radiance Clinics Bhubaneswar",
+      "alt_text": "Hair transplant improvement example showing restored hair density after treatment at Radiance Clinics Bhubaneswar",
+      "caption": "",
+      "displayMode": "cover",
+      "contentHash": "4be20ed0d5d55b8c5f3916907f1e69e877933fc6",
+      "normalizedBasename": "replacement-after-beard-transplant",
+      "focalPointX": 0.5,
+      "focalPointY": 0.5,
+      "focal_point_x": 0.5,
+      "focal_point_y": 0.5,
+      "sortOrder": 0,
+      "sort_order": 0,
+      "featured": false,
+      "publish": true,
+      "consentConfirmed": true,
+      "consent_confirmed": true,
+      "timeGap": "",
+      "disclaimer": "",
+      "desktop_url": "hero-desktop/radiance-ba-replacement-beard-transplant-condition-primary-after.webp",
+      "mobile_url": "hero-mobile/radiance-ba-replacement-beard-transplant-condition-primary-after.webp",
+      "thumb_url": "thumb/radiance-ba-replacement-beard-transplant-condition-primary-after.webp",
+      "blur_data_url": "data:image/jpeg;base64,/9j/2wBDABISEhITEhQWFhQcHhseHCkmIiImKT4sMCwwLD5eO0U7O0U7XlNlUk1SZVOWdmhodpatkYqRrdK8vNL/+///////2wBDARISEhITEhQWFhQcHhseHCkmIiImKT4sMCwwLD5eO0U7O0U7XlNlUk1SZVOWdmhodpatkYqRrdK8vNL/+///////wgARCAAYABgDASIAAhEBAxEB/8QAFwABAQEBAAAAAAAAAAAAAAAAAAQFAf/EABQBAQAAAAAAAAAAAAAAAAAAAAP/2gAMAwEAAhADEAAAAO52zGT8WkKfOBasMP8A/8QAJRAAAgEDAgUFAAAAAAAAAAAAAQIDAAQSBRETFCNCUSEkMTJB/9oACAEBAAE/ANXmlS2RI/mV8aXRRhk01aO0iczbs2QjYY1eorwozD6OGr269LiHYn1P5vVkiqJnXubbfziKk1K2ZuXTqMwIPimgvAeEpXA91R6nb27ctICuHdX/xAAaEQEAAgMBAAAAAAAAAAAAAAABAAIDEXEy/9oACAECAQE/AMlkdEq7CZLJY5K+Tk//xAAaEQADAAMBAAAAAAAAAAAAAAAAAQIDEXEy/9oACAEDAQE/AMcy02ylqmjFKcvpXqun/9k=",
+      "sequence": null,
+      "sequenceNumber": null,
+      "caseId": null,
+      "beforeAfterRole": "after",
+      "beforeAfterView": "primary",
+      "beforeAfterViewLabel": "Front View",
+      "beforeAfterPhase": "after",
+      "beforeAfterPairKey": null,
+      "replacementAfter": true,
+      "replacementTargetSlug": "beard-transplant",
+      "replacementExampleNumber": null,
+      "width": 1122,
+      "height": 1402,
+      "original": {
+        "path": "",
+        "width": 1122,
+        "height": 1402,
+        "format": "webp",
+        "sizeBytes": 272998
+      },
+      "generated": {
+        "heroDesktop": {
+          "webp": "hero-desktop/radiance-ba-replacement-beard-transplant-condition-primary-after.webp",
+          "width": 2400,
+          "height": 1400
+        },
+        "heroMobile": {
+          "webp": "hero-mobile/radiance-ba-replacement-beard-transplant-condition-primary-after.webp",
+          "width": 1200,
+          "height": 1500
+        },
+        "landscape": {
+          "webp": "landscape/radiance-ba-replacement-beard-transplant-condition-primary-after.webp",
+          "width": 1200,
+          "height": 800
+        },
+        "portrait": {
+          "webp": "portrait/radiance-ba-replacement-beard-transplant-condition-primary-after.webp",
+          "width": 900,
+          "height": 1200
+        },
+        "square": {
+          "webp": "square/radiance-ba-replacement-beard-transplant-condition-primary-after.webp",
+          "width": 1000,
+          "height": 1000
+        },
+        "thumb": {
+          "webp": "thumb/radiance-ba-replacement-beard-transplant-condition-primary-after.webp",
+          "width": 500,
+          "height": 500
+        }
+      },
+      "blur": {
+        "placeholder": "data:image/jpeg;base64,/9j/2wBDABISEhITEhQWFhQcHhseHCkmIiImKT4sMCwwLD5eO0U7O0U7XlNlUk1SZVOWdmhodpatkYqRrdK8vNL/+///////2wBDARISEhITEhQWFhQcHhseHCkmIiImKT4sMCwwLD5eO0U7O0U7XlNlUk1SZVOWdmhodpatkYqRrdK8vNL/+///////wgARCAAYABgDASIAAhEBAxEB/8QAFwABAQEBAAAAAAAAAAAAAAAAAAQFAf/EABQBAQAAAAAAAAAAAAAAAAAAAAP/2gAMAwEAAhADEAAAAO52zGT8WkKfOBasMP8A/8QAJRAAAgEDAgUFAAAAAAAAAAAAAQIDAAQSBRETFCNCUSEkMTJB/9oACAEBAAE/ANXmlS2RI/mV8aXRRhk01aO0iczbs2QjYY1eorwozD6OGr269LiHYn1P5vVkiqJnXubbfziKk1K2ZuXTqMwIPimgvAeEpXA91R6nb27ctICuHdX/xAAaEQEAAgMBAAAAAAAAAAAAAAABAAIDEXEy/9oACAECAQE/AMlkdEq7CZLJY5K+Tk//xAAaEQADAAMBAAAAAAAAAAAAAAAAAQIDEXEy/9oACAEDAQE/AMcy02ylqmjFKcvpXqun/9k=",
+        "imagePath": "blur/radiance-ba-replacement-beard-transplant-condition-primary-after.jpg",
+        "textPath": "blur/radiance-ba-replacement-beard-transplant-condition-primary-after.txt"
+      },
+      "recommendedWebsiteUsage": "Hair Transformation Examples for beard transplant",
+      "warnings": []
+    },
+    {
+      "id": "radiance-ba-replacement-crown-hair-transplant-condition-crown-after",
+      "filename": "after-crown-hair-transplant.webp",
+      "originalFilename": "after-crown-hair-transplant.webp",
+      "originalRelativePath": "",
+      "rawRelativePath": "radiance-hair-before-after/hair-transplant-after-results-webp/after-crown-hair-transplant.webp",
+      "category": "hair-before-after",
+      "detectedType": "hair_before_after",
+      "type": "hair_before_after",
+      "mediaClassification": "hair_before_after",
+      "transformationCategory": "hair",
+      "subject": "hair-transplant",
+      "conditionName": "Hair Transplant",
+      "publicTitle": "Hair Transplant Transformation",
+      "treatment": "Hair Transplant",
+      "usage": "crown-after",
+      "role": "crown-after",
+      "title": "Crown Hair Transplant",
+      "altText": "Hair transplant improvement example showing restored hair density after treatment at Radiance Clinics Bhubaneswar",
+      "alt_text": "Hair transplant improvement example showing restored hair density after treatment at Radiance Clinics Bhubaneswar",
+      "caption": "",
+      "displayMode": "cover",
+      "contentHash": "08fca4a1728c966ecf207db106755dbafb131461",
+      "normalizedBasename": "replacement-after-crown-hair-transplant",
+      "focalPointX": 0.5,
+      "focalPointY": 0.5,
+      "focal_point_x": 0.5,
+      "focal_point_y": 0.5,
+      "sortOrder": 0,
+      "sort_order": 0,
+      "featured": false,
+      "publish": true,
+      "consentConfirmed": true,
+      "consent_confirmed": true,
+      "timeGap": "",
+      "disclaimer": "",
+      "desktop_url": "hero-desktop/radiance-ba-replacement-crown-hair-transplant-condition-crown-after.webp",
+      "mobile_url": "hero-mobile/radiance-ba-replacement-crown-hair-transplant-condition-crown-after.webp",
+      "thumb_url": "thumb/radiance-ba-replacement-crown-hair-transplant-condition-crown-after.webp",
+      "blur_data_url": "data:image/jpeg;base64,/9j/2wBDABISEhITEhQWFhQcHhseHCkmIiImKT4sMCwwLD5eO0U7O0U7XlNlUk1SZVOWdmhodpatkYqRrdK8vNL/+///////2wBDARISEhITEhQWFhQcHhseHCkmIiImKT4sMCwwLD5eO0U7O0U7XlNlUk1SZVOWdmhodpatkYqRrdK8vNL/+///////wgARCAAYABgDASIAAhEBAxEB/8QAGAABAQEBAQAAAAAAAAAAAAAAAAUGAQP/xAAUAQEAAAAAAAAAAAAAAAAAAAAC/9oADAMBAAIQAxAAAADxzOpjFU3SOarBUcI//8QAIhAAAgEEAgEFAAAAAAAAAAAAAQIDAAQFIRETEhAxM0FS/9oACAEBAAE/AM5K6QRop07b9MHKzRzoTpSCKyDWtz4W5lHZ5/VNjZRtXQr+uaxpt7bsh7R2s1K7IwdTsHkUcmpj+NfPnn2pnZ3Lsdk8mv/EABgRAQEBAQEAAAAAAAAAAAAAAAECEBEx/9oACAECAQE/AGgeOMle5//EABgRAQEBAQEAAAAAAAAAAAAAAAECEBEx/9oACAEDAQE/ACaToZNM+Z//2Q==",
+      "sequence": null,
+      "sequenceNumber": null,
+      "caseId": null,
+      "beforeAfterRole": "crownAfter",
+      "beforeAfterView": "crown",
+      "beforeAfterViewLabel": "Crown View",
+      "beforeAfterPhase": "after",
+      "beforeAfterPairKey": null,
+      "replacementAfter": true,
+      "replacementTargetSlug": "crown-hair-transplant",
+      "replacementExampleNumber": null,
+      "width": 1122,
+      "height": 1402,
+      "original": {
+        "path": "",
+        "width": 1122,
+        "height": 1402,
+        "format": "webp",
+        "sizeBytes": 223614
+      },
+      "generated": {
+        "heroDesktop": {
+          "webp": "hero-desktop/radiance-ba-replacement-crown-hair-transplant-condition-crown-after.webp",
+          "width": 2400,
+          "height": 1400
+        },
+        "heroMobile": {
+          "webp": "hero-mobile/radiance-ba-replacement-crown-hair-transplant-condition-crown-after.webp",
+          "width": 1200,
+          "height": 1500
+        },
+        "landscape": {
+          "webp": "landscape/radiance-ba-replacement-crown-hair-transplant-condition-crown-after.webp",
+          "width": 1200,
+          "height": 800
+        },
+        "portrait": {
+          "webp": "portrait/radiance-ba-replacement-crown-hair-transplant-condition-crown-after.webp",
+          "width": 900,
+          "height": 1200
+        },
+        "square": {
+          "webp": "square/radiance-ba-replacement-crown-hair-transplant-condition-crown-after.webp",
+          "width": 1000,
+          "height": 1000
+        },
+        "thumb": {
+          "webp": "thumb/radiance-ba-replacement-crown-hair-transplant-condition-crown-after.webp",
+          "width": 500,
+          "height": 500
+        }
+      },
+      "blur": {
+        "placeholder": "data:image/jpeg;base64,/9j/2wBDABISEhITEhQWFhQcHhseHCkmIiImKT4sMCwwLD5eO0U7O0U7XlNlUk1SZVOWdmhodpatkYqRrdK8vNL/+///////2wBDARISEhITEhQWFhQcHhseHCkmIiImKT4sMCwwLD5eO0U7O0U7XlNlUk1SZVOWdmhodpatkYqRrdK8vNL/+///////wgARCAAYABgDASIAAhEBAxEB/8QAGAABAQEBAQAAAAAAAAAAAAAAAAUGAQP/xAAUAQEAAAAAAAAAAAAAAAAAAAAC/9oADAMBAAIQAxAAAADxzOpjFU3SOarBUcI//8QAIhAAAgEEAgEFAAAAAAAAAAAAAQIDAAQFIRETEhAxM0FS/9oACAEBAAE/AM5K6QRop07b9MHKzRzoTpSCKyDWtz4W5lHZ5/VNjZRtXQr+uaxpt7bsh7R2s1K7IwdTsHkUcmpj+NfPnn2pnZ3Lsdk8mv/EABgRAQEBAQEAAAAAAAAAAAAAAAECEBEx/9oACAECAQE/AGgeOMle5//EABgRAQEBAQEAAAAAAAAAAAAAAAECEBEx/9oACAEDAQE/ACaToZNM+Z//2Q==",
+        "imagePath": "blur/radiance-ba-replacement-crown-hair-transplant-condition-crown-after.jpg",
+        "textPath": "blur/radiance-ba-replacement-crown-hair-transplant-condition-crown-after.txt"
+      },
+      "recommendedWebsiteUsage": "Hair Transformation Examples for hair transplant",
+      "warnings": []
+    },
+    {
+      "id": "radiance-ba-replacement-female-pattern-hair-loss-condition-primary-after",
+      "filename": "after-female-hair-transplant.webp",
+      "originalFilename": "after-female-hair-transplant.webp",
+      "originalRelativePath": "",
+      "rawRelativePath": "radiance-hair-before-after/hair-transplant-after-results-webp/after-female-hair-transplant.webp",
+      "category": "hair-before-after",
+      "detectedType": "hair_before_after",
+      "type": "hair_before_after",
+      "mediaClassification": "hair_before_after",
+      "transformationCategory": "hair",
+      "subject": "female-pattern-hair-loss",
+      "conditionName": "Female Pattern Hair Loss",
+      "publicTitle": "Hair Fall Improvement",
+      "treatment": "Hair Restoration",
+      "usage": "after",
+      "role": "after",
+      "title": "Female Pattern Hair Loss",
+      "altText": "Hair transplant improvement example showing restored hair density after treatment at Radiance Clinics Bhubaneswar",
+      "alt_text": "Hair transplant improvement example showing restored hair density after treatment at Radiance Clinics Bhubaneswar",
+      "caption": "",
+      "displayMode": "cover",
+      "contentHash": "f006797febd430462fe4c4a5e930ad17507b8951",
+      "normalizedBasename": "replacement-after-female-hair-transplant",
+      "focalPointX": 0.5,
+      "focalPointY": 0.5,
+      "focal_point_x": 0.5,
+      "focal_point_y": 0.5,
+      "sortOrder": 0,
+      "sort_order": 0,
+      "featured": false,
+      "publish": true,
+      "consentConfirmed": true,
+      "consent_confirmed": true,
+      "timeGap": "",
+      "disclaimer": "",
+      "desktop_url": "hero-desktop/radiance-ba-replacement-female-pattern-hair-loss-condition-primary-after.webp",
+      "mobile_url": "hero-mobile/radiance-ba-replacement-female-pattern-hair-loss-condition-primary-after.webp",
+      "thumb_url": "thumb/radiance-ba-replacement-female-pattern-hair-loss-condition-primary-after.webp",
+      "blur_data_url": "data:image/jpeg;base64,/9j/2wBDABISEhITEhQWFhQcHhseHCkmIiImKT4sMCwwLD5eO0U7O0U7XlNlUk1SZVOWdmhodpatkYqRrdK8vNL/+///////2wBDARISEhITEhQWFhQcHhseHCkmIiImKT4sMCwwLD5eO0U7O0U7XlNlUk1SZVOWdmhodpatkYqRrdK8vNL/+///////wgARCAAYABgDASIAAhEBAxEB/8QAGAABAAMBAAAAAAAAAAAAAAAAAAIEBQb/xAAVAQEBAAAAAAAAAAAAAAAAAAADBP/aAAwDAQACEAMQAAAAnhdPAmprRCxNUCigGD//xAAlEAACAgECBAcAAAAAAAAAAAABAgMRAAQSBRUhkRMUMUFCQ1H/2gAIAQEAAT8A41M0WhIU0XcLnK9V4BkIFbbAzgc7yaRkf63oZq4hMiX6I4bNi7QnmHu73Zp4liMzL82vtnNp5pUS1jRmANYYJh0A6fvvkvEH0k7QmnUdwc//xAAbEQEAAgIDAAAAAAAAAAAAAAABAAIDETEycf/aAAgBAgEBPwDJdqkHYMzc1lep5P/EABsRAQADAAMBAAAAAAAAAAAAAAEAAgMRMTJx/9oACAEDAQE/AM8ywrE4UmHVpb1b7P/Z",
+      "sequence": null,
+      "sequenceNumber": null,
+      "caseId": null,
+      "beforeAfterRole": "after",
+      "beforeAfterView": "primary",
+      "beforeAfterViewLabel": "Front View",
+      "beforeAfterPhase": "after",
+      "beforeAfterPairKey": null,
+      "replacementAfter": true,
+      "replacementTargetSlug": "female-pattern-hair-loss",
+      "replacementExampleNumber": null,
+      "width": 1122,
+      "height": 1402,
+      "original": {
+        "path": "",
+        "width": 1122,
+        "height": 1402,
+        "format": "webp",
+        "sizeBytes": 230132
+      },
+      "generated": {
+        "heroDesktop": {
+          "webp": "hero-desktop/radiance-ba-replacement-female-pattern-hair-loss-condition-primary-after.webp",
+          "width": 2400,
+          "height": 1400
+        },
+        "heroMobile": {
+          "webp": "hero-mobile/radiance-ba-replacement-female-pattern-hair-loss-condition-primary-after.webp",
+          "width": 1200,
+          "height": 1500
+        },
+        "landscape": {
+          "webp": "landscape/radiance-ba-replacement-female-pattern-hair-loss-condition-primary-after.webp",
+          "width": 1200,
+          "height": 800
+        },
+        "portrait": {
+          "webp": "portrait/radiance-ba-replacement-female-pattern-hair-loss-condition-primary-after.webp",
+          "width": 900,
+          "height": 1200
+        },
+        "square": {
+          "webp": "square/radiance-ba-replacement-female-pattern-hair-loss-condition-primary-after.webp",
+          "width": 1000,
+          "height": 1000
+        },
+        "thumb": {
+          "webp": "thumb/radiance-ba-replacement-female-pattern-hair-loss-condition-primary-after.webp",
+          "width": 500,
+          "height": 500
+        }
+      },
+      "blur": {
+        "placeholder": "data:image/jpeg;base64,/9j/2wBDABISEhITEhQWFhQcHhseHCkmIiImKT4sMCwwLD5eO0U7O0U7XlNlUk1SZVOWdmhodpatkYqRrdK8vNL/+///////2wBDARISEhITEhQWFhQcHhseHCkmIiImKT4sMCwwLD5eO0U7O0U7XlNlUk1SZVOWdmhodpatkYqRrdK8vNL/+///////wgARCAAYABgDASIAAhEBAxEB/8QAGAABAAMBAAAAAAAAAAAAAAAAAAIEBQb/xAAVAQEBAAAAAAAAAAAAAAAAAAADBP/aAAwDAQACEAMQAAAAnhdPAmprRCxNUCigGD//xAAlEAACAgECBAcAAAAAAAAAAAABAgMRAAQSBRUhkRMUMUFCQ1H/2gAIAQEAAT8A41M0WhIU0XcLnK9V4BkIFbbAzgc7yaRkf63oZq4hMiX6I4bNi7QnmHu73Zp4liMzL82vtnNp5pUS1jRmANYYJh0A6fvvkvEH0k7QmnUdwc//xAAbEQEAAgIDAAAAAAAAAAAAAAABAAIDETEycf/aAAgBAgEBPwDJdqkHYMzc1lep5P/EABsRAQADAAMBAAAAAAAAAAAAAAEAAgMRMTJx/9oACAEDAQE/AM8ywrE4UmHVpb1b7P/Z",
+        "imagePath": "blur/radiance-ba-replacement-female-pattern-hair-loss-condition-primary-after.jpg",
+        "textPath": "blur/radiance-ba-replacement-female-pattern-hair-loss-condition-primary-after.txt"
+      },
+      "recommendedWebsiteUsage": "Hair Transformation Examples for female pattern hair loss",
+      "warnings": []
+    },
+    {
+      "id": "radiance-ba-replacement-frontal-mid-scalp-hair-transplant-condition-front-after",
+      "filename": "after-frontal-mid-scalp-hair-transplant.webp",
+      "originalFilename": "after-frontal-mid-scalp-hair-transplant.webp",
+      "originalRelativePath": "",
+      "rawRelativePath": "radiance-hair-before-after/hair-transplant-after-results-webp/after-frontal-mid-scalp-hair-transplant.webp",
+      "category": "hair-before-after",
+      "detectedType": "hair_before_after",
+      "type": "hair_before_after",
+      "mediaClassification": "hair_before_after",
+      "transformationCategory": "hair",
+      "subject": "hair-transplant",
+      "conditionName": "Frontal And Mid Scalp Hair Transplant",
+      "publicTitle": "Hair Transplant Transformation",
+      "treatment": "Hair Transplant",
+      "usage": "front-after",
+      "role": "front-after",
+      "title": "Frontal and Mid-Scalp Hair Transplant",
+      "altText": "Hair transplant improvement example showing restored hair density after treatment at Radiance Clinics Bhubaneswar",
+      "alt_text": "Hair transplant improvement example showing restored hair density after treatment at Radiance Clinics Bhubaneswar",
+      "caption": "",
+      "displayMode": "cover",
+      "contentHash": "8571632e14ff3a9bde835e0e7ee5ba29422f365c",
+      "normalizedBasename": "replacement-after-frontal-mid-scalp-hair-transplant",
+      "focalPointX": 0.5,
+      "focalPointY": 0.5,
+      "focal_point_x": 0.5,
+      "focal_point_y": 0.5,
+      "sortOrder": 0,
+      "sort_order": 0,
+      "featured": false,
+      "publish": true,
+      "consentConfirmed": true,
+      "consent_confirmed": true,
+      "timeGap": "",
+      "disclaimer": "",
+      "desktop_url": "hero-desktop/radiance-ba-replacement-frontal-mid-scalp-hair-transplant-condition-front-after.webp",
+      "mobile_url": "hero-mobile/radiance-ba-replacement-frontal-mid-scalp-hair-transplant-condition-front-after.webp",
+      "thumb_url": "thumb/radiance-ba-replacement-frontal-mid-scalp-hair-transplant-condition-front-after.webp",
+      "blur_data_url": "data:image/jpeg;base64,/9j/2wBDABISEhITEhQWFhQcHhseHCkmIiImKT4sMCwwLD5eO0U7O0U7XlNlUk1SZVOWdmhodpatkYqRrdK8vNL/+///////2wBDARISEhITEhQWFhQcHhseHCkmIiImKT4sMCwwLD5eO0U7O0U7XlNlUk1SZVOWdmhodpatkYqRrdK8vNL/+///////wgARCAAYABgDASIAAhEBAxEB/8QAGQABAQADAQAAAAAAAAAAAAAAAAQCAwUG/8QAFAEBAAAAAAAAAAAAAAAAAAAAA//aAAwDAQACEAMQAAAA28L0shLgsIcUIS1hS//EACQQAAIBAwMDBQAAAAAAAAAAAAEDAgAREgQFQhMUIiFBUXGR/9oACAEBAAE/AN0e1OmAXfKcxChterkMjhGtoY7ByW+pVKwNalcWqGXGQl+VK4HT7s5GQt9VpVRWGSHOVyfmwtTt104mFQ87mxPEVNbgzDxte+XvUNzSlnQZx5Cv/8QAGhEBAAMAAwAAAAAAAAAAAAAAAQACEQMycf/aAAgBAgEBPwC9kcIOgzlcSV6nk//EABoRAQACAwEAAAAAAAAAAAAAAAEAAgMRMnH/2gAIAQMBAT8Ax0LCssaUmI2Mt0+z/9k=",
+      "sequence": null,
+      "sequenceNumber": null,
+      "caseId": null,
+      "beforeAfterRole": "frontAfter",
+      "beforeAfterView": "front",
+      "beforeAfterViewLabel": "Front View",
+      "beforeAfterPhase": "after",
+      "beforeAfterPairKey": null,
+      "replacementAfter": true,
+      "replacementTargetSlug": "frontal-mid-scalp-hair-transplant",
+      "replacementExampleNumber": null,
+      "width": 1122,
+      "height": 1402,
+      "original": {
+        "path": "",
+        "width": 1122,
+        "height": 1402,
+        "format": "webp",
+        "sizeBytes": 242902
+      },
+      "generated": {
+        "heroDesktop": {
+          "webp": "hero-desktop/radiance-ba-replacement-frontal-mid-scalp-hair-transplant-condition-front-after.webp",
+          "width": 2400,
+          "height": 1400
+        },
+        "heroMobile": {
+          "webp": "hero-mobile/radiance-ba-replacement-frontal-mid-scalp-hair-transplant-condition-front-after.webp",
+          "width": 1200,
+          "height": 1500
+        },
+        "landscape": {
+          "webp": "landscape/radiance-ba-replacement-frontal-mid-scalp-hair-transplant-condition-front-after.webp",
+          "width": 1200,
+          "height": 800
+        },
+        "portrait": {
+          "webp": "portrait/radiance-ba-replacement-frontal-mid-scalp-hair-transplant-condition-front-after.webp",
+          "width": 900,
+          "height": 1200
+        },
+        "square": {
+          "webp": "square/radiance-ba-replacement-frontal-mid-scalp-hair-transplant-condition-front-after.webp",
+          "width": 1000,
+          "height": 1000
+        },
+        "thumb": {
+          "webp": "thumb/radiance-ba-replacement-frontal-mid-scalp-hair-transplant-condition-front-after.webp",
+          "width": 500,
+          "height": 500
+        }
+      },
+      "blur": {
+        "placeholder": "data:image/jpeg;base64,/9j/2wBDABISEhITEhQWFhQcHhseHCkmIiImKT4sMCwwLD5eO0U7O0U7XlNlUk1SZVOWdmhodpatkYqRrdK8vNL/+///////2wBDARISEhITEhQWFhQcHhseHCkmIiImKT4sMCwwLD5eO0U7O0U7XlNlUk1SZVOWdmhodpatkYqRrdK8vNL/+///////wgARCAAYABgDASIAAhEBAxEB/8QAGQABAQADAQAAAAAAAAAAAAAAAAQCAwUG/8QAFAEBAAAAAAAAAAAAAAAAAAAAA//aAAwDAQACEAMQAAAA28L0shLgsIcUIS1hS//EACQQAAIBAwMDBQAAAAAAAAAAAAEDAgAREgQFQhMUIiFBUXGR/9oACAEBAAE/AN0e1OmAXfKcxChterkMjhGtoY7ByW+pVKwNalcWqGXGQl+VK4HT7s5GQt9VpVRWGSHOVyfmwtTt104mFQ87mxPEVNbgzDxte+XvUNzSlnQZx5Cv/8QAGhEBAAMAAwAAAAAAAAAAAAAAAQACEQMycf/aAAgBAgEBPwC9kcIOgzlcSV6nk//EABoRAQACAwEAAAAAAAAAAAAAAAEAAgMRMnH/2gAIAQMBAT8Ax0LCssaUmI2Mt0+z/9k=",
+        "imagePath": "blur/radiance-ba-replacement-frontal-mid-scalp-hair-transplant-condition-front-after.jpg",
+        "textPath": "blur/radiance-ba-replacement-frontal-mid-scalp-hair-transplant-condition-front-after.txt"
+      },
+      "recommendedWebsiteUsage": "Hair Transformation Examples for hair transplant",
+      "warnings": []
+    },
+    {
+      "id": "radiance-ba-replacement-receding-hairline-condition-primary-after",
+      "filename": "after-receding-hairline-hair-transplant.webp",
+      "originalFilename": "after-receding-hairline-hair-transplant.webp",
+      "originalRelativePath": "",
+      "rawRelativePath": "radiance-hair-before-after/hair-transplant-after-results-webp/after-receding-hairline-hair-transplant.webp",
+      "category": "hair-before-after",
+      "detectedType": "hair_before_after",
+      "type": "hair_before_after",
+      "mediaClassification": "hair_before_after",
+      "transformationCategory": "hair",
+      "subject": "receding-hairline",
+      "conditionName": "Receding Hairline",
+      "publicTitle": "Hair Transplant Transformation",
+      "treatment": "Hair Transplant",
+      "usage": "after",
+      "role": "after",
+      "title": "Receding Hairline",
+      "altText": "Hair transplant improvement example showing restored hair density after treatment at Radiance Clinics Bhubaneswar",
+      "alt_text": "Hair transplant improvement example showing restored hair density after treatment at Radiance Clinics Bhubaneswar",
+      "caption": "",
+      "displayMode": "cover",
+      "contentHash": "cf7d145ce0c6373aba31d811fa9d1cba88e2f16a",
+      "normalizedBasename": "replacement-after-receding-hairline-hair-transplant",
+      "focalPointX": 0.5,
+      "focalPointY": 0.5,
+      "focal_point_x": 0.5,
+      "focal_point_y": 0.5,
+      "sortOrder": 0,
+      "sort_order": 0,
+      "featured": false,
+      "publish": true,
+      "consentConfirmed": true,
+      "consent_confirmed": true,
+      "timeGap": "",
+      "disclaimer": "",
+      "desktop_url": "hero-desktop/radiance-ba-replacement-receding-hairline-condition-primary-after.webp",
+      "mobile_url": "hero-mobile/radiance-ba-replacement-receding-hairline-condition-primary-after.webp",
+      "thumb_url": "thumb/radiance-ba-replacement-receding-hairline-condition-primary-after.webp",
+      "blur_data_url": "data:image/jpeg;base64,/9j/2wBDABISEhITEhQWFhQcHhseHCkmIiImKT4sMCwwLD5eO0U7O0U7XlNlUk1SZVOWdmhodpatkYqRrdK8vNL/+///////2wBDARISEhITEhQWFhQcHhseHCkmIiImKT4sMCwwLD5eO0U7O0U7XlNlUk1SZVOWdmhodpatkYqRrdK8vNL/+///////wgARCAAYABgDASIAAhEBAxEB/8QAGAABAQEBAQAAAAAAAAAAAAAAAAQFAwb/xAAVAQEBAAAAAAAAAAAAAAAAAAACA//aAAwDAQACEAMQAAAAqn1cedu61SXmqAqAIf/EACcQAAEDAwIEBwAAAAAAAAAAAAIAAQMFERMEEhQhIlEjQkNScZHC/9oACAEBAAE/AKxC88WmHy523LhqUETkwh2VGieHjG9PK2xam7wE7NdxsVvhPrh5HiDCtLfAJu1nPq+09ZmlnFz6YfYKeOmk+bNH3tu/KaqTxTGUJeHfkBL/xAAZEQACAwEAAAAAAAAAAAAAAAABEQACEDH/2gAIAQIBAT8Au3BwS4az/8QAGREBAQADAQAAAAAAAAAAAAAAEQEAAgMQ/9oACAEDAQE/AOYZRpmmwwnn/9k=",
+      "sequence": null,
+      "sequenceNumber": null,
+      "caseId": null,
+      "beforeAfterRole": "after",
+      "beforeAfterView": "primary",
+      "beforeAfterViewLabel": "Front View",
+      "beforeAfterPhase": "after",
+      "beforeAfterPairKey": null,
+      "replacementAfter": true,
+      "replacementTargetSlug": "receding-hairline",
+      "replacementExampleNumber": null,
+      "width": 1122,
+      "height": 1402,
+      "original": {
+        "path": "",
+        "width": 1122,
+        "height": 1402,
+        "format": "webp",
+        "sizeBytes": 273350
+      },
+      "generated": {
+        "heroDesktop": {
+          "webp": "hero-desktop/radiance-ba-replacement-receding-hairline-condition-primary-after.webp",
+          "width": 2400,
+          "height": 1400
+        },
+        "heroMobile": {
+          "webp": "hero-mobile/radiance-ba-replacement-receding-hairline-condition-primary-after.webp",
+          "width": 1200,
+          "height": 1500
+        },
+        "landscape": {
+          "webp": "landscape/radiance-ba-replacement-receding-hairline-condition-primary-after.webp",
+          "width": 1200,
+          "height": 800
+        },
+        "portrait": {
+          "webp": "portrait/radiance-ba-replacement-receding-hairline-condition-primary-after.webp",
+          "width": 900,
+          "height": 1200
+        },
+        "square": {
+          "webp": "square/radiance-ba-replacement-receding-hairline-condition-primary-after.webp",
+          "width": 1000,
+          "height": 1000
+        },
+        "thumb": {
+          "webp": "thumb/radiance-ba-replacement-receding-hairline-condition-primary-after.webp",
+          "width": 500,
+          "height": 500
+        }
+      },
+      "blur": {
+        "placeholder": "data:image/jpeg;base64,/9j/2wBDABISEhITEhQWFhQcHhseHCkmIiImKT4sMCwwLD5eO0U7O0U7XlNlUk1SZVOWdmhodpatkYqRrdK8vNL/+///////2wBDARISEhITEhQWFhQcHhseHCkmIiImKT4sMCwwLD5eO0U7O0U7XlNlUk1SZVOWdmhodpatkYqRrdK8vNL/+///////wgARCAAYABgDASIAAhEBAxEB/8QAGAABAQEBAQAAAAAAAAAAAAAAAAQFAwb/xAAVAQEBAAAAAAAAAAAAAAAAAAACA//aAAwDAQACEAMQAAAAqn1cedu61SXmqAqAIf/EACcQAAEDAwIEBwAAAAAAAAAAAAIAAQMFERMEEhQhIlEjQkNScZHC/9oACAEBAAE/AKxC88WmHy523LhqUETkwh2VGieHjG9PK2xam7wE7NdxsVvhPrh5HiDCtLfAJu1nPq+09ZmlnFz6YfYKeOmk+bNH3tu/KaqTxTGUJeHfkBL/xAAZEQACAwEAAAAAAAAAAAAAAAABEQACEDH/2gAIAQIBAT8Au3BwS4az/8QAGREBAQADAQAAAAAAAAAAAAAAEQEAAgMQ/9oACAEDAQE/AOYZRpmmwwnn/9k=",
+        "imagePath": "blur/radiance-ba-replacement-receding-hairline-condition-primary-after.jpg",
+        "textPath": "blur/radiance-ba-replacement-receding-hairline-condition-primary-after.txt"
+      },
+      "recommendedWebsiteUsage": "Hair Transformation Examples for receding hairline",
+      "warnings": []
     },
     {
       "id": "radiance-hero-anil-kapoor-feature-01",
@@ -10636,6 +11361,9 @@
       "beforeAfterViewLabel": null,
       "beforeAfterPhase": null,
       "beforeAfterPairKey": null,
+      "replacementAfter": false,
+      "replacementTargetSlug": null,
+      "replacementExampleNumber": null,
       "width": 1448,
       "height": 1086,
       "original": {
@@ -10735,6 +11463,9 @@
       "beforeAfterViewLabel": null,
       "beforeAfterPhase": null,
       "beforeAfterPairKey": null,
+      "replacementAfter": false,
+      "replacementTargetSlug": null,
+      "replacementExampleNumber": null,
       "width": 1448,
       "height": 1086,
       "original": {
@@ -10834,6 +11565,9 @@
       "beforeAfterViewLabel": null,
       "beforeAfterPhase": null,
       "beforeAfterPairKey": null,
+      "replacementAfter": false,
+      "replacementTargetSlug": null,
+      "replacementExampleNumber": null,
       "width": 1086,
       "height": 1448,
       "original": {
@@ -10933,6 +11667,9 @@
       "beforeAfterViewLabel": null,
       "beforeAfterPhase": null,
       "beforeAfterPairKey": null,
+      "replacementAfter": false,
+      "replacementTargetSlug": null,
+      "replacementExampleNumber": null,
       "width": 941,
       "height": 1672,
       "original": {
@@ -11032,6 +11769,9 @@
       "beforeAfterViewLabel": null,
       "beforeAfterPhase": null,
       "beforeAfterPairKey": null,
+      "replacementAfter": false,
+      "replacementTargetSlug": null,
+      "replacementExampleNumber": null,
       "width": 2200,
       "height": 1749,
       "original": {
@@ -11131,6 +11871,9 @@
       "beforeAfterViewLabel": null,
       "beforeAfterPhase": null,
       "beforeAfterPairKey": null,
+      "replacementAfter": false,
+      "replacementTargetSlug": null,
+      "replacementExampleNumber": null,
       "width": 999,
       "height": 891,
       "original": {
@@ -11230,6 +11973,9 @@
       "beforeAfterViewLabel": null,
       "beforeAfterPhase": null,
       "beforeAfterPairKey": null,
+      "replacementAfter": false,
+      "replacementTargetSlug": null,
+      "replacementExampleNumber": null,
       "width": 1254,
       "height": 1254,
       "original": {
@@ -11329,6 +12075,9 @@
       "beforeAfterViewLabel": null,
       "beforeAfterPhase": null,
       "beforeAfterPairKey": null,
+      "replacementAfter": false,
+      "replacementTargetSlug": null,
+      "replacementExampleNumber": null,
       "width": 1547,
       "height": 1118,
       "original": {
@@ -11429,6 +12178,9 @@
       "beforeAfterViewLabel": null,
       "beforeAfterPhase": null,
       "beforeAfterPairKey": null,
+      "replacementAfter": false,
+      "replacementTargetSlug": null,
+      "replacementExampleNumber": null,
       "width": 1578,
       "height": 1150,
       "original": {
@@ -11529,6 +12281,9 @@
       "beforeAfterViewLabel": null,
       "beforeAfterPhase": null,
       "beforeAfterPairKey": null,
+      "replacementAfter": false,
+      "replacementTargetSlug": null,
+      "replacementExampleNumber": null,
       "width": 1614,
       "height": 1166,
       "original": {
@@ -11629,6 +12384,9 @@
       "beforeAfterViewLabel": null,
       "beforeAfterPhase": null,
       "beforeAfterPairKey": null,
+      "replacementAfter": false,
+      "replacementTargetSlug": null,
+      "replacementExampleNumber": null,
       "width": 1563,
       "height": 1118,
       "original": {
@@ -11729,6 +12487,9 @@
       "beforeAfterViewLabel": null,
       "beforeAfterPhase": null,
       "beforeAfterPairKey": null,
+      "replacementAfter": false,
+      "replacementTargetSlug": null,
+      "replacementExampleNumber": null,
       "width": 1567,
       "height": 1134,
       "original": {
@@ -11829,6 +12590,9 @@
       "beforeAfterViewLabel": null,
       "beforeAfterPhase": null,
       "beforeAfterPairKey": null,
+      "replacementAfter": false,
+      "replacementTargetSlug": null,
+      "replacementExampleNumber": null,
       "width": 1614,
       "height": 1166,
       "original": {
@@ -11929,6 +12693,9 @@
       "beforeAfterViewLabel": null,
       "beforeAfterPhase": null,
       "beforeAfterPairKey": null,
+      "replacementAfter": false,
+      "replacementTargetSlug": null,
+      "replacementExampleNumber": null,
       "width": 1557,
       "height": 1134,
       "original": {
@@ -12029,6 +12796,9 @@
       "beforeAfterViewLabel": null,
       "beforeAfterPhase": null,
       "beforeAfterPairKey": null,
+      "replacementAfter": false,
+      "replacementTargetSlug": null,
+      "replacementExampleNumber": null,
       "width": 1724,
       "height": 1244,
       "original": {
@@ -12129,6 +12899,9 @@
       "beforeAfterViewLabel": null,
       "beforeAfterPhase": null,
       "beforeAfterPairKey": null,
+      "replacementAfter": false,
+      "replacementTargetSlug": null,
+      "replacementExampleNumber": null,
       "width": 1562,
       "height": 1084,
       "original": {
@@ -12229,6 +13002,9 @@
       "beforeAfterViewLabel": null,
       "beforeAfterPhase": null,
       "beforeAfterPairKey": null,
+      "replacementAfter": false,
+      "replacementTargetSlug": null,
+      "replacementExampleNumber": null,
       "width": 1721,
       "height": 1244,
       "original": {
@@ -12329,6 +13105,9 @@
       "beforeAfterViewLabel": null,
       "beforeAfterPhase": null,
       "beforeAfterPairKey": null,
+      "replacementAfter": false,
+      "replacementTargetSlug": null,
+      "replacementExampleNumber": null,
       "width": 1724,
       "height": 1244,
       "original": {
@@ -12429,6 +13208,9 @@
       "beforeAfterViewLabel": null,
       "beforeAfterPhase": null,
       "beforeAfterPairKey": null,
+      "replacementAfter": false,
+      "replacementTargetSlug": null,
+      "replacementExampleNumber": null,
       "width": 1576,
       "height": 1206,
       "original": {
@@ -12529,6 +13311,9 @@
       "beforeAfterViewLabel": null,
       "beforeAfterPhase": null,
       "beforeAfterPairKey": null,
+      "replacementAfter": false,
+      "replacementTargetSlug": null,
+      "replacementExampleNumber": null,
       "width": 1687,
       "height": 1214,
       "original": {
@@ -12629,6 +13414,9 @@
       "beforeAfterViewLabel": null,
       "beforeAfterPhase": null,
       "beforeAfterPairKey": null,
+      "replacementAfter": false,
+      "replacementTargetSlug": null,
+      "replacementExampleNumber": null,
       "width": 1448,
       "height": 1086,
       "original": {
@@ -12728,6 +13516,9 @@
       "beforeAfterViewLabel": null,
       "beforeAfterPhase": null,
       "beforeAfterPairKey": null,
+      "replacementAfter": false,
+      "replacementTargetSlug": null,
+      "replacementExampleNumber": null,
       "width": 1448,
       "height": 1086,
       "original": {
@@ -12827,6 +13618,9 @@
       "beforeAfterViewLabel": null,
       "beforeAfterPhase": null,
       "beforeAfterPairKey": null,
+      "replacementAfter": false,
+      "replacementTargetSlug": null,
+      "replacementExampleNumber": null,
       "width": 1448,
       "height": 1086,
       "original": {
@@ -12926,6 +13720,9 @@
       "beforeAfterViewLabel": null,
       "beforeAfterPhase": null,
       "beforeAfterPairKey": null,
+      "replacementAfter": false,
+      "replacementTargetSlug": null,
+      "replacementExampleNumber": null,
       "width": 999,
       "height": 891,
       "original": {
@@ -13025,6 +13822,9 @@
       "beforeAfterViewLabel": null,
       "beforeAfterPhase": null,
       "beforeAfterPairKey": null,
+      "replacementAfter": false,
+      "replacementTargetSlug": null,
+      "replacementExampleNumber": null,
       "width": 1254,
       "height": 1254,
       "original": {
@@ -13124,6 +13924,9 @@
       "beforeAfterViewLabel": "Front View",
       "beforeAfterPhase": "after",
       "beforeAfterPairKey": "acne-radiance-skin-before-after-separated-2-01-acne",
+      "replacementAfter": false,
+      "replacementTargetSlug": null,
+      "replacementExampleNumber": null,
       "width": 1200,
       "height": 960,
       "original": {
@@ -13172,7 +13975,7 @@
       },
       "recommendedWebsiteUsage": "Skin Improvement Examples for acne",
       "warnings": [
-        "radiance-skin-before-after-separated 2/01-acne/after_acne.webp: below heroDesktop target (1200x960); generated hero variants may be upscaled."
+        "radiance-skin-before-after-separated 2/01-acne/after_acne.webp: below transformation viewer target (1200x960); use at least 900x1200 to avoid upscaling."
       ]
     },
     {
@@ -13223,6 +14026,9 @@
       "beforeAfterViewLabel": "Front View",
       "beforeAfterPhase": "before",
       "beforeAfterPairKey": "acne-radiance-skin-before-after-separated-2-01-acne",
+      "replacementAfter": false,
+      "replacementTargetSlug": null,
+      "replacementExampleNumber": null,
       "width": 1200,
       "height": 960,
       "original": {
@@ -13271,7 +14077,7 @@
       },
       "recommendedWebsiteUsage": "Skin Improvement Examples for acne",
       "warnings": [
-        "radiance-skin-before-after-separated 2/01-acne/before_acne.webp: below heroDesktop target (1200x960); generated hero variants may be upscaled."
+        "radiance-skin-before-after-separated 2/01-acne/before_acne.webp: below transformation viewer target (1200x960); use at least 900x1200 to avoid upscaling."
       ]
     },
     {
@@ -13322,6 +14128,9 @@
       "beforeAfterViewLabel": "Front View",
       "beforeAfterPhase": "after",
       "beforeAfterPairKey": "acne-scars-radiance-skin-before-after-separated-2-02-acne-scars",
+      "replacementAfter": false,
+      "replacementTargetSlug": null,
+      "replacementExampleNumber": null,
       "width": 1200,
       "height": 960,
       "original": {
@@ -13370,7 +14179,7 @@
       },
       "recommendedWebsiteUsage": "Skin Improvement Examples for acne scars",
       "warnings": [
-        "radiance-skin-before-after-separated 2/02-acne-scars/after_acne_scars.webp: below heroDesktop target (1200x960); generated hero variants may be upscaled."
+        "radiance-skin-before-after-separated 2/02-acne-scars/after_acne_scars.webp: below transformation viewer target (1200x960); use at least 900x1200 to avoid upscaling."
       ]
     },
     {
@@ -13421,6 +14230,9 @@
       "beforeAfterViewLabel": "Front View",
       "beforeAfterPhase": "before",
       "beforeAfterPairKey": "acne-scars-radiance-skin-before-after-separated-2-02-acne-scars",
+      "replacementAfter": false,
+      "replacementTargetSlug": null,
+      "replacementExampleNumber": null,
       "width": 1200,
       "height": 960,
       "original": {
@@ -13469,7 +14281,7 @@
       },
       "recommendedWebsiteUsage": "Skin Improvement Examples for acne scars",
       "warnings": [
-        "radiance-skin-before-after-separated 2/02-acne-scars/before_acne_scars.webp: below heroDesktop target (1200x960); generated hero variants may be upscaled."
+        "radiance-skin-before-after-separated 2/02-acne-scars/before_acne_scars.webp: below transformation viewer target (1200x960); use at least 900x1200 to avoid upscaling."
       ]
     },
     {
@@ -13520,6 +14332,9 @@
       "beforeAfterViewLabel": "Front View",
       "beforeAfterPhase": "after",
       "beforeAfterPairKey": "dark-circles-radiance-skin-before-after-separated-2-05-dark-circles",
+      "replacementAfter": false,
+      "replacementTargetSlug": null,
+      "replacementExampleNumber": null,
       "width": 1200,
       "height": 960,
       "original": {
@@ -13568,7 +14383,7 @@
       },
       "recommendedWebsiteUsage": "Skin Improvement Examples for dark circles",
       "warnings": [
-        "radiance-skin-before-after-separated 2/05-dark-circles/after_dark_circles.webp: below heroDesktop target (1200x960); generated hero variants may be upscaled."
+        "radiance-skin-before-after-separated 2/05-dark-circles/after_dark_circles.webp: below transformation viewer target (1200x960); use at least 900x1200 to avoid upscaling."
       ]
     },
     {
@@ -13619,6 +14434,9 @@
       "beforeAfterViewLabel": "Front View",
       "beforeAfterPhase": "before",
       "beforeAfterPairKey": "dark-circles-radiance-skin-before-after-separated-2-05-dark-circles",
+      "replacementAfter": false,
+      "replacementTargetSlug": null,
+      "replacementExampleNumber": null,
       "width": 1200,
       "height": 960,
       "original": {
@@ -13667,7 +14485,7 @@
       },
       "recommendedWebsiteUsage": "Skin Improvement Examples for dark circles",
       "warnings": [
-        "radiance-skin-before-after-separated 2/05-dark-circles/before_dark_circles.webp: below heroDesktop target (1200x960); generated hero variants may be upscaled."
+        "radiance-skin-before-after-separated 2/05-dark-circles/before_dark_circles.webp: below transformation viewer target (1200x960); use at least 900x1200 to avoid upscaling."
       ]
     },
     {
@@ -13718,6 +14536,9 @@
       "beforeAfterViewLabel": "Front View",
       "beforeAfterPhase": "after",
       "beforeAfterPairKey": "facial-mole-radiance-next-5-skin-before-after-03-facial-mole",
+      "replacementAfter": false,
+      "replacementTargetSlug": null,
+      "replacementExampleNumber": null,
       "width": 1200,
       "height": 1500,
       "original": {
@@ -13765,9 +14586,7 @@
         "textPath": "blur/radiance-ba-facial-mole-facial-mole-radiance-next-5-skin-before-after-03-facial-mole-after.txt"
       },
       "recommendedWebsiteUsage": "Skin Improvement Examples for facial mole",
-      "warnings": [
-        "radiance-next-5-skin-before-after/03-facial-mole/after_facial_mole.webp: below heroDesktop target (1200x1500); generated hero variants may be upscaled."
-      ]
+      "warnings": []
     },
     {
       "id": "radiance-ba-facial-mole-facial-mole-radiance-next-5-skin-before-after-03-facial-mole-before",
@@ -13817,6 +14636,9 @@
       "beforeAfterViewLabel": "Front View",
       "beforeAfterPhase": "before",
       "beforeAfterPairKey": "facial-mole-radiance-next-5-skin-before-after-03-facial-mole",
+      "replacementAfter": false,
+      "replacementTargetSlug": null,
+      "replacementExampleNumber": null,
       "width": 1200,
       "height": 1500,
       "original": {
@@ -13864,9 +14686,7 @@
         "textPath": "blur/radiance-ba-facial-mole-facial-mole-radiance-next-5-skin-before-after-03-facial-mole-before.txt"
       },
       "recommendedWebsiteUsage": "Skin Improvement Examples for facial mole",
-      "warnings": [
-        "radiance-next-5-skin-before-after/03-facial-mole/before_facial_mole.webp: below heroDesktop target (1200x1500); generated hero variants may be upscaled."
-      ]
+      "warnings": []
     },
     {
       "id": "radiance-ba-melasma-melasma-radiance-skin-before-after-separated-2-04-melasma-after",
@@ -13916,6 +14736,9 @@
       "beforeAfterViewLabel": "Front View",
       "beforeAfterPhase": "after",
       "beforeAfterPairKey": "melasma-radiance-skin-before-after-separated-2-04-melasma",
+      "replacementAfter": false,
+      "replacementTargetSlug": null,
+      "replacementExampleNumber": null,
       "width": 1200,
       "height": 960,
       "original": {
@@ -13964,7 +14787,7 @@
       },
       "recommendedWebsiteUsage": "Skin Improvement Examples for melasma",
       "warnings": [
-        "radiance-skin-before-after-separated 2/04-melasma/after_melasma.webp: below heroDesktop target (1200x960); generated hero variants may be upscaled."
+        "radiance-skin-before-after-separated 2/04-melasma/after_melasma.webp: below transformation viewer target (1200x960); use at least 900x1200 to avoid upscaling."
       ]
     },
     {
@@ -14015,6 +14838,9 @@
       "beforeAfterViewLabel": "Front View",
       "beforeAfterPhase": "before",
       "beforeAfterPairKey": "melasma-radiance-skin-before-after-separated-2-04-melasma",
+      "replacementAfter": false,
+      "replacementTargetSlug": null,
+      "replacementExampleNumber": null,
       "width": 1200,
       "height": 960,
       "original": {
@@ -14063,7 +14889,7 @@
       },
       "recommendedWebsiteUsage": "Skin Improvement Examples for melasma",
       "warnings": [
-        "radiance-skin-before-after-separated 2/04-melasma/before_melasma.webp: below heroDesktop target (1200x960); generated hero variants may be upscaled."
+        "radiance-skin-before-after-separated 2/04-melasma/before_melasma.webp: below transformation viewer target (1200x960); use at least 900x1200 to avoid upscaling."
       ]
     },
     {
@@ -14114,6 +14940,9 @@
       "beforeAfterViewLabel": "Front View",
       "beforeAfterPhase": "after",
       "beforeAfterPairKey": "pigmentation-radiance-skin-before-after-separated-2-03-pigmentation",
+      "replacementAfter": false,
+      "replacementTargetSlug": null,
+      "replacementExampleNumber": null,
       "width": 1200,
       "height": 960,
       "original": {
@@ -14162,7 +14991,7 @@
       },
       "recommendedWebsiteUsage": "Skin Improvement Examples for pigmentation",
       "warnings": [
-        "radiance-skin-before-after-separated 2/03-pigmentation/after_pigmentation.webp: below heroDesktop target (1200x960); generated hero variants may be upscaled."
+        "radiance-skin-before-after-separated 2/03-pigmentation/after_pigmentation.webp: below transformation viewer target (1200x960); use at least 900x1200 to avoid upscaling."
       ]
     },
     {
@@ -14213,6 +15042,9 @@
       "beforeAfterViewLabel": "Front View",
       "beforeAfterPhase": "before",
       "beforeAfterPairKey": "pigmentation-radiance-skin-before-after-separated-2-03-pigmentation",
+      "replacementAfter": false,
+      "replacementTargetSlug": null,
+      "replacementExampleNumber": null,
       "width": 1200,
       "height": 960,
       "original": {
@@ -14261,7 +15093,7 @@
       },
       "recommendedWebsiteUsage": "Skin Improvement Examples for pigmentation",
       "warnings": [
-        "radiance-skin-before-after-separated 2/03-pigmentation/before_pigmentation.webp: below heroDesktop target (1200x960); generated hero variants may be upscaled."
+        "radiance-skin-before-after-separated 2/03-pigmentation/before_pigmentation.webp: below transformation viewer target (1200x960); use at least 900x1200 to avoid upscaling."
       ]
     },
     {
@@ -14312,6 +15144,9 @@
       "beforeAfterViewLabel": "Front View",
       "beforeAfterPhase": "after",
       "beforeAfterPairKey": "rosacea-redness-radiance-next-5-skin-before-after-02-rosacea-redness",
+      "replacementAfter": false,
+      "replacementTargetSlug": null,
+      "replacementExampleNumber": null,
       "width": 1200,
       "height": 1500,
       "original": {
@@ -14359,9 +15194,7 @@
         "textPath": "blur/radiance-ba-rosacea-redness-rosacea-redness-radiance-next-5-skin-before-after-02-rosacea-redness-after.txt"
       },
       "recommendedWebsiteUsage": "Skin Improvement Examples for rosacea redness",
-      "warnings": [
-        "radiance-next-5-skin-before-after/02-rosacea-redness/after_rosacea_redness.webp: below heroDesktop target (1200x1500); generated hero variants may be upscaled."
-      ]
+      "warnings": []
     },
     {
       "id": "radiance-ba-rosacea-redness-rosacea-redness-radiance-next-5-skin-before-after-02-rosacea-redness-before",
@@ -14411,6 +15244,9 @@
       "beforeAfterViewLabel": "Front View",
       "beforeAfterPhase": "before",
       "beforeAfterPairKey": "rosacea-redness-radiance-next-5-skin-before-after-02-rosacea-redness",
+      "replacementAfter": false,
+      "replacementTargetSlug": null,
+      "replacementExampleNumber": null,
       "width": 1200,
       "height": 1500,
       "original": {
@@ -14458,9 +15294,7 @@
         "textPath": "blur/radiance-ba-rosacea-redness-rosacea-redness-radiance-next-5-skin-before-after-02-rosacea-redness-before.txt"
       },
       "recommendedWebsiteUsage": "Skin Improvement Examples for rosacea redness",
-      "warnings": [
-        "radiance-next-5-skin-before-after/02-rosacea-redness/before_rosacea_redness.webp: below heroDesktop target (1200x1500); generated hero variants may be upscaled."
-      ]
+      "warnings": []
     },
     {
       "id": "radiance-ba-skin-case001-after",
@@ -14510,6 +15344,9 @@
       "beforeAfterViewLabel": "Front View",
       "beforeAfterPhase": "after",
       "beforeAfterPairKey": "skin-case001",
+      "replacementAfter": false,
+      "replacementTargetSlug": null,
+      "replacementExampleNumber": null,
       "width": 724,
       "height": 1086,
       "original": {
@@ -14558,7 +15395,7 @@
       },
       "recommendedWebsiteUsage": "Skin Improvement Examples for skin",
       "warnings": [
-        "radiance-skin-before-after-separated/radiance-skin-before-after-skin-case001-after.jpg: image is too small for premium web use (724x1086); replace with a higher-resolution original if possible."
+        "radiance-skin-before-after-separated/radiance-skin-before-after-skin-case001-after.jpg: below transformation viewer target (724x1086); use at least 900x1200 to avoid upscaling."
       ]
     },
     {
@@ -14609,6 +15446,9 @@
       "beforeAfterViewLabel": "Front View",
       "beforeAfterPhase": "before",
       "beforeAfterPairKey": "skin-case001",
+      "replacementAfter": false,
+      "replacementTargetSlug": null,
+      "replacementExampleNumber": null,
       "width": 724,
       "height": 1086,
       "original": {
@@ -14657,7 +15497,7 @@
       },
       "recommendedWebsiteUsage": "Skin Improvement Examples for skin",
       "warnings": [
-        "radiance-skin-before-after-separated/radiance-skin-before-after-skin-case001-before.jpg: image is too small for premium web use (724x1086); replace with a higher-resolution original if possible."
+        "radiance-skin-before-after-separated/radiance-skin-before-after-skin-case001-before.jpg: below transformation viewer target (724x1086); use at least 900x1200 to avoid upscaling."
       ]
     },
     {
@@ -14708,6 +15548,9 @@
       "beforeAfterViewLabel": "Front View",
       "beforeAfterPhase": "after",
       "beforeAfterPairKey": "skin-case002",
+      "replacementAfter": false,
+      "replacementTargetSlug": null,
+      "replacementExampleNumber": null,
       "width": 724,
       "height": 1086,
       "original": {
@@ -14756,7 +15599,7 @@
       },
       "recommendedWebsiteUsage": "Skin Improvement Examples for skin",
       "warnings": [
-        "radiance-skin-before-after-separated/radiance-skin-before-after-skin-case002-after.jpg: image is too small for premium web use (724x1086); replace with a higher-resolution original if possible."
+        "radiance-skin-before-after-separated/radiance-skin-before-after-skin-case002-after.jpg: below transformation viewer target (724x1086); use at least 900x1200 to avoid upscaling."
       ]
     },
     {
@@ -14807,6 +15650,9 @@
       "beforeAfterViewLabel": "Front View",
       "beforeAfterPhase": "before",
       "beforeAfterPairKey": "skin-case002",
+      "replacementAfter": false,
+      "replacementTargetSlug": null,
+      "replacementExampleNumber": null,
       "width": 724,
       "height": 1086,
       "original": {
@@ -14855,7 +15701,7 @@
       },
       "recommendedWebsiteUsage": "Skin Improvement Examples for skin",
       "warnings": [
-        "radiance-skin-before-after-separated/radiance-skin-before-after-skin-case002-before.jpg: image is too small for premium web use (724x1086); replace with a higher-resolution original if possible."
+        "radiance-skin-before-after-separated/radiance-skin-before-after-skin-case002-before.jpg: below transformation viewer target (724x1086); use at least 900x1200 to avoid upscaling."
       ]
     },
     {
@@ -14906,6 +15752,9 @@
       "beforeAfterViewLabel": "Front View",
       "beforeAfterPhase": "after",
       "beforeAfterPairKey": "skin-case003",
+      "replacementAfter": false,
+      "replacementTargetSlug": null,
+      "replacementExampleNumber": null,
       "width": 724,
       "height": 1086,
       "original": {
@@ -14954,7 +15803,7 @@
       },
       "recommendedWebsiteUsage": "Skin Improvement Examples for skin",
       "warnings": [
-        "radiance-skin-before-after-separated/radiance-skin-before-after-skin-case003-after.jpg: image is too small for premium web use (724x1086); replace with a higher-resolution original if possible."
+        "radiance-skin-before-after-separated/radiance-skin-before-after-skin-case003-after.jpg: below transformation viewer target (724x1086); use at least 900x1200 to avoid upscaling."
       ]
     },
     {
@@ -15005,6 +15854,9 @@
       "beforeAfterViewLabel": "Front View",
       "beforeAfterPhase": "before",
       "beforeAfterPairKey": "skin-case003",
+      "replacementAfter": false,
+      "replacementTargetSlug": null,
+      "replacementExampleNumber": null,
       "width": 724,
       "height": 1086,
       "original": {
@@ -15053,7 +15905,7 @@
       },
       "recommendedWebsiteUsage": "Skin Improvement Examples for skin",
       "warnings": [
-        "radiance-skin-before-after-separated/radiance-skin-before-after-skin-case003-before.jpg: image is too small for premium web use (724x1086); replace with a higher-resolution original if possible."
+        "radiance-skin-before-after-separated/radiance-skin-before-after-skin-case003-before.jpg: below transformation viewer target (724x1086); use at least 900x1200 to avoid upscaling."
       ]
     },
     {
@@ -15104,6 +15956,9 @@
       "beforeAfterViewLabel": "Front View",
       "beforeAfterPhase": "after",
       "beforeAfterPairKey": "skin-case004",
+      "replacementAfter": false,
+      "replacementTargetSlug": null,
+      "replacementExampleNumber": null,
       "width": 724,
       "height": 1086,
       "original": {
@@ -15152,7 +16007,7 @@
       },
       "recommendedWebsiteUsage": "Skin Improvement Examples for skin",
       "warnings": [
-        "radiance-skin-before-after-separated/radiance-skin-before-after-skin-case004-after.jpg: image is too small for premium web use (724x1086); replace with a higher-resolution original if possible."
+        "radiance-skin-before-after-separated/radiance-skin-before-after-skin-case004-after.jpg: below transformation viewer target (724x1086); use at least 900x1200 to avoid upscaling."
       ]
     },
     {
@@ -15203,6 +16058,9 @@
       "beforeAfterViewLabel": "Front View",
       "beforeAfterPhase": "before",
       "beforeAfterPairKey": "skin-case004",
+      "replacementAfter": false,
+      "replacementTargetSlug": null,
+      "replacementExampleNumber": null,
       "width": 724,
       "height": 1086,
       "original": {
@@ -15251,7 +16109,7 @@
       },
       "recommendedWebsiteUsage": "Skin Improvement Examples for skin",
       "warnings": [
-        "radiance-skin-before-after-separated/radiance-skin-before-after-skin-case004-before.jpg: image is too small for premium web use (724x1086); replace with a higher-resolution original if possible."
+        "radiance-skin-before-after-separated/radiance-skin-before-after-skin-case004-before.jpg: below transformation viewer target (724x1086); use at least 900x1200 to avoid upscaling."
       ]
     },
     {
@@ -15302,6 +16160,9 @@
       "beforeAfterViewLabel": "Front View",
       "beforeAfterPhase": "after",
       "beforeAfterPairKey": "skin-case005",
+      "replacementAfter": false,
+      "replacementTargetSlug": null,
+      "replacementExampleNumber": null,
       "width": 724,
       "height": 1086,
       "original": {
@@ -15350,7 +16211,7 @@
       },
       "recommendedWebsiteUsage": "Skin Improvement Examples for skin",
       "warnings": [
-        "radiance-skin-before-after-separated/radiance-skin-before-after-skin-case005-after.jpg: image is too small for premium web use (724x1086); replace with a higher-resolution original if possible."
+        "radiance-skin-before-after-separated/radiance-skin-before-after-skin-case005-after.jpg: below transformation viewer target (724x1086); use at least 900x1200 to avoid upscaling."
       ]
     },
     {
@@ -15401,6 +16262,9 @@
       "beforeAfterViewLabel": "Front View",
       "beforeAfterPhase": "before",
       "beforeAfterPairKey": "skin-case005",
+      "replacementAfter": false,
+      "replacementTargetSlug": null,
+      "replacementExampleNumber": null,
       "width": 724,
       "height": 1086,
       "original": {
@@ -15449,7 +16313,7 @@
       },
       "recommendedWebsiteUsage": "Skin Improvement Examples for skin",
       "warnings": [
-        "radiance-skin-before-after-separated/radiance-skin-before-after-skin-case005-before.jpg: image is too small for premium web use (724x1086); replace with a higher-resolution original if possible."
+        "radiance-skin-before-after-separated/radiance-skin-before-after-skin-case005-before.jpg: below transformation viewer target (724x1086); use at least 900x1200 to avoid upscaling."
       ]
     },
     {
@@ -15500,6 +16364,9 @@
       "beforeAfterViewLabel": "Front View",
       "beforeAfterPhase": "after",
       "beforeAfterPairKey": "skin-case006",
+      "replacementAfter": false,
+      "replacementTargetSlug": null,
+      "replacementExampleNumber": null,
       "width": 724,
       "height": 1086,
       "original": {
@@ -15548,7 +16415,7 @@
       },
       "recommendedWebsiteUsage": "Skin Improvement Examples for skin",
       "warnings": [
-        "radiance-skin-before-after-separated/radiance-skin-before-after-skin-case006-after.jpg: image is too small for premium web use (724x1086); replace with a higher-resolution original if possible."
+        "radiance-skin-before-after-separated/radiance-skin-before-after-skin-case006-after.jpg: below transformation viewer target (724x1086); use at least 900x1200 to avoid upscaling."
       ]
     },
     {
@@ -15599,6 +16466,9 @@
       "beforeAfterViewLabel": "Front View",
       "beforeAfterPhase": "before",
       "beforeAfterPairKey": "skin-case006",
+      "replacementAfter": false,
+      "replacementTargetSlug": null,
+      "replacementExampleNumber": null,
       "width": 724,
       "height": 1086,
       "original": {
@@ -15647,7 +16517,7 @@
       },
       "recommendedWebsiteUsage": "Skin Improvement Examples for skin",
       "warnings": [
-        "radiance-skin-before-after-separated/radiance-skin-before-after-skin-case006-before.jpg: image is too small for premium web use (724x1086); replace with a higher-resolution original if possible."
+        "radiance-skin-before-after-separated/radiance-skin-before-after-skin-case006-before.jpg: below transformation viewer target (724x1086); use at least 900x1200 to avoid upscaling."
       ]
     },
     {
@@ -15698,6 +16568,9 @@
       "beforeAfterViewLabel": "Front View",
       "beforeAfterPhase": "after",
       "beforeAfterPairKey": "skin-rejuvenation-radiance-next-5-skin-before-after-01-uneven-skin-tone",
+      "replacementAfter": false,
+      "replacementTargetSlug": null,
+      "replacementExampleNumber": null,
       "width": 1200,
       "height": 1500,
       "original": {
@@ -15745,9 +16618,7 @@
         "textPath": "blur/radiance-ba-skin-rejuvenation-skin-rejuvenation-radiance-next-5-skin-before-after-01-uneven-skin-tone-after.txt"
       },
       "recommendedWebsiteUsage": "Skin Improvement Examples for skin rejuvenation",
-      "warnings": [
-        "radiance-next-5-skin-before-after/01-uneven-skin-tone/after_uneven_skin_tone.webp: below heroDesktop target (1200x1500); generated hero variants may be upscaled."
-      ]
+      "warnings": []
     },
     {
       "id": "radiance-ba-skin-rejuvenation-skin-rejuvenation-radiance-next-5-skin-before-after-01-uneven-skin-tone-before",
@@ -15797,6 +16668,9 @@
       "beforeAfterViewLabel": "Front View",
       "beforeAfterPhase": "before",
       "beforeAfterPairKey": "skin-rejuvenation-radiance-next-5-skin-before-after-01-uneven-skin-tone",
+      "replacementAfter": false,
+      "replacementTargetSlug": null,
+      "replacementExampleNumber": null,
       "width": 1200,
       "height": 1500,
       "original": {
@@ -15844,9 +16718,7 @@
         "textPath": "blur/radiance-ba-skin-rejuvenation-skin-rejuvenation-radiance-next-5-skin-before-after-01-uneven-skin-tone-before.txt"
       },
       "recommendedWebsiteUsage": "Skin Improvement Examples for skin rejuvenation",
-      "warnings": [
-        "radiance-next-5-skin-before-after/01-uneven-skin-tone/before_uneven_skin_tone.webp: below heroDesktop target (1200x1500); generated hero variants may be upscaled."
-      ]
+      "warnings": []
     },
     {
       "id": "radiance-ba-skin-rejuvenation-skin-rejuvenation-radiance-next-5-skin-before-after-04-oily-skin-after",
@@ -15896,6 +16768,9 @@
       "beforeAfterViewLabel": "Front View",
       "beforeAfterPhase": "after",
       "beforeAfterPairKey": "skin-rejuvenation-radiance-next-5-skin-before-after-04-oily-skin",
+      "replacementAfter": false,
+      "replacementTargetSlug": null,
+      "replacementExampleNumber": null,
       "width": 1200,
       "height": 1500,
       "original": {
@@ -15943,9 +16818,7 @@
         "textPath": "blur/radiance-ba-skin-rejuvenation-skin-rejuvenation-radiance-next-5-skin-before-after-04-oily-skin-after.txt"
       },
       "recommendedWebsiteUsage": "Skin Improvement Examples for skin rejuvenation",
-      "warnings": [
-        "radiance-next-5-skin-before-after/04-oily-skin/after_oily_skin.webp: below heroDesktop target (1200x1500); generated hero variants may be upscaled."
-      ]
+      "warnings": []
     },
     {
       "id": "radiance-ba-skin-rejuvenation-skin-rejuvenation-radiance-next-5-skin-before-after-04-oily-skin-before",
@@ -15995,6 +16868,9 @@
       "beforeAfterViewLabel": "Front View",
       "beforeAfterPhase": "before",
       "beforeAfterPairKey": "skin-rejuvenation-radiance-next-5-skin-before-after-04-oily-skin",
+      "replacementAfter": false,
+      "replacementTargetSlug": null,
+      "replacementExampleNumber": null,
       "width": 1200,
       "height": 1500,
       "original": {
@@ -16042,9 +16918,7 @@
         "textPath": "blur/radiance-ba-skin-rejuvenation-skin-rejuvenation-radiance-next-5-skin-before-after-04-oily-skin-before.txt"
       },
       "recommendedWebsiteUsage": "Skin Improvement Examples for skin rejuvenation",
-      "warnings": [
-        "radiance-next-5-skin-before-after/04-oily-skin/before_oily_skin.webp: below heroDesktop target (1200x1500); generated hero variants may be upscaled."
-      ]
+      "warnings": []
     },
     {
       "id": "radiance-ba-skin-rejuvenation-skin-rejuvenation-radiance-skin-before-after-separated-2-06-open-pores-after",
@@ -16094,6 +16968,9 @@
       "beforeAfterViewLabel": "Front View",
       "beforeAfterPhase": "after",
       "beforeAfterPairKey": "skin-rejuvenation-radiance-skin-before-after-separated-2-06-open-pores",
+      "replacementAfter": false,
+      "replacementTargetSlug": null,
+      "replacementExampleNumber": null,
       "width": 1200,
       "height": 960,
       "original": {
@@ -16142,7 +17019,7 @@
       },
       "recommendedWebsiteUsage": "Skin Improvement Examples for skin rejuvenation",
       "warnings": [
-        "radiance-skin-before-after-separated 2/06-open-pores/after_open_pores.webp: below heroDesktop target (1200x960); generated hero variants may be upscaled."
+        "radiance-skin-before-after-separated 2/06-open-pores/after_open_pores.webp: below transformation viewer target (1200x960); use at least 900x1200 to avoid upscaling."
       ]
     },
     {
@@ -16193,6 +17070,9 @@
       "beforeAfterViewLabel": "Front View",
       "beforeAfterPhase": "before",
       "beforeAfterPairKey": "skin-rejuvenation-radiance-skin-before-after-separated-2-06-open-pores",
+      "replacementAfter": false,
+      "replacementTargetSlug": null,
+      "replacementExampleNumber": null,
       "width": 1200,
       "height": 960,
       "original": {
@@ -16241,7 +17121,7 @@
       },
       "recommendedWebsiteUsage": "Skin Improvement Examples for skin rejuvenation",
       "warnings": [
-        "radiance-skin-before-after-separated 2/06-open-pores/before_open_pores.webp: below heroDesktop target (1200x960); generated hero variants may be upscaled."
+        "radiance-skin-before-after-separated 2/06-open-pores/before_open_pores.webp: below transformation viewer target (1200x960); use at least 900x1200 to avoid upscaling."
       ]
     },
     {
@@ -16292,6 +17172,9 @@
       "beforeAfterViewLabel": "Front View",
       "beforeAfterPhase": "after",
       "beforeAfterPairKey": "skin-tags-radiance-next-5-skin-before-after-05-skin-tags",
+      "replacementAfter": false,
+      "replacementTargetSlug": null,
+      "replacementExampleNumber": null,
       "width": 1200,
       "height": 1500,
       "original": {
@@ -16339,9 +17222,7 @@
         "textPath": "blur/radiance-ba-skin-tags-skin-tags-radiance-next-5-skin-before-after-05-skin-tags-after.txt"
       },
       "recommendedWebsiteUsage": "Skin Improvement Examples for skin tags",
-      "warnings": [
-        "radiance-next-5-skin-before-after/05-skin-tags/after_skin_tags.webp: below heroDesktop target (1200x1500); generated hero variants may be upscaled."
-      ]
+      "warnings": []
     },
     {
       "id": "radiance-ba-skin-tags-skin-tags-radiance-next-5-skin-before-after-05-skin-tags-before",
@@ -16391,6 +17272,9 @@
       "beforeAfterViewLabel": "Front View",
       "beforeAfterPhase": "before",
       "beforeAfterPairKey": "skin-tags-radiance-next-5-skin-before-after-05-skin-tags",
+      "replacementAfter": false,
+      "replacementTargetSlug": null,
+      "replacementExampleNumber": null,
       "width": 1200,
       "height": 1500,
       "original": {
@@ -16438,9 +17322,7 @@
         "textPath": "blur/radiance-ba-skin-tags-skin-tags-radiance-next-5-skin-before-after-05-skin-tags-before.txt"
       },
       "recommendedWebsiteUsage": "Skin Improvement Examples for skin tags",
-      "warnings": [
-        "radiance-next-5-skin-before-after/05-skin-tags/before_skin_tags.webp: below heroDesktop target (1200x1500); generated hero variants may be upscaled."
-      ]
+      "warnings": []
     },
     {
       "id": "radiance-social-consultation-post-01",
@@ -16490,6 +17372,9 @@
       "beforeAfterViewLabel": null,
       "beforeAfterPhase": null,
       "beforeAfterPairKey": null,
+      "replacementAfter": false,
+      "replacementTargetSlug": null,
+      "replacementExampleNumber": null,
       "width": 1086,
       "height": 1448,
       "original": {
@@ -16589,6 +17474,9 @@
       "beforeAfterViewLabel": null,
       "beforeAfterPhase": null,
       "beforeAfterPairKey": null,
+      "replacementAfter": false,
+      "replacementTargetSlug": null,
+      "replacementExampleNumber": null,
       "width": 1448,
       "height": 1086,
       "original": {
@@ -16641,6 +17529,61 @@
       ]
     }
   ],
+  "replacementAfterReport": {
+    "replaced": [
+      {
+        "filename": "after-beard-transplant.webp",
+        "replacementId": "radiance-ba-replacement-beard-transplant-condition-primary-after",
+        "target": "beard-transplant",
+        "exampleNumber": null,
+        "view": "primary",
+        "pairKey": "beard-transplant-radiance-hair-before-after-01-beard-transplant",
+        "previousAfterId": "radiance-ba-beard-transplant-beard-transplant-radiance-hair-before-after-01-beard-transplant-after",
+        "resolution": "1122x1402"
+      },
+      {
+        "filename": "after-crown-hair-transplant.webp",
+        "replacementId": "radiance-ba-replacement-crown-hair-transplant-condition-crown-after",
+        "target": "crown-hair-transplant",
+        "exampleNumber": null,
+        "view": "crown",
+        "pairKey": "hair-transplant-radiance-hair-before-after-04-crown-hair-transplant",
+        "previousAfterId": "radiance-ba-hair-transplant-hair-transplant-radiance-hair-before-after-04-crown-hair-transplant-crown-after",
+        "resolution": "1122x1402"
+      },
+      {
+        "filename": "after-female-hair-transplant.webp",
+        "replacementId": "radiance-ba-replacement-female-pattern-hair-loss-condition-primary-after",
+        "target": "female-pattern-hair-loss",
+        "exampleNumber": null,
+        "view": "primary",
+        "pairKey": "female-pattern-hair-loss-radiance-hair-before-after-03-female-pattern-hair-loss",
+        "previousAfterId": "radiance-ba-female-pattern-hair-loss-female-pattern-hair-loss-radiance-hair-before-after-03-female-pattern-hair-loss-after",
+        "resolution": "1122x1402"
+      },
+      {
+        "filename": "after-frontal-mid-scalp-hair-transplant.webp",
+        "replacementId": "radiance-ba-replacement-frontal-mid-scalp-hair-transplant-condition-front-after",
+        "target": "frontal-mid-scalp-hair-transplant",
+        "exampleNumber": null,
+        "view": "front",
+        "pairKey": "hair-transplant-radiance-hair-before-after-05-frontal-mid-scalp-hair-transplant",
+        "previousAfterId": "radiance-ba-hair-transplant-hair-transplant-radiance-hair-before-after-05-frontal-mid-scalp-hair-transplant-front-after",
+        "resolution": "1122x1402"
+      },
+      {
+        "filename": "after-receding-hairline-hair-transplant.webp",
+        "replacementId": "radiance-ba-replacement-receding-hairline-condition-primary-after",
+        "target": "receding-hairline",
+        "exampleNumber": null,
+        "view": "primary",
+        "pairKey": "receding-hairline-radiance-hair-before-after-02-receding-hairline",
+        "previousAfterId": "radiance-ba-receding-hairline-receding-hairline-radiance-hair-before-after-02-receding-hairline-after",
+        "resolution": "1122x1402"
+      }
+    ],
+    "unmatched": []
+  },
   "warnings": [
     "01-hero/radiance-clinin-heor-gallery-new.png: below heroDesktop target (1448x1086); generated hero variants may be upscaled.",
     "01-hero/radiance-hero-anil-kapoor-feature-01.jpg: below heroDesktop target (1448x1086); generated hero variants may be upscaled.",
@@ -16659,38 +17602,10 @@
     "02-doctor/radiance-doctor-satyarth-procedure-room-01.jpg: below heroDesktop target (1448x1086); generated hero variants may be upscaled.",
     "02-doctor/radiance-doctor-satyarth-with-patient-01.jpg: image is too small for premium web use (941x1672); replace with a higher-resolution original if possible.",
     "02-doctor/radiance-doctor-satyarth-with-team-01.jpg: image is too small for premium web use (1086x1448); replace with a higher-resolution original if possible.",
-    "03-before-after/case001/radiance-ba-hair-transplant-case001-angle-after.jpg: below heroDesktop target (1254x1254); generated hero variants may be upscaled.",
-    "03-before-after/case001/radiance-ba-hair-transplant-case001-angle-before.jpg: below heroDesktop target (1254x1254); generated hero variants may be upscaled.",
-    "03-before-after/case001/radiance-ba-hair-transplant-case001-front-after.jpg: below heroDesktop target (1254x1254); generated hero variants may be upscaled.",
-    "03-before-after/case001/radiance-ba-hair-transplant-case001-front-before.jpg: below heroDesktop target (1254x1254); generated hero variants may be upscaled.",
-    "03-before-after/case002/radiance-ba-hair-transplant-case002-angle-after.jpg: below heroDesktop target (1254x1254); generated hero variants may be upscaled.",
-    "03-before-after/case002/radiance-ba-hair-transplant-case002-angle-before.jpg: below heroDesktop target (1254x1254); generated hero variants may be upscaled.",
-    "03-before-after/case002/radiance-ba-hair-transplant-case002-front-after.jpg: below heroDesktop target (1254x1254); generated hero variants may be upscaled.",
-    "03-before-after/case002/radiance-ba-hair-transplant-case002-front-before.jpg: below heroDesktop target (1254x1254); generated hero variants may be upscaled.",
-    "03-before-after/case003/radiance-ba-hair-transplant-case003-angle-after.jpg: image is too small for premium web use (1086x1448); replace with a higher-resolution original if possible.",
-    "03-before-after/case003/radiance-ba-hair-transplant-case003-angle-before.jpg: image is too small for premium web use (1086x1448); replace with a higher-resolution original if possible.",
-    "03-before-after/case003/radiance-ba-hair-transplant-case003-front-after.jpg: image is too small for premium web use (1086x1448); replace with a higher-resolution original if possible.",
-    "03-before-after/case003/radiance-ba-hair-transplant-case003-front-before.jpg: image is too small for premium web use (1086x1448); replace with a higher-resolution original if possible.",
-    "03-before-after/case003/radiance-ba-hair-transplant-case003-top-after.jpg: image is too small for premium web use (1086x1448); replace with a higher-resolution original if possible.",
-    "03-before-after/case003/radiance-ba-hair-transplant-case003-top-before.jpg: image is too small for premium web use (1086x1448); replace with a higher-resolution original if possible.",
     "03-before-after/case004/after1.jpg: unknown condition name \"After1\" was parsed from filename/folder; add a normalization alias if this should be public-facing.",
-    "03-before-after/case004/before.png: image is too small for premium web use (1086x1448); replace with a higher-resolution original if possible.",
     "03-before-after/case004/before.png: unknown condition name \"Before After\" was parsed from filename/folder; add a normalization alias if this should be public-facing.",
-    "03-before-after/case004/bfore1.png: image is too small for premium web use (1086x1448); replace with a higher-resolution original if possible.",
     "03-before-after/case004/bfore1.png: unknown condition name \"Bfore1\" was parsed from filename/folder; add a normalization alias if this should be public-facing.",
-    "03-before-after/case004/radiance-ba-hair-transplant-case004-front-after.jpg: image is too small for premium web use (1086x1448); replace with a higher-resolution original if possible.",
-    "03-before-after/case005/radiance-ba-hair-transplant-case005-front-after.jpg: image is too small for premium web use (1086x1448); replace with a higher-resolution original if possible.",
-    "03-before-after/case005/radiance-ba-hair-transplant-case005-front-before.jpg: image is too small for premium web use (1086x1448); replace with a higher-resolution original if possible.",
-    "03-before-after/case005/radiance-ba-hair-transplant-case005-top-after.jpg: image is too small for premium web use (1086x1448); replace with a higher-resolution original if possible.",
-    "03-before-after/case005/radiance-ba-hair-transplant-case005-top-before.jpg: image is too small for premium web use (1086x1448); replace with a higher-resolution original if possible.",
-    "03-before-after/case006/after.png: image is too small for premium web use (1024x1536); replace with a higher-resolution original if possible.",
     "03-before-after/case006/after.png: unknown condition name \"Before After\" was parsed from filename/folder; add a normalization alias if this should be public-facing.",
-    "03-before-after/case006/radiance-ba-hair-transplant-case006-angle-before.jpg: image is too small for premium web use (1024x1536); replace with a higher-resolution original if possible.",
-    "03-before-after/case006/radiance-ba-hair-transplant-case006-front-before.jpg: image is too small for premium web use (1024x1536); replace with a higher-resolution original if possible.",
-    "03-before-after/case007/radiance-ba-hair-transplant-case007-angle-after.jpg: image is too small for premium web use (1086x1448); replace with a higher-resolution original if possible.",
-    "03-before-after/case007/radiance-ba-hair-transplant-case007-angle-before.jpg: image is too small for premium web use (1086x1448); replace with a higher-resolution original if possible.",
-    "03-before-after/case007/radiance-ba-hair-transplant-case007-top-after.jpg: image is too small for premium web use (1086x1448); replace with a higher-resolution original if possible.",
-    "03-before-after/case007/radiance-ba-hair-transplant-case007-top-before.jpg: image is too small for premium web use (1086x1448); replace with a higher-resolution original if possible.",
     "04-awards-recognition/radiance-recognition-anil-kapoor-event-01.jpg: below heroDesktop target (1448x1086); generated hero variants may be upscaled.",
     "04-awards-recognition/radiance-recognition-award-ceremony-01.jpg: below heroDesktop target (1448x1086); generated hero variants may be upscaled.",
     "04-awards-recognition/radiance-recognition-award-ceremony-02.jpg: below heroDesktop target (1448x1086); generated hero variants may be upscaled.",
@@ -16733,16 +17648,6 @@
     "gallery-raw/20260703_174344.jpg: filename does not follow the radiance-category-subject-use-seq convention.",
     "gallery-raw/20260703_174358.jpg: below heroDesktop target (2252x4000); generated hero variants may be upscaled.",
     "gallery-raw/20260703_174358.jpg: filename does not follow the radiance-category-subject-use-seq convention.",
-    "radiance-additional-hair-before-after/01-male-temporal-recession/after_male_temporal_recession.webp: below heroDesktop target (1200x1500); generated hero variants may be upscaled.",
-    "radiance-additional-hair-before-after/01-male-temporal-recession/before_male_temporal_recession.webp: below heroDesktop target (1200x1500); generated hero variants may be upscaled.",
-    "radiance-additional-hair-before-after/02-male-diffuse-frontal-thinning/after_male_diffuse_frontal_thinning.webp: below heroDesktop target (1200x1500); generated hero variants may be upscaled.",
-    "radiance-additional-hair-before-after/02-male-diffuse-frontal-thinning/before_male_diffuse_frontal_thinning.webp: below heroDesktop target (1200x1500); generated hero variants may be upscaled.",
-    "radiance-additional-hair-before-after/03-female-frontal-hairline-thinning/after_female_frontal_hairline_thinning.webp: below heroDesktop target (1200x1500); generated hero variants may be upscaled.",
-    "radiance-additional-hair-before-after/03-female-frontal-hairline-thinning/before_female_frontal_hairline_thinning.webp: below heroDesktop target (1200x1500); generated hero variants may be upscaled.",
-    "radiance-additional-hair-before-after/04-advanced-male-pattern-baldness/after_advanced_male_pattern_baldness.webp: below heroDesktop target (1200x1500); generated hero variants may be upscaled.",
-    "radiance-additional-hair-before-after/04-advanced-male-pattern-baldness/before_advanced_male_pattern_baldness.webp: below heroDesktop target (1200x1500); generated hero variants may be upscaled.",
-    "radiance-additional-hair-before-after/05-female-widening-part/after_female_widening_part.webp: below heroDesktop target (1200x1500); generated hero variants may be upscaled.",
-    "radiance-additional-hair-before-after/05-female-widening-part/before_female_widening_part.webp: below heroDesktop target (1200x1500); generated hero variants may be upscaled.",
     "radiance-additional-hair-before-after/preview-additional-hair-pairs.jpg: below heroDesktop target (1650x860); generated hero variants may be upscaled.",
     "radiance-additional-hair-before-after/preview-additional-hair-pairs.jpg: filename does not follow the radiance-category-subject-use-seq convention.",
     "radiance-certificates-enhanced/aesthetics-2013-learning-from-each-other-certificate.jpg: below heroDesktop target (1547x1118); generated hero variants may be upscaled.",
@@ -16771,28 +17676,8 @@
     "radiance-certificates-enhanced/indian-medical-association-life-member-certificate-2019.png: filename does not follow the radiance-category-subject-use-seq convention.",
     "radiance-certificates-enhanced/ishrs-associate-member-certificate-2016.jpg: below heroDesktop target (1687x1214); generated hero variants may be upscaled.",
     "radiance-certificates-enhanced/ishrs-associate-member-certificate-2016.jpg: filename does not follow the radiance-category-subject-use-seq convention.",
-    "radiance-hair-before-after/01-beard-transplant/after_beard_transplant.webp: below heroDesktop target (1200x1500); generated hero variants may be upscaled.",
-    "radiance-hair-before-after/01-beard-transplant/before_beard_transplant.webp: below heroDesktop target (1200x1500); generated hero variants may be upscaled.",
-    "radiance-hair-before-after/02-receding-hairline/after_receding_hairline.webp: below heroDesktop target (1200x1500); generated hero variants may be upscaled.",
-    "radiance-hair-before-after/02-receding-hairline/before_receding_hairline.webp: below heroDesktop target (1200x1500); generated hero variants may be upscaled.",
-    "radiance-hair-before-after/03-female-pattern-hair-loss/after_female_pattern_hair_loss.webp: below heroDesktop target (1200x1500); generated hero variants may be upscaled.",
-    "radiance-hair-before-after/03-female-pattern-hair-loss/before_female_pattern_hair_loss.webp: below heroDesktop target (1200x1500); generated hero variants may be upscaled.",
-    "radiance-hair-before-after/04-crown-hair-transplant/after_crown_hair_transplant.webp: below heroDesktop target (1200x1500); generated hero variants may be upscaled.",
-    "radiance-hair-before-after/04-crown-hair-transplant/before_crown_hair_transplant.webp: below heroDesktop target (1200x1500); generated hero variants may be upscaled.",
-    "radiance-hair-before-after/05-frontal-mid-scalp-hair-transplant/after_frontal_mid_scalp_hair_transplant.webp: below heroDesktop target (1200x1500); generated hero variants may be upscaled.",
-    "radiance-hair-before-after/05-frontal-mid-scalp-hair-transplant/before_frontal_mid_scalp_hair_transplant.webp: below heroDesktop target (1200x1500); generated hero variants may be upscaled.",
     "radiance-hair-before-after/preview-hair-before-after.jpg: below heroDesktop target (1650x860); generated hero variants may be upscaled.",
     "radiance-hair-before-after/preview-hair-before-after.jpg: filename does not follow the radiance-category-subject-use-seq convention.",
-    "radiance-next-5-skin-before-after/01-uneven-skin-tone/after_uneven_skin_tone.webp: below heroDesktop target (1200x1500); generated hero variants may be upscaled.",
-    "radiance-next-5-skin-before-after/01-uneven-skin-tone/before_uneven_skin_tone.webp: below heroDesktop target (1200x1500); generated hero variants may be upscaled.",
-    "radiance-next-5-skin-before-after/02-rosacea-redness/after_rosacea_redness.webp: below heroDesktop target (1200x1500); generated hero variants may be upscaled.",
-    "radiance-next-5-skin-before-after/02-rosacea-redness/before_rosacea_redness.webp: below heroDesktop target (1200x1500); generated hero variants may be upscaled.",
-    "radiance-next-5-skin-before-after/03-facial-mole/after_facial_mole.webp: below heroDesktop target (1200x1500); generated hero variants may be upscaled.",
-    "radiance-next-5-skin-before-after/03-facial-mole/before_facial_mole.webp: below heroDesktop target (1200x1500); generated hero variants may be upscaled.",
-    "radiance-next-5-skin-before-after/04-oily-skin/after_oily_skin.webp: below heroDesktop target (1200x1500); generated hero variants may be upscaled.",
-    "radiance-next-5-skin-before-after/04-oily-skin/before_oily_skin.webp: below heroDesktop target (1200x1500); generated hero variants may be upscaled.",
-    "radiance-next-5-skin-before-after/05-skin-tags/after_skin_tags.webp: below heroDesktop target (1200x1500); generated hero variants may be upscaled.",
-    "radiance-next-5-skin-before-after/05-skin-tags/before_skin_tags.webp: below heroDesktop target (1200x1500); generated hero variants may be upscaled.",
     "radiance-next-5-skin-before-after/preview-next-5-pairs.jpg: below heroDesktop target (1650x860); generated hero variants may be upscaled.",
     "radiance-next-5-skin-before-after/preview-next-5-pairs.jpg: filename does not follow the radiance-category-subject-use-seq convention.",
     "radiance-premium-visuals/radiance-visuals-preview.jpg: below heroDesktop target (1560x1625); generated hero variants may be upscaled.",
@@ -16817,34 +17702,34 @@
     "radiance-premium-visuals/webp/radiance-smiling-patient-hero.webp: below heroDesktop target (2200x1749); generated hero variants may be upscaled.",
     "radiance-premium-visuals/webp/radiance-under-eye-rejuvenation.webp: below heroDesktop target (1800x1551); generated hero variants may be upscaled.",
     "radiance-premium-visuals/webp/radiance-under-eye-rejuvenation.webp: unknown condition name \"Under Eye\" was parsed from filename/folder; add a normalization alias if this should be public-facing.",
-    "radiance-skin-before-after-separated 2/01-acne/after_acne.webp: below heroDesktop target (1200x960); generated hero variants may be upscaled.",
-    "radiance-skin-before-after-separated 2/01-acne/before_acne.webp: below heroDesktop target (1200x960); generated hero variants may be upscaled.",
-    "radiance-skin-before-after-separated 2/02-acne-scars/after_acne_scars.webp: below heroDesktop target (1200x960); generated hero variants may be upscaled.",
-    "radiance-skin-before-after-separated 2/02-acne-scars/before_acne_scars.webp: below heroDesktop target (1200x960); generated hero variants may be upscaled.",
-    "radiance-skin-before-after-separated 2/03-pigmentation/after_pigmentation.webp: below heroDesktop target (1200x960); generated hero variants may be upscaled.",
-    "radiance-skin-before-after-separated 2/03-pigmentation/before_pigmentation.webp: below heroDesktop target (1200x960); generated hero variants may be upscaled.",
-    "radiance-skin-before-after-separated 2/04-melasma/after_melasma.webp: below heroDesktop target (1200x960); generated hero variants may be upscaled.",
-    "radiance-skin-before-after-separated 2/04-melasma/before_melasma.webp: below heroDesktop target (1200x960); generated hero variants may be upscaled.",
-    "radiance-skin-before-after-separated 2/05-dark-circles/after_dark_circles.webp: below heroDesktop target (1200x960); generated hero variants may be upscaled.",
-    "radiance-skin-before-after-separated 2/05-dark-circles/before_dark_circles.webp: below heroDesktop target (1200x960); generated hero variants may be upscaled.",
-    "radiance-skin-before-after-separated 2/06-open-pores/after_open_pores.webp: below heroDesktop target (1200x960); generated hero variants may be upscaled.",
-    "radiance-skin-before-after-separated 2/06-open-pores/before_open_pores.webp: below heroDesktop target (1200x960); generated hero variants may be upscaled.",
+    "radiance-skin-before-after-separated 2/01-acne/after_acne.webp: below transformation viewer target (1200x960); use at least 900x1200 to avoid upscaling.",
+    "radiance-skin-before-after-separated 2/01-acne/before_acne.webp: below transformation viewer target (1200x960); use at least 900x1200 to avoid upscaling.",
+    "radiance-skin-before-after-separated 2/02-acne-scars/after_acne_scars.webp: below transformation viewer target (1200x960); use at least 900x1200 to avoid upscaling.",
+    "radiance-skin-before-after-separated 2/02-acne-scars/before_acne_scars.webp: below transformation viewer target (1200x960); use at least 900x1200 to avoid upscaling.",
+    "radiance-skin-before-after-separated 2/03-pigmentation/after_pigmentation.webp: below transformation viewer target (1200x960); use at least 900x1200 to avoid upscaling.",
+    "radiance-skin-before-after-separated 2/03-pigmentation/before_pigmentation.webp: below transformation viewer target (1200x960); use at least 900x1200 to avoid upscaling.",
+    "radiance-skin-before-after-separated 2/04-melasma/after_melasma.webp: below transformation viewer target (1200x960); use at least 900x1200 to avoid upscaling.",
+    "radiance-skin-before-after-separated 2/04-melasma/before_melasma.webp: below transformation viewer target (1200x960); use at least 900x1200 to avoid upscaling.",
+    "radiance-skin-before-after-separated 2/05-dark-circles/after_dark_circles.webp: below transformation viewer target (1200x960); use at least 900x1200 to avoid upscaling.",
+    "radiance-skin-before-after-separated 2/05-dark-circles/before_dark_circles.webp: below transformation viewer target (1200x960); use at least 900x1200 to avoid upscaling.",
+    "radiance-skin-before-after-separated 2/06-open-pores/after_open_pores.webp: below transformation viewer target (1200x960); use at least 900x1200 to avoid upscaling.",
+    "radiance-skin-before-after-separated 2/06-open-pores/before_open_pores.webp: below transformation viewer target (1200x960); use at least 900x1200 to avoid upscaling.",
     "radiance-skin-before-after-separated 2/preview-all-separated.jpg: below heroDesktop target (1560x1020); generated hero variants may be upscaled.",
     "radiance-skin-before-after-separated 2/preview-all-separated.jpg: filename does not follow the radiance-category-subject-use-seq convention.",
     "radiance-skin-before-after-separated/contact-sheet.jpg: below heroDesktop target (1300x1400); generated hero variants may be upscaled.",
     "radiance-skin-before-after-separated/contact-sheet.jpg: filename does not follow the radiance-category-subject-use-seq convention.",
-    "radiance-skin-before-after-separated/radiance-skin-before-after-skin-case001-after.jpg: image is too small for premium web use (724x1086); replace with a higher-resolution original if possible.",
-    "radiance-skin-before-after-separated/radiance-skin-before-after-skin-case001-before.jpg: image is too small for premium web use (724x1086); replace with a higher-resolution original if possible.",
-    "radiance-skin-before-after-separated/radiance-skin-before-after-skin-case002-after.jpg: image is too small for premium web use (724x1086); replace with a higher-resolution original if possible.",
-    "radiance-skin-before-after-separated/radiance-skin-before-after-skin-case002-before.jpg: image is too small for premium web use (724x1086); replace with a higher-resolution original if possible.",
-    "radiance-skin-before-after-separated/radiance-skin-before-after-skin-case003-after.jpg: image is too small for premium web use (724x1086); replace with a higher-resolution original if possible.",
-    "radiance-skin-before-after-separated/radiance-skin-before-after-skin-case003-before.jpg: image is too small for premium web use (724x1086); replace with a higher-resolution original if possible.",
-    "radiance-skin-before-after-separated/radiance-skin-before-after-skin-case004-after.jpg: image is too small for premium web use (724x1086); replace with a higher-resolution original if possible.",
-    "radiance-skin-before-after-separated/radiance-skin-before-after-skin-case004-before.jpg: image is too small for premium web use (724x1086); replace with a higher-resolution original if possible.",
-    "radiance-skin-before-after-separated/radiance-skin-before-after-skin-case005-after.jpg: image is too small for premium web use (724x1086); replace with a higher-resolution original if possible.",
-    "radiance-skin-before-after-separated/radiance-skin-before-after-skin-case005-before.jpg: image is too small for premium web use (724x1086); replace with a higher-resolution original if possible.",
-    "radiance-skin-before-after-separated/radiance-skin-before-after-skin-case006-after.jpg: image is too small for premium web use (724x1086); replace with a higher-resolution original if possible.",
-    "radiance-skin-before-after-separated/radiance-skin-before-after-skin-case006-before.jpg: image is too small for premium web use (724x1086); replace with a higher-resolution original if possible.",
+    "radiance-skin-before-after-separated/radiance-skin-before-after-skin-case001-after.jpg: below transformation viewer target (724x1086); use at least 900x1200 to avoid upscaling.",
+    "radiance-skin-before-after-separated/radiance-skin-before-after-skin-case001-before.jpg: below transformation viewer target (724x1086); use at least 900x1200 to avoid upscaling.",
+    "radiance-skin-before-after-separated/radiance-skin-before-after-skin-case002-after.jpg: below transformation viewer target (724x1086); use at least 900x1200 to avoid upscaling.",
+    "radiance-skin-before-after-separated/radiance-skin-before-after-skin-case002-before.jpg: below transformation viewer target (724x1086); use at least 900x1200 to avoid upscaling.",
+    "radiance-skin-before-after-separated/radiance-skin-before-after-skin-case003-after.jpg: below transformation viewer target (724x1086); use at least 900x1200 to avoid upscaling.",
+    "radiance-skin-before-after-separated/radiance-skin-before-after-skin-case003-before.jpg: below transformation viewer target (724x1086); use at least 900x1200 to avoid upscaling.",
+    "radiance-skin-before-after-separated/radiance-skin-before-after-skin-case004-after.jpg: below transformation viewer target (724x1086); use at least 900x1200 to avoid upscaling.",
+    "radiance-skin-before-after-separated/radiance-skin-before-after-skin-case004-before.jpg: below transformation viewer target (724x1086); use at least 900x1200 to avoid upscaling.",
+    "radiance-skin-before-after-separated/radiance-skin-before-after-skin-case005-after.jpg: below transformation viewer target (724x1086); use at least 900x1200 to avoid upscaling.",
+    "radiance-skin-before-after-separated/radiance-skin-before-after-skin-case005-before.jpg: below transformation viewer target (724x1086); use at least 900x1200 to avoid upscaling.",
+    "radiance-skin-before-after-separated/radiance-skin-before-after-skin-case006-after.jpg: below transformation viewer target (724x1086); use at least 900x1200 to avoid upscaling.",
+    "radiance-skin-before-after-separated/radiance-skin-before-after-skin-case006-before.jpg: below transformation viewer target (724x1086); use at least 900x1200 to avoid upscaling.",
     "Duplicate content hash \"8807bb16767972ecdd822477a3e1d1a96324ddef\" appears in: 01-hero/radiance-hero-anil-kapoor-feature-01.jpg, 04-awards-recognition/radiance-recognition-anil-kapoor-event-01.jpg.",
     "Duplicate content hash \"7db536d9606102b630557864d97eeb1ff38bdf32\" appears in: 01-hero/radiance-hero-clinic-interior-secondary-01.jpg, 05-clinic-ambience/radiance-clinic-reception-wide-01.jpg, 05-clinic-ambience/radiance-clinic-waiting-lounge-01.jpg.",
     "Duplicate content hash \"8a3acf1aef6083b0920f831d8cec5c589da44eb7\" appears in: 01-hero/radiance-hero-doctor-consultation-feature-01.jpg, 02-doctor/radiance-doctor-satyarth-consultation-01.jpg, 02-doctor/radiance-doctor-satyarth-with-team-01.jpg, 07-social-media/radiance-social-consultation-post-01.jpg.",

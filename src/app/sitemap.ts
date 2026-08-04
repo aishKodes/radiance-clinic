@@ -6,20 +6,15 @@ import {
   getSeoIndex,
   getTreatmentStaticParams,
 } from "@/data/site";
+import {
+  coreIndexableRoutes,
+  plannedLandingRouteSet,
+} from "@/lib/seo-routes";
 import { siteUrl } from "@/lib/utils";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const now = new Date();
-  const staticRoutes = [
-    "/",
-    "/about",
-    "/treatments",
-    "/conditions",
-    "/knowledge",
-    "/before-after",
-    "/reviews",
-    "/contact",
-  ];
+  const staticRoutes = [...coreIndexableRoutes];
 
   const [treatmentParams, conditionParams, articleParams, reviewParams, seoIndex] = await Promise.all([
     getTreatmentStaticParams(),
@@ -54,7 +49,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       ...articleRoutes,
       ...reviewRoutes,
       ...seoRoutes,
-    ].filter(Boolean)),
+    ].filter((route) => Boolean(route) && !plannedLandingRouteSet.has(route))),
   );
 
   return routes.map(

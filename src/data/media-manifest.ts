@@ -64,6 +64,9 @@ type ManifestItem = {
   caseId?: string | null;
   beforeAfterRole?: string | null;
   beforeAfterPairKey?: string | null;
+  replacementAfter?: boolean;
+  replacementTargetSlug?: string | null;
+  replacementExampleNumber?: number | null;
   generated?: Partial<Record<VariantKey, ManifestVariant>>;
   blur?: {
     placeholder?: string;
@@ -82,6 +85,7 @@ type PairImage = {
   id: string;
   role?: string;
   beforeAfterRole?: string;
+  replacementAfter?: boolean;
   altText?: string;
   caption?: string;
   blurDataUrl?: string;
