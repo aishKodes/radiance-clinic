@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import { copyFile, mkdir, readdir, readFile, stat, writeFile } from "node:fs/promises";
+import { copyFile, mkdir, readdir, readFile, stat, unlink, writeFile } from "node:fs/promises";
 import { existsSync } from "node:fs";
 import crypto from "node:crypto";
 import path from "node:path";
@@ -34,6 +34,9 @@ const replacementAfterFolderNames = new Set([
 const replacementTargetAliases = new Map([
   ["female-hair-transplant", "female-pattern-hair-loss"],
   ["receding-hairline-hair-transplant", "receding-hairline"],
+]);
+const excludedBeforeAfterPairKeys = new Set([
+  "hair-transplant-radiance-hair-before-after-04-crown-hair-transplant",
 ]);
 
 const categoryAliases = new Map([
@@ -378,6 +381,16 @@ function isReplacementAfterPath(relativePathParts) {
   );
 }
 
+function isNamedAfterReplacement(stem, relativePathParts) {
+  const normalizedStem = slugify(stem);
+  const pathText = slugify(relativePathParts.slice(0, -1).join("-"));
+
+  return (
+    /^(new-after|replacement-after)-/.test(normalizedStem) &&
+    /hair.*before.*after|before.*after.*hair/.test(pathText)
+  );
+}
+
 function replacementExampleNumber(tokens) {
   const exampleIndex = tokens.findIndex((token) => token === "example");
   if (exampleIndex >= 0 && /^\d+$/.test(tokens[exampleIndex + 1] || "")) {
@@ -394,7 +407,8 @@ function replacementExampleNumber(tokens) {
 }
 
 function parseReplacementAfter(stem, relativePathParts) {
-  if (!isReplacementAfterPath(relativePathParts)) return null;
+  const namedReplacement = isNamedAfterReplacement(stem, relativePathParts);
+  if (!isReplacementAfterPath(relativePathParts) && !namedReplacement) return null;
 
   const tokens = slugify(stem).split("-").filter(Boolean);
   const { phase } = phaseFromTokens(tokens);
@@ -404,7 +418,7 @@ function parseReplacementAfter(stem, relativePathParts) {
   const hasExplicitExample = exampleNumber !== null;
   const view = viewFromTokens(tokens);
   const conditionTokens = tokens.filter((token, index) => {
-    if (/^(before|after|replacement|result|results)$/.test(token)) return false;
+    if (/^(new|before|after|replacement|result|results)$/.test(token)) return false;
     if (/^v\d+$/.test(token) || /^case\d+$/.test(token) || /^example\d+$/.test(token)) {
       return false;
     }
@@ -416,7 +430,9 @@ function parseReplacementAfter(stem, relativePathParts) {
     return true;
   });
   const parsedTarget = conditionTokens.join("-");
-  const targetSlug = replacementTargetAliases.get(parsedTarget) || parsedTarget;
+  const folderTarget = namedReplacement ? folderSubject(relativePathParts) : "";
+  const rawTarget = folderTarget || parsedTarget;
+  const targetSlug = replacementTargetAliases.get(rawTarget) || rawTarget;
   const condition = normalizeCondition(targetSlug);
 
   return {
@@ -1985,6 +2001,7 @@ function buildBeforeAfterPairs(manifest) {
   const replacementReport = applyAfterReplacements(pairMap, replacementItems, warnings);
 
   const pairs = Array.from(pairMap.values())
+    .filter((pair) => !excludedBeforeAfterPairKeys.has(pair.pairKey))
     .map((pair) => {
       const orderedViews = Object.values(pair.views).sort(compareViewGroups);
       const completeViews = [];
@@ -2145,6 +2162,7 @@ function replaceAfterReferences(pair, currentAfter, replacementAfter) {
 function applyAfterReplacements(pairMap, replacementItems, warnings) {
   const replaced = [];
   const unmatched = [];
+  const excluded = [];
 
   for (const replacement of replacementItems) {
     const candidates = findReplacementCandidates(pairMap, replacement);
@@ -2169,6 +2187,15 @@ function applyAfterReplacements(pairMap, replacementItems, warnings) {
     const view = replacement.beforeAfterView || "primary";
     const currentAfter = pair.views[view]?.after;
     const resolution = replacementMeetsViewerResolution(replacement);
+
+    if (excludedBeforeAfterPairKeys.has(pair.pairKey)) {
+      excluded.push({
+        ...reportBase,
+        pairKey: pair.pairKey,
+        reason: "transformation removed after clinic review",
+      });
+      continue;
+    }
 
     if (!currentAfter) {
       const reason = `matched transformation is missing an approved ${viewLabel(view)} after image`;
@@ -2205,7 +2232,7 @@ function applyAfterReplacements(pairMap, replacementItems, warnings) {
     });
   }
 
-  return { replaced, unmatched };
+  return { replaced, unmatched, excluded };
 }
 
 function imageExtensionPriority(image) {
@@ -2277,6 +2304,34 @@ function duplicateWarnings(manifest) {
   return warnings;
 }
 
+async function removeGeneratedItemFiles(item, outRoot) {
+  const generatedPaths = Object.values(item.generated || {})
+    .flatMap((variant) => Object.values(variant || {}))
+    .filter((value) => typeof value === "string");
+  const managedPaths = [
+    ...generatedPaths,
+    item.blur?.imagePath,
+    item.blur?.textPath,
+  ].filter(Boolean);
+
+  for (const relativePath of managedPaths) {
+    try {
+      await unlink(path.join(outRoot, relativePath));
+    } catch (error) {
+      if (!(error && typeof error === "object" && error.code === "ENOENT")) {
+        throw error;
+      }
+    }
+  }
+}
+
+function isExcludedManifestItem(item) {
+  return (
+    excludedBeforeAfterPairKeys.has(item.beforeAfterPairKey) ||
+    (item.replacementAfter && item.replacementTargetSlug === "crown-hair-transplant")
+  );
+}
+
 function printSummary({
   processed,
   skipped,
@@ -2296,6 +2351,7 @@ function printSummary({
   console.log(`Errors: ${errors.length}`);
   console.log(`Replacement after images used: ${replacementReport.replaced.length}`);
   console.log(`Unmatched replacement after images: ${replacementReport.unmatched.length}`);
+  console.log(`Replacement images for excluded transformations: ${replacementReport.excluded.length}`);
 
   if (warnings.length) {
     console.log("");
@@ -2424,7 +2480,21 @@ async function main() {
   }
 
   const beforeAfter = buildBeforeAfterPairs(manifest);
-  warnings.push(...duplicateWarnings(manifest));
+  const supersededIds = new Set(
+    beforeAfter.replacementReport.replaced.map((item) => item.previousAfterId),
+  );
+  const removedManifestItems = manifest.filter(
+    (item) => supersededIds.has(item.id) || isExcludedManifestItem(item),
+  );
+  const deployableManifest = manifest.filter(
+    (item) => !supersededIds.has(item.id) && !isExcludedManifestItem(item),
+  );
+
+  for (const item of removedManifestItems) {
+    await removeGeneratedItemFiles(item, outRoot);
+  }
+
+  warnings.push(...duplicateWarnings(deployableManifest));
   warnings.push(...beforeAfter.warnings);
 
   const manifestPayload = {
@@ -2432,7 +2502,8 @@ async function main() {
     inputRoot,
     outputRoot: outRoot,
     counts: {
-      processed: manifest.length,
+      processed: deployableManifest.length,
+      removedSupersededOrExcluded: removedManifestItems.length,
       skipped,
       warnings: warnings.length,
       errors: errors.length,
@@ -2445,7 +2516,7 @@ async function main() {
       formats: generatedFormats,
       webpQuality: 88,
     })),
-    items: manifest.sort(
+    items: deployableManifest.sort(
       (a, b) => a.sortOrder - b.sortOrder || a.category.localeCompare(b.category) || a.id.localeCompare(b.id),
     ),
     replacementAfterReport: beforeAfter.replacementReport,
@@ -2464,7 +2535,7 @@ async function main() {
   await writeFile(path.join(outRoot, "before-after-pairs.json"), `${JSON.stringify(beforeAfterPayload, null, 2)}\n`);
 
   printSummary({
-    processed: manifest.length,
+    processed: deployableManifest.length,
     skipped,
     warnings,
     errors,

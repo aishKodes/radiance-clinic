@@ -1,9 +1,10 @@
 {
-  "generatedAt": "2026-08-04T10:03:12.306Z",
+  "generatedAt": "2026-08-04T10:44:18.212Z",
   "inputRoot": "/Users/aishwaryam/Desktop/radiance-work/radiance-clinics/radiance-media-raw",
   "outputRoot": "/Users/aishwaryam/Desktop/radiance-work/radiance-clinics/public/radiance-media-processed",
   "counts": {
-    "processed": 172,
+    "processed": 165,
+    "removedSupersededOrExcluded": 8,
     "skipped": 0,
     "warnings": 167,
     "errors": 0
@@ -8814,106 +8815,6 @@
       ]
     },
     {
-      "id": "radiance-ba-advanced-male-pattern-baldness-advanced-male-pattern-baldness-radiance-additional-hair-before-after-04-advanced-male-pattern-bal",
-      "filename": "after_advanced_male_pattern_baldness.webp",
-      "originalFilename": "after_advanced_male_pattern_baldness.webp",
-      "originalRelativePath": "",
-      "rawRelativePath": "radiance-additional-hair-before-after/04-advanced-male-pattern-baldness/after_advanced_male_pattern_baldness.webp",
-      "category": "hair-before-after",
-      "detectedType": "hair_before_after",
-      "type": "hair_before_after",
-      "mediaClassification": "hair_before_after",
-      "transformationCategory": "hair",
-      "subject": "advanced-male-pattern-baldness",
-      "conditionName": "Advanced Male Pattern Baldness",
-      "publicTitle": "Hair Fall Improvement",
-      "treatment": "Hair Transplant",
-      "usage": "after",
-      "role": "after",
-      "title": "Advanced Male Pattern Baldness",
-      "altText": "Hair transplant improvement example showing restored hair density after treatment at Radiance Clinics Bhubaneswar",
-      "alt_text": "Hair transplant improvement example showing restored hair density after treatment at Radiance Clinics Bhubaneswar",
-      "caption": "",
-      "displayMode": "cover",
-      "contentHash": "d989c876e630c9dc8defa999fcdbe401b5d7d5ad",
-      "normalizedBasename": "after-advanced-male-pattern-baldness",
-      "focalPointX": 0.5,
-      "focalPointY": 0.5,
-      "focal_point_x": 0.5,
-      "focal_point_y": 0.5,
-      "sortOrder": 0,
-      "sort_order": 0,
-      "featured": false,
-      "publish": true,
-      "consentConfirmed": true,
-      "consent_confirmed": true,
-      "timeGap": "",
-      "disclaimer": "",
-      "desktop_url": "hero-desktop/radiance-ba-advanced-male-pattern-baldness-advanced-male-pattern-baldness-radiance-additional-hair-before-after-04-advanced-male-pattern-bal.webp",
-      "mobile_url": "hero-mobile/radiance-ba-advanced-male-pattern-baldness-advanced-male-pattern-baldness-radiance-additional-hair-before-after-04-advanced-male-pattern-bal.webp",
-      "thumb_url": "thumb/radiance-ba-advanced-male-pattern-baldness-advanced-male-pattern-baldness-radiance-additional-hair-before-after-04-advanced-male-pattern-bal.webp",
-      "blur_data_url": "data:image/jpeg;base64,/9j/2wBDABISEhITEhQWFhQcHhseHCkmIiImKT4sMCwwLD5eO0U7O0U7XlNlUk1SZVOWdmhodpatkYqRrdK8vNL/+///////2wBDARISEhITEhQWFhQcHhseHCkmIiImKT4sMCwwLD5eO0U7O0U7XlNlUk1SZVOWdmhodpatkYqRrdK8vNL/+///////wgARCAAYABgDASIAAhEBAxEB/8QAGAABAQEBAQAAAAAAAAAAAAAAAAUEAwb/xAAUAQEAAAAAAAAAAAAAAAAAAAAD/9oADAMBAAIQAxAAAACz5+3lJtzkQps8Jq4Yf//EACYQAAEDAgUDBQAAAAAAAAAAAAECBBIAAwURExQxISJhIzNBUcH/2gAIAQEAAT8AfOto3NwJkomKR5NJvYyTqyV+Uyd7uxOMVBRSoeRWIInat5nom6k16sdHcIlnnwOKw9GnZX9KuqVTnFmt/NujMz7Z8CtB2TDJA6+5802xNoDt1GBR2+K//8QAGhEBAQACAwAAAAAAAAAAAAAAAQACAxEhMf/aAAgBAgEBPwDZm4vBHYW1RI8L/8QAGREBAAMBAQAAAAAAAAAAAAAAAQACAxEx/9oACAEDAQE/AM6FjrE4sxqIx9Z//9k=",
-      "sequence": null,
-      "sequenceNumber": null,
-      "caseId": null,
-      "beforeAfterRole": "after",
-      "beforeAfterView": "primary",
-      "beforeAfterViewLabel": "Front View",
-      "beforeAfterPhase": "after",
-      "beforeAfterPairKey": "advanced-male-pattern-baldness-radiance-additional-hair-before-after-04-advanced-male-pattern-baldness",
-      "replacementAfter": false,
-      "replacementTargetSlug": null,
-      "replacementExampleNumber": null,
-      "width": 1200,
-      "height": 1500,
-      "original": {
-        "path": "",
-        "width": 1200,
-        "height": 1500,
-        "format": "webp",
-        "sizeBytes": 234710
-      },
-      "generated": {
-        "heroDesktop": {
-          "webp": "hero-desktop/radiance-ba-advanced-male-pattern-baldness-advanced-male-pattern-baldness-radiance-additional-hair-before-after-04-advanced-male-pattern-bal.webp",
-          "width": 2400,
-          "height": 1400
-        },
-        "heroMobile": {
-          "webp": "hero-mobile/radiance-ba-advanced-male-pattern-baldness-advanced-male-pattern-baldness-radiance-additional-hair-before-after-04-advanced-male-pattern-bal.webp",
-          "width": 1200,
-          "height": 1500
-        },
-        "landscape": {
-          "webp": "landscape/radiance-ba-advanced-male-pattern-baldness-advanced-male-pattern-baldness-radiance-additional-hair-before-after-04-advanced-male-pattern-bal.webp",
-          "width": 1200,
-          "height": 800
-        },
-        "portrait": {
-          "webp": "portrait/radiance-ba-advanced-male-pattern-baldness-advanced-male-pattern-baldness-radiance-additional-hair-before-after-04-advanced-male-pattern-bal.webp",
-          "width": 900,
-          "height": 1200
-        },
-        "square": {
-          "webp": "square/radiance-ba-advanced-male-pattern-baldness-advanced-male-pattern-baldness-radiance-additional-hair-before-after-04-advanced-male-pattern-bal.webp",
-          "width": 1000,
-          "height": 1000
-        },
-        "thumb": {
-          "webp": "thumb/radiance-ba-advanced-male-pattern-baldness-advanced-male-pattern-baldness-radiance-additional-hair-before-after-04-advanced-male-pattern-bal.webp",
-          "width": 500,
-          "height": 500
-        }
-      },
-      "blur": {
-        "placeholder": "data:image/jpeg;base64,/9j/2wBDABISEhITEhQWFhQcHhseHCkmIiImKT4sMCwwLD5eO0U7O0U7XlNlUk1SZVOWdmhodpatkYqRrdK8vNL/+///////2wBDARISEhITEhQWFhQcHhseHCkmIiImKT4sMCwwLD5eO0U7O0U7XlNlUk1SZVOWdmhodpatkYqRrdK8vNL/+///////wgARCAAYABgDASIAAhEBAxEB/8QAGAABAQEBAQAAAAAAAAAAAAAAAAUEAwb/xAAUAQEAAAAAAAAAAAAAAAAAAAAD/9oADAMBAAIQAxAAAACz5+3lJtzkQps8Jq4Yf//EACYQAAEDAgUDBQAAAAAAAAAAAAECBBIAAwURExQxISJhIzNBUcH/2gAIAQEAAT8AfOto3NwJkomKR5NJvYyTqyV+Uyd7uxOMVBRSoeRWIInat5nom6k16sdHcIlnnwOKw9GnZX9KuqVTnFmt/NujMz7Z8CtB2TDJA6+5802xNoDt1GBR2+K//8QAGhEBAQACAwAAAAAAAAAAAAAAAQACAxEhMf/aAAgBAgEBPwDZm4vBHYW1RI8L/8QAGREBAAMBAQAAAAAAAAAAAAAAAQACAxEx/9oACAEDAQE/AM6FjrE4sxqIx9Z//9k=",
-        "imagePath": "blur/radiance-ba-advanced-male-pattern-baldness-advanced-male-pattern-baldness-radiance-additional-hair-before-after-04-advanced-male-pattern-bal.jpg",
-        "textPath": "blur/radiance-ba-advanced-male-pattern-baldness-advanced-male-pattern-baldness-radiance-additional-hair-before-after-04-advanced-male-pattern-bal.txt"
-      },
-      "recommendedWebsiteUsage": "Hair Transformation Examples for advanced male pattern baldness",
-      "warnings": []
-    },
-    {
       "id": "radiance-ba-advanced-male-pattern-baldness-advanced-male-pattern-baldness-radiance-additional-hair-before-after-04-advanced-male-pattern-bal-09045bcc",
       "filename": "before_advanced_male_pattern_baldness.webp",
       "originalFilename": "before_advanced_male_pattern_baldness.webp",
@@ -9011,106 +8912,6 @@
         "textPath": "blur/radiance-ba-advanced-male-pattern-baldness-advanced-male-pattern-baldness-radiance-additional-hair-before-after-04-advanced-male-pattern-bal-09045bcc.txt"
       },
       "recommendedWebsiteUsage": "Hair Transformation Examples for advanced male pattern baldness",
-      "warnings": []
-    },
-    {
-      "id": "radiance-ba-beard-transplant-beard-transplant-radiance-hair-before-after-01-beard-transplant-after",
-      "filename": "after_beard_transplant.webp",
-      "originalFilename": "after_beard_transplant.webp",
-      "originalRelativePath": "",
-      "rawRelativePath": "radiance-hair-before-after/01-beard-transplant/after_beard_transplant.webp",
-      "category": "hair-before-after",
-      "detectedType": "hair_before_after",
-      "type": "hair_before_after",
-      "mediaClassification": "hair_before_after",
-      "transformationCategory": "hair",
-      "subject": "beard-transplant",
-      "conditionName": "Beard Transplant",
-      "publicTitle": "Hair Transplant Transformation",
-      "treatment": "Hair Transplant",
-      "usage": "after",
-      "role": "after",
-      "title": "Beard Transplant",
-      "altText": "Hair transplant improvement example showing restored hair density after treatment at Radiance Clinics Bhubaneswar",
-      "alt_text": "Hair transplant improvement example showing restored hair density after treatment at Radiance Clinics Bhubaneswar",
-      "caption": "",
-      "displayMode": "cover",
-      "contentHash": "1cb73730769a9c53ef7c1537e6eb1df46617b150",
-      "normalizedBasename": "after-beard-transplant",
-      "focalPointX": 0.5,
-      "focalPointY": 0.5,
-      "focal_point_x": 0.5,
-      "focal_point_y": 0.5,
-      "sortOrder": 0,
-      "sort_order": 0,
-      "featured": false,
-      "publish": true,
-      "consentConfirmed": true,
-      "consent_confirmed": true,
-      "timeGap": "",
-      "disclaimer": "",
-      "desktop_url": "hero-desktop/radiance-ba-beard-transplant-beard-transplant-radiance-hair-before-after-01-beard-transplant-after.webp",
-      "mobile_url": "hero-mobile/radiance-ba-beard-transplant-beard-transplant-radiance-hair-before-after-01-beard-transplant-after.webp",
-      "thumb_url": "thumb/radiance-ba-beard-transplant-beard-transplant-radiance-hair-before-after-01-beard-transplant-after.webp",
-      "blur_data_url": "data:image/jpeg;base64,/9j/2wBDABISEhITEhQWFhQcHhseHCkmIiImKT4sMCwwLD5eO0U7O0U7XlNlUk1SZVOWdmhodpatkYqRrdK8vNL/+///////2wBDARISEhITEhQWFhQcHhseHCkmIiImKT4sMCwwLD5eO0U7O0U7XlNlUk1SZVOWdmhodpatkYqRrdK8vNL/+///////wgARCAAYABgDASIAAhEBAxEB/8QAGAABAQEBAQAAAAAAAAAAAAAAAAUEAgP/xAAUAQEAAAAAAAAAAAAAAAAAAAAD/9oADAMBAAIQAxAAAAB41pgv2oFKDpCXEGH/xAAjEAABBAIABgMAAAAAAAAAAAABAgMREgAEBRUhMTJBI3GB/9oACAEBAAE/AOMJW41roHiXeuDW0AzNEn1nB0FobaB4BwVzYRdmQJKTbC8L9GhSf37zVTDVoi5nOdF55KB8bR94dFN7XVTvE9M5y4y8tAhxkds//8QAGREAAgMBAAAAAAAAAAAAAAAAAAEDETEh/9oACAECAQE/AJLsWIl40LEf/8QAGhEBAQACAwAAAAAAAAAAAAAAAQADIQIRMf/aAAgBAwEBPwDEHTcvWxbGXbf/2Q==",
-      "sequence": null,
-      "sequenceNumber": null,
-      "caseId": null,
-      "beforeAfterRole": "after",
-      "beforeAfterView": "primary",
-      "beforeAfterViewLabel": "Front View",
-      "beforeAfterPhase": "after",
-      "beforeAfterPairKey": "beard-transplant-radiance-hair-before-after-01-beard-transplant",
-      "replacementAfter": false,
-      "replacementTargetSlug": null,
-      "replacementExampleNumber": null,
-      "width": 1200,
-      "height": 1500,
-      "original": {
-        "path": "",
-        "width": 1200,
-        "height": 1500,
-        "format": "webp",
-        "sizeBytes": 238184
-      },
-      "generated": {
-        "heroDesktop": {
-          "webp": "hero-desktop/radiance-ba-beard-transplant-beard-transplant-radiance-hair-before-after-01-beard-transplant-after.webp",
-          "width": 2400,
-          "height": 1400
-        },
-        "heroMobile": {
-          "webp": "hero-mobile/radiance-ba-beard-transplant-beard-transplant-radiance-hair-before-after-01-beard-transplant-after.webp",
-          "width": 1200,
-          "height": 1500
-        },
-        "landscape": {
-          "webp": "landscape/radiance-ba-beard-transplant-beard-transplant-radiance-hair-before-after-01-beard-transplant-after.webp",
-          "width": 1200,
-          "height": 800
-        },
-        "portrait": {
-          "webp": "portrait/radiance-ba-beard-transplant-beard-transplant-radiance-hair-before-after-01-beard-transplant-after.webp",
-          "width": 900,
-          "height": 1200
-        },
-        "square": {
-          "webp": "square/radiance-ba-beard-transplant-beard-transplant-radiance-hair-before-after-01-beard-transplant-after.webp",
-          "width": 1000,
-          "height": 1000
-        },
-        "thumb": {
-          "webp": "thumb/radiance-ba-beard-transplant-beard-transplant-radiance-hair-before-after-01-beard-transplant-after.webp",
-          "width": 500,
-          "height": 500
-        }
-      },
-      "blur": {
-        "placeholder": "data:image/jpeg;base64,/9j/2wBDABISEhITEhQWFhQcHhseHCkmIiImKT4sMCwwLD5eO0U7O0U7XlNlUk1SZVOWdmhodpatkYqRrdK8vNL/+///////2wBDARISEhITEhQWFhQcHhseHCkmIiImKT4sMCwwLD5eO0U7O0U7XlNlUk1SZVOWdmhodpatkYqRrdK8vNL/+///////wgARCAAYABgDASIAAhEBAxEB/8QAGAABAQEBAQAAAAAAAAAAAAAAAAUEAgP/xAAUAQEAAAAAAAAAAAAAAAAAAAAD/9oADAMBAAIQAxAAAAB41pgv2oFKDpCXEGH/xAAjEAABBAIABgMAAAAAAAAAAAABAgMREgAEBRUhMTJBI3GB/9oACAEBAAE/AOMJW41roHiXeuDW0AzNEn1nB0FobaB4BwVzYRdmQJKTbC8L9GhSf37zVTDVoi5nOdF55KB8bR94dFN7XVTvE9M5y4y8tAhxkds//8QAGREAAgMBAAAAAAAAAAAAAAAAAAEDETEh/9oACAECAQE/AJLsWIl40LEf/8QAGhEBAQACAwAAAAAAAAAAAAAAAQADIQIRMf/aAAgBAwEBPwDEHTcvWxbGXbf/2Q==",
-        "imagePath": "blur/radiance-ba-beard-transplant-beard-transplant-radiance-hair-before-after-01-beard-transplant-after.jpg",
-        "textPath": "blur/radiance-ba-beard-transplant-beard-transplant-radiance-hair-before-after-01-beard-transplant-after.txt"
-      },
-      "recommendedWebsiteUsage": "Hair Transformation Examples for beard transplant",
       "warnings": []
     },
     {
@@ -9414,106 +9215,6 @@
       "warnings": []
     },
     {
-      "id": "radiance-ba-female-pattern-hair-loss-female-pattern-hair-loss-radiance-hair-before-after-03-female-pattern-hair-loss-after",
-      "filename": "after_female_pattern_hair_loss.webp",
-      "originalFilename": "after_female_pattern_hair_loss.webp",
-      "originalRelativePath": "",
-      "rawRelativePath": "radiance-hair-before-after/03-female-pattern-hair-loss/after_female_pattern_hair_loss.webp",
-      "category": "hair-before-after",
-      "detectedType": "hair_before_after",
-      "type": "hair_before_after",
-      "mediaClassification": "hair_before_after",
-      "transformationCategory": "hair",
-      "subject": "female-pattern-hair-loss",
-      "conditionName": "Female Pattern Hair Loss",
-      "publicTitle": "Hair Fall Improvement",
-      "treatment": "Hair Restoration",
-      "usage": "after",
-      "role": "after",
-      "title": "Female Pattern Hair Loss",
-      "altText": "Hair transplant improvement example showing restored hair density after treatment at Radiance Clinics Bhubaneswar",
-      "alt_text": "Hair transplant improvement example showing restored hair density after treatment at Radiance Clinics Bhubaneswar",
-      "caption": "",
-      "displayMode": "cover",
-      "contentHash": "8e85d723ccd4f03ffc16d2f32d5442a71d4cb5b7",
-      "normalizedBasename": "after-female-pattern-hair-loss",
-      "focalPointX": 0.5,
-      "focalPointY": 0.5,
-      "focal_point_x": 0.5,
-      "focal_point_y": 0.5,
-      "sortOrder": 0,
-      "sort_order": 0,
-      "featured": false,
-      "publish": true,
-      "consentConfirmed": true,
-      "consent_confirmed": true,
-      "timeGap": "",
-      "disclaimer": "",
-      "desktop_url": "hero-desktop/radiance-ba-female-pattern-hair-loss-female-pattern-hair-loss-radiance-hair-before-after-03-female-pattern-hair-loss-after.webp",
-      "mobile_url": "hero-mobile/radiance-ba-female-pattern-hair-loss-female-pattern-hair-loss-radiance-hair-before-after-03-female-pattern-hair-loss-after.webp",
-      "thumb_url": "thumb/radiance-ba-female-pattern-hair-loss-female-pattern-hair-loss-radiance-hair-before-after-03-female-pattern-hair-loss-after.webp",
-      "blur_data_url": "data:image/jpeg;base64,/9j/2wBDABISEhITEhQWFhQcHhseHCkmIiImKT4sMCwwLD5eO0U7O0U7XlNlUk1SZVOWdmhodpatkYqRrdK8vNL/+///////2wBDARISEhITEhQWFhQcHhseHCkmIiImKT4sMCwwLD5eO0U7O0U7XlNlUk1SZVOWdmhodpatkYqRrdK8vNL/+///////wgARCAAYABgDASIAAhEBAxEB/8QAFwABAQEBAAAAAAAAAAAAAAAAAAUDBv/EABQBAQAAAAAAAAAAAAAAAAAAAAP/2gAMAwEAAhADEAAAANofQibBoQolYF5wYf/EACIQAAIBBAEEAwAAAAAAAAAAAAECBAADERIFExQhUTFBYf/aAAgBAQABPwDlJLx4jFDh2IUGjxknt+ofW37XESXvxMOcsja1KtLdVM/COGrRdAncPnOdqjotprxU+HfNDlJF68iEqiM2DijYvDwB49/dXJ7xZDWjh1Wv/8QAGxEBAAICAwAAAAAAAAAAAAAAAQACAxExMnH/2gAIAQIBAT8AyXaoEHYMzckr1PJ//8QAGxEBAAICAwAAAAAAAAAAAAAAAQACAxExMnH/2gAIAQMBAT8Ax0LCsTSkwcWluz7P/9k=",
-      "sequence": null,
-      "sequenceNumber": null,
-      "caseId": null,
-      "beforeAfterRole": "after",
-      "beforeAfterView": "primary",
-      "beforeAfterViewLabel": "Front View",
-      "beforeAfterPhase": "after",
-      "beforeAfterPairKey": "female-pattern-hair-loss-radiance-hair-before-after-03-female-pattern-hair-loss",
-      "replacementAfter": false,
-      "replacementTargetSlug": null,
-      "replacementExampleNumber": null,
-      "width": 1200,
-      "height": 1500,
-      "original": {
-        "path": "",
-        "width": 1200,
-        "height": 1500,
-        "format": "webp",
-        "sizeBytes": 165968
-      },
-      "generated": {
-        "heroDesktop": {
-          "webp": "hero-desktop/radiance-ba-female-pattern-hair-loss-female-pattern-hair-loss-radiance-hair-before-after-03-female-pattern-hair-loss-after.webp",
-          "width": 2400,
-          "height": 1400
-        },
-        "heroMobile": {
-          "webp": "hero-mobile/radiance-ba-female-pattern-hair-loss-female-pattern-hair-loss-radiance-hair-before-after-03-female-pattern-hair-loss-after.webp",
-          "width": 1200,
-          "height": 1500
-        },
-        "landscape": {
-          "webp": "landscape/radiance-ba-female-pattern-hair-loss-female-pattern-hair-loss-radiance-hair-before-after-03-female-pattern-hair-loss-after.webp",
-          "width": 1200,
-          "height": 800
-        },
-        "portrait": {
-          "webp": "portrait/radiance-ba-female-pattern-hair-loss-female-pattern-hair-loss-radiance-hair-before-after-03-female-pattern-hair-loss-after.webp",
-          "width": 900,
-          "height": 1200
-        },
-        "square": {
-          "webp": "square/radiance-ba-female-pattern-hair-loss-female-pattern-hair-loss-radiance-hair-before-after-03-female-pattern-hair-loss-after.webp",
-          "width": 1000,
-          "height": 1000
-        },
-        "thumb": {
-          "webp": "thumb/radiance-ba-female-pattern-hair-loss-female-pattern-hair-loss-radiance-hair-before-after-03-female-pattern-hair-loss-after.webp",
-          "width": 500,
-          "height": 500
-        }
-      },
-      "blur": {
-        "placeholder": "data:image/jpeg;base64,/9j/2wBDABISEhITEhQWFhQcHhseHCkmIiImKT4sMCwwLD5eO0U7O0U7XlNlUk1SZVOWdmhodpatkYqRrdK8vNL/+///////2wBDARISEhITEhQWFhQcHhseHCkmIiImKT4sMCwwLD5eO0U7O0U7XlNlUk1SZVOWdmhodpatkYqRrdK8vNL/+///////wgARCAAYABgDASIAAhEBAxEB/8QAFwABAQEBAAAAAAAAAAAAAAAAAAUDBv/EABQBAQAAAAAAAAAAAAAAAAAAAAP/2gAMAwEAAhADEAAAANofQibBoQolYF5wYf/EACIQAAIBBAEEAwAAAAAAAAAAAAECBAADERIFExQhUTFBYf/aAAgBAQABPwDlJLx4jFDh2IUGjxknt+ofW37XESXvxMOcsja1KtLdVM/COGrRdAncPnOdqjotprxU+HfNDlJF68iEqiM2DijYvDwB49/dXJ7xZDWjh1Wv/8QAGxEBAAICAwAAAAAAAAAAAAAAAQACAxExMnH/2gAIAQIBAT8AyXaoEHYMzckr1PJ//8QAGxEBAAICAwAAAAAAAAAAAAAAAQACAxExMnH/2gAIAQMBAT8Ax0LCsTSkwcWluz7P/9k=",
-        "imagePath": "blur/radiance-ba-female-pattern-hair-loss-female-pattern-hair-loss-radiance-hair-before-after-03-female-pattern-hair-loss-after.jpg",
-        "textPath": "blur/radiance-ba-female-pattern-hair-loss-female-pattern-hair-loss-radiance-hair-before-after-03-female-pattern-hair-loss-after.txt"
-      },
-      "recommendedWebsiteUsage": "Hair Transformation Examples for female pattern hair loss",
-      "warnings": []
-    },
-    {
       "id": "radiance-ba-female-pattern-hair-loss-female-pattern-hair-loss-radiance-hair-before-after-03-female-pattern-hair-loss-before",
       "filename": "before_female_pattern_hair_loss.webp",
       "originalFilename": "before_female_pattern_hair_loss.webp",
@@ -9811,306 +9512,6 @@
         "textPath": "blur/radiance-ba-female-widening-part-female-widening-part-radiance-additional-hair-before-after-05-female-widening-part-before.txt"
       },
       "recommendedWebsiteUsage": "Hair Transformation Examples for female widening part",
-      "warnings": []
-    },
-    {
-      "id": "radiance-ba-hair-transplant-hair-transplant-radiance-hair-before-after-04-crown-hair-transplant-crown-after",
-      "filename": "after_crown_hair_transplant.webp",
-      "originalFilename": "after_crown_hair_transplant.webp",
-      "originalRelativePath": "",
-      "rawRelativePath": "radiance-hair-before-after/04-crown-hair-transplant/after_crown_hair_transplant.webp",
-      "category": "hair-before-after",
-      "detectedType": "hair_before_after",
-      "type": "hair_before_after",
-      "mediaClassification": "hair_before_after",
-      "transformationCategory": "hair",
-      "subject": "hair-transplant",
-      "conditionName": "Hair Transplant",
-      "publicTitle": "Hair Transplant Transformation",
-      "treatment": "Hair Transplant",
-      "usage": "crown-after",
-      "role": "crown-after",
-      "title": "Crown Hair Transplant",
-      "altText": "Hair transplant improvement example showing restored hair density after treatment at Radiance Clinics Bhubaneswar",
-      "alt_text": "Hair transplant improvement example showing restored hair density after treatment at Radiance Clinics Bhubaneswar",
-      "caption": "",
-      "displayMode": "cover",
-      "contentHash": "dcdae10805ebb0384dec85c3184ce4326437c84e",
-      "normalizedBasename": "after-crown-hair-transplant",
-      "focalPointX": 0.5,
-      "focalPointY": 0.5,
-      "focal_point_x": 0.5,
-      "focal_point_y": 0.5,
-      "sortOrder": 0,
-      "sort_order": 0,
-      "featured": false,
-      "publish": true,
-      "consentConfirmed": true,
-      "consent_confirmed": true,
-      "timeGap": "",
-      "disclaimer": "",
-      "desktop_url": "hero-desktop/radiance-ba-hair-transplant-hair-transplant-radiance-hair-before-after-04-crown-hair-transplant-crown-after.webp",
-      "mobile_url": "hero-mobile/radiance-ba-hair-transplant-hair-transplant-radiance-hair-before-after-04-crown-hair-transplant-crown-after.webp",
-      "thumb_url": "thumb/radiance-ba-hair-transplant-hair-transplant-radiance-hair-before-after-04-crown-hair-transplant-crown-after.webp",
-      "blur_data_url": "data:image/jpeg;base64,/9j/2wBDABISEhITEhQWFhQcHhseHCkmIiImKT4sMCwwLD5eO0U7O0U7XlNlUk1SZVOWdmhodpatkYqRrdK8vNL/+///////2wBDARISEhITEhQWFhQcHhseHCkmIiImKT4sMCwwLD5eO0U7O0U7XlNlUk1SZVOWdmhodpatkYqRrdK8vNL/+///////wgARCAAYABgDASIAAhEBAxEB/8QAFwABAQEBAAAAAAAAAAAAAAAAAAUEBv/EABUBAQEAAAAAAAAAAAAAAAAAAAEA/9oADAMBAAIQAxAAAABzNuMNplNHshRAn//EACIQAAICAQMEAwAAAAAAAAAAAAECAAMRBAUSEyFBUTEzgf/aAAgBAQABPwDe7WWumsHs3In8h+DNkvbNtPgDkJuGpo1r1U0kl1Y4aOrKeJQhvU26+nRWWJflXfEDEMGBwR3EO75o+s9b34jMzsWY5Jn/xAAXEQEBAQEAAAAAAAAAAAAAAAABEAIx/9oACAECAQE/AGOR7P/EABcRAAMBAAAAAAAAAAAAAAAAAAECEDH/2gAIAQMBAT8AgYrk/9k=",
-      "sequence": null,
-      "sequenceNumber": null,
-      "caseId": null,
-      "beforeAfterRole": "crownAfter",
-      "beforeAfterView": "crown",
-      "beforeAfterViewLabel": "Crown View",
-      "beforeAfterPhase": "after",
-      "beforeAfterPairKey": "hair-transplant-radiance-hair-before-after-04-crown-hair-transplant",
-      "replacementAfter": false,
-      "replacementTargetSlug": null,
-      "replacementExampleNumber": null,
-      "width": 1200,
-      "height": 1500,
-      "original": {
-        "path": "",
-        "width": 1200,
-        "height": 1500,
-        "format": "webp",
-        "sizeBytes": 208116
-      },
-      "generated": {
-        "heroDesktop": {
-          "webp": "hero-desktop/radiance-ba-hair-transplant-hair-transplant-radiance-hair-before-after-04-crown-hair-transplant-crown-after.webp",
-          "width": 2400,
-          "height": 1400
-        },
-        "heroMobile": {
-          "webp": "hero-mobile/radiance-ba-hair-transplant-hair-transplant-radiance-hair-before-after-04-crown-hair-transplant-crown-after.webp",
-          "width": 1200,
-          "height": 1500
-        },
-        "landscape": {
-          "webp": "landscape/radiance-ba-hair-transplant-hair-transplant-radiance-hair-before-after-04-crown-hair-transplant-crown-after.webp",
-          "width": 1200,
-          "height": 800
-        },
-        "portrait": {
-          "webp": "portrait/radiance-ba-hair-transplant-hair-transplant-radiance-hair-before-after-04-crown-hair-transplant-crown-after.webp",
-          "width": 900,
-          "height": 1200
-        },
-        "square": {
-          "webp": "square/radiance-ba-hair-transplant-hair-transplant-radiance-hair-before-after-04-crown-hair-transplant-crown-after.webp",
-          "width": 1000,
-          "height": 1000
-        },
-        "thumb": {
-          "webp": "thumb/radiance-ba-hair-transplant-hair-transplant-radiance-hair-before-after-04-crown-hair-transplant-crown-after.webp",
-          "width": 500,
-          "height": 500
-        }
-      },
-      "blur": {
-        "placeholder": "data:image/jpeg;base64,/9j/2wBDABISEhITEhQWFhQcHhseHCkmIiImKT4sMCwwLD5eO0U7O0U7XlNlUk1SZVOWdmhodpatkYqRrdK8vNL/+///////2wBDARISEhITEhQWFhQcHhseHCkmIiImKT4sMCwwLD5eO0U7O0U7XlNlUk1SZVOWdmhodpatkYqRrdK8vNL/+///////wgARCAAYABgDASIAAhEBAxEB/8QAFwABAQEBAAAAAAAAAAAAAAAAAAUEBv/EABUBAQEAAAAAAAAAAAAAAAAAAAEA/9oADAMBAAIQAxAAAABzNuMNplNHshRAn//EACIQAAICAQMEAwAAAAAAAAAAAAECAAMRBAUSEyFBUTEzgf/aAAgBAQABPwDe7WWumsHs3In8h+DNkvbNtPgDkJuGpo1r1U0kl1Y4aOrKeJQhvU26+nRWWJflXfEDEMGBwR3EO75o+s9b34jMzsWY5Jn/xAAXEQEBAQEAAAAAAAAAAAAAAAABEAIx/9oACAECAQE/AGOR7P/EABcRAAMBAAAAAAAAAAAAAAAAAAECEDH/2gAIAQMBAT8AgYrk/9k=",
-        "imagePath": "blur/radiance-ba-hair-transplant-hair-transplant-radiance-hair-before-after-04-crown-hair-transplant-crown-after.jpg",
-        "textPath": "blur/radiance-ba-hair-transplant-hair-transplant-radiance-hair-before-after-04-crown-hair-transplant-crown-after.txt"
-      },
-      "recommendedWebsiteUsage": "Hair Transformation Examples for hair transplant",
-      "warnings": []
-    },
-    {
-      "id": "radiance-ba-hair-transplant-hair-transplant-radiance-hair-before-after-04-crown-hair-transplant-crown-before",
-      "filename": "before_crown_hair_transplant.webp",
-      "originalFilename": "before_crown_hair_transplant.webp",
-      "originalRelativePath": "",
-      "rawRelativePath": "radiance-hair-before-after/04-crown-hair-transplant/before_crown_hair_transplant.webp",
-      "category": "hair-before-after",
-      "detectedType": "hair_before_after",
-      "type": "hair_before_after",
-      "mediaClassification": "hair_before_after",
-      "transformationCategory": "hair",
-      "subject": "hair-transplant",
-      "conditionName": "Hair Transplant",
-      "publicTitle": "Hair Transplant Transformation",
-      "treatment": "Hair Transplant",
-      "usage": "crown-before",
-      "role": "crown-before",
-      "title": "Crown Hair Transplant",
-      "altText": "Hair transplant example before treatment at Radiance Clinics Bhubaneswar",
-      "alt_text": "Hair transplant example before treatment at Radiance Clinics Bhubaneswar",
-      "caption": "",
-      "displayMode": "cover",
-      "contentHash": "02886443957d1215b06ac0fd70d8700749daf844",
-      "normalizedBasename": "before-crown-hair-transplant",
-      "focalPointX": 0.5,
-      "focalPointY": 0.5,
-      "focal_point_x": 0.5,
-      "focal_point_y": 0.5,
-      "sortOrder": 0,
-      "sort_order": 0,
-      "featured": false,
-      "publish": true,
-      "consentConfirmed": true,
-      "consent_confirmed": true,
-      "timeGap": "",
-      "disclaimer": "",
-      "desktop_url": "hero-desktop/radiance-ba-hair-transplant-hair-transplant-radiance-hair-before-after-04-crown-hair-transplant-crown-before.webp",
-      "mobile_url": "hero-mobile/radiance-ba-hair-transplant-hair-transplant-radiance-hair-before-after-04-crown-hair-transplant-crown-before.webp",
-      "thumb_url": "thumb/radiance-ba-hair-transplant-hair-transplant-radiance-hair-before-after-04-crown-hair-transplant-crown-before.webp",
-      "blur_data_url": "data:image/jpeg;base64,/9j/2wBDABISEhITEhQWFhQcHhseHCkmIiImKT4sMCwwLD5eO0U7O0U7XlNlUk1SZVOWdmhodpatkYqRrdK8vNL/+///////2wBDARISEhITEhQWFhQcHhseHCkmIiImKT4sMCwwLD5eO0U7O0U7XlNlUk1SZVOWdmhodpatkYqRrdK8vNL/+///////wgARCAAYABgDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAUE/8QAFQEBAQAAAAAAAAAAAAAAAAAAAQL/2gAMAwEAAhADEAAAAEjbOmqrEqY9gGKE/8QAIBAAAgIBBAMBAAAAAAAAAAAAAQIDEQAEBRMhEjFBQv/aAAgBAQABPwDeZSFgj/LFicPGYz1X0Zs07Hlh+L2ubjqYNY0cMRJdWNHJHCr4eJDVVZt2oh0byJNas9YGIYMpoj1h3a4KKHlxmZ3ZmPZz/8QAFxEAAwEAAAAAAAAAAAAAAAAAAQIQMf/aAAgBAgEBPwBoVB2f/8QAFxEAAwEAAAAAAAAAAAAAAAAAAQIQMf/aAAgBAwEBPwBYGK5P/9k=",
-      "sequence": null,
-      "sequenceNumber": null,
-      "caseId": null,
-      "beforeAfterRole": "crownBefore",
-      "beforeAfterView": "crown",
-      "beforeAfterViewLabel": "Crown View",
-      "beforeAfterPhase": "before",
-      "beforeAfterPairKey": "hair-transplant-radiance-hair-before-after-04-crown-hair-transplant",
-      "replacementAfter": false,
-      "replacementTargetSlug": null,
-      "replacementExampleNumber": null,
-      "width": 1200,
-      "height": 1500,
-      "original": {
-        "path": "",
-        "width": 1200,
-        "height": 1500,
-        "format": "webp",
-        "sizeBytes": 258928
-      },
-      "generated": {
-        "heroDesktop": {
-          "webp": "hero-desktop/radiance-ba-hair-transplant-hair-transplant-radiance-hair-before-after-04-crown-hair-transplant-crown-before.webp",
-          "width": 2400,
-          "height": 1400
-        },
-        "heroMobile": {
-          "webp": "hero-mobile/radiance-ba-hair-transplant-hair-transplant-radiance-hair-before-after-04-crown-hair-transplant-crown-before.webp",
-          "width": 1200,
-          "height": 1500
-        },
-        "landscape": {
-          "webp": "landscape/radiance-ba-hair-transplant-hair-transplant-radiance-hair-before-after-04-crown-hair-transplant-crown-before.webp",
-          "width": 1200,
-          "height": 800
-        },
-        "portrait": {
-          "webp": "portrait/radiance-ba-hair-transplant-hair-transplant-radiance-hair-before-after-04-crown-hair-transplant-crown-before.webp",
-          "width": 900,
-          "height": 1200
-        },
-        "square": {
-          "webp": "square/radiance-ba-hair-transplant-hair-transplant-radiance-hair-before-after-04-crown-hair-transplant-crown-before.webp",
-          "width": 1000,
-          "height": 1000
-        },
-        "thumb": {
-          "webp": "thumb/radiance-ba-hair-transplant-hair-transplant-radiance-hair-before-after-04-crown-hair-transplant-crown-before.webp",
-          "width": 500,
-          "height": 500
-        }
-      },
-      "blur": {
-        "placeholder": "data:image/jpeg;base64,/9j/2wBDABISEhITEhQWFhQcHhseHCkmIiImKT4sMCwwLD5eO0U7O0U7XlNlUk1SZVOWdmhodpatkYqRrdK8vNL/+///////2wBDARISEhITEhQWFhQcHhseHCkmIiImKT4sMCwwLD5eO0U7O0U7XlNlUk1SZVOWdmhodpatkYqRrdK8vNL/+///////wgARCAAYABgDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAUE/8QAFQEBAQAAAAAAAAAAAAAAAAAAAQL/2gAMAwEAAhADEAAAAEjbOmqrEqY9gGKE/8QAIBAAAgIBBAMBAAAAAAAAAAAAAQIDEQAEBRMhEjFBQv/aAAgBAQABPwDeZSFgj/LFicPGYz1X0Zs07Hlh+L2ubjqYNY0cMRJdWNHJHCr4eJDVVZt2oh0byJNas9YGIYMpoj1h3a4KKHlxmZ3ZmPZz/8QAFxEAAwEAAAAAAAAAAAAAAAAAAQIQMf/aAAgBAgEBPwBoVB2f/8QAFxEAAwEAAAAAAAAAAAAAAAAAAQIQMf/aAAgBAwEBPwBYGK5P/9k=",
-        "imagePath": "blur/radiance-ba-hair-transplant-hair-transplant-radiance-hair-before-after-04-crown-hair-transplant-crown-before.jpg",
-        "textPath": "blur/radiance-ba-hair-transplant-hair-transplant-radiance-hair-before-after-04-crown-hair-transplant-crown-before.txt"
-      },
-      "recommendedWebsiteUsage": "Hair Transformation Examples for hair transplant",
-      "warnings": []
-    },
-    {
-      "id": "radiance-ba-hair-transplant-hair-transplant-radiance-hair-before-after-05-frontal-mid-scalp-hair-transplant-front-after",
-      "filename": "after_frontal_mid_scalp_hair_transplant.webp",
-      "originalFilename": "after_frontal_mid_scalp_hair_transplant.webp",
-      "originalRelativePath": "",
-      "rawRelativePath": "radiance-hair-before-after/05-frontal-mid-scalp-hair-transplant/after_frontal_mid_scalp_hair_transplant.webp",
-      "category": "hair-before-after",
-      "detectedType": "hair_before_after",
-      "type": "hair_before_after",
-      "mediaClassification": "hair_before_after",
-      "transformationCategory": "hair",
-      "subject": "hair-transplant",
-      "conditionName": "Frontal And Mid Scalp Hair Transplant",
-      "publicTitle": "Hair Transplant Transformation",
-      "treatment": "Hair Transplant",
-      "usage": "front-after",
-      "role": "front-after",
-      "title": "Frontal and Mid-Scalp Hair Transplant",
-      "altText": "Hair transplant improvement example showing restored hair density after treatment at Radiance Clinics Bhubaneswar",
-      "alt_text": "Hair transplant improvement example showing restored hair density after treatment at Radiance Clinics Bhubaneswar",
-      "caption": "",
-      "displayMode": "cover",
-      "contentHash": "642f5b3b1fcd85ce702e17fb0ea5c41f84d9e730",
-      "normalizedBasename": "after-frontal-mid-scalp-hair-transplant",
-      "focalPointX": 0.5,
-      "focalPointY": 0.5,
-      "focal_point_x": 0.5,
-      "focal_point_y": 0.5,
-      "sortOrder": 0,
-      "sort_order": 0,
-      "featured": false,
-      "publish": true,
-      "consentConfirmed": true,
-      "consent_confirmed": true,
-      "timeGap": "",
-      "disclaimer": "",
-      "desktop_url": "hero-desktop/radiance-ba-hair-transplant-hair-transplant-radiance-hair-before-after-05-frontal-mid-scalp-hair-transplant-front-after.webp",
-      "mobile_url": "hero-mobile/radiance-ba-hair-transplant-hair-transplant-radiance-hair-before-after-05-frontal-mid-scalp-hair-transplant-front-after.webp",
-      "thumb_url": "thumb/radiance-ba-hair-transplant-hair-transplant-radiance-hair-before-after-05-frontal-mid-scalp-hair-transplant-front-after.webp",
-      "blur_data_url": "data:image/jpeg;base64,/9j/2wBDABISEhITEhQWFhQcHhseHCkmIiImKT4sMCwwLD5eO0U7O0U7XlNlUk1SZVOWdmhodpatkYqRrdK8vNL/+///////2wBDARISEhITEhQWFhQcHhseHCkmIiImKT4sMCwwLD5eO0U7O0U7XlNlUk1SZVOWdmhodpatkYqRrdK8vNL/+///////wgARCAAYABgDASIAAhEBAxEB/8QAGQABAAMBAQAAAAAAAAAAAAAAAAMEBQEG/8QAFAEBAAAAAAAAAAAAAAAAAAAAA//aAAwDAQACEAMQAAAAnxfQViXich1c0JboUv/EACMQAAIBAwMEAwAAAAAAAAAAAAEDAgAREgQFEyEyQmEVUXH/2gAIAQEAAT8A3B7UpiFd854ivjdaTnJkQfu9bc97ItU/rNRAyrULDIQJ8ZiQqQfjgdTDLLoPVaZYhyyvcykLn8FN3HTZhMTnKRt6FTDeTHHrfuvS9xSmfAw2t5V//8QAGhEBAAIDAQAAAAAAAAAAAAAAAQACAxFxMv/aAAgBAgEBPwDJZHRKuwZldJyV8nJ//8QAGhEBAAMBAQEAAAAAAAAAAAAAAQACEQMycf/aAAgBAwEBPwDnQTWWMUnI0Zb0/Z//2Q==",
-      "sequence": null,
-      "sequenceNumber": null,
-      "caseId": null,
-      "beforeAfterRole": "frontAfter",
-      "beforeAfterView": "front",
-      "beforeAfterViewLabel": "Front View",
-      "beforeAfterPhase": "after",
-      "beforeAfterPairKey": "hair-transplant-radiance-hair-before-after-05-frontal-mid-scalp-hair-transplant",
-      "replacementAfter": false,
-      "replacementTargetSlug": null,
-      "replacementExampleNumber": null,
-      "width": 1200,
-      "height": 1500,
-      "original": {
-        "path": "",
-        "width": 1200,
-        "height": 1500,
-        "format": "webp",
-        "sizeBytes": 197628
-      },
-      "generated": {
-        "heroDesktop": {
-          "webp": "hero-desktop/radiance-ba-hair-transplant-hair-transplant-radiance-hair-before-after-05-frontal-mid-scalp-hair-transplant-front-after.webp",
-          "width": 2400,
-          "height": 1400
-        },
-        "heroMobile": {
-          "webp": "hero-mobile/radiance-ba-hair-transplant-hair-transplant-radiance-hair-before-after-05-frontal-mid-scalp-hair-transplant-front-after.webp",
-          "width": 1200,
-          "height": 1500
-        },
-        "landscape": {
-          "webp": "landscape/radiance-ba-hair-transplant-hair-transplant-radiance-hair-before-after-05-frontal-mid-scalp-hair-transplant-front-after.webp",
-          "width": 1200,
-          "height": 800
-        },
-        "portrait": {
-          "webp": "portrait/radiance-ba-hair-transplant-hair-transplant-radiance-hair-before-after-05-frontal-mid-scalp-hair-transplant-front-after.webp",
-          "width": 900,
-          "height": 1200
-        },
-        "square": {
-          "webp": "square/radiance-ba-hair-transplant-hair-transplant-radiance-hair-before-after-05-frontal-mid-scalp-hair-transplant-front-after.webp",
-          "width": 1000,
-          "height": 1000
-        },
-        "thumb": {
-          "webp": "thumb/radiance-ba-hair-transplant-hair-transplant-radiance-hair-before-after-05-frontal-mid-scalp-hair-transplant-front-after.webp",
-          "width": 500,
-          "height": 500
-        }
-      },
-      "blur": {
-        "placeholder": "data:image/jpeg;base64,/9j/2wBDABISEhITEhQWFhQcHhseHCkmIiImKT4sMCwwLD5eO0U7O0U7XlNlUk1SZVOWdmhodpatkYqRrdK8vNL/+///////2wBDARISEhITEhQWFhQcHhseHCkmIiImKT4sMCwwLD5eO0U7O0U7XlNlUk1SZVOWdmhodpatkYqRrdK8vNL/+///////wgARCAAYABgDASIAAhEBAxEB/8QAGQABAAMBAQAAAAAAAAAAAAAAAAMEBQEG/8QAFAEBAAAAAAAAAAAAAAAAAAAAA//aAAwDAQACEAMQAAAAnxfQViXich1c0JboUv/EACMQAAIBAwMEAwAAAAAAAAAAAAEDAgAREgQFEyEyQmEVUXH/2gAIAQEAAT8A3B7UpiFd854ivjdaTnJkQfu9bc97ItU/rNRAyrULDIQJ8ZiQqQfjgdTDLLoPVaZYhyyvcykLn8FN3HTZhMTnKRt6FTDeTHHrfuvS9xSmfAw2t5V//8QAGhEBAAIDAQAAAAAAAAAAAAAAAQACAxFxMv/aAAgBAgEBPwDJZHRKuwZldJyV8nJ//8QAGhEBAAMBAQEAAAAAAAAAAAAAAQACEQMycf/aAAgBAwEBPwDnQTWWMUnI0Zb0/Z//2Q==",
-        "imagePath": "blur/radiance-ba-hair-transplant-hair-transplant-radiance-hair-before-after-05-frontal-mid-scalp-hair-transplant-front-after.jpg",
-        "textPath": "blur/radiance-ba-hair-transplant-hair-transplant-radiance-hair-before-after-05-frontal-mid-scalp-hair-transplant-front-after.txt"
-      },
-      "recommendedWebsiteUsage": "Hair Transformation Examples for hair transplant",
       "warnings": []
     },
     {
@@ -10614,106 +10015,6 @@
       "warnings": []
     },
     {
-      "id": "radiance-ba-receding-hairline-receding-hairline-radiance-hair-before-after-02-receding-hairline-after",
-      "filename": "after_receding_hairline.webp",
-      "originalFilename": "after_receding_hairline.webp",
-      "originalRelativePath": "",
-      "rawRelativePath": "radiance-hair-before-after/02-receding-hairline/after_receding_hairline.webp",
-      "category": "hair-before-after",
-      "detectedType": "hair_before_after",
-      "type": "hair_before_after",
-      "mediaClassification": "hair_before_after",
-      "transformationCategory": "hair",
-      "subject": "receding-hairline",
-      "conditionName": "Receding Hairline",
-      "publicTitle": "Hair Transplant Transformation",
-      "treatment": "Hair Transplant",
-      "usage": "after",
-      "role": "after",
-      "title": "Receding Hairline",
-      "altText": "Hair transplant improvement example showing restored hair density after treatment at Radiance Clinics Bhubaneswar",
-      "alt_text": "Hair transplant improvement example showing restored hair density after treatment at Radiance Clinics Bhubaneswar",
-      "caption": "",
-      "displayMode": "cover",
-      "contentHash": "1ac929e0857a7b541ad50caa071c2a75dde43436",
-      "normalizedBasename": "after-receding-hairline",
-      "focalPointX": 0.5,
-      "focalPointY": 0.5,
-      "focal_point_x": 0.5,
-      "focal_point_y": 0.5,
-      "sortOrder": 0,
-      "sort_order": 0,
-      "featured": false,
-      "publish": true,
-      "consentConfirmed": true,
-      "consent_confirmed": true,
-      "timeGap": "",
-      "disclaimer": "",
-      "desktop_url": "hero-desktop/radiance-ba-receding-hairline-receding-hairline-radiance-hair-before-after-02-receding-hairline-after.webp",
-      "mobile_url": "hero-mobile/radiance-ba-receding-hairline-receding-hairline-radiance-hair-before-after-02-receding-hairline-after.webp",
-      "thumb_url": "thumb/radiance-ba-receding-hairline-receding-hairline-radiance-hair-before-after-02-receding-hairline-after.webp",
-      "blur_data_url": "data:image/jpeg;base64,/9j/2wBDABISEhITEhQWFhQcHhseHCkmIiImKT4sMCwwLD5eO0U7O0U7XlNlUk1SZVOWdmhodpatkYqRrdK8vNL/+///////2wBDARISEhITEhQWFhQcHhseHCkmIiImKT4sMCwwLD5eO0U7O0U7XlNlUk1SZVOWdmhodpatkYqRrdK8vNL/+///////wgARCAAYABgDASIAAhEBAxEB/8QAGAABAQEBAQAAAAAAAAAAAAAAAAQDAQX/xAAUAQEAAAAAAAAAAAAAAAAAAAAD/9oADAMBAAIQAxAAAADfl8BtooIUXmhLYFL/xAAnEAABAwMCBAcAAAAAAAAAAAABAgMEABESBSEUIlFSFTNBgZKxwf/aAAgBAQABPwDWC449DjBZS25ln7V4RFCNwTWkuu3kx1kqDShio9DUwJIZUr0WR8hR4fZjilXz7qhhKUOlJ2Uv6Fqe1GNKKojfNkDzUWZXl4ot3/tutM6oxHUIricQjbMV/8QAGBEBAQEBAQAAAAAAAAAAAAAAAQACMRH/2gAIAQIBAT8A2vscLajHC//EABoRAQACAwEAAAAAAAAAAAAAAAEAAgMSMUH/2gAIAQMBAT8Axhr5LdZjBrHrP//Z",
-      "sequence": null,
-      "sequenceNumber": null,
-      "caseId": null,
-      "beforeAfterRole": "after",
-      "beforeAfterView": "primary",
-      "beforeAfterViewLabel": "Front View",
-      "beforeAfterPhase": "after",
-      "beforeAfterPairKey": "receding-hairline-radiance-hair-before-after-02-receding-hairline",
-      "replacementAfter": false,
-      "replacementTargetSlug": null,
-      "replacementExampleNumber": null,
-      "width": 1200,
-      "height": 1500,
-      "original": {
-        "path": "",
-        "width": 1200,
-        "height": 1500,
-        "format": "webp",
-        "sizeBytes": 245096
-      },
-      "generated": {
-        "heroDesktop": {
-          "webp": "hero-desktop/radiance-ba-receding-hairline-receding-hairline-radiance-hair-before-after-02-receding-hairline-after.webp",
-          "width": 2400,
-          "height": 1400
-        },
-        "heroMobile": {
-          "webp": "hero-mobile/radiance-ba-receding-hairline-receding-hairline-radiance-hair-before-after-02-receding-hairline-after.webp",
-          "width": 1200,
-          "height": 1500
-        },
-        "landscape": {
-          "webp": "landscape/radiance-ba-receding-hairline-receding-hairline-radiance-hair-before-after-02-receding-hairline-after.webp",
-          "width": 1200,
-          "height": 800
-        },
-        "portrait": {
-          "webp": "portrait/radiance-ba-receding-hairline-receding-hairline-radiance-hair-before-after-02-receding-hairline-after.webp",
-          "width": 900,
-          "height": 1200
-        },
-        "square": {
-          "webp": "square/radiance-ba-receding-hairline-receding-hairline-radiance-hair-before-after-02-receding-hairline-after.webp",
-          "width": 1000,
-          "height": 1000
-        },
-        "thumb": {
-          "webp": "thumb/radiance-ba-receding-hairline-receding-hairline-radiance-hair-before-after-02-receding-hairline-after.webp",
-          "width": 500,
-          "height": 500
-        }
-      },
-      "blur": {
-        "placeholder": "data:image/jpeg;base64,/9j/2wBDABISEhITEhQWFhQcHhseHCkmIiImKT4sMCwwLD5eO0U7O0U7XlNlUk1SZVOWdmhodpatkYqRrdK8vNL/+///////2wBDARISEhITEhQWFhQcHhseHCkmIiImKT4sMCwwLD5eO0U7O0U7XlNlUk1SZVOWdmhodpatkYqRrdK8vNL/+///////wgARCAAYABgDASIAAhEBAxEB/8QAGAABAQEBAQAAAAAAAAAAAAAAAAQDAQX/xAAUAQEAAAAAAAAAAAAAAAAAAAAD/9oADAMBAAIQAxAAAADfl8BtooIUXmhLYFL/xAAnEAABAwMCBAcAAAAAAAAAAAABAgMEABESBSEUIlFSFTNBgZKxwf/aAAgBAQABPwDWC449DjBZS25ln7V4RFCNwTWkuu3kx1kqDShio9DUwJIZUr0WR8hR4fZjilXz7qhhKUOlJ2Uv6Fqe1GNKKojfNkDzUWZXl4ot3/tutM6oxHUIricQjbMV/8QAGBEBAQEBAQAAAAAAAAAAAAAAAQACMRH/2gAIAQIBAT8A2vscLajHC//EABoRAQACAwEAAAAAAAAAAAAAAAEAAgMSMUH/2gAIAQMBAT8Axhr5LdZjBrHrP//Z",
-        "imagePath": "blur/radiance-ba-receding-hairline-receding-hairline-radiance-hair-before-after-02-receding-hairline-after.jpg",
-        "textPath": "blur/radiance-ba-receding-hairline-receding-hairline-radiance-hair-before-after-02-receding-hairline-after.txt"
-      },
-      "recommendedWebsiteUsage": "Hair Transformation Examples for receding hairline",
-      "warnings": []
-    },
-    {
       "id": "radiance-ba-receding-hairline-receding-hairline-radiance-hair-before-after-02-receding-hairline-before",
       "filename": "before_receding_hairline.webp",
       "originalFilename": "before_receding_hairline.webp",
@@ -10814,6 +10115,106 @@
       "warnings": []
     },
     {
+      "id": "radiance-ba-replacement-advanced-male-pattern-baldness-condition-primary-after",
+      "filename": "new-after-advanced.png",
+      "originalFilename": "new-after-advanced.png",
+      "originalRelativePath": "",
+      "rawRelativePath": "radiance-additional-hair-before-after/04-advanced-male-pattern-baldness/new-after-advanced.png",
+      "category": "hair-before-after",
+      "detectedType": "hair_before_after",
+      "type": "hair_before_after",
+      "mediaClassification": "hair_before_after",
+      "transformationCategory": "hair",
+      "subject": "advanced-male-pattern-baldness",
+      "conditionName": "Advanced Male Pattern Baldness",
+      "publicTitle": "Hair Fall Improvement",
+      "treatment": "Hair Transplant",
+      "usage": "after",
+      "role": "after",
+      "title": "Advanced Male Pattern Baldness",
+      "altText": "Hair transplant improvement example showing restored hair density after treatment at Radiance Clinics Bhubaneswar",
+      "alt_text": "Hair transplant improvement example showing restored hair density after treatment at Radiance Clinics Bhubaneswar",
+      "caption": "",
+      "displayMode": "cover",
+      "contentHash": "239f7b21d060786977efe9a8ccfe51e70ab5fcd7",
+      "normalizedBasename": "replacement-new-after-advanced",
+      "focalPointX": 0.5,
+      "focalPointY": 0.5,
+      "focal_point_x": 0.5,
+      "focal_point_y": 0.5,
+      "sortOrder": 0,
+      "sort_order": 0,
+      "featured": false,
+      "publish": true,
+      "consentConfirmed": true,
+      "consent_confirmed": true,
+      "timeGap": "",
+      "disclaimer": "",
+      "desktop_url": "hero-desktop/radiance-ba-replacement-advanced-male-pattern-baldness-condition-primary-after.webp",
+      "mobile_url": "hero-mobile/radiance-ba-replacement-advanced-male-pattern-baldness-condition-primary-after.webp",
+      "thumb_url": "thumb/radiance-ba-replacement-advanced-male-pattern-baldness-condition-primary-after.webp",
+      "blur_data_url": "data:image/jpeg;base64,/9j/2wBDABISEhITEhQWFhQcHhseHCkmIiImKT4sMCwwLD5eO0U7O0U7XlNlUk1SZVOWdmhodpatkYqRrdK8vNL/+///////2wBDARISEhITEhQWFhQcHhseHCkmIiImKT4sMCwwLD5eO0U7O0U7XlNlUk1SZVOWdmhodpatkYqRrdK8vNL/+///////wgARCAAYABgDASIAAhEBAxEB/8QAGQABAAMBAQAAAAAAAAAAAAAAAAQFBgED/8QAFAEBAAAAAAAAAAAAAAAAAAAAA//aAAwDAQACEAMQAAAAs8xpoRNMdIVL4hNMDB//xAAkEAACAQMDBAMBAAAAAAAAAAABAgMABBIFESITI1JxFCEyM//aAAgBAQABPwDUrmW2tcoR3HcIvtqFnquXVzbfyzrTbqW5tt5R3Eco1X6q0SMx4pIrGt4v4/Lf9VYIEgJB+ndnFTa0k5MIjxifizNQsbgjEy9ry25Ee6g1m3V+lINlXirrX//EABkRAQADAQEAAAAAAAAAAAAAAAEAAiEDEf/aAAgBAgEBPwC97DkNCdVPIT//xAAZEQEAAwEBAAAAAAAAAAAAAAABAAIDERL/2gAIAQMBAT8AzpWx1icWYg+oz//Z",
+      "sequence": null,
+      "sequenceNumber": null,
+      "caseId": null,
+      "beforeAfterRole": "after",
+      "beforeAfterView": "primary",
+      "beforeAfterViewLabel": "Front View",
+      "beforeAfterPhase": "after",
+      "beforeAfterPairKey": null,
+      "replacementAfter": true,
+      "replacementTargetSlug": "advanced-male-pattern-baldness",
+      "replacementExampleNumber": null,
+      "width": 1122,
+      "height": 1402,
+      "original": {
+        "path": "",
+        "width": 1122,
+        "height": 1402,
+        "format": "png",
+        "sizeBytes": 2031217
+      },
+      "generated": {
+        "heroDesktop": {
+          "webp": "hero-desktop/radiance-ba-replacement-advanced-male-pattern-baldness-condition-primary-after.webp",
+          "width": 2400,
+          "height": 1400
+        },
+        "heroMobile": {
+          "webp": "hero-mobile/radiance-ba-replacement-advanced-male-pattern-baldness-condition-primary-after.webp",
+          "width": 1200,
+          "height": 1500
+        },
+        "landscape": {
+          "webp": "landscape/radiance-ba-replacement-advanced-male-pattern-baldness-condition-primary-after.webp",
+          "width": 1200,
+          "height": 800
+        },
+        "portrait": {
+          "webp": "portrait/radiance-ba-replacement-advanced-male-pattern-baldness-condition-primary-after.webp",
+          "width": 900,
+          "height": 1200
+        },
+        "square": {
+          "webp": "square/radiance-ba-replacement-advanced-male-pattern-baldness-condition-primary-after.webp",
+          "width": 1000,
+          "height": 1000
+        },
+        "thumb": {
+          "webp": "thumb/radiance-ba-replacement-advanced-male-pattern-baldness-condition-primary-after.webp",
+          "width": 500,
+          "height": 500
+        }
+      },
+      "blur": {
+        "placeholder": "data:image/jpeg;base64,/9j/2wBDABISEhITEhQWFhQcHhseHCkmIiImKT4sMCwwLD5eO0U7O0U7XlNlUk1SZVOWdmhodpatkYqRrdK8vNL/+///////2wBDARISEhITEhQWFhQcHhseHCkmIiImKT4sMCwwLD5eO0U7O0U7XlNlUk1SZVOWdmhodpatkYqRrdK8vNL/+///////wgARCAAYABgDASIAAhEBAxEB/8QAGQABAAMBAQAAAAAAAAAAAAAAAAQFBgED/8QAFAEBAAAAAAAAAAAAAAAAAAAAA//aAAwDAQACEAMQAAAAs8xpoRNMdIVL4hNMDB//xAAkEAACAQMDBAMBAAAAAAAAAAABAgMABBIFESITI1JxFCEyM//aAAgBAQABPwDUrmW2tcoR3HcIvtqFnquXVzbfyzrTbqW5tt5R3Eco1X6q0SMx4pIrGt4v4/Lf9VYIEgJB+ndnFTa0k5MIjxifizNQsbgjEy9ry25Ee6g1m3V+lINlXirrX//EABkRAQADAQEAAAAAAAAAAAAAAAEAAiEDEf/aAAgBAgEBPwC97DkNCdVPIT//xAAZEQEAAwEBAAAAAAAAAAAAAAABAAIDERL/2gAIAQMBAT8AzpWx1icWYg+oz//Z",
+        "imagePath": "blur/radiance-ba-replacement-advanced-male-pattern-baldness-condition-primary-after.jpg",
+        "textPath": "blur/radiance-ba-replacement-advanced-male-pattern-baldness-condition-primary-after.txt"
+      },
+      "recommendedWebsiteUsage": "Hair Transformation Examples for advanced male pattern baldness",
+      "warnings": []
+    },
+    {
       "id": "radiance-ba-replacement-beard-transplant-condition-primary-after",
       "filename": "after-beard-transplant.webp",
       "originalFilename": "after-beard-transplant.webp",
@@ -10911,106 +10312,6 @@
         "textPath": "blur/radiance-ba-replacement-beard-transplant-condition-primary-after.txt"
       },
       "recommendedWebsiteUsage": "Hair Transformation Examples for beard transplant",
-      "warnings": []
-    },
-    {
-      "id": "radiance-ba-replacement-crown-hair-transplant-condition-crown-after",
-      "filename": "after-crown-hair-transplant.webp",
-      "originalFilename": "after-crown-hair-transplant.webp",
-      "originalRelativePath": "",
-      "rawRelativePath": "radiance-hair-before-after/hair-transplant-after-results-webp/after-crown-hair-transplant.webp",
-      "category": "hair-before-after",
-      "detectedType": "hair_before_after",
-      "type": "hair_before_after",
-      "mediaClassification": "hair_before_after",
-      "transformationCategory": "hair",
-      "subject": "hair-transplant",
-      "conditionName": "Hair Transplant",
-      "publicTitle": "Hair Transplant Transformation",
-      "treatment": "Hair Transplant",
-      "usage": "crown-after",
-      "role": "crown-after",
-      "title": "Crown Hair Transplant",
-      "altText": "Hair transplant improvement example showing restored hair density after treatment at Radiance Clinics Bhubaneswar",
-      "alt_text": "Hair transplant improvement example showing restored hair density after treatment at Radiance Clinics Bhubaneswar",
-      "caption": "",
-      "displayMode": "cover",
-      "contentHash": "08fca4a1728c966ecf207db106755dbafb131461",
-      "normalizedBasename": "replacement-after-crown-hair-transplant",
-      "focalPointX": 0.5,
-      "focalPointY": 0.5,
-      "focal_point_x": 0.5,
-      "focal_point_y": 0.5,
-      "sortOrder": 0,
-      "sort_order": 0,
-      "featured": false,
-      "publish": true,
-      "consentConfirmed": true,
-      "consent_confirmed": true,
-      "timeGap": "",
-      "disclaimer": "",
-      "desktop_url": "hero-desktop/radiance-ba-replacement-crown-hair-transplant-condition-crown-after.webp",
-      "mobile_url": "hero-mobile/radiance-ba-replacement-crown-hair-transplant-condition-crown-after.webp",
-      "thumb_url": "thumb/radiance-ba-replacement-crown-hair-transplant-condition-crown-after.webp",
-      "blur_data_url": "data:image/jpeg;base64,/9j/2wBDABISEhITEhQWFhQcHhseHCkmIiImKT4sMCwwLD5eO0U7O0U7XlNlUk1SZVOWdmhodpatkYqRrdK8vNL/+///////2wBDARISEhITEhQWFhQcHhseHCkmIiImKT4sMCwwLD5eO0U7O0U7XlNlUk1SZVOWdmhodpatkYqRrdK8vNL/+///////wgARCAAYABgDASIAAhEBAxEB/8QAGAABAQEBAQAAAAAAAAAAAAAAAAUGAQP/xAAUAQEAAAAAAAAAAAAAAAAAAAAC/9oADAMBAAIQAxAAAADxzOpjFU3SOarBUcI//8QAIhAAAgEEAgEFAAAAAAAAAAAAAQIDAAQFIRETEhAxM0FS/9oACAEBAAE/AM5K6QRop07b9MHKzRzoTpSCKyDWtz4W5lHZ5/VNjZRtXQr+uaxpt7bsh7R2s1K7IwdTsHkUcmpj+NfPnn2pnZ3Lsdk8mv/EABgRAQEBAQEAAAAAAAAAAAAAAAECEBEx/9oACAECAQE/AGgeOMle5//EABgRAQEBAQEAAAAAAAAAAAAAAAECEBEx/9oACAEDAQE/ACaToZNM+Z//2Q==",
-      "sequence": null,
-      "sequenceNumber": null,
-      "caseId": null,
-      "beforeAfterRole": "crownAfter",
-      "beforeAfterView": "crown",
-      "beforeAfterViewLabel": "Crown View",
-      "beforeAfterPhase": "after",
-      "beforeAfterPairKey": null,
-      "replacementAfter": true,
-      "replacementTargetSlug": "crown-hair-transplant",
-      "replacementExampleNumber": null,
-      "width": 1122,
-      "height": 1402,
-      "original": {
-        "path": "",
-        "width": 1122,
-        "height": 1402,
-        "format": "webp",
-        "sizeBytes": 223614
-      },
-      "generated": {
-        "heroDesktop": {
-          "webp": "hero-desktop/radiance-ba-replacement-crown-hair-transplant-condition-crown-after.webp",
-          "width": 2400,
-          "height": 1400
-        },
-        "heroMobile": {
-          "webp": "hero-mobile/radiance-ba-replacement-crown-hair-transplant-condition-crown-after.webp",
-          "width": 1200,
-          "height": 1500
-        },
-        "landscape": {
-          "webp": "landscape/radiance-ba-replacement-crown-hair-transplant-condition-crown-after.webp",
-          "width": 1200,
-          "height": 800
-        },
-        "portrait": {
-          "webp": "portrait/radiance-ba-replacement-crown-hair-transplant-condition-crown-after.webp",
-          "width": 900,
-          "height": 1200
-        },
-        "square": {
-          "webp": "square/radiance-ba-replacement-crown-hair-transplant-condition-crown-after.webp",
-          "width": 1000,
-          "height": 1000
-        },
-        "thumb": {
-          "webp": "thumb/radiance-ba-replacement-crown-hair-transplant-condition-crown-after.webp",
-          "width": 500,
-          "height": 500
-        }
-      },
-      "blur": {
-        "placeholder": "data:image/jpeg;base64,/9j/2wBDABISEhITEhQWFhQcHhseHCkmIiImKT4sMCwwLD5eO0U7O0U7XlNlUk1SZVOWdmhodpatkYqRrdK8vNL/+///////2wBDARISEhITEhQWFhQcHhseHCkmIiImKT4sMCwwLD5eO0U7O0U7XlNlUk1SZVOWdmhodpatkYqRrdK8vNL/+///////wgARCAAYABgDASIAAhEBAxEB/8QAGAABAQEBAQAAAAAAAAAAAAAAAAUGAQP/xAAUAQEAAAAAAAAAAAAAAAAAAAAC/9oADAMBAAIQAxAAAADxzOpjFU3SOarBUcI//8QAIhAAAgEEAgEFAAAAAAAAAAAAAQIDAAQFIRETEhAxM0FS/9oACAEBAAE/AM5K6QRop07b9MHKzRzoTpSCKyDWtz4W5lHZ5/VNjZRtXQr+uaxpt7bsh7R2s1K7IwdTsHkUcmpj+NfPnn2pnZ3Lsdk8mv/EABgRAQEBAQEAAAAAAAAAAAAAAAECEBEx/9oACAECAQE/AGgeOMle5//EABgRAQEBAQEAAAAAAAAAAAAAAAECEBEx/9oACAEDAQE/ACaToZNM+Z//2Q==",
-        "imagePath": "blur/radiance-ba-replacement-crown-hair-transplant-condition-crown-after.jpg",
-        "textPath": "blur/radiance-ba-replacement-crown-hair-transplant-condition-crown-after.txt"
-      },
-      "recommendedWebsiteUsage": "Hair Transformation Examples for hair transplant",
       "warnings": []
     },
     {
@@ -17532,6 +16833,16 @@
   "replacementAfterReport": {
     "replaced": [
       {
+        "filename": "new-after-advanced.png",
+        "replacementId": "radiance-ba-replacement-advanced-male-pattern-baldness-condition-primary-after",
+        "target": "advanced-male-pattern-baldness",
+        "exampleNumber": null,
+        "view": "primary",
+        "pairKey": "advanced-male-pattern-baldness-radiance-additional-hair-before-after-04-advanced-male-pattern-baldness",
+        "previousAfterId": "radiance-ba-advanced-male-pattern-baldness-advanced-male-pattern-baldness-radiance-additional-hair-before-after-04-advanced-male-pattern-bal",
+        "resolution": "1122x1402"
+      },
+      {
         "filename": "after-beard-transplant.webp",
         "replacementId": "radiance-ba-replacement-beard-transplant-condition-primary-after",
         "target": "beard-transplant",
@@ -17539,16 +16850,6 @@
         "view": "primary",
         "pairKey": "beard-transplant-radiance-hair-before-after-01-beard-transplant",
         "previousAfterId": "radiance-ba-beard-transplant-beard-transplant-radiance-hair-before-after-01-beard-transplant-after",
-        "resolution": "1122x1402"
-      },
-      {
-        "filename": "after-crown-hair-transplant.webp",
-        "replacementId": "radiance-ba-replacement-crown-hair-transplant-condition-crown-after",
-        "target": "crown-hair-transplant",
-        "exampleNumber": null,
-        "view": "crown",
-        "pairKey": "hair-transplant-radiance-hair-before-after-04-crown-hair-transplant",
-        "previousAfterId": "radiance-ba-hair-transplant-hair-transplant-radiance-hair-before-after-04-crown-hair-transplant-crown-after",
         "resolution": "1122x1402"
       },
       {
@@ -17582,7 +16883,18 @@
         "resolution": "1122x1402"
       }
     ],
-    "unmatched": []
+    "unmatched": [],
+    "excluded": [
+      {
+        "filename": "after-crown-hair-transplant.webp",
+        "replacementId": "radiance-ba-replacement-crown-hair-transplant-condition-crown-after",
+        "target": "crown-hair-transplant",
+        "exampleNumber": null,
+        "view": "crown",
+        "pairKey": "hair-transplant-radiance-hair-before-after-04-crown-hair-transplant",
+        "reason": "transformation removed after clinic review"
+      }
+    ]
   },
   "warnings": [
     "01-hero/radiance-clinin-heor-gallery-new.png: below heroDesktop target (1448x1086); generated hero variants may be upscaled.",

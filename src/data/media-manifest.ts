@@ -116,6 +116,11 @@ type PairPayload = {
     topAfter?: PairImage | null;
     images?: Record<string, PairImage>;
     extraImages?: PairImage[];
+    replacementAfterImages?: {
+      view: string;
+      previousAfterId: string;
+      replacementAfterId: string;
+    }[];
   }[];
 };
 
@@ -630,12 +635,15 @@ function comparisonViewsForPair(pair: NonNullable<PairPayload["pairs"]>[number])
     const explicitBefore = pairImageByRole(pair, view.before);
     const explicitAfter = pairImageByRole(pair, view.after);
     const beforeCandidate = explicitBefore || looseCandidates(pair, "before", usedIds)[0];
+    const afterCandidate = explicitAfter || looseCandidates(pair, "after", usedIds)[0];
 
-    if (beforeCandidate?.id) {
-      usedIds.add(beforeCandidate.id);
+    if (
+      (beforeCandidate?.id && usedIds.has(beforeCandidate.id)) ||
+      (afterCandidate?.id && usedIds.has(afterCandidate.id))
+    ) {
+      continue;
     }
 
-    const afterCandidate = explicitAfter || looseCandidates(pair, "after", usedIds)[0];
     const before = pairImageToCms(beforeCandidate);
     const after = pairImageToCms(afterCandidate);
 
@@ -670,10 +678,20 @@ function additionalViewsForPair(
   ].filter((item): item is PairImage => Boolean(item));
   const manifestImages = caseManifestItems(pair).map(pairImageFromItem);
   const seen = new Set<string>();
+  const supersededAfterIds = new Set(
+    (pair.replacementAfterImages || []).map((item) => item.previousAfterId),
+  );
 
   return [...explicitImages, ...manifestImages]
     .filter((item) => {
-      if (!item.id || usedIds.has(item.id) || seen.has(item.id)) return false;
+      if (
+        !item.id ||
+        usedIds.has(item.id) ||
+        seen.has(item.id) ||
+        supersededAfterIds.has(item.id)
+      ) {
+        return false;
+      }
       seen.add(item.id);
       return true;
     })
