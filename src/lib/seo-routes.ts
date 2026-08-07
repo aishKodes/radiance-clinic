@@ -5,8 +5,17 @@ export const coreIndexableRoutes = [
   "/conditions",
   "/knowledge",
   "/before-after",
+  "/results",
+  "/locations",
   "/reviews",
   "/contact",
+] as const;
+
+export const categoryHubRoutes = [
+  "/treatments/hair-restoration",
+  "/treatments/skin",
+  "/treatments/laser",
+  "/treatments/aesthetic-dermatology",
 ] as const;
 
 export const localLandingRoutes = [

@@ -77,7 +77,7 @@ export const reviewCategories = [
     slug: "hair-transplant",
     label: "Hair Transplant",
     description:
-      "Verified patient experience notes related to hair restoration and transplant consultation journeys.",
+      "Patient feedback related to hair restoration consultations and transplant care.",
   },
   {
     slug: "skin-laser",
@@ -213,6 +213,17 @@ function toStringArray(value: unknown): string[] {
   }
 
   return [];
+}
+
+function toFaqArray(value: unknown) {
+  return (Array.isArray(value) ? value : [])
+    .map((item) => {
+      const record = asRecord(item);
+      const question = firstString(record, ["question", "title", "q"]);
+      const answer = firstString(record, ["answer", "text", "body", "a"]);
+      return question && answer ? { question, answer } : null;
+    })
+    .filter((item): item is { question: string; answer: string } => Boolean(item));
 }
 
 function toParagraphs(value: unknown): string[] {
@@ -407,6 +418,7 @@ function normalizeTreatment(value: unknown, fallback?: Treatment): Treatment | n
   }
 
   const accent = firstString(record, ["accent", "theme"]) as Treatment["accent"] | undefined;
+  const faq = toFaqArray(record.faq ?? record.faqs);
 
   return {
     slug,
@@ -451,6 +463,25 @@ function normalizeTreatment(value: unknown, fallback?: Treatment): Treatment | n
     seoDescription:
       firstString(record, ["seoDescription", "seo_description", "meta_description"]) ||
       fallback?.seoDescription,
+    primaryIntent: firstString(record, ["primaryIntent", "primary_intent"]) || fallback?.primaryIntent,
+    primaryLocation: firstString(record, ["primaryLocation", "primary_location"]) || fallback?.primaryLocation,
+    h1: firstString(record, ["h1", "pageHeading", "page_heading"]) || fallback?.h1,
+    overview: toStringArray(record.overview).length ? toStringArray(record.overview) : fallback?.overview,
+    candidateInfo: toStringArray(record.candidateInfo ?? record.candidate_info).length ? toStringArray(record.candidateInfo ?? record.candidate_info) : fallback?.candidateInfo,
+    benefits: toStringArray(record.benefits).length ? toStringArray(record.benefits) : fallback?.benefits,
+    limitations: toStringArray(record.limitations).length ? toStringArray(record.limitations) : fallback?.limitations,
+    procedureSteps: toStringArray(record.procedureSteps ?? record.procedure_steps).length ? toStringArray(record.procedureSteps ?? record.procedure_steps) : fallback?.procedureSteps,
+    timeline: toStringArray(record.timeline).length ? toStringArray(record.timeline) : fallback?.timeline,
+    risks: toStringArray(record.risks).length ? toStringArray(record.risks) : fallback?.risks,
+    aftercare: toStringArray(record.aftercare).length ? toStringArray(record.aftercare) : fallback?.aftercare,
+    faq: faq.length ? faq : fallback?.faq,
+    relatedConditions: toStringArray(record.relatedConditions ?? record.related_conditions).length ? toStringArray(record.relatedConditions ?? record.related_conditions) : fallback?.relatedConditions,
+    relatedTreatments: toStringArray(record.relatedTreatments ?? record.related_treatments).length ? toStringArray(record.relatedTreatments ?? record.related_treatments) : fallback?.relatedTreatments,
+    relatedArticles: toStringArray(record.relatedArticles ?? record.related_articles).length ? toStringArray(record.relatedArticles ?? record.related_articles) : fallback?.relatedArticles,
+    relatedCases: toStringArray(record.relatedCases ?? record.related_cases).length ? toStringArray(record.relatedCases ?? record.related_cases) : fallback?.relatedCases,
+    status: firstString(record, ["status"]) || fallback?.status,
+    lastReviewedAt: firstString(record, ["lastReviewedAt", "last_reviewed_at"]) || fallback?.lastReviewedAt,
+    reviewedBy: firstString(record, ["reviewedBy", "reviewed_by"]) || fallback?.reviewedBy,
   };
 }
 
@@ -462,6 +493,8 @@ function normalizeCondition(value: unknown, fallback?: Condition): Condition | n
   if (!slug || !title) {
     return fallback || null;
   }
+
+  const faq = toFaqArray(record.faq ?? record.faqs);
 
   return {
     slug,
@@ -482,6 +515,20 @@ function normalizeCondition(value: unknown, fallback?: Condition): Condition | n
     seoDescription:
       firstString(record, ["seoDescription", "seo_description", "meta_description"]) ||
       fallback?.seoDescription,
+    primaryIntent: firstString(record, ["primaryIntent", "primary_intent"]) || fallback?.primaryIntent,
+    h1: firstString(record, ["h1", "pageHeading", "page_heading"]) || fallback?.h1,
+    overview: toStringArray(record.overview).length ? toStringArray(record.overview) : fallback?.overview,
+    commonCauses: toStringArray(record.commonCauses ?? record.common_causes).length ? toStringArray(record.commonCauses ?? record.common_causes) : fallback?.commonCauses,
+    commonTypes: toStringArray(record.commonTypes ?? record.common_types).length ? toStringArray(record.commonTypes ?? record.common_types) : fallback?.commonTypes,
+    assessment: toStringArray(record.assessment).length ? toStringArray(record.assessment) : fallback?.assessment,
+    limitations: toStringArray(record.limitations).length ? toStringArray(record.limitations) : fallback?.limitations,
+    faq: faq.length ? faq : fallback?.faq,
+    relatedConditions: toStringArray(record.relatedConditions ?? record.related_conditions).length ? toStringArray(record.relatedConditions ?? record.related_conditions) : fallback?.relatedConditions,
+    relatedArticles: toStringArray(record.relatedArticles ?? record.related_articles).length ? toStringArray(record.relatedArticles ?? record.related_articles) : fallback?.relatedArticles,
+    relatedCases: toStringArray(record.relatedCases ?? record.related_cases).length ? toStringArray(record.relatedCases ?? record.related_cases) : fallback?.relatedCases,
+    status: firstString(record, ["status"]) || fallback?.status,
+    lastReviewedAt: firstString(record, ["lastReviewedAt", "last_reviewed_at"]) || fallback?.lastReviewedAt,
+    reviewedBy: firstString(record, ["reviewedBy", "reviewed_by"]) || fallback?.reviewedBy,
   };
 }
 
@@ -512,6 +559,24 @@ function normalizeArticle(value: unknown, fallback?: Article): Article | null {
     seoDescription:
       firstString(record, ["seoDescription", "seo_description", "meta_description"]) ||
       fallback?.seoDescription,
+    authorName:
+      firstString(record, ["authorName", "author_name", "author"]) ||
+      fallback?.authorName,
+    publishedAt:
+      firstString(record, ["publishedAt", "published_at", "datePublished"]) ||
+      fallback?.publishedAt,
+    updatedAt:
+      firstString(record, ["updatedAt", "updated_at", "dateModified"]) ||
+      fallback?.updatedAt,
+    reviewedAt:
+      firstString(record, ["reviewedAt", "reviewed_at"]) ||
+      fallback?.reviewedAt,
+    reviewedBy:
+      firstString(record, ["reviewedBy", "reviewed_by", "medicalReviewer"]) ||
+      fallback?.reviewedBy,
+    relatedTreatments: toStringArray(record.relatedTreatments ?? record.related_treatments).length ? toStringArray(record.relatedTreatments ?? record.related_treatments) : fallback?.relatedTreatments,
+    relatedConditions: toStringArray(record.relatedConditions ?? record.related_conditions).length ? toStringArray(record.relatedConditions ?? record.related_conditions) : fallback?.relatedConditions,
+    relatedArticles: toStringArray(record.relatedArticles ?? record.related_articles).length ? toStringArray(record.relatedArticles ?? record.related_articles) : fallback?.relatedArticles,
   };
 }
 
@@ -1213,28 +1278,19 @@ export async function getClinicSettings(): Promise<ClinicSettings> {
 
   return {
     ...fallbackData.siteSettings,
-    name:
-      firstString(settings, ["name", "clinicName", "clinic_name"]) ||
-      fallbackData.siteSettings.name,
-    legalName:
-      firstString(settings, ["legalName", "legal_name", "clinicName", "clinic_name"]) ||
-      fallbackData.siteSettings.legalName,
-    city: firstString(settings, ["city"]) || fallbackData.siteSettings.city,
-    region: firstString(settings, ["region", "state"]) || fallbackData.siteSettings.region,
-    address: firstString(settings, ["address", "street_address"]) || fallbackData.siteSettings.address,
-    phone: firstString(settings, ["phone", "phone_number"]) || fallbackData.siteSettings.phone,
-    secondaryPhone:
-      firstString(settings, [
-        "secondaryPhone",
-        "secondary_phone",
-        "alternatePhone",
-        "alternate_phone",
-      ]) || fallbackData.siteSettings.secondaryPhone,
-    whatsapp: firstString(settings, ["whatsapp", "whatsapp_number"]) || fallbackData.siteSettings.whatsapp,
-    email: firstString(settings, ["email"]) || fallbackData.siteSettings.email,
-    doctor: firstString(settings, ["doctor", "doctor_name"]) || fallbackData.siteSettings.doctor,
+    name: fallbackData.siteSettings.name,
+    legalName: fallbackData.siteSettings.legalName,
+    city: fallbackData.siteSettings.city,
+    region: fallbackData.siteSettings.region,
+    address: fallbackData.siteSettings.address,
+    phone: fallbackData.siteSettings.phone,
+    secondaryPhone: fallbackData.siteSettings.secondaryPhone,
+    landline: fallbackData.siteSettings.landline,
+    whatsapp: fallbackData.siteSettings.whatsapp,
+    email: fallbackData.siteSettings.email,
+    doctor: fallbackData.siteSettings.doctor,
     tagline: firstString(settings, ["tagline", "description"]) || fallbackData.siteSettings.tagline,
-    hours: firstString(settings, ["hours", "opening_hours"]) || fallbackData.siteSettings.hours,
+    hours: "",
     bookingUrl: firstString(settings, ["bookingUrl", "booking_url"]),
     callbackLabel: firstString(settings, ["callbackLabel", "callback_label"]),
   };
@@ -1400,7 +1456,13 @@ export async function getReviewStaticParams() {
   const reviews = await getReviews();
   return uniqueParams(
     [
-      ...reviewCategories.map((category) => ({ slug: category.slug })),
+      ...reviewCategories
+        .filter((category) =>
+          reviews.some(
+            (review) => review.treatmentCategory === category.slug,
+          ),
+        )
+        .map((category) => ({ slug: category.slug })),
       ...reviews.map((review) => ({ slug: review.slug })),
     ],
     ["slug"],
@@ -1609,6 +1671,9 @@ export async function getSeoIndex(): Promise<SeoIndex> {
     getArticles(),
     getReviews(),
   ]);
+  const publishedReviewCategories = new Set(
+    reviews.map((review) => review.treatmentCategory),
+  );
 
   return {
     staticRoutes: [
@@ -1619,7 +1684,9 @@ export async function getSeoIndex(): Promise<SeoIndex> {
       "/knowledge",
       "/before-after",
       "/reviews",
-      ...reviewCategories.map((category) => `/reviews/${category.slug}`),
+      ...reviewCategories
+        .filter((category) => publishedReviewCategories.has(category.slug))
+        .map((category) => `/reviews/${category.slug}`),
       "/contact",
     ],
     treatments: treatments.map((treatment) => ({

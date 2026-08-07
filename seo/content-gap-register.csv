@@ -1,0 +1,40 @@
+suggested_url,topic,intent,priority,reason,verified_information_available,medical_input_required,image_assets_required,status
+/hair-transplant-cuttack,Hair transplant for patients from Cuttack,local-transactional,high,Historical demand exists but city-specific travel and patient information is not verified,partial,yes,no,draft-blocked
+/hair-transplant-puri,Hair transplant for patients from Puri,local-transactional,high,Historical demand exists but city-specific travel and patient information is not verified,partial,yes,no,draft-blocked
+/hair-transplant-rourkela,Hair transplant for patients from Rourkela,local-transactional,high,Historical demand exists but city-specific travel and patient information is not verified,partial,yes,no,draft-blocked
+/hair-transplant-sambalpur,Hair transplant for patients from Sambalpur,local-transactional,high,Historical demand exists but city-specific travel and patient information is not verified,partial,yes,no,draft-blocked
+/hair-transplant-berhampur,Hair transplant for patients from Berhampur,local-transactional,high,Historical demand exists but city-specific travel and patient information is not verified,partial,yes,no,draft-blocked
+/hair-transplant-baripada,Hair transplant for patients from Baripada,local-transactional,high,Historical demand exists but city-specific travel and patient information is not verified,partial,yes,no,draft-blocked
+/results/hair-transplant/advanced-male-pattern-baldness-result,Advanced male pattern baldness result,case-research,high,Consented images exist but clinical narrative and timeline are missing,images-only,yes,no,draft-blocked
+/results/hair-transplant/female-frontal-hairline-thinning-result,Female frontal hairline result,case-research,medium,Consented images exist but clinical narrative and timeline are missing,images-only,yes,no,draft-blocked
+/results/hair-transplant/female-pattern-hair-loss-result,Female pattern hair-loss result,case-research,medium,Consented images exist but clinical narrative and timeline are missing,images-only,yes,no,draft-blocked
+/results/hair-transplant/female-widening-part-result,Female widening-part result,case-research,medium,Consented images exist but clinical narrative and timeline are missing,images-only,yes,no,draft-blocked
+/results/hair-transplant/frontal-and-mid-scalp-hair-transplant-result,Frontal and mid-scalp transplant result,case-research,high,Consented images exist but clinical narrative and timeline are missing,images-only,yes,no,draft-blocked
+/results/hair-transplant/male-diffuse-frontal-thinning-result,Male diffuse thinning result,case-research,medium,Consented images exist but clinical narrative and timeline are missing,images-only,yes,no,draft-blocked
+/results/hair-transplant/male-temporal-recession-result,Male temporal recession result,case-research,medium,Consented images exist but clinical narrative and timeline are missing,images-only,yes,no,draft-blocked
+/results/hair-transplant/receding-hairline-result,Receding hairline result,case-research,high,Consented images exist but clinical narrative and timeline are missing,images-only,yes,no,draft-blocked
+/results/skin/acne-improvement-result,Acne improvement result,case-research,medium,Consented images exist but clinical narrative and timeline are missing,images-only,yes,no,draft-blocked
+/results/skin/acne-scars-improvement-result,Acne scar improvement result,case-research,high,Consented images exist but clinical narrative and timeline are missing,images-only,yes,no,draft-blocked
+/results/skin/melasma-improvement-result,Melasma improvement result,case-research,high,Consented images exist but clinical narrative and timeline are missing,images-only,yes,no,draft-blocked
+/results/skin/pigmentation-improvement-result,Pigmentation improvement result,case-research,high,Consented images exist but clinical narrative and timeline are missing,images-only,yes,no,draft-blocked
+/knowledge/hair-transplant-cost-bhubaneswar,Hair transplant cost in Bhubaneswar,commercial-investigation,high,Pricing framework and inclusions require clinic verification,no,yes,no,awaiting-clinic-input
+/knowledge/fue-hair-transplant-guide,FUE hair transplant guide,informational,high,Detailed procedure and candidate guidance requires medical review,partial,yes,optional,awaiting-medical-review
+/knowledge/hair-transplant-recovery,Hair transplant recovery,informational,high,Recovery milestones and aftercare protocol require medical review,partial,yes,optional,awaiting-medical-review
+/knowledge/hair-transplant-timeline,Hair transplant growth timeline,informational,high,Timeline ranges require medically approved wording,no,yes,yes,awaiting-medical-review
+/knowledge/hair-transplant-shedding,Post-transplant shedding,informational,medium,Clinical explanation requires medical review,no,yes,optional,awaiting-medical-review
+/knowledge/hairline-design,Hairline design,informational,medium,Doctor-specific planning approach requires verified clinical input,partial,yes,yes,awaiting-medical-review
+/knowledge/hair-transplant-donor-area,Hair transplant donor area,informational,medium,Donor assessment detail requires medical review,partial,yes,optional,awaiting-medical-review
+/knowledge/prp-vs-gfc-hair-loss,PRP versus GFC for hair loss,commercial-investigation,high,Protocol distinctions and indications require clinic verification,partial,yes,optional,awaiting-medical-review
+/knowledge/types-of-acne-scars,Types of acne scars,informational,high,Scar classification and treatment links require medical review,partial,yes,yes,awaiting-medical-review
+/knowledge/acne-scar-treatment-options,Acne scar treatment options,commercial-investigation,high,Available modalities and selection criteria require clinic verification,partial,yes,optional,awaiting-medical-review
+/knowledge/melasma-treatment-guide,Melasma treatment guide,informational,high,Clinical causes and management guidance require medical review,partial,yes,optional,awaiting-medical-review
+/knowledge/laser-hair-removal-preparation-aftercare,Laser hair reduction preparation and aftercare,informational,high,Clinic-specific protocol requires verification,partial,yes,optional,awaiting-medical-review
+/hair-wig,Non-surgical hair system,transactional,medium,Current service availability is not verified,no,yes,yes,service-verification-required
+/hair-patch,Hair patch service,transactional,medium,Current service availability is not verified,no,yes,yes,service-verification-required
+/tattoo-removal-bhubaneswar,Tattoo removal,local-transactional,medium,Current service and technology are not verified,no,yes,yes,service-verification-required
+/conditions/vitiligo,Vitiligo guidance,informational,medium,Clinic treatment scope and medical content are not verified,no,yes,optional,medical-review-required
+/treatments/skin/stretch-mark-treatment,Stretch mark treatment,commercial-investigation,medium,Current modalities and suitability guidance are not verified,no,yes,yes,service-verification-required
+/treatments/skin/mole-wart-removal,Mole and wart removal,commercial-investigation,medium,Existing page only mentions the concern and lacks treatment detail,partial,yes,yes,awaiting-medical-review
+/knowledge/botox-treatment-guide,Injectable educational guide,informational,medium,Legacy intent lacks an equivalent reviewed article,partial,yes,optional,awaiting-medical-review
+/about,Doctor qualifications and registration,trust,high,Credentials memberships and registration details are intentionally absent until verified,no,yes,no,awaiting-doctor-verification
+/treatments/hair-restoration,Educational graft-planning estimator,interactive-informational,medium,No clinic-approved estimation methodology exists,no,yes,no,disabled-pending-methodology

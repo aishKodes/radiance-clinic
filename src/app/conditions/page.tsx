@@ -6,15 +6,15 @@ import { SectionHeader } from "@/components/SectionHeader";
 import { StickyConsultationCard } from "@/components/StickyConsultationCard";
 import { getConditions } from "@/data/site";
 import { webPageJsonLd } from "@/lib/schema";
+import { pageMetadata } from "@/lib/metadata";
+import { treatmentHubs } from "@/data/search-taxonomy";
 
-export const metadata: Metadata = {
-  title: "Conditions",
+export const metadata: Metadata = pageMetadata({
+  title: "Hair & Skin Conditions | Radiance Clinics Bhubaneswar",
   description:
     "Explore skin, hair and aesthetic concerns treated at Radiance Clinics, Bhubaneswar.",
-  alternates: {
-    canonical: "/conditions",
-  },
-};
+  path: "/conditions",
+});
 
 export default async function ConditionsPage() {
   const conditions = await getConditions();
@@ -32,6 +32,7 @@ export default async function ConditionsPage() {
       <section className="bg-[#F7F1E8] px-5 pb-20 pt-36 sm:px-8 lg:pb-28 lg:pt-44">
         <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[1fr_0.36fr]">
           <SectionHeader
+            level="h1"
             eyebrow="Concerns"
             title="Start with what you are noticing."
             description="Radiance Clinics organizes care around concerns first, then maps suitable treatment options after clinical review."
@@ -73,6 +74,15 @@ export default async function ConditionsPage() {
           ))}
         </div>
       </section>
+      <nav aria-label="Related treatment categories" className="bg-[#F7F1E8] px-5 py-12 sm:px-8">
+        <div className="mx-auto grid max-w-7xl gap-3 sm:grid-cols-2 lg:grid-cols-4">
+          {treatmentHubs.map((hub) => (
+            <Link key={hub.slug} href={`/treatments/${hub.slug}`} className="border-t border-[#151515]/15 py-5 text-sm font-extrabold text-[#151515] transition hover:border-[#B78A4A]">
+              {hub.label}
+            </Link>
+          ))}
+        </div>
+      </nav>
     </>
   );
 }

@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import Link from "next/link";
-import { ArrowLeft, CheckCircle2 } from "lucide-react";
+import { CheckCircle2 } from "lucide-react";
+import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { ClinicalContentSections } from "@/components/ClinicalContentSections";
 import { JsonLd } from "@/components/JsonLd";
 import { PremiumButton } from "@/components/PremiumButton";
+import { RelatedContent } from "@/components/RelatedContent";
 import { SectionHeader } from "@/components/SectionHeader";
 import { StickyConsultationCard } from "@/components/StickyConsultationCard";
 import { TreatmentCard } from "@/components/TreatmentCard";
@@ -12,7 +14,9 @@ import {
   getConditionStaticParams,
   getTreatments,
 } from "@/data/site";
-import { webPageJsonLd } from "@/lib/schema";
+import { pageMetadata } from "@/lib/metadata";
+import { relationshipsFor } from "@/data/search-taxonomy";
+import { breadcrumbJsonLd, webPageJsonLd } from "@/lib/schema";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -30,13 +34,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     return { title: "Condition" };
   }
 
-  return {
-    title: condition.seoTitle || condition.title,
+  return pageMetadata({
+    title:
+      condition.seoTitle ||
+      `${condition.title} Treatment Guidance | Radiance Clinics`,
     description: condition.seoDescription || condition.summary,
-    alternates: {
-      canonical: `/conditions/${slug}`,
-    },
-  };
+    path: `/conditions/${slug}`,
+    image: condition.image?.src,
+    imageAlt: condition.image?.alt,
+  });
 }
 
 export default async function ConditionDetailPage({ params }: Props) {
@@ -47,10 +53,19 @@ export default async function ConditionDetailPage({ params }: Props) {
     notFound();
   }
 
+  const path = `/conditions/${slug}`;
+  const relationships = relationshipsFor(path);
   const treatments = await getTreatments();
-  const related = treatments.filter((treatment) =>
-    condition.relatedTreatments.includes(treatment.title),
-  );
+  const related = treatments.filter((treatment) => {
+    const treatmentPath = `/treatments/${treatment.cluster}/${treatment.slug}`;
+    return relationships?.treatments.includes(treatmentPath) ||
+      condition.relatedTreatments.includes(treatment.title);
+  });
+  const breadcrumbs = [
+    { name: "Home", path: "/" },
+    { name: "Conditions", path: "/conditions" },
+    { name: condition.title, path },
+  ];
 
   return (
     <>
@@ -58,19 +73,14 @@ export default async function ConditionDetailPage({ params }: Props) {
         data={webPageJsonLd({
           title: condition.title,
           description: condition.summary,
-          path: `/conditions/${slug}`,
+          path,
         })}
       />
+      <JsonLd data={breadcrumbJsonLd(breadcrumbs)} />
       <section className="bg-[#F7F1E8] px-5 pb-20 pt-36 sm:px-8 lg:pb-28 lg:pt-44">
         <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[1fr_0.36fr]">
           <div>
-            <Link
-              href="/conditions"
-              className="mb-8 inline-flex items-center gap-2 text-sm font-bold uppercase tracking-[0.18em] text-[#151515]/54 transition hover:text-[#151515]"
-            >
-              <ArrowLeft className="h-4 w-4" />
-              Concerns
-            </Link>
+            <Breadcrumbs items={breadcrumbs} />
             <h1 className="max-w-5xl font-serif text-[clamp(4rem,9vw,8rem)] leading-[0.88] tracking-normal text-[#151515]">
               {condition.title}
             </h1>
@@ -106,6 +116,17 @@ export default async function ConditionDetailPage({ params }: Props) {
         </div>
       </section>
 
+      <ClinicalContentSections
+        sections={[
+          { title: "Overview", items: condition.overview },
+          { title: "Common causes", items: condition.commonCauses },
+          { title: "Common types", items: condition.commonTypes },
+          { title: "How professional assessment may help", items: condition.assessment },
+          { title: "Important limitations", items: condition.limitations },
+        ]}
+        faqs={condition.faq}
+      />
+
       <section className="bg-[#F7F1E8] px-5 py-20 sm:px-8 lg:py-28">
         <div className="mx-auto max-w-7xl">
           <SectionHeader
@@ -119,6 +140,18 @@ export default async function ConditionDetailPage({ params }: Props) {
           </div>
         </div>
       </section>
+      {relationships ? (
+        <RelatedContent
+          eyebrow="Related guidance and results"
+          title="Understand the available pathways before consultation."
+          items={[
+            { href: relationships.hub, label: "Treatment category overview", description: "Compare related treatment pathways and assessment considerations." },
+            ...relationships.articles.map((href) => ({ href, label: "Related patient guide", description: "Read practical guidance connected to this concern." })),
+            { href: relationships.results, label: "Relevant treatment results", description: "View consent-confirmed comparisons without guaranteed-outcome claims." },
+            ...relationships.commercial.slice(0, 1).map((href) => ({ href, label: "Bhubaneswar consultation information", description: "Review the local consultation approach and clinic pathway." })),
+          ]}
+        />
+      ) : null}
     </>
   );
 }

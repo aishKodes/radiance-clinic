@@ -3,12 +3,13 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu, Phone, X } from "lucide-react";
+import { ChevronDown, Menu, Phone, X } from "lucide-react";
 import { useState } from "react";
 import { navItems } from "@/data/seed";
 import { fallbackData } from "@/data/fallback";
 import { OpenBookingButton } from "@/components/OpenBookingButton";
 import { cn } from "@/lib/utils";
+import { normalizedTel, treatmentNavigationGroups } from "@/lib/seo-config";
 import type { ClinicSettings } from "@/types/cms";
 
 export function SiteHeader({
@@ -36,13 +37,13 @@ export function SiteHeader({
           <Link href="/" className="flex min-w-0 items-center gap-3">
             {hasPrimaryLogo ? (
               <>
-                <span className="relative block h-11 w-[min(12rem,46vw)] max-w-[12rem]">
+                <span className="block h-11 w-[min(12rem,46vw)] max-w-[12rem]">
                   <Image
                     src={logoUrl || ""}
                     alt="Radiance Clinics"
-                    fill
-                    sizes="192px"
-                    className="object-contain object-left"
+                    width={192}
+                    height={44}
+                    className="h-11 w-auto max-w-full object-contain object-left"
                     unoptimized={logoUrl?.endsWith(".svg")}
                   />
                 </span>
@@ -50,14 +51,14 @@ export function SiteHeader({
               </>
             ) : (
               <>
-                <span className="relative grid h-11 w-11 shrink-0 place-items-center overflow-hidden rounded-full border border-[var(--ink)]/10 bg-white/72 font-serif text-xl text-[var(--ink)] shadow-lg">
+                <span className="grid h-11 w-11 shrink-0 place-items-center overflow-hidden rounded-full border border-[var(--ink)]/10 bg-white/72 font-serif text-xl text-[var(--ink)] shadow-lg">
                   {hasLogoMark ? (
                     <Image
                       src={logoUrl || ""}
                       alt=""
-                      fill
-                      sizes="44px"
-                      className="object-contain p-1"
+                      width={44}
+                      height={44}
+                      className="h-11 w-11 object-contain p-1"
                       unoptimized={logoUrl?.endsWith(".svg")}
                     />
                   ) : (
@@ -77,24 +78,63 @@ export function SiteHeader({
           </Link>
 
           <nav className="hidden items-center gap-1 xl:flex">
-            {navItems.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className={cn(
-                  "relative rounded-full px-4 py-2 text-sm font-bold text-[var(--ink)]/62 transition hover:bg-white/68 hover:text-[var(--ink)] after:absolute after:inset-x-5 after:bottom-1 after:h-px after:scale-x-0 after:bg-[linear-gradient(90deg,var(--aqua),var(--coral))] after:transition-transform hover:after:scale-x-100",
-                  pathname === item.href &&
-                    "bg-white/76 text-[var(--ink)] shadow-sm after:scale-x-100",
-                )}
-              >
-                {item.label}
-              </Link>
-            ))}
+            {navItems.map((item) =>
+              item.href === "/treatments" ? (
+                <div key={item.href} className="group relative">
+                  <Link
+                    href={item.href}
+                    className={cn(
+                      "flex items-center gap-1 rounded-full px-4 py-2 text-sm font-bold text-[var(--ink)]/62 transition hover:bg-white/68 hover:text-[var(--ink)]",
+                      pathname?.startsWith(item.href) &&
+                        "bg-white/76 text-[var(--ink)] shadow-sm",
+                    )}
+                  >
+                    {item.label}
+                    <ChevronDown aria-hidden="true" className="h-3.5 w-3.5" />
+                  </Link>
+                  <div className="invisible absolute left-1/2 top-full w-[44rem] -translate-x-1/2 pt-4 opacity-0 transition group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
+                    <div className="grid grid-cols-4 gap-5 rounded-[1.25rem] border border-[var(--ink)]/10 bg-[rgba(255,247,237,0.98)] p-6 shadow-[0_24px_90px_rgba(16,16,20,0.16)] backdrop-blur-2xl">
+                      {treatmentNavigationGroups.map((group) => (
+                        <div key={group.label}>
+                          <p className="text-xs font-extrabold uppercase tracking-[0.14em] text-[var(--bronze)]">
+                            {group.label}
+                          </p>
+                          <ul className="mt-3 space-y-2">
+                            {group.links.map((link) => (
+                              <li key={link.href}>
+                                <Link
+                                  href={link.href}
+                                  className="block text-xs font-semibold leading-5 text-[var(--ink)]/66 transition hover:text-[var(--ink)] focus:text-[var(--ink)]"
+                                >
+                                  {link.label}
+                                </Link>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              ) : (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className={cn(
+                    "relative rounded-full px-3 py-2 text-sm font-bold text-[var(--ink)]/62 transition hover:bg-white/68 hover:text-[var(--ink)]",
+                    pathname === item.href &&
+                      "bg-white/76 text-[var(--ink)] shadow-sm",
+                  )}
+                >
+                  {item.label}
+                </Link>
+              ),
+            )}
           </nav>
 
           <div className="hidden items-center gap-3 xl:flex">
             <a
-              href={`tel:${settings.phone.replace(/\s/g, "")}`}
+              href={`tel:${normalizedTel(settings.phone)}`}
               className="grid h-11 w-11 place-items-center rounded-full border border-[var(--ink)]/10 bg-white/60 text-[var(--ink)] transition hover:border-[var(--aqua)]/60"
               aria-label="Call Radiance Clinics"
             >
@@ -116,8 +156,13 @@ export function SiteHeader({
         </div>
       </div>
 
-      {open ? (
-        <div className="gradient-border mx-auto mt-3 max-w-7xl rounded-[2rem] bg-[rgba(255,247,237,0.94)] p-4 shadow-[0_24px_90px_rgba(16,16,20,0.16)] backdrop-blur-2xl xl:hidden">
+      <div
+        aria-hidden={!open}
+        className={cn(
+          "gradient-border mx-auto mt-3 max-h-[calc(100svh-7rem)] max-w-7xl overflow-y-auto rounded-[1.5rem] bg-[rgba(255,247,237,0.98)] p-4 shadow-[0_24px_90px_rgba(16,16,20,0.16)] backdrop-blur-2xl xl:hidden",
+          !open && "hidden",
+        )}
+      >
           <nav className="grid gap-1">
             {navItems.map((item) => (
               <Link
@@ -129,12 +174,33 @@ export function SiteHeader({
                 {item.label}
               </Link>
             ))}
+            <div className="mt-3 grid grid-cols-2 gap-4 border-t border-[var(--ink)]/10 px-4 pt-5">
+              {treatmentNavigationGroups.map((group) => (
+                <div key={group.label}>
+                  <p className="text-xs font-extrabold uppercase tracking-[0.12em] text-[var(--bronze)]">
+                    {group.label}
+                  </p>
+                  <ul className="mt-2 space-y-2">
+                    {group.links.map((link) => (
+                      <li key={link.href}>
+                        <Link
+                          href={link.href}
+                          onClick={() => setOpen(false)}
+                          className="block text-xs font-semibold leading-5 text-[var(--ink)]/65"
+                        >
+                          {link.label}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
           </nav>
           <OpenBookingButton source="cta" className="mt-4 w-full">
             Book consultation
           </OpenBookingButton>
-        </div>
-      ) : null}
+      </div>
     </header>
   );
 }

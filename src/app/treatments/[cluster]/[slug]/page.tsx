@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { ArrowLeft, CheckCircle2 } from "lucide-react";
-import Link from "next/link";
+import { CheckCircle2 } from "lucide-react";
+import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { ClinicalContentSections } from "@/components/ClinicalContentSections";
 import { JsonLd } from "@/components/JsonLd";
 import { PremiumButton } from "@/components/PremiumButton";
+import { RelatedContent } from "@/components/RelatedContent";
 import { SectionHeader } from "@/components/SectionHeader";
 import { StickyConsultationCard } from "@/components/StickyConsultationCard";
 import { TreatmentCard } from "@/components/TreatmentCard";
@@ -12,7 +14,13 @@ import {
   getTreatments,
   getTreatmentStaticParams,
 } from "@/data/site";
-import { webPageJsonLd } from "@/lib/schema";
+import { pageMetadata } from "@/lib/metadata";
+import { relationshipsFor } from "@/data/search-taxonomy";
+import {
+  breadcrumbJsonLd,
+  medicalServiceJsonLd,
+  webPageJsonLd,
+} from "@/lib/schema";
 
 type Props = {
   params: Promise<{ cluster: string; slug: string }>;
@@ -32,13 +40,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     };
   }
 
-  return {
-    title: treatment.seoTitle || treatment.title,
+  return pageMetadata({
+    title:
+      treatment.seoTitle ||
+      `${treatment.title} in Bhubaneswar | Radiance Clinics`,
     description: treatment.seoDescription || treatment.summary,
-    alternates: {
-      canonical: `/treatments/${cluster}/${slug}`,
-    },
-  };
+    path: `/treatments/${cluster}/${slug}`,
+    image: treatment.image?.src,
+    imageAlt: treatment.image?.alt,
+  });
 }
 
 export default async function TreatmentDetailPage({ params }: Props) {
@@ -57,6 +67,14 @@ export default async function TreatmentDetailPage({ params }: Props) {
         item.cluster === treatment.cluster && item.slug !== treatment.slug,
     )
     .slice(0, 3);
+  const path = `/treatments/${cluster}/${slug}`;
+  const relationships = relationshipsFor(path);
+  const breadcrumbs = [
+    { name: "Home", path: "/" },
+    { name: "Treatments", path: "/treatments" },
+    { name: treatment.clusterLabel, path: relationships?.hub || `/treatments#${cluster}` },
+    { name: treatment.title, path },
+  ];
 
   return (
     <>
@@ -64,19 +82,21 @@ export default async function TreatmentDetailPage({ params }: Props) {
         data={webPageJsonLd({
           title: treatment.title,
           description: treatment.summary,
-          path: `/treatments/${cluster}/${slug}`,
+          path,
+        })}
+      />
+      <JsonLd data={breadcrumbJsonLd(breadcrumbs)} />
+      <JsonLd
+        data={medicalServiceJsonLd({
+          name: treatment.title,
+          description: treatment.summary,
+          path,
         })}
       />
       <section className="bg-[#F7F1E8] px-5 pb-20 pt-36 sm:px-8 lg:pb-28 lg:pt-44">
         <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[1fr_0.36fr]">
           <div>
-            <Link
-              href="/treatments"
-              className="mb-8 inline-flex items-center gap-2 text-sm font-bold uppercase tracking-[0.18em] text-[#151515]/54 transition hover:text-[#151515]"
-            >
-              <ArrowLeft className="h-4 w-4" />
-              Treatments
-            </Link>
+            <Breadcrumbs items={breadcrumbs} />
             <div className="mb-7 inline-flex items-center gap-3 rounded-full border border-[#151515]/10 bg-white/46 px-4 py-2 backdrop-blur">
               <Icon className="h-4 w-4 text-[#B78A4A]" />
               <span className="text-xs font-bold uppercase tracking-[0.22em] text-[#151515]/58">
@@ -91,8 +111,8 @@ export default async function TreatmentDetailPage({ params }: Props) {
             </p>
             <div className="mt-10 flex flex-col gap-4 sm:flex-row">
               <PremiumButton href="/contact">Book consultation</PremiumButton>
-              <PremiumButton href="/before-after" variant="outline">
-                View case previews
+              <PremiumButton href={relationships?.results || "/results"} variant="outline">
+                View treatment results
               </PremiumButton>
             </div>
           </div>
@@ -162,6 +182,17 @@ export default async function TreatmentDetailPage({ params }: Props) {
         </div>
       </section>
 
+      <ClinicalContentSections
+        sections={[
+          { title: "Treatment overview", items: treatment.overview },
+          { title: "Who may ask about this treatment", items: treatment.candidateInfo },
+          { title: "Procedure planning", items: treatment.procedureSteps },
+          { title: "Recovery and timeline", items: [...(treatment.timeline || []), ...(treatment.aftercare || [])] },
+          { title: "Limitations and risks", items: [...(treatment.limitations || []), ...(treatment.risks || [])] },
+        ]}
+        faqs={treatment.faq}
+      />
+
       {related.length ? (
         <section className="bg-[#FBF7EF] px-5 py-20 sm:px-8 lg:py-28">
           <div className="mx-auto max-w-7xl">
@@ -176,6 +207,19 @@ export default async function TreatmentDetailPage({ params }: Props) {
             </div>
           </div>
         </section>
+      ) : null}
+      {relationships ? (
+        <RelatedContent
+          eyebrow="Conditions, guides and results"
+          title="Continue with related clinical information."
+          items={[
+            { href: relationships.hub, label: `${treatment.clusterLabel} overview`, description: "Compare related care pathways and the concerns they address." },
+            ...relationships.conditions.map((href) => ({ href, label: href.includes("hair-fall") ? "Hair fall and thinning" : href.includes("acne") ? "Acne and acne scars" : href.includes("pigmentation") ? "Pigmentation and melasma" : "Skin ageing and laxity", description: "Review concern-led guidance before selecting treatment." })),
+            ...relationships.articles.map((href) => ({ href, label: "Related patient guide", description: "Read practical preparation and decision-making guidance." })),
+            { href: relationships.results, label: "Consent-confirmed treatment results", description: "Review individual comparisons with outcome variability stated clearly." },
+            { href: "/locations", label: "Visiting from elsewhere in Odisha", description: "Plan an appointment at the verified Bhubaneswar clinic." },
+          ]}
+        />
       ) : null}
     </>
   );

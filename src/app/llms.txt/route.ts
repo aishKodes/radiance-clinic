@@ -31,14 +31,33 @@ export async function GET() {
     "## Key Pages",
     `- Home: ${siteUrl}/`,
     `- Treatments: ${siteUrl}/treatments`,
+    `- Hair Restoration: ${siteUrl}/treatments/hair-restoration`,
+    `- Skin Treatments: ${siteUrl}/treatments/skin`,
+    `- Laser Treatments: ${siteUrl}/treatments/laser`,
+    `- Aesthetic Dermatology: ${siteUrl}/treatments/aesthetic-dermatology`,
     `- Conditions: ${siteUrl}/conditions`,
     `- Knowledge Library: ${siteUrl}/knowledge`,
     `- Before/After Policy: ${siteUrl}/before-after`,
+    `- Patient Results: ${siteUrl}/results`,
+    `- Clinic Location and Outstation Visits: ${siteUrl}/locations`,
     `- Reviews: ${siteUrl}/reviews`,
     `- Contact: ${siteUrl}/contact`,
-    "",
-    "## Review Categories",
-    ...reviewCategories.map((category) => `- ${category.label}: ${siteUrl}/reviews/${category.slug}`),
+    ...(reviews.length
+      ? [
+          "",
+          "## Review Categories",
+          ...reviewCategories
+            .filter((category) =>
+              reviews.some(
+                (review) => review.treatmentCategory === category.slug,
+              ),
+            )
+            .map(
+              (category) =>
+                `- ${category.label}: ${siteUrl}/reviews/${category.slug}`,
+            ),
+        ]
+      : []),
     "",
     "## Treatments",
     ...treatments.map((item) => `- ${item.title}: ${siteUrl}/treatments/${item.cluster}/${item.slug}`),
@@ -52,7 +71,7 @@ export async function GET() {
     "## Published Reviews",
     ...(reviews.length
       ? reviews.map((item) => `- Review from ${item.reviewerName}: ${siteUrl}/reviews/${item.slug}`)
-      : ["- No permission-confirmed public reviews are currently published through the CMS fallback."]),
+      : [`- Current patient reviews: ${siteUrl}/reviews`]),
     "",
     "## Contact",
     `- Phone: ${clinic.phone || "Contact page"}`,

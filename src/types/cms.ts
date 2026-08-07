@@ -69,6 +69,25 @@ export type CmsTreatment = {
   image?: CmsImage;
   seoTitle?: string;
   seoDescription?: string;
+  primaryIntent?: string;
+  primaryLocation?: string;
+  h1?: string;
+  overview?: string[];
+  candidateInfo?: string[];
+  benefits?: string[];
+  limitations?: string[];
+  procedureSteps?: string[];
+  timeline?: string[];
+  risks?: string[];
+  aftercare?: string[];
+  faq?: CmsFaq[];
+  relatedConditions?: string[];
+  relatedTreatments?: string[];
+  relatedArticles?: string[];
+  relatedCases?: string[];
+  status?: "draft" | "published" | string;
+  lastReviewedAt?: string;
+  reviewedBy?: string;
 };
 
 export type CmsCondition = {
@@ -80,6 +99,20 @@ export type CmsCondition = {
   image?: CmsImage;
   seoTitle?: string;
   seoDescription?: string;
+  primaryIntent?: string;
+  h1?: string;
+  overview?: string[];
+  commonCauses?: string[];
+  commonTypes?: string[];
+  assessment?: string[];
+  limitations?: string[];
+  faq?: CmsFaq[];
+  relatedConditions?: string[];
+  relatedArticles?: string[];
+  relatedCases?: string[];
+  status?: "draft" | "published" | string;
+  lastReviewedAt?: string;
+  reviewedBy?: string;
 };
 
 export type CmsArticle = {
@@ -92,6 +125,14 @@ export type CmsArticle = {
   image?: CmsImage;
   seoTitle?: string;
   seoDescription?: string;
+  authorName?: string;
+  publishedAt?: string;
+  updatedAt?: string;
+  reviewedAt?: string;
+  reviewedBy?: string;
+  relatedTreatments?: string[];
+  relatedConditions?: string[];
+  relatedArticles?: string[];
 };
 
 export type CmsTestimonial = {
@@ -327,6 +368,7 @@ export type CmsSiteSettings = {
   address: string;
   phone: string;
   secondaryPhone?: string;
+  landline?: string;
   whatsapp: string;
   email: string;
   doctor: string;

@@ -141,61 +141,13 @@ export function LuxuryHero({
             </span>
           </motion.div>
 
-          <motion.div
-            variants={fadeUp}
-            className="mt-7 grid min-w-0 max-w-2xl grid-cols-2 gap-3"
-          >
-            {heroStats.map((stat) => {
-              const isYouTube =
-                stat.icon === "youtube" ||
-                /youtube|video/i.test(`${stat.value} ${stat.label}`);
-              const CardTag = stat.href ? "a" : "div";
-
-              return (
-                <CardTag
-                  key={stat.label}
-                  href={stat.href}
-                  target={stat.external ? "_blank" : undefined}
-                  rel={stat.external ? "noreferrer" : undefined}
-                  aria-label={
-                    isYouTube ? "Watch Radiance Clinics on YouTube" : undefined
-                  }
-                  className="group min-h-[6.75rem] min-w-0 rounded-[1.35rem] border border-white/58 bg-white/62 p-3.5 shadow-[0_18px_55px_rgba(16,16,20,0.08)] backdrop-blur-xl transition hover:-translate-y-0.5 hover:bg-white/78 sm:min-h-[7.6rem] sm:rounded-3xl sm:p-4"
-                >
-                  {isYouTube ? (
-                    <span className="inline-flex h-10 w-10 items-center justify-center rounded-2xl bg-[#FF0033] text-white shadow-[0_16px_40px_rgba(255,0,51,0.22)]">
-                      <Play className="h-5 w-5 fill-current" />
-                    </span>
-                  ) : (
-                    <p className="break-words font-mono text-lg font-extrabold leading-tight text-[var(--ink)] sm:text-xl sm:leading-none">
-                      {stat.value}
-                    </p>
-                  )}
-                  <p
-                    className={
-                      isYouTube
-                        ? "mt-3 text-sm font-extrabold text-[var(--ink)]"
-                        : "mt-2 text-[0.66rem] font-bold uppercase tracking-[0.14em] text-[var(--ink)]/50"
-                    }
-                  >
-                    {isYouTube ? "YouTube Community" : stat.label}
-                  </p>
-                  {isYouTube ? (
-                    <p className="mt-1 text-[0.66rem] font-extrabold uppercase tracking-[0.16em] text-[var(--ink)]/45">
-                      Watch Videos
-                    </p>
-                  ) : null}
-                </CardTag>
-              );
-            })}
-          </motion.div>
         </motion.div>
 
         <motion.div
           initial={false}
           animate={reduceMotion ? undefined : { opacity: 1, scale: 1, y: 0 }}
           transition={{ duration: 0.75, ease: [0.22, 1, 0.36, 1] }}
-          className="relative z-10 min-w-0"
+          className="relative z-10 min-w-0 lg:col-start-2 lg:row-span-2 lg:row-start-1"
         >
           <HeroMediaCollage
             images={heroImages}
@@ -203,6 +155,57 @@ export function LuxuryHero({
             settings={settings}
             assistantTeaser={homepage.assistantTeaser}
           />
+        </motion.div>
+
+        <motion.div
+          initial={false}
+          animate={reduceMotion ? undefined : "visible"}
+          variants={fadeUp}
+          className="grid min-w-0 max-w-2xl grid-cols-2 gap-3 lg:col-start-1 lg:row-start-2"
+        >
+          {heroStats.map((stat) => {
+            const isYouTube =
+              stat.icon === "youtube" ||
+              /youtube|video/i.test(`${stat.value} ${stat.label}`);
+            const CardTag = stat.href ? "a" : "div";
+
+            return (
+              <CardTag
+                key={stat.label}
+                href={stat.href}
+                target={stat.external ? "_blank" : undefined}
+                rel={stat.external ? "noreferrer" : undefined}
+                aria-label={
+                  isYouTube ? "Watch Radiance Clinics on YouTube" : undefined
+                }
+                className="group min-h-[6.75rem] min-w-0 rounded-[1.35rem] border border-white/58 bg-white/62 p-3.5 shadow-[0_18px_55px_rgba(16,16,20,0.08)] backdrop-blur-xl transition hover:-translate-y-0.5 hover:bg-white/78 sm:min-h-[7.6rem] sm:rounded-3xl sm:p-4"
+              >
+                {isYouTube ? (
+                  <span className="inline-flex h-10 w-10 items-center justify-center rounded-2xl bg-[#FF0033] text-white shadow-[0_16px_40px_rgba(255,0,51,0.22)]">
+                    <Play className="h-5 w-5 fill-current" />
+                  </span>
+                ) : (
+                  <p className="break-words font-mono text-lg font-extrabold leading-tight text-[var(--ink)] sm:text-xl sm:leading-none">
+                    {stat.value}
+                  </p>
+                )}
+                <p
+                  className={
+                    isYouTube
+                      ? "mt-3 text-sm font-extrabold text-[var(--ink)]"
+                      : "mt-2 text-[0.66rem] font-bold uppercase tracking-[0.14em] text-[var(--ink)]/50"
+                  }
+                >
+                  {isYouTube ? "YouTube Community" : stat.label}
+                </p>
+                {isYouTube ? (
+                  <p className="mt-1 text-[0.66rem] font-extrabold uppercase tracking-[0.16em] text-[var(--ink)]/45">
+                    Watch Videos
+                  </p>
+                ) : null}
+              </CardTag>
+            );
+          })}
         </motion.div>
       </div>
 

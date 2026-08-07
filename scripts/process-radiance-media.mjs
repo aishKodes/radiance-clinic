@@ -752,17 +752,6 @@ function metadataForFile(metadataIndex, info) {
   );
 }
 
-function safeRelativePath(relativePath) {
-  const parsed = path.parse(relativePath);
-  const dir = parsed.dir
-    .split(path.sep)
-    .filter(Boolean)
-    .map((segment) => slugify(segment) || "folder")
-    .join(path.sep);
-  const filename = `${slugify(parsed.name) || "image"}${parsed.ext.toLowerCase()}`;
-  return dir ? path.join(dir, filename) : filename;
-}
-
 function shortHash(value) {
   return crypto.createHash("sha1").update(value).digest("hex").slice(0, 8);
 }

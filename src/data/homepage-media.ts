@@ -149,7 +149,7 @@ export const premiumServiceCards: Treatment[] = [
     accent: "orchid",
   }),
   serviceCard({
-    title: "Botox & Fillers",
+    title: "Injectables & Fillers",
     summary:
       "Refined aesthetic treatments for facial balance and rejuvenation.",
     slug: "injectable-aesthetics",
@@ -171,8 +171,8 @@ export const premiumServiceCards: Treatment[] = [
     accent: "aqua",
   }),
   serviceCard({
-    title: "Skin Rejuvenation",
-    summary: "Modern skin treatments for glow, texture and freshness.",
+    title: "Event Skin Protocols",
+    summary: "Consultation-led skin preparation for important dates and events.",
     slug: "bridal-glow-protocol",
     cluster: "skin-wellness",
     clusterLabel: "Skin Wellness",
@@ -191,7 +191,7 @@ export const premiumServiceCards: Treatment[] = [
     accent: "bronze",
   }),
   serviceCard({
-    title: "Anti Ageing",
+    title: "Anti-ageing & Skin Quality",
     summary:
       "Subtle, personalised care for lines, firmness and youthful skin quality.",
     slug: "injectable-aesthetics",

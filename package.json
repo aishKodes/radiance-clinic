@@ -7,6 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
+    "seo:audit": "node scripts/seo-audit.mjs",
+    "test:redirects": "node scripts/seo-audit.mjs --redirects-only",
     "process:media": "node scripts/process-radiance-media.mjs"
   },
   "dependencies": {

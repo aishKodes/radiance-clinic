@@ -10,15 +10,14 @@ import {
   skinTransformationExamples,
 } from "@/data/homepage-media";
 import { webPageJsonLd } from "@/lib/schema";
+import { pageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
-  title: "Hair Transplant & Skin Before and After Results",
+export const metadata: Metadata = pageMetadata({
+  title: "Hair Transplant & Skin Before and After Results | Radiance Clinics",
   description:
     "Consent-led before and after examples at Radiance Clinics, Bhubaneswar, with realistic clinical context.",
-  alternates: {
-    canonical: "/before-after",
-  },
-};
+  path: "/before-after",
+});
 
 export default function BeforeAfterPage() {
   return (
@@ -34,6 +33,7 @@ export default function BeforeAfterPage() {
       <section className="bg-[#F7F1E8] px-5 pb-20 pt-36 sm:px-8 lg:pb-28 lg:pt-44">
         <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[1fr_0.36fr]">
           <SectionHeader
+            level="h1"
             eyebrow="Before / after"
             title="Before and after images should clarify, not oversell."
             description="Radiance Clinics shares approved case examples with consent, timeline context and realistic discussion. A consultation is required to understand suitability."
@@ -100,6 +100,9 @@ export default function BeforeAfterPage() {
           </div>
           <PremiumButton href="/contact" className="mt-10">
             Discuss case suitability
+          </PremiumButton>
+          <PremiumButton href="/results" variant="outline" className="ml-0 mt-4 sm:ml-3 sm:mt-10">
+            Browse results by concern
           </PremiumButton>
         </div>
       </section>

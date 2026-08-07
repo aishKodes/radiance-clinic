@@ -7,6 +7,7 @@ type SectionHeaderProps = {
   align?: "left" | "center";
   inverse?: boolean;
   className?: string;
+  level?: "h1" | "h2";
 };
 
 export function SectionHeader({
@@ -16,7 +17,9 @@ export function SectionHeader({
   align = "left",
   inverse = false,
   className,
+  level = "h2",
 }: SectionHeaderProps) {
+  const Heading = level;
   return (
     <div
       className={cn(
@@ -33,14 +36,14 @@ export function SectionHeader({
       >
         {eyebrow}
       </p>
-      <h2
+      <Heading
         className={cn(
           "font-serif text-[2.15rem] leading-[0.98] tracking-normal sm:text-5xl lg:text-6xl",
           inverse ? "text-[var(--ivory)]" : "text-[var(--ink)]",
         )}
       >
         {title}
-      </h2>
+      </Heading>
       {description ? (
         <p
           className={cn(

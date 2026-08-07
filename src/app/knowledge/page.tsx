@@ -7,15 +7,15 @@ import { SectionHeader } from "@/components/SectionHeader";
 import { StickyConsultationCard } from "@/components/StickyConsultationCard";
 import { getArticles } from "@/data/site";
 import { webPageJsonLd } from "@/lib/schema";
+import { pageMetadata } from "@/lib/metadata";
+import { treatmentHubs } from "@/data/search-taxonomy";
 
-export const metadata: Metadata = {
-  title: "Knowledge Library",
+export const metadata: Metadata = pageMetadata({
+  title: "Hair, Skin & Aesthetic Knowledge | Radiance Clinics",
   description:
     "Patient education on hair restoration, laser skin care and aesthetic medicine from Radiance Clinics, Bhubaneswar.",
-  alternates: {
-    canonical: "/knowledge",
-  },
-};
+  path: "/knowledge",
+});
 
 export default async function KnowledgePage() {
   const articles = await getArticles();
@@ -33,6 +33,7 @@ export default async function KnowledgePage() {
       <section className="bg-[#F7F1E8] px-5 pb-20 pt-36 sm:px-8 lg:pb-28 lg:pt-44">
         <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[1fr_0.36fr]">
           <SectionHeader
+            level="h1"
             eyebrow="Knowledge library"
             title="Read before you decide."
             description="Concise, clinically grounded articles for patients comparing aesthetic, hair restoration and laser options."
@@ -40,6 +41,15 @@ export default async function KnowledgePage() {
           <StickyConsultationCard />
         </div>
       </section>
+      <nav aria-label="Knowledge topic clusters" className="bg-[#F7F1E8] px-5 py-12 sm:px-8">
+        <div className="mx-auto grid max-w-7xl gap-3 sm:grid-cols-2 lg:grid-cols-4">
+          {treatmentHubs.map((hub) => (
+            <Link key={hub.slug} href={`/treatments/${hub.slug}`} className="border-t border-[#151515]/15 py-5 text-sm font-extrabold text-[#151515] transition hover:border-[#B78A4A]">
+              {hub.label} guides and treatments
+            </Link>
+          ))}
+        </div>
+      </nav>
       <section className="bg-[#FBF7EF] px-5 py-20 sm:px-8 lg:py-28">
         <div className="mx-auto grid max-w-7xl gap-5 md:grid-cols-3">
           {articles.map((article) => (

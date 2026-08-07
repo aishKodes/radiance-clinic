@@ -2,23 +2,23 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import {
-  ArrowLeft,
   ArrowUpRight,
   ExternalLink,
   ShieldCheck,
   Star,
 } from "lucide-react";
 import { JsonLd } from "@/components/JsonLd";
+import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { PremiumButton } from "@/components/PremiumButton";
 import {
-  getClinicSettings,
   getReview,
   getReviews,
   getReviewStaticParams,
   isReviewCategory,
   reviewCategories,
 } from "@/data/site";
-import { breadcrumbJsonLd, reviewJsonLd, webPageJsonLd } from "@/lib/schema";
+import { breadcrumbJsonLd, webPageJsonLd } from "@/lib/schema";
+import { pageMetadata } from "@/lib/metadata";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -33,13 +33,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const category = reviewCategories.find((item) => item.slug === slug);
 
   if (category) {
-    return {
-      title: `${category.label} Reviews`,
+    const categoryReviews = await getReviews(slug);
+
+    return pageMetadata({
+      title: `${category.label} Reviews | Radiance Clinics`,
       description: category.description,
-      alternates: {
-        canonical: `/reviews/${slug}`,
-      },
-    };
+      path: `/reviews/${slug}`,
+      index: categoryReviews.length > 0,
+    });
   }
 
   const review = await getReview(slug);
@@ -48,13 +49,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     return { title: "Review" };
   }
 
-  return {
-    title: `Review from ${review.reviewerName}`,
+  return pageMetadata({
+    title: `Patient Review | Radiance Clinics Bhubaneswar`,
     description: review.reviewText.slice(0, 155),
-    alternates: {
-      canonical: `/reviews/${slug}`,
-    },
-  };
+    path: `/reviews/${slug}`,
+  });
 }
 
 export default async function ReviewRoutePage({ params }: Props) {
@@ -64,18 +63,19 @@ export default async function ReviewRoutePage({ params }: Props) {
     return <ReviewCategoryPage slug={slug} />;
   }
 
-  const [review, clinic] = await Promise.all([
-    getReview(slug),
-    getClinicSettings(),
-  ]);
+  const review = await getReview(slug);
 
   if (!review) {
     notFound();
   }
+  const breadcrumbs = [
+    { name: "Home", path: "/" },
+    { name: "Reviews", path: "/reviews" },
+    { name: review.reviewerName, path: `/reviews/${slug}` },
+  ];
 
   return (
     <>
-      <JsonLd data={reviewJsonLd(review, clinic)} />
       <JsonLd
         data={webPageJsonLd({
           title: `Review from ${review.reviewerName}`,
@@ -84,24 +84,14 @@ export default async function ReviewRoutePage({ params }: Props) {
         })}
       />
       <JsonLd
-        data={breadcrumbJsonLd([
-          { name: "Home", path: "/" },
-          { name: "Reviews", path: "/reviews" },
-          { name: review.reviewerName, path: `/reviews/${slug}` },
-        ])}
+        data={breadcrumbJsonLd(breadcrumbs)}
       />
 
       <section className="relative overflow-hidden bg-[var(--ivory)] px-5 pb-20 pt-36 sm:px-8 lg:pb-28 lg:pt-44">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_16%,rgba(42,195,214,0.18),transparent_30%),radial-gradient(circle_at_82%_20%,rgba(255,123,97,0.16),transparent_32%),radial-gradient(circle_at_58%_82%,rgba(124,77,255,0.12),transparent_34%)]" />
         <article className="relative mx-auto grid max-w-7xl gap-12 lg:grid-cols-[1fr_0.38fr]">
           <div>
-            <Link
-              href="/reviews"
-              className="mb-8 inline-flex items-center gap-2 text-sm font-bold uppercase tracking-[0.18em] text-[var(--ink)]/54 transition hover:text-[var(--ink)]"
-            >
-              <ArrowLeft className="h-4 w-4" />
-              Reviews
-            </Link>
+            <Breadcrumbs items={breadcrumbs} />
             <p className="mb-5 text-xs font-black uppercase tracking-[0.34em] text-[var(--aqua)]">
               {review.treatmentCategory.replaceAll("-", " ")}
             </p>
@@ -119,11 +109,11 @@ export default async function ReviewRoutePage({ params }: Props) {
           <div className="h-fit rounded-[2.25rem] border border-white/60 bg-white/55 p-7 shadow-[0_30px_100px_rgba(16,16,20,0.11)] backdrop-blur-2xl">
             <ShieldCheck className="mb-8 h-7 w-7 text-[var(--aqua)]" />
             <p className="font-serif text-4xl leading-none text-[var(--ink)]">
-              Permission-confirmed review
+              Patient feedback in context
             </p>
             <p className="mt-5 text-sm leading-7 text-[var(--ink)]/62">
-              Review content is published for trust and context only. Individual
-              results and experiences can vary.
+              This comment describes one person&apos;s clinic experience. Treatment
+              suitability, experiences and results vary.
             </p>
           </div>
         </article>
@@ -184,6 +174,11 @@ async function ReviewCategoryPage({ slug }: { slug: string }) {
   }
 
   const reviews = await getReviews(slug);
+  const breadcrumbs = [
+    { name: "Home", path: "/" },
+    { name: "Reviews", path: "/reviews" },
+    { name: category.label, path: `/reviews/${slug}` },
+  ];
 
   return (
     <>
@@ -195,22 +190,12 @@ async function ReviewCategoryPage({ slug }: { slug: string }) {
         })}
       />
       <JsonLd
-        data={breadcrumbJsonLd([
-          { name: "Home", path: "/" },
-          { name: "Reviews", path: "/reviews" },
-          { name: category.label, path: `/reviews/${slug}` },
-        ])}
+        data={breadcrumbJsonLd(breadcrumbs)}
       />
       <section className="relative overflow-hidden bg-[var(--ivory)] px-5 pb-20 pt-36 sm:px-8 lg:pb-28 lg:pt-44">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_18%,rgba(42,195,214,0.17),transparent_30%),radial-gradient(circle_at_82%_20%,rgba(124,77,255,0.12),transparent_30%)]" />
         <div className="relative mx-auto max-w-7xl">
-          <Link
-            href="/reviews"
-            className="mb-8 inline-flex items-center gap-2 text-sm font-bold uppercase tracking-[0.18em] text-[var(--ink)]/54 transition hover:text-[var(--ink)]"
-          >
-            <ArrowLeft className="h-4 w-4" />
-            All reviews
-          </Link>
+          <Breadcrumbs items={breadcrumbs} />
           <div className="max-w-4xl">
             <p className="mb-4 text-xs font-extrabold uppercase tracking-[0.34em] text-[var(--aqua)]">
               Review category
@@ -252,7 +237,7 @@ async function ReviewCategoryPage({ slug }: { slug: string }) {
           ) : (
             <div className="rounded-[2.5rem] border border-[var(--ink)]/10 bg-white/62 p-8 shadow-[0_30px_110px_rgba(16,16,20,0.1)] backdrop-blur">
               <h2 className="font-serif text-5xl leading-none text-[var(--ink)]">
-                More reviews in this category will be added after clinic review.
+                Speak with the clinic about this treatment category.
               </h2>
               <p className="mt-5 max-w-2xl text-sm leading-7 text-[var(--ink)]/64">
                 Contact Radiance Clinics for consultation guidance about this

@@ -1,0 +1,25 @@
+legacy_url,destination_url,status,reason,equivalence_confidence,notes
+/treatment/hairfall/prp/,https://www.radianceclinics.com/treatments/hair-restoration/prp-gfc-scalp-therapy,active-permanent,Equivalent scalp therapy page,high,Implemented as one-hop 308 by Next.js
+/treatment/hairfall/gfc/,https://www.radianceclinics.com/treatments/hair-restoration/prp-gfc-scalp-therapy,active-permanent,Equivalent scalp therapy page,high,Implemented as one-hop 308 by Next.js
+/hair-loss-treatments/,https://www.radianceclinics.com/hair-transplant-bhubaneswar,active-permanent,Closest current commercial hair restoration page,high,Implemented as one-hop 308 by Next.js
+/hair-wig/,,deferred-verification,No genuine non-surgical hair system page exists,none,Service and clinical content must be verified before publication
+/hair-patch/,,deferred-verification,No genuine non-surgical hair system page exists,none,Service and clinical content must be verified before publication
+/skin-care-treatments/,https://www.radianceclinics.com/skin-clinic-bhubaneswar,active-permanent,Equivalent current skin clinic page,high,Implemented as one-hop 308 by Next.js
+/acne-scars/,https://www.radianceclinics.com/acne-scar-treatment-bhubaneswar,active-permanent,Equivalent acne scar service page,high,Implemented as one-hop 308 by Next.js
+/mole-wart-removal/,https://www.radianceclinics.com/skin-clinic-bhubaneswar,active-permanent,Current skin clinic page explicitly covers mole and wart concerns,medium,Build dedicated service page in Step 2 if content depth supports it
+/laser-hair-removal-radiance/,https://www.radianceclinics.com/laser-hair-removal-bhubaneswar,active-permanent,Equivalent laser hair removal page,high,Implemented as one-hop 308 by Next.js
+/tattoo-removal-radiance/,,deferred-verification,No current page genuinely covers tattoo removal,none,Verify that the clinic currently offers this service before publication
+/fillers/,https://www.radianceclinics.com/treatments/aesthetic-dermatology/injectable-aesthetics,active-permanent,Equivalent injectables and fillers page,high,Implemented as one-hop 308 by Next.js
+/about-us/,https://www.radianceclinics.com/about,active-permanent,Equivalent doctor and clinic page,high,Implemented as one-hop 308 by Next.js
+/contact-us/,https://www.radianceclinics.com/contact,active-permanent,Equivalent contact page,high,Implemented as one-hop 308 by Next.js
+/dermatology-clinic-in-bhubaneswar/,https://www.radianceclinics.com/skin-clinic-bhubaneswar,active-permanent,Equivalent local skin clinic page,high,Implemented as one-hop 308 by Next.js
+/treatment/anti-ageing-therapies/ultherapy/,https://www.radianceclinics.com/conditions/skin-ageing-laxity,active-permanent,Closest genuine current concern page without claiming an Ultherapy service,medium,Create dedicated Ultherapy content only if the clinic verifies the service
+/treatment/stretch-marks/dermaroller/,,deferred-verification,No current page genuinely covers stretch marks or dermaroller treatment,none,Verify service details and obtain medical review before publication
+/vitiligo-3/,,deferred-verification,No current vitiligo page exists,none,Medical review and verified clinic treatment scope are required
+/post/a-complete-guide-to-know-about-botox-treatment/,https://www.radianceclinics.com/treatments/aesthetic-dermatology/injectable-aesthetics,active-permanent,Closest genuine current injectable treatment page,medium,Step 2 should publish an equivalent educational article
+/hair-transplant-in-cuttack/,https://www.radianceclinics.com/hair-transplant-bhubaneswar,active-permanent,Closest current verified hair transplant page,medium,Cuttack route remains draft until city-specific evidence passes the Step 2 eligibility gate
+/hair-transplant-in-puri/,https://www.radianceclinics.com/hair-transplant-bhubaneswar,active-permanent,Closest current verified hair transplant page,medium,Puri route remains draft until city-specific evidence passes the Step 2 eligibility gate
+/hair-transplant-in-rourkela/,https://www.radianceclinics.com/hair-transplant-bhubaneswar,active-permanent,Closest current verified hair transplant page,medium,Rourkela route remains draft until city-specific evidence passes the Step 2 eligibility gate
+/hair-transplant-in-sambalpur/,https://www.radianceclinics.com/hair-transplant-bhubaneswar,active-permanent,Closest current verified hair transplant page,medium,Sambalpur route remains draft until city-specific evidence passes the Step 2 eligibility gate
+/hair-transplant-in-berhampur/,https://www.radianceclinics.com/hair-transplant-bhubaneswar,active-permanent,Closest current verified hair transplant page,medium,Berhampur route remains draft until city-specific evidence passes the Step 2 eligibility gate
+/hair-transplant-in-baripada/,https://www.radianceclinics.com/hair-transplant-bhubaneswar,active-permanent,Closest current verified hair transplant page,medium,Baripada route remains draft until city-specific evidence passes the Step 2 eligibility gate

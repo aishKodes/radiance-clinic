@@ -1,19 +1,24 @@
 import type { Metadata } from "next";
-import { Mail, MapPin, MessageCircle, Phone } from "lucide-react";
+import { ExternalLink, Mail, MapPin, MessageCircle, Phone } from "lucide-react";
+import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { JsonLd } from "@/components/JsonLd";
 import { PremiumButton } from "@/components/PremiumButton";
 import { SectionHeader } from "@/components/SectionHeader";
 import { getClinicSettings } from "@/data/site";
-import { medicalClinicJsonLd, webPageJsonLd } from "@/lib/schema";
+import { breadcrumbJsonLd, webPageJsonLd } from "@/lib/schema";
+import { pageMetadata } from "@/lib/metadata";
+import {
+  clinicIdentity,
+  directionsUrl,
+  normalizedTel,
+} from "@/lib/seo-config";
 
-export const metadata: Metadata = {
-  title: "Contact",
+export const metadata: Metadata = pageMetadata({
+  title: "Contact Radiance Clinics Bhubaneswar",
   description:
-    "Book a consultation at Radiance Clinics, Bhubaneswar for hair, skin, laser and aesthetic care.",
-  alternates: {
-    canonical: "/contact",
-  },
-};
+    "Contact Radiance Clinics in Nayapalli, Bhubaneswar for doctor-led hair, skin, laser and aesthetic consultation appointments.",
+  path: "/contact",
+});
 
 export default async function ContactPage() {
   const clinic = await getClinicSettings();
@@ -21,7 +26,7 @@ export default async function ContactPage() {
     {
       label: "Call clinic",
       value: clinic.phone,
-      href: `tel:${clinic.phone.replace(/\s/g, "")}`,
+      href: `tel:${normalizedTel(clinic.phone)}`,
       icon: Phone,
     },
     ...(clinic.secondaryPhone
@@ -29,7 +34,17 @@ export default async function ContactPage() {
           {
             label: "Alternate number",
             value: clinic.secondaryPhone,
-            href: `tel:${clinic.secondaryPhone.replace(/\s/g, "")}`,
+            href: `tel:${normalizedTel(clinic.secondaryPhone)}`,
+            icon: Phone,
+          },
+        ]
+    : []),
+    ...(clinic.landline
+      ? [
+          {
+            label: "Clinic landline",
+            value: clinic.landline,
+            href: `tel:${clinicIdentity.landlineTel}`,
             icon: Phone,
           },
         ]
@@ -50,7 +65,6 @@ export default async function ContactPage() {
 
   return (
     <>
-      <JsonLd data={medicalClinicJsonLd(clinic)} />
       <JsonLd
         data={webPageJsonLd({
           title: "Contact Radiance Clinics",
@@ -59,30 +73,51 @@ export default async function ContactPage() {
           path: "/contact",
         })}
       />
+      <JsonLd
+        data={breadcrumbJsonLd([
+          { name: "Home", path: "/" },
+          { name: "Contact", path: "/contact" },
+        ])}
+      />
       <section className="bg-[#F7F1E8] px-5 pb-20 pt-36 sm:px-8 lg:pb-28 lg:pt-44">
         <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[1fr_0.8fr] lg:items-end">
-          <SectionHeader
-            eyebrow="Book consultation"
-            title="Begin with a private, doctor-led assessment."
-            description="Share your concern, timeline and expectations. The clinic team can guide you toward the right consultation route."
-          />
+          <div>
+            <Breadcrumbs
+              items={[
+                { name: "Home", path: "/" },
+                { name: "Contact", path: "/contact" },
+              ]}
+            />
+            <SectionHeader
+              level="h1"
+              eyebrow="Book consultation"
+              title="Contact Radiance Clinics in Bhubaneswar."
+              description="Share your concern, timeline and expectations. The clinic team can guide you toward the right consultation route."
+            />
+          </div>
           <div className="rounded-[2.5rem] border border-[#151515]/10 bg-[#151515] p-8 text-[#FBF7EF] shadow-[0_34px_100px_rgba(21,21,21,0.16)]">
             <p className="text-xs font-bold uppercase tracking-[0.3em] text-[#B78A4A]">
-              Clinic hours
-            </p>
-            <p className="mt-5 font-serif text-5xl leading-none">
-              {clinic.hours}
+              Clinic address
             </p>
             <p className="mt-6 flex gap-3 text-sm leading-7 text-[#FBF7EF]/64">
               <MapPin className="mt-0.5 h-5 w-5 shrink-0 text-[#B78A4A]" />
               {clinic.address}
             </p>
+            <a
+              href={directionsUrl(clinic.address)}
+              target="_blank"
+              rel="noreferrer"
+              className="mt-6 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.14em] text-[#B78A4A] hover:text-white"
+            >
+              Get directions
+              <ExternalLink className="h-4 w-4" />
+            </a>
           </div>
         </div>
       </section>
 
       <section className="bg-[#FBF7EF] px-5 py-20 sm:px-8 lg:py-28">
-        <div className="mx-auto grid max-w-7xl gap-5 md:grid-cols-2 lg:grid-cols-4">
+        <div className="mx-auto grid max-w-7xl gap-5 md:grid-cols-2 lg:grid-cols-5">
           {contactCards.map((item) => {
             const Icon = item.icon;
             return (
@@ -101,6 +136,18 @@ export default async function ContactPage() {
               </a>
             );
           })}
+        </div>
+      </section>
+
+      <section className="bg-[#FBF7EF] px-5 pb-20 sm:px-8 lg:pb-28">
+        <div className="mx-auto max-w-7xl overflow-hidden rounded-[1.5rem] border border-[#151515]/10 bg-white">
+          <iframe
+            title="Map showing Radiance Clinics in Nayapalli, Bhubaneswar"
+            src={`https://www.google.com/maps?q=${encodeURIComponent(clinic.address)}&output=embed`}
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            className="h-[22rem] w-full border-0 lg:h-[28rem]"
+          />
         </div>
       </section>
 

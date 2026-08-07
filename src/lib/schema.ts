@@ -1,11 +1,54 @@
 import { fallbackData } from "@/data/fallback";
-import { siteUrl } from "@/lib/utils";
-import type { Article, ClinicSettings, Review } from "@/types/cms";
+import {
+  absoluteUrl,
+  clinicIdentity,
+  defaultSocialImage,
+  schemaIds,
+  socialProfiles,
+} from "@/lib/seo-config";
+import type { Article, ClinicSettings } from "@/types/cms";
 
 type JsonLd = Record<string, unknown>;
 
 export function safeJsonLd(data: JsonLd) {
   return JSON.stringify(data).replace(/</g, "\\u003c");
+}
+
+function postalAddress(settings: ClinicSettings): JsonLd {
+  return {
+    "@type": "PostalAddress",
+    streetAddress: clinicIdentity.streetAddress,
+    addressLocality: settings.city,
+    addressRegion: settings.region,
+    postalCode: clinicIdentity.postalCode,
+    addressCountry: clinicIdentity.countryCode,
+  };
+}
+
+function telephoneNumbers(settings: ClinicSettings) {
+  return [settings.landline, settings.phone, settings.secondaryPhone].filter(
+    Boolean,
+  );
+}
+
+export function organizationJsonLd(
+  settings: ClinicSettings = fallbackData.siteSettings,
+): JsonLd {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": schemaIds.organization,
+    name: settings.legalName,
+    alternateName: clinicIdentity.shortName,
+    url: absoluteUrl("/"),
+    logo: {
+      "@type": "ImageObject",
+      url: absoluteUrl("/radiance-logo.png"),
+    },
+    email: settings.email,
+    telephone: telephoneNumbers(settings),
+    sameAs: socialProfiles.map((profile) => profile.href),
+  };
 }
 
 export function medicalClinicJsonLd(
@@ -14,30 +57,28 @@ export function medicalClinicJsonLd(
   return {
     "@context": "https://schema.org",
     "@type": "MedicalClinic",
+    "@id": schemaIds.clinic,
     name: settings.legalName,
-    url: siteUrl,
-    telephone: [settings.phone, settings.secondaryPhone].filter(Boolean),
+    alternateName: clinicIdentity.shortName,
+    url: absoluteUrl("/"),
+    image: absoluteUrl(defaultSocialImage),
+    telephone: telephoneNumbers(settings),
     email: settings.email,
-    address: {
-      "@type": "PostalAddress",
-      streetAddress: settings.address,
-      addressLocality: settings.city,
-      addressRegion: settings.region,
-      addressCountry: "IN",
-    },
-    medicalSpecialty: [
-      "Dermatology",
-      "Cosmetic Dermatology",
-      "Hair Restoration",
-      "Laser Aesthetic Medicine",
-    ],
-    founder: {
-      "@type": "Person",
-      name: settings.doctor,
-      jobTitle: "Doctor",
-    },
-    openingHours: "Mo-Sa 10:00-19:00",
-    priceRange: "$$",
+    address: postalAddress(settings),
+    parentOrganization: { "@id": schemaIds.organization },
+    sameAs: socialProfiles.map((profile) => profile.href),
+  };
+}
+
+export function websiteJsonLd(): JsonLd {
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": schemaIds.website,
+    name: clinicIdentity.shortName,
+    url: absoluteUrl("/"),
+    publisher: { "@id": schemaIds.organization },
+    inLanguage: "en-IN",
   };
 }
 
@@ -47,25 +88,11 @@ export function physicianJsonLd(
   return {
     "@context": "https://schema.org",
     "@type": "Physician",
+    "@id": schemaIds.physician,
     name: settings.doctor,
-    url: `${siteUrl}/about`,
-    worksFor: {
-      "@type": "MedicalClinic",
-      name: settings.legalName,
-      url: siteUrl,
-    },
-    medicalSpecialty: [
-      "Dermatology",
-      "Cosmetic Dermatology",
-      "Hair Restoration",
-      "Laser Aesthetic Medicine",
-    ],
-    address: {
-      "@type": "PostalAddress",
-      addressLocality: settings.city,
-      addressRegion: settings.region,
-      addressCountry: "IN",
-    },
+    url: absoluteUrl("/about"),
+    worksFor: { "@id": schemaIds.clinic },
+    address: postalAddress(settings),
   };
 }
 
@@ -78,17 +105,50 @@ export function webPageJsonLd({
   description: string;
   path: string;
 }): JsonLd {
+  const url = absoluteUrl(path);
   return {
     "@context": "https://schema.org",
     "@type": "WebPage",
+    "@id": `${url}#webpage`,
     name: title,
     description,
-    url: `${siteUrl}${path}`,
-    isPartOf: {
-      "@type": "WebSite",
-      name: fallbackData.siteSettings.name,
-      url: siteUrl,
+    url,
+    isPartOf: { "@id": schemaIds.website },
+    about: { "@id": schemaIds.clinic },
+    inLanguage: "en-IN",
+  };
+}
+
+export function collectionPageJsonLd({
+  title,
+  description,
+  path,
+  itemPaths,
+}: {
+  title: string;
+  description: string;
+  path: string;
+  itemPaths: string[];
+}): JsonLd {
+  const url = absoluteUrl(path);
+  return {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "@id": `${url}#webpage`,
+    name: title,
+    description,
+    url,
+    isPartOf: { "@id": schemaIds.website },
+    about: { "@id": schemaIds.clinic },
+    mainEntity: {
+      "@type": "ItemList",
+      itemListElement: itemPaths.map((itemPath, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        url: absoluteUrl(itemPath),
+      })),
     },
+    inLanguage: "en-IN",
   };
 }
 
@@ -103,48 +163,42 @@ export function medicalServiceJsonLd({
   path: string;
   settings?: ClinicSettings;
 }): JsonLd {
+  const url = absoluteUrl(path);
   return {
     "@context": "https://schema.org",
     "@type": "Service",
+    "@id": `${url}#service`,
     name,
     description,
-    url: `${siteUrl}${path}`,
+    url,
     areaServed: {
       "@type": "City",
       name: settings.city,
     },
-    provider: {
-      "@type": "MedicalClinic",
-      name: settings.legalName,
-      url: siteUrl,
-      telephone: [settings.phone, settings.secondaryPhone].filter(Boolean),
-      address: {
-        "@type": "PostalAddress",
-        streetAddress: settings.address,
-        addressLocality: settings.city,
-        addressRegion: settings.region,
-        addressCountry: "IN",
-      },
-    },
+    provider: { "@id": schemaIds.clinic },
   };
 }
 
 export function articleJsonLd(article: Article): JsonLd {
+  const url = absoluteUrl(`/knowledge/${article.slug}`);
   return {
     "@context": "https://schema.org",
     "@type": "Article",
+    "@id": `${url}#article`,
     headline: article.title,
     description: article.excerpt,
     articleSection: article.category,
-    author: {
-      "@type": "Person",
-      name: fallbackData.siteSettings.doctor,
-    },
-    publisher: {
-      "@type": "Organization",
-      name: fallbackData.siteSettings.name,
-    },
-    mainEntityOfPage: `${siteUrl}/knowledge/${article.slug}`,
+    image: article.image
+      ? absoluteUrl(article.image.src || article.image.desktopUrl)
+      : undefined,
+    author: article.authorName
+      ? { "@type": "Person", name: article.authorName }
+      : { "@id": schemaIds.organization },
+    publisher: { "@id": schemaIds.organization },
+    datePublished: article.publishedAt,
+    dateModified: article.updatedAt || article.reviewedAt,
+    mainEntityOfPage: { "@id": `${url}#webpage` },
+    inLanguage: "en-IN",
   };
 }
 
@@ -158,58 +212,7 @@ export function breadcrumbJsonLd(
       "@type": "ListItem",
       position: index + 1,
       name: item.name,
-      item: `${siteUrl}${item.path}`,
-    })),
-  };
-}
-
-export function reviewJsonLd(
-  review: Review,
-  settings: ClinicSettings = fallbackData.siteSettings,
-): JsonLd {
-  return {
-    "@context": "https://schema.org",
-    "@type": "Review",
-    name: `Radiance Clinics review - ${review.treatmentCategory}`,
-    reviewBody: review.reviewText,
-    datePublished: review.reviewedAt,
-    author: {
-      "@type": "Person",
-      name: review.reviewerName,
-    },
-    reviewRating: {
-      "@type": "Rating",
-      ratingValue: review.rating,
-      bestRating: 5,
-      worstRating: 1,
-    },
-    itemReviewed: {
-      "@type": "MedicalClinic",
-      name: settings.legalName,
-      url: siteUrl,
-      address: {
-        "@type": "PostalAddress",
-        addressLocality: settings.city,
-        addressRegion: settings.region,
-        addressCountry: "IN",
-      },
-    },
-  };
-}
-
-export function faqJsonLd(
-  items: { question: string; answer: string }[],
-): JsonLd {
-  return {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: items.map((item) => ({
-      "@type": "Question",
-      name: item.question,
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: item.answer,
-      },
+      item: absoluteUrl(item.path),
     })),
   };
 }

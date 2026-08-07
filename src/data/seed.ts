@@ -51,21 +51,22 @@ import {
   realSocialStats,
 } from "@/data/real-media";
 import { beforeAfterCasesToTransformations } from "@/lib/transformations";
+import { clinicIdentity } from "@/lib/seo-config";
 
 export const clinic: ClinicSettings = {
-  name: "Radiance Clinics",
-  legalName: "Radiance Clinics, Bhubaneswar",
-  city: "Bhubaneswar",
-  region: "Odisha",
-  address:
-    "Radiance Clinics, Bhubaneswar, Odisha, India",
-  phone: "+91 92383 21888",
-  secondaryPhone: "+91 92381 22550",
-  whatsapp: "919238321888",
-  email: "care@radianceclinics.in",
-  doctor: "Dr. Satyarth Prakash",
+  name: clinicIdentity.name,
+  legalName: clinicIdentity.legalName,
+  city: clinicIdentity.city,
+  region: clinicIdentity.region,
+  address: clinicIdentity.address,
+  phone: clinicIdentity.primaryPhone,
+  secondaryPhone: clinicIdentity.secondaryPhone,
+  landline: clinicIdentity.landline,
+  whatsapp: clinicIdentity.whatsapp,
+  email: clinicIdentity.email,
+  doctor: clinicIdentity.doctor,
   tagline: "Doctor-led hair, skin, laser and aesthetic care.",
-  hours: "Mon-Sat, 10:00 AM-7:00 PM",
+  hours: "",
   socialLinks: realSocialLinks,
   socialStats: realSocialStats,
   reviewSummary: realReviewSummary,
@@ -76,7 +77,7 @@ export const navItems = [
   { href: "/about", label: "Doctor" },
   { href: "/treatments", label: "Treatments" },
   { href: "/conditions", label: "Concerns" },
-  { href: "/before-after", label: "Results" },
+  { href: "/results", label: "Results" },
   { href: "/reviews", label: "Reviews" },
   { href: "/knowledge", label: "Knowledge" },
   { href: "/contact", label: "Visit" },

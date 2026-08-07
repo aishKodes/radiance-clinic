@@ -71,11 +71,11 @@ export function BeforeAfterCompare({
             {viewLabel}
           </p>
           <h3 className="mt-3 font-serif text-3xl leading-none">
-            Result image pair coming soon.
+            Comparison unavailable.
           </h3>
           <p className="mt-4 text-sm leading-6 text-white/62">
-            This space is reserved for a consent-confirmed before-and-after
-            image pair.
+            The approved before-and-after images could not be loaded. Please
+            review another comparison or contact the clinic.
           </p>
         </div>
       </div>

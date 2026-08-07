@@ -27,15 +27,26 @@ Open `http://localhost:3000`.
 All variables are optional for local fallback rendering unless noted.
 
 ```bash
-NEXT_PUBLIC_SITE_URL=https://radianceclinics.com
+NEXT_PUBLIC_SITE_URL=https://www.radianceclinics.com
 NEXT_PUBLIC_API_BASE_URL=https://api.radianceclinics.com
 GOOGLE_GENERATIVE_AI_API_KEY=
 GEMINI_API_KEY=
+GOOGLE_BUSINESS_PROFILE_CLIENT_ID=
+GOOGLE_BUSINESS_PROFILE_CLIENT_SECRET=
+GOOGLE_BUSINESS_PROFILE_REFRESH_TOKEN=
+GOOGLE_BUSINESS_PROFILE_ACCOUNT_ID=
+GOOGLE_BUSINESS_PROFILE_LOCATION_ID=
+GOOGLE_PLACES_API_KEY=
+GOOGLE_PLACE_ID=
+GOOGLE_BUSINESS_PROFILE_MAPS_URL=
 ```
 
 - `NEXT_PUBLIC_SITE_URL`: Used for metadata, canonical URLs, and sitemap output.
 - `NEXT_PUBLIC_API_BASE_URL`: Public API origin. If missing or unreachable, the frontend renders from `src/data/fallback.ts` and `src/data/seed.ts`.
 - `GOOGLE_GENERATIVE_AI_API_KEY` or `GEMINI_API_KEY`: Optional server-side Gemini key for `/api/assistant`. If missing, the assistant uses a safe rules-based fallback.
+- `GOOGLE_BUSINESS_PROFILE_*`: Optional server-only OAuth credentials and account/location IDs for the complete verified-location review feed. The access token is refreshed server-side and review data is cached for one hour.
+- `GOOGLE_PLACES_API_KEY` and `GOOGLE_PLACE_ID`: Optional fallback for the public Google rating, count, and selected reviews when Business Profile API access is not configured.
+- `GOOGLE_BUSINESS_PROFILE_MAPS_URL`: Optional direct link to the clinic's Google Maps profile. A Bhubaneswar search link is used when omitted.
 
 Do not commit `.env`, `.env.local`, or any real secret values.
 
@@ -76,6 +87,7 @@ The production site should not depend on raw folders. It should use optimized pu
    - `NEXT_PUBLIC_SITE_URL`
    - `NEXT_PUBLIC_API_BASE_URL` when the Hostinger API is live
    - `GOOGLE_GENERATIVE_AI_API_KEY` or `GEMINI_API_KEY` only if Gemini responses are desired
+   - The server-only `GOOGLE_BUSINESS_PROFILE_*` variables for live Google reviews, or `GOOGLE_PLACES_API_KEY` and `GOOGLE_PLACE_ID` for the public fallback
 4. Use the default build command:
 
 ```bash

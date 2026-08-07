@@ -3,20 +3,21 @@ import { Award, Microscope, ShieldCheck, Sparkles } from "lucide-react";
 import { DoctorAuthority } from "@/components/DoctorAuthority";
 import { JsonLd } from "@/components/JsonLd";
 import { PremiumButton } from "@/components/PremiumButton";
+import { RelatedContent } from "@/components/RelatedContent";
 import { SectionHeader } from "@/components/SectionHeader";
 import { StickyConsultationCard } from "@/components/StickyConsultationCard";
 import { fallbackData } from "@/data/fallback";
 import { getDoctorProfile } from "@/data/site";
 import { webPageJsonLd } from "@/lib/schema";
+import { pageMetadata } from "@/lib/metadata";
+import { physicianJsonLd } from "@/lib/schema";
 
-export const metadata: Metadata = {
-  title: `About ${fallbackData.siteSettings.doctor}`,
+export const metadata: Metadata = pageMetadata({
+  title: `About ${fallbackData.siteSettings.doctor} | Radiance Clinics`,
   description:
     "Meet Dr. Satyarth Prakash and the doctor-led philosophy behind Radiance Clinics, Bhubaneswar.",
-  alternates: {
-    canonical: "/about",
-  },
-};
+  path: "/about",
+});
 
 export default async function AboutPage() {
   const doctor = await getDoctorProfile();
@@ -31,14 +32,15 @@ export default async function AboutPage() {
           path: "/about",
         })}
       />
+      <JsonLd data={physicianJsonLd()} />
       <section className="bg-[#F7F1E8] px-5 pb-20 pt-36 sm:px-8 lg:pb-28 lg:pt-44">
         <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[1fr_0.72fr] lg:items-start">
           <div>
             <p className="mb-5 text-xs font-bold uppercase tracking-[0.36em] text-[#1E6F86]">
-              Doctor authority
+              Doctor profile
             </p>
             <h1 className="font-serif text-[clamp(4rem,10vw,8.5rem)] leading-[0.86] tracking-normal text-[#151515]">
-              Aesthetic care with clinical restraint.
+              Dr. Satyarth Prakash at Radiance Clinics
             </h1>
             <p className="mt-8 max-w-3xl text-xl leading-9 text-[#151515]/68">
               {doctor.name} leads Radiance Clinics with a consultation-first
@@ -92,6 +94,19 @@ export default async function AboutPage() {
       </section>
 
       <DoctorAuthority doctor={doctor} />
+
+      <RelatedContent
+        eyebrow="Treatment areas and patient guides"
+        title="Explore doctor-led care at Radiance Clinics."
+        items={[
+          { href: "/treatments/hair-restoration", label: "Hair restoration", description: "Hair-loss assessment, transplant planning and scalp-support options." },
+          { href: "/treatments/skin", label: "Skin treatments", description: "Concern-led skin consultation and staged treatment planning." },
+          { href: "/treatments/laser", label: "Laser treatments", description: "Skin-type aware laser planning, preparation and aftercare." },
+          { href: "/treatments/aesthetic-dermatology", label: "Aesthetic dermatology", description: "Conservative planning focused on anatomy, expression and proportion." },
+          { href: "/knowledge", label: "Patient knowledge library", description: "Read treatment and consultation guidance before booking." },
+          { href: "/contact", label: "Contact Radiance Clinics", description: "Use the verified clinic address and appointment channels." },
+        ]}
+      />
 
       <section className="bg-[#FBF7EF] px-5 py-24 sm:px-8 lg:py-32">
         <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-center">

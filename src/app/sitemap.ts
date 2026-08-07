@@ -7,15 +7,20 @@ import {
   getTreatmentStaticParams,
 } from "@/data/site";
 import {
+  categoryHubRoutes,
   coreIndexableRoutes,
   localLandingRouteSet,
   localLandingRoutes,
 } from "@/lib/seo-routes";
-import { siteUrl } from "@/lib/utils";
+import { indexableLocationPages } from "@/data/location-pages";
+import { indexableResultCases } from "@/data/result-cases";
+import { absoluteUrl } from "@/lib/seo-config";
+import { isIndexableRoute, normalizeRoutePath } from "@/lib/indexability";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const now = new Date();
-  const staticRoutes = [...coreIndexableRoutes, ...localLandingRoutes];
+  const staticRoutes = [...coreIndexableRoutes, ...categoryHubRoutes, ...localLandingRoutes];
+  const locationRoutes = indexableLocationPages.map((page) => `/${page.slug}`);
+  const resultRoutes = indexableResultCases.map((item) => `/results/${item.category}/${item.slug}`);
 
   const [
     treatmentParams,
@@ -54,18 +59,30 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     new Set(
       [
         ...staticRoutes,
+        ...locationRoutes,
+        ...resultRoutes,
         ...treatmentRoutes,
         ...conditionRoutes,
         ...articleRoutes,
         ...reviewRoutes,
         ...seoRoutes,
-      ].filter(Boolean),
+      ].map(normalizeRoutePath).filter(isIndexableRoute),
     ),
   );
 
+  const updatedAtByRoute = new Map<string, string>();
+  for (const item of [
+    ...seoIndex.treatments,
+    ...seoIndex.conditions,
+    ...seoIndex.articles,
+    ...seoIndex.reviews,
+  ]) {
+    if (item.updatedAt) updatedAtByRoute.set(normalizeRoutePath(item.url), item.updatedAt);
+  }
+
   return routes.map((route) => ({
-    url: `${siteUrl}${route === "/" ? "" : route}`,
-    lastModified: now,
+    url: absoluteUrl(route),
+    lastModified: updatedAtByRoute.get(route),
     changeFrequency: route === "/" ? "weekly" : "monthly",
     priority: route === "/" ? 1 : localLandingRouteSet.has(route) ? 0.9 : 0.8,
   }));

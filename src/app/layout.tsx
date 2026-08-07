@@ -6,8 +6,16 @@ import { BookingModal } from "@/components/BookingModal";
 import { DynamicChatbotDock } from "@/components/DynamicChatbotDock";
 import { FloatingCTA } from "@/components/FloatingCTA";
 import { SiteHeader } from "@/components/SiteHeader";
+import { SiteFooter } from "@/components/SiteFooter";
+import { JsonLd } from "@/components/JsonLd";
 import { fallbackData } from "@/data/fallback";
 import { getAssistantSettings, getClinicSettings } from "@/data/site";
+import { canonicalOrigin, defaultSocialImage } from "@/lib/seo-config";
+import {
+  medicalClinicJsonLd,
+  organizationJsonLd,
+  websiteJsonLd,
+} from "@/lib/schema";
 import "./globals.css";
 
 const jakarta = Plus_Jakarta_Sans({
@@ -29,29 +37,27 @@ const fraunces = Fraunces({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(
-    process.env.NEXT_PUBLIC_SITE_URL || "https://radianceclinics.com",
-  ),
+  metadataBase: new URL(canonicalOrigin),
   title: {
     default: "Radiance Clinics Bhubaneswar | Hair, Skin & Aesthetic Care",
     template: "%s | Radiance Clinics Bhubaneswar",
   },
   description:
     "Doctor-led skin, laser, hair restoration and aesthetic care by Dr. Satyarth Prakash at Radiance Clinics, Bhubaneswar.",
-  keywords: [
-    "Radiance Clinics Bhubaneswar",
-    "Dr Satyarth Prakash",
-    "hair restoration Bhubaneswar",
-    "dermatology clinic Bhubaneswar",
-    "laser skin clinic Bhubaneswar",
-    "aesthetic clinic Bhubaneswar",
-  ],
+  alternates: { canonical: canonicalOrigin },
   openGraph: {
     title: "Radiance Clinics Bhubaneswar",
     description: fallbackData.siteSettings.tagline,
     type: "website",
     locale: "en_IN",
     siteName: "Radiance Clinics",
+    url: canonicalOrigin,
+    images: [
+      {
+        url: defaultSocialImage,
+        alt: "Dr. Satyarth Prakash at Radiance Clinics Bhubaneswar",
+      },
+    ],
   },
   robots: {
     index: true,
@@ -69,6 +75,7 @@ export const metadata: Metadata = {
     title: "Radiance Clinics Bhubaneswar",
     description:
       "Doctor-led hair, skin, laser and aesthetic care in Bhubaneswar.",
+    images: [defaultSocialImage],
   },
   icons: {
     icon: [
@@ -118,12 +125,16 @@ export default async function RootLayout({
       className={`${jakarta.variable} ${manrope.variable} ${fraunces.variable} h-full scroll-smooth antialiased`}
     >
       <body className="flex min-h-full flex-col bg-[var(--ivory)] text-[var(--ink)]">
+        <JsonLd data={organizationJsonLd(clinicSettings)} />
+        <JsonLd data={medicalClinicJsonLd(clinicSettings)} />
+        <JsonLd data={websiteJsonLd()} />
         <SiteHeader
           settings={clinicSettings}
           logoUrl={headerLogo?.url}
           logoMode={headerLogo?.mode}
         />
         <main className="flex-1">{children}</main>
+        <SiteFooter settings={clinicSettings} />
         <FloatingCTA settings={clinicSettings} />
         <BookingModal settings={clinicSettings} />
         <DynamicChatbotDock settings={assistantSettings} />

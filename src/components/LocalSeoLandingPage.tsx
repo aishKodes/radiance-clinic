@@ -13,6 +13,7 @@ import { OpenBookingButton } from "@/components/OpenBookingButton";
 import { PremiumButton } from "@/components/PremiumButton";
 import type { LocalSeoPage } from "@/data/local-seo-pages";
 import type { ClinicSettings } from "@/types/cms";
+import { relationshipsFor } from "@/data/search-taxonomy";
 
 export function LocalSeoLandingPage({
   page,
@@ -21,6 +22,19 @@ export function LocalSeoLandingPage({
   page: LocalSeoPage;
   clinic: ClinicSettings;
 }) {
+  const relationships = relationshipsFor(`/${page.slug}`);
+  const contextualLinks = [
+    ...page.relatedLinks,
+    ...(relationships
+      ? [
+          { href: relationships.hub, label: "Treatment category overview", description: "Compare relevant treatment pathways and concerns." },
+          ...relationships.articles.map((href) => ({ href, label: "Related patient guide", description: "Read practical guidance before choosing a treatment." })),
+          { href: relationships.results, label: "Relevant treatment results", description: "Review consent-confirmed comparisons and realistic context." },
+          { href: "/locations", label: "Visiting from elsewhere in Odisha", description: "Plan a visit to the verified Nayapalli, Bhubaneswar clinic." },
+        ]
+      : []),
+  ].filter((item, index, items) => items.findIndex((candidate) => candidate.href === item.href) === index);
+
   return (
     <>
       <section className="relative flex min-h-[82svh] items-end overflow-hidden bg-[var(--ink)] px-5 pb-14 pt-36 text-white sm:px-8 sm:pb-20 lg:min-h-[46rem] lg:pb-24">
@@ -204,8 +218,8 @@ export function LocalSeoLandingPage({
               View all treatments
             </PremiumButton>
           </div>
-          <div className="mt-9 grid gap-4 md:grid-cols-3">
-            {page.relatedLinks.map((item) => (
+          <div className="mt-9 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+            {contextualLinks.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}

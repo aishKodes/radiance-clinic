@@ -5,16 +5,16 @@ import { SectionHeader } from "@/components/SectionHeader";
 import { StickyConsultationCard } from "@/components/StickyConsultationCard";
 import { TreatmentCard } from "@/components/TreatmentCard";
 import { getTreatments } from "@/data/site";
+import { treatmentHubs } from "@/data/search-taxonomy";
 import { webPageJsonLd } from "@/lib/schema";
+import { pageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
-  title: "Treatments",
+export const metadata: Metadata = pageMetadata({
+  title: "Hair, Skin, Laser & Aesthetic Treatments | Radiance Clinics",
   description:
     "Explore doctor-led hair restoration, skin, laser and aesthetic treatments at Radiance Clinics, Bhubaneswar.",
-  alternates: {
-    canonical: "/treatments",
-  },
-};
+  path: "/treatments",
+});
 
 export default async function TreatmentsPage() {
   const treatments = await getTreatments();
@@ -41,6 +41,7 @@ export default async function TreatmentsPage() {
         <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[1fr_0.36fr]">
           <div>
             <SectionHeader
+              level="h1"
               eyebrow="Treatment options"
               title="Treatments planned around your concern."
               description="Explore doctor-led care across hair restoration, skin, laser and aesthetic dermatology. Every treatment pathway begins with an assessment of suitability."
@@ -59,6 +60,17 @@ export default async function TreatmentsPage() {
           </div>
           <StickyConsultationCard />
         </div>
+      </section>
+
+      <section className="bg-[#F7F1E8] px-5 py-12 sm:px-8 lg:py-16">
+        <nav aria-label="Treatment categories" className="mx-auto grid max-w-7xl gap-3 sm:grid-cols-2 lg:grid-cols-4">
+          {treatmentHubs.map((hub) => (
+            <a key={hub.slug} href={`/treatments/${hub.slug}`} className="border-t border-[#151515]/15 py-5 transition hover:border-[#B78A4A]">
+              <span className="text-xs font-bold uppercase tracking-[0.18em] text-[#1E6F86]">{hub.eyebrow}</span>
+              <span className="mt-3 block text-lg font-extrabold text-[#151515]">{hub.label}</span>
+            </a>
+          ))}
+        </nav>
       </section>
 
       <section className="bg-[#FBF7EF] px-5 py-20 sm:px-8 lg:py-28">

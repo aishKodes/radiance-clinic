@@ -23,6 +23,7 @@ import { Reveal } from "@/components/Reveal";
 import { SectionHeader } from "@/components/SectionHeader";
 import { SocialCommunitySection } from "@/components/SocialCommunitySection";
 import { TreatmentUniverseSection } from "@/components/TreatmentUniverseSection";
+import { treatmentHubs } from "@/data/search-taxonomy";
 import { TransformationShowcase } from "@/components/TransformationShowcase";
 import { WhyChooseRadiance } from "@/components/WhyChooseRadiance";
 import {
@@ -34,7 +35,8 @@ import {
   skinTransformationExamples,
 } from "@/data/homepage-media";
 import { localLandingByTreatmentSlug } from "@/data/local-seo-pages";
-import { faqJsonLd, medicalClinicJsonLd, webPageJsonLd } from "@/lib/schema";
+import { getGoogleReviewsFeed } from "@/lib/google-reviews";
+import { webPageJsonLd } from "@/lib/schema";
 import {
   getArticles,
   getClinicSettings,
@@ -50,26 +52,16 @@ import {
   getVideoItems,
 } from "@/data/site";
 import type { CmsImage } from "@/types/cms";
+import { pageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
-  title: {
-    absolute:
-      "Radiance Clinics Bhubaneswar | Hair Transplant, Skin & Laser Clinic",
-  },
+export const metadata: Metadata = pageMetadata({
+  title: "Radiance Clinics Bhubaneswar | Hair Transplant, Skin & Laser Clinic",
   description:
     "Doctor-led hair transplant, hair restoration, skin, laser and aesthetic treatments by Dr. Satyarth Prakash at Radiance Clinics, Bhubaneswar.",
-  alternates: {
-    canonical: "/",
-  },
-  openGraph: {
-    title:
-      "Radiance Clinics Bhubaneswar | Hair Transplant, Skin & Laser Clinic",
-    description:
-      "Doctor-led hair transplant, hair restoration, skin, laser and aesthetic care in Bhubaneswar.",
-    url: "/",
-    type: "website",
-  },
-};
+  path: "/",
+  image: "/radiance-media-processed/portrait/doctor-hero.webp",
+  imageAlt: "Dr. Satyarth Prakash at Radiance Clinics Bhubaneswar",
+});
 
 function isAnilKapoorImage(image?: CmsImage) {
   const evidence = [
@@ -99,7 +91,8 @@ export default async function Home() {
     recognitionItems,
     socialLinks,
     socialStats,
-    reviewSummary,
+    clinicReviewSummary,
+    googleReviewFeed,
   ] = await Promise.all([
     getClinicSettings(),
     getHomepageContent(),
@@ -113,6 +106,7 @@ export default async function Home() {
     getSocialLinks(),
     getSocialStats(),
     getReviewSummary(),
+    getGoogleReviewsFeed(),
   ]);
 
   const featuredTreatments = premiumServiceCards;
@@ -122,6 +116,7 @@ export default async function Home() {
     ...heroImages.filter((image) => !isAnilKapoorImage(image)),
     ...premiumHeroSupportImages,
     doctorPatientHeroImage,
+    anilKapoorRecognitionImage,
   ].filter((image) => {
     const key = image.id || image.src;
     if (!key || seenHeroImages.has(key)) return false;
@@ -134,10 +129,19 @@ export default async function Home() {
   const clinicGalleryImages = galleryImages.filter(
     (item) => !isAnilKapoorImage(item.image),
   );
+  const reviewSummary = {
+    ...clinicReviewSummary,
+    googleRating:
+      googleReviewFeed.rating?.toFixed(1) || clinicReviewSummary.googleRating,
+    googleReviewCount:
+      googleReviewFeed.totalReviewCount?.toLocaleString("en-IN") ||
+      clinicReviewSummary.googleReviewCount,
+    googleMapsUrl:
+      googleReviewFeed.googleMapsUrl || clinicReviewSummary.googleMapsUrl,
+  };
 
   return (
     <>
-      <JsonLd data={medicalClinicJsonLd(settings)} />
       <JsonLd
         data={webPageJsonLd({
           title: "Radiance Clinics Bhubaneswar",
@@ -146,8 +150,6 @@ export default async function Home() {
           path: "/",
         })}
       />
-      <JsonLd data={faqJsonLd(homepage.faqs)} />
-
       <LuxuryHero
         homepage={{
           heroEyebrow: homepage.heroEyebrow,
@@ -234,6 +236,14 @@ export default async function Home() {
           <Reveal delay={0.08} className="mt-9 sm:mt-14">
             <TreatmentUniverseSection />
           </Reveal>
+          <nav aria-label="Treatment category guides" className="mt-10 grid gap-3 border-t border-[var(--ink)]/10 pt-8 sm:grid-cols-2 lg:grid-cols-4">
+            {treatmentHubs.map((hub) => (
+              <Link key={hub.slug} href={`/treatments/${hub.slug}`} className="group flex items-center justify-between gap-3 py-3 text-sm font-extrabold text-[var(--ink)]">
+                {hub.label}
+                <ArrowUpRight className="h-4 w-4 text-[var(--bronze)] transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+              </Link>
+            ))}
+          </nav>
         </div>
       </section>
 
@@ -320,33 +330,7 @@ export default async function Home() {
               description="Moments, certificates and recognitions from Radiance Clinics' work in hair, skin and aesthetic care."
             />
           </Reveal>
-          <Reveal delay={0.06}>
-            <article className="grid min-w-0 overflow-hidden rounded-[1.4rem] bg-[var(--ink)] text-[var(--ivory)] shadow-[0_32px_110px_rgba(15,16,22,0.18)] sm:rounded-[2rem] lg:grid-cols-[1.2fr_0.8fr] lg:items-stretch">
-              <div className="relative min-h-[22rem] overflow-hidden bg-[var(--ink)] sm:min-h-[30rem] lg:min-h-[34rem]">
-                <Image
-                  src={anilKapoorRecognitionImage.src}
-                  alt={anilKapoorRecognitionImage.alt}
-                  fill
-                  sizes="(min-width: 1024px) 60vw, 100vw"
-                  className="object-cover object-center"
-                />
-                <div className="absolute inset-0 bg-[linear-gradient(180deg,transparent_58%,rgba(15,16,22,0.48))] lg:bg-[linear-gradient(90deg,transparent_70%,rgba(15,16,22,0.28))]" />
-              </div>
-              <div className="flex flex-col justify-center p-6 sm:p-9 lg:p-10">
-                <p className="text-xs font-extrabold uppercase tracking-[0.24em] text-[var(--aqua)]">
-                  Event recognition
-                </p>
-                <h3 className="mt-4 font-serif text-4xl leading-[0.94] sm:text-5xl">
-                  A recognition moment with Anil Kapoor.
-                </h3>
-                <p className="mt-6 text-sm leading-7 text-white/66">
-                  Dr. Satyarth Prakash at a public recognition event with actor
-                  Anil Kapoor, marking a memorable professional milestone.
-                </p>
-              </div>
-            </article>
-          </Reveal>
-          <Reveal delay={0.1} className="mt-6">
+          <Reveal delay={0.08}>
             <RecognitionCarousel items={supportingRecognitionItems} />
           </Reveal>
         </div>
