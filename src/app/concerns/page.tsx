@@ -4,7 +4,7 @@ import { ArrowUpRight } from "lucide-react";
 import { ConcernSearch, type SearchDocument } from "@/components/ConcernSearch";
 import { JsonLd } from "@/components/JsonLd";
 import { SectionHeader } from "@/components/SectionHeader";
-import { concernCategories, concerns, doctorAnswers } from "@/data/concern-library";
+import { concernCategories, concerns, doctorAnswers, medicalReviewer } from "@/data/concern-library";
 import { resultCases } from "@/data/result-cases";
 import { getArticles, getTreatments } from "@/data/site";
 import { pageMetadata } from "@/lib/metadata";
@@ -80,7 +80,7 @@ export default async function ConcernsPage() {
             Start with what you notice.
           </h1>
           <p className="mt-8 max-w-3xl text-lg leading-8 text-[var(--ink)]/66 sm:text-xl sm:leading-9">
-            Explore hair, scalp and skin concerns, treatment information and answers prepared by the Radiance editorial team for clinical review.
+            Explore hair, scalp and skin concerns, treatment information and answers medically reviewed by {medicalReviewer.name}, with more than 30 years of clinical experience.
           </p>
         </div>
       </section>

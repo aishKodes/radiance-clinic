@@ -55,6 +55,7 @@
   "dynamicIndexablePrefixes": [
     "/treatments/",
     "/concerns/",
+    "/doctor-answers/",
     "/conditions/",
     "/knowledge/",
     "/reviews/",
@@ -70,7 +71,5 @@
     { "path": "/hair-transplant-berhampur", "reason": "Draft until city-specific information is verified" },
     { "path": "/hair-transplant-baripada", "reason": "Draft until city-specific information is verified" },
     { "path": "/results/*/*", "reason": "Case details require verified clinical context and timeline before indexation" }
-    ,{ "path": "/concerns/*/*", "reason": "Concern details require recorded medical approval before indexation" }
-    ,{ "path": "/doctor-answers/*", "reason": "Answer details require recorded doctor review before indexation" }
   ]
 }

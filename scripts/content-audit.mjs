@@ -69,8 +69,13 @@ async function main() {
   }
 
   const paths = concerns.map((item) => `/concerns/${item.categorySlug}/${item.slug}`);
+  const pathSet = new Set(paths);
+  const answerPaths = answers.map((item) => `/doctor-answers/${item.slug}`);
+  const answerSlugSet = new Set(answers.map((item) => item.slug));
   for (const duplicate of duplicateValues(paths)) errors.push(`Duplicate concern path: ${duplicate}`);
   for (const duplicate of duplicateValues(concerns.map((item) => item.seoTitle))) errors.push(`Duplicate SEO title: ${duplicate}`);
+  for (const duplicate of duplicateValues(answerPaths)) errors.push(`Duplicate doctor-answer path: ${duplicate}`);
+  for (const duplicate of duplicateValues(answers.map((item) => item.question))) errors.push(`Duplicate doctor-answer question: ${duplicate}`);
 
   for (const category of categories) {
     const count = concerns.filter((concern) => concern.categorySlug === category.slug).length;
@@ -128,11 +133,18 @@ async function main() {
   }
 
   for (const answer of answers) {
+    const answerPath = `/doctor-answers/${answer.slug}`;
     if (answer.indexable && (answer.status !== "APPROVED" || !answer.reviewedBy || !answer.reviewedAt)) {
-      errors.push(`/doctor-answers/${answer.slug}: indexable without real doctor review.`);
+      errors.push(`${answerPath}: indexable without real doctor review.`);
     }
     if (words([answer.conciseAnswer, answer.explanation, answer.whenEvaluationMayHelp]) < 55) {
-      errors.push(`/doctor-answers/${answer.slug}: answer is too thin.`);
+      errors.push(`${answerPath}: answer is too thin.`);
+    }
+    if (!categories.some((category) => category.slug === answer.categorySlug)) errors.push(`${answerPath}: unknown category.`);
+    if (!pathSet.has(answer.relatedConcern)) errors.push(`${answerPath}: related concern does not exist.`);
+    for (const relatedSlug of answer.relatedQuestions) {
+      if (relatedSlug === answer.slug) errors.push(`${answerPath}: links to itself as a related question.`);
+      if (!answerSlugSet.has(relatedSlug)) errors.push(`${answerPath}: related question ${relatedSlug} does not exist.`);
     }
   }
 
@@ -159,7 +171,19 @@ async function main() {
     robots: concern.indexable ? "index,follow" : "noindex,nofollow",
     status: concern.status,
   }));
-  const linkingRows = concerns.flatMap((concern) => {
+  const answerRouteRows = answers.map((answer) => ({
+    route: `/doctor-answers/${answer.slug}`,
+    route_type: "doctor-answer",
+    parent_hub: "/doctor-answers",
+    canonical: `/doctor-answers/${answer.slug}`,
+    category: answer.categorySlug,
+    sitemap: answer.indexable,
+    robots: answer.indexable ? "index,follow" : "noindex,nofollow",
+    status: answer.status,
+    reviewed_by: answer.reviewedBy || "",
+    reviewed_at: answer.reviewedAt || "",
+  }));
+  const concernLinkingRows = concerns.flatMap((concern) => {
     const source = `/concerns/${concern.categorySlug}/${concern.slug}`;
     return [
       { source, destination: `/concerns/${concern.categorySlug}`, relationship: "parent-category" },
@@ -168,6 +192,17 @@ async function main() {
       ...concern.doctorAnswers.map((slug) => ({ source, destination: `/doctor-answers/${slug}`, relationship: "doctor-answer" })),
     ];
   });
+  const answerLinkingRows = answers.flatMap((answer) => {
+    const source = `/doctor-answers/${answer.slug}`;
+    return [
+      { source, destination: "/doctor-answers", relationship: "parent-hub" },
+      { source, destination: answer.relatedConcern, relationship: "related-concern" },
+      ...(answer.relatedTreatment ? [{ source, destination: answer.relatedTreatment.href, relationship: "related-treatment" }] : []),
+      ...(answer.relatedGuide ? [{ source, destination: answer.relatedGuide.href, relationship: "related-guide" }] : []),
+      ...answer.relatedQuestions.map((slug) => ({ source, destination: `/doctor-answers/${slug}`, relationship: "related-question" })),
+    ];
+  });
+  const linkingRows = [...concernLinkingRows, ...answerLinkingRows];
   const synonymPayload = Object.fromEntries(
     concerns.map((concern) => [
       `/concerns/${concern.categorySlug}/${concern.slug}`,
@@ -184,7 +219,8 @@ async function main() {
     `- Category hubs audited: ${categories.length}`,
     `- Doctor answers audited: ${answers.length}`,
     `- Indexable concern pages: ${concerns.filter((item) => item.indexable).length}`,
-    `- Ready for medical review: ${concerns.filter((item) => item.status === "READY_FOR_MEDICAL_REVIEW").length}`,
+    `- Approved concern pages: ${concerns.filter((item) => item.status === "APPROVED" && item.indexable).length}`,
+    `- Approved Doctor Answer pages: ${answers.filter((item) => item.status === "APPROVED" && item.indexable).length}`,
     `- Errors: ${errors.length}`,
     `- Warnings: ${warnings.length}`,
     "",
@@ -220,9 +256,9 @@ async function main() {
       concern.title,
       concern.primaryIntent,
       concern.featured ? "P0" : "P1",
-      "Prepared content awaits real medical review before indexation",
-      "editorial-draft",
-      "yes",
+      concern.indexable ? "Doctor-reviewed and approved for indexation" : "Prepared content awaits real medical review before indexation",
+      concern.indexable ? "doctor-reviewed" : "editorial-draft",
+      concern.indexable ? "no" : "yes",
       "no",
       concern.status.toLowerCase().replaceAll("_", "-"),
     ].map(csvCell).join(","),
@@ -232,6 +268,7 @@ async function main() {
     writeFile(path.join(root, "seo", "content-quality-report.md"), report),
     writeFile(path.join(root, "seo", "concern-taxonomy.csv"), toCsv(["canonical_path", "category", "canonical_name", "aliases", "patient_language_terms", "primary_intent", "status", "medical_review_required", "reviewed_by", "reviewed_at", "indexable", "updated_at"], taxonomyRows)),
     writeFile(path.join(root, "seo", "concern-route-map.csv"), toCsv(["route", "route_type", "parent_hub", "canonical", "sitemap", "robots", "status"], routeRows)),
+    writeFile(path.join(root, "seo", "doctor-answer-route-map.csv"), toCsv(["route", "route_type", "parent_hub", "canonical", "category", "sitemap", "robots", "status", "reviewed_by", "reviewed_at"], answerRouteRows)),
     writeFile(path.join(root, "seo", "content-internal-linking-graph.csv"), toCsv(["source", "destination", "relationship"], linkingRows)),
     writeFile(path.join(root, "seo", "search-synonyms.json"), `${JSON.stringify(synonymPayload, null, 2)}\n`),
     writeFile(existingGapPath, `${gapHeader}\n${[...existingRows, ...concernGapRows].join("\n")}\n`),
@@ -243,7 +280,7 @@ async function main() {
     process.exitCode = 1;
     return;
   }
-  console.log(`Content audit passed for ${concerns.length} concerns, ${categories.length} hubs and ${answers.length} prepared answers.`);
+  console.log(`Content audit passed for ${concerns.length} concerns, ${categories.length} hubs and ${answers.length} approved answers.`);
 }
 
 main().catch((error) => {

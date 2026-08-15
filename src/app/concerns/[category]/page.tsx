@@ -5,7 +5,7 @@ import { ArrowUpRight, CheckCircle2 } from "lucide-react";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { JsonLd } from "@/components/JsonLd";
 import { SectionHeader } from "@/components/SectionHeader";
-import { concernCategories, concernsByCategory, doctorAnswers, getConcernCategory } from "@/data/concern-library";
+import { concernCategories, concernsByCategory, doctorAnswers, getConcernCategory, medicalReviewer } from "@/data/concern-library";
 import { pageMetadata } from "@/lib/metadata";
 import { breadcrumbJsonLd, collectionPageJsonLd } from "@/lib/schema";
 
@@ -70,11 +70,11 @@ export default async function ConcernCategoryPage({ params }: Props) {
 
       <section className="bg-[var(--ivory)] px-5 py-20 sm:px-8 lg:py-28">
         <div className="mx-auto max-w-7xl">
-          <SectionHeader eyebrow={`${items.length} focused topics`} title="Choose the description closest to what you notice." description="These pages are educational and do not diagnose. Topics awaiting real medical review remain excluded from search-engine indexing." />
+          <SectionHeader eyebrow={`${items.length} focused topics`} title="Choose the description closest to what you notice." description={`Educational guidance medically reviewed by ${medicalReviewer.name}. These pages do not diagnose or replace an individual consultation.`} />
           <div className="mt-12 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
             {items.map((concern) => (
               <Link key={concern.slug} href={`/concerns/${slug}/${concern.slug}`} className="group flex min-h-72 flex-col rounded-[1.65rem] border border-[var(--ink)]/10 bg-white/62 p-6 transition hover:-translate-y-1 hover:border-[var(--aqua)]/38">
-                <div className="flex justify-between gap-4"><span className="rounded-full bg-[var(--mist)] px-3 py-1.5 text-[0.65rem] font-extrabold uppercase tracking-[0.14em] text-[var(--bronze)]">{concern.status === "READY_FOR_MEDICAL_REVIEW" ? "Review ready" : concern.status}</span><ArrowUpRight className="h-5 w-5 text-[var(--aqua)]" /></div>
+                <div className="flex justify-between gap-4"><span className="rounded-full bg-[var(--mist)] px-3 py-1.5 text-[0.65rem] font-extrabold uppercase tracking-[0.14em] text-[var(--bronze)]">Doctor reviewed</span><ArrowUpRight className="h-5 w-5 text-[var(--aqua)]" /></div>
                 <h2 className="mt-9 font-serif text-3xl leading-none text-[var(--ink)]">{concern.title}</h2>
                 <p className="mt-4 text-sm leading-7 text-[var(--ink)]/62">{concern.summary}</p>
                 <span className="mt-auto pt-6 text-xs font-extrabold uppercase tracking-[0.13em] text-[var(--bronze)]">Read guidance</span>
@@ -95,7 +95,7 @@ export default async function ConcernCategoryPage({ params }: Props) {
           </div>
           <div>
             <p className="text-xs font-extrabold uppercase tracking-[0.2em] text-[var(--bronze)]">Questions patients ask</p>
-            <h2 className="mt-4 font-serif text-5xl leading-none text-[var(--ink)]">Prepared answers for this category.</h2>
+            <h2 className="mt-4 font-serif text-5xl leading-none text-[var(--ink)]">Doctor-reviewed answers for this category.</h2>
             <div className="mt-8 grid gap-3">
               {answers.length ? answers.map((answer) => <Link key={answer.slug} href={`/doctor-answers/${answer.slug}`} className="flex items-center justify-between border-t border-[var(--ink)]/12 py-4 text-sm font-extrabold text-[var(--ink)]">{answer.question}<ArrowUpRight className="h-4 w-4 text-[var(--aqua)]" /></Link>) : <Link href="/doctor-answers#ask" className="text-sm font-extrabold text-[var(--aqua)]">Ask a private question</Link>}
             </div>

@@ -2,12 +2,12 @@
 
 ## Release summary
 
-This release adds a scalable concern-led information architecture without auto-publishing unreviewed medical content.
+This release adds a scalable, doctor-reviewed concern-led information architecture.
 
 - 10 indexable category hubs under `/concerns`
 - 62 structured concern pages across P0 and P1 topic groups
 - typo-tolerant grouped local search across concerns, treatments, prepared answers, guides and consent-confirmed result records
-- `/doctor-answers` architecture with 10 substantive prepared answers
+- `/doctor-answers` architecture with 53 substantive, long-tail answers
 - private Ask the Doctor API contract and spam honeypot
 - medical review workflow enforced by the content audit and sitemap gate
 - WordPress WXR recovery tooling for the supplied `radiance.xml`
@@ -31,12 +31,12 @@ This release adds a scalable concern-led information architecture without auto-p
 - `/concerns/other-skin-concerns`
 - `/doctor-answers`
 
-### Review-gated routes
+### Doctor-reviewed indexable routes
 
 - `/concerns/[category]/[slug]`
 - `/doctor-answers/[slug]`
 
-These routes are available to patients and carry self-canonical metadata, but they render `noindex` until a real approval record is present. They are not included in the sitemap.
+All 62 concern detail routes and 53 Doctor Answer routes have recorded medical approval, self-canonical metadata, `index,follow` directives and sitemap inclusion.
 
 ## Editorial and medical review workflow
 
@@ -55,7 +55,7 @@ Substantial medical content uses `medicalReviewRequired: true`. It may be indexe
 - `reviewedBy` contains the verified reviewer
 - `reviewedAt` contains the real review date
 
-`npm run content:audit` fails if an indexable page violates this rule. No reviewer or review date has been invented in this release. All 62 concern pages and 10 answer pages begin at `READY_FOR_MEDICAL_REVIEW`.
+`npm run content:audit` fails if an indexable page violates this rule. The clinic confirmed review by Dr. Satyarth Prakash, recorded on 2026-08-15. All 62 concern pages and 53 answer pages are `APPROVED` and indexable.
 
 ## Content model
 
@@ -184,6 +184,7 @@ Generated outputs:
 - `seo/content-quality-report.md`
 - `seo/concern-taxonomy.csv`
 - `seo/concern-route-map.csv`
+- `seo/doctor-answer-route-map.csv`
 - `seo/search-synonyms.json`
 - `seo/content-gap-register.csv`
 - `seo/content-internal-linking-graph.csv`

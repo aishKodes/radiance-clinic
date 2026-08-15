@@ -91,6 +91,7 @@ export function physicianJsonLd(
     "@id": schemaIds.physician,
     name: settings.doctor,
     url: absoluteUrl("/about"),
+    description: "Founder and lead doctor at Radiance Clinics with more than 30 years of clinical experience.",
     worksFor: { "@id": schemaIds.clinic },
     address: postalAddress(settings),
   };
@@ -115,6 +116,7 @@ export function webPageJsonLd({
     url,
     isPartOf: { "@id": schemaIds.website },
     about: { "@id": schemaIds.clinic },
+    reviewedBy: { "@id": schemaIds.physician },
     inLanguage: "en-IN",
   };
 }
@@ -140,6 +142,7 @@ export function collectionPageJsonLd({
     url,
     isPartOf: { "@id": schemaIds.website },
     about: { "@id": schemaIds.clinic },
+    reviewedBy: { "@id": schemaIds.physician },
     mainEntity: {
       "@type": "ItemList",
       itemListElement: itemPaths.map((itemPath, index) => ({
@@ -194,6 +197,9 @@ export function articleJsonLd(article: Article): JsonLd {
     author: article.authorName
       ? { "@type": "Person", name: article.authorName }
       : { "@id": schemaIds.organization },
+    reviewedBy: article.reviewedBy
+      ? { "@type": "Person", name: article.reviewedBy, url: absoluteUrl("/about") }
+      : { "@id": schemaIds.physician },
     publisher: { "@id": schemaIds.organization },
     datePublished: article.publishedAt,
     dateModified: article.updatedAt || article.reviewedAt,

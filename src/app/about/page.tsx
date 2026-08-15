@@ -45,8 +45,8 @@ export default async function AboutPage() {
             <p className="mt-8 max-w-3xl text-xl leading-9 text-[#151515]/68">
               {doctor.name} leads Radiance Clinics with a consultation-first
               approach across hair restoration, skin, laser and aesthetic
-              medicine. The focus is planning, proportion and medically grounded
-              decision-making.
+              medicine, informed by more than 30 years of clinical experience.
+              The focus is planning, proportion and medically grounded decision-making.
             </p>
             <div className="mt-10 grid gap-4 sm:grid-cols-2">
               {[

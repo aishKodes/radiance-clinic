@@ -5,7 +5,7 @@ import { ArrowUpRight, ClipboardCheck, Stethoscope } from "lucide-react";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { JsonLd } from "@/components/JsonLd";
 import { TrackedLink } from "@/components/TrackedLink";
-import { concernCategories, doctorAnswers, getDoctorAnswer } from "@/data/concern-library";
+import { concernCategories, doctorAnswers, getDoctorAnswer, medicalReviewer } from "@/data/concern-library";
 import { pageMetadata } from "@/lib/metadata";
 import { breadcrumbJsonLd, webPageJsonLd } from "@/lib/schema";
 
@@ -51,8 +51,9 @@ export default async function DoctorAnswerPage({ params }: Props) {
           </div>
           <aside className="h-fit rounded-[2rem] border border-[var(--bronze)]/20 bg-white/64 p-6">
             <ClipboardCheck className="h-7 w-7 text-[var(--bronze)]" />
-            <p className="mt-6 font-serif text-3xl leading-none text-[var(--ink)]">Prepared for medical review</p>
-            <p className="mt-4 text-sm leading-7 text-[var(--ink)]/62">This is editorial guidance, not a published opinion attributed to Dr. Satyarth Prakash. It remains noindex until real review is completed.</p>
+            <p className="mt-6 font-serif text-3xl leading-none text-[var(--ink)]">Medically reviewed by {answer.reviewedBy}</p>
+            <p className="mt-4 text-sm leading-7 text-[var(--ink)]/62">{medicalReviewer.experience}. Reviewed for clinical clarity, safety and realistic expectations.</p>
+            <p className="mt-5 text-xs font-semibold text-[var(--ink)]/48">Last reviewed {answer.reviewedAt}</p>
           </aside>
         </div>
       </section>

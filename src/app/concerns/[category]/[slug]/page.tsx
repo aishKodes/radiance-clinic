@@ -7,7 +7,7 @@ import { FAQAccordion } from "@/components/FAQAccordion";
 import { JsonLd } from "@/components/JsonLd";
 import { OpenBookingButton } from "@/components/OpenBookingButton";
 import { TrackedLink } from "@/components/TrackedLink";
-import { concerns, doctorAnswers, getConcern, getConcernCategory } from "@/data/concern-library";
+import { concerns, doctorAnswers, getConcern, getConcernCategory, medicalReviewer } from "@/data/concern-library";
 import { pageMetadata } from "@/lib/metadata";
 import { breadcrumbJsonLd, webPageJsonLd } from "@/lib/schema";
 
@@ -63,10 +63,10 @@ export default async function ConcernDetailPage({ params }: Props) {
           </div>
           <aside className="h-fit rounded-[2rem] border border-[var(--bronze)]/20 bg-white/64 p-6 shadow-[0_24px_80px_rgba(15,16,22,0.08)]">
             <ClipboardCheck className="h-7 w-7 text-[var(--bronze)]" />
-            <p className="mt-7 text-xs font-extrabold uppercase tracking-[0.18em] text-[var(--bronze)]">Editorial status</p>
-            <p className="mt-3 font-serif text-3xl leading-none text-[var(--ink)]">Ready for medical review</p>
-            <p className="mt-4 text-sm leading-7 text-[var(--ink)]/62">Prepared by {concern.preparedBy}. This page does not claim doctor review and remains excluded from search-engine indexing until approval is recorded.</p>
-            <p className="mt-5 text-xs font-semibold text-[var(--ink)]/48">Updated {concern.updatedAt}</p>
+            <p className="mt-7 text-xs font-extrabold uppercase tracking-[0.18em] text-[var(--bronze)]">Medical review</p>
+            <p className="mt-3 font-serif text-3xl leading-none text-[var(--ink)]">Reviewed by {concern.reviewedBy}</p>
+            <p className="mt-4 text-sm leading-7 text-[var(--ink)]/62">{medicalReviewer.experience}. Prepared by {concern.preparedBy}; reviewed for clinical clarity, safety and realistic expectations.</p>
+            <p className="mt-5 text-xs font-semibold text-[var(--ink)]/48">Last reviewed {concern.reviewedAt}</p>
           </aside>
         </div>
       </section>

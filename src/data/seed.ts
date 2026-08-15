@@ -90,7 +90,7 @@ export const stats: Stat[] = [
     description: "A visible trust signal from the current Radiance Clinics presence.",
   },
   {
-    value: "20+",
+    value: "30+",
     label: "Years Experience",
     description: "Long-running doctor-led clinical and aesthetic care.",
   },
@@ -419,7 +419,12 @@ export const articles: Article[] = [
     relatedTreatments: ["/skin-clinic-bhubaneswar", "/treatments/skin"],
     relatedConditions: ["/conditions/acne-acne-scars", "/conditions/pigmentation-melasma"],
   },
-];
+].map((article) => ({
+  ...article,
+  reviewedBy: "Dr. Satyarth Prakash",
+  reviewedAt: "2026-08-15",
+  updatedAt: article.updatedAt || "2026-08-15",
+}));
 
 export const testimonials: Testimonial[] = [
   {
@@ -464,7 +469,7 @@ export const proofStats: ProofStat[] = [
   },
   {
     eyebrow: "Experience",
-    value: "20+",
+    value: "30+",
     label: "Years of experience",
     description:
       "Long-running doctor-led aesthetic, hair and skin care experience.",
@@ -672,12 +677,12 @@ export const doctorProfile: DoctorProfile = {
   name: clinic.doctor,
   role: "Founder and lead doctor, Radiance Clinics",
   shortBio:
-    "Doctor-led hair restoration, skin, laser and aesthetic care with clinical restraint, proportion-aware planning and safety-first care.",
+    "More than 30 years of doctor-led hair restoration, skin, laser and aesthetic care with clinical restraint, proportion-aware planning and safety-first care.",
   authorityPoints: authorityPoints.map((point) => point.label),
 };
 
 export const homepageContent: HomepageContent = {
-  heroEyebrow: "20+ Years of Excellence | US FDA Approved Technology | Expert Dermatologists",
+  heroEyebrow: "30+ Years of Clinical Experience | US FDA Approved Technology | Doctor-Led Care",
   heroTitle: "Advanced Skin, Hair & Aesthetic Clinic",
   heroSubtitle:
     "Doctor-led hair transplant, skin, laser and aesthetic treatments by Dr. Satyarth Prakash at Radiance Clinics, Bhubaneswar.",

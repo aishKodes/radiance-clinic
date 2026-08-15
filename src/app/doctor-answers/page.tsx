@@ -4,14 +4,14 @@ import { ArrowUpRight, LockKeyhole, ShieldCheck } from "lucide-react";
 import { AskDoctorForm } from "@/components/AskDoctorForm";
 import { JsonLd } from "@/components/JsonLd";
 import { SectionHeader } from "@/components/SectionHeader";
-import { concernCategories, doctorAnswers } from "@/data/concern-library";
+import { concernCategories, doctorAnswers, medicalReviewer } from "@/data/concern-library";
 import { pageMetadata } from "@/lib/metadata";
 import { collectionPageJsonLd } from "@/lib/schema";
 
 export const metadata: Metadata = pageMetadata({
   title: "Doctor Answers: Hair & Skin Questions | Radiance Clinics",
   description:
-    "Explore patient hair and skin questions prepared for medical review, or submit a private question for clinical triage.",
+    "Explore doctor-reviewed answers to specific patient hair, skin, laser and aesthetic questions, or submit a private question for clinical triage.",
   path: "/doctor-answers",
 });
 
@@ -31,13 +31,13 @@ export default function DoctorAnswersPage() {
         <div className="relative mx-auto max-w-7xl">
           <p className="mb-5 text-xs font-extrabold uppercase tracking-[0.32em] text-[var(--champagne)]">Questions patients ask</p>
           <h1 className="max-w-6xl font-serif text-[clamp(4rem,10vw,9rem)] leading-[0.86]">Doctor Answers</h1>
-          <p className="mt-8 max-w-3xl text-xl leading-9 text-white/64">Clear answers are prepared by the Radiance Editorial Team and are excluded from indexing until a verified doctor review is recorded.</p>
+          <p className="mt-8 max-w-3xl text-xl leading-9 text-white/64">Clear, contextual answers medically reviewed by {medicalReviewer.name}, with more than 30 years of clinical experience.</p>
         </div>
       </section>
 
       <section className="bg-[var(--ivory)] px-5 py-20 sm:px-8 lg:py-28">
         <div className="mx-auto max-w-7xl">
-          <SectionHeader eyebrow={`${doctorAnswers.length} prepared answers`} title="Start with a question already asked." description="No one-sentence or duplicate answers are published as search pages. Related wording is merged into one canonical question." />
+          <SectionHeader eyebrow={`${doctorAnswers.length} doctor-reviewed answers`} title="Start with a specific question." description="Each page gives a contextual answer, explains when evaluation may help and links to related concerns and treatments." />
           <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
             {doctorAnswers.map((answer) => {
               const category = concernCategories.find((item) => item.slug === answer.categorySlug);
@@ -46,7 +46,7 @@ export default function DoctorAnswersPage() {
                   <div className="flex items-start justify-between gap-4"><span className="text-xs font-extrabold uppercase tracking-[0.16em] text-[var(--aqua)]">{category?.label}</span><ArrowUpRight className="h-5 w-5 text-[var(--bronze)]" /></div>
                   <h2 className="mt-10 font-serif text-4xl leading-none text-[var(--ink)]">{answer.question}</h2>
                   <p className="mt-5 line-clamp-4 text-sm leading-7 text-[var(--ink)]/62">{answer.conciseAnswer}</p>
-                  <p className="mt-auto flex items-center gap-2 pt-7 text-xs font-extrabold uppercase tracking-[0.13em] text-[var(--bronze)]"><ShieldCheck className="h-4 w-4" />Prepared for review</p>
+                  <p className="mt-auto flex items-center gap-2 pt-7 text-xs font-extrabold uppercase tracking-[0.13em] text-[var(--bronze)]"><ShieldCheck className="h-4 w-4" />Medically reviewed</p>
                 </Link>
               );
             })}
