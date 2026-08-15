@@ -1,0 +1,62 @@
+[
+  {
+    "path": "/knowledge/hair-loss-causes-and-assessment",
+    "sourceUrls": [
+      "https://www.radianceclinics.com/hair-loss-causes/",
+      "https://www.radianceclinics.com/post/what-causes-hair-loss-and-how-it-can-be-treated/"
+    ],
+    "sourcePublishedDates": ["2023-08-13", "2025-04-19"],
+    "displayPublishedAt": "2023-08-13",
+    "reviewedAt": "2026-08-15",
+    "reviewedBy": "Dr. Satyarth Prakash",
+    "migrationMethod": "Consolidated rewrite; earliest directly relevant source date retained."
+  },
+  {
+    "path": "/knowledge/hair-transplant-aftercare",
+    "sourceUrls": [
+      "https://www.radianceclinics.com/post/how-to-care-for-your-scalp-after-a-hair-transplant/",
+      "https://www.radianceclinics.com/post/hair-transplants-what-to-expect/"
+    ],
+    "sourcePublishedDates": ["2025-02-15", "2022-01-27"],
+    "displayPublishedAt": "2025-02-15",
+    "reviewedAt": "2026-08-15",
+    "reviewedBy": "Dr. Satyarth Prakash",
+    "migrationMethod": "Aftercare-specific source date retained; broader expectations source merged as supporting material."
+  },
+  {
+    "path": "/knowledge/acne-scar-types-and-treatment-planning",
+    "sourceUrls": ["https://www.radianceclinics.com/acne-scars/"],
+    "sourcePublishedDates": ["2023-08-10"],
+    "displayPublishedAt": "2023-08-10",
+    "reviewedAt": "2026-08-15",
+    "reviewedBy": "Dr. Satyarth Prakash",
+    "migrationMethod": "Substantive clinical rewrite; historical source date retained."
+  },
+  {
+    "path": "/knowledge/laser-hair-reduction-expectations",
+    "sourceUrls": ["https://www.radianceclinics.com/laser-hair-removal-radiance/"],
+    "sourcePublishedDates": ["2023-08-09"],
+    "displayPublishedAt": "2023-08-09",
+    "reviewedAt": "2026-08-15",
+    "reviewedBy": "Dr. Satyarth Prakash",
+    "migrationMethod": "Overpromissory language removed; historical source date retained."
+  },
+  {
+    "path": "/knowledge/hair-transplant-cost-factors",
+    "sourceUrls": ["https://www.radianceclinics.com/post/what-common-mistakes-can-make-your-hair-transplant-more-expensive/"],
+    "sourcePublishedDates": ["2026-01-30"],
+    "displayPublishedAt": "2026-01-30",
+    "reviewedAt": "2026-08-15",
+    "reviewedBy": "Dr. Satyarth Prakash",
+    "migrationMethod": "Rewritten as a transparent planning checklist; historical source date retained."
+  },
+  {
+    "path": "/knowledge/prp-gfc-hair-restoration-guide",
+    "sourceUrls": ["https://www.radianceclinics.com/post/what-is-gfc-treatment-and-how-does-it-help-in-hair-regrowth/"],
+    "sourcePublishedDates": ["2025-10-31"],
+    "displayPublishedAt": "2025-10-31",
+    "reviewedAt": "2026-08-15",
+    "reviewedBy": "Dr. Satyarth Prakash",
+    "migrationMethod": "Diagnosis-first clinical rewrite; historical source date retained."
+  }
+]

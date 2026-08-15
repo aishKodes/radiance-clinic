@@ -6,6 +6,7 @@ export const coreIndexableRoutes = [
   "/doctor-answers",
   "/conditions",
   "/knowledge",
+  "/videos",
   "/before-after",
   "/results",
   "/locations",

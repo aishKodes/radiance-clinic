@@ -50,7 +50,14 @@
     { "path": "/knowledge/laser-skin-treatments-safety", "type": "article", "sitemap": true, "primaryIntent": "laser treatment safety education", "parent": "/knowledge", "breadcrumb": true, "eligible": true },
     { "path": "/knowledge/premium-aesthetic-consultation", "type": "article", "sitemap": true, "primaryIntent": "aesthetic consultation education", "parent": "/knowledge", "breadcrumb": true, "eligible": true },
     { "path": "/knowledge/best-skin-clinic-bhubaneswar", "type": "article", "sitemap": true, "primaryIntent": "how to choose a skin clinic", "parent": "/knowledge", "breadcrumb": true, "eligible": true },
-    { "path": "/knowledge/skin-care-doctor-bhubaneswar", "type": "article", "sitemap": true, "primaryIntent": "when to consult a skin care doctor", "parent": "/knowledge", "breadcrumb": true, "eligible": true }
+    { "path": "/knowledge/skin-care-doctor-bhubaneswar", "type": "article", "sitemap": true, "primaryIntent": "when to consult a skin care doctor", "parent": "/knowledge", "breadcrumb": true, "eligible": true },
+    { "path": "/videos", "type": "video-library", "sitemap": true, "primaryIntent": "official patient education videos", "parent": "/", "breadcrumb": false, "eligible": true },
+    { "path": "/knowledge/hair-loss-causes-and-assessment", "type": "article", "sitemap": true, "primaryIntent": "hair loss causes and assessment", "parent": "/knowledge", "breadcrumb": true, "eligible": true },
+    { "path": "/knowledge/hair-transplant-aftercare", "type": "article", "sitemap": true, "primaryIntent": "hair transplant aftercare", "parent": "/knowledge", "breadcrumb": true, "eligible": true },
+    { "path": "/knowledge/acne-scar-types-and-treatment-planning", "type": "article", "sitemap": true, "primaryIntent": "acne scar treatment planning", "parent": "/knowledge", "breadcrumb": true, "eligible": true },
+    { "path": "/knowledge/laser-hair-reduction-expectations", "type": "article", "sitemap": true, "primaryIntent": "laser hair reduction expectations", "parent": "/knowledge", "breadcrumb": true, "eligible": true },
+    { "path": "/knowledge/hair-transplant-cost-factors", "type": "article", "sitemap": true, "primaryIntent": "hair transplant cost factors", "parent": "/knowledge", "breadcrumb": true, "eligible": true },
+    { "path": "/knowledge/prp-gfc-hair-restoration-guide", "type": "article", "sitemap": true, "primaryIntent": "PRP and GFC treatment questions", "parent": "/knowledge", "breadcrumb": true, "eligible": true }
   ],
   "dynamicIndexablePrefixes": [
     "/treatments/",

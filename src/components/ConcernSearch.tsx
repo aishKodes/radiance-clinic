@@ -1,13 +1,13 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowUpRight, BookOpen, CircleHelp, Search, Sparkles, Stethoscope, X } from "lucide-react";
+import { ArrowUpRight, BookOpen, CircleHelp, Play, Search, Sparkles, Stethoscope, X } from "lucide-react";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { privateQueryMetrics, trackEvent } from "@/lib/analytics";
 
 export type SearchDocument = {
   id: string;
-  type: "Concerns" | "Treatments" | "Doctor Answers" | "Guides" | "Results";
+  type: "Concerns" | "Treatments" | "Doctor Answers" | "Guides" | "Videos" | "Results";
   title: string;
   description: string;
   href: string;
@@ -19,6 +19,7 @@ const groupOrder: SearchDocument["type"][] = [
   "Treatments",
   "Doctor Answers",
   "Guides",
+  "Videos",
   "Results",
 ];
 
@@ -27,6 +28,7 @@ const icons = {
   Treatments: Stethoscope,
   "Doctor Answers": CircleHelp,
   Guides: BookOpen,
+  Videos: Play,
   Results: Sparkles,
 };
 

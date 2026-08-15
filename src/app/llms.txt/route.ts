@@ -37,6 +37,7 @@ export async function GET() {
     `- Aesthetic Dermatology: ${siteUrl}/treatments/aesthetic-dermatology`,
     `- Conditions: ${siteUrl}/conditions`,
     `- Knowledge Library: ${siteUrl}/knowledge`,
+    `- Official Video Library: ${siteUrl}/videos`,
     `- Before/After Policy: ${siteUrl}/before-after`,
     `- Patient Results: ${siteUrl}/results`,
     `- Clinic Location and Outstation Visits: ${siteUrl}/locations`,

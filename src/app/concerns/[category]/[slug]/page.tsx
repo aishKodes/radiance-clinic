@@ -6,10 +6,12 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { FAQAccordion } from "@/components/FAQAccordion";
 import { JsonLd } from "@/components/JsonLd";
 import { OpenBookingButton } from "@/components/OpenBookingButton";
+import { RelatedVideos } from "@/components/RelatedVideos";
 import { TrackedLink } from "@/components/TrackedLink";
 import { concerns, doctorAnswers, getConcern, getConcernCategory, medicalReviewer } from "@/data/concern-library";
+import { videosForPath } from "@/data/video-library";
 import { pageMetadata } from "@/lib/metadata";
-import { breadcrumbJsonLd, webPageJsonLd } from "@/lib/schema";
+import { breadcrumbJsonLd, videoObjectJsonLd, webPageJsonLd } from "@/lib/schema";
 
 type Props = { params: Promise<{ category: string; slug: string }> };
 
@@ -35,6 +37,7 @@ export default async function ConcernDetailPage({ params }: Props) {
   const category = getConcernCategory(categorySlug);
   if (!concern || !category) notFound();
   const path = `/concerns/${categorySlug}/${slug}`;
+  const videos = videosForPath(path, 2);
   const breadcrumbs = [
     { name: "Home", path: "/" },
     { name: "Concerns", path: "/concerns" },
@@ -52,6 +55,7 @@ export default async function ConcernDetailPage({ params }: Props) {
     <>
       <JsonLd data={webPageJsonLd({ title: concern.title, description: concern.summary, path })} />
       <JsonLd data={breadcrumbJsonLd(breadcrumbs)} />
+      {videos.map((video) => <JsonLd key={video.videoId} data={videoObjectJsonLd(video)} />)}
       <section className="bg-[var(--ivory)] px-5 pb-20 pt-36 sm:px-8 lg:pb-28 lg:pt-44">
         <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[1fr_0.36fr]">
           <div>
@@ -121,6 +125,8 @@ export default async function ConcernDetailPage({ params }: Props) {
           </div>
         </section>
       ) : null}
+
+      <RelatedVideos videos={videos} title="See this concern explained on video." />
 
       <section className="bg-[var(--ivory)] px-5 py-20 sm:px-8 lg:py-24">
         <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-2">

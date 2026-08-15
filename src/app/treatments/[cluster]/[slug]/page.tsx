@@ -6,6 +6,7 @@ import { ClinicalContentSections } from "@/components/ClinicalContentSections";
 import { JsonLd } from "@/components/JsonLd";
 import { PremiumButton } from "@/components/PremiumButton";
 import { RelatedContent } from "@/components/RelatedContent";
+import { RelatedVideos } from "@/components/RelatedVideos";
 import { SectionHeader } from "@/components/SectionHeader";
 import { StickyConsultationCard } from "@/components/StickyConsultationCard";
 import { TreatmentCard } from "@/components/TreatmentCard";
@@ -16,9 +17,11 @@ import {
 } from "@/data/site";
 import { pageMetadata } from "@/lib/metadata";
 import { relationshipsFor } from "@/data/search-taxonomy";
+import { videosForPath } from "@/data/video-library";
 import {
   breadcrumbJsonLd,
   medicalServiceJsonLd,
+  videoObjectJsonLd,
   webPageJsonLd,
 } from "@/lib/schema";
 
@@ -68,6 +71,7 @@ export default async function TreatmentDetailPage({ params }: Props) {
     )
     .slice(0, 3);
   const path = `/treatments/${cluster}/${slug}`;
+  const videos = videosForPath(path, 2);
   const relationships = relationshipsFor(path);
   const breadcrumbs = [
     { name: "Home", path: "/" },
@@ -85,6 +89,7 @@ export default async function TreatmentDetailPage({ params }: Props) {
           path,
         })}
       />
+      {videos.map((video) => <JsonLd key={video.videoId} data={videoObjectJsonLd(video)} />)}
       <JsonLd data={breadcrumbJsonLd(breadcrumbs)} />
       <JsonLd
         data={medicalServiceJsonLd({
@@ -192,6 +197,8 @@ export default async function TreatmentDetailPage({ params }: Props) {
         ]}
         faqs={treatment.faq}
       />
+
+      <RelatedVideos videos={videos} title="Watch this treatment topic before consultation." />
 
       {related.length ? (
         <section className="bg-[#FBF7EF] px-5 py-20 sm:px-8 lg:py-28">

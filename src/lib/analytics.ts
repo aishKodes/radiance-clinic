@@ -8,7 +8,8 @@ export type RadianceAnalyticsEvent =
   | "question_submitted"
   | "related_question_clicked"
   | "treatment_clicked"
-  | "consultation_clicked";
+  | "consultation_clicked"
+  | "video_played";
 
 declare global {
   interface Window {

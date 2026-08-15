@@ -7,6 +7,7 @@ import {
   socialProfiles,
 } from "@/lib/seo-config";
 import type { Article, ClinicSettings } from "@/types/cms";
+import type { YouTubeVideo } from "@/types/video-library";
 
 type JsonLd = Record<string, unknown>;
 
@@ -204,6 +205,23 @@ export function articleJsonLd(article: Article): JsonLd {
     datePublished: article.publishedAt,
     dateModified: article.updatedAt || article.reviewedAt,
     mainEntityOfPage: { "@id": `${url}#webpage` },
+    inLanguage: "en-IN",
+  };
+}
+
+export function videoObjectJsonLd(video: YouTubeVideo): JsonLd {
+  return {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    "@id": `${absoluteUrl("/videos")}#video-${video.videoId}`,
+    name: video.title,
+    description: video.description || `${video.primaryTopic} video from Radiance Clinics.`,
+    thumbnailUrl: [video.thumbnail],
+    uploadDate: video.publishedAt,
+    duration: video.duration,
+    contentUrl: video.url,
+    embedUrl: `https://www.youtube-nocookie.com/embed/${video.videoId}`,
+    publisher: { "@id": schemaIds.organization },
     inLanguage: "en-IN",
   };
 }

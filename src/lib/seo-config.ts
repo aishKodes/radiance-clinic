@@ -22,8 +22,7 @@ export const clinicIdentity = {
   email: "radiance.clinics@gmail.com",
 } as const;
 
-export const defaultSocialImage =
-  "/radiance-media-processed/portrait/doctor-hero.webp";
+export const defaultSocialImage = "/og.png";
 
 export const socialProfiles = [
   {
@@ -132,6 +131,36 @@ export const legacyRedirects: LegacyRedirect[] = [
     permanent: true,
   },
   { source: "/blogs", destination: "/knowledge", permanent: true },
+  {
+    source: "/hair-loss-causes",
+    destination: "/knowledge/hair-loss-causes-and-assessment",
+    permanent: true,
+  },
+  {
+    source: "/post/what-causes-hair-loss-and-how-it-can-be-treated",
+    destination: "/knowledge/hair-loss-causes-and-assessment",
+    permanent: true,
+  },
+  {
+    source: "/post/how-to-care-for-your-scalp-after-a-hair-transplant",
+    destination: "/knowledge/hair-transplant-aftercare",
+    permanent: true,
+  },
+  {
+    source: "/post/hair-transplants-what-to-expect",
+    destination: "/knowledge/hair-transplant-aftercare",
+    permanent: true,
+  },
+  {
+    source: "/post/what-common-mistakes-can-make-your-hair-transplant-more-expensive",
+    destination: "/knowledge/hair-transplant-cost-factors",
+    permanent: true,
+  },
+  {
+    source: "/post/what-is-gfc-treatment-and-how-does-it-help-in-hair-regrowth",
+    destination: "/knowledge/prp-gfc-hair-restoration-guide",
+    permanent: true,
+  },
   { source: "/recent-result", destination: "/results", permanent: true },
   { source: "/photo-gallery", destination: "/results", permanent: true },
   {

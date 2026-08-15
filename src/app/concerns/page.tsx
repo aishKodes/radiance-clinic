@@ -6,6 +6,7 @@ import { JsonLd } from "@/components/JsonLd";
 import { SectionHeader } from "@/components/SectionHeader";
 import { concernCategories, concerns, doctorAnswers, medicalReviewer } from "@/data/concern-library";
 import { resultCases } from "@/data/result-cases";
+import { publicEducationalVideos } from "@/data/video-library";
 import { getArticles, getTreatments } from "@/data/site";
 import { pageMetadata } from "@/lib/metadata";
 import { collectionPageJsonLd } from "@/lib/schema";
@@ -51,6 +52,14 @@ export default async function ConcernsPage() {
       description: article.excerpt,
       href: `/knowledge/${article.slug}`,
       terms: [article.title, article.category, article.excerpt],
+    })),
+    ...publicEducationalVideos.map((video) => ({
+      id: `video:${video.videoId}`,
+      type: "Videos" as const,
+      title: video.title,
+      description: video.description || `${video.primaryTopic} video from Radiance Clinics.`,
+      href: "/videos",
+      terms: [video.title, video.primaryTopic, video.searchIntent, video.description],
     })),
     ...resultCases.map((result) => ({
       id: `result:${result.category}:${result.slug}`,

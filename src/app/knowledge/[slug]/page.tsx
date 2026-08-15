@@ -6,6 +6,7 @@ import { ArrowUpRight } from "lucide-react";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { JsonLd } from "@/components/JsonLd";
 import { PremiumButton } from "@/components/PremiumButton";
+import { RelatedVideos } from "@/components/RelatedVideos";
 import { StickyConsultationCard } from "@/components/StickyConsultationCard";
 import {
   getArticle,
@@ -14,7 +15,8 @@ import {
 } from "@/data/site";
 import { pageMetadata } from "@/lib/metadata";
 import { relationshipsFor } from "@/data/search-taxonomy";
-import { articleJsonLd, breadcrumbJsonLd, webPageJsonLd } from "@/lib/schema";
+import { videosForPath } from "@/data/video-library";
+import { articleJsonLd, breadcrumbJsonLd, videoObjectJsonLd, webPageJsonLd } from "@/lib/schema";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -54,6 +56,7 @@ export default async function ArticlePage({ params }: Props) {
   }
   const path = `/knowledge/${slug}`;
   const relationships = relationshipsFor(path);
+  const videos = videosForPath(path, 2);
   const breadcrumbs = [
     { name: "Home", path: "/" },
     { name: "Knowledge", path: "/knowledge" },
@@ -67,7 +70,28 @@ export default async function ArticlePage({ params }: Props) {
     : article.category.includes("Laser")
       ? "Laser treatment equipment room at Radiance Clinics Bhubaneswar"
       : "Doctor consultation space at Radiance Clinics Bhubaneswar";
-  const relatedTreatmentLinks = relationships
+  const explicitRelatedLinks = [
+    ...(article.relatedTreatments || []),
+    ...(article.relatedConditions || []),
+  ].map((href) => ({
+    href,
+    label: href.includes("prp-gfc")
+      ? "PRP and GFC scalp therapy"
+      : href.includes("hair-transplant") || href.includes("fue-hair")
+        ? "Hair transplant planning"
+        : href.includes("hair-loss") || href.includes("hair-fall")
+          ? "Hair loss and scalp guidance"
+          : href.includes("laser-hair")
+            ? "Laser hair reduction"
+            : href.includes("acne-scar")
+              ? "Acne scar assessment and treatment"
+              : href.includes("/acne")
+                ? "Active acne guidance"
+                : "Related clinical guidance",
+  }));
+  const relatedTreatmentLinks = explicitRelatedLinks.length
+    ? explicitRelatedLinks
+    : relationships
     ? [
         { label: "Treatment category overview", href: relationships.hub },
         ...relationships.treatments.slice(0, 2).map((href) => ({
@@ -122,6 +146,7 @@ export default async function ArticlePage({ params }: Props) {
           path,
         })}
       />
+      {videos.map((video) => <JsonLd key={video.videoId} data={videoObjectJsonLd(video)} />)}
       <section className="bg-[#F7F1E8] px-5 pb-20 pt-36 sm:px-8 lg:pb-28 lg:pt-44">
         <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[1fr_0.36fr]">
           <article>
@@ -188,6 +213,8 @@ export default async function ArticlePage({ params }: Props) {
           </div>
         </article>
       </section>
+
+      <RelatedVideos videos={videos} title="Continue with official video guidance." />
 
       {relatedArticles.length ? (
         <section className="bg-[#F7F1E8] px-5 py-16 sm:px-8 lg:py-20">

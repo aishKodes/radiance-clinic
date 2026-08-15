@@ -1,6 +1,6 @@
 # Concern Content Quality Report
 
-Generated: 2026-08-15T08:05:35.686Z
+Generated: 2026-08-15T10:08:22.826Z
 
 - Concern pages audited: 62
 - Category hubs audited: 10

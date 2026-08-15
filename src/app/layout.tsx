@@ -56,7 +56,7 @@ export const metadata: Metadata = {
     images: [
       {
         url: defaultSocialImage,
-        alt: "Dr. Satyarth Prakash at Radiance Clinics Bhubaneswar",
+        alt: "Radiance Clinics skin, hair and aesthetic knowledge",
       },
     ],
   },
