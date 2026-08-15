@@ -111,6 +111,34 @@ export const legacyRedirects: LegacyRedirect[] = [
     destination: "/treatments/aesthetic-dermatology/injectable-aesthetics",
     permanent: true,
   },
+  {
+    source: "/hair-transplantation",
+    destination: "/hair-transplant-bhubaneswar",
+    permanent: true,
+  },
+  {
+    source: "/skin-pigmentation",
+    destination: "/pigmentation-treatment-bhubaneswar",
+    permanent: true,
+  },
+  {
+    source: "/tan-removal",
+    destination: "/pigmentation-treatment-bhubaneswar",
+    permanent: true,
+  },
+  {
+    source: "/botox-treatment",
+    destination: "/treatments/aesthetic-dermatology/injectable-aesthetics",
+    permanent: true,
+  },
+  { source: "/blogs", destination: "/knowledge", permanent: true },
+  { source: "/recent-result", destination: "/results", permanent: true },
+  { source: "/photo-gallery", destination: "/results", permanent: true },
+  {
+    source: "/book-online-radiance-clinics-bhuabaneswar",
+    destination: "/contact",
+    permanent: true,
+  },
   ...[
     "cuttack",
     "puri",

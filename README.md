@@ -44,6 +44,9 @@ GOOGLE_BUSINESS_PROFILE_MAPS_URL=
 - `NEXT_PUBLIC_SITE_URL`: Used for metadata, canonical URLs, and sitemap output.
 - `NEXT_PUBLIC_API_BASE_URL`: Public API origin. If missing or unreachable, the frontend renders from `src/data/fallback.ts` and `src/data/seed.ts`.
 - `GOOGLE_GENERATIVE_AI_API_KEY` or `GEMINI_API_KEY`: Optional server-side Gemini key for `/api/assistant`. If missing, the assistant uses a safe rules-based fallback.
+- `DEEPSEEK_API_KEY` and `DEEPSEEK_MODEL`: Preferred server-side assistant provider. The default model is `deepseek-v4-flash`; Gemini and the safe rules-based responder remain fallbacks.
+- `QUESTION_SUBMISSION_WEBHOOK_URL`: Optional secure server-side destination for private Ask the Doctor submissions. Questions are never published automatically.
+- `SEARCH_SIGNAL_WEBHOOK_URL`: Optional destination for privacy-preserving no-result counters. Search wording is never sent.
 - `GOOGLE_BUSINESS_PROFILE_*`: Optional server-only OAuth credentials and account/location IDs for the complete verified-location review feed. The access token is refreshed server-side and review data is cached for one hour.
 - `GOOGLE_PLACES_API_KEY` and `GOOGLE_PLACE_ID`: Optional fallback for the public Google rating, count, and selected reviews when Business Profile API access is not configured.
 - `GOOGLE_BUSINESS_PROFILE_MAPS_URL`: Optional direct link to the clinic's Google Maps profile. A Bhubaneswar search link is used when omitted.
@@ -58,7 +61,11 @@ npm run lint
 npm run build
 npm run start
 npm run process:media
+npm run content:migrate-old
+npm run content:audit
 ```
+
+The Concern Library architecture, review gate, search privacy model and generated SEO deliverables are documented in `CONCERN_LIBRARY_IMPLEMENTATION.md`.
 
 `npm run process:media` processes approved local clinic media with Sharp. Raw media folders are intentionally ignored by Git.
 

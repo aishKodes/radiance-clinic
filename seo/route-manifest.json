@@ -9,6 +9,18 @@
     { "path": "/treatments/skin", "type": "treatment-hub", "sitemap": true, "primaryIntent": "skin treatment options", "parent": "/treatments", "breadcrumb": true, "eligible": true },
     { "path": "/treatments/laser", "type": "treatment-hub", "sitemap": true, "primaryIntent": "laser treatment options", "parent": "/treatments", "breadcrumb": true, "eligible": true },
     { "path": "/treatments/aesthetic-dermatology", "type": "treatment-hub", "sitemap": true, "primaryIntent": "aesthetic dermatology options", "parent": "/treatments", "breadcrumb": true, "eligible": true },
+    { "path": "/concerns", "type": "concern-index", "sitemap": true, "primaryIntent": "hair skin and scalp concern discovery", "parent": "/", "breadcrumb": false, "eligible": true },
+    { "path": "/concerns/hair-loss-scalp", "type": "concern-hub", "sitemap": true, "primaryIntent": "hair loss and scalp concern discovery", "parent": "/concerns", "breadcrumb": true, "eligible": true },
+    { "path": "/concerns/hair-transplant", "type": "concern-hub", "sitemap": true, "primaryIntent": "hair transplant question discovery", "parent": "/concerns", "breadcrumb": true, "eligible": true },
+    { "path": "/concerns/acne", "type": "concern-hub", "sitemap": true, "primaryIntent": "acne concern discovery", "parent": "/concerns", "breadcrumb": true, "eligible": true },
+    { "path": "/concerns/acne-scars", "type": "concern-hub", "sitemap": true, "primaryIntent": "acne scar type discovery", "parent": "/concerns", "breadcrumb": true, "eligible": true },
+    { "path": "/concerns/pigmentation", "type": "concern-hub", "sitemap": true, "primaryIntent": "pigmentation concern discovery", "parent": "/concerns", "breadcrumb": true, "eligible": true },
+    { "path": "/concerns/skin-texture", "type": "concern-hub", "sitemap": true, "primaryIntent": "skin texture concern discovery", "parent": "/concerns", "breadcrumb": true, "eligible": true },
+    { "path": "/concerns/aging-aesthetics", "type": "concern-hub", "sitemap": true, "primaryIntent": "facial ageing concern discovery", "parent": "/concerns", "breadcrumb": true, "eligible": true },
+    { "path": "/concerns/laser-hair-reduction", "type": "concern-hub", "sitemap": true, "primaryIntent": "laser hair reduction question discovery", "parent": "/concerns", "breadcrumb": true, "eligible": true },
+    { "path": "/concerns/scars-stretch-marks", "type": "concern-hub", "sitemap": true, "primaryIntent": "scar and stretch mark concern discovery", "parent": "/concerns", "breadcrumb": true, "eligible": true },
+    { "path": "/concerns/other-skin-concerns", "type": "concern-hub", "sitemap": true, "primaryIntent": "other skin concern discovery", "parent": "/concerns", "breadcrumb": true, "eligible": true },
+    { "path": "/doctor-answers", "type": "answer-index", "sitemap": true, "primaryIntent": "patient hair and skin question discovery", "parent": "/", "breadcrumb": false, "eligible": true },
     { "path": "/conditions", "type": "condition-index", "sitemap": true, "primaryIntent": "condition discovery", "parent": "/", "breadcrumb": false, "eligible": true },
     { "path": "/knowledge", "type": "article-index", "sitemap": true, "primaryIntent": "patient education discovery", "parent": "/", "breadcrumb": false, "eligible": true },
     { "path": "/before-after", "type": "results-viewer", "sitemap": true, "primaryIntent": "interactive before after comparisons", "parent": "/results", "breadcrumb": false, "eligible": true },
@@ -16,6 +28,7 @@
     { "path": "/locations", "type": "location-index", "sitemap": true, "primaryIntent": "outstation clinic visit planning", "parent": "/contact", "breadcrumb": true, "eligible": true },
     { "path": "/reviews", "type": "review-index", "sitemap": true, "primaryIntent": "clinic reputation research", "parent": "/", "breadcrumb": false, "eligible": true },
     { "path": "/contact", "type": "contact", "sitemap": true, "primaryIntent": "clinic appointment and directions", "parent": "/", "breadcrumb": false, "eligible": true },
+    { "path": "/privacy-policy", "type": "policy", "sitemap": true, "primaryIntent": "website privacy information", "parent": "/", "breadcrumb": false, "eligible": true },
     { "path": "/hair-transplant-bhubaneswar", "type": "local-service", "sitemap": true, "primaryIntent": "hair transplant Bhubaneswar", "parent": "/treatments/hair-restoration", "breadcrumb": true, "eligible": true },
     { "path": "/skin-clinic-bhubaneswar", "type": "local-service", "sitemap": true, "primaryIntent": "skin clinic Bhubaneswar", "parent": "/treatments/skin", "breadcrumb": true, "eligible": true },
     { "path": "/laser-hair-removal-bhubaneswar", "type": "local-service", "sitemap": true, "primaryIntent": "laser hair removal Bhubaneswar", "parent": "/treatments/laser", "breadcrumb": true, "eligible": true },
@@ -35,10 +48,13 @@
     { "path": "/conditions/skin-ageing-laxity", "type": "condition", "sitemap": true, "primaryIntent": "skin ageing and laxity guidance", "parent": "/conditions", "breadcrumb": true, "eligible": true },
     { "path": "/knowledge/how-to-plan-hair-restoration", "type": "article", "sitemap": true, "primaryIntent": "hair restoration planning education", "parent": "/knowledge", "breadcrumb": true, "eligible": true },
     { "path": "/knowledge/laser-skin-treatments-safety", "type": "article", "sitemap": true, "primaryIntent": "laser treatment safety education", "parent": "/knowledge", "breadcrumb": true, "eligible": true },
-    { "path": "/knowledge/premium-aesthetic-consultation", "type": "article", "sitemap": true, "primaryIntent": "aesthetic consultation education", "parent": "/knowledge", "breadcrumb": true, "eligible": true }
+    { "path": "/knowledge/premium-aesthetic-consultation", "type": "article", "sitemap": true, "primaryIntent": "aesthetic consultation education", "parent": "/knowledge", "breadcrumb": true, "eligible": true },
+    { "path": "/knowledge/best-skin-clinic-bhubaneswar", "type": "article", "sitemap": true, "primaryIntent": "how to choose a skin clinic", "parent": "/knowledge", "breadcrumb": true, "eligible": true },
+    { "path": "/knowledge/skin-care-doctor-bhubaneswar", "type": "article", "sitemap": true, "primaryIntent": "when to consult a skin care doctor", "parent": "/knowledge", "breadcrumb": true, "eligible": true }
   ],
   "dynamicIndexablePrefixes": [
     "/treatments/",
+    "/concerns/",
     "/conditions/",
     "/knowledge/",
     "/reviews/",
@@ -54,5 +70,7 @@
     { "path": "/hair-transplant-berhampur", "reason": "Draft until city-specific information is verified" },
     { "path": "/hair-transplant-baripada", "reason": "Draft until city-specific information is verified" },
     { "path": "/results/*/*", "reason": "Case details require verified clinical context and timeline before indexation" }
+    ,{ "path": "/concerns/*/*", "reason": "Concern details require recorded medical approval before indexation" }
+    ,{ "path": "/doctor-answers/*", "reason": "Answer details require recorded doctor review before indexation" }
   ]
 }

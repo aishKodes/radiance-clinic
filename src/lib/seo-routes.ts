@@ -2,6 +2,8 @@ export const coreIndexableRoutes = [
   "/",
   "/about",
   "/treatments",
+  "/concerns",
+  "/doctor-answers",
   "/conditions",
   "/knowledge",
   "/before-after",
@@ -9,6 +11,20 @@ export const coreIndexableRoutes = [
   "/locations",
   "/reviews",
   "/contact",
+  "/privacy-policy",
+] as const;
+
+export const concernHubRoutes = [
+  "/concerns/hair-loss-scalp",
+  "/concerns/hair-transplant",
+  "/concerns/acne",
+  "/concerns/acne-scars",
+  "/concerns/pigmentation",
+  "/concerns/skin-texture",
+  "/concerns/aging-aesthetics",
+  "/concerns/laser-hair-reduction",
+  "/concerns/scars-stretch-marks",
+  "/concerns/other-skin-concerns",
 ] as const;
 
 export const categoryHubRoutes = [

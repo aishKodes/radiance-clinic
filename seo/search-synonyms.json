@@ -1,0 +1,814 @@
+{
+  "/concerns/hair-loss-scalp/hair-loss": {
+    "canonical": "Hair Loss",
+    "aliases": [
+      "hairfall",
+      "hair fall",
+      "losing hair"
+    ],
+    "patientLanguageTerms": [
+      "hairfall",
+      "hair fall",
+      "losing hair"
+    ]
+  },
+  "/concerns/hair-loss-scalp/hair-thinning": {
+    "canonical": "Hair Thinning",
+    "aliases": [
+      "thin hair",
+      "less hair density",
+      "scalp showing"
+    ],
+    "patientLanguageTerms": [
+      "thin hair",
+      "less hair density",
+      "scalp showing"
+    ]
+  },
+  "/concerns/hair-loss-scalp/sudden-hair-shedding": {
+    "canonical": "Sudden Hair Shedding",
+    "aliases": [
+      "sudden hairfall",
+      "hair coming out in handfuls",
+      "excessive shedding"
+    ],
+    "patientLanguageTerms": [
+      "sudden hairfall",
+      "hair coming out in handfuls",
+      "excessive shedding"
+    ]
+  },
+  "/concerns/hair-loss-scalp/male-pattern-hair-loss": {
+    "canonical": "Male Pattern Hair Loss",
+    "aliases": [
+      "male pattern baldness",
+      "androgenetic alopecia",
+      "balding crown"
+    ],
+    "patientLanguageTerms": [
+      "male pattern baldness",
+      "androgenetic alopecia",
+      "balding crown"
+    ]
+  },
+  "/concerns/hair-loss-scalp/female-pattern-hair-loss": {
+    "canonical": "Female Pattern Hair Loss",
+    "aliases": [
+      "female hair thinning",
+      "widening part",
+      "female androgenetic alopecia"
+    ],
+    "patientLanguageTerms": [
+      "female hair thinning",
+      "widening part",
+      "female androgenetic alopecia"
+    ]
+  },
+  "/concerns/hair-loss-scalp/receding-hairline": {
+    "canonical": "Receding Hairline",
+    "aliases": [
+      "hairline going back",
+      "temple recession",
+      "M shaped hairline"
+    ],
+    "patientLanguageTerms": [
+      "hairline going back",
+      "temple recession",
+      "M shaped hairline"
+    ]
+  },
+  "/concerns/hair-loss-scalp/widening-part": {
+    "canonical": "Widening Hair Part",
+    "aliases": [
+      "broad parting",
+      "scalp visible in part",
+      "female thinning part"
+    ],
+    "patientLanguageTerms": [
+      "broad parting",
+      "scalp visible in part",
+      "female thinning part"
+    ]
+  },
+  "/concerns/hair-loss-scalp/alopecia-areata": {
+    "canonical": "Patchy Hair Loss (Alopecia Areata)",
+    "aliases": [
+      "coin shaped bald patch",
+      "patchy alopecia",
+      "round bald spot"
+    ],
+    "patientLanguageTerms": [
+      "coin shaped bald patch",
+      "patchy alopecia",
+      "round bald spot"
+    ]
+  },
+  "/concerns/hair-loss-scalp/dandruff": {
+    "canonical": "Dandruff & Flaky Scalp",
+    "aliases": [
+      "flaky scalp",
+      "white flakes",
+      "scalp scaling"
+    ],
+    "patientLanguageTerms": [
+      "flaky scalp",
+      "white flakes",
+      "scalp scaling"
+    ]
+  },
+  "/concerns/hair-loss-scalp/itchy-scalp": {
+    "canonical": "Itchy Scalp",
+    "aliases": [
+      "scalp itching",
+      "itching with hair fall",
+      "irritated scalp"
+    ],
+    "patientLanguageTerms": [
+      "scalp itching",
+      "itching with hair fall",
+      "irritated scalp"
+    ]
+  },
+  "/concerns/hair-transplant/hair-transplant-suitability": {
+    "canonical": "Hair Transplant Suitability",
+    "aliases": [
+      "am I eligible for hair transplant",
+      "hair transplant candidate",
+      "can I get transplant"
+    ],
+    "patientLanguageTerms": [
+      "am I eligible for hair transplant",
+      "hair transplant candidate",
+      "can I get transplant"
+    ]
+  },
+  "/concerns/hair-transplant/female-hair-transplant": {
+    "canonical": "Female Hair Transplant",
+    "aliases": [
+      "hair transplant for women",
+      "female hairline transplant",
+      "women hair transplant"
+    ],
+    "patientLanguageTerms": [
+      "hair transplant for women",
+      "female hairline transplant",
+      "women hair transplant"
+    ]
+  },
+  "/concerns/hair-transplant/beard-transplant": {
+    "canonical": "Beard & Moustache Transplant",
+    "aliases": [
+      "beard transplant",
+      "patchy beard transplant",
+      "moustache hair transplant"
+    ],
+    "patientLanguageTerms": [
+      "beard transplant",
+      "patchy beard transplant",
+      "moustache hair transplant"
+    ]
+  },
+  "/concerns/hair-transplant/donor-area-thinning": {
+    "canonical": "Donor Area Thinning",
+    "aliases": [
+      "weak donor area",
+      "thin back hair",
+      "overharvested donor"
+    ],
+    "patientLanguageTerms": [
+      "weak donor area",
+      "thin back hair",
+      "overharvested donor"
+    ]
+  },
+  "/concerns/hair-transplant/hairline-design": {
+    "canonical": "Hairline Design",
+    "aliases": [
+      "natural hairline",
+      "hairline shape",
+      "front hair transplant design"
+    ],
+    "patientLanguageTerms": [
+      "natural hairline",
+      "hairline shape",
+      "front hair transplant design"
+    ]
+  },
+  "/concerns/hair-transplant/graft-number-planning": {
+    "canonical": "Hair Transplant Graft Planning",
+    "aliases": [
+      "how many grafts",
+      "graft count",
+      "hair transplant density calculator"
+    ],
+    "patientLanguageTerms": [
+      "how many grafts",
+      "graft count",
+      "hair transplant density calculator"
+    ]
+  },
+  "/concerns/hair-transplant/post-transplant-shedding": {
+    "canonical": "Shedding After Hair Transplant",
+    "aliases": [
+      "transplanted hair falling",
+      "hair fall after transplant",
+      "post transplant shedding"
+    ],
+    "patientLanguageTerms": [
+      "transplanted hair falling",
+      "hair fall after transplant",
+      "post transplant shedding"
+    ]
+  },
+  "/concerns/hair-transplant/shock-loss": {
+    "canonical": "Shock Loss",
+    "aliases": [
+      "hair loss around transplant",
+      "shock shedding",
+      "native hair falling after transplant"
+    ],
+    "patientLanguageTerms": [
+      "hair loss around transplant",
+      "shock shedding",
+      "native hair falling after transplant"
+    ]
+  },
+  "/concerns/hair-transplant/hair-transplant-growth-timeline": {
+    "canonical": "Hair Transplant Growth Timeline",
+    "aliases": [
+      "when hair transplant grows",
+      "hair transplant months",
+      "transplant result time"
+    ],
+    "patientLanguageTerms": [
+      "when hair transplant grows",
+      "hair transplant months",
+      "transplant result time"
+    ]
+  },
+  "/concerns/acne/acne": {
+    "canonical": "Acne",
+    "aliases": [
+      "pimples",
+      "breakouts",
+      "zits"
+    ],
+    "patientLanguageTerms": [
+      "pimples",
+      "breakouts",
+      "zits"
+    ]
+  },
+  "/concerns/acne/closed-comedones": {
+    "canonical": "Closed Comedones (Whiteheads)",
+    "aliases": [
+      "whiteheads",
+      "tiny bumps on forehead",
+      "small skin coloured bumps",
+      "bumps that do not pop"
+    ],
+    "patientLanguageTerms": [
+      "whiteheads",
+      "tiny bumps on forehead",
+      "small skin coloured bumps",
+      "bumps that do not pop"
+    ]
+  },
+  "/concerns/acne/blackheads": {
+    "canonical": "Blackheads (Open Comedones)",
+    "aliases": [
+      "open pores with black dots",
+      "black spots in pores",
+      "open comedones"
+    ],
+    "patientLanguageTerms": [
+      "open pores with black dots",
+      "black spots in pores",
+      "open comedones"
+    ]
+  },
+  "/concerns/acne/inflammatory-acne": {
+    "canonical": "Inflammatory Acne",
+    "aliases": [
+      "red pimples",
+      "pus pimples",
+      "painful acne"
+    ],
+    "patientLanguageTerms": [
+      "red pimples",
+      "pus pimples",
+      "painful acne"
+    ]
+  },
+  "/concerns/acne/cystic-acne": {
+    "canonical": "Deep or Cystic Acne",
+    "aliases": [
+      "big painful pimples",
+      "under skin acne",
+      "nodular acne"
+    ],
+    "patientLanguageTerms": [
+      "big painful pimples",
+      "under skin acne",
+      "nodular acne"
+    ]
+  },
+  "/concerns/acne/hormonal-acne": {
+    "canonical": "Hormonal Acne",
+    "aliases": [
+      "period pimples",
+      "jawline acne",
+      "PCOS acne"
+    ],
+    "patientLanguageTerms": [
+      "period pimples",
+      "jawline acne",
+      "PCOS acne"
+    ]
+  },
+  "/concerns/acne/adult-acne": {
+    "canonical": "Adult Acne",
+    "aliases": [
+      "acne after 25",
+      "late acne",
+      "adult pimples"
+    ],
+    "patientLanguageTerms": [
+      "acne after 25",
+      "late acne",
+      "adult pimples"
+    ]
+  },
+  "/concerns/acne/acne-purging-vs-breakout": {
+    "canonical": "Skin Purging vs Acne Breakout",
+    "aliases": [
+      "purging or breakout",
+      "new product pimples",
+      "retinol purge"
+    ],
+    "patientLanguageTerms": [
+      "purging or breakout",
+      "new product pimples",
+      "retinol purge"
+    ]
+  },
+  "/concerns/acne-scars/acne-scars": {
+    "canonical": "Acne Scars",
+    "aliases": [
+      "pimple holes",
+      "acne pits",
+      "face holes after pimples"
+    ],
+    "patientLanguageTerms": [
+      "pimple holes",
+      "acne pits",
+      "face holes after pimples"
+    ]
+  },
+  "/concerns/acne-scars/ice-pick-scars": {
+    "canonical": "Ice Pick Acne Scars",
+    "aliases": [
+      "tiny deep acne holes",
+      "pinpoint pits",
+      "needle scars"
+    ],
+    "patientLanguageTerms": [
+      "tiny deep acne holes",
+      "pinpoint pits",
+      "needle scars"
+    ]
+  },
+  "/concerns/acne-scars/boxcar-scars": {
+    "canonical": "Boxcar Acne Scars",
+    "aliases": [
+      "square acne scars",
+      "sharp edged pits",
+      "crater scars"
+    ],
+    "patientLanguageTerms": [
+      "square acne scars",
+      "sharp edged pits",
+      "crater scars"
+    ]
+  },
+  "/concerns/acne-scars/rolling-scars": {
+    "canonical": "Rolling Acne Scars",
+    "aliases": [
+      "wavy acne scars",
+      "uneven rolling skin",
+      "tethered acne scars"
+    ],
+    "patientLanguageTerms": [
+      "wavy acne scars",
+      "uneven rolling skin",
+      "tethered acne scars"
+    ]
+  },
+  "/concerns/acne-scars/post-acne-red-marks": {
+    "canonical": "Red Marks After Acne",
+    "aliases": [
+      "red acne marks",
+      "post acne redness",
+      "PIE"
+    ],
+    "patientLanguageTerms": [
+      "red acne marks",
+      "post acne redness",
+      "PIE"
+    ]
+  },
+  "/concerns/acne-scars/post-inflammatory-hyperpigmentation": {
+    "canonical": "Dark Marks After Acne",
+    "aliases": [
+      "pimple marks",
+      "acne pigmentation",
+      "brown acne spots",
+      "PIH"
+    ],
+    "patientLanguageTerms": [
+      "pimple marks",
+      "acne pigmentation",
+      "brown acne spots",
+      "PIH"
+    ]
+  },
+  "/concerns/acne-scars/deep-acne-scars": {
+    "canonical": "Deep Acne Scars",
+    "aliases": [
+      "very deep pimple holes",
+      "severe acne scarring",
+      "deep face pits"
+    ],
+    "patientLanguageTerms": [
+      "very deep pimple holes",
+      "severe acne scarring",
+      "deep face pits"
+    ]
+  },
+  "/concerns/pigmentation/pigmentation": {
+    "canonical": "Facial Pigmentation",
+    "aliases": [
+      "dark patches",
+      "skin pigmentation",
+      "face darkening"
+    ],
+    "patientLanguageTerms": [
+      "dark patches",
+      "skin pigmentation",
+      "face darkening"
+    ]
+  },
+  "/concerns/pigmentation/melasma": {
+    "canonical": "Melasma",
+    "aliases": [
+      "facial pigmentation",
+      "brown patches",
+      "patches on cheeks",
+      "pregnancy pigmentation"
+    ],
+    "patientLanguageTerms": [
+      "facial pigmentation",
+      "brown patches",
+      "patches on cheeks",
+      "pregnancy pigmentation"
+    ]
+  },
+  "/concerns/pigmentation/sunspots": {
+    "canonical": "Sunspots",
+    "aliases": [
+      "age spots",
+      "solar lentigines",
+      "brown sun spots"
+    ],
+    "patientLanguageTerms": [
+      "age spots",
+      "solar lentigines",
+      "brown sun spots"
+    ]
+  },
+  "/concerns/pigmentation/uneven-skin-tone": {
+    "canonical": "Uneven Skin Tone",
+    "aliases": [
+      "patchy skin colour",
+      "uneven complexion",
+      "face colour uneven"
+    ],
+    "patientLanguageTerms": [
+      "patchy skin colour",
+      "uneven complexion",
+      "face colour uneven"
+    ]
+  },
+  "/concerns/pigmentation/tanning": {
+    "canonical": "Sun Tan & Persistent Darkening",
+    "aliases": [
+      "tan removal",
+      "sun darkening",
+      "face tan"
+    ],
+    "patientLanguageTerms": [
+      "tan removal",
+      "sun darkening",
+      "face tan"
+    ]
+  },
+  "/concerns/pigmentation/lip-pigmentation": {
+    "canonical": "Lip Pigmentation",
+    "aliases": [
+      "dark lips",
+      "black lips",
+      "uneven lip colour"
+    ],
+    "patientLanguageTerms": [
+      "dark lips",
+      "black lips",
+      "uneven lip colour"
+    ]
+  },
+  "/concerns/pigmentation/under-eye-dark-circles": {
+    "canonical": "Under-Eye Dark Circles",
+    "aliases": [
+      "dark circles",
+      "black under eyes",
+      "eye pigmentation"
+    ],
+    "patientLanguageTerms": [
+      "dark circles",
+      "black under eyes",
+      "eye pigmentation"
+    ]
+  },
+  "/concerns/skin-texture/enlarged-pores": {
+    "canonical": "Visible or Enlarged Pores",
+    "aliases": [
+      "open pores",
+      "big pores",
+      "holes on nose"
+    ],
+    "patientLanguageTerms": [
+      "open pores",
+      "big pores",
+      "holes on nose"
+    ]
+  },
+  "/concerns/skin-texture/rough-skin-texture": {
+    "canonical": "Rough Skin Texture",
+    "aliases": [
+      "bumpy skin",
+      "uneven skin texture",
+      "sandpaper face"
+    ],
+    "patientLanguageTerms": [
+      "bumpy skin",
+      "uneven skin texture",
+      "sandpaper face"
+    ]
+  },
+  "/concerns/skin-texture/dull-skin": {
+    "canonical": "Dull-Looking Skin",
+    "aliases": [
+      "no glow",
+      "tired skin",
+      "lifeless face"
+    ],
+    "patientLanguageTerms": [
+      "no glow",
+      "tired skin",
+      "lifeless face"
+    ]
+  },
+  "/concerns/skin-texture/fine-lines": {
+    "canonical": "Fine Lines",
+    "aliases": [
+      "small wrinkles",
+      "early wrinkles",
+      "crepey skin"
+    ],
+    "patientLanguageTerms": [
+      "small wrinkles",
+      "early wrinkles",
+      "crepey skin"
+    ]
+  },
+  "/concerns/skin-texture/dehydrated-skin": {
+    "canonical": "Dehydrated Skin",
+    "aliases": [
+      "tight skin",
+      "skin lacking water",
+      "dry but oily skin"
+    ],
+    "patientLanguageTerms": [
+      "tight skin",
+      "skin lacking water",
+      "dry but oily skin"
+    ]
+  },
+  "/concerns/aging-aesthetics/skin-laxity": {
+    "canonical": "Skin Laxity",
+    "aliases": [
+      "loose skin",
+      "sagging face",
+      "skin tightening"
+    ],
+    "patientLanguageTerms": [
+      "loose skin",
+      "sagging face",
+      "skin tightening"
+    ]
+  },
+  "/concerns/aging-aesthetics/facial-volume-loss": {
+    "canonical": "Facial Volume Loss",
+    "aliases": [
+      "sunken cheeks",
+      "face hollowing",
+      "volume loss"
+    ],
+    "patientLanguageTerms": [
+      "sunken cheeks",
+      "face hollowing",
+      "volume loss"
+    ]
+  },
+  "/concerns/aging-aesthetics/forehead-lines": {
+    "canonical": "Forehead & Frown Lines",
+    "aliases": [
+      "forehead wrinkles",
+      "11 lines",
+      "expression lines"
+    ],
+    "patientLanguageTerms": [
+      "forehead wrinkles",
+      "11 lines",
+      "expression lines"
+    ]
+  },
+  "/concerns/aging-aesthetics/under-eye-bags": {
+    "canonical": "Under-Eye Bags",
+    "aliases": [
+      "eye bags",
+      "puffy under eyes",
+      "under eye hollow"
+    ],
+    "patientLanguageTerms": [
+      "eye bags",
+      "puffy under eyes",
+      "under eye hollow"
+    ]
+  },
+  "/concerns/laser-hair-reduction/unwanted-facial-hair": {
+    "canonical": "Unwanted Facial Hair",
+    "aliases": [
+      "chin hair",
+      "upper lip hair",
+      "facial hair women"
+    ],
+    "patientLanguageTerms": [
+      "chin hair",
+      "upper lip hair",
+      "facial hair women"
+    ]
+  },
+  "/concerns/laser-hair-reduction/ingrown-hair": {
+    "canonical": "Ingrown Hair",
+    "aliases": [
+      "hair growing inside skin",
+      "razor bumps",
+      "pseudofolliculitis"
+    ],
+    "patientLanguageTerms": [
+      "hair growing inside skin",
+      "razor bumps",
+      "pseudofolliculitis"
+    ]
+  },
+  "/concerns/laser-hair-reduction/strawberry-legs": {
+    "canonical": "Strawberry Legs",
+    "aliases": [
+      "black dots on legs",
+      "dark pores legs",
+      "spotted legs after shaving"
+    ],
+    "patientLanguageTerms": [
+      "black dots on legs",
+      "dark pores legs",
+      "spotted legs after shaving"
+    ]
+  },
+  "/concerns/laser-hair-reduction/laser-hair-reduction-suitability": {
+    "canonical": "Laser Hair Reduction Suitability",
+    "aliases": [
+      "am I suitable for laser",
+      "laser hair removal candidate",
+      "laser consultation"
+    ],
+    "patientLanguageTerms": [
+      "am I suitable for laser",
+      "laser hair removal candidate",
+      "laser consultation"
+    ]
+  },
+  "/concerns/laser-hair-reduction/laser-hair-removal-dark-skin": {
+    "canonical": "Laser Hair Reduction for Darker Skin",
+    "aliases": [
+      "laser hair removal Indian skin",
+      "laser for brown skin",
+      "laser hair removal dark skin"
+    ],
+    "patientLanguageTerms": [
+      "laser hair removal Indian skin",
+      "laser for brown skin",
+      "laser hair removal dark skin"
+    ]
+  },
+  "/concerns/scars-stretch-marks/stretch-marks": {
+    "canonical": "Stretch Marks",
+    "aliases": [
+      "striae",
+      "pregnancy stretch marks",
+      "body lines"
+    ],
+    "patientLanguageTerms": [
+      "striae",
+      "pregnancy stretch marks",
+      "body lines"
+    ]
+  },
+  "/concerns/scars-stretch-marks/surgical-scars": {
+    "canonical": "Surgical Scars",
+    "aliases": [
+      "operation scar",
+      "stitch marks",
+      "post surgery scar"
+    ],
+    "patientLanguageTerms": [
+      "operation scar",
+      "stitch marks",
+      "post surgery scar"
+    ]
+  },
+  "/concerns/scars-stretch-marks/traumatic-scars": {
+    "canonical": "Traumatic & Injury Scars",
+    "aliases": [
+      "accident scar",
+      "cut mark",
+      "injury scar"
+    ],
+    "patientLanguageTerms": [
+      "accident scar",
+      "cut mark",
+      "injury scar"
+    ]
+  },
+  "/concerns/scars-stretch-marks/raised-scars-keloids": {
+    "canonical": "Raised Scars & Keloids",
+    "aliases": [
+      "keloid",
+      "thick scar",
+      "growing scar"
+    ],
+    "patientLanguageTerms": [
+      "keloid",
+      "thick scar",
+      "growing scar"
+    ]
+  },
+  "/concerns/other-skin-concerns/moles-and-warts": {
+    "canonical": "Moles, Skin Tags & Warts",
+    "aliases": [
+      "mole removal",
+      "wart removal",
+      "skin growth"
+    ],
+    "patientLanguageTerms": [
+      "mole removal",
+      "wart removal",
+      "skin growth"
+    ]
+  },
+  "/concerns/other-skin-concerns/rosacea-redness": {
+    "canonical": "Persistent Facial Redness & Rosacea",
+    "aliases": [
+      "red face",
+      "rosacea",
+      "facial flushing"
+    ],
+    "patientLanguageTerms": [
+      "red face",
+      "rosacea",
+      "facial flushing"
+    ]
+  },
+  "/concerns/other-skin-concerns/excessive-sweating": {
+    "canonical": "Excessive Sweating",
+    "aliases": [
+      "hyperhidrosis",
+      "too much sweating",
+      "sweaty palms"
+    ],
+    "patientLanguageTerms": [
+      "hyperhidrosis",
+      "too much sweating",
+      "sweaty palms"
+    ]
+  }
+}

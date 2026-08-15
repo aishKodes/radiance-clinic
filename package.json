@@ -9,6 +9,8 @@
     "lint": "eslint",
     "seo:audit": "node scripts/seo-audit.mjs",
     "test:redirects": "node scripts/seo-audit.mjs --redirects-only",
+    "content:migrate-old": "node scripts/content-migrate-old.mjs",
+    "content:audit": "node scripts/content-audit.mjs",
     "process:media": "node scripts/process-radiance-media.mjs"
   },
   "dependencies": {

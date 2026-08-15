@@ -132,10 +132,11 @@ export async function POST(request: Request) {
     lead: parsed.data.lead,
   };
 
-  const apiKey =
+  const deepSeekApiKey = process.env.DEEPSEEK_API_KEY;
+  const googleApiKey =
     process.env.GOOGLE_GENERATIVE_AI_API_KEY || process.env.GEMINI_API_KEY;
 
-  if (!apiKey) {
+  if (!deepSeekApiKey && !googleApiKey) {
     return Response.json({
       reply: rulesBasedReply(latestUserMessage, context),
       source: "fallback",
@@ -143,7 +144,16 @@ export async function POST(request: Request) {
   }
 
   try {
-    const google = createGoogleGenerativeAI({apiKey});
+    if (deepSeekApiKey) {
+      const reply = await generateDeepSeekReply(
+        deepSeekApiKey,
+        context,
+        parsed.data.messages,
+      );
+      return Response.json({ reply: addSafetyFooter(reply), source: "deepseek" });
+    }
+
+    const google = createGoogleGenerativeAI({apiKey: googleApiKey});
     const result = await generateText({
       model: google("gemini-2.5-flash"),
       system: [
@@ -175,6 +185,49 @@ export async function POST(request: Request) {
       source: "fallback",
     });
   }
+}
+
+async function generateDeepSeekReply(
+  apiKey: string,
+  context: AssistantContext,
+  messages: { role: "user" | "assistant"; content: string }[],
+) {
+  const response = await fetch("https://api.deepseek.com/chat/completions", {
+    method: "POST",
+    headers: {
+      Authorization: `Bearer ${apiKey}`,
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      model: process.env.DEEPSEEK_MODEL || "deepseek-v4-flash",
+      thinking: { type: "disabled" },
+      max_tokens: 360,
+      messages: [
+        {
+          role: "system",
+          content: [
+            "You are Radiance AI Assistant for Radiance Clinics, Bhubaneswar.",
+            "Use only the supplied clinic context. Be concise, warm, premium and medically responsible.",
+            "Explain services only at a general level. Do not diagnose, prescribe, recommend medicines, guarantee outcomes or select a personal treatment.",
+            "For medical decisions, advise a doctor-led consultation with Dr. Satyarth Prakash or the clinic team.",
+            "Never claim that a booking is confirmed.",
+            `Clinic context: ${JSON.stringify(context)}`,
+          ].join("\n"),
+        },
+        ...messages,
+      ],
+    }),
+    cache: "no-store",
+    signal: AbortSignal.timeout(18_000),
+  });
+
+  if (!response.ok) throw new Error(`DeepSeek returned ${response.status}`);
+  const payload = (await response.json()) as {
+    choices?: { message?: { content?: string } }[];
+  };
+  const reply = payload.choices?.[0]?.message?.content?.trim();
+  if (!reply) throw new Error("DeepSeek returned an empty reply");
+  return reply;
 }
 
 function rulesBasedReply(

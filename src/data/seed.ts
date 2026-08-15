@@ -76,7 +76,7 @@ export const navItems = [
   { href: "/", label: "Home" },
   { href: "/about", label: "Doctor" },
   { href: "/treatments", label: "Treatments" },
-  { href: "/conditions", label: "Concerns" },
+  { href: "/concerns", label: "Concerns" },
   { href: "/results", label: "Results" },
   { href: "/reviews", label: "Reviews" },
   { href: "/knowledge", label: "Knowledge" },
@@ -370,6 +370,55 @@ export const articles: Article[] = [
     ],
     image: radianceMedia.doctorCabin,
   },
+  {
+    slug: "best-skin-clinic-bhubaneswar",
+    title: "Looking for Expert Skin Care in Bhubaneswar? Where Should You Go?",
+    category: "Skin Health",
+    readTime: "6 min read",
+    excerpt:
+      "What to look for in a trusted skin clinic, from assessment and personalised planning to realistic long-term care.",
+    body: [
+      "Healthy-looking skin often needs more than basic home care. Acne, pigmentation, dullness, uneven texture, scars, signs of ageing and sun damage may need professional evaluation and targeted treatment. A trusted clinic combines experienced guidance, modern procedures and personalised care rather than offering the same package to every patient.",
+      "Every person's skin behaves differently. Skin type, lifestyle, environmental exposure, age and existing conditions affect how it responds. A professional consultation can examine the underlying concern before treatment is selected and can reduce trial and error with unsuitable products.",
+      "Depending on the skin, a plan may focus on active acne, acne scars, pigmentation, uneven tone, texture, fine lines or sun damage. Chemical peels, laser-based procedures, rejuvenation treatments or supportive facials may be discussed only after skin type, severity, tolerance and goals are considered.",
+      "Personalised planning matters more than trends. A useful plan explains preparation, sun protection, aftercare, maintenance and realistic limits. Good skin care is not only a quick cosmetic change; it combines appropriate professional treatment with consistent daily habits.",
+      "When comparing skin clinics in Bhubaneswar, look at the consultation process, doctor-led assessment, treatment range, technology, safety guidance and whether the clinic sets honest expectations. Radiance Clinics offers individual consultation pathways for acne, pigmentation, scars, ageing concerns and overall skin quality.",
+    ],
+    image: radianceMedia.consultationRoom,
+    authorName: "Radiance Clinics Content Team",
+    publishedAt: "2026-08-15",
+    updatedAt: "2026-08-15",
+    seoTitle: "Expert Skin Care & Skin Clinic in Bhubaneswar | Radiance",
+    seoDescription:
+      "Learn what makes a trusted skin clinic stand out and how personalised assessment supports acne, pigmentation, scar and skin-quality care.",
+    relatedTreatments: ["/skin-clinic-bhubaneswar", "/treatments/skin"],
+    relatedConditions: ["/conditions/acne-acne-scars", "/conditions/pigmentation-melasma"],
+  },
+  {
+    slug: "skin-care-doctor-bhubaneswar",
+    title: "How Can a Skin Care Doctor in Bhubaneswar Help You Achieve Healthier Skin?",
+    category: "Skin Health",
+    readTime: "6 min read",
+    excerpt:
+      "How professional assessment can clarify acne, pigmentation, scars, ageing and persistent skin changes before treatment.",
+    body: [
+      "Healthy, clear skin is not only about appearance; it also reflects how the skin is protected and cared for. Persistent acne, pigmentation, uneven texture, early ageing, sun damage or recurring irritation often need more than over-the-counter products. Professional assessment can help identify likely causes and avoid unsuitable procedures.",
+      "Skin problems that look similar can have different causes. Pigmentation may follow sun exposure, hormonal change, acne or another skin condition. Persistent acne can involve oil, blocked follicles, hormones, friction, stress or medicines. A skin-care doctor examines the pattern and history rather than relying on a label alone.",
+      "Treatment options vary with the concern. Acne, scars, uneven tone, sun damage, fine lines, enlarged pores and dull-looking skin may require different combinations of home care, chemical peels, laser-based procedures or rejuvenation treatments. The correct option depends on skin type, medical suitability and the desired degree of change.",
+      "Age, sensitivity, medical history, sun exposure, previous procedures and daily products all influence planning. A consultation is also the place to discuss preparation, aftercare and a realistic maintenance routine.",
+      "Consider seeking assessment for persistent acne, dark spots, stubborn pigmentation, repeated breakouts, visible scars, premature signs of ageing or texture changes that do not improve with a simple routine. Early review can reduce prolonged product experimentation and help protect the skin barrier.",
+      "Radiance Clinics provides consultation-led skin care in Bhubaneswar. Recommendations are made after evaluating the individual concern; no article or online answer can replace that examination.",
+    ],
+    image: radianceMedia.doctorConsultation,
+    authorName: "Radiance Clinics Content Team",
+    publishedAt: "2026-08-15",
+    updatedAt: "2026-08-15",
+    seoTitle: "Skin Care Doctor & Skin Specialist in Bhubaneswar | Radiance",
+    seoDescription:
+      "See how a skin-care doctor can assess acne, pigmentation, scars, ageing and persistent skin changes using personalised planning.",
+    relatedTreatments: ["/skin-clinic-bhubaneswar", "/treatments/skin"],
+    relatedConditions: ["/conditions/acne-acne-scars", "/conditions/pigmentation-melasma"],
+  },
 ];
 
 export const testimonials: Testimonial[] = [
@@ -483,11 +532,12 @@ export const treatmentUniverse = [
 
 export const videoItems: VideoItem[] = [
   {
-    title: "Hair Restoration Planning",
-    label: "Doctor Explains",
+    title: "The Complete Hair Transplant Guide",
+    label: "Featured Guide",
     description:
-      "Doctor-led guidance on diagnosis-first hair restoration planning.",
-    href: "https://youtube.com/@radianceclinics?si=MwbMHVfdlLk2C95l",
+      "A detailed Radiance Clinics video guide to hair transplant planning, the procedure, recovery and expectations.",
+    youtubeId: "8qYMw935MF8",
+    href: "https://youtu.be/8qYMw935MF8?si=usENtf9ygZmREo0R",
     thumbnail: radianceMedia.doctorConsultation,
   },
   {

@@ -11,13 +11,16 @@ import type { ClinicSettings } from "@/types/cms";
 const clinicLinks = [
   { label: "About the doctor", href: "/about" },
   { label: "Treatments", href: "/treatments" },
-  { label: "Conditions", href: "/conditions" },
+  { label: "Concern library", href: "/concerns" },
+  { label: "Doctor answers", href: "/doctor-answers" },
+  { label: "Legacy conditions", href: "/conditions" },
   { label: "Patient results", href: "/results" },
   { label: "Interactive comparisons", href: "/before-after" },
   { label: "Patient reviews", href: "/reviews" },
   { label: "Knowledge library", href: "/knowledge" },
   { label: "Contact and directions", href: "/contact" },
   { label: "Visiting from across Odisha", href: "/locations" },
+  { label: "Privacy policy", href: "/privacy-policy" },
 ];
 
 export function SiteFooter({ settings }: { settings: ClinicSettings }) {

@@ -8,19 +8,25 @@ import {
 } from "@/data/site";
 import {
   categoryHubRoutes,
+  concernHubRoutes,
   coreIndexableRoutes,
   localLandingRouteSet,
   localLandingRoutes,
 } from "@/lib/seo-routes";
+import { approvedConcerns, doctorAnswers } from "@/data/concern-library";
 import { indexableLocationPages } from "@/data/location-pages";
 import { indexableResultCases } from "@/data/result-cases";
 import { absoluteUrl } from "@/lib/seo-config";
 import { isIndexableRoute, normalizeRoutePath } from "@/lib/indexability";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const staticRoutes = [...coreIndexableRoutes, ...categoryHubRoutes, ...localLandingRoutes];
+  const staticRoutes = [...coreIndexableRoutes, ...categoryHubRoutes, ...concernHubRoutes, ...localLandingRoutes];
   const locationRoutes = indexableLocationPages.map((page) => `/${page.slug}`);
   const resultRoutes = indexableResultCases.map((item) => `/results/${item.category}/${item.slug}`);
+  const concernRoutes = approvedConcerns.map((item) => `/concerns/${item.categorySlug}/${item.slug}`);
+  const answerRoutes = doctorAnswers
+    .filter((answer) => answer.indexable && answer.status === "APPROVED" && answer.reviewedBy && answer.reviewedAt)
+    .map((answer) => `/doctor-answers/${answer.slug}`);
 
   const [
     treatmentParams,
@@ -61,6 +67,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         ...staticRoutes,
         ...locationRoutes,
         ...resultRoutes,
+        ...concernRoutes,
+        ...answerRoutes,
         ...treatmentRoutes,
         ...conditionRoutes,
         ...articleRoutes,
