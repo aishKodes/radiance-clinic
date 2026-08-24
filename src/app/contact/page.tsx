@@ -12,6 +12,8 @@ import {
   directionsUrl,
   normalizedTel,
 } from "@/lib/seo-config";
+import { whatsappHref } from "@/lib/contact-links";
+import { ConversionLink } from "@/components/ConversionLink";
 
 export const metadata: Metadata = pageMetadata({
   title: "Contact Radiance Clinics Bhubaneswar",
@@ -52,7 +54,7 @@ export default async function ContactPage() {
     {
       label: "WhatsApp",
       value: "Start consultation chat",
-      href: `https://wa.me/${clinic.whatsapp}`,
+      href: whatsappHref(clinic.whatsapp, "/contact"),
       icon: MessageCircle,
     },
     {
@@ -120,12 +122,13 @@ export default async function ContactPage() {
         <div className="mx-auto grid max-w-7xl gap-5 md:grid-cols-2 lg:grid-cols-5">
           {contactCards.map((item) => {
             const Icon = item.icon;
-            return (
-              <a
-                key={item.label}
-                href={item.href}
-                className="group rounded-[2rem] border border-[#151515]/10 bg-white/58 p-7 shadow-[0_24px_80px_rgba(21,21,21,0.08)] backdrop-blur transition duration-300 hover:-translate-y-1 hover:border-[#B78A4A]/45"
-              >
+            const eventName = item.href.startsWith("tel:")
+              ? "call_click"
+              : item.href.includes("wa.me/")
+                ? "whatsapp_click"
+                : null;
+            const cardContent = (
+              <>
                 <Icon className="mb-12 h-6 w-6 text-[#1E6F86]" />
                 <p className="text-xs font-bold uppercase tracking-[0.24em] text-[#B78A4A]">
                   {item.label}
@@ -133,6 +136,29 @@ export default async function ContactPage() {
                 <p className="mt-4 text-lg font-bold text-[#151515]">
                   {item.value}
                 </p>
+              </>
+            );
+
+            if (eventName) {
+              return (
+                <ConversionLink
+                  key={item.label}
+                  href={item.href}
+                  eventName={eventName}
+                  className="group rounded-[2rem] border border-[#151515]/10 bg-white/58 p-7 shadow-[0_24px_80px_rgba(21,21,21,0.08)] backdrop-blur transition duration-300 hover:-translate-y-1 hover:border-[#B78A4A]/45"
+                >
+                  {cardContent}
+                </ConversionLink>
+              );
+            }
+
+            return (
+              <a
+                key={item.label}
+                href={item.href}
+                className="group rounded-[2rem] border border-[#151515]/10 bg-white/58 p-7 shadow-[0_24px_80px_rgba(21,21,21,0.08)] backdrop-blur transition duration-300 hover:-translate-y-1 hover:border-[#B78A4A]/45"
+              >
+                {cardContent}
               </a>
             );
           })}
@@ -164,7 +190,7 @@ export default async function ContactPage() {
             medical judgement.
           </p>
           <PremiumButton
-            href={`https://wa.me/${clinic.whatsapp}`}
+            href={whatsappHref(clinic.whatsapp, "/contact")}
             variant="ivory"
             className="mt-10"
           >

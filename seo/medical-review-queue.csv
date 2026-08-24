@@ -299,3 +299,6 @@ url,title,content_type,topic,source_material,legacy_source,video_source,risk_lev
 /knowledge,Virtual Tour,PATIENT_GUIDE,Other,../output/rejected-content.json,https://www.radianceclinics.com/virtual-tour/,,LOW,P2,possible,Dr. Satyarth Prakash,ARCHIVED_SOURCE
 /about,Media,DOCTOR_INFO,Clinic & Doctor,../output/rejected-content.json,https://www.radianceclinics.com/media-press-release/,,LOW,P2,possible,Dr. Satyarth Prakash,ARCHIVED_SOURCE
 /knowledge,Thank You,PATIENT_GUIDE,Other,../output/rejected-content.json,https://www.radianceclinics.com/thank-you/,,LOW,P2,possible,Dr. Satyarth Prakash,ARCHIVED_SOURCE
+/botox-treatment-bhubaneswar,Botox Treatment in Bhubaneswar,TREATMENT,Ageing & Aesthetics,Radiance_Codex_Master_Implementation_Content_Pack.md,https://www.radianceclinics.com/botox-treatment/,,HIGH,P0,yes,Dr. Satyarth Prakash,READY_FOR_MEDICAL_REVIEW
+/dermal-fillers-bhubaneswar,Dermal Fillers in Bhubaneswar,TREATMENT,Ageing & Aesthetics,Radiance_Codex_Master_Implementation_Content_Pack.md,https://www.radianceclinics.com/fillers/,,HIGH,P0,yes,Dr. Satyarth Prakash,READY_FOR_MEDICAL_REVIEW
+/tattoo-removal-bhubaneswar,Laser Tattoo Removal in Bhubaneswar,TREATMENT,Skin Health,Radiance_Codex_Master_Implementation_Content_Pack.md,https://www.radianceclinics.com/tattoo-removal-radiance/,,MEDIUM,P0,yes,Dr. Satyarth Prakash,READY_FOR_MEDICAL_REVIEW

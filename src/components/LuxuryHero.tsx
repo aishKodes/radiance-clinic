@@ -10,6 +10,9 @@ import { HeroMediaCollage } from "@/components/HeroMediaCollage";
 import { OpenBookingButton } from "@/components/OpenBookingButton";
 import { PremiumButton } from "@/components/PremiumButton";
 import type { ClinicSettings, HomepageContent } from "@/types/cms";
+import { normalizedTel } from "@/lib/seo-config";
+import { whatsappHref } from "@/lib/contact-links";
+import { ConversionLink } from "@/components/ConversionLink";
 
 export function LuxuryHero({
   homepage = seedHomepageContent,
@@ -65,7 +68,7 @@ export function LuxuryHero({
               {homepage.primaryCta.label}
             </OpenBookingButton>
             <PremiumButton
-              href={`https://wa.me/${settings.whatsapp}`}
+              href={whatsappHref(settings.whatsapp, "/")}
               variant="outline"
               icon={MessageCircle}
               className="w-full sm:w-auto"
@@ -73,7 +76,7 @@ export function LuxuryHero({
               WhatsApp
             </PremiumButton>
             <PremiumButton
-              href={`tel:${settings.phone}`}
+              href={`tel:${normalizedTel(settings.phone)}`}
               variant="outline"
               icon={Phone}
               className="w-full sm:w-auto"
@@ -86,23 +89,25 @@ export function LuxuryHero({
               Clinic numbers
             </span>
             <span className="flex min-w-0 flex-wrap items-center gap-x-3 gap-y-1">
-              <a
-                href={`tel:${settings.phone.replace(/\s/g, "")}`}
+              <ConversionLink
+                href={`tel:${normalizedTel(settings.phone)}`}
+                eventName="call_click"
                 className="transition hover:text-[var(--ink)]"
               >
                 {settings.phone}
-              </a>
+              </ConversionLink>
               {settings.secondaryPhone ? (
                 <>
                   <span aria-hidden="true" className="text-[var(--ink)]/24">
                     /
                   </span>
-                  <a
-                    href={`tel:${settings.secondaryPhone.replace(/\s/g, "")}`}
+                  <ConversionLink
+                    href={`tel:${normalizedTel(settings.secondaryPhone)}`}
+                    eventName="call_click"
                     className="transition hover:text-[var(--ink)]"
                   >
                     {settings.secondaryPhone}
-                  </a>
+                  </ConversionLink>
                 </>
               ) : null}
             </span>

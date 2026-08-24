@@ -1,11 +1,17 @@
 # Legacy Cannibalization Report
 
-Generated: 2026-08-15T10:07:02.978Z
+Generated: 2026-08-24T09:03:14.262Z
 
 - Structured legacy records: 300
 - Shared target groups requiring merge/redirect decisions: 16
 
 Scores are triage signals only. A high score does not override medical safety, factual accuracy, duplicate intent or current service alignment.
+
+## Current controlled-page decisions
+
+- `/hair-loss-treatment-bhubaneswar` permanently redirects to `/hair-loss-clinic-bhubaneswar` so one canonical local hair-loss page owns that intent.
+- `/fue-hair-transplant-bhubaneswar` permanently redirects to `/treatments/hair-restoration/fue-hair-transplant` so the established treatment route owns FUE planning intent.
+- `/botox-treatment-bhubaneswar`, `/dermal-fillers-bhubaneswar` and `/tattoo-removal-bhubaneswar` remain `READY_FOR_MEDICAL_REVIEW`, `noindex` and excluded from the sitemap until approval is recorded.
 
 ## /about
 

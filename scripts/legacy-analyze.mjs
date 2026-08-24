@@ -8,6 +8,50 @@ const defaultSource = path.resolve(root, "..", "output");
 const sourceRoot = path.resolve(process.env.LEGACY_CONTENT_DIR || defaultSource);
 const reviewDate = "2026-08-15";
 const reviewer = "Dr. Satyarth Prakash";
+const commercialReviewRows = [
+  {
+    url: "/botox-treatment-bhubaneswar",
+    title: "Botox Treatment in Bhubaneswar",
+    content_type: "TREATMENT",
+    topic: "Ageing & Aesthetics",
+    source_material: "Radiance_Codex_Master_Implementation_Content_Pack.md",
+    legacy_source: "https://www.radianceclinics.com/botox-treatment/",
+    video_source: "",
+    risk_level: "HIGH",
+    review_priority: "P0",
+    medical_claims_present: "yes",
+    reviewer,
+    status: "READY_FOR_MEDICAL_REVIEW",
+  },
+  {
+    url: "/dermal-fillers-bhubaneswar",
+    title: "Dermal Fillers in Bhubaneswar",
+    content_type: "TREATMENT",
+    topic: "Ageing & Aesthetics",
+    source_material: "Radiance_Codex_Master_Implementation_Content_Pack.md",
+    legacy_source: "https://www.radianceclinics.com/fillers/",
+    video_source: "",
+    risk_level: "HIGH",
+    review_priority: "P0",
+    medical_claims_present: "yes",
+    reviewer,
+    status: "READY_FOR_MEDICAL_REVIEW",
+  },
+  {
+    url: "/tattoo-removal-bhubaneswar",
+    title: "Laser Tattoo Removal in Bhubaneswar",
+    content_type: "TREATMENT",
+    topic: "Skin Health",
+    source_material: "Radiance_Codex_Master_Implementation_Content_Pack.md",
+    legacy_source: "https://www.radianceclinics.com/tattoo-removal-radiance/",
+    video_source: "",
+    risk_level: "MEDIUM",
+    review_priority: "P0",
+    medical_claims_present: "yes",
+    reviewer,
+    status: "READY_FOR_MEDICAL_REVIEW",
+  },
+];
 
 const knownRoutes = new Set([
   "/about",
@@ -315,6 +359,8 @@ async function main() {
     });
   }
 
+  reviewRows.push(...commercialReviewRows);
+
   const byTarget = new Map();
   for (const row of inventory) {
     const rows = byTarget.get(row.potential_target_url) || [];
@@ -333,6 +379,12 @@ async function main() {
     `- Shared target groups requiring merge/redirect decisions: ${collisions.length}`,
     "",
     "Scores are triage signals only. A high score does not override medical safety, factual accuracy, duplicate intent or current service alignment.",
+    "",
+    "## Current controlled-page decisions",
+    "",
+    "- `/hair-loss-treatment-bhubaneswar` permanently redirects to `/hair-loss-clinic-bhubaneswar` so one canonical local hair-loss page owns that intent.",
+    "- `/fue-hair-transplant-bhubaneswar` permanently redirects to `/treatments/hair-restoration/fue-hair-transplant` so the established treatment route owns FUE planning intent.",
+    "- `/botox-treatment-bhubaneswar`, `/dermal-fillers-bhubaneswar` and `/tattoo-removal-bhubaneswar` remain `READY_FOR_MEDICAL_REVIEW`, `noindex` and excluded from the sitemap until approval is recorded.",
     "",
     ...collisions.flatMap(([target, rows]) => [
       `## ${target}`,

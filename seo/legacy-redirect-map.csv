@@ -9,7 +9,9 @@ legacy_url,destination_url,status,reason,equivalence_confidence,notes
 /dermatology-clinic-in-bhubaneswar,https://www.radianceclinics.com/skin-clinic-bhubaneswar,active-permanent,Canonical skin-clinic intent page,high,Prevents duplicate local-intent pages.
 /ear-piercing,,deferred-verification,No verified current ear-piercing page,none,Do not redirect to an unrelated clinic page
 /fillers,https://www.radianceclinics.com/treatments/aesthetic-dermatology/injectable-aesthetics,active-permanent,Equivalent injectable aesthetics consultation page,high,No new unverified treatment claim is introduced.
+/fue-hair-transplant-bhubaneswar,https://www.radianceclinics.com/treatments/hair-restoration/fue-hair-transplant,active-permanent,Existing canonical FUE planning page,high,Preserves the established FUE route and avoids cannibalisation.
 /hair-loss-causes,https://www.radianceclinics.com/knowledge/hair-loss-causes-and-assessment,active-permanent,Equivalent reviewed hair-loss guide,high,Overlapping education is consolidated.
+/hair-loss-treatment-bhubaneswar,https://www.radianceclinics.com/hair-loss-clinic-bhubaneswar,active-permanent,Existing canonical hair loss consultation page,high,Prevents a duplicate local commercial hair-loss page.
 /hair-loss-treatments,https://www.radianceclinics.com/hair-loss-clinic-bhubaneswar,active-permanent,Diagnosis-led hair loss consultation page,high,Replaces the former commercial hair loss page.
 /hair-patch,,deferred-verification,No verified current hair-system page,none,Service scope and replacement content need clinic confirmation
 /hair-transplant-in-angul,https://www.radianceclinics.com/hair-transplant-bhubaneswar,active-permanent,Verified clinic hair transplant page,medium,No Angul branch is claimed and no thin city page is created.

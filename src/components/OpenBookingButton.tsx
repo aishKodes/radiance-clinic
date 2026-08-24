@@ -3,7 +3,9 @@
 import { CalendarCheck } from "lucide-react";
 import type { LeadSource } from "@/types/cms";
 import { cn } from "@/lib/utils";
-import { trackEvent } from "@/lib/analytics";
+import { usePathname } from "next/navigation";
+import { pageTypeFromPath, topicFromPath } from "@/lib/contact-links";
+import { trackConversionEvent } from "@/lib/analytics";
 
 export function openBookingModal(source: LeadSource = "homepage_booking") {
   window.dispatchEvent(
@@ -22,11 +24,17 @@ export function OpenBookingButton({
   className?: string;
   source?: LeadSource;
 }) {
+  const pathname = usePathname() || "/";
+
   return (
     <button
       type="button"
       onClick={() => {
-        trackEvent("consultation_clicked", { source });
+        trackConversionEvent("book_appointment_click", {
+          path: pathname,
+          page_type: pageTypeFromPath(pathname),
+          topic: topicFromPath(pathname),
+        });
         openBookingModal(source);
       }}
       className={cn(

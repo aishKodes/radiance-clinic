@@ -14,6 +14,9 @@ import { PremiumButton } from "@/components/PremiumButton";
 import type { LocalSeoPage } from "@/data/local-seo-pages";
 import type { ClinicSettings } from "@/types/cms";
 import { relationshipsFor } from "@/data/search-taxonomy";
+import { ConversionLink } from "@/components/ConversionLink";
+import { normalizedTel } from "@/lib/seo-config";
+import { whatsappHref } from "@/lib/contact-links";
 
 export function LocalSeoLandingPage({
   page,
@@ -66,13 +69,15 @@ export function LocalSeoLandingPage({
             >
               Book Appointment
             </OpenBookingButton>
-            <a
-              href={`https://wa.me/${clinic.whatsapp}`}
+            <ConversionLink
+              href={whatsappHref(clinic.whatsapp, `/${page.slug}`, page.serviceName)}
+              eventName="whatsapp_click"
+              topic={page.serviceName}
               className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-white/28 bg-white/10 px-6 py-3 text-sm font-extrabold uppercase tracking-[0.1em] text-white transition hover:bg-white/18"
             >
               <MessageCircle className="h-4 w-4" />
               WhatsApp
-            </a>
+            </ConversionLink>
           </div>
         </div>
       </section>
@@ -271,12 +276,14 @@ export function LocalSeoLandingPage({
             >
               Book Appointment
             </OpenBookingButton>
-            <a
-              href={`tel:${clinic.phone.replace(/\s/g, "")}`}
+            <ConversionLink
+              href={`tel:${normalizedTel(clinic.phone)}`}
+              eventName="call_click"
+              topic={page.serviceName}
               className="inline-flex min-h-12 items-center justify-center rounded-full border border-white/22 px-6 py-3 text-sm font-extrabold uppercase tracking-[0.1em] transition hover:bg-white/10"
             >
               Call {clinic.phone}
-            </a>
+            </ConversionLink>
           </div>
         </div>
       </section>

@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import Link from "next/link";
 import { ArrowUpRight, CalendarCheck, ShieldCheck } from "lucide-react";
 import {
   AnimatedAuroraBackground,
@@ -53,6 +52,9 @@ import {
 } from "@/data/site";
 import type { CmsImage } from "@/types/cms";
 import { pageMetadata } from "@/lib/metadata";
+import { normalizedTel } from "@/lib/seo-config";
+import { whatsappHref } from "@/lib/contact-links";
+import { ConversionLink } from "@/components/ConversionLink";
 
 export const metadata: Metadata = pageMetadata({
   title: "Radiance Clinics Bhubaneswar | Hair Transplant, Skin & Laser Clinic",
@@ -259,10 +261,10 @@ export default async function Home() {
           </Reveal>
           <nav aria-label="Treatment category guides" className="mt-10 grid gap-3 border-t border-[var(--ink)]/10 pt-8 sm:grid-cols-2 lg:grid-cols-4">
             {treatmentHubs.map((hub) => (
-              <Link key={hub.slug} href={`/treatments/${hub.slug}`} className="group flex items-center justify-between gap-3 py-3 text-sm font-extrabold text-[var(--ink)]">
+              <ConversionLink key={hub.slug} href={`/treatments/${hub.slug}`} eventName="treatment_cta_click" topic={hub.label} className="group flex items-center justify-between gap-3 py-3 text-sm font-extrabold text-[var(--ink)]">
                 {hub.label}
                 <ArrowUpRight className="h-4 w-4 text-[var(--bronze)] transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
-              </Link>
+              </ConversionLink>
             ))}
           </nav>
         </div>
@@ -280,7 +282,7 @@ export default async function Home() {
                 description="Each service begins with doctor-led assessment, realistic expectations and a clear plan for preparation, treatment and aftercare."
               />
             </Reveal>
-            <PremiumButton href="/treatments" variant="outline">
+            <PremiumButton href="/treatments" variant="outline" eventName="treatment_cta_click">
               Explore all treatments
             </PremiumButton>
           </div>
@@ -294,11 +296,13 @@ export default async function Home() {
                 delay={index * 0.04}
                 className="w-[82vw] max-w-[20rem] shrink-0 snap-start md:w-auto md:max-w-none"
               >
-                <Link
+                <ConversionLink
                   href={
                     localLandingByTreatmentSlug[treatment.slug] ||
                     `/treatments/${treatment.cluster}/${treatment.slug}`
                   }
+                  eventName="treatment_cta_click"
+                  topic={treatment.title}
                   className="group block h-full min-w-0 overflow-hidden rounded-[1.25rem] border border-[var(--ink)]/10 bg-white shadow-[0_22px_76px_rgba(15,16,22,0.08)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_30px_96px_rgba(15,16,22,0.12)] sm:rounded-[1.4rem]"
                 >
                   {treatment.image ? (
@@ -331,7 +335,7 @@ export default async function Home() {
                       <ArrowUpRight className="h-4 w-4 text-[var(--ink)] transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
                     </div>
                   </div>
-                </Link>
+                </ConversionLink>
               </Reveal>
             ))}
           </div>
@@ -467,8 +471,8 @@ export default async function Home() {
           <Reveal>
             <SectionHeader
               eyebrow="Questions"
-              title="The premium part is how carefully the plan is chosen."
-              description="A few answers before your first visit."
+              title="Careful assessment comes before every treatment plan."
+              description="Clear answers to common questions before your first visit."
             />
           </Reveal>
           <Reveal delay={0.08}>
@@ -494,11 +498,11 @@ export default async function Home() {
             service and booking guidance.
           </p>
           <div className="mt-10 flex flex-col justify-center gap-4 sm:flex-row sm:flex-wrap">
-            <PremiumButton href={`tel:${settings.phone}`} variant="ivory">
+            <PremiumButton href={`tel:${normalizedTel(settings.phone)}`} variant="ivory">
               Call
             </PremiumButton>
             <PremiumButton
-              href={`https://wa.me/${settings.whatsapp}`}
+              href={whatsappHref(settings.whatsapp, "/")}
               variant="outline"
               className="border-white/20 bg-white/5 text-[var(--ivory)] hover:bg-white/10"
             >

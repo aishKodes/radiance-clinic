@@ -24,7 +24,7 @@ const defaultAssistantSettings: AssistantSettings = {
   quickPrompts: ["Hair transplant", "Book consultation"],
 };
 
-const whatsappFallback = "https://wa.me/919238321888";
+const whatsappFallback = "https://wa.me/919238321888?text=Hello%20Radiance%20Clinics%2C%20I%20would%20like%20to%20know%20more%20about%20your%20treatment%20options%20and%20book%20a%20consultation.";
 
 export function ChatbotDock({
   settings = defaultAssistantSettings,
@@ -183,11 +183,11 @@ export function ChatbotDock({
   }
 
   return (
-    <div className="pointer-events-none fixed bottom-5 right-4 z-[60] sm:bottom-8 sm:right-6">
+    <div className="pointer-events-none fixed bottom-20 right-4 z-[60] sm:right-6 lg:bottom-8 lg:left-6 lg:right-auto">
       {open ? (
         <section
           aria-label="Radiance AI Assistant chat"
-          className="pointer-events-auto fixed bottom-20 right-4 flex max-h-[min(calc(100svh-7rem),38rem)] w-[min(calc(100vw-2rem),24rem)] flex-col overflow-hidden rounded-[1.65rem] border border-white/58 bg-[rgba(255,247,237,0.98)] shadow-[0_28px_90px_rgba(15,16,22,0.24)] backdrop-blur-2xl sm:bottom-24 sm:right-6"
+          className="pointer-events-auto fixed bottom-36 right-4 flex max-h-[min(calc(100svh-10rem),38rem)] w-[min(calc(100vw-2rem),24rem)] flex-col overflow-hidden rounded-[1.65rem] border border-white/58 bg-[rgba(255,247,237,0.98)] shadow-[0_28px_90px_rgba(15,16,22,0.24)] backdrop-blur-2xl sm:right-6 lg:bottom-24 lg:left-6 lg:right-auto"
         >
           <header className="relative shrink-0 overflow-hidden bg-[linear-gradient(135deg,rgba(31,127,143,0.16),rgba(217,189,130,0.2))] p-4">
             <div className="pointer-events-none absolute -right-12 -top-16 h-32 w-32 rounded-full bg-[var(--aqua)]/24 blur-2xl" />

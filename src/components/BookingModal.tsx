@@ -4,6 +4,14 @@ import { FormEvent, useEffect, useMemo, useState } from "react";
 import { CalendarCheck, Loader2, MessageCircle, Phone, Send, X } from "lucide-react";
 import type { ClinicSettings, LeadPayload, LeadSource } from "@/types/cms";
 import { apiBaseUrl } from "@/lib/api";
+import { usePathname } from "next/navigation";
+import { normalizedTel } from "@/lib/seo-config";
+import {
+  pageTypeFromPath,
+  topicFromPath,
+  whatsappHref,
+} from "@/lib/contact-links";
+import { trackConversionEvent } from "@/lib/analytics";
 
 type BookingFields = {
   name: string;
@@ -22,21 +30,26 @@ const initialFields: BookingFields = {
 };
 
 export function BookingModal({ settings }: { settings: ClinicSettings }) {
+  const pathname = usePathname() || "/";
   const [open, setOpen] = useState(false);
   const [source, setSource] = useState<LeadSource>("homepage_booking");
   const [fields, setFields] = useState<BookingFields>(initialFields);
   const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
   const [error, setError] = useState("");
   const phoneHref = useMemo(
-    () => `tel:${settings.phone.replace(/\s/g, "")}`,
+    () => `tel:${normalizedTel(settings.phone)}`,
     [settings.phone],
   );
-  const whatsappHref = useMemo(() => {
-    const message = encodeURIComponent(
-      `Hello Radiance Clinics, I would like to request a consultation.${fields.concern ? ` Concern: ${fields.concern}` : ""}`,
-    );
-    return `https://wa.me/${settings.whatsapp}?text=${message}`;
-  }, [fields.concern, settings.whatsapp]);
+  const treatmentTopic = fields.concern.trim() || topicFromPath(pathname);
+  const messageHref = useMemo(
+    () => whatsappHref(settings.whatsapp, pathname, treatmentTopic),
+    [pathname, settings.whatsapp, treatmentTopic],
+  );
+  const eventParameters = {
+    path: pathname,
+    page_type: pageTypeFromPath(pathname),
+    topic: topicFromPath(pathname),
+  };
 
   useEffect(() => {
     const openBooking = (event: Event) => {
@@ -189,9 +202,10 @@ export function BookingModal({ settings }: { settings: ClinicSettings }) {
               Request Callback
             </button>
             <a
-              href={whatsappHref}
+              href={messageHref}
               target="_blank"
               rel="noreferrer"
+              onClick={() => trackConversionEvent("whatsapp_click", eventParameters)}
               className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-[var(--ink)]/10 bg-white/72 px-5 py-3 text-xs font-extrabold uppercase tracking-[0.14em] text-[var(--ink)] transition hover:bg-white"
             >
               <MessageCircle className="h-4 w-4" />
@@ -199,6 +213,7 @@ export function BookingModal({ settings }: { settings: ClinicSettings }) {
             </a>
             <a
               href={phoneHref}
+              onClick={() => trackConversionEvent("call_click", eventParameters)}
               className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-[var(--ink)]/10 bg-white/72 px-5 py-3 text-xs font-extrabold uppercase tracking-[0.14em] text-[var(--ink)] transition hover:bg-white"
             >
               <Phone className="h-4 w-4" />

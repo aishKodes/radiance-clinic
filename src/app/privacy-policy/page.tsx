@@ -3,6 +3,7 @@ import { JsonLd } from "@/components/JsonLd";
 import { pageMetadata } from "@/lib/metadata";
 import { webPageJsonLd } from "@/lib/schema";
 import { clinicIdentity } from "@/lib/seo-config";
+import { ConversionLink } from "@/components/ConversionLink";
 
 export const metadata: Metadata = pageMetadata({
   title: "Privacy Policy | Radiance Clinics",
@@ -78,7 +79,7 @@ export default function PrivacyPolicyPage() {
           ))}
           <article className="rounded-[2rem] bg-[var(--ink)] p-7 text-white sm:p-9">
             <h2 className="font-serif text-4xl leading-none">Contact</h2>
-            <p className="mt-6 text-base leading-8 text-white/68">{clinicIdentity.legalName}<br />{clinicIdentity.address}<br /><a className="text-[var(--champagne)]" href={`mailto:${clinicIdentity.email}`}>{clinicIdentity.email}</a><br /><a className="text-[var(--champagne)]" href={`tel:${clinicIdentity.primaryPhoneTel}`}>{clinicIdentity.primaryPhone}</a></p>
+            <p className="mt-6 text-base leading-8 text-white/68">{clinicIdentity.legalName}<br />{clinicIdentity.address}<br /><a className="text-[var(--champagne)]" href={`mailto:${clinicIdentity.email}`}>{clinicIdentity.email}</a><br /><ConversionLink className="text-[var(--champagne)]" href={`tel:${clinicIdentity.primaryPhoneTel}`} eventName="call_click">{clinicIdentity.primaryPhone}</ConversionLink></p>
           </article>
         </div>
       </section>

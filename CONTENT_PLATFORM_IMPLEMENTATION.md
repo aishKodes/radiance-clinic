@@ -2,7 +2,7 @@
 
 ## 1. Source files discovered
 
-The supplied `output` directory contains 300 structured legacy records across good, maybe and rejected JSON buckets, a 300-row scoring CSV, and 283 Markdown renderings. The official YouTube catalogue contained 182 entries; full public metadata was available for 180.
+The supplied `output` directory contains 300 structured legacy records across good, maybe and rejected JSON buckets, a 300-row scoring CSV, and 283 Markdown renderings. The latest official YouTube refresh discovered 183 unique public videos.
 
 ## 2. Old content extracted
 
@@ -34,7 +34,7 @@ All nine records from the supplied rejected bucket are marked `ARCHIVE`. Thin, u
 
 ## 9. Number of videos discovered
 
-The channel catalogue contained 182 entries. Two were unavailable and are excluded; 180 accessible public videos are stored in `content/platform/youtube-source.json` and the typed generated library. Sixty-nine cleared educational videos are currently surfaced on the website.
+The current channel refresh found 183 unique public videos. All 183 are stored in `content/platform/youtube-source.json` and the typed generated library; 135 cleared educational videos are available to the website through the lightweight video library and contextual mapping layer.
 
 ## 10. Video categories
 
@@ -78,7 +78,7 @@ Visible embedded videos receive `VideoObject` JSON-LD using real titles, descrip
 
 ## 20. Medical-review workflow
 
-`seo/medical-review-queue.csv` carries source, topic, risk, priority, reviewer and status for all legacy records. The clinic-provided review attribution is Dr. Satyarth Prakash, with more than 30 years of clinical experience. Archived source records stay archived despite that source-level review.
+`seo/medical-review-queue.csv` carries source, topic, risk, priority, reviewer and status for all legacy records and new treatment drafts. The verified clinic experience statement is 20+ years of clinical experience. Archived sources stay archived, and new medically substantive treatment pages remain `READY_FOR_MEDICAL_REVIEW` and non-indexable until approval.
 
 ## 21. Admin/data architecture
 

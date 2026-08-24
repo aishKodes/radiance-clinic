@@ -20,6 +20,8 @@ The migration report contains 299 unique historical URLs. The production registr
 
 ## Fixes Implemented
 
+- Centralized the verified `20+ Years of Clinical Experience` and `60,000+ Happy Clients` facts so public CMS values cannot reintroduce outdated homepage statistics.
+- Added a desktop floating WhatsApp action and a mobile `Call | WhatsApp | Book Appointment` bar with contextual WhatsApp text and privacy-safe CTA events.
 - Added one source of truth for legacy redirects and made the runtime and audit use it.
 - Added canonical local intent routes to the route manifest, sitemap and internal relationship graph.
 - Preserved the `www` canonical host and verified self-canonicals for the existing priority pages.
@@ -40,6 +42,12 @@ The migration report contains 299 unique historical URLs. The production registr
 - `/hair-transplant-sambalpur`
 - `/hair-transplant-rourkela`
 - `/hair-transplant-baripada`
+
+The following evidence-backed commercial routes are implemented as non-indexable review pages and are excluded from the sitemap until medical approval:
+
+- `/botox-treatment-bhubaneswar`
+- `/dermal-fillers-bhubaneswar`
+- `/tattoo-removal-bhubaneswar`
 
 The six city pages contain unique travel, consultation and follow-up guidance. They do not claim a clinic branch outside Bhubaneswar.
 

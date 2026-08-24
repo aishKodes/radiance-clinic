@@ -55,7 +55,22 @@ async function main() {
   check((await lineCount("seo/youtube-content-map.csv")) === videos.length + 1, "YouTube mapping CSV count does not match source JSON.");
   check((await lineCount("seo/legacy-content-master-inventory.csv")) === provenance.length + 1, "Legacy inventory CSV count does not match provenance JSON.");
   check((await lineCount("seo/historical-content-dates.csv")) === provenance.length + 1, "Historical-date report count does not match legacy provenance.");
-  check((await lineCount("seo/medical-review-queue.csv")) === provenance.length + 1, "Medical-review queue count does not match legacy provenance.");
+  const medicalReviewQueue = await read("seo/medical-review-queue.csv");
+  check(
+    medicalReviewQueue.trim().split(/\r?\n/).length === provenance.length + 4,
+    "Medical-review queue count does not match legacy provenance and commercial review pages.",
+  );
+  for (const route of [
+    "/botox-treatment-bhubaneswar",
+    "/dermal-fillers-bhubaneswar",
+    "/tattoo-removal-bhubaneswar",
+  ]) {
+    check(
+      medicalReviewQueue.includes(`${route},`) &&
+        medicalReviewQueue.includes("READY_FOR_MEDICAL_REVIEW"),
+      `${route} is missing from the medical-review queue.`,
+    );
+  }
 
   const generatedLibrary = await read("src/data/youtube-library.generated.ts");
   check(generatedLibrary.includes("satisfies YouTubeVideo[]"), "Generated typed video library is missing.");

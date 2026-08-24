@@ -9,7 +9,23 @@ export type RadianceAnalyticsEvent =
   | "related_question_clicked"
   | "treatment_clicked"
   | "consultation_clicked"
-  | "video_played";
+  | "video_played"
+  | RadianceConversionEvent;
+
+export type RadianceConversionEvent =
+  | "call_click"
+  | "whatsapp_click"
+  | "book_appointment_click"
+  | "treatment_cta_click"
+  | "doctor_answer_click"
+  | "video_play"
+  | "case_click";
+
+export type ConversionEventParameters = {
+  path: string;
+  page_type: string;
+  topic?: string;
+};
 
 declare global {
   interface Window {
@@ -28,6 +44,17 @@ export function trackEvent(
     Object.entries(parameters).filter(([, value]) => value !== undefined),
   );
   window.gtag("event", name, safeParameters);
+}
+
+export function trackConversionEvent(
+  name: RadianceConversionEvent,
+  parameters: ConversionEventParameters,
+) {
+  trackEvent(name, {
+    path: parameters.path,
+    page_type: parameters.page_type,
+    topic: parameters.topic,
+  });
 }
 
 export function privateQueryMetrics(query: string) {

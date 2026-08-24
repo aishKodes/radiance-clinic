@@ -52,6 +52,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     path,
     image: page!.image,
     imageAlt: page!.imageAlt,
+    index: page!.indexable !== false,
   });
 }
 

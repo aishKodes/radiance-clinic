@@ -1,11 +1,11 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { useState } from "react";
 import { treatmentCategoryTabs } from "@/data/homepage-media";
 import { cn } from "@/lib/utils";
+import { ConversionLink } from "@/components/ConversionLink";
 
 const tabAccent = {
   skin: "border-[var(--orchid)]/30 bg-[var(--orchid)]/10 text-[var(--ink)]",
@@ -111,13 +111,15 @@ export function TreatmentUniverseSection() {
                       </div>
                     ))}
                   </div>
-                  <Link
+                  <ConversionLink
                     href={active.href}
+                    eventName="treatment_cta_click"
+                    topic={active.label}
                     className="mt-8 inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-full border border-[var(--ink)]/10 bg-[var(--ink)] px-6 py-3 text-center text-sm font-extrabold uppercase tracking-[0.12em] text-[var(--ivory)] transition hover:-translate-y-0.5 sm:w-auto sm:tracking-[0.16em]"
                   >
                     Explore {active.label} Care
                     <ArrowUpRight className="h-4 w-4" />
-                  </Link>
+                  </ConversionLink>
                 </div>
               </div>
         </div>

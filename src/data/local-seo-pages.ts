@@ -19,6 +19,8 @@ export type LocalSeoPage = {
   expectations: { title: string; text: string }[];
   relatedLinks: { href: string; label: string; description: string }[];
   faqs: { question: string; answer: string }[];
+  reviewStatus?: "APPROVED" | "READY_FOR_MEDICAL_REVIEW";
+  indexable?: boolean;
 };
 
 const mediaBase = "/radiance-media-processed/landscape";
@@ -774,6 +776,281 @@ export const localSeoPages: LocalSeoPage[] = [
     ],
   },
 ];
+
+localSeoPages.push(
+  {
+    slug: "botox-treatment-bhubaneswar",
+    serviceName: "Botox Treatment",
+    metaTitle: "Botox Treatment in Bhubaneswar | Radiance Clinics",
+    metaDescription:
+      "Botulinum toxin treatment in Bhubaneswar for selected expression lines and aesthetic concerns.",
+    eyebrow: "Conservative aesthetic planning",
+    title: "Botox Treatment in Bhubaneswar",
+    heroDescription:
+      "Doctor-led consultation for selected expression lines with treatment planned around facial anatomy, movement and natural-looking expression.",
+    image: `${mediaBase}/radiance-botox-fillers-service.webp`,
+    imageAlt:
+      "Botox treatment consultation at Radiance Clinics Bhubaneswar",
+    introductionTitle:
+      "Expression-line treatment should begin with movement and facial anatomy.",
+    introduction: [
+      "Botulinum toxin temporarily reduces selected muscle activity and is commonly discussed for expression-related frown lines, forehead lines and crow's feet.",
+      "Conservative treatment should preserve natural facial movement rather than aim for a frozen appearance. Suitability, treatment area and placement require an individual consultation.",
+    ],
+    assessmentTitle: "What the aesthetic consultation evaluates",
+    assessmentDescription:
+      "The assessment separates dynamic expression lines from volume loss, skin laxity and surface texture before a treatment is selected.",
+    assessmentPoints: [
+      "Facial movement at rest and during expression",
+      "Whether the concern is related to muscle activity, volume or skin quality",
+      "Facial symmetry and relevant anatomy",
+      "Medical history, medicines and previous aesthetic treatment",
+      "Areas where treatment may not be suitable",
+      "The patient's preference for subtle movement and follow-up",
+    ],
+    approachTitle: "Dose and placement are individual, not standardised.",
+    approachDescription:
+      "The doctor plans selected treatment points according to anatomy and expression. Effects are temporary, response varies, and follow-up may be needed.",
+    approachPoints: [
+      "Anatomy-led assessment",
+      "Conservative placement",
+      "Natural expression as the goal",
+      "Review after treatment when advised",
+    ],
+    expectations: [
+      {
+        title: "Assessment",
+        text: "The doctor reviews facial movement, the concern and medical suitability before discussing treatment.",
+      },
+      {
+        title: "Individual plan",
+        text: "Suitable areas, expected temporary effect, aftercare and limitations are discussed without promising a fixed result.",
+      },
+      {
+        title: "Follow-up",
+        text: "Response and facial movement can be reviewed after treatment when clinically appropriate.",
+      },
+    ],
+    relatedLinks: [
+      {
+        href: "/treatments/aesthetic-dermatology/injectable-aesthetics",
+        label: "Injectable aesthetics consultation",
+        description: "Compare muscle-relaxing treatment and filler planning.",
+      },
+      {
+        href: "/concerns/aging-aesthetics/forehead-lines",
+        label: "Forehead lines",
+        description: "Understand why different types of lines need different approaches.",
+      },
+      {
+        href: "/dermal-fillers-bhubaneswar",
+        label: "Dermal fillers",
+        description: "Learn how filler treatment differs from botulinum toxin treatment.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Will Botox freeze my face?",
+        answer:
+          "Conservative treatment aims to soften selected movement while retaining natural expression. The appropriate plan depends on anatomy and individual goals.",
+      },
+      {
+        question: "Is Botox the same as filler?",
+        answer:
+          "No. Botulinum toxin changes selected muscle activity, while fillers add or restore selected volume.",
+      },
+      {
+        question: "Are the effects permanent?",
+        answer:
+          "No. Effects are temporary and duration varies between people and treatment areas.",
+      },
+    ],
+    reviewStatus: "READY_FOR_MEDICAL_REVIEW",
+    indexable: false,
+  },
+  {
+    slug: "dermal-fillers-bhubaneswar",
+    serviceName: "Dermal Fillers",
+    metaTitle: "Dermal Fillers in Bhubaneswar | Radiance Clinics",
+    metaDescription:
+      "Dermal filler consultation in Bhubaneswar for selected volume loss, contour and facial-aesthetic concerns.",
+    eyebrow: "Proportion-aware aesthetic care",
+    title: "Dermal Fillers in Bhubaneswar",
+    heroDescription:
+      "A doctor-led filler consultation focused on facial anatomy, tissue quality, proportion and conservative treatment planning.",
+    image: `${mediaBase}/radiance-botox-fillers-service.webp`,
+    imageAlt:
+      "Dermal filler consultation at Radiance Clinics Bhubaneswar",
+    introductionTitle:
+      "Filler planning should assess the whole face before adding volume.",
+    introduction: [
+      "Dermal fillers can add or restore volume in selected facial areas. Appropriate treatment depends on anatomy, tissue quality, proportion and goals.",
+      "More volume is not automatically a better result. Product choice, placement and whether filler is suitable at all require careful assessment.",
+    ],
+    assessmentTitle: "What the filler consultation considers",
+    assessmentDescription:
+      "The doctor reviews the visible concern in the context of facial structure, movement and skin quality.",
+    assessmentPoints: [
+      "Facial proportions and the area of volume change",
+      "Tissue quality, symmetry and skin condition",
+      "Previous filler or aesthetic treatment",
+      "Medical history, medicines and relevant risk factors",
+      "Whether another treatment approach may be more appropriate",
+      "Expected swelling, bruising, limitations and follow-up",
+    ],
+    approachTitle: "Conservative placement is planned around anatomy.",
+    approachDescription:
+      "Treatment is individualised, particularly in higher-risk areas. Commonly used aesthetic fillers are temporary and response varies.",
+    approachPoints: [
+      "Whole-face assessment",
+      "Product and placement planning",
+      "Conservative volume",
+      "Clear aftercare and review",
+    ],
+    expectations: [
+      {
+        title: "Consultation",
+        text: "The concern, anatomy, previous treatment and medical suitability are reviewed first.",
+      },
+      {
+        title: "Treatment plan",
+        text: "The doctor explains suitable areas, limitations, temporary effects and expected early swelling or bruising.",
+      },
+      {
+        title: "Review",
+        text: "Healing and the treatment response can be reviewed before any further treatment is considered.",
+      },
+    ],
+    relatedLinks: [
+      {
+        href: "/treatments/aesthetic-dermatology/injectable-aesthetics",
+        label: "Injectable aesthetics consultation",
+        description: "Review the broader doctor-led approach to injectable treatment.",
+      },
+      {
+        href: "/concerns/aging-aesthetics/facial-volume-loss",
+        label: "Facial volume loss",
+        description: "Understand how facial volume changes are assessed.",
+      },
+      {
+        href: "/botox-treatment-bhubaneswar",
+        label: "Botox treatment",
+        description: "Learn how muscle-relaxing treatment differs from fillers.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Are fillers permanent?",
+        answer: "Many commonly used aesthetic fillers are temporary. Duration varies by product, area and individual response.",
+      },
+      {
+        question: "Can filler be used under the eyes?",
+        answer:
+          "Selected patients may be suitable, but this area requires careful anatomical assessment and a clear discussion of risks and alternatives.",
+      },
+      {
+        question: "Is more filler better?",
+        answer:
+          "No. The amount and placement should be based on anatomy, proportion and a conservative treatment goal.",
+      },
+    ],
+    reviewStatus: "READY_FOR_MEDICAL_REVIEW",
+    indexable: false,
+  },
+  {
+    slug: "tattoo-removal-bhubaneswar",
+    serviceName: "Laser Tattoo Removal",
+    metaTitle: "Laser Tattoo Removal in Bhubaneswar | Radiance Clinics",
+    metaDescription:
+      "Laser tattoo removal in Bhubaneswar: factors affecting fading, treatment planning, aftercare and expectations.",
+    eyebrow: "Assessment-led laser care",
+    title: "Laser Tattoo Removal in Bhubaneswar",
+    heroDescription:
+      "Doctor-led assessment of tattoo colour, ink density, location and skin type before laser treatment is planned.",
+    image: `${mediaBase}/radiance-equipment-laser-machines-01.webp`,
+    imageAlt:
+      "Laser treatment equipment at Radiance Clinics Bhubaneswar",
+    introductionTitle:
+      "Tattoo fading depends on more than tattoo size.",
+    introduction: [
+      "Tattoo removal uses laser energy to fragment selected tattoo pigments so they can fade gradually.",
+      "Colour, depth, ink density, location and skin type all influence response, so the number of treatments and final clearance cannot be promised from tattoo size alone.",
+    ],
+    assessmentTitle: "What the laser assessment reviews",
+    assessmentDescription:
+      "The consultation identifies factors that can affect suitability, fading and aftercare before treatment begins.",
+    assessmentPoints: [
+      "Tattoo colours, ink density and layering",
+      "Tattoo age, location and whether it is professional or amateur",
+      "Skin type, tanning and pigment-change risk",
+      "Scarring, skin conditions or previous removal attempts",
+      "Medical history and healing considerations",
+      "Realistic expectations for gradual fading and residual pigment",
+    ],
+    approachTitle: "Fading is gradual and aftercare matters.",
+    approachDescription:
+      "Treatment settings and spacing are selected after assessment. Blistering or crusting can occur, and clear wound-care and sun-protection guidance is important.",
+    approachPoints: [
+      "Tattoo and skin assessment",
+      "Individual laser planning",
+      "Progress reviewed over time",
+      "Clear aftercare guidance",
+    ],
+    expectations: [
+      {
+        title: "Assessment",
+        text: "The doctor reviews the tattoo, skin type, previous treatment and healing history.",
+      },
+      {
+        title: "Treatment planning",
+        text: "The likely response, limitations, possible skin reactions and aftercare are discussed before treatment.",
+      },
+      {
+        title: "Follow-up",
+        text: "Fading and skin recovery are reviewed before further treatment is planned when needed.",
+      },
+    ],
+    relatedLinks: [
+      {
+        href: "/treatments/laser",
+        label: "Laser treatment overview",
+        description: "Review the clinic's broader assessment-led laser care.",
+      },
+      {
+        href: "/skin-clinic-bhubaneswar",
+        label: "Skin consultation",
+        description: "Book a doctor-led skin and laser suitability assessment.",
+      },
+      {
+        href: "/contact",
+        label: "Clinic contact and directions",
+        description: "Plan an appointment at the Nayapalli, Bhubaneswar clinic.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Can every tattoo be completely removed?",
+        answer:
+          "No. Some colours and inks are resistant, and residual pigment or a visible outline may remain.",
+      },
+      {
+        question: "Can a new tattoo be treated immediately?",
+        answer: "Fresh tattoos generally need to heal before removal is considered. The skin should be assessed first.",
+      },
+      {
+        question: "Can the number of treatments be predicted from a photograph?",
+        answer:
+          "A photograph cannot reliably show ink depth, layering or healing risk. The expected treatment course is discussed after examination.",
+      },
+    ],
+    reviewStatus: "READY_FOR_MEDICAL_REVIEW",
+    indexable: false,
+  },
+);
+
+export const indexableLocalSeoPages = localSeoPages.filter(
+  (page) => page.indexable !== false,
+);
 
 export const localSeoPageBySlug = new Map(
   localSeoPages.map((page) => [page.slug, page]),

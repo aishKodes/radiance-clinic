@@ -26,6 +26,15 @@ function normalize(value) {
   return String(value || "").replace(/\s+/g, " ").trim();
 }
 
+function decodeXml(value) {
+  return String(value || "")
+    .replaceAll("&amp;", "&")
+    .replaceAll("&quot;", '"')
+    .replaceAll("&#39;", "'")
+    .replaceAll("&lt;", "<")
+    .replaceAll("&gt;", ">");
+}
+
 function isoDate(value) {
   const text = String(value || "");
   if (/^\d{8}$/.test(text)) return `${text.slice(0, 4)}-${text.slice(4, 6)}-${text.slice(6, 8)}`;
@@ -49,7 +58,10 @@ function topicFor(text) {
   if (/hair loss|hair fall|hairfall|alopecia|dandruff|scalp|prp|gfc|hair regrowth|grey hair|white hair/.test(text)) return "Hair Loss";
   if (/laser hair|hair removal|unwanted hair|facial hair|underarm hair|body hair/.test(text)) return "Laser Hair Reduction";
   if (/pigment|melasma|dark spot|dark circle|tan|skin tone/.test(text)) return "Pigmentation";
-  if (/botox|filler|injectable|wrinkle|anti.?aging|anti.?ageing|facelift|hifu|ultherapy|volume loss/.test(text)) return "Aesthetic Dermatology";
+  if (/botox|botulinum toxin/.test(text)) return "Botox";
+  if (/dermal filler|facial filler|\bfillers?\b/.test(text)) return "Dermal Fillers";
+  if (/tattoo removal|remove tattoo/.test(text)) return "Tattoo Removal";
+  if (/injectable|wrinkle|anti.?aging|anti.?ageing|facelift|hifu|ultherapy|volume loss/.test(text)) return "Aesthetic Dermatology";
   if (/stretch mark|keloid|scar/.test(text)) return "Scars & Stretch Marks";
   if (/wart|mole|rosacea|vitiligo|skin tag/.test(text)) return "General Skin Concerns";
   if (/skin|facial|peel|laser|glow|hydra/.test(text)) return "Skin Health";
@@ -66,6 +78,9 @@ function destinationsFor(topic, contentType) {
     Pigmentation: ["/pigmentation-treatment-bhubaneswar", "/concerns/pigmentation", "/treatments/skin-laser/laser-pigmentation-program"],
     "Laser Hair Reduction": ["/laser-hair-removal-bhubaneswar", "/concerns/laser-hair-reduction", "/treatments/skin-laser/laser-hair-reduction"],
     "Aesthetic Dermatology": ["/treatments/aesthetic-dermatology/injectable-aesthetics", "/concerns/aging-aesthetics", "/knowledge/premium-aesthetic-consultation"],
+    Botox: ["/botox-treatment-bhubaneswar", "/treatments/aesthetic-dermatology/injectable-aesthetics", "/concerns/aging-aesthetics/forehead-lines"],
+    "Dermal Fillers": ["/dermal-fillers-bhubaneswar", "/treatments/aesthetic-dermatology/injectable-aesthetics", "/concerns/aging-aesthetics/facial-volume-loss"],
+    "Tattoo Removal": ["/tattoo-removal-bhubaneswar", "/treatments/laser", "/skin-clinic-bhubaneswar"],
     "Scars & Stretch Marks": ["/concerns/scars-stretch-marks", "/skin-clinic-bhubaneswar", "/knowledge/laser-skin-treatments-safety"],
     "General Skin Concerns": ["/concerns/other-skin-concerns", "/skin-clinic-bhubaneswar", "/doctor-answers/when-should-mole-be-checked"],
     "Skin Health": ["/skin-clinic-bhubaneswar", "/concerns/skin-texture", "/knowledge/skin-care-doctor-bhubaneswar"],
@@ -79,25 +94,34 @@ function destinationsFor(topic, contentType) {
 function classify(raw) {
   const title = normalize(raw.title);
   const description = normalize(raw.description);
-  const text = `${title} ${description}`.toLowerCase();
-  const durationSeconds = Number(raw.duration || 0) || undefined;
+  const titleText = title.toLowerCase();
+  const descriptionText = description.toLowerCase();
+  const text = `${titleText} ${descriptionText}`;
+  const durationSeconds = Number(raw.durationSeconds || raw.duration || 0) || undefined;
   const isShort = Boolean(raw.webpage_url?.includes("/shorts/")) || /#shorts?\b/.test(text) || (durationSeconds ? durationSeconds <= 60 : false);
-  const topic = topicFor(text);
+  const titleTopic = topicFor(titleText);
+  const topic = ["Other", "Clinic & Doctor"].includes(titleTopic)
+    ? topicFor(descriptionText)
+    : titleTopic;
   let contentType = "PATIENT_EDUCATION";
-  if (/before.?after|result|testimonial|patient experience|transformation/.test(text)) contentType = topic === "Hair Transplant" ? "HAIR_TRANSPLANT_RESULT" : "SKIN_RESULT";
+  if (/before.?after|result|testimonial|patient experience|transformation/.test(titleText)) contentType = topic === "Hair Transplant" ? "HAIR_TRANSPLANT_RESULT" : "SKIN_RESULT";
   else if (/dr\.?\s*satyarth|dr\.?\s*satyartha|doctor explains|explained by doctor|expert explains/.test(text)) contentType = "DOCTOR_EXPLANATION";
   else if (/after.?care|recovery|day by day|post.?operative|do.s and don.ts/.test(text)) contentType = "RECOVERY";
   else if (/procedure|surgery|live treatment|how .* works/.test(text)) contentType = "PROCEDURE";
   else if (/clinic tour|inside radiance|our clinic/.test(text)) contentType = "CLINIC_TOUR";
   else if (/award|honou?r|recognition/.test(text)) contentType = "AWARD";
   else if (/interview|news|media|television|tv/.test(text)) contentType = "MEDIA_APPEARANCE";
-  else if (/^(can|does|do|is|are|why|what|when|how)\b/.test(title.toLowerCase()) || /\?$/.test(title)) contentType = "FAQ";
+  else if (/^(can|does|do|is|are|why|what|when|how)\b/.test(titleText) || /\?$/.test(title)) contentType = "FAQ";
   else if (/treatment|therapy|laser|transplant|facial|peel/.test(text)) contentType = "TREATMENT_EXPLAINER";
   else if (isShort) contentType = "SHORT";
   if (raw.id === "8qYMw935MF8") contentType = "DOCTOR_EXPLANATION";
   const destinations = destinationsFor(topic, contentType);
   const explicitDoctor = /dr\.?\s*satyarth|dr\.?\s*satyartha|satyarth prakash|satyartha prakash/.test(text);
-  const captionsAvailable = Boolean(Object.keys(raw.subtitles || {}).length || Object.keys(raw.automatic_captions || {}).length);
+  const captionsAvailable = Boolean(
+    raw.captionsAvailable ||
+      Object.keys(raw.subtitles || {}).length ||
+      Object.keys(raw.automatic_captions || {}).length,
+  );
   const needsManualReview = ["HAIR_TRANSPLANT_RESULT", "SKIN_RESULT", "PATIENT_TESTIMONIAL", "PROMOTIONAL", "OUTDATED"].includes(contentType) || /100%|guarantee|permanent cure|best in india/.test(text);
   const priority = raw.id === "8qYMw935MF8" || ["DOCTOR_EXPLANATION", "RECOVERY", "FAQ", "TREATMENT_EXPLAINER"].includes(contentType) ? "HIGH" : isShort ? "LOW" : "MEDIUM";
   return {
@@ -127,7 +151,9 @@ function classify(raw) {
     primaryDestination: destinations[0],
     secondaryDestinations: destinations.slice(1, 3),
     embedPriority: priority,
-    transcriptAvailable: Boolean(Object.keys(raw.subtitles || {}).length),
+    transcriptAvailable: Boolean(
+      raw.transcriptAvailable || Object.keys(raw.subtitles || {}).length,
+    ),
     captionsAvailable,
     isShort,
     needsManualReview,
@@ -149,7 +175,11 @@ async function fromNdjson(inputPath) {
 }
 
 async function fetchWithYtDlp() {
-  const { stdout } = await execFileAsync("yt-dlp", ["--skip-download", "--ignore-errors", "--no-warnings", "--dump-json", channelHandle], { maxBuffer: 1024 * 1024 * 64 });
+  const { stdout } = await execFileAsync(
+    "yt-dlp",
+    ["--flat-playlist", "--skip-download", "--ignore-errors", "--no-warnings", "--dump-json", channelHandle],
+    { maxBuffer: 1024 * 1024 * 32 },
+  );
   return stdout.split(/\r?\n/).filter(Boolean).map((line) => JSON.parse(line));
 }
 
@@ -158,7 +188,12 @@ async function fetchFeed() {
   if (!response.ok) throw new Error(`YouTube feed returned ${response.status}`);
   const xml = await response.text();
   const entries = [...xml.matchAll(/<entry>([\s\S]*?)<\/entry>/g)].map((match) => match[1]);
-  const text = (source, tag) => source.match(new RegExp(`<${tag}[^>]*>([\\s\\S]*?)<\\/${tag}>`))?.[1]?.replace(/<!\[CDATA\[|\]\]>/g, "").trim();
+  const text = (source, tag) => decodeXml(
+    source
+      .match(new RegExp(`<${tag}[^>]*>([\\s\\S]*?)<\\/${tag}>`))?.[1]
+      ?.replace(/<!\[CDATA\[|\]\]>/g, "")
+      .trim(),
+  );
   return entries.map((entry) => {
     const id = text(entry, "yt:videoId");
     return {
@@ -179,15 +214,23 @@ async function main() {
   const inputPath = inputIndex >= 0 ? path.resolve(process.argv[inputIndex + 1]) : process.env.YOUTUBE_METADATA_FILE;
   let rawVideos;
   let retrieval;
+  const existing = JSON.parse(await readFile(sourcePath, "utf8").catch(() => "[]"));
+  const existingById = new Map(existing.map((video) => [video.videoId, video]));
   if (inputPath) {
     rawVideos = await fromNdjson(inputPath);
     retrieval = "yt-dlp metadata export supplied to --input";
   } else if (await hasExecutable("yt-dlp")) {
     rawVideos = await fetchWithYtDlp();
-    retrieval = "yt-dlp public metadata";
+    const feedById = new Map(
+      (await fetchFeed().catch(() => [])).map((video) => [video.id, video]),
+    );
+    rawVideos = rawVideos.map((video) => ({
+      ...video,
+      ...(feedById.get(video.id) || {}),
+    }));
+    retrieval = "yt-dlp public metadata merged with official channel RSS";
   } else {
     const feedVideos = await fetchFeed();
-    const existing = JSON.parse(await readFile(sourcePath, "utf8").catch(() => "[]"));
     const merged = new Map(existing.map((video) => [video.videoId, video]));
     for (const raw of feedVideos) merged.set(raw.id, classify(raw));
     rawVideos = [...merged.values()].map((video) => ({ ...video, id: video.videoId }));
@@ -195,8 +238,26 @@ async function main() {
   }
 
   const videos = rawVideos
+    .map((raw) => {
+      const id = raw.id || raw.videoId;
+      const previous = existingById.get(id) || {};
+      return {
+        ...previous,
+        ...raw,
+        id,
+        description: raw.description || previous.fullDescription || previous.description,
+        upload_date: raw.upload_date || raw.release_date || previous.publishedAt,
+        duration: raw.duration || previous.durationSeconds,
+        webpage_url: raw.webpage_url || raw.url || previous.url,
+        thumbnail: raw.thumbnail || previous.thumbnail,
+        channel_id: raw.channel_id || previous.channelId,
+        channel: raw.channel || raw.uploader || previous.channelTitle,
+        transcriptAvailable: previous.transcriptAvailable,
+        captionsAvailable: previous.captionsAvailable,
+      };
+    })
     .filter((video) => video?.id && video.title)
-    .map((video) => video.videoId ? video : classify(video));
+    .map(classify);
   const deduped = [...new Map(videos.map((video) => [video.videoId, video])).values()]
     .sort((a, b) => String(b.publishedAt || "").localeCompare(String(a.publishedAt || "")));
 

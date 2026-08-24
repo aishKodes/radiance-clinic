@@ -1035,6 +1035,13 @@ function galleryTitleFor(item: ManifestItem, label: string) {
     item.role ||
     item.normalizedBasename ||
     pathBasename(item.originalFilename || item.filename || item.id);
+  if (
+    /^\d{6,}(?:[-_\s]\d+)?$/i.test(rawTitle) ||
+    /^(?:img|image|dsc|photo|whatsapp)[-_\s]*\d+/i.test(rawTitle) ||
+    /clinin|heor\s+gallery|clinic\s+gallery/i.test(rawTitle)
+  ) {
+    return label;
+  }
   const title = titleFromSlug(rawTitle)
     .replace(/\bRadiance\b/g, "")
     .replace(/\bClinics?\b/g, "Clinic")

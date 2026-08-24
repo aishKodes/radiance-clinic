@@ -63,7 +63,7 @@ function opportunityScore(row, mappedTarget) {
 async function main() {
   const queryRows = await loadDimension("Queries.csv", "Top queries");
   const pageRows = await loadDimension("Pages.csv", "Top pages");
-  const targetRows = await readCsv(path.join(root, "seo", "query-target-map.csv")).catch(() => []);
+  const targetRows = await readCsv(path.join(root, "seo", "gsc-query-target-map.csv")).catch(() => []);
   const targetByQuery = new Map(targetRows.map((row) => [row.query.toLowerCase(), row]));
   const observations = await readCsv(path.join(root, "seo", "gsc-query-page-observations.csv")).catch(() => []);
 

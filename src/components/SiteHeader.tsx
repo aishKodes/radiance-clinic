@@ -11,6 +11,8 @@ import { OpenBookingButton } from "@/components/OpenBookingButton";
 import { cn } from "@/lib/utils";
 import { normalizedTel, treatmentNavigationGroups } from "@/lib/seo-config";
 import type { ClinicSettings } from "@/types/cms";
+import { trackConversionEvent } from "@/lib/analytics";
+import { pageTypeFromPath, topicFromPath } from "@/lib/contact-links";
 
 export function SiteHeader({
   settings = fallbackData.siteSettings,
@@ -135,6 +137,13 @@ export function SiteHeader({
           <div className="hidden items-center gap-3 xl:flex">
             <a
               href={`tel:${normalizedTel(settings.phone)}`}
+              onClick={() =>
+                trackConversionEvent("call_click", {
+                  path: pathname || "/",
+                  page_type: pageTypeFromPath(pathname || "/"),
+                  topic: topicFromPath(pathname || "/"),
+                })
+              }
               className="grid h-11 w-11 place-items-center rounded-full border border-[var(--ink)]/10 bg-white/60 text-[var(--ink)] transition hover:border-[var(--aqua)]/60"
               aria-label="Call Radiance Clinics"
             >

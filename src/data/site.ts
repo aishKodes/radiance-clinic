@@ -39,6 +39,7 @@ import type {
   CmsAssistantKnowledge,
   CmsImage,
 } from "@/types/cms";
+import { applyVerifiedClinicFacts } from "@/data/clinic-facts";
 
 type ApiRecord = Record<string, unknown>;
 
@@ -1175,7 +1176,7 @@ function normalizeHomepage(value: unknown): HomepageContent {
   const faqs = firstArray(record, ["faqs", "faq"]);
   const heroImages = firstArray(record, ["heroImages", "hero_images", "hero_media"]);
 
-  return {
+  return applyVerifiedClinicFacts({
     heroEyebrow:
       firstString(record, ["heroEyebrow", "hero_eyebrow", "eyebrow"]) ||
       fallback.heroEyebrow,
@@ -1256,7 +1257,7 @@ function normalizeHomepage(value: unknown): HomepageContent {
           };
         })
       : fallback.faqs,
-  };
+  });
 }
 
 function normalizeCta(
@@ -1298,7 +1299,9 @@ export async function getClinicSettings(): Promise<ClinicSettings> {
 
 export async function getHomepageContent(): Promise<HomepageContent> {
   const homepage = await fetchPublicSingle<ApiRecord>(publicApiPaths.homepage);
-  return homepage ? normalizeHomepage(homepage) : fallbackData.homepage;
+  return homepage
+    ? normalizeHomepage(homepage)
+    : applyVerifiedClinicFacts(fallbackData.homepage);
 }
 
 export async function getHeroImages(): Promise<CmsImage[]> {

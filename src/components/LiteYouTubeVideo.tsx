@@ -4,11 +4,14 @@ import Image from "next/image";
 import { ExternalLink, Play } from "lucide-react";
 import { useState } from "react";
 import { formatVideoDuration } from "@/data/video-library";
-import { trackEvent } from "@/lib/analytics";
+import { trackConversionEvent } from "@/lib/analytics";
+import { usePathname } from "next/navigation";
+import { pageTypeFromPath } from "@/lib/contact-links";
 import type { YouTubeVideo } from "@/types/video-library";
 
 export function LiteYouTubeVideo({ video }: { video: YouTubeVideo }) {
   const [playing, setPlaying] = useState(false);
+  const pathname = usePathname() || "/videos";
 
   return (
     <article id={`video-${video.videoId}`} className="scroll-mt-28 overflow-hidden rounded-[1.75rem] border border-[var(--ink)]/10 bg-white/70 shadow-[0_24px_70px_rgba(15,16,22,0.08)]">
@@ -27,9 +30,10 @@ export function LiteYouTubeVideo({ video }: { video: YouTubeVideo }) {
             aria-label={`Play ${video.title}`}
             onClick={() => {
               setPlaying(true);
-              trackEvent("video_played", {
-                video_id: video.videoId,
-                video_topic: video.primaryTopic,
+              trackConversionEvent("video_play", {
+                path: pathname,
+                page_type: pageTypeFromPath(pathname),
+                topic: video.primaryTopic,
               });
             }}
             className="group absolute inset-0 w-full text-left"

@@ -8,6 +8,8 @@ import {
 } from "@/lib/seo-config";
 import { medicalReviewer } from "@/data/concern-library";
 import type { ClinicSettings } from "@/types/cms";
+import { ConversionLink } from "@/components/ConversionLink";
+import { clinicFacts } from "@/data/clinic-facts";
 
 const clinicLinks = [
   { label: "About the doctor", href: "/about" },
@@ -55,17 +57,17 @@ export function SiteFooter({ settings }: { settings: ClinicSettings }) {
               <Phone aria-hidden="true" className="mt-0.5 h-4 w-4 shrink-0 text-[var(--champagne)]" />
               <div className="flex flex-col gap-1">
                 {settings.landline ? (
-                  <a href={`tel:${clinicIdentity.landlineTel}`} className="hover:text-white">
+                  <ConversionLink href={`tel:${clinicIdentity.landlineTel}`} eventName="call_click" className="hover:text-white">
                     {settings.landline}
-                  </a>
+                  </ConversionLink>
                 ) : null}
-                <a href={`tel:${clinicIdentity.primaryPhoneTel}`} className="hover:text-white">
+                <ConversionLink href={`tel:${clinicIdentity.primaryPhoneTel}`} eventName="call_click" className="hover:text-white">
                   {settings.phone}
-                </a>
+                </ConversionLink>
                 {settings.secondaryPhone ? (
-                  <a href={`tel:${clinicIdentity.secondaryPhoneTel}`} className="hover:text-white">
+                  <ConversionLink href={`tel:${clinicIdentity.secondaryPhoneTel}`} eventName="call_click" className="hover:text-white">
                     {settings.secondaryPhone}
-                  </a>
+                  </ConversionLink>
                 ) : null}
               </div>
             </div>
@@ -125,17 +127,18 @@ export function SiteFooter({ settings }: { settings: ClinicSettings }) {
               </li>
             ))}
           </ul>
-          <Link
+          <ConversionLink
             href="/contact"
+            eventName="book_appointment_click"
             className="mt-8 inline-flex min-h-11 items-center justify-center rounded-full bg-[var(--champagne)] px-5 text-xs font-extrabold uppercase tracking-[0.12em] text-[var(--ink)] transition hover:bg-white"
           >
             Book appointment
-          </Link>
+          </ConversionLink>
         </div>
       </div>
       <div className="mx-auto mt-14 flex max-w-7xl flex-col gap-2 border-t border-white/10 pt-6 text-xs text-white/58 sm:flex-row sm:items-center sm:justify-between">
         <p>&copy; {new Date().getFullYear()} {settings.legalName}</p>
-        <p>Medical content reviewed by <Link href={medicalReviewer.profilePath} className="text-white underline decoration-white/50 underline-offset-2 hover:decoration-white">{medicalReviewer.name}</Link> · 30+ years of clinical experience · General information, not a consultation.</p>
+        <p>Medical content reviewed by <Link href={medicalReviewer.profilePath} className="text-white underline decoration-white/50 underline-offset-2 hover:decoration-white">{medicalReviewer.name}</Link> · {clinicFacts.clinicalExperience.value} years of clinical experience · General information, not a consultation.</p>
       </div>
     </footer>
   );

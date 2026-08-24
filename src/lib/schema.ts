@@ -8,6 +8,7 @@ import {
 } from "@/lib/seo-config";
 import type { Article, ClinicSettings } from "@/types/cms";
 import type { YouTubeVideo } from "@/types/video-library";
+import { clinicFacts } from "@/data/clinic-facts";
 
 type JsonLd = Record<string, unknown>;
 
@@ -92,7 +93,7 @@ export function physicianJsonLd(
     "@id": schemaIds.physician,
     name: settings.doctor,
     url: absoluteUrl("/about"),
-    description: "Founder and lead doctor at Radiance Clinics with more than 30 years of clinical experience.",
+    description: `Founder and lead doctor at Radiance Clinics with more than ${clinicFacts.clinicalExperience.value.replace("+", "")} years of clinical experience.`,
     worksFor: { "@id": schemaIds.clinic },
     address: postalAddress(settings),
   };

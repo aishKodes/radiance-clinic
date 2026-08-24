@@ -52,6 +52,8 @@ import {
 } from "@/data/real-media";
 import { beforeAfterCasesToTransformations } from "@/lib/transformations";
 import { clinicIdentity } from "@/lib/seo-config";
+import { clinicFacts } from "@/data/clinic-facts";
+import { whatsappHref } from "@/lib/contact-links";
 
 export const clinic: ClinicSettings = {
   name: clinicIdentity.name,
@@ -86,14 +88,10 @@ export const navItems = [
 
 export const stats: Stat[] = [
   {
-    value: "25,000+",
-    label: "Happy Patients",
-    description: "A visible trust signal from the current Radiance Clinics presence.",
+    ...clinicFacts.happyClients,
   },
   {
-    value: "30+",
-    label: "Years Experience",
-    description: "Long-running doctor-led clinical and aesthetic care.",
+    ...clinicFacts.clinicalExperience,
   },
   {
     value: "YouTube",
@@ -613,17 +611,11 @@ export const skinTransformations: Transformation[] = allTransformations.filter(
 export const proofStats: ProofStat[] = [
   {
     eyebrow: "Patients",
-    value: "25,000+",
-    label: "Happy patients",
-    description:
-      "Patients visit Radiance for hair, skin, laser and aesthetic concerns.",
+    ...clinicFacts.happyClients,
   },
   {
     eyebrow: "Experience",
-    value: "30+",
-    label: "Years of experience",
-    description:
-      "Long-running doctor-led aesthetic, hair and skin care experience.",
+    ...clinicFacts.clinicalExperience,
   },
   {
     eyebrow: "Recognition",
@@ -828,17 +820,17 @@ export const doctorProfile: DoctorProfile = {
   name: clinic.doctor,
   role: "Founder and lead doctor, Radiance Clinics",
   shortBio:
-    "More than 30 years of doctor-led hair restoration, skin, laser and aesthetic care with clinical restraint, proportion-aware planning and safety-first care.",
+    "More than 20 years of doctor-led hair restoration, skin, laser and aesthetic care with clinical restraint, proportion-aware planning and safety-first care.",
   authorityPoints: authorityPoints.map((point) => point.label),
 };
 
 export const homepageContent: HomepageContent = {
-  heroEyebrow: "30+ Years of Clinical Experience | US FDA Approved Technology | Doctor-Led Care",
+  heroEyebrow: clinicFacts.heroEyebrow,
   heroTitle: "Advanced Skin, Hair & Aesthetic Clinic",
   heroSubtitle:
     "Doctor-led hair transplant, skin, laser and aesthetic treatments by Dr. Satyarth Prakash at Radiance Clinics, Bhubaneswar.",
   primaryCta: { label: "Book Appointment", href: "/contact" },
-  secondaryCta: { label: "WhatsApp", href: `https://wa.me/${clinic.whatsapp}` },
+  secondaryCta: { label: "WhatsApp", href: whatsappHref(clinic.whatsapp, "/") },
   assistantTeaser: {
     label: "Chat Now",
     text: "Ask about treatments or request a consultation.",

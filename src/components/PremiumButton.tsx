@@ -3,6 +3,8 @@ import type { ReactNode } from "react";
 import type { LucideIcon } from "lucide-react";
 import { ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { ConversionLink } from "@/components/ConversionLink";
+import type { RadianceConversionEvent } from "@/lib/analytics";
 
 type PremiumButtonProps = {
   href?: string;
@@ -10,6 +12,8 @@ type PremiumButtonProps = {
   variant?: "charcoal" | "ivory" | "outline" | "ghost";
   className?: string;
   icon?: LucideIcon;
+  eventName?: RadianceConversionEvent;
+  topic?: string;
 };
 
 const variants = {
@@ -29,6 +33,8 @@ export function PremiumButton({
   variant = "charcoal",
   className,
   icon: Icon = ArrowRight,
+  eventName,
+  topic,
 }: PremiumButtonProps) {
   const content = (
     <>
@@ -44,6 +50,27 @@ export function PremiumButton({
   );
 
   if (href) {
+    const conversionEvent =
+      eventName ||
+      (href.startsWith("tel:")
+        ? "call_click"
+        : href.includes("wa.me/")
+          ? "whatsapp_click"
+          : undefined);
+
+    if (conversionEvent) {
+      return (
+        <ConversionLink
+          className={classes}
+          href={href}
+          eventName={conversionEvent}
+          topic={topic}
+        >
+          {content}
+        </ConversionLink>
+      );
+    }
+
     return (
       <Link className={classes} href={href}>
         {content}
