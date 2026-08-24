@@ -1,3 +1,5 @@
+import legacyRedirectRecords from "../data/legacy-redirects.json";
+
 export const canonicalOrigin = "https://www.radianceclinics.com";
 
 export const clinicIdentity = {
@@ -52,135 +54,9 @@ export type LegacyRedirect = {
   permanent: true;
 };
 
-export const legacyRedirects: LegacyRedirect[] = [
-  {
-    source: "/treatment/hairfall/prp",
-    destination: "/treatments/hair-restoration/prp-gfc-scalp-therapy",
-    permanent: true,
-  },
-  {
-    source: "/treatment/hairfall/gfc",
-    destination: "/treatments/hair-restoration/prp-gfc-scalp-therapy",
-    permanent: true,
-  },
-  {
-    source: "/hair-loss-treatments",
-    destination: "/hair-transplant-bhubaneswar",
-    permanent: true,
-  },
-  {
-    source: "/skin-care-treatments",
-    destination: "/skin-clinic-bhubaneswar",
-    permanent: true,
-  },
-  {
-    source: "/acne-scars",
-    destination: "/acne-scar-treatment-bhubaneswar",
-    permanent: true,
-  },
-  {
-    source: "/mole-wart-removal",
-    destination: "/skin-clinic-bhubaneswar",
-    permanent: true,
-  },
-  {
-    source: "/laser-hair-removal-radiance",
-    destination: "/laser-hair-removal-bhubaneswar",
-    permanent: true,
-  },
-  {
-    source: "/fillers",
-    destination: "/treatments/aesthetic-dermatology/injectable-aesthetics",
-    permanent: true,
-  },
-  { source: "/about-us", destination: "/about", permanent: true },
-  { source: "/contact-us", destination: "/contact", permanent: true },
-  {
-    source: "/dermatology-clinic-in-bhubaneswar",
-    destination: "/skin-clinic-bhubaneswar",
-    permanent: true,
-  },
-  {
-    source: "/treatment/anti-ageing-therapies/ultherapy",
-    destination: "/conditions/skin-ageing-laxity",
-    permanent: true,
-  },
-  {
-    source: "/post/a-complete-guide-to-know-about-botox-treatment",
-    destination: "/treatments/aesthetic-dermatology/injectable-aesthetics",
-    permanent: true,
-  },
-  {
-    source: "/hair-transplantation",
-    destination: "/hair-transplant-bhubaneswar",
-    permanent: true,
-  },
-  {
-    source: "/skin-pigmentation",
-    destination: "/pigmentation-treatment-bhubaneswar",
-    permanent: true,
-  },
-  {
-    source: "/tan-removal",
-    destination: "/pigmentation-treatment-bhubaneswar",
-    permanent: true,
-  },
-  {
-    source: "/botox-treatment",
-    destination: "/treatments/aesthetic-dermatology/injectable-aesthetics",
-    permanent: true,
-  },
-  { source: "/blogs", destination: "/knowledge", permanent: true },
-  {
-    source: "/hair-loss-causes",
-    destination: "/knowledge/hair-loss-causes-and-assessment",
-    permanent: true,
-  },
-  {
-    source: "/post/what-causes-hair-loss-and-how-it-can-be-treated",
-    destination: "/knowledge/hair-loss-causes-and-assessment",
-    permanent: true,
-  },
-  {
-    source: "/post/how-to-care-for-your-scalp-after-a-hair-transplant",
-    destination: "/knowledge/hair-transplant-aftercare",
-    permanent: true,
-  },
-  {
-    source: "/post/hair-transplants-what-to-expect",
-    destination: "/knowledge/hair-transplant-aftercare",
-    permanent: true,
-  },
-  {
-    source: "/post/what-common-mistakes-can-make-your-hair-transplant-more-expensive",
-    destination: "/knowledge/hair-transplant-cost-factors",
-    permanent: true,
-  },
-  {
-    source: "/post/what-is-gfc-treatment-and-how-does-it-help-in-hair-regrowth",
-    destination: "/knowledge/prp-gfc-hair-restoration-guide",
-    permanent: true,
-  },
-  { source: "/recent-result", destination: "/results", permanent: true },
-  { source: "/photo-gallery", destination: "/results", permanent: true },
-  {
-    source: "/book-online-radiance-clinics-bhuabaneswar",
-    destination: "/contact",
-    permanent: true,
-  },
-  ...[
-    "cuttack",
-    "puri",
-    "rourkela",
-    "sambalpur",
-    "berhampur",
-    "baripada",
-  ].map((city) => ({
-    source: `/hair-transplant-in-${city}`,
-    destination: "/hair-transplant-bhubaneswar",
-    permanent: true as const,
-  })),
-];
+export const legacyRedirects: LegacyRedirect[] = legacyRedirectRecords.map(
+  ({ source, destination }) => ({ source, destination, permanent: true }),
+);
 
 export const treatmentNavigationGroups = [
   {
@@ -188,6 +64,7 @@ export const treatmentNavigationGroups = [
     links: [
       { label: "Hair restoration overview", href: "/treatments/hair-restoration" },
       { label: "Hair transplant in Bhubaneswar", href: "/hair-transplant-bhubaneswar" },
+      { label: "Hair loss clinic in Bhubaneswar", href: "/hair-loss-clinic-bhubaneswar" },
       {
         label: "FUE hair transplant planning",
         href: "/treatments/hair-restoration/fue-hair-transplant",
@@ -203,7 +80,9 @@ export const treatmentNavigationGroups = [
     links: [
       { label: "Skin treatments overview", href: "/treatments/skin" },
       { label: "Skin clinic in Bhubaneswar", href: "/skin-clinic-bhubaneswar" },
+      { label: "Active acne treatment", href: "/acne-treatment-bhubaneswar" },
       { label: "Acne scar treatment", href: "/acne-scar-treatment-bhubaneswar" },
+      { label: "Wart removal assessment", href: "/wart-removal-bhubaneswar" },
       {
         label: "Pigmentation treatment",
         href: "/pigmentation-treatment-bhubaneswar",

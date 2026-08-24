@@ -98,6 +98,38 @@ function imageSrc(item: GalleryImage) {
   );
 }
 
+function publicGalleryTitle(item: GalleryImage) {
+  const title = item.title.trim();
+  const genericFilename =
+    /^\d{6,}(?:[-_\s]\d+)?$/i.test(title) ||
+    /^(?:img|image|dsc|photo|whatsapp)[-_\s]*\d+/i.test(title) ||
+    /clinin|heor\s+gallery|clinic\s+gallery/i.test(title);
+
+  if (genericFilename) return item.category;
+  if (/smiling patient hero/i.test(title)) return "Patient Comfort";
+  return title;
+}
+
+function publicGalleryCaption(item: GalleryImage) {
+  const caption = item.caption.trim();
+  if (!caption || /asset|photography|placeholder/i.test(caption)) {
+    return `${item.category} at Radiance Clinics, Bhubaneswar.`;
+  }
+  return caption;
+}
+
+function publicGalleryAlt(item: GalleryImage) {
+  const alt = (item.image.altText || item.image.alt || "").trim();
+  if (
+    !alt ||
+    /asset|placeholder|photography|clinin|heor\s+gallery/i.test(alt) ||
+    /^\d{6,}(?:[-_\s]\d+)?(?:\s+-\s+radiance clinics)?$/i.test(alt)
+  ) {
+    return `${publicGalleryTitle(item)} at Radiance Clinics Bhubaneswar`;
+  }
+  return alt;
+}
+
 export function ClinicAmbienceGallery({ images }: { images: GalleryImage[] }) {
   const visibleImages = useMemo(() => dedupeGalleryImages(images), [images]);
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
@@ -160,7 +192,7 @@ export function ClinicAmbienceGallery({ images }: { images: GalleryImage[] }) {
               className="fixed inset-0 z-[80] grid place-items-center overflow-y-auto bg-[rgba(15,16,22,0.86)] px-3 py-4 backdrop-blur-xl sm:px-4 sm:py-6"
               role="dialog"
               aria-modal="true"
-              aria-label={activeItem.title}
+              aria-label={publicGalleryTitle(activeItem)}
               onClick={closeLightbox}
             >
               <div
@@ -173,7 +205,7 @@ export function ClinicAmbienceGallery({ images }: { images: GalleryImage[] }) {
                       {activeItem.category}
                     </p>
                     <h3 className="mt-2 font-serif text-3xl leading-none sm:text-4xl">
-                      {activeItem.title}
+                      {publicGalleryTitle(activeItem)}
                     </h3>
                   </div>
                   <button
@@ -189,11 +221,7 @@ export function ClinicAmbienceGallery({ images }: { images: GalleryImage[] }) {
                 <div className="relative h-[min(62svh,42rem)] min-h-0 overflow-hidden rounded-[1.35rem] border border-white/16 bg-white/8 sm:rounded-[1.8rem]">
                   <Image
                     src={imageSrc(activeItem)}
-                    alt={
-                      activeItem.image.altText ||
-                      activeItem.image.alt ||
-                      activeItem.title
-                    }
+                    alt={publicGalleryAlt(activeItem)}
                     fill
                     sizes="100vw"
                     placeholder={
@@ -219,7 +247,7 @@ export function ClinicAmbienceGallery({ images }: { images: GalleryImage[] }) {
                     Previous
                   </button>
                   <p className="hidden max-w-xl text-center text-sm leading-6 text-white/66 sm:block">
-                    {activeItem.caption}
+                    {publicGalleryCaption(activeItem)}
                   </p>
                   <button
                     type="button"
@@ -265,7 +293,7 @@ function GalleryTile({
     >
       <Image
         src={imageSrc(item)}
-        alt={item.image.altText || item.image.alt || item.title}
+        alt={publicGalleryAlt(item)}
         fill
         sizes={
           large
@@ -303,11 +331,11 @@ function GalleryTile({
             large ? "text-3xl sm:text-5xl" : "text-2xl",
           )}
         >
-          {item.title}
+          {publicGalleryTitle(item)}
         </h3>
         {large ? (
           <p className="mt-3 max-w-xl text-sm leading-6 text-white/72">
-            {item.caption}
+            {publicGalleryCaption(item)}
           </p>
         ) : null}
       </div>

@@ -34,6 +34,15 @@
     { "path": "/laser-hair-removal-bhubaneswar", "type": "local-service", "sitemap": true, "primaryIntent": "laser hair removal Bhubaneswar", "parent": "/treatments/laser", "breadcrumb": true, "eligible": true },
     { "path": "/acne-scar-treatment-bhubaneswar", "type": "local-service", "sitemap": true, "primaryIntent": "acne scar treatment Bhubaneswar", "parent": "/treatments/skin", "breadcrumb": true, "eligible": true },
     { "path": "/pigmentation-treatment-bhubaneswar", "type": "local-service", "sitemap": true, "primaryIntent": "pigmentation treatment Bhubaneswar", "parent": "/treatments/skin", "breadcrumb": true, "eligible": true },
+    { "path": "/acne-treatment-bhubaneswar", "type": "local-service", "sitemap": true, "primaryIntent": "active acne treatment Bhubaneswar", "parent": "/treatments/skin", "breadcrumb": true, "eligible": true },
+    { "path": "/hair-loss-clinic-bhubaneswar", "type": "local-service", "sitemap": true, "primaryIntent": "hair loss clinic Bhubaneswar", "parent": "/treatments/hair-restoration", "breadcrumb": true, "eligible": true },
+    { "path": "/wart-removal-bhubaneswar", "type": "local-service", "sitemap": true, "primaryIntent": "wart removal Bhubaneswar", "parent": "/treatments/skin", "breadcrumb": true, "eligible": true },
+    { "path": "/hair-transplant-cuttack", "type": "outstation-location", "sitemap": true, "primaryIntent": "hair transplant for Cuttack patients", "parent": "/locations", "breadcrumb": true, "eligible": true },
+    { "path": "/hair-transplant-puri", "type": "outstation-location", "sitemap": true, "primaryIntent": "hair transplant for Puri patients", "parent": "/locations", "breadcrumb": true, "eligible": true },
+    { "path": "/hair-transplant-berhampur", "type": "outstation-location", "sitemap": true, "primaryIntent": "hair transplant for Berhampur patients", "parent": "/locations", "breadcrumb": true, "eligible": true },
+    { "path": "/hair-transplant-sambalpur", "type": "outstation-location", "sitemap": true, "primaryIntent": "hair transplant for Sambalpur patients", "parent": "/locations", "breadcrumb": true, "eligible": true },
+    { "path": "/hair-transplant-rourkela", "type": "outstation-location", "sitemap": true, "primaryIntent": "hair transplant for Rourkela patients", "parent": "/locations", "breadcrumb": true, "eligible": true },
+    { "path": "/hair-transplant-baripada", "type": "outstation-location", "sitemap": true, "primaryIntent": "hair transplant for Baripada patients", "parent": "/locations", "breadcrumb": true, "eligible": true },
     { "path": "/treatments/hair-restoration/fue-hair-transplant", "type": "treatment", "sitemap": true, "primaryIntent": "FUE planning research", "parent": "/treatments/hair-restoration", "breadcrumb": true, "eligible": true },
     { "path": "/treatments/hair-restoration/prp-gfc-scalp-therapy", "type": "treatment", "sitemap": true, "primaryIntent": "PRP GFC scalp therapy research", "parent": "/treatments/hair-restoration", "breadcrumb": true, "eligible": true },
     { "path": "/treatments/hair-restoration/advanced-hair-fall-solutions", "type": "treatment", "sitemap": true, "primaryIntent": "hair fall treatment research", "parent": "/treatments/hair-restoration", "breadcrumb": true, "eligible": true },
@@ -71,12 +80,6 @@
   "nonIndexableRoutes": [
     { "path": "/api/*", "reason": "Machine endpoint" },
     { "path": "/studio/*", "reason": "Private administration interface" },
-    { "path": "/hair-transplant-cuttack", "reason": "Draft until city-specific information is verified" },
-    { "path": "/hair-transplant-puri", "reason": "Draft until city-specific information is verified" },
-    { "path": "/hair-transplant-rourkela", "reason": "Draft until city-specific information is verified" },
-    { "path": "/hair-transplant-sambalpur", "reason": "Draft until city-specific information is verified" },
-    { "path": "/hair-transplant-berhampur", "reason": "Draft until city-specific information is verified" },
-    { "path": "/hair-transplant-baripada", "reason": "Draft until city-specific information is verified" },
     { "path": "/results/*/*", "reason": "Case details require verified clinical context and timeline before indexation" }
   ]
 }

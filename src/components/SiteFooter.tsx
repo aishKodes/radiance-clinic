@@ -133,9 +133,9 @@ export function SiteFooter({ settings }: { settings: ClinicSettings }) {
           </Link>
         </div>
       </div>
-      <div className="mx-auto mt-14 flex max-w-7xl flex-col gap-2 border-t border-white/10 pt-6 text-xs text-white/42 sm:flex-row sm:items-center sm:justify-between">
+      <div className="mx-auto mt-14 flex max-w-7xl flex-col gap-2 border-t border-white/10 pt-6 text-xs text-white/58 sm:flex-row sm:items-center sm:justify-between">
         <p>&copy; {new Date().getFullYear()} {settings.legalName}</p>
-        <p>Medical content reviewed by <Link href={medicalReviewer.profilePath} className="text-white/66 hover:text-white">{medicalReviewer.name}</Link> · 30+ years of clinical experience · General information, not a consultation.</p>
+        <p>Medical content reviewed by <Link href={medicalReviewer.profilePath} className="text-white underline decoration-white/50 underline-offset-2 hover:decoration-white">{medicalReviewer.name}</Link> · 30+ years of clinical experience · General information, not a consultation.</p>
       </div>
     </footer>
   );

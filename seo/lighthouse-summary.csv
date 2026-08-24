@@ -1,0 +1,3 @@
+form_factor,performance,accessibility,best_practices,seo,fcp_ms,lcp_ms,tbt_ms,cls,speed_index_ms
+mobile,81,100,100,100,1658,4900,68,0.000,1658
+desktop,98,100,100,100,406,1051,0,0.000,425

@@ -497,6 +497,282 @@ export const localSeoPages: LocalSeoPage[] = [
       },
     ],
   },
+  {
+    slug: "acne-treatment-bhubaneswar",
+    serviceName: "Acne Treatment",
+    metaTitle: "Acne Treatment in Bhubaneswar | Radiance Clinics",
+    metaDescription:
+      "Doctor-led acne treatment in Bhubaneswar for active breakouts, comedones, acne marks and recurring acne at Radiance Clinics.",
+    eyebrow: "Active acne and breakout care",
+    title: "Acne Treatment in Bhubaneswar",
+    heroDescription:
+      "Clinical assessment for recurring breakouts, blackheads, whiteheads, inflammatory acne and post-acne marks, followed by an individual treatment and review plan.",
+    image: `${mediaBase}/radiance-acne-condition.webp`,
+    imageAlt: "Doctor-led acne consultation at Radiance Clinics Bhubaneswar",
+    introductionTitle:
+      "Active acne needs a different plan from acne scars and leftover marks.",
+    introduction: [
+      "Acne may involve blocked pores, inflamed spots, deeper painful lesions or a mixture of patterns. Products, hormones, medication, stress, friction and the skin barrier can influence how often it returns. The consultation focuses on the current pattern before discussing procedures.",
+      "The first goal is usually to control active breakouts and reduce the risk of new marks or scars. Texture procedures are considered separately when acne is stable enough and the skin can tolerate them.",
+    ],
+    assessmentTitle: "What the acne consultation reviews",
+    assessmentDescription:
+      "The doctor looks for the type, severity and triggers of acne and checks what has already been tried.",
+    assessmentPoints: [
+      "Blackheads, whiteheads, inflamed spots or deeper lesions",
+      "Face, jawline, back, chest or other affected areas",
+      "Duration, flare pattern and possible hormonal features",
+      "Skin sensitivity, barrier irritation and current products",
+      "Previous prescriptions, procedures and treatment response",
+      "Existing marks, scars and risk of further scarring",
+    ],
+    approachTitle: "Control breakouts before intensive scar treatment",
+    approachDescription:
+      "The plan may include home care, prescribed treatment, review-based adjustments or selected procedures. Recommendations depend on the diagnosis and are not a fixed acne package.",
+    approachPoints: [
+      "Separate active acne from marks and scars",
+      "Choose products around skin tolerance",
+      "Review response before changing intensity",
+      "Plan scar treatment only when acne is sufficiently controlled",
+    ],
+    expectations: [
+      {
+        title: "Assessment",
+        text: "The doctor reviews acne type, skin condition, triggers, medication and previous response.",
+      },
+      {
+        title: "Treatment plan",
+        text: "Suitable home care, medical treatment or procedures are discussed with realistic timelines and precautions.",
+      },
+      {
+        title: "Review",
+        text: "Breakouts, irritation and marks are reassessed so the plan can be adjusted rather than continued automatically.",
+      },
+    ],
+    relatedLinks: [
+      {
+        href: "/concerns/acne/acne",
+        label: "Understanding acne",
+        description: "Review acne patterns and when clinical assessment may help.",
+      },
+      {
+        href: "/acne-scar-treatment-bhubaneswar",
+        label: "Acne scar treatment",
+        description: "Learn how textural scars are assessed after active acne is controlled.",
+      },
+      {
+        href: "/skin-clinic-bhubaneswar",
+        label: "Skin clinic consultation",
+        description: "Discuss acne together with sensitivity, pigmentation or other concerns.",
+      },
+    ],
+    faqs: [
+      {
+        question: "When should I consult a doctor for acne?",
+        answer:
+          "Consider assessment when acne is persistent, painful, leaving marks or scars, affecting larger areas, or not improving with a careful routine. Sudden or severe acne also deserves medical review.",
+      },
+      {
+        question: "Can acne marks be treated while breakouts are active?",
+        answer:
+          "Some mark-focused care may be compatible with acne treatment, but intensive scar or resurfacing procedures are usually planned after active inflammation is better controlled.",
+      },
+      {
+        question: "How quickly does acne treatment work?",
+        answer:
+          "Response varies with acne type, severity, treatment tolerance and consistency. The doctor explains review timing and adjusts the plan based on progress rather than guaranteeing a fixed result date.",
+      },
+      {
+        question: "Should I stop all products before the appointment?",
+        answer:
+          "Do not stop prescribed treatment without advice. Bring or list the products and medicines you use so the doctor can assess irritation, interactions and what should continue.",
+      },
+    ],
+  },
+  {
+    slug: "hair-loss-clinic-bhubaneswar",
+    serviceName: "Hair Loss Consultation",
+    metaTitle: "Hair Loss Clinic in Bhubaneswar | Radiance Clinics",
+    metaDescription:
+      "Doctor-led hair loss and scalp assessment in Bhubaneswar for shedding, thinning, widening part and pattern hair loss at Radiance Clinics.",
+    eyebrow: "Diagnosis-led hair and scalp care",
+    title: "Hair Loss Clinic in Bhubaneswar",
+    heroDescription:
+      "Assessment for persistent shedding, progressive thinning, pattern hair loss and scalp concerns before medical, regenerative or surgical options are considered.",
+    image: `${mediaBase}/radiance-hair-fall-condition.webp`,
+    imageAlt: "Hair loss and scalp assessment at Radiance Clinics Bhubaneswar",
+    introductionTitle:
+      "Hair fall is a symptom; the treatment plan depends on the cause and pattern.",
+    introduction: [
+      "Increased shedding, a receding hairline, a widening part and patchy loss are not the same problem. A hair consultation reviews the timeline, scalp, family pattern, health history and previous treatment before selecting a pathway.",
+      "Not every patient needs PRP, GFC or a hair transplant. Some patterns need investigation or medical management first, while surgery is considered only when loss, donor supply and long-term goals make it appropriate.",
+    ],
+    assessmentTitle: "What a hair loss assessment checks",
+    assessmentDescription:
+      "The consultation separates active shedding from patterned or scarring loss and looks for factors that may change treatment selection.",
+    assessmentPoints: [
+      "Onset, progression and daily shedding pattern",
+      "Hairline, crown, part width and overall density",
+      "Scalp inflammation, flaking, tenderness or scarring signs",
+      "Family history, illness, stress and nutritional context",
+      "Medication, hormonal history and previous treatment",
+      "Donor-area quality when surgery is being considered",
+    ],
+    approachTitle: "Choose the pathway after diagnosis",
+    approachDescription:
+      "Depending on the assessment, the plan may involve scalp care, medical treatment, PRP or GFC support, monitoring, transplant planning or referral for further investigation.",
+    approachPoints: [
+      "Identify the pattern before choosing treatment",
+      "Review active shedding before surgery",
+      "Protect existing and donor hair over time",
+      "Use follow-up to judge response and next steps",
+    ],
+    expectations: [
+      {
+        title: "History and examination",
+        text: "The doctor reviews the timeline, scalp, distribution of loss and treatments already used.",
+      },
+      {
+        title: "Suitable options",
+        text: "Medical, regenerative and surgical pathways are discussed only where they fit the diagnosis and goals.",
+      },
+      {
+        title: "Monitoring",
+        text: "Follow-up helps distinguish temporary fluctuation from meaningful change and guides whether the plan should continue.",
+      },
+    ],
+    relatedLinks: [
+      {
+        href: "/conditions/hair-fall-thinning",
+        label: "Hair fall and thinning",
+        description: "Understand common signs and assessment pathways.",
+      },
+      {
+        href: "/treatments/hair-restoration/prp-gfc-scalp-therapy",
+        label: "PRP and GFC scalp therapy",
+        description: "Review suitability, limitations and session planning.",
+      },
+      {
+        href: "/hair-transplant-bhubaneswar",
+        label: "Hair transplant planning",
+        description: "Learn when donor assessment and surgery may be considered.",
+      },
+    ],
+    faqs: [
+      {
+        question: "How much daily hair fall is normal?",
+        answer:
+          "Shedding naturally varies, so a count alone may not explain the problem. Persistent change, visible thinning, widening part or scalp symptoms are more useful reasons to seek assessment.",
+      },
+      {
+        question: "Is PRP or GFC suitable for every type of hair loss?",
+        answer:
+          "No. Suitability depends on diagnosis, stage, scalp health and realistic goals. It is not a substitute for investigating an active medical or scarring cause.",
+      },
+      {
+        question: "When is a hair transplant considered?",
+        answer:
+          "Surgery may be considered when the hair loss pattern is appropriate, donor supply is adequate and expectations are realistic. Active or unstable loss may need treatment and review first.",
+      },
+      {
+        question: "Should I bring previous test reports?",
+        answer:
+          "Bring relevant prescriptions, test reports and a list of current medicines if available. The doctor will decide whether any further investigation is appropriate.",
+      },
+    ],
+  },
+  {
+    slug: "wart-removal-bhubaneswar",
+    serviceName: "Wart Removal Consultation",
+    metaTitle: "Wart Removal in Bhubaneswar | Radiance Clinics",
+    metaDescription:
+      "Doctor-led assessment and wart removal planning in Bhubaneswar with lesion review, treatment selection and aftercare guidance at Radiance Clinics.",
+    eyebrow: "Assessment before lesion treatment",
+    title: "Wart Removal in Bhubaneswar",
+    heroDescription:
+      "Clinical review of suspected warts before removal, with treatment selected around the lesion type, location, number, skin response and recurrence risk.",
+    image: `${mediaBase}/radiance-skin-category.webp`,
+    imageAlt: "Skin lesion consultation for wart removal at Radiance Clinics Bhubaneswar",
+    introductionTitle:
+      "A suspected wart should be identified before a removal method is chosen.",
+    introduction: [
+      "Warts can vary in shape, thickness, location and number, and not every raised skin lesion is a wart. The consultation begins by examining the lesion and asking about change, symptoms, previous treatment and relevant medical history.",
+      "Removal options and aftercare depend on the assessment. The doctor may recommend a procedure, a staged approach, medical care or further evaluation when the diagnosis is uncertain. No method can responsibly guarantee that a wart will never recur.",
+    ],
+    assessmentTitle: "What is checked before wart removal",
+    assessmentDescription:
+      "The doctor reviews whether the lesion appears consistent with a wart and whether treatment needs additional precautions.",
+    assessmentPoints: [
+      "Location, number, size and surface of the lesion",
+      "Duration, recent change, pain, bleeding or irritation",
+      "Previous home treatment or clinic procedures",
+      "Nearby sensitive skin and risk of visible marks",
+      "Medical history, medicines and healing concerns",
+      "Whether another diagnosis or further review should be considered",
+    ],
+    approachTitle: "Match treatment to the lesion and the skin",
+    approachDescription:
+      "Procedure choice is made after examination. The clinic explains preparation, discomfort, wound care, pigment or scar risk, and whether repeat treatment may be needed.",
+    approachPoints: [
+      "Confirm the likely diagnosis first",
+      "Choose a method suitable for the site",
+      "Explain healing and aftercare clearly",
+      "Review persistent or recurring lesions",
+    ],
+    expectations: [
+      {
+        title: "Examination",
+        text: "The doctor examines the lesion and checks for features that may need a different evaluation.",
+      },
+      {
+        title: "Treatment discussion",
+        text: "Suitable removal options, discomfort, healing and the possibility of repeat treatment are explained.",
+      },
+      {
+        title: "Aftercare",
+        text: "Patients receive site-specific wound care and review guidance after the chosen treatment.",
+      },
+    ],
+    relatedLinks: [
+      {
+        href: "/concerns/other-skin-concerns/moles-and-warts",
+        label: "Moles and warts",
+        description: "Understand why different skin lesions need assessment.",
+      },
+      {
+        href: "/skin-clinic-bhubaneswar",
+        label: "Skin clinic consultation",
+        description: "Discuss other persistent or changing skin concerns.",
+      },
+      {
+        href: "/contact",
+        label: "Book a lesion assessment",
+        description: "Contact the clinic for appointment and location details.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Can a wart be diagnosed from a photograph?",
+        answer:
+          "A photograph may help scheduling, but an in-person examination is safer because other lesions can resemble warts and may need a different approach.",
+      },
+      {
+        question: "Is wart removal painless?",
+        answer:
+          "Comfort varies by method, lesion and location. The doctor explains what sensation to expect and what comfort measures are appropriate before treatment.",
+      },
+      {
+        question: "Can a wart return after removal?",
+        answer:
+          "Recurrence is possible. It depends on the lesion, treatment response and individual factors, so repeat treatment or review may sometimes be needed.",
+      },
+      {
+        question: "Should I use an over-the-counter wart treatment first?",
+        answer:
+          "Avoid treating an uncertain, changing, bleeding or sensitive-site lesion without assessment. Tell the doctor what has already been applied because irritation can affect examination and treatment.",
+      },
+    ],
+  },
 ];
 
 export const localSeoPageBySlug = new Map(
@@ -508,4 +784,5 @@ export const localLandingByTreatmentSlug: Record<string, string> = {
   "laser-hair-reduction": "/laser-hair-removal-bhubaneswar",
   "acne-scar-revision": "/acne-scar-treatment-bhubaneswar",
   "laser-pigmentation-program": "/pigmentation-treatment-bhubaneswar",
+  "advanced-hair-fall-solutions": "/hair-loss-clinic-bhubaneswar",
 };

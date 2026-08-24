@@ -31,7 +31,7 @@ export function SectionHeader({
       <p
         className={cn(
           "mb-3 text-[0.68rem] font-extrabold uppercase leading-5 tracking-[0.22em] sm:mb-4 sm:text-xs sm:tracking-[0.34em]",
-          inverse ? "text-[var(--champagne)]" : "text-[var(--aqua)]",
+          inverse ? "text-[var(--champagne)]" : "text-[#126675]",
         )}
       >
         {eyebrow}

@@ -97,7 +97,7 @@ export function BeforeAfterCompare({
           keyboardIncrement="5%"
           itemOne={
             <ReactCompareSliderImage
-              src={before.src}
+              src={optimizedCompareImage(before.src)}
               alt={before.alt}
               loading="lazy"
               onError={() => setHasBrokenImage(true)}
@@ -109,7 +109,7 @@ export function BeforeAfterCompare({
           }
           itemTwo={
             <ReactCompareSliderImage
-              src={after.src}
+              src={optimizedCompareImage(after.src)}
               alt={after.alt}
               loading="lazy"
               onError={() => setHasBrokenImage(true)}
@@ -177,9 +177,10 @@ function SplitPreview({
     <div className="grid h-full w-full grid-cols-2 overflow-hidden bg-[var(--ink)]">
       <div className="relative">
         <Image
-          src={before.src}
+          src={optimizedCompareImage(before.src)}
           alt={before.alt}
           fill
+          unoptimized
           sizes="(min-width: 1024px) 40vw, 100vw"
           placeholder={before.blurDataUrl ? "blur" : "empty"}
           blurDataURL={before.blurDataUrl}
@@ -190,9 +191,10 @@ function SplitPreview({
       </div>
       <div className="relative border-l border-white/60">
         <Image
-          src={after.src}
+          src={optimizedCompareImage(after.src)}
           alt={after.alt}
           fill
+          unoptimized
           sizes="(min-width: 1024px) 40vw, 100vw"
           placeholder={after.blurDataUrl ? "blur" : "empty"}
           blurDataURL={after.blurDataUrl}
@@ -258,4 +260,9 @@ function objectPosition(focalPoint?: CmsFocalPoint) {
   const y = Number.isFinite(focalPoint?.y) ? focalPoint?.y : 0.5;
 
   return `${(x ?? 0.5) * 100}% ${(y ?? 0.5) * 100}%`;
+}
+
+function optimizedCompareImage(src: string) {
+  if (!src.startsWith("/") || src.startsWith("/_next/image")) return src;
+  return `/_next/image?url=${encodeURIComponent(src)}&w=640&q=75`;
 }

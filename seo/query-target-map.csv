@@ -1,0 +1,27 @@
+query,intent,current_position,current_ranking_url,preferred_target_url,target_exists,target_quality,cannibalization,action,priority
+hair transplant in odisha,local commercial,2.8,https://www.radianceclinics.com/,/hair-transplant-bhubaneswar,true,strong,homepage currently owns intent,PRESERVE,P0
+hair transplant bhubaneswar,local commercial,4.8,https://www.radianceclinics.com/,/hair-transplant-bhubaneswar,true,strong,homepage and legacy URLs share intent,INTERNAL_LINK,P0
+hair transplant in bhubaneswar,local commercial,7.8,https://www.radianceclinics.com/,/hair-transplant-bhubaneswar,true,strong,homepage and legacy URLs share intent,INTERNAL_LINK,P0
+hair transplant clinic in bhubaneswar,local commercial,9.1,https://www.radianceclinics.com/,/hair-transplant-bhubaneswar,true,strong,homepage and legacy URLs share intent,INTERNAL_LINK,P0
+best hair transplant in bhubaneswar,commercial investigation,15.2,https://www.radianceclinics.com/,/hair-transplant-bhubaneswar,true,strong,homepage and legacy URLs share intent,INTERNAL_LINK,P0
+hair transplant in cuttack,local outstation,5.0,https://www.radianceclinics.com/hair-transplant-in-cuttack/,/hair-transplant-cuttack,true,strong,legacy page has current visibility,REDIRECT,P0
+hair transplant in berhampur,local outstation,4.8,https://www.radianceclinics.com/hair-transplant-in-berhampur/,/hair-transplant-berhampur,true,strong,legacy page has current visibility,REDIRECT,P0
+hair transplant in puri,local outstation,10.0,https://www.radianceclinics.com/hair-transplant-in-puri/,/hair-transplant-puri,true,strong,legacy page has tracked visibility,REDIRECT,P0
+hair transplant in sambalpur,local outstation,4.1,https://www.radianceclinics.com/hair-transplant-in-sambalpur/,/hair-transplant-sambalpur,true,strong,legacy page has current visibility,REDIRECT,P0
+hair transplant in baripada,local outstation,13.0,https://www.radianceclinics.com/hair-transplant-in-baripada/,/hair-transplant-baripada,true,strong,legacy page has tracked visibility,REDIRECT,P0
+hair transplant in rourkela,local outstation,11.5,https://www.radianceclinics.com/hair-transplant-in-rourkela/,/hair-transplant-rourkela,true,strong,legacy page has current visibility,REDIRECT,P0
+laser hair removal bhubaneswar,local commercial,7.7,https://www.radianceclinics.com/laser-hair-removal-radiance/,/laser-hair-removal-bhubaneswar,true,strong,homepage and legacy page share intent,REDIRECT,P0
+laser hair removal in bhubaneswar,local commercial,15.4,https://www.radianceclinics.com/,/laser-hair-removal-bhubaneswar,true,strong,homepage and legacy page share intent,INTERNAL_LINK,P0
+prp treatment in bhubaneswar,local commercial,2.9,https://www.radianceclinics.com/,/treatments/hair-restoration/prp-gfc-scalp-therapy,true,strong,homepage and legacy PRP URL share intent,PRESERVE,P0
+gfc treatment in bhubaneswar,local commercial,3.3,https://www.radianceclinics.com/,/treatments/hair-restoration/prp-gfc-scalp-therapy,true,strong,homepage and legacy GFC URL share intent,PRESERVE,P0
+best dermatologist in bhubaneswar,local commercial,6.4,https://www.radianceclinics.com/,/skin-clinic-bhubaneswar,true,strong,homepage owns broad intent,INTERNAL_LINK,P0
+dermatologist in bhubaneswar,local commercial,8.9,https://www.radianceclinics.com/,/skin-clinic-bhubaneswar,true,strong,homepage owns broad intent,INTERNAL_LINK,P0
+skin clinic in bhubaneswar,local commercial,13.2,https://www.radianceclinics.com/,/skin-clinic-bhubaneswar,true,strong,homepage and legacy pages share intent,REDIRECT,P0
+skin specialist in bhubaneswar,local commercial,15.6,https://www.radianceclinics.com/,/skin-clinic-bhubaneswar,true,strong,one canonical page should cover synonyms,INTERNAL_LINK,P0
+skin care doctor,informational commercial,29.9,https://www.radianceclinics.com/post/what-to-expect-during-your-first-visit-to-a-skin-care-doctor/,/skin-clinic-bhubaneswar,true,strong,legacy article and homepage share intent,REDIRECT,P0
+acne treatment in bhubaneswar,local commercial,16.7,https://www.radianceclinics.com/treatment/acne-treatment/,/acne-treatment-bhubaneswar,true,strong,legacy page and articles fragment intent,REDIRECT,P0
+botox treatment in bhubaneswar,local commercial,14.0,https://www.radianceclinics.com/post/a-complete-guide-to-know-about-botox-treatment/,/treatments/aesthetic-dermatology/injectable-aesthetics,true,needs local strengthening,homepage and legacy article share intent,STRENGTHEN,P0
+wart removal bhubaneswar,local commercial,5.5,https://www.radianceclinics.com/mole-wart-removal/,/wart-removal-bhubaneswar,true,strong,legacy service URL owns intent,REDIRECT,P0
+hair loss clinic in bhubaneswar,local commercial,7.0,https://www.radianceclinics.com/,/hair-loss-clinic-bhubaneswar,true,strong,homepage owns intent,INTERNAL_LINK,P0
+body hair removal in bhubaneswar,local commercial,9.0,https://www.radianceclinics.com/,/laser-hair-removal-bhubaneswar,true,strong,same intent as laser hair reduction,INTERNAL_LINK,P1
+fillers treatment in bhubaneswar,local commercial,7.0,https://www.radianceclinics.com/fillers/,/treatments/aesthetic-dermatology/injectable-aesthetics,true,strong,legacy route shares intent,REDIRECT,P0

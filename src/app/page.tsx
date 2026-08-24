@@ -78,6 +78,19 @@ function isAnilKapoorImage(image?: CmsImage) {
   return /anil[-_\s]+kapoor/i.test(evidence);
 }
 
+function imageIdentityKeys(image?: CmsImage) {
+  if (!image) return [];
+
+  return [
+    image.id,
+    image.contentHash,
+    image.normalizedBasename,
+    image.src,
+    image.desktopUrl,
+    image.thumbnailUrl,
+  ].filter((value): value is string => Boolean(value));
+}
+
 export default async function Home() {
   const [
     settings,
@@ -126,9 +139,17 @@ export default async function Home() {
   const supportingRecognitionItems = recognitionItems.filter(
     (item) => !isAnilKapoorImage(item.image || item.badge),
   );
-  const clinicGalleryImages = galleryImages.filter(
-    (item) => !isAnilKapoorImage(item.image),
+  const recognitionImageKeys = new Set(
+    supportingRecognitionItems.flatMap((item) =>
+      imageIdentityKeys(item.image || item.badge),
+    ),
   );
+  const clinicGalleryImages = galleryImages.filter((item) => {
+    if (isAnilKapoorImage(item.image)) return false;
+    return !imageIdentityKeys(item.image).some((key) =>
+      recognitionImageKeys.has(key),
+    );
+  });
   const reviewSummary = {
     ...clinicReviewSummary,
     googleRating:
@@ -177,9 +198,9 @@ export default async function Home() {
                 <p className="mt-3 break-words font-mono text-2xl font-extrabold leading-none text-[var(--ink)] sm:mt-4 sm:text-4xl">
                   {stat.value}
                 </p>
-                <h3 className="mt-2 text-[0.7rem] font-extrabold uppercase leading-5 tracking-[0.1em] text-[var(--ink)]/62 sm:text-sm sm:tracking-[0.16em]">
+                <p className="mt-2 text-[0.7rem] font-extrabold uppercase leading-5 tracking-[0.1em] text-[var(--ink)]/62 sm:text-sm sm:tracking-[0.16em]">
                   {stat.label}
-                </h3>
+                </p>
                 {stat.description ? (
                   <p className="mt-3 hidden text-sm leading-6 text-[var(--ink)]/58 sm:mt-4 sm:block">
                     {stat.description}

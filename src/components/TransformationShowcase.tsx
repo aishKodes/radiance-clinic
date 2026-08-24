@@ -343,9 +343,12 @@ function SelectorCard({
         {thumb ? (
           <Image
             src={imageSrc(thumb)}
-            alt={
-              thumb.altText || thumb.alt || displayTitle(item, category, index)
-            }
+            alt={transformationAltText(
+              item,
+              category,
+              "after",
+              pairs[0]?.viewLabel || "Front View",
+            )}
             fill
             sizes="64px"
             placeholder={thumb.blurDataUrl ? "blur" : "empty"}

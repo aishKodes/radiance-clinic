@@ -40,7 +40,7 @@ export function TreatmentUniverseSection() {
             role="tab"
             id={`treatment-tab-trigger-${tab.id}`}
             aria-selected={active.id === tab.id}
-            aria-controls={`treatment-tab-${tab.id}`}
+            aria-controls="treatment-tab-panel"
             onClick={() => setActiveId(tab.id)}
             className={cn(
               "w-[10.5rem] shrink-0 snap-start rounded-[1.2rem] border px-4 py-3.5 text-left transition hover:-translate-y-0.5 sm:w-[11rem] sm:px-5 sm:py-4 lg:w-full",
@@ -60,31 +60,23 @@ export function TreatmentUniverseSection() {
       </div>
 
       <div className="min-w-0">
-        {treatmentCategoryTabs.map((tab) => {
-          const isActive = active.id === tab.id;
-
-          return (
-            <div
-              key={tab.id}
-              id={`treatment-tab-${tab.id}`}
-              role="tabpanel"
-              aria-labelledby={`treatment-tab-trigger-${tab.id}`}
-              hidden={!isActive}
-              className={cn(
-                "overflow-hidden rounded-[1.8rem] border border-[var(--ink)]/10 bg-white shadow-[0_24px_86px_rgba(15,16,22,0.08)]",
-                !isActive && "hidden",
-              )}
-            >
+        <div
+          key={active.id}
+          id="treatment-tab-panel"
+          role="tabpanel"
+          aria-labelledby={`treatment-tab-trigger-${active.id}`}
+          className="overflow-hidden rounded-[1.8rem] border border-[var(--ink)]/10 bg-white shadow-[0_24px_86px_rgba(15,16,22,0.08)]"
+        >
               <div className="grid lg:grid-cols-[0.9fr_1.1fr]">
                 <div className="relative min-h-[18rem] bg-[var(--mist)] lg:min-h-[31rem]">
-                  {tab.image ? (
+                  {active.image ? (
                     <Image
-                      src={tab.image.src}
-                      alt={tab.image.altText || tab.image.alt}
+                      src={active.image.src}
+                      alt={active.image.altText || active.image.alt}
                       fill
                       sizes="(min-width: 1024px) 42vw, 100vw"
-                      placeholder={tab.image.blurDataUrl ? "blur" : "empty"}
-                      blurDataURL={tab.image.blurDataUrl}
+                      placeholder={active.image.blurDataUrl ? "blur" : "empty"}
+                      blurDataURL={active.image.blurDataUrl}
                       className="object-cover"
                     />
                   ) : (
@@ -97,20 +89,20 @@ export function TreatmentUniverseSection() {
                   <div className="absolute inset-0 bg-[linear-gradient(180deg,transparent,rgba(15,16,22,0.58))]" />
                   <div className="absolute inset-x-5 bottom-5 text-white">
                     <p className="text-[0.64rem] font-extrabold uppercase tracking-[0.22em] text-[var(--champagne)]">
-                      {tab.label}
+                      {active.label}
                     </p>
                     <h3 className="mt-2 font-serif text-4xl leading-none">
-                      {tab.title}
+                      {active.title}
                     </h3>
                   </div>
                 </div>
 
                 <div className="p-5 sm:p-7 lg:p-8">
                   <p className="max-w-xl text-sm leading-7 text-[var(--ink)]/66">
-                    {tab.description}
+                    {active.description}
                   </p>
                   <div className="mt-7 grid gap-3 sm:grid-cols-2">
-                    {tab.procedures.map((procedure) => (
+                    {active.procedures.map((procedure) => (
                       <div
                         key={procedure}
                         className="rounded-[1.1rem] border border-[var(--ink)]/10 bg-[var(--ivory)]/72 px-4 py-3 text-sm font-extrabold text-[var(--ink)] shadow-sm"
@@ -120,17 +112,15 @@ export function TreatmentUniverseSection() {
                     ))}
                   </div>
                   <Link
-                    href={tab.href}
+                    href={active.href}
                     className="mt-8 inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-full border border-[var(--ink)]/10 bg-[var(--ink)] px-6 py-3 text-center text-sm font-extrabold uppercase tracking-[0.12em] text-[var(--ivory)] transition hover:-translate-y-0.5 sm:w-auto sm:tracking-[0.16em]"
                   >
-                    Explore {tab.label} Care
+                    Explore {active.label} Care
                     <ArrowUpRight className="h-4 w-4" />
                   </Link>
                 </div>
               </div>
-            </div>
-          );
-        })}
+        </div>
       </div>
     </div>
   );

@@ -18,6 +18,24 @@ function shouldContain(type: string) {
   return /badge|certificate|press|media/i.test(type);
 }
 
+function publicDescription(item: RecognitionItem) {
+  const description = item.description?.trim();
+  if (!description || /asset|placeholder|photography/i.test(description)) {
+    return `${publicLabel(item.type)} from Radiance Clinics.`;
+  }
+  return description;
+}
+
+function publicTitle(item: RecognitionItem) {
+  const title = item.title.trim();
+  if (/asset|placeholder|photography/i.test(title)) {
+    return /badge/i.test(`${item.type} ${title}`)
+      ? "Clinic Recognition"
+      : publicLabel(item.type);
+  }
+  return title;
+}
+
 export function RecognitionCarousel({ items }: { items: RecognitionItem[] }) {
   const visibleItems = dedupeRecognitionItems(items);
   const [emblaRef, emblaApi] = useEmblaCarousel({
@@ -50,7 +68,7 @@ export function RecognitionCarousel({ items }: { items: RecognitionItem[] }) {
       <div className="relative grid gap-5 lg:grid-cols-[0.42fr_1fr] lg:items-stretch">
         <div className="rounded-[1.25rem] border border-[var(--ink)]/10 bg-[var(--ink)] p-5 text-[var(--ivory)] sm:rounded-[2.1rem] sm:p-7">
           <BadgeCheck className="mb-7 h-7 w-7 text-[var(--champagne)] sm:mb-12" />
-          <p className="text-xs font-extrabold uppercase tracking-[0.3em] text-[var(--aqua)]">
+          <p className="text-xs font-extrabold uppercase tracking-[0.3em] text-[var(--champagne)]">
             Recognition & Trust
           </p>
           <h3 className="mt-4 font-serif text-4xl leading-[0.94] sm:mt-5 sm:text-5xl sm:leading-[0.9]">
@@ -118,18 +136,16 @@ export function RecognitionCarousel({ items }: { items: RecognitionItem[] }) {
                     ) : null}
                   </div>
                   <div className="p-5 sm:p-6">
-                    <span className="mb-4 inline-flex items-center gap-2 rounded-full border border-[var(--ink)]/10 bg-[var(--mist)] px-3 py-1.5 text-[0.64rem] font-extrabold uppercase tracking-[0.18em] text-[var(--ink)]/58">
+                    <span className="mb-4 inline-flex items-center gap-2 rounded-full border border-[var(--ink)]/10 bg-[var(--mist)] px-3 py-1.5 text-[0.64rem] font-extrabold uppercase tracking-[0.18em] text-[var(--ink)]/72">
                       <Award className="h-3.5 w-3.5 text-[var(--bronze)]" />
                       {publicLabel(item.type)}
                     </span>
                     <h4 className="font-serif text-2xl leading-none text-[var(--ink)] sm:text-3xl">
-                      {item.title}
+                      {publicTitle(item)}
                     </h4>
-                    {item.description ? (
-                      <p className="mt-4 text-sm leading-7 text-[var(--ink)]/62">
-                        {item.description}
-                      </p>
-                    ) : null}
+                    <p className="mt-4 text-sm leading-7 text-[var(--ink)]/62">
+                      {publicDescription(item)}
+                    </p>
                   </div>
                 </article>
               );

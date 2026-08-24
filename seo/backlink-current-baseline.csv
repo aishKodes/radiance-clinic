@@ -1,0 +1,13 @@
+metric,item,count,checked_on,source,notes
+external_links,total_external_links,302,2026-08-24,Authenticated Google Search Console Links report,Sampled links reported by Search Console
+top_linked_page,https://www.radianceclinics.com/,135,2026-08-24,Authenticated Google Search Console Links report,Protect homepage URL and canonical
+top_linked_page,https://www.radianceclinics.com/skin-care-treatments/,47,2026-08-24,Authenticated Google Search Console Links report,Legacy URL must retain a one-hop equivalent redirect
+top_linked_page,https://www.radianceclinics.com/hair-wig/,23,2026-08-24,Authenticated Google Search Console Links report,Service status and replacement page require clinic confirmation
+top_linked_page,https://www.radianceclinics.com/hair-loss-treatments/,20,2026-08-24,Authenticated Google Search Console Links report,Redirect to hair-loss consultation page
+top_linked_page,https://www.radianceclinics.com/hair-patch/,18,2026-08-24,Authenticated Google Search Console Links report,Service status and replacement page require clinic confirmation
+top_linking_site,viesearch.com,109,2026-08-24,Authenticated Google Search Console Links report,Audit quality before pursuing any additional directory links
+top_linking_site,tumblr.com,40,2026-08-24,Authenticated Google Search Console Links report,Historical links only; no scaled posting
+top_linking_site,blogspot.com,19,2026-08-24,Authenticated Google Search Console Links report,Historical links only; no scaled posting
+top_linking_site,wordpress.com,19,2026-08-24,Authenticated Google Search Console Links report,Historical links only; no scaled posting
+top_linking_site,articleezines.com,8,2026-08-24,Authenticated Google Search Console Links report,Do not reproduce article-directory tactics
+internal_links,total_internal_links,42151,2026-08-24,Authenticated Google Search Console Links report,Legacy URLs dominate until Google recrawls the recovered site architecture

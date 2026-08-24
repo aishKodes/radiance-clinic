@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import { useReducedMotion } from "framer-motion";
 import { Pause, Play } from "lucide-react";
 import type {
   ClinicSettings,
@@ -93,13 +92,21 @@ export function HeroMediaCollage({
   assistantTeaser: HomepageContent["assistantTeaser"];
 }) {
   const slides = selectHeroSlides(images);
-  const reduceMotion = useReducedMotion();
+  const [reduceMotion, setReduceMotion] = useState(false);
   const [activeIndex, setActiveIndex] = useState(0);
   const [paused, setPaused] = useState(false);
   const activeImage = slides[activeIndex] || slides[0];
   const recognitionActive = activeImage
     ? isAnilKapoorImage(activeImage)
     : false;
+
+  useEffect(() => {
+    const query = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const update = () => setReduceMotion(query.matches);
+    update();
+    query.addEventListener("change", update);
+    return () => query.removeEventListener("change", update);
+  }, []);
 
   useEffect(() => {
     if (reduceMotion || paused || slides.length < 2) return;
@@ -128,16 +135,19 @@ export function HeroMediaCollage({
                   aria-hidden={!active}
                   fill
                   preload={index === 0}
+                  fetchPriority={index === 0 ? "high" : "auto"}
                   loading={index === 0 ? undefined : "lazy"}
-                  sizes="(min-width: 1024px) 560px, 100vw"
+                  sizes="(min-width: 1024px) 560px, (min-width: 640px) 576px, calc(100vw - 32px)"
                   placeholder={image.blurDataUrl ? "blur" : "empty"}
                   blurDataURL={image.blurDataUrl}
-                  className={`${
+                  className={`absolute ${index === 0 ? "z-0" : "z-[1]"} ${
                     recognition
                       ? "object-cover bg-[#10142b]"
                       : "object-cover"
                   } transition-[opacity,transform] duration-700 ease-out ${
-                    active ? "scale-100 opacity-100" : "scale-[1.015] opacity-0"
+                    index === 0 || active
+                      ? "scale-100 opacity-100"
+                      : "scale-[1.015] opacity-0"
                   }`}
                   style={{
                     objectPosition: recognition
@@ -150,7 +160,7 @@ export function HeroMediaCollage({
           ) : (
             <HeroVisualFallback />
           )}
-          <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(16,16,20,0.04),rgba(16,16,20,0.68))]" />
+          <div className="pointer-events-none absolute inset-0 z-[2] bg-[linear-gradient(180deg,rgba(16,16,20,0.04),rgba(16,16,20,0.68))]" />
           <div className="pointer-events-none absolute left-3 top-3 z-10 rounded-full border border-white/20 bg-white/14 px-3 py-2 text-[0.6rem] font-extrabold uppercase tracking-[0.16em] text-white backdrop-blur sm:left-5 sm:top-5 sm:px-4 sm:text-[0.62rem] sm:tracking-[0.2em]">
             {recognitionActive ? "Recognition moment" : "Doctor-led care"}
           </div>

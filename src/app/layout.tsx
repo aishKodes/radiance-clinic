@@ -3,6 +3,7 @@ import { existsSync } from "node:fs";
 import path from "node:path";
 import { Fraunces, Manrope, Plus_Jakarta_Sans } from "next/font/google";
 import { BookingModal } from "@/components/BookingModal";
+import { DeferredGoogleAnalytics } from "@/components/DeferredGoogleAnalytics";
 import { DynamicChatbotDock } from "@/components/DynamicChatbotDock";
 import { FloatingCTA } from "@/components/FloatingCTA";
 import { SiteHeader } from "@/components/SiteHeader";
@@ -125,20 +126,6 @@ export default async function RootLayout({
       lang="en"
       className={`${jakarta.variable} ${manrope.variable} ${fraunces.variable} h-full scroll-smooth antialiased`}
     >
-      <head>
-        <script
-          async
-          src={`https://www.googletagmanager.com/gtag/js?id=${googleAnalyticsId}`}
-        />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', '${googleAnalyticsId}');`,
-          }}
-        />
-      </head>
       <body className="flex min-h-full flex-col bg-[var(--ivory)] text-[var(--ink)]">
         <JsonLd data={organizationJsonLd(clinicSettings)} />
         <JsonLd data={medicalClinicJsonLd(clinicSettings)} />
@@ -153,6 +140,7 @@ gtag('config', '${googleAnalyticsId}');`,
         <FloatingCTA settings={clinicSettings} />
         <BookingModal settings={clinicSettings} />
         <DynamicChatbotDock settings={assistantSettings} />
+        <DeferredGoogleAnalytics measurementId={googleAnalyticsId} />
       </body>
     </html>
   );

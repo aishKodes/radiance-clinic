@@ -162,7 +162,7 @@ export function SocialCommunitySection({
                         stat?.label ||
                         "Official Radiance Clinics profile."}
                     </p>
-                    <p className="mt-5 text-xs font-extrabold uppercase tracking-[0.16em] text-[var(--ink)]/48">
+                    <p className="mt-5 text-xs font-extrabold uppercase tracking-[0.16em] text-[var(--ink)]/68">
                       {link.ctaLabel}
                     </p>
                   </div>
@@ -259,7 +259,7 @@ export function SocialCommunitySection({
                   <p className="mt-3 line-clamp-3 text-sm leading-6 text-[var(--ink)]/60">
                     {article.excerpt}
                   </p>
-                  <span className="mt-auto flex items-center gap-2 pt-5 text-xs font-extrabold uppercase tracking-[0.14em] text-[var(--ink)]/50">
+                  <span className="mt-auto flex items-center gap-2 pt-5 text-xs font-extrabold uppercase tracking-[0.14em] text-[var(--ink)]/68">
                     Read article
                     <ArrowUpRight className="h-4 w-4 transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
                   </span>
@@ -280,7 +280,7 @@ export function SocialCommunitySection({
           <span className="grid h-12 w-12 place-items-center rounded-2xl bg-[var(--champagne)] text-[var(--ink)]">
             <Star className="h-5 w-5 fill-current" />
           </span>
-          <p className="mt-8 text-xs font-extrabold uppercase tracking-[0.22em] text-[var(--aqua)]">
+          <p className="mt-8 text-xs font-extrabold uppercase tracking-[0.22em] text-[var(--champagne)]">
             Patient reviews
           </p>
           <h3 className="mt-3 font-serif text-4xl leading-none">

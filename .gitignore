@@ -13,6 +13,10 @@
 # testing
 /coverage
 
+# generated local performance traces
+/seo/lighthouse-mobile.json
+/seo/lighthouse-desktop.json
+
 # next.js
 /.next/
 /out/

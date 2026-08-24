@@ -12,11 +12,18 @@ export default function robots(): MetadataRoute.Robots {
   }
 
   return {
-    rules: {
-      userAgent: "*",
-      allow: "/",
-      disallow: ["/studio/", "/api/"],
-    },
+    rules: [
+      {
+        userAgent: "*",
+        allow: "/",
+        disallow: ["/studio/", "/api/"],
+      },
+      {
+        userAgent: ["Googlebot", "Bingbot", "OAI-SearchBot", "PerplexityBot"],
+        allow: "/",
+        disallow: ["/studio/", "/api/"],
+      },
+    ],
     sitemap: `${canonicalOrigin}/sitemap.xml`,
     host: canonicalOrigin,
   };

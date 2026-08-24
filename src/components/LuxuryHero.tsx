@@ -1,6 +1,3 @@
-"use client";
-
-import { motion, useReducedMotion } from "framer-motion";
 import { ArrowDown, MessageCircle, Phone, Play } from "lucide-react";
 import {
   AnimatedAuroraBackground,
@@ -13,11 +10,6 @@ import { HeroMediaCollage } from "@/components/HeroMediaCollage";
 import { OpenBookingButton } from "@/components/OpenBookingButton";
 import { PremiumButton } from "@/components/PremiumButton";
 import type { ClinicSettings, HomepageContent } from "@/types/cms";
-
-const fadeUp = {
-  hidden: { opacity: 0, y: 24 },
-  visible: { opacity: 1, y: 0 },
-};
 
 export function LuxuryHero({
   homepage = seedHomepageContent,
@@ -36,7 +28,6 @@ export function LuxuryHero({
   >;
   settings?: ClinicSettings;
 }) {
-  const reduceMotion = useReducedMotion();
   const heroStats = homepage.stats.length
     ? homepage.stats
     : seedHomepageContent.stats;
@@ -53,41 +44,20 @@ export function LuxuryHero({
       <div className="pointer-events-none absolute inset-x-0 bottom-0 z-0 h-40 bg-gradient-to-t from-[var(--mist)] to-transparent" />
 
       <div className="relative z-10 mx-auto grid w-full min-w-0 max-w-7xl gap-8 sm:gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(25rem,0.92fr)] lg:items-start">
-        <motion.div
-          initial={false}
-          animate={reduceMotion ? undefined : "visible"}
-          variants={{
-            visible: {
-              transition: { staggerChildren: 0.1 },
-            },
-          }}
-          className="min-w-0"
-        >
-          <motion.div
-            variants={fadeUp}
-            className="mb-5 flex w-full max-w-full items-start gap-3 rounded-2xl border border-white/60 bg-white/64 px-4 py-3 shadow-[0_16px_50px_rgba(16,16,20,0.08)] backdrop-blur-xl sm:mb-6 sm:inline-flex sm:w-auto sm:items-center sm:rounded-full sm:py-2"
-          >
+        <div className="min-w-0">
+          <div className="mb-5 flex w-full max-w-full items-start gap-3 rounded-2xl border border-white/60 bg-white/64 px-4 py-3 shadow-[0_16px_50px_rgba(16,16,20,0.08)] backdrop-blur-xl sm:mb-6 sm:inline-flex sm:w-auto sm:items-center sm:rounded-full sm:py-2">
             <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-[var(--aqua)] shadow-[0_0_20px_var(--aqua)] sm:mt-0" />
             <span className="min-w-0 text-[0.68rem] font-extrabold uppercase leading-5 tracking-[0.12em] text-[var(--ink)]/64 sm:text-xs sm:tracking-[0.24em]">
               {homepage.heroEyebrow || "Hair • Skin • Laser • Aesthetic Care"}
             </span>
-          </motion.div>
-          <motion.h1
-            variants={fadeUp}
-            className="max-w-4xl text-balance font-serif text-[2.45rem] leading-[0.98] tracking-normal text-[var(--ink)] sm:text-[3.5rem] lg:text-[4.8rem]"
-          >
+          </div>
+          <h1 className="max-w-4xl text-balance font-serif text-[2.45rem] leading-[0.98] tracking-normal text-[var(--ink)] sm:text-[3.5rem] lg:text-[4.8rem]">
             {homepage.heroTitle}
-          </motion.h1>
-          <motion.p
-            variants={fadeUp}
-            className="mt-5 max-w-2xl text-base leading-7 text-[var(--ink)]/72 sm:text-lg"
-          >
+          </h1>
+          <p className="mt-5 max-w-2xl text-base leading-7 text-[var(--ink)]/72 sm:text-lg">
             {homepage.heroSubtitle}
-          </motion.p>
-          <motion.div
-            variants={fadeUp}
-            className="mt-6 flex min-w-0 flex-col gap-3 sm:flex-row sm:flex-wrap lg:grid lg:grid-cols-2 xl:flex"
-          >
+          </p>
+          <div className="mt-6 flex min-w-0 flex-col gap-3 sm:flex-row sm:flex-wrap lg:grid lg:grid-cols-2 xl:flex">
             <OpenBookingButton
               source="homepage_booking"
               className="w-full sm:w-auto lg:col-span-2 xl:col-span-1"
@@ -110,11 +80,8 @@ export function LuxuryHero({
             >
               Call Now
             </PremiumButton>
-          </motion.div>
-          <motion.div
-            variants={fadeUp}
-            className="mt-4 grid min-w-0 gap-1.5 text-sm font-bold text-[var(--ink)]/58 sm:flex sm:flex-wrap sm:items-center sm:gap-x-3"
-          >
+          </div>
+          <div className="mt-4 grid min-w-0 gap-1.5 text-sm font-bold text-[var(--ink)]/58 sm:flex sm:flex-wrap sm:items-center sm:gap-x-3">
             <span className="text-[0.66rem] font-extrabold uppercase tracking-[0.14em] text-[var(--bronze)]">
               Clinic numbers
             </span>
@@ -139,30 +106,20 @@ export function LuxuryHero({
                 </>
               ) : null}
             </span>
-          </motion.div>
+          </div>
 
-        </motion.div>
+        </div>
 
-        <motion.div
-          initial={false}
-          animate={reduceMotion ? undefined : { opacity: 1, scale: 1, y: 0 }}
-          transition={{ duration: 0.75, ease: [0.22, 1, 0.36, 1] }}
-          className="relative z-10 min-w-0 lg:col-start-2 lg:row-span-2 lg:row-start-1"
-        >
+        <div className="relative z-10 min-w-0 lg:col-start-2 lg:row-span-2 lg:row-start-1">
           <HeroMediaCollage
             images={heroImages}
             stats={heroStats}
             settings={settings}
             assistantTeaser={homepage.assistantTeaser}
           />
-        </motion.div>
+        </div>
 
-        <motion.div
-          initial={false}
-          animate={reduceMotion ? undefined : "visible"}
-          variants={fadeUp}
-          className="grid min-w-0 max-w-2xl grid-cols-2 gap-3 lg:col-start-1 lg:row-start-2"
-        >
+        <div className="grid min-w-0 max-w-2xl grid-cols-2 gap-3 lg:col-start-1 lg:row-start-2">
           {heroStats.map((stat) => {
             const isYouTube =
               stat.icon === "youtube" ||
@@ -175,9 +132,6 @@ export function LuxuryHero({
                 href={stat.href}
                 target={stat.external ? "_blank" : undefined}
                 rel={stat.external ? "noreferrer" : undefined}
-                aria-label={
-                  isYouTube ? "Watch Radiance Clinics on YouTube" : undefined
-                }
                 className="group min-h-[6.75rem] min-w-0 rounded-[1.35rem] border border-white/58 bg-white/62 p-3.5 shadow-[0_18px_55px_rgba(16,16,20,0.08)] backdrop-blur-xl transition hover:-translate-y-0.5 hover:bg-white/78 sm:min-h-[7.6rem] sm:rounded-3xl sm:p-4"
               >
                 {isYouTube ? (
@@ -206,7 +160,7 @@ export function LuxuryHero({
               </CardTag>
             );
           })}
-        </motion.div>
+        </div>
       </div>
 
       <a

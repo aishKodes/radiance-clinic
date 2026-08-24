@@ -7,7 +7,16 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
+    "typecheck": "tsc --noEmit",
     "seo:audit": "node scripts/seo-audit.mjs",
+    "seo:gsc-sync": "node scripts/gsc-sync.mjs",
+    "seo:gsc-inspect": "node scripts/gsc-inspect.mjs",
+    "seo:gsc-submit-sitemap": "node scripts/gsc-submit-sitemap.mjs",
+    "seo:legacy-analyze": "node scripts/migration-recovery.mjs",
+    "seo:youtube-sync": "node scripts/youtube-sync.mjs",
+    "seo:content-report": "npm run content:report",
+    "seo:lighthouse": "node scripts/lighthouse-audit.mjs",
+    "seo:report": "node scripts/seo-report.mjs",
     "test:redirects": "node scripts/seo-audit.mjs --redirects-only",
     "content:migrate-old": "node scripts/content-migrate-old.mjs",
     "content:audit": "node scripts/content-audit.mjs && node scripts/content-platform-audit.mjs",
@@ -26,10 +35,8 @@
     "cheerio": "^1.2.0",
     "clsx": "^2.1.1",
     "embla-carousel-react": "^8.6.0",
-    "framer-motion": "^12.40.0",
-    "gsap": "^3.15.0",
     "lucide-react": "^1.17.0",
-    "next": "16.2.7",
+    "next": "^16.3.2",
     "react": "19.2.4",
     "react-compare-slider": "^4.0.0",
     "react-dom": "19.2.4",
@@ -42,9 +49,12 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
-    "eslint-config-next": "16.2.7",
+    "eslint-config-next": "^16.3.2",
     "prettier": "^3.8.3",
     "tailwindcss": "^4",
     "typescript": "^5"
+  },
+  "overrides": {
+    "undici": "7.29.0"
   }
 }

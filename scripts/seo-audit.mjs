@@ -114,44 +114,41 @@ function startServer() {
   );
 }
 
-function parseRedirectCsv(csv) {
-  return csv
-    .trim()
-    .split(/\r?\n/)
-    .slice(1)
-    .map((line) => {
-      const [legacyUrl, destinationUrl, status] = line.split(",");
-      return { legacyUrl, destinationUrl, status };
-    })
-    .filter((row) => row.status === "active-permanent");
-}
-
 async function auditRedirects(redirects) {
+  const sources = new Set();
   for (const redirect of redirects) {
-    const sourcePath = redirect.legacyUrl || "/";
+    if (sources.has(redirect.source)) reportError(`duplicate redirect source: ${redirect.source}`);
+    sources.add(redirect.source);
+  }
+
+  for (const redirect of redirects) {
+    const sourcePath = redirect.source || "/";
+    if (sources.has(redirect.destination)) {
+      reportError(`${redirect.source}: redirect chain detected through ${redirect.destination}`);
+    }
     const source = await fetch(`${localBase}${sourcePath}?seo_audit=1`, {
       redirect: "manual",
     });
     if (![301, 308].includes(source.status)) {
-      reportError(`${redirect.legacyUrl}: expected one permanent redirect, received ${source.status}`);
+      reportError(`${redirect.source}: expected one permanent redirect, received ${source.status}`);
       continue;
     }
 
     const location = source.headers.get("location");
     if (!location) {
-      reportError(`${redirect.legacyUrl}: redirect is missing a Location header`);
+      reportError(`${redirect.source}: redirect is missing a Location header`);
       continue;
     }
 
     const resolved = new URL(location, canonicalOrigin);
-    const expected = new URL(redirect.destinationUrl);
+    const expected = new URL(redirect.destination, canonicalOrigin);
     if (resolved.pathname !== expected.pathname) {
       reportError(
-        `${redirect.legacyUrl}: expected ${expected.pathname}, received ${resolved.pathname}`,
+        `${redirect.source}: expected ${expected.pathname}, received ${resolved.pathname}`,
       );
     }
     if (resolved.searchParams.get("seo_audit") !== "1") {
-      reportError(`${redirect.legacyUrl}: query parameters were not preserved`);
+      reportError(`${redirect.source}: query parameters were not preserved`);
     }
 
     const destination = await fetch(`${localBase}${expected.pathname}`, {
@@ -159,7 +156,7 @@ async function auditRedirects(redirects) {
     });
     if (destination.status !== 200) {
       reportError(
-        `${redirect.legacyUrl}: destination ${expected.pathname} returned ${destination.status}`,
+        `${redirect.source}: destination ${expected.pathname} returned ${destination.status}`,
       );
     }
   }
@@ -410,16 +407,16 @@ async function auditNonIndexableRoutes(manifest) {
 }
 
 async function main() {
-  const [manifest, redirectCsv, intentCsv] = await Promise.all([
+  const [manifest, redirects, intentCsv] = await Promise.all([
     readFile(`${root}/seo/route-manifest.json`, "utf8").then(JSON.parse),
-    readFile(`${root}/seo/legacy-redirect-map.csv`, "utf8"),
+    readFile(`${root}/src/data/legacy-redirects.json`, "utf8").then(JSON.parse),
     readFile(`${root}/seo/search-intent-map.csv`, "utf8"),
   ]);
   const server = startServer();
 
   try {
     await waitForServer();
-    await auditRedirects(parseRedirectCsv(redirectCsv));
+    await auditRedirects(redirects);
     if (!redirectsOnly) {
       auditIntentMap(manifest, intentCsv);
       await auditRoutes(manifest);
