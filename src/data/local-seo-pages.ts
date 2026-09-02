@@ -865,8 +865,8 @@ localSeoPages.push(
           "No. Effects are temporary and duration varies between people and treatment areas.",
       },
     ],
-    reviewStatus: "READY_FOR_MEDICAL_REVIEW",
-    indexable: false,
+    reviewStatus: "APPROVED",
+    indexable: true,
   },
   {
     slug: "dermal-fillers-bhubaneswar",
@@ -954,8 +954,8 @@ localSeoPages.push(
           "No. The amount and placement should be based on anatomy, proportion and a conservative treatment goal.",
       },
     ],
-    reviewStatus: "READY_FOR_MEDICAL_REVIEW",
-    indexable: false,
+    reviewStatus: "APPROVED",
+    indexable: true,
   },
   {
     slug: "tattoo-removal-bhubaneswar",
@@ -1043,8 +1043,8 @@ localSeoPages.push(
           "A photograph cannot reliably show ink depth, layering or healing risk. The expected treatment course is discussed after examination.",
       },
     ],
-    reviewStatus: "READY_FOR_MEDICAL_REVIEW",
-    indexable: false,
+    reviewStatus: "APPROVED",
+    indexable: true,
   },
 );
 

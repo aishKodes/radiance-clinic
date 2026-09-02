@@ -161,6 +161,9 @@ export default async function Home() {
       clinicReviewSummary.googleReviewCount,
     googleMapsUrl:
       googleReviewFeed.googleMapsUrl || clinicReviewSummary.googleMapsUrl,
+    featuredReviewExcerpts: googleReviewFeed.reviews.length
+      ? googleReviewFeed.reviews.map((review) => review.text)
+      : clinicReviewSummary.featuredReviewExcerpts,
   };
 
   return (

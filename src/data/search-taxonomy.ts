@@ -122,6 +122,7 @@ export const treatmentHubs: TreatmentHub[] = [
     commercialPaths: [
       "/laser-hair-removal-bhubaneswar",
       "/pigmentation-treatment-bhubaneswar",
+      "/tattoo-removal-bhubaneswar",
     ],
     resultsHref: "/results#skin-results",
   },
@@ -150,7 +151,11 @@ export const treatmentHubs: TreatmentHub[] = [
     ],
     conditionPaths: ["/conditions/skin-ageing-laxity"],
     articlePaths: ["/knowledge/premium-aesthetic-consultation"],
-    commercialPaths: ["/skin-clinic-bhubaneswar"],
+    commercialPaths: [
+      "/botox-treatment-bhubaneswar",
+      "/dermal-fillers-bhubaneswar",
+      "/skin-clinic-bhubaneswar",
+    ],
     resultsHref: "/results#skin-results",
   },
 ];
@@ -232,9 +237,12 @@ export const relationshipByPath: Record<string, ContentRelationships> = {
   "/knowledge/laser-skin-treatments-safety": laserRelationships,
   "/laser-hair-removal-bhubaneswar": laserRelationships,
   "/pigmentation-treatment-bhubaneswar": laserRelationships,
+  "/tattoo-removal-bhubaneswar": laserRelationships,
   "/treatments/aesthetic-dermatology/injectable-aesthetics": aestheticRelationships,
   "/conditions/skin-ageing-laxity": aestheticRelationships,
   "/knowledge/premium-aesthetic-consultation": aestheticRelationships,
+  "/botox-treatment-bhubaneswar": aestheticRelationships,
+  "/dermal-fillers-bhubaneswar": aestheticRelationships,
 };
 
 export function relationshipsFor(path: string) {

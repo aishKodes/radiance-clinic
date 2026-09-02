@@ -10,7 +10,6 @@ const checkLive = process.argv.includes("--live");
 const deferred = [
   ["/hair-patch", "No verified current hair-system page", "Service scope and replacement content need clinic confirmation"],
   ["/hair-wig", "No verified current hair-system page", "Service scope and replacement content need clinic confirmation"],
-  ["/tattoo-removal-radiance", "No verified current tattoo-removal page", "Confirm the current service and device before rebuilding"],
   ["/treatment/non-surgical-facial-enhancements/micro-blading", "No verified current microblading page", "Confirm the current service before rebuilding"],
   ["/body-piercing", "No verified current body-piercing page", "Do not redirect to an unrelated clinic page"],
   ["/ear-piercing", "No verified current ear-piercing page", "Do not redirect to an unrelated clinic page"],

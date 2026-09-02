@@ -67,8 +67,8 @@ async function main() {
   ]) {
     check(
       medicalReviewQueue.includes(`${route},`) &&
-        medicalReviewQueue.includes("READY_FOR_MEDICAL_REVIEW"),
-      `${route} is missing from the medical-review queue.`,
+        medicalReviewQueue.includes("DOCTOR_APPROVED_PUBLISHED"),
+      `${route} is missing its doctor-approved publication status.`,
     );
   }
 

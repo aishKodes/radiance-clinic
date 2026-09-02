@@ -798,7 +798,7 @@
     "recommendedAction": "EXPAND"
   },
   {
-    "canonicalTarget": "/treatments/aesthetic-dermatology/injectable-aesthetics",
+    "canonicalTarget": "/botox-treatment-bhubaneswar",
     "sourceType": "legacy_website",
     "sourceIds": [],
     "sourceFile": "../output/markdown/clinic__a-complete-guide-to-know-about-botox-treatment.md",
@@ -1501,7 +1501,7 @@
     "recommendedAction": "REWRITE"
   },
   {
-    "canonicalTarget": "/treatments/aesthetic-dermatology/injectable-aesthetics",
+    "canonicalTarget": "/dermal-fillers-bhubaneswar",
     "sourceType": "legacy_website",
     "sourceIds": [],
     "sourceFile": "../output/markdown/clinic__are-fillers-treatments-safe.md",
@@ -1615,7 +1615,7 @@
     "recommendedAction": "EXPAND"
   },
   {
-    "canonicalTarget": "/knowledge/four-misconceptions-people-have-about-laser-tattoo-removal-in-bhubaneswar",
+    "canonicalTarget": "/tattoo-removal-bhubaneswar",
     "sourceType": "legacy_website",
     "sourceIds": [],
     "sourceFile": "../output/markdown/clinic__four-misconceptions-people-have-about-laser-tattoo-removal-in-bhubaneswar.md",
@@ -1631,7 +1631,7 @@
     "sourceBucket": "GOOD",
     "sourceScore": 80,
     "bodySha256": "591b377e4b8902ed92bfd09d3144192ab857dda9ef72021aaf393562ba9db487",
-    "recommendedAction": "REWRITE"
+    "recommendedAction": "EXPAND"
   },
   {
     "canonicalTarget": "/hair-transplant-bhubaneswar",
@@ -1710,7 +1710,7 @@
     "recommendedAction": "CONVERT_TO_QA"
   },
   {
-    "canonicalTarget": "/treatments/aesthetic-dermatology/injectable-aesthetics",
+    "canonicalTarget": "/botox-treatment-bhubaneswar",
     "sourceType": "legacy_website",
     "sourceIds": [],
     "sourceFile": "../output/markdown/clinic__aging-gracefully-with-botox-how-it-can-enhance-your-natural-beauty.md",
@@ -1805,7 +1805,7 @@
     "recommendedAction": "EXPAND"
   },
   {
-    "canonicalTarget": "/treatments/aesthetic-dermatology/injectable-aesthetics",
+    "canonicalTarget": "/dermal-fillers-bhubaneswar",
     "sourceType": "legacy_website",
     "sourceIds": [],
     "sourceFile": "../output/markdown/clinic__fillers-treatment-at-radiance-skin-and-hair-clinics-in-bhubaneswar.md",
@@ -1881,7 +1881,7 @@
     "recommendedAction": "CONVERT_TO_QA"
   },
   {
-    "canonicalTarget": "/treatments/aesthetic-dermatology/injectable-aesthetics",
+    "canonicalTarget": "/botox-treatment-bhubaneswar",
     "sourceType": "legacy_website",
     "sourceIds": [],
     "sourceFile": "../output/markdown/clinic__botox-vs-fillers-which-is-right-for-you.md",
@@ -2014,7 +2014,7 @@
     "recommendedAction": "CONVERT_TO_QA"
   },
   {
-    "canonicalTarget": "/treatments/aesthetic-dermatology/injectable-aesthetics",
+    "canonicalTarget": "/dermal-fillers-bhubaneswar",
     "sourceType": "legacy_website",
     "sourceIds": [],
     "sourceFile": "../output/markdown/skin__which-filler-is-right-for-you-expert-advice.md",
@@ -2375,7 +2375,7 @@
     "recommendedAction": "CONVERT_TO_GUIDE"
   },
   {
-    "canonicalTarget": "/treatments/aesthetic-dermatology/injectable-aesthetics",
+    "canonicalTarget": "/botox-treatment-bhubaneswar",
     "sourceType": "legacy_website",
     "sourceIds": [],
     "sourceFile": "../output/markdown/clinic__using-botox-and-fillers-for-anti-aging-treatments.md",
@@ -2451,7 +2451,7 @@
     "recommendedAction": "EXPAND"
   },
   {
-    "canonicalTarget": "/treatments/aesthetic-dermatology/injectable-aesthetics",
+    "canonicalTarget": "/dermal-fillers-bhubaneswar",
     "sourceType": "legacy_website",
     "sourceIds": [],
     "sourceFile": "../output/markdown/clinic__how-facial-fillers-can-enhance-your-natural-beauty.md",
@@ -3268,7 +3268,7 @@
     "recommendedAction": "MERGE"
   },
   {
-    "canonicalTarget": "/treatments/aesthetic-dermatology/injectable-aesthetics",
+    "canonicalTarget": "/dermal-fillers-bhubaneswar",
     "sourceType": "legacy_website",
     "sourceIds": [],
     "sourceFile": "../output/markdown/skin__fillers.md",
@@ -3667,7 +3667,7 @@
     "recommendedAction": "MERGE"
   },
   {
-    "canonicalTarget": "/treatments/aesthetic-dermatology/injectable-aesthetics",
+    "canonicalTarget": "/botox-treatment-bhubaneswar",
     "sourceType": "legacy_website",
     "sourceIds": [],
     "sourceFile": "../output/markdown/clinic__botox-treatment.md",
@@ -3914,7 +3914,7 @@
     "recommendedAction": "MERGE"
   },
   {
-    "canonicalTarget": "/treatments/aesthetic-dermatology/injectable-aesthetics",
+    "canonicalTarget": "/dermal-fillers-bhubaneswar",
     "sourceType": "legacy_website",
     "sourceIds": [],
     "sourceFile": "../output/markdown/clinic__dermal-fillers.md",
@@ -4997,7 +4997,7 @@
     "recommendedAction": "MERGE"
   },
   {
-    "canonicalTarget": "/treatments/aesthetic-dermatology/injectable-aesthetics",
+    "canonicalTarget": "/dermal-fillers-bhubaneswar",
     "sourceType": "legacy_website",
     "sourceIds": [],
     "sourceFile": "../output/markdown/aesthetic__filler.md",
@@ -5320,7 +5320,7 @@
     "recommendedAction": "MERGE"
   },
   {
-    "canonicalTarget": "/skin-clinic-bhubaneswar",
+    "canonicalTarget": "/tattoo-removal-bhubaneswar",
     "sourceType": "legacy_website",
     "sourceIds": [],
     "sourceFile": "../output/markdown/laser__laser-tattoo-removal.md",
@@ -5415,7 +5415,7 @@
     "recommendedAction": "MERGE"
   },
   {
-    "canonicalTarget": "/treatments/aesthetic-dermatology/injectable-aesthetics",
+    "canonicalTarget": "/botox-treatment-bhubaneswar",
     "sourceType": "legacy_website",
     "sourceIds": [],
     "sourceFile": "../output/markdown/skin__botox-treatment.md",
@@ -5472,7 +5472,7 @@
     "recommendedAction": "MERGE"
   },
   {
-    "canonicalTarget": "/skin-clinic-bhubaneswar",
+    "canonicalTarget": "/tattoo-removal-bhubaneswar",
     "sourceType": "legacy_website",
     "sourceIds": [],
     "sourceFile": "../output/maybe-content.json",
@@ -5491,7 +5491,7 @@
     "recommendedAction": "MERGE"
   },
   {
-    "canonicalTarget": "/treatments/aesthetic-dermatology/injectable-aesthetics",
+    "canonicalTarget": "/dermal-fillers-bhubaneswar",
     "sourceType": "legacy_website",
     "sourceIds": [],
     "sourceFile": "../output/maybe-content.json",

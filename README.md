@@ -48,7 +48,7 @@ GOOGLE_BUSINESS_PROFILE_MAPS_URL=
 - `QUESTION_SUBMISSION_WEBHOOK_URL`: Optional secure server-side destination for private Ask the Doctor submissions. Questions are never published automatically.
 - `SEARCH_SIGNAL_WEBHOOK_URL`: Optional destination for privacy-preserving no-result counters. Search wording is never sent.
 - `GOOGLE_BUSINESS_PROFILE_*`: Optional server-only OAuth credentials and account/location IDs for the complete verified-location review feed. The access token is refreshed server-side and review data is cached for one hour.
-- `GOOGLE_PLACES_API_KEY` and `GOOGLE_PLACE_ID`: Optional fallback for the public Google rating, count, and selected reviews when Business Profile API access is not configured.
+- `GOOGLE_PLACES_API_KEY` and `GOOGLE_PLACE_ID`: Optional fallback for the public Google rating, count, and selected reviews when Business Profile API access is not configured. Without API credentials, the site uses a dated, source-linked snapshot verified against the clinic's public Google profile.
 - `GOOGLE_BUSINESS_PROFILE_MAPS_URL`: Optional direct link to the clinic's Google Maps profile. A Bhubaneswar search link is used when omitted.
 
 Do not commit `.env`, `.env.local`, or any real secret values.

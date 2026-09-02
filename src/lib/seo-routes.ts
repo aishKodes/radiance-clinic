@@ -44,6 +44,9 @@ export const localLandingRoutes = [
   "/acne-treatment-bhubaneswar",
   "/hair-loss-clinic-bhubaneswar",
   "/wart-removal-bhubaneswar",
+  "/botox-treatment-bhubaneswar",
+  "/dermal-fillers-bhubaneswar",
+  "/tattoo-removal-bhubaneswar",
 ] as const;
 
 export const localLandingRouteSet = new Set<string>(localLandingRoutes);

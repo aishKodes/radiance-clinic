@@ -63,6 +63,19 @@ function reviewCount(value?: number) {
   return value ? new Intl.NumberFormat("en-IN").format(value) : undefined;
 }
 
+function verifiedDate(value?: string) {
+  if (!value) return undefined;
+  const date = new Date(`${value}T00:00:00Z`);
+  if (Number.isNaN(date.getTime())) return undefined;
+
+  return new Intl.DateTimeFormat("en-IN", {
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+    timeZone: "UTC",
+  }).format(date);
+}
+
 function StarRating({ rating }: { rating: number }) {
   return (
     <span
@@ -98,6 +111,8 @@ export default async function ReviewsPage() {
   const hasGoogleSummary = Boolean(
     googleReviews.rating || googleReviews.totalReviewCount,
   );
+  const isVerifiedSnapshot = googleReviews.source === "verified-snapshot";
+  const snapshotDate = verifiedDate(googleReviews.verifiedAt);
 
   return (
     <>
@@ -161,8 +176,9 @@ export default async function ReviewsPage() {
                   </p>
                 ) : null}
                 <p className="mt-5 text-sm leading-7 text-white/58">
-                  Rating and review count are supplied by the clinic&apos;s
-                  Google profile.
+                  {isVerifiedSnapshot && snapshotDate
+                    ? `Rating and review count verified on Google on ${snapshotDate}. Visit Google for the latest figures.`
+                    : "Rating and review count are supplied by the clinic's Google profile."}
                 </p>
               </>
             ) : (
@@ -194,7 +210,9 @@ export default async function ReviewsPage() {
             }
             description={
               visibleGoogleReviews.length
-                ? "Recent written reviews supplied directly by Google. Visit the clinic profile to see the complete and most current review history."
+                ? isVerifiedSnapshot
+                  ? "Selected written reviews verified on the clinic's Google profile. Visit Google to see the complete and most current review history."
+                  : "Recent written reviews supplied directly by Google. Visit the clinic profile to see the complete and most current review history."
                 : "The clinic's Google profile carries the latest rating, review count and patient feedback in one place."
             }
           />

@@ -21,7 +21,7 @@ const commercialReviewRows = [
     review_priority: "P0",
     medical_claims_present: "yes",
     reviewer,
-    status: "READY_FOR_MEDICAL_REVIEW",
+    status: "DOCTOR_APPROVED_PUBLISHED",
   },
   {
     url: "/dermal-fillers-bhubaneswar",
@@ -35,7 +35,7 @@ const commercialReviewRows = [
     review_priority: "P0",
     medical_claims_present: "yes",
     reviewer,
-    status: "READY_FOR_MEDICAL_REVIEW",
+    status: "DOCTOR_APPROVED_PUBLISHED",
   },
   {
     url: "/tattoo-removal-bhubaneswar",
@@ -49,7 +49,7 @@ const commercialReviewRows = [
     review_priority: "P0",
     medical_claims_present: "yes",
     reviewer,
-    status: "READY_FOR_MEDICAL_REVIEW",
+    status: "DOCTOR_APPROVED_PUBLISHED",
   },
 ];
 
@@ -62,6 +62,9 @@ const knownRoutes = new Set([
   "/laser-hair-removal-bhubaneswar",
   "/acne-scar-treatment-bhubaneswar",
   "/pigmentation-treatment-bhubaneswar",
+  "/botox-treatment-bhubaneswar",
+  "/dermal-fillers-bhubaneswar",
+  "/tattoo-removal-bhubaneswar",
   "/concerns/hair-loss-scalp/hair-loss",
   "/concerns/hair-loss-scalp/female-pattern-hair-loss",
   "/concerns/hair-loss-scalp/dandruff",
@@ -158,7 +161,10 @@ function targetFor(record, family) {
   if (/dark circle|under eye/.test(text)) return "/concerns/pigmentation/under-eye-dark-circles";
   if (/pigment|dark spot|tan|age spot|skin bright/.test(text)) return "/pigmentation-treatment-bhubaneswar";
   if (/laser hair|hair removal|body hair|facial hair|waxing/.test(text)) return "/laser-hair-removal-bhubaneswar";
-  if (/filler|botox|injectable|wrinkle|anti aging|antiageing|facelift|face lift|volume|hifu|ultherapy/.test(text)) return "/treatments/aesthetic-dermatology/injectable-aesthetics";
+  if (/tattoo removal|remove tattoo/.test(text)) return "/tattoo-removal-bhubaneswar";
+  if (/botox|botulinum toxin/.test(text) && !/hair botox/.test(text)) return "/botox-treatment-bhubaneswar";
+  if (/dermal filler|facial filler|\bfillers?\b/.test(text)) return "/dermal-fillers-bhubaneswar";
+  if (/injectable|wrinkle|anti aging|antiageing|facelift|face lift|volume|hifu|ultherapy/.test(text)) return "/treatments/aesthetic-dermatology/injectable-aesthetics";
   if (/stretch mark/.test(text)) return "/concerns/scars-stretch-marks/stretch-marks";
   if (/keloid|raised scar/.test(text)) return "/concerns/scars-stretch-marks/raised-scars-keloids";
   if (/wart|mole|skin tag/.test(text)) return "/concerns/other-skin-concerns/moles-and-warts";
@@ -384,7 +390,7 @@ async function main() {
     "",
     "- `/hair-loss-treatment-bhubaneswar` permanently redirects to `/hair-loss-clinic-bhubaneswar` so one canonical local hair-loss page owns that intent.",
     "- `/fue-hair-transplant-bhubaneswar` permanently redirects to `/treatments/hair-restoration/fue-hair-transplant` so the established treatment route owns FUE planning intent.",
-    "- `/botox-treatment-bhubaneswar`, `/dermal-fillers-bhubaneswar` and `/tattoo-removal-bhubaneswar` remain `READY_FOR_MEDICAL_REVIEW`, `noindex` and excluded from the sitemap until approval is recorded.",
+    "- `/botox-treatment-bhubaneswar`, `/dermal-fillers-bhubaneswar` and `/tattoo-removal-bhubaneswar` are doctor-approved, indexable and included in the sitemap.",
     "",
     ...collisions.flatMap(([target, rows]) => [
       `## ${target}`,

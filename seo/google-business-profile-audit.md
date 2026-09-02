@@ -1,6 +1,6 @@
 # Google Business Profile Audit
 
-Checked on 24 August 2026 through the authenticated Google Business Profile management interface.
+Profile details were audited on 24 August 2026. The public rating and review count were rechecked on 2 September 2026 through Google Maps and the authenticated Google Business Profile review interface.
 
 ## Verified State
 
@@ -8,13 +8,14 @@ Checked on 24 August 2026 through the authenticated Google Business Profile mana
 - Verification state: **verified**
 - Actual clinic location represented: Nayapalli, Bhubaneswar
 - Primary phone shown: **9238321888**
-- Google review count shown: **2,276**
+- Google rating shown: **4.8**
+- Google review count shown: **2,279**
 - Profile strength shown: **complete**
 - New reviews awaiting attention in the management interface: **4**
 - Photos were last added **68 days** before this audit
 - Website link is present
 
-The live review count is recorded as observed. The website must not hard-code a higher count or publish copied review text without a legitimate source and permission.
+The website fallback snapshot matches the observed public profile and links visitors to Google for the current rating and complete review history. Live Google API data remains the preferred source when production credentials are configured.
 
 ## P0 Consistency Issues
 

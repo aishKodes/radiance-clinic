@@ -4,11 +4,11 @@ legacy_url,destination_url,status,reason,equivalence_confidence,notes
 /blogs,https://www.radianceclinics.com/knowledge,active-permanent,Knowledge library replaces the old blog index,high,Direct content-hub replacement.
 /body-piercing,,deferred-verification,No verified current body-piercing page,none,Do not redirect to an unrelated clinic page
 /book-online-radiance-clinics-bhuabaneswar,https://www.radianceclinics.com/contact,active-permanent,Current appointment and contact page,high,High-impression booking URL is preserved.
-/botox-treatment,https://www.radianceclinics.com/treatments/aesthetic-dermatology/injectable-aesthetics,active-permanent,Current injectable consultation pathway,high,Prevents commercial intent duplication.
+/botox-treatment,https://www.radianceclinics.com/botox-treatment-bhubaneswar,active-permanent,Dedicated doctor-approved Botox treatment page,high,Prevents commercial Botox intent duplication.
 /contact-us,https://www.radianceclinics.com/contact,active-permanent,Equivalent appointment and clinic contact page,high,Direct one-hop replacement.
 /dermatology-clinic-in-bhubaneswar,https://www.radianceclinics.com/skin-clinic-bhubaneswar,active-permanent,Canonical skin-clinic intent page,high,Prevents duplicate local-intent pages.
 /ear-piercing,,deferred-verification,No verified current ear-piercing page,none,Do not redirect to an unrelated clinic page
-/fillers,https://www.radianceclinics.com/treatments/aesthetic-dermatology/injectable-aesthetics,active-permanent,Equivalent injectable aesthetics consultation page,high,No new unverified treatment claim is introduced.
+/fillers,https://www.radianceclinics.com/dermal-fillers-bhubaneswar,active-permanent,Dedicated doctor-approved dermal fillers page,high,Commercial filler intent is preserved on the canonical local page.
 /fue-hair-transplant-bhubaneswar,https://www.radianceclinics.com/treatments/hair-restoration/fue-hair-transplant,active-permanent,Existing canonical FUE planning page,high,Preserves the established FUE route and avoids cannibalisation.
 /hair-loss-causes,https://www.radianceclinics.com/knowledge/hair-loss-causes-and-assessment,active-permanent,Equivalent reviewed hair-loss guide,high,Overlapping education is consolidated.
 /hair-loss-treatment-bhubaneswar,https://www.radianceclinics.com/hair-loss-clinic-bhubaneswar,active-permanent,Existing canonical hair loss consultation page,high,Prevents a duplicate local commercial hair-loss page.
@@ -32,7 +32,7 @@ legacy_url,destination_url,status,reason,equivalence_confidence,notes
 /laser-hair-removal-radiance,https://www.radianceclinics.com/laser-hair-removal-bhubaneswar,active-permanent,Equivalent laser hair removal page,high,Local commercial intent is preserved.
 /mole-wart-removal,https://www.radianceclinics.com/wart-removal-bhubaneswar,active-permanent,Dedicated wart assessment and removal page,high,The replacement avoids diagnosing an uncertain lesion online.
 /photo-gallery,https://www.radianceclinics.com/results,active-permanent,Closest current verified result and clinic collection,medium,No private or unverified imagery is exposed.
-/post/a-complete-guide-to-know-about-botox-treatment,https://www.radianceclinics.com/treatments/aesthetic-dermatology/injectable-aesthetics,active-permanent,Current injectable consultation pathway,medium,Avoids creating a duplicate Botox-intent page.
+/post/a-complete-guide-to-know-about-botox-treatment,https://www.radianceclinics.com/botox-treatment-bhubaneswar,active-permanent,Dedicated doctor-approved Botox treatment page,high,Legacy Botox education and commercial intent are consolidated in one canonical page.
 /post/acne-check-peel-your-comprehensive-guide-to-clearer-skin,https://www.radianceclinics.com/acne-treatment-bhubaneswar,active-permanent,Canonical active acne treatment page,medium,Procedure selection follows assessment.
 /post/can-laser-hair-removal-permanently-remove-hair,https://www.radianceclinics.com/laser-hair-removal-bhubaneswar,active-permanent,Canonical laser hair reduction page,high,The destination avoids guaranteed permanent-removal claims.
 /post/hair-transplants-what-to-expect,https://www.radianceclinics.com/knowledge/hair-transplant-aftercare,active-permanent,Current transplant recovery and aftercare guide,medium,Fixed outcome and timeline claims are not carried forward.
@@ -59,7 +59,7 @@ legacy_url,destination_url,status,reason,equivalence_confidence,notes
 /skin-pigmentation,https://www.radianceclinics.com/pigmentation-treatment-bhubaneswar,active-permanent,Equivalent pigmentation assessment page,high,Direct one-hop replacement.
 /split-ear-repair,,deferred-verification,No verified current split-ear repair page,none,Confirm clinical scope before rebuilding
 /tan-removal,https://www.radianceclinics.com/pigmentation-treatment-bhubaneswar,active-permanent,Current pigmentation consultation pathway,medium,The destination covers diagnosis before treatment selection.
-/tattoo-removal-radiance,,deferred-verification,No verified current tattoo-removal page,none,Confirm the current service and device before rebuilding
+/tattoo-removal-radiance,https://www.radianceclinics.com/tattoo-removal-bhubaneswar,active-permanent,Dedicated doctor-approved laser tattoo removal page,high,Historical tattoo-removal visibility is consolidated on the canonical local page.
 /treatment/acne-scars,https://www.radianceclinics.com/acne-scar-treatment-bhubaneswar,active-permanent,Current acne scar assessment pathway,high,Direct one-hop replacement.
 /treatment/acne-treatment,https://www.radianceclinics.com/acne-treatment-bhubaneswar,active-permanent,Current active acne assessment pathway,high,Active acne intent is kept separate from scar treatment.
 /treatment/anti-ageing-therapies,https://www.radianceclinics.com/treatments/aesthetic-dermatology,active-permanent,Current aesthetic dermatology hub,high,Broad category intent is preserved.

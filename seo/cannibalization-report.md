@@ -1,9 +1,9 @@
 # Legacy Cannibalization Report
 
-Generated: 2026-08-24T09:03:14.262Z
+Generated: 2026-09-02T08:58:59.914Z
 
 - Structured legacy records: 300
-- Shared target groups requiring merge/redirect decisions: 16
+- Shared target groups requiring merge/redirect decisions: 19
 
 Scores are triage signals only. A high score does not override medical safety, factual accuracy, duplicate intent or current service alignment.
 
@@ -11,7 +11,7 @@ Scores are triage signals only. A high score does not override medical safety, f
 
 - `/hair-loss-treatment-bhubaneswar` permanently redirects to `/hair-loss-clinic-bhubaneswar` so one canonical local hair-loss page owns that intent.
 - `/fue-hair-transplant-bhubaneswar` permanently redirects to `/treatments/hair-restoration/fue-hair-transplant` so the established treatment route owns FUE planning intent.
-- `/botox-treatment-bhubaneswar`, `/dermal-fillers-bhubaneswar` and `/tattoo-removal-bhubaneswar` remain `READY_FOR_MEDICAL_REVIEW`, `noindex` and excluded from the sitemap until approval is recorded.
+- `/botox-treatment-bhubaneswar`, `/dermal-fillers-bhubaneswar` and `/tattoo-removal-bhubaneswar` are doctor-approved, indexable and included in the sitemap.
 
 ## /about
 
@@ -129,10 +129,8 @@ Scores are triage signals only. A high score does not override medical safety, f
 - Atopic Dermatitis — score 45; MERGE; https://www.radianceclinics.com/conditions/atopic-dermatitis/
 - 4D Photofacial — score 40; MERGE; https://www.radianceclinics.com/treatment/premium-services/4d-photofacial/
 - Diamond Polishing — score 40; MERGE; https://www.radianceclinics.com/treatment/acne-treatment/diamond-polishing/
-- Laser Tattoo Removal — score 40; MERGE; https://www.radianceclinics.com/conditions/laser-tattoo-removal/
 - Photo Facial — score 35; MERGE; https://www.radianceclinics.com/treatment/bridal-dermatology/photofacial/
 - Peels — score 35; MERGE; https://www.radianceclinics.com/treatment/premium-services/peels/
-- Tattoo Removal — score 20; MERGE; https://www.radianceclinics.com/tattoo-removal-radiance/
 
 ## /hair-transplant-bhubaneswar
 
@@ -197,28 +195,6 @@ Scores are triage signals only. A high score does not override medical safety, f
 - Locations — score -40; ARCHIVE; https://www.radianceclinics.com/locations/
 - Virtual Tour — score -50; ARCHIVE; https://www.radianceclinics.com/virtual-tour/
 - Thank You — score -130; ARCHIVE; https://www.radianceclinics.com/thank-you/
-
-## /treatments/aesthetic-dermatology/injectable-aesthetics
-
-- A Complete Guide to Know About Botox Treatment in Bhubaneswar — score 85; EXPAND; https://www.radianceclinics.com/post/a-complete-guide-to-know-about-botox-treatment/
-- Are Fillers Treatments Safe? — score 80; CONVERT_TO_QA; https://www.radianceclinics.com/post/are-fillers-treatments-safe/
-- Aging Gracefully with Botox: How It Can Enhance Your Natural Beauty — score 80; EXPAND; https://www.radianceclinics.com/post/aging-gracefully-with-botox-how-it-can-enhance-your-natural-beauty/
-- Fillers Treatment at Radiance Skin and Hair Clinics in Bhubaneswar — score 80; EXPAND; https://www.radianceclinics.com/post/fillers-treatment-at-radiance-skin-and-hair-clinics-in-bhubaneswar/
-- Botox vs. Fillers: Which is Right for You? — score 80; EXPAND; https://www.radianceclinics.com/post/botox-vs-fillers-which-is-right-for-you/
-- Which Filler Is Right for You? Expert Advice — score 80; EXPAND; https://www.radianceclinics.com/post/which-filler-is-right-for-you-expert-advice/
-- Anti Wrinkle — score 75; EXPAND; https://www.radianceclinics.com/anti-wrinkle-radiance/
-- Using Botox and Fillers for Anti-Aging Treatments — score 75; EXPAND; https://www.radianceclinics.com/post/using-botox-and-fillers-for-anti-aging-treatments/
-- How Facial Fillers Can Enhance Your Natural Beauty — score 75; CONVERT_TO_QA; https://www.radianceclinics.com/post/how-facial-fillers-can-enhance-your-natural-beauty/
-- Fillers — score 60; MERGE; https://www.radianceclinics.com/fillers/
-- Ultherapy — score 60; MERGE; https://www.radianceclinics.com/treatment/anti-ageing-therapies/ultherapy/
-- Botox Treatment — score 60; MERGE; https://www.radianceclinics.com/post/botox-treatment/
-- Dermal Fillers — score 55; MERGE; https://www.radianceclinics.com/treatment/bridal-dermatology/dermal-fillers/
-- PRP Facelift — score 55; MERGE; https://www.radianceclinics.com/treatment/anti-ageing-therapies/prp-facelift/
-- Invisible Facelift — score 50; MERGE; https://www.radianceclinics.com/invisible-facelift-at-bhubaneswar/
-- Wrinkles — score 50; MERGE; https://www.radianceclinics.com/conditions/antiageing/wrinkle/
-- Filler — score 45; MERGE; https://www.radianceclinics.com/treatment/anti-ageing-therapies/filler/
-- Botox — score 30; MERGE; https://www.radianceclinics.com/botox-treatment/
-- What Are the Latest Trends in Filler Treatment? — score 5; CONVERT_TO_QA; https://www.radianceclinics.com/post/what-are-the-latest-trends-in-filler-treatment/
 
 ## /concerns/hair-loss-scalp/hair-loss
 
@@ -296,6 +272,26 @@ Scores are triage signals only. A high score does not override medical safety, f
 - Dermaroller — score 55; MERGE; https://www.radianceclinics.com/treatment/stretch-marks/dermaroller/
 - Acne Scar Removal — score 50; MERGE; https://www.radianceclinics.com/conditions/acne-scar-removal/
 
+## /dermal-fillers-bhubaneswar
+
+- Are Fillers Treatments Safe? — score 80; CONVERT_TO_QA; https://www.radianceclinics.com/post/are-fillers-treatments-safe/
+- Fillers Treatment at Radiance Skin and Hair Clinics in Bhubaneswar — score 80; EXPAND; https://www.radianceclinics.com/post/fillers-treatment-at-radiance-skin-and-hair-clinics-in-bhubaneswar/
+- Which Filler Is Right for You? Expert Advice — score 80; EXPAND; https://www.radianceclinics.com/post/which-filler-is-right-for-you-expert-advice/
+- How Facial Fillers Can Enhance Your Natural Beauty — score 75; CONVERT_TO_QA; https://www.radianceclinics.com/post/how-facial-fillers-can-enhance-your-natural-beauty/
+- Fillers — score 60; MERGE; https://www.radianceclinics.com/fillers/
+- Dermal Fillers — score 55; MERGE; https://www.radianceclinics.com/treatment/bridal-dermatology/dermal-fillers/
+- Filler — score 45; MERGE; https://www.radianceclinics.com/treatment/anti-ageing-therapies/filler/
+- What Are the Latest Trends in Filler Treatment? — score 5; CONVERT_TO_QA; https://www.radianceclinics.com/post/what-are-the-latest-trends-in-filler-treatment/
+
+## /botox-treatment-bhubaneswar
+
+- A Complete Guide to Know About Botox Treatment in Bhubaneswar — score 85; EXPAND; https://www.radianceclinics.com/post/a-complete-guide-to-know-about-botox-treatment/
+- Aging Gracefully with Botox: How It Can Enhance Your Natural Beauty — score 80; EXPAND; https://www.radianceclinics.com/post/aging-gracefully-with-botox-how-it-can-enhance-your-natural-beauty/
+- Botox vs. Fillers: Which is Right for You? — score 80; EXPAND; https://www.radianceclinics.com/post/botox-vs-fillers-which-is-right-for-you/
+- Using Botox and Fillers for Anti-Aging Treatments — score 75; EXPAND; https://www.radianceclinics.com/post/using-botox-and-fillers-for-anti-aging-treatments/
+- Botox Treatment — score 60; MERGE; https://www.radianceclinics.com/post/botox-treatment/
+- Botox — score 30; MERGE; https://www.radianceclinics.com/botox-treatment/
+
 ## /concerns/pigmentation/under-eye-dark-circles
 
 - Can Skin Clinics Help With Dark Circles and Under-Eye Concerns? — score 80; CONVERT_TO_QA; https://www.radianceclinics.com/post/can-skin-clinics-help-with-dark-circles-and-under-eye-concerns/
@@ -303,6 +299,14 @@ Scores are triage signals only. A high score does not override medical safety, f
 - Laser vs. Fillers vs. Creams – What Truly Works for Under Eye Bags — score 75; EXPAND; https://www.radianceclinics.com/post/laser-vs-fillers-vs-creams-what-truly-works-for-under-eye-bags/
 - Under Eye Rejuvenation — score 65; EXPAND; https://www.radianceclinics.com/treatment/bridal-dermatology/under-eye-rejuvenation/
 - Dark Circles — score 50; MERGE; https://www.radianceclinics.com/conditions/dark-circles/
+
+## /treatments/aesthetic-dermatology/injectable-aesthetics
+
+- Anti Wrinkle — score 75; EXPAND; https://www.radianceclinics.com/anti-wrinkle-radiance/
+- Ultherapy — score 60; MERGE; https://www.radianceclinics.com/treatment/anti-ageing-therapies/ultherapy/
+- PRP Facelift — score 55; MERGE; https://www.radianceclinics.com/treatment/anti-ageing-therapies/prp-facelift/
+- Invisible Facelift — score 50; MERGE; https://www.radianceclinics.com/invisible-facelift-at-bhubaneswar/
+- Wrinkles — score 50; MERGE; https://www.radianceclinics.com/conditions/antiageing/wrinkle/
 
 ## /concerns/other-skin-concerns/moles-and-warts
 
@@ -316,6 +320,12 @@ Scores are triage signals only. A high score does not override medical safety, f
 - How Many PRP Sessions Are Needed for Visible Hair Growth — score 85; CONVERT_TO_QA; https://www.radianceclinics.com/post/how-many-prp-sessions-are-needed-for-visible-hair-growth/
 - What Is GFC Treatment And How Does It Help In Hair Regrowth — score 75; CONVERT_TO_QA; https://www.radianceclinics.com/post/what-is-gfc-treatment-and-how-does-it-help-in-hair-regrowth/
 - How PRP Treatment Helps In Hair Fall Control And Regrowth Naturally — score 70; CONVERT_TO_QA; https://www.radianceclinics.com/post/how-prp-treatment-helps-in-hair-fall-control-and-regrowth-naturally/
+
+## /tattoo-removal-bhubaneswar
+
+- Four misconceptions people have about laser tattoo removal in Bhubaneswar — score 80; EXPAND; https://www.radianceclinics.com/post/four-misconceptions-people-have-about-laser-tattoo-removal-in-bhubaneswar/
+- Laser Tattoo Removal — score 40; MERGE; https://www.radianceclinics.com/conditions/laser-tattoo-removal/
+- Tattoo Removal — score 20; MERGE; https://www.radianceclinics.com/tattoo-removal-radiance/
 
 ## /concerns/hair-loss-scalp/dandruff
 

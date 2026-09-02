@@ -290,6 +290,11 @@ export function SocialCommunitySection({
             See patient feedback about consultations, clinic care and treatment
             planning on the clinic&apos;s Google profile.
           </p>
+          {reviewSummary.featuredReviewExcerpts?.[0] ? (
+            <blockquote className="mt-5 line-clamp-4 border-l-2 border-[var(--champagne)]/55 pl-4 text-sm leading-7 text-white/78">
+              &ldquo;{reviewSummary.featuredReviewExcerpts[0]}&rdquo;
+            </blockquote>
+          ) : null}
           {reviewSummary.googleRating ? (
             <p className="mt-5 font-mono text-2xl font-extrabold text-[var(--champagne)]">
               {reviewSummary.googleRating} rating

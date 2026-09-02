@@ -105,6 +105,10 @@ export const treatmentNavigationGroups = [
         label: "Acne scar revision",
         href: "/treatments/skin-laser/acne-scar-revision",
       },
+      {
+        label: "Laser tattoo removal",
+        href: "/tattoo-removal-bhubaneswar",
+      },
     ],
   },
   {
@@ -115,6 +119,8 @@ export const treatmentNavigationGroups = [
         label: "Injectables and fillers",
         href: "/treatments/aesthetic-dermatology/injectable-aesthetics",
       },
+      { label: "Botox treatment", href: "/botox-treatment-bhubaneswar" },
+      { label: "Dermal fillers", href: "/dermal-fillers-bhubaneswar" },
       { label: "Skin ageing and laxity", href: "/conditions/skin-ageing-laxity" },
     ],
   },

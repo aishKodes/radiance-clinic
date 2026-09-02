@@ -1,4 +1,14 @@
 import { unstable_cache } from "next/cache";
+import { verifiedGoogleReviewsSnapshot } from "@/data/google-reviews-snapshot";
+import type {
+  GoogleReviewItem,
+  GoogleReviewsFeed,
+} from "@/types/google-reviews";
+
+export type {
+  GoogleReviewItem,
+  GoogleReviewsFeed,
+} from "@/types/google-reviews";
 
 const DEFAULT_GOOGLE_MAPS_URL =
   "https://www.google.com/maps/search/?api=1&query=Radiance%20Clinics%20Bhubaneswar";
@@ -53,25 +63,6 @@ type GoogleTokenResponse = {
   access_token?: string;
 };
 
-export type GoogleReviewItem = {
-  id: string;
-  reviewerName: string;
-  rating: number;
-  text: string;
-  publishedAt?: string;
-  relativePublishedAt?: string;
-  reviewerProfileUrl?: string;
-  sourceUrl: string;
-};
-
-export type GoogleReviewsFeed = {
-  source: "business-profile" | "places" | "unavailable";
-  rating?: number;
-  totalReviewCount?: number;
-  googleMapsUrl: string;
-  reviews: GoogleReviewItem[];
-};
-
 function env(name: string) {
   return process.env[name]?.trim() || "";
 }
@@ -114,11 +105,7 @@ function uniqueReviews(reviews: GoogleReviewItem[]) {
 }
 
 function unavailableFeed(): GoogleReviewsFeed {
-  return {
-    source: "unavailable",
-    googleMapsUrl: mapsUrl(),
-    reviews: [],
-  };
+  return verifiedGoogleReviewsSnapshot;
 }
 
 function hasBusinessProfileConfig() {
@@ -302,7 +289,7 @@ async function fetchGoogleReviews(): Promise<GoogleReviewsFeed> {
 
 const getCachedGoogleReviews = unstable_cache(
   fetchGoogleReviews,
-  ["radiance-google-reviews-v1"],
+  ["radiance-google-reviews-v2"],
   {
     revalidate: REVIEW_REFRESH_SECONDS,
     tags: ["google-reviews"],
@@ -311,7 +298,7 @@ const getCachedGoogleReviews = unstable_cache(
 
 export async function getGoogleReviewsFeed() {
   if (!hasBusinessProfileConfig() && !hasPlacesConfig()) {
-    return unavailableFeed();
+    return verifiedGoogleReviewsSnapshot;
   }
 
   return getCachedGoogleReviews();

@@ -31,7 +31,7 @@ suggested_url,topic,intent,priority,reason,verified_information_available,medica
 /knowledge/laser-hair-removal-preparation-aftercare,Laser hair reduction preparation and aftercare,informational,high,Clinic-specific protocol requires verification,partial,yes,optional,awaiting-medical-review
 /hair-wig,Non-surgical hair system,transactional,medium,Current service availability is not verified,no,yes,yes,service-verification-required
 /hair-patch,Hair patch service,transactional,medium,Current service availability is not verified,no,yes,yes,service-verification-required
-/tattoo-removal-bhubaneswar,Tattoo removal,local-transactional,medium,Current service and technology are not verified,no,yes,yes,service-verification-required
+/tattoo-removal-bhubaneswar,Tattoo removal,local-transactional,medium,Doctor-approved service page is published,yes,no,no,published
 /conditions/vitiligo,Vitiligo guidance,informational,medium,Clinic treatment scope and medical content are not verified,no,yes,optional,medical-review-required
 /treatments/skin/stretch-mark-treatment,Stretch mark treatment,commercial-investigation,medium,Current modalities and suitability guidance are not verified,no,yes,yes,service-verification-required
 /treatments/skin/mole-wart-removal,Mole and wart removal,commercial-investigation,medium,Existing page only mentions the concern and lacks treatment detail,partial,yes,yes,awaiting-medical-review
