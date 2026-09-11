@@ -30,13 +30,34 @@ export function LocalSeoLandingPage({
     ...page.relatedLinks,
     ...(relationships
       ? [
-          { href: relationships.hub, label: "Treatment category overview", description: "Compare relevant treatment pathways and concerns." },
-          ...relationships.articles.map((href) => ({ href, label: "Related patient guide", description: "Read practical guidance before choosing a treatment." })),
-          { href: relationships.results, label: "Relevant treatment results", description: "Review consent-confirmed comparisons and realistic context." },
-          { href: "/locations", label: "Visiting from elsewhere in Odisha", description: "Plan a visit to the verified Nayapalli, Bhubaneswar clinic." },
+          {
+            href: relationships.hub,
+            label: "Treatment category overview",
+            description: "Compare relevant treatment pathways and concerns.",
+          },
+          ...relationships.articles.map((href) => ({
+            href,
+            label: "Related patient guide",
+            description: "Read practical guidance before choosing a treatment.",
+          })),
+          {
+            href: relationships.results,
+            label: "Relevant treatment results",
+            description:
+              "Review consent-confirmed comparisons and realistic context.",
+          },
+          {
+            href: "/locations",
+            label: "Visiting from elsewhere in Odisha",
+            description:
+              "Plan a visit to the verified Nayapalli, Bhubaneswar clinic.",
+          },
         ]
       : []),
-  ].filter((item, index, items) => items.findIndex((candidate) => candidate.href === item.href) === index);
+  ].filter(
+    (item, index, items) =>
+      items.findIndex((candidate) => candidate.href === item.href) === index,
+  );
 
   return (
     <>
@@ -70,7 +91,11 @@ export function LocalSeoLandingPage({
               Book Appointment
             </OpenBookingButton>
             <ConversionLink
-              href={whatsappHref(clinic.whatsapp, `/${page.slug}`, page.serviceName)}
+              href={whatsappHref(
+                clinic.whatsapp,
+                `/${page.slug}`,
+                page.serviceName,
+              )}
               eventName="whatsapp_click"
               topic={page.serviceName}
               className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-white/28 bg-white/10 px-6 py-3 text-sm font-extrabold uppercase tracking-[0.1em] text-white transition hover:bg-white/18"
@@ -174,6 +199,64 @@ export function LocalSeoLandingPage({
           </div>
         </div>
       </section>
+
+      {page.decisionGuide ? (
+        <section
+          aria-labelledby={`${page.slug}-selection-guide`}
+          className="bg-[var(--ink)] px-5 py-16 text-[var(--ivory)] sm:px-8 sm:py-20 lg:py-28"
+        >
+          <div className="mx-auto max-w-7xl">
+            <div className="grid gap-10 lg:grid-cols-[0.78fr_1.22fr] lg:gap-16">
+              <div>
+                <p className="text-xs font-extrabold uppercase tracking-[0.24em] text-[var(--champagne)]">
+                  Making an informed choice
+                </p>
+                <h2
+                  id={`${page.slug}-selection-guide`}
+                  className="mt-4 font-serif text-4xl leading-tight sm:text-5xl"
+                >
+                  {page.decisionGuide.title}
+                </h2>
+                <p className="mt-5 text-base leading-8 text-white/68">
+                  {page.decisionGuide.introduction}
+                </p>
+              </div>
+
+              <div>
+                <dl className="grid gap-x-8 sm:grid-cols-2">
+                  {page.decisionGuide.criteria.map((criterion) => (
+                    <div
+                      key={criterion.title}
+                      className="border-t border-white/14 py-5"
+                    >
+                      <dt className="text-base font-extrabold text-white">
+                        {criterion.title}
+                      </dt>
+                      <dd className="mt-2 text-sm leading-7 text-white/64">
+                        {criterion.text}
+                      </dd>
+                    </div>
+                  ))}
+                </dl>
+
+                <div className="mt-7 border-l-2 border-[var(--champagne)]/55 pl-5 sm:pl-6">
+                  <h3 className="text-lg font-extrabold text-white">
+                    What you can verify at Radiance Clinics
+                  </h3>
+                  <ul className="mt-4 grid gap-3 text-sm leading-7 text-white/72 sm:grid-cols-2">
+                    {page.decisionGuide.verifiedElements.map((element) => (
+                      <li key={element} className="flex gap-3">
+                        <ShieldCheck className="mt-1 h-4 w-4 shrink-0 text-[var(--champagne)]" />
+                        {element}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      ) : null}
 
       <section className="bg-[var(--ivory)] px-5 py-16 sm:px-8 sm:py-20 lg:py-28">
         <div className="mx-auto max-w-7xl">

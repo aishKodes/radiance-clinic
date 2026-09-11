@@ -43,6 +43,8 @@ export const localLandingRoutes = [
   "/pigmentation-treatment-bhubaneswar",
   "/acne-treatment-bhubaneswar",
   "/hair-loss-clinic-bhubaneswar",
+  "/alopecia-areata-treatment-bhubaneswar",
+  "/non-surgical-hair-replacement-bhubaneswar",
   "/wart-removal-bhubaneswar",
   "/botox-treatment-bhubaneswar",
   "/dermal-fillers-bhubaneswar",

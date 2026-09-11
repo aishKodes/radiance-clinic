@@ -83,7 +83,7 @@ function destinationsFor(topic, contentType) {
     "Tattoo Removal": ["/tattoo-removal-bhubaneswar", "/treatments/laser", "/skin-clinic-bhubaneswar"],
     "Scars & Stretch Marks": ["/concerns/scars-stretch-marks", "/skin-clinic-bhubaneswar", "/knowledge/laser-skin-treatments-safety"],
     "General Skin Concerns": ["/concerns/other-skin-concerns", "/skin-clinic-bhubaneswar", "/doctor-answers/when-should-mole-be-checked"],
-    "Skin Health": ["/skin-clinic-bhubaneswar", "/concerns/skin-texture", "/knowledge/skin-care-doctor-bhubaneswar"],
+    "Skin Health": ["/skin-clinic-bhubaneswar", "/concerns/skin-texture", "/knowledge/laser-skin-treatments-safety"],
     "Clinic & Doctor": ["/about", "/videos", "/contact"],
     Other: ["/videos", "/knowledge", "/concerns"],
   }[topic] || ["/videos", "/knowledge", "/concerns"];

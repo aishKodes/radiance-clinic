@@ -31,7 +31,7 @@ export default function DoctorAnswersPage() {
         <div className="relative mx-auto max-w-7xl">
           <p className="mb-5 text-xs font-extrabold uppercase tracking-[0.32em] text-[var(--champagne)]">Questions patients ask</p>
           <h1 className="max-w-6xl font-serif text-[clamp(4rem,10vw,9rem)] leading-[0.86]">Doctor Answers</h1>
-          <p className="mt-8 max-w-3xl text-xl leading-9 text-white/64">Clear, contextual answers medically reviewed by {medicalReviewer.name}, with more than 30 years of clinical experience.</p>
+          <p className="mt-8 max-w-3xl text-xl leading-9 text-white/64">Clear, contextual answers medically reviewed by {medicalReviewer.name}, with {medicalReviewer.experience}.</p>
         </div>
       </section>
 

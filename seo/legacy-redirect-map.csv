@@ -13,7 +13,7 @@ legacy_url,destination_url,status,reason,equivalence_confidence,notes
 /hair-loss-causes,https://www.radianceclinics.com/knowledge/hair-loss-causes-and-assessment,active-permanent,Equivalent reviewed hair-loss guide,high,Overlapping education is consolidated.
 /hair-loss-treatment-bhubaneswar,https://www.radianceclinics.com/hair-loss-clinic-bhubaneswar,active-permanent,Existing canonical hair loss consultation page,high,Prevents a duplicate local commercial hair-loss page.
 /hair-loss-treatments,https://www.radianceclinics.com/hair-loss-clinic-bhubaneswar,active-permanent,Diagnosis-led hair loss consultation page,high,Replaces the former commercial hair loss page.
-/hair-patch,,deferred-verification,No verified current hair-system page,none,Service scope and replacement content need clinic confirmation
+/hair-patch,https://www.radianceclinics.com/non-surgical-hair-replacement-bhubaneswar,active-permanent,Current non-surgical hair replacement page,high,Former commercial hair-patch intent is restored without unsupported claims.
 /hair-transplant-in-angul,https://www.radianceclinics.com/hair-transplant-bhubaneswar,active-permanent,Verified clinic hair transplant page,medium,No Angul branch is claimed and no thin city page is created.
 /hair-transplant-in-balasore,https://www.radianceclinics.com/hair-transplant-bhubaneswar,active-permanent,Verified clinic hair transplant page,medium,No Balasore branch is claimed and no thin city page is created.
 /hair-transplant-in-baripada,https://www.radianceclinics.com/hair-transplant-baripada,active-permanent,Dedicated planning page for patients travelling from Baripada,high,The page clearly states that treatment is in Bhubaneswar.
@@ -74,4 +74,8 @@ legacy_url,destination_url,status,reason,equivalence_confidence,notes
 /treatment/premium-services/lip-pigmentation,,deferred-verification,No verified equivalent for lip pigmentation,none,Do not conflate cosmetic lip work with general pigmentation treatment
 /treatment/stretch-marks,https://www.radianceclinics.com/concerns/scars-stretch-marks,active-permanent,Current scars and stretch marks concern hub,high,No device or outcome is promised.
 /treatment/unwanted-hair,https://www.radianceclinics.com/laser-hair-removal-bhubaneswar,active-permanent,Current laser hair reduction pathway,high,Commercial unwanted-hair intent is preserved.
+/alopecia-treatment,https://www.radianceclinics.com/alopecia-areata-treatment-bhubaneswar,active-permanent,Current alopecia areata assessment page,high,Preserves the legacy sudden patchy hair-loss intent with reviewed content.
+/post/experience-natural-looking-hair-with-hair-patch,https://www.radianceclinics.com/non-surgical-hair-replacement-bhubaneswar,active-permanent,Canonical non-surgical hair replacement page,high,Consolidates overlapping hair-patch guidance.
+/knowledge/best-skin-clinic-bhubaneswar,https://www.radianceclinics.com/skin-clinic-bhubaneswar,active-permanent,Canonical skin-clinic decision page,high,Prevents a keyword-variant article from competing with the commercial page.
+/knowledge/skin-care-doctor-bhubaneswar,https://www.radianceclinics.com/skin-clinic-bhubaneswar,active-permanent,Canonical skin-clinic consultation page,high,Consolidates skin doctor and skin specialist variants under one query owner.
 /vitiligo-3,,deferred-verification,No medically reviewed vitiligo page,none,Medical review and current service verification required

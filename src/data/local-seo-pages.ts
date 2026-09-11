@@ -16,6 +16,12 @@ export type LocalSeoPage = {
   approachTitle: string;
   approachDescription: string;
   approachPoints: string[];
+  decisionGuide?: {
+    title: string;
+    introduction: string;
+    criteria: { title: string; text: string }[];
+    verifiedElements: string[];
+  };
   expectations: { title: string; text: string }[];
   relatedLinks: { href: string; label: string; description: string }[];
   faqs: { question: string; answer: string }[];
@@ -31,7 +37,7 @@ export const localSeoPages: LocalSeoPage[] = [
     serviceName: "Hair Transplant",
     metaTitle: "Hair Transplant in Bhubaneswar | Radiance Clinics",
     metaDescription:
-      "Plan a doctor-led FUE hair transplant in Bhubaneswar with donor-area assessment, hairline design and realistic restoration guidance at Radiance Clinics.",
+      "Consult Dr. Satyarth Prakash for doctor-led FUE hair transplant planning in Bhubaneswar, including donor assessment, hairline design and realistic guidance.",
     eyebrow: "Doctor-led hair restoration",
     title: "Hair Transplant in Bhubaneswar",
     heroDescription:
@@ -65,6 +71,35 @@ export const localSeoPages: LocalSeoPage[] = [
       "Graft distribution for visible coverage",
       "Clear preparation and post-procedure guidance",
     ],
+    decisionGuide: {
+      title: "How to choose a hair transplant clinic in Bhubaneswar",
+      introduction:
+        "A useful comparison goes beyond a quoted graft count. Look for a clinic that explains whether surgery is appropriate, protects the donor area and sets expectations for both transplanted and existing hair.",
+      criteria: [
+        {
+          title: "Doctor-led suitability assessment",
+          text: "The cause and stability of hair loss, scalp health, medical history and donor reserve should be reviewed before surgery is recommended.",
+        },
+        {
+          title: "Long-term donor planning",
+          text: "Hairline position and graft distribution should account for age, facial proportion, donor limits and possible future hair loss.",
+        },
+        {
+          title: "Clear risks and recovery guidance",
+          text: "The consultation should cover healing, temporary shedding, visible extraction marks, aftercare and the limits of achievable density.",
+        },
+        {
+          title: "Authentic evidence and follow-up",
+          text: "Review consent-led results in context and confirm how the clinic monitors recovery, growth progression and preservation of existing hair.",
+        },
+      ],
+      verifiedElements: [
+        "Consultations led by Dr. Satyarth Prakash",
+        "FUE planning with donor-area assessment",
+        "Consent-led hair restoration examples",
+        "Physical clinic in Nayapalli, Bhubaneswar",
+      ],
+    },
     expectations: [
       {
         title: "Consultation",
@@ -98,6 +133,18 @@ export const localSeoPages: LocalSeoPage[] = [
         description:
           "Review consent-led examples with realistic clinical context.",
       },
+      {
+        href: "/knowledge/hair-transplant-aftercare",
+        label: "Hair transplant aftercare",
+        description:
+          "Prepare for recovery, early shedding and review appointments.",
+      },
+      {
+        href: "/doctor-answers/how-many-grafts-receding-hairline",
+        label: "How graft planning is assessed",
+        description:
+          "Read the doctor's answer on why graft needs cannot be set from a hairline photograph alone.",
+      },
     ],
     faqs: [
       {
@@ -127,7 +174,7 @@ export const localSeoPages: LocalSeoPage[] = [
     serviceName: "Skin Consultation",
     metaTitle: "Skin Clinic in Bhubaneswar | Radiance Clinics",
     metaDescription:
-      "Visit Radiance Clinics for doctor-led skin consultation in Bhubaneswar for acne, scars, pigmentation, ageing, texture and laser treatment planning.",
+      "Looking for a skin clinic in Bhubaneswar? Get doctor-led assessment for acne, scars, pigmentation, ageing, texture and laser treatment planning.",
     eyebrow: "Skin, laser and aesthetic care",
     title: "Skin Clinic in Bhubaneswar",
     heroDescription:
@@ -160,6 +207,35 @@ export const localSeoPages: LocalSeoPage[] = [
       "Barrier support and aftercare guidance",
       "Review-based changes to the treatment plan",
     ],
+    decisionGuide: {
+      title: "How to choose a skin clinic in Bhubaneswar",
+      introduction:
+        "The right clinic should help identify what is causing the concern before offering a procedure. Compare the quality of the consultation, medical oversight and follow-up rather than relying on a generic package or unsupported ranking claim.",
+      criteria: [
+        {
+          title: "Diagnosis before treatment",
+          text: "Similar-looking acne, pigmentation, redness and texture concerns can have different causes and should be examined before a plan is selected.",
+        },
+        {
+          title: "Relevant treatment options",
+          text: "A clinic should be able to explain when home care, medical treatment, a procedure, a laser or a staged combination is appropriate.",
+        },
+        {
+          title: "Honest downtime and risk discussion",
+          text: "Preparation, discomfort, pigment risk, recovery, maintenance and realistic limits should be discussed in plain language.",
+        },
+        {
+          title: "Accessible follow-up",
+          text: "Confirm the clinic's physical location, contact process and how response or side effects will be reviewed after treatment.",
+        },
+      ],
+      verifiedElements: [
+        "Doctor-led consultations for skin concerns",
+        "Assessment across acne, scars, pigmentation and ageing",
+        "Skin-type aware laser and procedure planning",
+        "Verified Nayapalli address and direct contact numbers",
+      ],
+    },
     expectations: [
       {
         title: "Listen",
@@ -191,6 +267,12 @@ export const localSeoPages: LocalSeoPage[] = [
         label: "All skin and laser treatments",
         description:
           "Compare treatment pathways available at Radiance Clinics.",
+      },
+      {
+        href: "/knowledge/laser-skin-treatments-safety",
+        label: "Laser skin treatment safety",
+        description:
+          "Understand assessment, pigment risk, preparation and aftercare.",
       },
     ],
     faqs: [
@@ -255,6 +337,35 @@ export const localSeoPages: LocalSeoPage[] = [
       "Calibrated energy and cooling measures",
       "Clear sun protection and aftercare advice",
     ],
+    decisionGuide: {
+      title: "How to choose a laser clinic in Bhubaneswar",
+      introduction:
+        "Laser hair reduction depends on the interaction between the device, settings, skin type and hair profile. Choose a clinic that assesses these variables and explains progressive reduction without promising permanent removal of every hair.",
+      criteria: [
+        {
+          title: "Skin and hair assessment",
+          text: "Hair colour and thickness, skin type, tanning, medication and hormonal factors should be reviewed before treatment.",
+        },
+        {
+          title: "Calibrated treatment planning",
+          text: "Settings and session spacing should be selected for the treatment area and adjusted according to response rather than applied as one standard package.",
+        },
+        {
+          title: "Preparation and aftercare",
+          text: "Patients should receive clear guidance about shaving, sun exposure, root-removal methods, temporary reactions and when to contact the clinic.",
+        },
+        {
+          title: "Realistic maintenance advice",
+          text: "The clinic should explain hair-growth cycles, variable response and why occasional maintenance may be needed.",
+        },
+      ],
+      verifiedElements: [
+        "Doctor-supervised suitability assessment",
+        "Skin-type aware laser planning",
+        "Preparation and sun-protection guidance",
+        "Review between sessions at the Bhubaneswar clinic",
+      ],
+    },
     expectations: [
       {
         title: "Preparation",
@@ -286,6 +397,12 @@ export const localSeoPages: LocalSeoPage[] = [
         href: "/contact",
         label: "Book a consultation",
         description: "Contact Radiance Clinics for treatment-area guidance.",
+      },
+      {
+        href: "/doctor-answers/laser-hair-reduction-safe-darker-skin",
+        label: "Laser reduction for darker skin",
+        description:
+          "Read the doctor's answer on skin type, settings and pigment safety.",
       },
     ],
     faqs: [
@@ -350,6 +467,35 @@ export const localSeoPages: LocalSeoPage[] = [
       "Plan intensity around skin type and downtime",
       "Review texture and pigmentation between stages",
     ],
+    decisionGuide: {
+      title: "How to choose an acne-scar clinic in Bhubaneswar",
+      introduction:
+        "Acne-scar care is strongest when the clinic maps scar types and controls active acne before selecting procedures. Be cautious of a single-treatment promise for every scar pattern.",
+      criteria: [
+        {
+          title: "Scar-type assessment",
+          text: "The consultation should distinguish active acne, flat marks and ice-pick, boxcar, rolling or raised scars before treatment is discussed.",
+        },
+        {
+          title: "Staged treatment options",
+          text: "Mixed scar patterns may need different methods at different depths, with intensity planned around skin type and acceptable downtime.",
+        },
+        {
+          title: "Realistic improvement goals",
+          text: "A responsible clinic explains that complete scar removal cannot be guaranteed and documents progress under consistent conditions.",
+        },
+        {
+          title: "Recovery and pigment-risk planning",
+          text: "Aftercare, sun protection, temporary redness and the possibility of darkening should be discussed before a procedure begins.",
+        },
+      ],
+      verifiedElements: [
+        "Doctor-led acne and scar assessment",
+        "Scar morphology guides procedure selection",
+        "Consent-led skin improvement examples",
+        "Review-based staged care in Nayapalli",
+      ],
+    },
     expectations: [
       {
         title: "Scar mapping",
@@ -380,6 +526,12 @@ export const localSeoPages: LocalSeoPage[] = [
         label: "Skin improvement examples",
         description:
           "View consent-led examples with individual-result context.",
+      },
+      {
+        href: "/acne-treatment-bhubaneswar",
+        label: "Active acne treatment",
+        description:
+          "Understand why active breakouts are usually controlled before scar revision.",
       },
     ],
     faqs: [
@@ -555,17 +707,20 @@ export const localSeoPages: LocalSeoPage[] = [
       {
         href: "/concerns/acne/acne",
         label: "Understanding acne",
-        description: "Review acne patterns and when clinical assessment may help.",
+        description:
+          "Review acne patterns and when clinical assessment may help.",
       },
       {
         href: "/acne-scar-treatment-bhubaneswar",
         label: "Acne scar treatment",
-        description: "Learn how textural scars are assessed after active acne is controlled.",
+        description:
+          "Learn how textural scars are assessed after active acne is controlled.",
       },
       {
         href: "/skin-clinic-bhubaneswar",
         label: "Skin clinic consultation",
-        description: "Discuss acne together with sensitivity, pigmentation or other concerns.",
+        description:
+          "Discuss acne together with sensitivity, pigmentation or other concerns.",
       },
     ],
     faqs: [
@@ -629,6 +784,35 @@ export const localSeoPages: LocalSeoPage[] = [
       "Protect existing and donor hair over time",
       "Use follow-up to judge response and next steps",
     ],
+    decisionGuide: {
+      title: "How to choose a hair clinic in Bhubaneswar",
+      introduction:
+        "Hair shedding, progressive pattern loss and scalp disease require different care. A reliable hair clinic should investigate the pattern first and explain why a medical, regenerative, surgical or cosmetic pathway is suitable.",
+      criteria: [
+        {
+          title: "Cause-focused consultation",
+          text: "The doctor should review onset, progression, family history, health changes, medication and scalp findings instead of treating every complaint as the same condition.",
+        },
+        {
+          title: "Appropriate treatment breadth",
+          text: "The clinic should distinguish medical care, scalp support, PRP or GFC, transplant assessment and non-surgical coverage rather than presenting one option for everyone.",
+        },
+        {
+          title: "Documented monitoring",
+          text: "Progress should be reviewed over realistic hair-growth intervals with consistent observations, not judged by daily shedding or promised on a fixed date.",
+        },
+        {
+          title: "Referral when needed",
+          text: "Sudden, patchy, inflamed or potentially scarring hair loss may need further evaluation instead of a routine cosmetic programme.",
+        },
+      ],
+      verifiedElements: [
+        "Consultation with scalp and density assessment",
+        "Medical, regenerative and surgical pathways considered separately",
+        "Long-term donor preservation where surgery is relevant",
+        "Direct follow-up at the Nayapalli clinic",
+      ],
+    },
     expectations: [
       {
         title: "History and examination",
@@ -657,7 +841,20 @@ export const localSeoPages: LocalSeoPage[] = [
       {
         href: "/hair-transplant-bhubaneswar",
         label: "Hair transplant planning",
-        description: "Learn when donor assessment and surgery may be considered.",
+        description:
+          "Learn when donor assessment and surgery may be considered.",
+      },
+      {
+        href: "/knowledge/hair-loss-causes-and-assessment",
+        label: "Hair loss causes and assessment",
+        description:
+          "Read how timing, pattern, scalp findings and medical context guide the next step.",
+      },
+      {
+        href: "/alopecia-areata-treatment-bhubaneswar",
+        label: "Patchy hair loss assessment",
+        description:
+          "Understand how alopecia areata differs from pattern and scarring hair loss.",
       },
     ],
     faqs: [
@@ -694,7 +891,8 @@ export const localSeoPages: LocalSeoPage[] = [
     heroDescription:
       "Clinical review of suspected warts before removal, with treatment selected around the lesion type, location, number, skin response and recurrence risk.",
     image: `${mediaBase}/radiance-skin-category.webp`,
-    imageAlt: "Skin lesion consultation for wart removal at Radiance Clinics Bhubaneswar",
+    imageAlt:
+      "Skin lesion consultation for wart removal at Radiance Clinics Bhubaneswar",
     introductionTitle:
       "A suspected wart should be identified before a removal method is chosen.",
     introduction: [
@@ -789,8 +987,7 @@ localSeoPages.push(
     heroDescription:
       "Doctor-led consultation for selected expression lines with treatment planned around facial anatomy, movement and natural-looking expression.",
     image: `${mediaBase}/radiance-botox-fillers-service.webp`,
-    imageAlt:
-      "Botox treatment consultation at Radiance Clinics Bhubaneswar",
+    imageAlt: "Botox treatment consultation at Radiance Clinics Bhubaneswar",
     introductionTitle:
       "Expression-line treatment should begin with movement and facial anatomy.",
     introduction: [
@@ -840,12 +1037,14 @@ localSeoPages.push(
       {
         href: "/concerns/aging-aesthetics/forehead-lines",
         label: "Forehead lines",
-        description: "Understand why different types of lines need different approaches.",
+        description:
+          "Understand why different types of lines need different approaches.",
       },
       {
         href: "/dermal-fillers-bhubaneswar",
         label: "Dermal fillers",
-        description: "Learn how filler treatment differs from botulinum toxin treatment.",
+        description:
+          "Learn how filler treatment differs from botulinum toxin treatment.",
       },
     ],
     faqs: [
@@ -879,8 +1078,7 @@ localSeoPages.push(
     heroDescription:
       "A doctor-led filler consultation focused on facial anatomy, tissue quality, proportion and conservative treatment planning.",
     image: `${mediaBase}/radiance-botox-fillers-service.webp`,
-    imageAlt:
-      "Dermal filler consultation at Radiance Clinics Bhubaneswar",
+    imageAlt: "Dermal filler consultation at Radiance Clinics Bhubaneswar",
     introductionTitle:
       "Filler planning should assess the whole face before adding volume.",
     introduction: [
@@ -925,7 +1123,8 @@ localSeoPages.push(
       {
         href: "/treatments/aesthetic-dermatology/injectable-aesthetics",
         label: "Injectable aesthetics consultation",
-        description: "Review the broader doctor-led approach to injectable treatment.",
+        description:
+          "Review the broader doctor-led approach to injectable treatment.",
       },
       {
         href: "/concerns/aging-aesthetics/facial-volume-loss",
@@ -935,13 +1134,15 @@ localSeoPages.push(
       {
         href: "/botox-treatment-bhubaneswar",
         label: "Botox treatment",
-        description: "Learn how muscle-relaxing treatment differs from fillers.",
+        description:
+          "Learn how muscle-relaxing treatment differs from fillers.",
       },
     ],
     faqs: [
       {
         question: "Are fillers permanent?",
-        answer: "Many commonly used aesthetic fillers are temporary. Duration varies by product, area and individual response.",
+        answer:
+          "Many commonly used aesthetic fillers are temporary. Duration varies by product, area and individual response.",
       },
       {
         question: "Can filler be used under the eyes?",
@@ -968,10 +1169,8 @@ localSeoPages.push(
     heroDescription:
       "Doctor-led assessment of tattoo colour, ink density, location and skin type before laser treatment is planned.",
     image: `${mediaBase}/radiance-equipment-laser-machines-01.webp`,
-    imageAlt:
-      "Laser treatment equipment at Radiance Clinics Bhubaneswar",
-    introductionTitle:
-      "Tattoo fading depends on more than tattoo size.",
+    imageAlt: "Laser treatment equipment at Radiance Clinics Bhubaneswar",
+    introductionTitle: "Tattoo fading depends on more than tattoo size.",
     introduction: [
       "Tattoo removal uses laser energy to fragment selected tattoo pigments so they can fade gradually.",
       "Colour, depth, ink density, location and skin type all influence response, so the number of treatments and final clearance cannot be promised from tattoo size alone.",
@@ -1024,7 +1223,8 @@ localSeoPages.push(
       {
         href: "/contact",
         label: "Clinic contact and directions",
-        description: "Plan an appointment at the Nayapalli, Bhubaneswar clinic.",
+        description:
+          "Plan an appointment at the Nayapalli, Bhubaneswar clinic.",
       },
     ],
     faqs: [
@@ -1035,12 +1235,213 @@ localSeoPages.push(
       },
       {
         question: "Can a new tattoo be treated immediately?",
-        answer: "Fresh tattoos generally need to heal before removal is considered. The skin should be assessed first.",
+        answer:
+          "Fresh tattoos generally need to heal before removal is considered. The skin should be assessed first.",
       },
       {
-        question: "Can the number of treatments be predicted from a photograph?",
+        question:
+          "Can the number of treatments be predicted from a photograph?",
         answer:
           "A photograph cannot reliably show ink depth, layering or healing risk. The expected treatment course is discussed after examination.",
+      },
+    ],
+    reviewStatus: "APPROVED",
+    indexable: true,
+  },
+  {
+    slug: "non-surgical-hair-replacement-bhubaneswar",
+    serviceName: "Non-Surgical Hair Replacement",
+    metaTitle:
+      "Non-Surgical Hair Replacement in Bhubaneswar | Radiance Clinics",
+    metaDescription:
+      "Explore non-surgical hair replacement and hair-patch options in Bhubaneswar, including suitability, matching, attachment and maintenance.",
+    eyebrow: "Immediate cosmetic hair coverage",
+    title: "Non-Surgical Hair Replacement in Bhubaneswar",
+    heroDescription:
+      "Consultation for external hair systems and hair-patch options when immediate cosmetic coverage is preferred or transplantation is not suitable.",
+    image: `${mediaBase}/radiance-hair-fall-condition.webp`,
+    imageAlt:
+      "Non-surgical hair replacement consultation at Radiance Clinics Bhubaneswar",
+    introductionTitle:
+      "A hair system provides cosmetic coverage; it does not restore living follicles.",
+    introduction: [
+      "Some people prefer immediate visible coverage, do not want surgery or may not have an appropriate donor area for transplantation. A non-surgical hair system can be considered after discussing the area of loss, existing hair and day-to-day expectations.",
+      "The system is selected to blend with the colour, density, texture and style of the surrounding hair. Attachment, cleaning, refitting and eventual replacement are part of the decision and should be understood before proceeding.",
+    ],
+    assessmentTitle: "What the consultation considers",
+    assessmentDescription:
+      "The assessment clarifies whether a cosmetic system fits the patient's pattern of loss, routine and maintenance preferences.",
+    assessmentPoints: [
+      "Area and pattern of hair loss",
+      "Existing hair colour, density, texture and preferred style",
+      "Scalp sensitivity, irritation or active skin concerns",
+      "Preferred attachment method and daily routine",
+      "Cleaning, refitting and maintenance expectations",
+      "Whether medical assessment of the hair loss is also needed",
+    ],
+    approachTitle: "Match the system to the person, not only the visible gap",
+    approachDescription:
+      "A natural-looking match depends on proportion, hair characteristics and practical maintenance. The clinic explains what is external and temporary so it is not confused with a transplant or medical regrowth treatment.",
+    approachPoints: [
+      "Select colour, density and texture carefully",
+      "Discuss attachment and scalp comfort",
+      "Plan maintenance before fitting",
+      "Review changes in the scalp or surrounding hair",
+    ],
+    expectations: [
+      {
+        title: "Consultation and matching",
+        text: "The area of loss, surrounding hair, scalp condition, preferred appearance and maintenance routine are reviewed.",
+      },
+      {
+        title: "Fitting plan",
+        text: "Suitable system and attachment options are discussed, including what the fitting can and cannot achieve.",
+      },
+      {
+        title: "Ongoing maintenance",
+        text: "Cleaning, refitting, scalp care and eventual system replacement depend on the selected option and individual use.",
+      },
+    ],
+    relatedLinks: [
+      {
+        href: "/hair-loss-clinic-bhubaneswar",
+        label: "Hair loss and scalp assessment",
+        description:
+          "Discuss the cause and pattern of hair loss alongside cosmetic coverage options.",
+      },
+      {
+        href: "/hair-transplant-bhubaneswar",
+        label: "Hair transplant consultation",
+        description:
+          "Compare external coverage with surgical restoration for suitable patients.",
+      },
+      {
+        href: "/knowledge/hair-loss-causes-and-assessment",
+        label: "Understanding hair loss causes",
+        description:
+          "Learn why different shedding and thinning patterns need different evaluation.",
+      },
+    ],
+    faqs: [
+      {
+        question:
+          "Is non-surgical hair replacement the same as a hair transplant?",
+        answer:
+          "No. A hair system is an external cosmetic option. It does not redistribute living follicles or treat the biological cause of hair loss.",
+      },
+      {
+        question: "Will a hair system need maintenance?",
+        answer:
+          "Yes. Cleaning, refitting and replacement needs vary with the system, attachment method, scalp and day-to-day use. These requirements should be discussed before fitting.",
+      },
+      {
+        question: "Can a hair patch look natural?",
+        answer:
+          "A careful match of colour, density, texture, hairline and style can improve blending. The appearance depends on the selected system and the surrounding hair.",
+      },
+      {
+        question:
+          "Should patchy or sudden hair loss be medically assessed first?",
+        answer:
+          "Yes. Sudden, patchy, inflamed or potentially scarring hair loss deserves assessment because cosmetic coverage does not identify or treat the underlying condition.",
+      },
+    ],
+    reviewStatus: "APPROVED",
+    indexable: true,
+  },
+  {
+    slug: "alopecia-areata-treatment-bhubaneswar",
+    serviceName: "Alopecia Areata Assessment",
+    metaTitle: "Alopecia Areata Treatment in Bhubaneswar | Radiance Clinics",
+    metaDescription:
+      "Assessment and treatment planning for sudden smooth patches of scalp, beard or eyebrow hair loss in Bhubaneswar at Radiance Clinics.",
+    eyebrow: "Assessment for patchy hair loss",
+    title: "Alopecia Areata Treatment in Bhubaneswar",
+    heroDescription:
+      "Doctor-led evaluation of sudden smooth hair-loss patches to distinguish possible alopecia areata from infection, traction and scarring conditions.",
+    image: `${mediaBase}/radiance-hair-fall-condition.webp`,
+    imageAlt:
+      "Doctor-led assessment for alopecia areata and patchy hair loss at Radiance Clinics Bhubaneswar",
+    introductionTitle:
+      "Smooth patches of hair loss need a diagnosis before treatment begins.",
+    introduction: [
+      "Alopecia areata is an autoimmune hair-loss condition that often appears as one or more smooth round or oval patches on the scalp or beard. Eyebrows or eyelashes may also be affected in some people, and the course can vary.",
+      "Patchy loss is not always alopecia areata. Infection, traction, hair breakage and inflammatory or scarring conditions can look similar, so examination is important before treatment or cosmetic coverage is chosen.",
+    ],
+    assessmentTitle: "What the doctor evaluates",
+    assessmentDescription:
+      "The consultation examines the pattern and activity of loss and checks for features that may point to another diagnosis or need further investigation.",
+    assessmentPoints: [
+      "Onset, speed of change and number of patches",
+      "Scalp, beard, eyebrow or eyelash involvement",
+      "Broken hairs, scaling, redness, pain or scarring signs",
+      "Nail changes and relevant personal or family history",
+      "Previous episodes, treatment and current medication",
+      "Whether focused tests or another medical review may be appropriate",
+    ],
+    approachTitle:
+      "Treatment depends on extent, activity and individual context",
+    approachDescription:
+      "The doctor discusses appropriate medical management or other supportive options only after the likely diagnosis is established. The variable course of alopecia areata and the possibility of recurrence are explained without promising regrowth.",
+    approachPoints: [
+      "Confirm the likely cause of patchy loss",
+      "Assess extent and signs of active change",
+      "Discuss treatment limits and possible side effects",
+      "Monitor response and new areas over time",
+    ],
+    expectations: [
+      {
+        title: "Examination",
+        text: "The doctor reviews the patches, scalp or facial hair, associated symptoms, previous episodes and medical context.",
+      },
+      {
+        title: "Individual plan",
+        text: "Suitable treatment, observation, tests or referral are discussed according to the likely diagnosis and extent of loss.",
+      },
+      {
+        title: "Review",
+        text: "Change in the existing patches, signs of regrowth and any new areas are assessed over an appropriate follow-up interval.",
+      },
+    ],
+    relatedLinks: [
+      {
+        href: "/hair-loss-clinic-bhubaneswar",
+        label: "Hair loss clinic consultation",
+        description:
+          "Compare patchy loss with shedding, pattern thinning and scalp concerns.",
+      },
+      {
+        href: "/conditions/hair-fall-thinning",
+        label: "Hair fall and thinning",
+        description: "Review common signs and diagnosis-led care pathways.",
+      },
+      {
+        href: "/knowledge/hair-loss-causes-and-assessment",
+        label: "Hair loss assessment guide",
+        description:
+          "Prepare useful history about timing, pattern, symptoms and possible triggers.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Is every smooth bald patch alopecia areata?",
+        answer:
+          "No. Infection, traction, hair breakage and inflammatory or scarring hair loss can produce patchy change. An examination helps distinguish them.",
+      },
+      {
+        question: "Can alopecia areata affect the beard or eyebrows?",
+        answer:
+          "Yes. It can involve scalp hair, beard hair, eyebrows or eyelashes, although the pattern and extent vary between people.",
+      },
+      {
+        question: "Can treatment guarantee permanent regrowth?",
+        answer:
+          "No. Response and future recurrence vary. The doctor explains realistic goals, monitoring and treatment limitations for the individual case.",
+      },
+      {
+        question: "When should patchy hair loss be reviewed promptly?",
+        answer:
+          "Seek earlier review when loss is expanding quickly, affects several areas, includes scalp pain, redness, scaling or scarring, or is accompanied by other health symptoms.",
       },
     ],
     reviewStatus: "APPROVED",

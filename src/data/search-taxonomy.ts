@@ -52,6 +52,8 @@ export const treatmentHubs: TreatmentHub[] = [
     commercialPaths: [
       "/hair-transplant-bhubaneswar",
       "/hair-loss-clinic-bhubaneswar",
+      "/alopecia-areata-treatment-bhubaneswar",
+      "/non-surgical-hair-replacement-bhubaneswar",
     ],
     resultsHref: "/results#hair-transplant-results",
   },
@@ -224,6 +226,8 @@ export const relationshipByPath: Record<string, ContentRelationships> = {
   "/knowledge/how-to-plan-hair-restoration": hairRelationships,
   "/hair-transplant-bhubaneswar": hairRelationships,
   "/hair-loss-clinic-bhubaneswar": hairRelationships,
+  "/alopecia-areata-treatment-bhubaneswar": hairRelationships,
+  "/non-surgical-hair-replacement-bhubaneswar": hairRelationships,
   "/treatments/skin-laser/acne-scar-revision": skinRelationships,
   "/treatments/skin-wellness/bridal-glow-protocol": skinRelationships,
   "/conditions/acne-acne-scars": skinRelationships,

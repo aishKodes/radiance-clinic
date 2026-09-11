@@ -7,6 +7,7 @@ import { RelatedContent } from "@/components/RelatedContent";
 import { SectionHeader } from "@/components/SectionHeader";
 import { StickyConsultationCard } from "@/components/StickyConsultationCard";
 import { fallbackData } from "@/data/fallback";
+import { clinicFacts } from "@/data/clinic-facts";
 import { getDoctorProfile } from "@/data/site";
 import { webPageJsonLd } from "@/lib/schema";
 import { pageMetadata } from "@/lib/metadata";
@@ -45,7 +46,7 @@ export default async function AboutPage() {
             <p className="mt-8 max-w-3xl text-xl leading-9 text-[#151515]/68">
               {doctor.name} leads Radiance Clinics with a consultation-first
               approach across hair restoration, skin, laser and aesthetic
-              medicine, informed by more than 30 years of clinical experience.
+              medicine, informed by {clinicFacts.clinicalExperience.value} years of clinical experience.
               The focus is planning, proportion and medically grounded decision-making.
             </p>
             <div className="mt-10 grid gap-4 sm:grid-cols-2">
@@ -100,6 +101,8 @@ export default async function AboutPage() {
         title="Explore doctor-led care at Radiance Clinics."
         items={[
           { href: "/treatments/hair-restoration", label: "Hair restoration", description: "Hair-loss assessment, transplant planning and scalp-support options." },
+          { href: "/hair-transplant-bhubaneswar", label: "Hair transplant in Bhubaneswar", description: "Donor assessment, hairline planning and realistic restoration guidance." },
+          { href: "/skin-clinic-bhubaneswar", label: "Skin clinic in Bhubaneswar", description: "Doctor-led assessment for acne, pigmentation, texture and skin ageing." },
           { href: "/treatments/skin", label: "Skin treatments", description: "Concern-led skin consultation and staged treatment planning." },
           { href: "/treatments/laser", label: "Laser treatments", description: "Skin-type aware laser planning, preparation and aftercare." },
           { href: "/treatments/aesthetic-dermatology", label: "Aesthetic dermatology", description: "Conservative planning focused on anatomy, expression and proportion." },

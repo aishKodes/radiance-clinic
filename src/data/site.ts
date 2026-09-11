@@ -40,6 +40,7 @@ import type {
   CmsImage,
 } from "@/types/cms";
 import { applyVerifiedClinicFacts } from "@/data/clinic-facts";
+import { isIndexableRoute } from "@/lib/indexability";
 
 type ApiRecord = Record<string, unknown>;
 
@@ -1399,7 +1400,11 @@ export async function getArticles(): Promise<Article[]> {
       )
       .filter((item): item is Article => Boolean(item)) || [];
 
-  return hasItems(normalized) ? normalized : fallbackData.articles;
+  const articles = hasItems(normalized) ? normalized : fallbackData.articles;
+
+  return articles.filter((article) =>
+    isIndexableRoute(`/knowledge/${article.slug}`),
+  );
 }
 
 export async function getArticle(slug: string): Promise<Article | null> {

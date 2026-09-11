@@ -9,7 +9,7 @@ const preparedBy = "Radiance Editorial Team";
 
 export const medicalReviewer = {
   name: "Dr. Satyarth Prakash",
-  experience: "More than 30 years of clinical experience",
+  experience: "20+ years of clinical experience",
   reviewedAt: "2026-08-15",
   profilePath: "/about",
 } as const;
@@ -94,7 +94,7 @@ export const concernCategories: ConcernCategory[] = [
     issueGroups: ["Comedonal acne", "Inflammatory acne", "Deep acne", "Recurring acne"],
     relatedTreatments: [treatmentLinks.skinConsultation, treatmentLinks.acneScars],
     usefulGuides: [
-      { href: "/knowledge/skin-care-doctor-bhubaneswar", label: "When a skin-care doctor can help" },
+      { href: "/skin-clinic-bhubaneswar", label: "When a skin-clinic consultation can help" },
     ],
     featuredConcernSlugs: ["acne", "closed-comedones", "inflammatory-acne", "cystic-acne", "adult-acne"],
     indexable: true,
@@ -142,7 +142,7 @@ export const concernCategories: ConcernCategory[] = [
     issueGroups: ["Pores", "Roughness", "Dehydration", "Early lines"],
     relatedTreatments: [treatmentLinks.skinConsultation],
     usefulGuides: [
-      { href: "/knowledge/best-skin-clinic-bhubaneswar", label: "Choosing professional skin care" },
+      { href: "/skin-clinic-bhubaneswar", label: "How to choose professional skin care" },
     ],
     featuredConcernSlugs: ["enlarged-pores", "rough-skin-texture", "dull-skin", "fine-lines"],
     indexable: true,
@@ -207,7 +207,7 @@ export const concernCategories: ConcernCategory[] = [
     issueGroups: ["Growths", "Redness", "Sweating", "Assessment-first concerns"],
     relatedTreatments: [treatmentLinks.skinConsultation],
     usefulGuides: [
-      { href: "/knowledge/skin-care-doctor-bhubaneswar", label: "When to consult a skin specialist" },
+      { href: "/skin-clinic-bhubaneswar", label: "When to book a skin consultation" },
     ],
     featuredConcernSlugs: ["moles-and-warts", "rosacea-redness", "excessive-sweating"],
     indexable: true,
@@ -567,7 +567,7 @@ const doctorAnswerDrafts: DoctorAnswer[] = [
     whenEvaluationMayHelp: "Review is helpful for painful, scarring, persistent or sudden adult-onset acne and when hormonal symptoms are present.",
     relatedConcern: "/concerns/acne/acne",
     relatedTreatment: treatmentLinks.skinConsultation,
-    relatedGuide: { href: "/knowledge/skin-care-doctor-bhubaneswar", label: "How a skin-care doctor can help" },
+    relatedGuide: { href: "/skin-clinic-bhubaneswar", label: "How a skin-clinic consultation can help" },
     relatedQuestions: ["which-acne-scar-treatment-is-best"],
     preparedBy,
     updatedAt,

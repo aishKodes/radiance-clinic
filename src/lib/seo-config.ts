@@ -65,6 +65,8 @@ export const treatmentNavigationGroups = [
       { label: "Hair restoration overview", href: "/treatments/hair-restoration" },
       { label: "Hair transplant in Bhubaneswar", href: "/hair-transplant-bhubaneswar" },
       { label: "Hair loss clinic in Bhubaneswar", href: "/hair-loss-clinic-bhubaneswar" },
+      { label: "Alopecia areata assessment", href: "/alopecia-areata-treatment-bhubaneswar" },
+      { label: "Non-surgical hair replacement", href: "/non-surgical-hair-replacement-bhubaneswar" },
       {
         label: "FUE hair transplant planning",
         href: "/treatments/hair-restoration/fue-hair-transplant",

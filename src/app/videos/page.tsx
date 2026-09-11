@@ -32,7 +32,7 @@ export default function VideosPage() {
           <p className="text-xs font-extrabold uppercase tracking-[0.3em] text-[var(--champagne)]">Official YouTube library</p>
           <h1 className="mt-5 max-w-6xl font-serif text-[clamp(4rem,10vw,9rem)] leading-[0.86]">Watch before you decide.</h1>
           <p className="mt-8 max-w-3xl text-xl leading-9 text-white/64">
-            Explore {videoLibraryVideos.length} public educational videos selected from a mapped catalogue of 180. Clinical context is reviewed by {medicalReviewer.name}, with more than 30 years of experience; individual results and suitability vary.
+            Explore {videoLibraryVideos.length} public educational videos selected from a mapped catalogue of 180. Clinical context is reviewed by {medicalReviewer.name}, with {medicalReviewer.experience}; individual results and suitability vary.
           </p>
           <p className="mt-5 max-w-3xl text-sm leading-7 text-white/48">
             Result and promotional videos stay out of this library until their website context is cleared. Videos open through a privacy-enhanced YouTube player only after you choose play; captions or subtitles depend on the source video.

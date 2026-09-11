@@ -168,6 +168,17 @@ function expectedCtr(position) {
   return 1;
 }
 
+const implementedSnippetActions = new Map([
+  [
+    "/hair-transplant-bhubaneswar",
+    "Implemented 2026-09-11: strengthened the meta description around doctor-led FUE planning, donor assessment and hairline design. Monitor clicks and CTR without changing the winning URL.",
+  ],
+  [
+    "/skin-clinic-bhubaneswar",
+    "Implemented 2026-09-11: strengthened the meta description and opening decision guidance for skin-clinic intent. Monitor clicks and CTR after consolidating keyword-variant pages.",
+  ],
+]);
+
 async function main() {
   const queryRows = await loadDimension("Queries.csv", "Top queries");
   const pageRows = await loadDimension("Pages.csv", "Top pages");
@@ -336,6 +347,9 @@ async function main() {
       const targetUrl =
         target?.preferred_target_url || target?.current_ranking_url || "";
       const metadata = metadataByPath.get(normalizeUrlPath(targetUrl));
+      const implementedSnippetAction = implementedSnippetActions.get(
+        normalizeUrlPath(targetUrl),
+      );
       const hasLegacyMismatch = Boolean(
         target?.current_ranking_url &&
         target?.preferred_target_url &&
@@ -350,9 +364,11 @@ async function main() {
         ctr: ctr.toFixed(2),
         title: metadata?.title || "",
         description: metadata?.description || "",
-        recommended_test: hasLegacyMismatch
-          ? "Consolidate the legacy ranking URL first, then test query-aligned title and description copy."
-          : "Test a clearer query-aligned title and description while preserving the canonical page and medical tone.",
+        recommended_test:
+          implementedSnippetAction ||
+          (hasLegacyMismatch
+            ? "Consolidate the legacy ranking URL first, then test query-aligned title and description copy."
+            : "Test a clearer query-aligned title and description while preserving the canonical page and medical tone."),
         _position: position,
       };
     })

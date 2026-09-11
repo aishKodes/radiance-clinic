@@ -89,7 +89,7 @@ export default async function ConcernsPage() {
             Start with what you notice.
           </h1>
           <p className="mt-8 max-w-3xl text-lg leading-8 text-[var(--ink)]/66 sm:text-xl sm:leading-9">
-            Explore hair, scalp and skin concerns, treatment information and answers medically reviewed by {medicalReviewer.name}, with more than 30 years of clinical experience.
+            Explore hair, scalp and skin concerns, treatment information and answers medically reviewed by {medicalReviewer.name}, with {medicalReviewer.experience}.
           </p>
         </div>
       </section>

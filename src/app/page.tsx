@@ -93,6 +93,15 @@ function imageIdentityKeys(image?: CmsImage) {
   ].filter((value): value is string => Boolean(value));
 }
 
+const priorityLocalCarePages = [
+  { href: "/hair-transplant-bhubaneswar", label: "Hair transplant in Bhubaneswar" },
+  { href: "/hair-loss-clinic-bhubaneswar", label: "Hair loss clinic in Bhubaneswar" },
+  { href: "/skin-clinic-bhubaneswar", label: "Skin clinic in Bhubaneswar" },
+  { href: "/laser-hair-removal-bhubaneswar", label: "Laser hair removal in Bhubaneswar" },
+  { href: "/acne-scar-treatment-bhubaneswar", label: "Acne scar treatment in Bhubaneswar" },
+  { href: "/pigmentation-treatment-bhubaneswar", label: "Pigmentation treatment in Bhubaneswar" },
+] as const;
+
 export default async function Home() {
   const [
     settings,
@@ -267,6 +276,14 @@ export default async function Home() {
               <ConversionLink key={hub.slug} href={`/treatments/${hub.slug}`} eventName="treatment_cta_click" topic={hub.label} className="group flex items-center justify-between gap-3 py-3 text-sm font-extrabold text-[var(--ink)]">
                 {hub.label}
                 <ArrowUpRight className="h-4 w-4 text-[var(--bronze)] transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+              </ConversionLink>
+            ))}
+          </nav>
+          <nav aria-label="Popular clinic services in Bhubaneswar" className="mt-7 flex flex-wrap justify-center gap-x-6 gap-y-3 border-t border-[var(--ink)]/10 pt-7">
+            {priorityLocalCarePages.map((item) => (
+              <ConversionLink key={item.href} href={item.href} eventName="treatment_cta_click" topic={item.label} className="inline-flex items-center gap-2 text-sm font-bold leading-6 text-[var(--ink)]/70 underline decoration-[var(--bronze)]/45 underline-offset-4 transition hover:text-[var(--ink)] hover:decoration-[var(--bronze)]">
+                {item.label}
+                <ArrowUpRight className="h-3.5 w-3.5 shrink-0 text-[var(--bronze)]" />
               </ConversionLink>
             ))}
           </nav>
