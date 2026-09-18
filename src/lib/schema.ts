@@ -278,7 +278,9 @@ export function articleJsonLd(article: Article): JsonLd {
           name: article.authorName || radianceEditorialTeam.name,
           url: absoluteUrl(radianceEditorialTeam.policyPath),
         },
-    reviewedBy: { "@id": schemaIds.doctor },
+    ...(article.reviewerId || article.reviewedBy
+      ? { reviewedBy: { "@id": schemaIds.doctor } }
+      : {}),
     publisher: { "@id": schemaIds.organization },
     datePublished: article.publishedAt,
     dateModified: article.updatedAt || article.reviewedAt,

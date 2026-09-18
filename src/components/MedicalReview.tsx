@@ -38,8 +38,10 @@ export function MedicalReview({
 }: MedicalReviewProps) {
   const isDoctorAuthored = authorType === "doctor";
   const heading =
-    variant === "answered" || isDoctorAuthored
+    variant === "answered"
       ? `Answered by ${satyarthPrakash.name}`
+      : isDoctorAuthored
+        ? `Written by ${satyarthPrakash.name}`
       : `Medically reviewed by ${satyarthPrakash.name}`;
   const image = satyarthPrakash.profileImage;
 
@@ -61,7 +63,7 @@ export function MedicalReview({
         <div className="min-w-0">
           <p className="flex items-center gap-2 text-[0.64rem] font-extrabold uppercase tracking-[0.16em] text-[var(--bronze)]">
             <BadgeCheck aria-hidden="true" className="h-3.5 w-3.5" />
-            Medical oversight
+            {isDoctorAuthored ? "Doctor author" : "Medical oversight"}
           </p>
           <p className="mt-2 text-base font-extrabold leading-6 text-[var(--ink)]">
             {heading}
@@ -69,7 +71,7 @@ export function MedicalReview({
           {!compact ? (
             <p className="mt-2 text-sm leading-6 text-[var(--ink)]/64">
               {isDoctorAuthored
-                ? "This page is attributed to Dr. Satyarth Prakash and is published with clinical context from Radiance Clinics."
+                ? "This article was written by Dr. Satyarth Prakash and published by Radiance Clinics."
                 : "This clinical content has been reviewed for medical accuracy and relevance to patient care at Radiance Clinics, Bhubaneswar."}
             </p>
           ) : null}

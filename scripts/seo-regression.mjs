@@ -23,6 +23,11 @@ const protectedPaths = [
   "/botox-treatment-bhubaneswar",
   "/dermal-fillers-bhubaneswar",
   "/tattoo-removal-bhubaneswar",
+  "/knowledge/adult-acne-hormones-pcos-insulin-resistance-bhubaneswar",
+  "/knowledge/bhubaneswar-water-hair-fall-hard-water",
+  "/knowledge/exosome-skin-treatment-bhubaneswar",
+  "/knowledge/why-tanning-despite-sunscreen-bhubaneswar",
+  "/knowledge/acne-scar-treatment-bhubaneswar",
   ...["rourkela", "cuttack", "puri", "berhampur", "sambalpur", "baripada"].map(
     (city) => `/hair-transplant-${city}`,
   ),

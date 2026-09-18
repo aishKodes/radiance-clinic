@@ -28,7 +28,8 @@
     "legacy:analyze": "node scripts/legacy-analyze.mjs",
     "youtube:sync": "node scripts/youtube-sync.mjs",
     "content:report": "npm run youtube:sync && npm run legacy:analyze && npm run content:audit",
-    "process:media": "node scripts/process-radiance-media.mjs"
+    "process:media": "node scripts/process-radiance-media.mjs",
+    "content:import-doctor": "node scripts/import-doctor-articles.mjs"
   },
   "dependencies": {
     "@ai-sdk/google": "^3.0.80",

@@ -157,6 +157,7 @@ export type CmsArticle = {
   readTime: string;
   excerpt: string;
   body: string[];
+  content?: CmsArticleContentBlock[];
   image?: CmsImage;
   seoTitle?: string;
   seoDescription?: string;
@@ -172,11 +173,32 @@ export type CmsArticle = {
   sourceType?: ContentSourceType;
   legacySources?: string[];
   youtubeSources?: string[];
-  references?: string[];
+  references?: CmsArticleReference[];
   relatedTreatments?: string[];
   relatedConditions?: string[];
   relatedArticles?: string[];
 };
+
+export type CmsArticleReference = {
+  label: string;
+  href: string;
+};
+
+export type CmsArticleContentBlock =
+  | {
+      type: "heading";
+      level: 2 | 3;
+      text: string;
+    }
+  | {
+      type: "paragraph";
+      text: string;
+    }
+  | {
+      type: "list";
+      ordered: boolean;
+      items: string[];
+    };
 
 export type CmsTestimonial = {
   name: string;

@@ -257,6 +257,22 @@ function toStringArray(value: unknown): string[] {
   return [];
 }
 
+function toArticleReferences(value: unknown): NonNullable<Article["references"]> {
+  if (!Array.isArray(value)) return [];
+
+  return value.flatMap((item) => {
+    if (typeof item === "string" && /^https?:\/\//i.test(item)) {
+      return [{ label: item, href: item }];
+    }
+
+    const record = asRecord(item);
+    const href = firstString(record, ["href", "url", "sourceUrl", "source_url"]);
+    const label = firstString(record, ["label", "title", "name"]);
+
+    return href && label ? [{ label, href }] : [];
+  });
+}
+
 function toFaqArray(value: unknown) {
   return (Array.isArray(value) ? value : [])
     .map((item) => {
@@ -640,6 +656,7 @@ function normalizeArticle(value: unknown, fallback?: Article): Article | null {
     readTime: firstString(record, ["readTime", "read_time"]) || fallback?.readTime || "4 min read",
     excerpt: firstString(record, ["excerpt", "summary", "description"]) || fallback?.excerpt || "",
     body: hasItems(body) ? body : fallback?.body || [],
+    content: fallback?.content,
     image: normalizeImage(
       firstRecord(record, ["featuredImage", "featured_image", "image", "heroImage", "hero_image"]) ||
         firstString(record, ["image_url", "featured_image_url"]),
@@ -684,8 +701,8 @@ function normalizeArticle(value: unknown, fallback?: Article): Article | null {
     youtubeSources: toStringArray(record.youtubeSources ?? record.youtube_sources).length
       ? toStringArray(record.youtubeSources ?? record.youtube_sources)
       : fallback?.youtubeSources,
-    references: toStringArray(record.references).length
-      ? toStringArray(record.references)
+    references: toArticleReferences(record.references).length
+      ? toArticleReferences(record.references)
       : fallback?.references,
     relatedTreatments: toStringArray(record.relatedTreatments ?? record.related_treatments).length ? toStringArray(record.relatedTreatments ?? record.related_treatments) : fallback?.relatedTreatments,
     relatedConditions: toStringArray(record.relatedConditions ?? record.related_conditions).length ? toStringArray(record.relatedConditions ?? record.related_conditions) : fallback?.relatedConditions,
@@ -1511,7 +1528,14 @@ export async function getArticles(): Promise<Article[]> {
       )
       .filter((item): item is Article => Boolean(item)) || [];
 
-  const articles = hasItems(normalized) ? normalized : fallbackData.articles;
+  const articles = hasItems(normalized)
+    ? [
+        ...normalized,
+        ...fallbackData.articles.filter(
+          (fallback) => !normalized.some((article) => article.slug === fallback.slug),
+        ),
+      ]
+    : fallbackData.articles;
 
   return articles.filter((article) =>
     isIndexableRoute(`/knowledge/${article.slug}`),

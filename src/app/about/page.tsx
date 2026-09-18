@@ -29,7 +29,12 @@ export const metadata: Metadata = pageMetadata({
 export default async function AboutPage() {
   const [doctor, articles] = await Promise.all([getDoctorProfile(), getArticles()]);
   const profileVideos = videosForPath("/about", 2);
-  const reviewedArticles = articles.slice(0, 3);
+  const doctorAuthoredArticles = articles.filter(
+    (article) => article.authorId === "dr-satyarth-prakash" || article.authorType === "doctor",
+  );
+  const reviewedArticles = doctorAuthoredArticles.length
+    ? doctorAuthoredArticles.slice(0, 3)
+    : articles.slice(0, 3);
   const relatedAnswers = doctorAnswers.slice(0, 4);
 
   return (
@@ -138,13 +143,13 @@ export default async function AboutPage() {
         <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-2">
           <div>
             <p className="text-xs font-extrabold uppercase tracking-[0.22em] text-[var(--bronze)]">
-              Reviewed clinical education
+              Doctor-authored clinical education
             </p>
             <h2 className="mt-4 font-serif text-5xl leading-none text-[var(--ink)]">
-              Patient information with visible medical oversight.
+              Articles by Dr. Satyarth Prakash.
             </h2>
             <p className="mt-6 max-w-xl text-base leading-8 text-[var(--ink)]/68">
-              Radiance Editorial Team prepares patient education using clinic knowledge and relevant sources. Substantive medical content is reviewed by Dr. Satyarth Prakash before publication or update.
+              These patient guides are written by Dr. Satyarth Prakash. Other substantive Radiance medical content is reviewed for clinical accuracy before publication or update.
             </p>
             <Link
               href="/editorial-policy"
@@ -162,7 +167,7 @@ export default async function AboutPage() {
               >
                 <span>
                   <span className="block text-xs font-extrabold uppercase tracking-[0.14em] text-[var(--bronze)]">
-                    Knowledge guide
+                    {article.authorType === "doctor" ? "Written by Dr. Satyarth Prakash" : "Knowledge guide"}
                   </span>
                   <span className="mt-2 block text-lg font-extrabold leading-7 text-[var(--ink)]">
                     {article.title}

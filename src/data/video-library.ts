@@ -44,7 +44,9 @@ function videoScore(video: YouTubeVideo, path: string) {
 export function videosForPath(path: string, limit = 2) {
   return publicEducationalVideos
     .map((video) => ({ video, score: videoScore(video, path) }))
-    .filter((item) => item.score >= 20)
+    // Do not surface a generic high-priority clip just because a page has a
+    // video module. A video needs an explicit page mapping or topic match.
+    .filter((item) => item.score >= 50)
     .sort(
       (left, right) =>
         right.score - left.score ||

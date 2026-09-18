@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { ArticleContent } from "@/components/ArticleContent";
 import { JsonLd } from "@/components/JsonLd";
 import { MedicalReview } from "@/components/MedicalReview";
 import { PremiumButton } from "@/components/PremiumButton";
@@ -63,9 +64,17 @@ export default async function ArticlePage({ params }: Props) {
     { name: "Knowledge", path: "/knowledge" },
     { name: article.title, path },
   ];
-  const relatedArticles = articles
-    .filter((item) => item.slug !== article.slug)
-    .slice(0, 2);
+  const explicitlyRelatedArticles = (article.relatedArticles || [])
+    .map((slug) => articles.find((item) => item.slug === slug))
+    .filter((item): item is NonNullable<typeof item> => Boolean(item));
+  const relatedArticles = [
+    ...explicitlyRelatedArticles,
+    ...articles.filter(
+      (item) =>
+        item.slug !== article.slug &&
+        !explicitlyRelatedArticles.some((related) => related.slug === item.slug),
+    ),
+  ].slice(0, 2);
   const featuredImageAlt = article.category.includes("Hair")
     ? "Dr. Satyarth Prakash discussing hair restoration planning at Radiance Clinics"
     : article.category.includes("Laser")
@@ -145,7 +154,9 @@ export default async function ArticlePage({ params }: Props) {
           title: article.title,
           description: article.excerpt,
           path,
-          medicalReview: true,
+          medicalReview:
+            article.authorType !== "doctor" &&
+            Boolean(article.reviewerId || article.reviewedBy),
         })}
       />
       {videos.map((video) => <JsonLd key={video.videoId} data={videoObjectJsonLd(video)} />)}
@@ -189,18 +200,35 @@ export default async function ArticlePage({ params }: Props) {
             <div className="relative mb-10 aspect-[16/9] overflow-hidden rounded-[1.25rem] bg-[var(--mist)]">
               <Image
                 src={article.image.src || article.image.desktopUrl}
-                alt={featuredImageAlt}
+                alt={article.image.alt || featuredImageAlt}
                 fill
                 sizes="(min-width: 768px) 768px, 100vw"
                 className="object-cover"
               />
             </div>
           ) : null}
-          <div className="space-y-7 text-xl leading-9 text-[#151515]/72">
-            {article.body.map((paragraph) => (
-              <p key={paragraph}>{paragraph}</p>
-            ))}
-          </div>
+          <ArticleContent body={article.body} content={article.content} />
+          {article.references?.length ? (
+            <section className="mt-14 border-t border-[#151515]/12 pt-9" aria-labelledby="article-references">
+              <h2 id="article-references" className="font-serif text-4xl leading-none text-[#151515]">
+                References
+              </h2>
+              <ol className="mt-6 space-y-4 text-sm leading-7 text-[#151515]/68">
+                {article.references.map((reference) => (
+                  <li key={reference.href}>
+                    <a
+                      href={reference.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="font-bold text-[var(--aqua)] underline decoration-[var(--aqua)]/35 underline-offset-4 hover:decoration-[var(--aqua)]"
+                    >
+                      {reference.label}
+                    </a>
+                  </li>
+                ))}
+              </ol>
+            </section>
+          ) : null}
           <div className="mt-12 rounded-[2rem] border border-[#151515]/10 bg-[#F7F1E8] p-7">
             <p className="text-sm leading-7 text-[#151515]/66">
               This article is educational and does not replace consultation. A

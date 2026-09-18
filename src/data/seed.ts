@@ -54,6 +54,7 @@ import { beforeAfterCasesToTransformations } from "@/lib/transformations";
 import { clinicIdentity } from "@/lib/seo-config";
 import { clinicFacts } from "@/data/clinic-facts";
 import { whatsappHref } from "@/lib/contact-links";
+import { doctorArticles } from "@/data/doctor-articles.generated";
 
 export const clinic: ClinicSettings = {
   name: clinicIdentity.name,
@@ -326,7 +327,7 @@ export const conditions: Condition[] = [
   },
 ];
 
-export const articles: Article[] = [
+const editorialArticles: Article[] = [
   {
     slug: "how-to-plan-hair-restoration",
     title: "How to Think About Hair Restoration Before Booking a Procedure",
@@ -580,6 +581,8 @@ export const articles: Article[] = [
   sourceType: "original" as const,
   updatedAt: article.updatedAt || "2026-08-15",
 }));
+
+export const articles: Article[] = [...editorialArticles, ...doctorArticles];
 
 export const testimonials: Testimonial[] = [
   {
