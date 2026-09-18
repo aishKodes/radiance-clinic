@@ -11,7 +11,7 @@ async function main() {
   const missing = rows.filter((row) => !row.url || !row.index_status || !row.checked_at);
   if (missing.length) throw new Error(`${missing.length} URL Inspection rows are incomplete.`);
 
-  const indexed = rows.filter((row) => /indexed|on google/i.test(row.index_status)).length;
+  const indexed = rows.filter((row) => /^(indexed|url is on google|on google)$/i.test(row.index_status.trim())).length;
   const pending = rows.length - indexed;
   console.log(`Validated ${rows.length} authenticated URL Inspection records: ${indexed} indexed, ${pending} pending or not indexed.`);
   console.log(`Latest recorded check: ${rows.map((row) => row.checked_at).sort().at(-1)}`);

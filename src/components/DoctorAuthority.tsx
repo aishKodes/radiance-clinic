@@ -14,11 +14,6 @@ import { OpenBookingButton } from "@/components/OpenBookingButton";
 import { PremiumButton } from "@/components/PremiumButton";
 import type { DoctorProfile } from "@/types/cms";
 
-function imagePosition(image: { focalPoint?: { x: number; y: number } }) {
-  const focal = image.focalPoint || { x: 0.5, y: 0.5 };
-  return `${focal.x * 100}% ${focal.y * 100}%`;
-}
-
 export function DoctorAuthority({
   doctor = seedDoctorProfile,
 }: {
@@ -35,18 +30,21 @@ export function DoctorAuthority({
       <SciencePatternOverlay className="z-0 opacity-20" />
       <LuxuryNoiseOverlay className="z-0" />
       <div className="relative z-10 mx-auto grid min-w-0 max-w-7xl gap-9 sm:gap-12 lg:grid-cols-[0.92fr_1.08fr] lg:items-center">
-        <div className="relative min-w-0 rounded-[1.5rem] border border-white/10 bg-white/[0.06] p-3 shadow-[0_36px_120px_rgba(0,0,0,0.25)] backdrop-blur-xl sm:rounded-[3rem] sm:p-5">
+        <div className="relative mx-auto w-full min-w-0 max-w-[34rem] rounded-[1.5rem] border border-white/10 bg-white/[0.06] p-3 shadow-[0_36px_120px_rgba(0,0,0,0.25)] backdrop-blur-xl sm:rounded-[3rem] sm:p-5">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_28%_18%,rgba(41,195,209,0.34),transparent_28%),radial-gradient(circle_at_75%_30%,rgba(255,122,89,0.28),transparent_26%),radial-gradient(circle_at_50%_90%,rgba(124,58,237,0.34),transparent_28%)]" />
-          <div className="relative aspect-[4/5] overflow-hidden rounded-[1.25rem] border border-white/12 bg-[radial-gradient(circle_at_30%_20%,rgba(42,195,214,0.18),transparent_32%),var(--ink)] sm:aspect-[16/12] sm:rounded-[2.4rem] lg:aspect-[4/5]">
+          <div
+            data-testid="doctor-portrait"
+            className="relative aspect-[4/5] overflow-hidden rounded-[1.25rem] border border-white/12 bg-[radial-gradient(circle_at_30%_20%,rgba(42,195,214,0.18),transparent_32%),var(--ink)] sm:rounded-[2.4rem]"
+          >
             <Image
-              src={doctorImage.desktopUrl || doctorImage.src}
+              src={doctorImage.uncroppedUrl || doctorImage.src}
               alt={doctorImage.altText || doctorImage.alt}
               fill
-              sizes="(min-width: 1024px) 42vw, 100vw"
+              sizes="(min-width: 1440px) 523px, (min-width: 1024px) 38vw, (min-width: 640px) 502px, calc(100vw - 60px)"
               placeholder={doctorImage.blurDataUrl ? "blur" : "empty"}
               blurDataURL={doctorImage.blurDataUrl}
-              className="object-contain"
-              style={{ objectPosition: imagePosition(doctorImage) }}
+              className="object-contain p-[4%]"
+              style={{ objectPosition: "50% 50%" }}
             />
           </div>
           <div className="relative mt-3 rounded-[1.25rem] border border-white/12 bg-[rgba(16,16,20,0.55)] p-4 backdrop-blur-2xl sm:mt-4 sm:rounded-[2rem] sm:p-5">

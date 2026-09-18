@@ -22,6 +22,7 @@ export type LocalSeoPage = {
     criteria: { title: string; text: string }[];
     verifiedElements: string[];
   };
+  informationSections?: { title: string; paragraphs: string[] }[];
   expectations: { title: string; text: string }[];
   relatedLinks: { href: string; label: string; description: string }[];
   faqs: { question: string; answer: string }[];
@@ -184,7 +185,7 @@ export const localSeoPages: LocalSeoPage[] = [
     introductionTitle:
       "Skin treatment works best when the concern and skin type are understood first.",
     introduction: [
-      "A visible skin concern may be influenced by inflammation, sun exposure, hormones, products, medication or the skin barrier. Radiance Clinics begins with a clinical review before recommending a procedure or device.",
+      "If you are looking for a skin specialist or skin-care doctor in Bhubaneswar, start with an assessment of the concern rather than a procedure package. At Radiance Clinics in IRC Village, Nayapalli, Dr. Satyarth Prakash reviews symptoms, skin type and previous care before recommending medical treatment, a procedure or a device.",
       "The treatment plan may combine home care, medical treatment, procedures or laser sessions. The sequence is selected around the active concern, skin tolerance, downtime and the patient's priorities.",
     ],
     assessmentTitle: "What happens during a skin consultation",
@@ -1252,9 +1253,9 @@ localSeoPages.push(
     slug: "non-surgical-hair-replacement-bhubaneswar",
     serviceName: "Non-Surgical Hair Replacement",
     metaTitle:
-      "Non-Surgical Hair Replacement in Bhubaneswar | Radiance Clinics",
+      "Hair Patch & Non-Surgical Hair Replacement in Bhubaneswar | Radiance",
     metaDescription:
-      "Explore non-surgical hair replacement and hair-patch options in Bhubaneswar, including suitability, matching, attachment and maintenance.",
+      "Discuss hair patches, wigs and non-surgical hair systems at Radiance Clinics, Bhubaneswar. Understand matching, fitting, scalp care, refitting and costs before choosing.",
     eyebrow: "Immediate cosmetic hair coverage",
     title: "Non-Surgical Hair Replacement in Bhubaneswar",
     heroDescription:
@@ -1287,6 +1288,43 @@ localSeoPages.push(
       "Discuss attachment and scalp comfort",
       "Plan maintenance before fitting",
       "Review changes in the scalp or surrounding hair",
+    ],
+    informationSections: [
+      {
+        title: "Hair Patch in Bhubaneswar: coverage for a defined area",
+        paragraphs: [
+          "A hair patch is an external hairpiece used to cover a particular area of visible thinning or baldness. It blends with the remaining hair; it does not grow new hair or change the cause of hair loss. The size and shape should follow the area that needs coverage, not an assumed example or package.",
+          "Matching involves more than choosing a colour. Hair direction, texture, density, the visible front edge and the haircut all affect the finish. Bring photographs of your usual hairstyle and explain your work, exercise, helmet use and grooming routine so the fitting discussion reflects daily life.",
+        ],
+      },
+      {
+        title: "Hair wigs and fuller-coverage systems",
+        paragraphs: [
+          "A wig generally provides broader coverage than a patch. The choice depends on how much scalp needs covering, the remaining hair and whether you want a removable option. Radiance's hair-replacement consultation brings patch and wig questions into the same assessment rather than treating them as separate cures for hair loss.",
+          "Ask to review the options actually available at the time of consultation. Human-hair and synthetic pieces differ in handling and permitted styling; do not assume that every piece accepts heat, colouring or the same products. Check the supplier's care instructions, construction, fit and replacement requirements before deciding.",
+        ],
+      },
+      {
+        title: "Fitting, attachment and scalp comfort",
+        paragraphs: [
+          "External systems may use tapes, adhesives or clips, depending on the construction and the person's scalp and existing hair. The clinic should explain the available method for the chosen system, how it is removed and whether any preparation of the surrounding hair is necessary. Not every attachment suits every person.",
+          "Mention known adhesive reactions, itching or scalp irritation before fitting. A system should not conceal an untreated painful, inflamed or damaged scalp. Ask who handles removal and refitting and how to contact the clinic if an edge lifts, the fit changes or irritation develops.",
+        ],
+      },
+      {
+        title: "Maintenance, refitting and the full cost",
+        paragraphs: [
+          "Plan for cleaning the piece and scalp, drying, detangling, attachment renewal and review visits. Sweat, washing, wear, the base and attachment can change the maintenance schedule, so a fixed lifespan or universal refitting interval is not a reliable promise.",
+          "Before fitting, request an estimate that separates the system, styling, attachment supplies, refitting and eventual replacement. Ask what is included, what you can do at home and what needs a trained person. A low initial price does not necessarily represent the ongoing cost.",
+        ],
+      },
+      {
+        title: "Hair patch or hair transplant: different goals",
+        paragraphs: [
+          "A patch gives cosmetic coverage when worn and can be considered when immediate appearance matters or surgery is not wanted. A transplant redistributes living follicles and requires suitable donor hair, surgical assessment and a gradual growth period. They are not interchangeable versions of the same treatment.",
+          "Some people also need care for continuing loss of their existing hair. Discuss that separately from the cosmetic piece. A useful consultation explains what coverage can achieve, what maintenance involves and which alternatives are appropriate without promising a permanent solution for everyone.",
+        ],
+      },
     ],
     expectations: [
       {
@@ -1338,6 +1376,21 @@ localSeoPages.push(
         question: "Can a hair patch look natural?",
         answer:
           "A careful match of colour, density, texture, hairline and style can improve blending. The appearance depends on the selected system and the surrounding hair.",
+      },
+      {
+        question: "Is a hair patch permanently attached?",
+        answer:
+          "No attachment should be understood as lifelong. Removal, scalp cleaning, refitting and eventual replacement are part of using an external system. The schedule depends on the piece and method selected.",
+      },
+      {
+        question: "Can I exercise or wear a helmet with a hair system?",
+        answer:
+          "Explain your routine during fitting. Heat, sweat, friction and helmet use can affect comfort and attachment. Follow the instructions for the selected system rather than assuming unrestricted activity or a universal waterproof fit.",
+      },
+      {
+        question: "How much does a hair patch or wig cost in Bhubaneswar?",
+        answer:
+          "An estimate depends on the system, coverage, material, fitting and maintenance. Radiance can discuss available options during consultation. Ask for both the initial and ongoing costs; a fixed price without selecting the system would be misleading.",
       },
       {
         question:

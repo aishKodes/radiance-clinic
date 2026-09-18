@@ -1,0 +1,43 @@
+{
+  "checkedAt": "2026-09-18",
+  "account": "radiance.clinics@gmail.com",
+  "urlPrefixProperty": "https://www.radianceclinics.com/",
+  "initialState": "Not verified when navigating to Settings; cached report access was not proof of ownership.",
+  "confirmedMethod": "HTML tag: Successfully verified; Settings > Ownership verification: You are a verified owner",
+  "owners": [{ "name": "Radiance Clinic (you)", "role": "Owner Verified" }],
+  "deployedVerificationCommit": "6f88c9b8ac2a81bec354a94d6dbe396d0a058c24",
+  "rootCauseEvidence": "Production root had no Google verification meta tag and public DNS had no Google verification TXT. Restoring the issued HTML tag enabled verification. Historical removal date and original ownership method cannot be proved from current UI.",
+  "domainProperty": "radianceclinics.com",
+  "domainStatus": "DNS_VERIFICATION_ACTION_REQUIRED",
+  "nameservers": ["ns29.domaincontrol.com", "ns30.domaincontrol.com"],
+  "dnsAction": {
+    "provider": "GoDaddy authoritative DNS",
+    "type": "TXT",
+    "name": "@",
+    "value": "google-site-verification=ij_K80AdENETIUwU-aGsVvf0nUue052w6HNz_nzxcn0",
+    "ttl": "default",
+    "instruction": "Add a separate record; preserve all existing SPF/verification records. Then verify the domain property in Search Console. No registrar access was available."
+  },
+  "indexOverview": {
+    "indexed": 212,
+    "notIndexed": 407,
+    "interpretation": "Not-indexed totals include legacy/redirect URLs; inspect reasons before treating all as failures."
+  },
+  "advertisingSubdomains": {
+    "skin.radianceclinics.com": "NOT_MODIFIED",
+    "hair.radianceclinics.com": "NOT_MODIFIED"
+  },
+  "serviceBlockers": [
+    {
+      "service": "Weight loss clinic",
+      "status": "SERVICE_CONFIRMATION_REQUIRED",
+      "reason": "Legacy page mixes drug/liposuction/contouring claims; it is not confirmation of the current clinical menu."
+    },
+    {
+      "service": "Microblading/lip blush",
+      "status": "SERVICE_CONFIRMATION_REQUIRED",
+      "reason": "Historical clicks alone do not verify current availability."
+    }
+  ],
+  "publicationPolicy": "Existing approved unique commercial/concern/answer routes remain indexable. No duplicate skin doctor/specialist/near-me page, unverified wig shop, local branch or medical weight-loss page created."
+}

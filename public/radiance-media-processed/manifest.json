@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-04T10:44:18.212Z",
+  "generatedAt": "2026-09-18T15:00:45.553Z",
   "inputRoot": "/Users/aishwaryam/Desktop/radiance-work/radiance-clinics/radiance-media-raw",
   "outputRoot": "/Users/aishwaryam/Desktop/radiance-work/radiance-clinics/public/radiance-media-processed",
   "counts": {
@@ -4192,6 +4192,11 @@
           "webp": "thumb/doctor-hero.webp",
           "width": 500,
           "height": 500
+        },
+        "uncropped": {
+          "webp": "uncropped/doctor-hero.webp",
+          "width": 1122,
+          "height": 1402
         }
       },
       "blur": {
@@ -4295,6 +4300,11 @@
           "webp": "thumb/doctor-image.webp",
           "width": 500,
           "height": 500
+        },
+        "uncropped": {
+          "webp": "uncropped/doctor-image.webp",
+          "width": 1122,
+          "height": 1402
         }
       },
       "blur": {
@@ -4398,6 +4408,11 @@
           "webp": "thumb/radiance-doctor-satyarth-award-moment-01.webp",
           "width": 500,
           "height": 500
+        },
+        "uncropped": {
+          "webp": "uncropped/radiance-doctor-satyarth-award-moment-01.webp",
+          "width": 1448,
+          "height": 1086
         }
       },
       "blur": {
@@ -4500,6 +4515,11 @@
           "webp": "thumb/radiance-doctor-satyarth-consultation-01.webp",
           "width": 500,
           "height": 500
+        },
+        "uncropped": {
+          "webp": "uncropped/radiance-doctor-satyarth-consultation-01.webp",
+          "width": 1086,
+          "height": 1448
         }
       },
       "blur": {
@@ -4602,6 +4622,11 @@
           "webp": "thumb/radiance-doctor-satyarth-consultation-01new.webp",
           "width": 500,
           "height": 500
+        },
+        "uncropped": {
+          "webp": "uncropped/radiance-doctor-satyarth-consultation-01new.webp",
+          "width": 1086,
+          "height": 1448
         }
       },
       "blur": {
@@ -4705,6 +4730,11 @@
           "webp": "thumb/radiance-doctor-satyarth-portrait-01.webp",
           "width": 500,
           "height": 500
+        },
+        "uncropped": {
+          "webp": "uncropped/radiance-doctor-satyarth-portrait-01.webp",
+          "width": 1448,
+          "height": 1086
         }
       },
       "blur": {
@@ -4807,6 +4837,11 @@
           "webp": "thumb/radiance-doctor-satyarth-procedure-room-01.webp",
           "width": 500,
           "height": 500
+        },
+        "uncropped": {
+          "webp": "uncropped/radiance-doctor-satyarth-procedure-room-01.webp",
+          "width": 1448,
+          "height": 1086
         }
       },
       "blur": {
@@ -4909,6 +4944,11 @@
           "webp": "thumb/radiance-doctor-satyarth-with-patient-01.webp",
           "width": 500,
           "height": 500
+        },
+        "uncropped": {
+          "webp": "uncropped/radiance-doctor-satyarth-with-patient-01.webp",
+          "width": 941,
+          "height": 1672
         }
       },
       "blur": {
@@ -5011,6 +5051,11 @@
           "webp": "thumb/radiance-doctor-satyarth-with-team-01.webp",
           "width": 500,
           "height": 500
+        },
+        "uncropped": {
+          "webp": "uncropped/radiance-doctor-satyarth-with-team-01.webp",
+          "width": 1086,
+          "height": 1448
         }
       },
       "blur": {

@@ -1589,6 +1589,7 @@ function sizeWarnings(width, height, relativePath, transformationCategory = "") 
 async function ensureOutputDirs(outRoot) {
   await mkdir(outRoot, { recursive: true });
   await mkdir(path.join(outRoot, "blur"), { recursive: true });
+  await mkdir(path.join(outRoot, "uncropped"), { recursive: true });
 
   for (const variant of variants) {
     await mkdir(path.join(outRoot, variant.dir), { recursive: true });
@@ -1662,6 +1663,17 @@ async function processImage({ filePath, inputRoot, outRoot, usedSlugs, metadataI
       width: variant.width,
       height: variant.height,
     };
+  }
+
+  // Portraits need a full-frame export: a cover-cropped hero cannot be uncropped by CSS.
+  if (category === "doctor") {
+    const relativePath = normalizeSlashes(path.join("uncropped", `${slug}.webp`));
+    const output = await sharp(filePath, { failOn: "none" })
+      .rotate()
+      .resize({ width: 1600, height: 2000, fit: "inside", withoutEnlargement: true })
+      .webp({ quality: 88, smartSubsample: true, effort: 5 })
+      .toFile(path.join(outRoot, relativePath));
+    generated.uncropped = { webp: relativePath, width: output.width, height: output.height };
   }
 
   const blurBuffer = await sharp(filePath, { failOn: "none" })

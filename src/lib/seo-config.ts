@@ -62,11 +62,26 @@ export const treatmentNavigationGroups = [
   {
     label: "Hair",
     links: [
-      { label: "Hair restoration overview", href: "/treatments/hair-restoration" },
-      { label: "Hair transplant in Bhubaneswar", href: "/hair-transplant-bhubaneswar" },
-      { label: "Hair loss clinic in Bhubaneswar", href: "/hair-loss-clinic-bhubaneswar" },
-      { label: "Alopecia areata assessment", href: "/alopecia-areata-treatment-bhubaneswar" },
-      { label: "Non-surgical hair replacement", href: "/non-surgical-hair-replacement-bhubaneswar" },
+      {
+        label: "Hair restoration overview",
+        href: "/treatments/hair-restoration",
+      },
+      {
+        label: "Hair transplant in Bhubaneswar",
+        href: "/hair-transplant-bhubaneswar",
+      },
+      {
+        label: "Hair loss clinic in Bhubaneswar",
+        href: "/hair-loss-clinic-bhubaneswar",
+      },
+      {
+        label: "Alopecia areata assessment",
+        href: "/alopecia-areata-treatment-bhubaneswar",
+      },
+      {
+        label: "Hair patches, wigs and non-surgical replacement",
+        href: "/non-surgical-hair-replacement-bhubaneswar",
+      },
       {
         label: "FUE hair transplant planning",
         href: "/treatments/hair-restoration/fue-hair-transplant",
@@ -81,9 +96,15 @@ export const treatmentNavigationGroups = [
     label: "Skin",
     links: [
       { label: "Skin treatments overview", href: "/treatments/skin" },
-      { label: "Skin clinic in Bhubaneswar", href: "/skin-clinic-bhubaneswar" },
+      {
+        label: "Skin clinic and specialist consultation in Bhubaneswar",
+        href: "/skin-clinic-bhubaneswar",
+      },
       { label: "Active acne treatment", href: "/acne-treatment-bhubaneswar" },
-      { label: "Acne scar treatment", href: "/acne-scar-treatment-bhubaneswar" },
+      {
+        label: "Acne scar treatment",
+        href: "/acne-scar-treatment-bhubaneswar",
+      },
       { label: "Wart removal assessment", href: "/wart-removal-bhubaneswar" },
       {
         label: "Pigmentation treatment",
@@ -116,20 +137,27 @@ export const treatmentNavigationGroups = [
   {
     label: "Aesthetic Dermatology",
     links: [
-      { label: "Aesthetic dermatology overview", href: "/treatments/aesthetic-dermatology" },
+      {
+        label: "Aesthetic dermatology overview",
+        href: "/treatments/aesthetic-dermatology",
+      },
       {
         label: "Injectables and fillers",
         href: "/treatments/aesthetic-dermatology/injectable-aesthetics",
       },
       { label: "Botox treatment", href: "/botox-treatment-bhubaneswar" },
       { label: "Dermal fillers", href: "/dermal-fillers-bhubaneswar" },
-      { label: "Skin ageing and laxity", href: "/conditions/skin-ageing-laxity" },
+      {
+        label: "Skin ageing and laxity",
+        href: "/conditions/skin-ageing-laxity",
+      },
     ],
   },
 ] as const;
 
 export function absoluteUrl(path = "/") {
-  const normalizedPath = path === "/" ? "/" : `/${path.replace(/^\/+|\/+$/g, "")}`;
+  const normalizedPath =
+    path === "/" ? "/" : `/${path.replace(/^\/+|\/+$/g, "")}`;
   return `${canonicalOrigin}${normalizedPath}`;
 }
 

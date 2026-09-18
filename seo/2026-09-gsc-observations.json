@@ -1,0 +1,264 @@
+{
+  "checkedAt": "2026-09-18",
+  "property": "https://www.radianceclinics.com/",
+  "source": "Authenticated Google Search Console performance UI; Web; all devices/countries; CSV download blocked by Chrome ERR_BLOCKED_BY_CLIENT. Query rows transcribed from rendered table. Unknown page mappings are intentionally blank.",
+  "window": "Last 28 complete days compared with previous 28 days; latest complete data through 2026-09-15. Exact custom-date dialog unavailable; retain native report-window labels.",
+  "columns": [
+    "query",
+    "current_clicks",
+    "previous_clicks",
+    "current_impressions",
+    "previous_impressions",
+    "current_ctr",
+    "previous_ctr",
+    "current_position",
+    "previous_position"
+  ],
+  "queries": [
+    ["radiance skin & hair clinics", 44, 55, 872, 955, "5%", "5.8%", 6, 5.8],
+    ["hair transplant bhubaneswar", 8, 11, 378, 351, "2.1%", "3.1%", 5.7, 6.9],
+    [
+      "radiance skin and hair clinic bhubaneswar",
+      8,
+      11,
+      61,
+      79,
+      "13.1%",
+      "13.9%",
+      1,
+      1.2
+    ],
+    [
+      "hair transplant in bhubaneswar",
+      6,
+      17,
+      635,
+      616,
+      "0.9%",
+      "2.8%",
+      6.2,
+      7.6
+    ],
+    [
+      "best hair transplant clinic in bhubaneswar",
+      3,
+      4,
+      223,
+      323,
+      "1.3%",
+      "1.2%",
+      15.6,
+      8.9
+    ],
+    [
+      "best hair transplant in bhubaneswar",
+      2,
+      6,
+      297,
+      350,
+      "0.7%",
+      "1.7%",
+      14.7,
+      15.9
+    ],
+    ["radiance hair clinic", 2, 3, 96, 159, "2.1%", "1.9%", 33.9, 35.8],
+    [
+      "best hair doctor in bhubaneswar",
+      1,
+      3,
+      229,
+      328,
+      "0.4%",
+      "0.9%",
+      5.7,
+      5.7
+    ],
+    [
+      "best dermatologist bhubaneswar",
+      1,
+      2,
+      148,
+      167,
+      "0.7%",
+      "1.2%",
+      6.6,
+      6.9
+    ],
+    ["hair clinic bhubaneswar", 1, 3, 95, 144, "1.1%", "2.1%", 6.6, 3],
+    [
+      "services offered by radiance skin & hair clinics",
+      1,
+      3,
+      41,
+      41,
+      "2.4%",
+      "7.3%",
+      1.1,
+      2
+    ],
+    [
+      "radiance skin & hair clinics bhubaneswar",
+      1,
+      3,
+      25,
+      26,
+      "4%",
+      "11.5%",
+      1,
+      1.2
+    ],
+    ["dr satyartha prakash", 1, 2, 19, 19, "5.3%", "10.5%", 2.5, 2.1],
+    [
+      "hair specialist doctor in bhubaneswar",
+      0,
+      3,
+      230,
+      198,
+      "0%",
+      "1.5%",
+      8,
+      7.1
+    ],
+    ["hair specialist in bhubaneswar", 0, 2, 152, 220, "0%", "0.9%", 14, 11.5],
+    ["radiance hair transplant", 0, 4, 116, 115, "0%", "3.5%", 34.7, 39],
+    [
+      "laser hair removal in bhubaneswar",
+      0,
+      2,
+      109,
+      148,
+      "0%",
+      "1.4%",
+      17.3,
+      15.1
+    ],
+    ["aesthetic clinic bhubaneswar", 0, 2, 42, 38, "0%", "5.3%", 9.1, 8.1],
+    [
+      "microblading eyebrows in bhubaneswar",
+      0,
+      2,
+      30,
+      30,
+      "0%",
+      "6.7%",
+      1,
+      2.6
+    ],
+    ["hair patch in bhubaneswar", 0, 3, 22, 131, "0%", "2.3%", 20.9, 5.5],
+    ["hair patch service in bhubaneswar", 0, 1, 2, 31, "0%", "3.2%", 7.5, 2.4],
+    ["hair patch price in bhubaneswar", 0, 1, 1, 19, "0%", "5.3%", 10, 6.8],
+    ["hair wig in bhubaneswar", 0, 1, 2, 27, "0%", "3.7%", 17, 6],
+    ["hair wig for men in bhubaneswar", 0, 1, 0, 6, "0%", "16.7%", null, 6],
+    ["dermatologist in bhubaneswar", 0, 0, 324, 276, "0%", "0%", 8.9, 8.9],
+    ["skin specialist in bhubaneswar", 0, 0, 156, 81, "0%", "0%", 10.7, 14.4],
+    ["hair transplant in rourkela", 0, 0, 15, 14, "0%", "0%", 7.4, 12],
+    ["hair patch bhubaneswar", 0, 0, 18, 23, "0%", "0%", 13.3, 8.3]
+  ],
+  "queryPageMappings": {
+    "hair transplant in bhubaneswar": {
+      "previous": "https://www.radianceclinics.com/",
+      "current": "https://www.radianceclinics.com/",
+      "detail": "Exact-query Pages: homepage 6 vs 16 clicks; 607 vs 574 impressions; CTR 1% vs 2.8%; page position 3.8 vs 3.3. Query aggregate 6.2 vs 7.6 is not this page's position. Commercial page 23 impressions/position 47.3; FUE page 8/51.5. Preserve winning homepage URL/title; ownership consolidation requires monitoring."
+    },
+    "hair patch in bhubaneswar": {
+      "previous": "https://www.radianceclinics.com/hair-patch/",
+      "current": "https://www.radianceclinics.com/",
+      "detail": "Old hair-patch page 3 clicks/101 impressions/position 2.8; homepage currently 17 impressions/position 18.1; transplant page 5 impressions/position 30.4. Canonical replacement absent from this query's page table."
+    },
+    "hair wig in bhubaneswar": {
+      "previous": "https://www.radianceclinics.com/hair-wig/",
+      "current": "https://www.radianceclinics.com/",
+      "detail": "Old wig page 1 click/23 impressions/position 4.6; homepage currently 2 impressions/position 17. Canonical replacement absent."
+    },
+    "dermatologist in bhubaneswar": {
+      "previous": "https://www.radianceclinics.com/",
+      "current": "https://www.radianceclinics.com/",
+      "detail": "Homepage 324 current vs 276 previous impressions; position 8.9 both periods. This is not evidence of deindexing."
+    },
+    "skin specialist in bhubaneswar": {
+      "previous": "https://www.radianceclinics.com/",
+      "current": "https://www.radianceclinics.com/",
+      "detail": "Homepage 156 current vs 81 previous impressions; position improved 14.4 to 10.7."
+    }
+  },
+  "siteTotals": {
+    "clicks7": 133,
+    "previousClicks7": 116,
+    "impressions7Display": "11.2k",
+    "previousImpressions7Display": "11.5k",
+    "position7": 12.8,
+    "previousPosition7": 13.6,
+    "clicks28": 485,
+    "previousClicks28": 536,
+    "impressions28": 47622,
+    "previousImpressions28": 53060,
+    "position28": 17.5,
+    "previousPosition28": 13.1
+  },
+  "pages28": [
+    ["/skin-clinic-bhubaneswar", 24, 5, 4283, 1494, "0.6%", "0.3%", 17.2, 19.8],
+    [
+      "/non-surgical-hair-replacement-bhubaneswar",
+      0,
+      0,
+      36,
+      0,
+      "0%",
+      "0%",
+      68.7,
+      null
+    ],
+    ["/hair-patch/", 0, 10, 0, 713, "0%", "1.4%", null, 18.4],
+    ["/hair-wig/", 0, 6, 0, 367, "0%", "1.6%", null, 7.9],
+    ["/hair-transplant-rourkela", 2, 0, 55, 0, "3.6%", "0%", 8, null],
+    ["/hair-transplant-in-rourkela/", 0, 0, 0, 138, "0%", "0%", null, 14.1],
+    [
+      "/book-online-radiance-clinics-bhuabaneswar",
+      0,
+      27,
+      0,
+      1776,
+      "0%",
+      "1.5%",
+      null,
+      4.7
+    ],
+    ["/hair-transplant-in-berhampur/", 0, 5, 0, 815, "0%", "0.6%", null, 7.9],
+    ["/hair-transplant-in-cuttack/", 0, 4, 0, 388, "0%", "1%", null, 13],
+    ["/hair-transplant-in-puri/", 0, 5, 0, 150, "0%", "3.3%", null, 16.4],
+    ["/hair-transplant-in-sambalpur/", 0, 3, 0, 392, "0%", "0.8%", null, 9.8],
+    ["/hair-transplant-in-baripada/", 0, 4, 0, 154, "0%", "2.6%", null, 10.9]
+  ],
+  "devices28": [
+    ["Mobile", 381, 422, 33527, 39892, "1.1%", "1.1%", 8.5, 7.9],
+    ["Desktop", 100, 110, 13870, 12519, "0.7%", "0.9%", 39.6, 28.9],
+    ["Tablet", 4, 4, 225, 649, "1.8%", "0.6%", 12.5, 22.1]
+  ],
+  "queries7": [
+    ["hair transplant in bhubaneswar", 1, 0, 135, 155, "0.7%", "0%", 5.5, 5.3],
+    ["hair transplant bhubaneswar", 1, 1, 86, 74, "1.2%", "1.4%", 4.4, 7.4],
+    ["dermatologist in bhubaneswar", 0, 0, 83, 80, "0%", "0%", 9.4, 8.5],
+    ["skin specialist in bhubaneswar", 0, 0, 39, 39, "0%", "0%", 9.9, 10.8],
+    ["hair patch in bhubaneswar", 0, 0, 6, 6, "0%", "0%", 15.7, 21.8],
+    ["hair transplant in rourkela", 0, 0, 7, 4, "0%", "0%", 7.1, 8.5],
+    ["skin clinic bhubaneswar", 2, 0, 46, 73, "4.3%", "0%", 8.7, 8.5],
+    ["hair doctor bhubaneswar", 0, 1, 65, 57, "0%", "1.8%", 5.2, 5.2]
+  ],
+  "countries28": [
+    ["India", 462, 514, 39669, 44479, "1.2%", "1.2%", 11.6, 9.8],
+    ["United Kingdom", 3, 2, 1274, 951, "0.2%", "0.2%", 60.7, 38.7],
+    ["United States", 2, 2, 2396, 2887, "0.1%", "0.1%", 40.9, 30.6],
+    ["Canada", 2, 3, 220, 242, "0.9%", "1.2%", 50.1, 20.9],
+    ["Germany", 2, 1, 84, 109, "2.4%", "0.9%", 14.4, 26.2]
+  ],
+  "missingExactQueries": [
+    "skin care doctor bhubaneswar",
+    "weight loss clinic bhubaneswar"
+  ],
+  "limitations": [
+    "First 500 unfiltered query rows sorted by current clicks plus all 107 rows matching the high-intent regex were examined. Low-click queries outside those sets require a full export or API access.",
+    "Page mappings only recorded when inspected with an exact query regex. Query-aggregate position is not the position of an individual page.",
+    "Current and previous 28-day windows overlap migration activity; they are not a clean causal pre/post experiment.",
+    "Site totals include anonymised queries absent from query tables. Missing queries and positions with zero impressions are unknown, not position zero."
+  ]
+}

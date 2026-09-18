@@ -200,6 +200,28 @@ export function LocalSeoLandingPage({
         </div>
       </section>
 
+      {page.informationSections?.map((section, index) => (
+        <section
+          key={section.title}
+          aria-labelledby={`${page.slug}-detail-${index}`}
+          className="border-t border-[var(--ink)]/10 bg-white px-5 py-12 sm:px-8 sm:py-16"
+        >
+          <div className="mx-auto max-w-7xl">
+            <h2
+              id={`${page.slug}-detail-${index}`}
+              className="max-w-4xl font-serif text-3xl leading-tight text-[var(--ink)] sm:text-4xl"
+            >
+              {section.title}
+            </h2>
+            <div className="mt-6 max-w-3xl space-y-5 text-base leading-8 text-[var(--ink)]/70">
+              {section.paragraphs.map((paragraph) => (
+                <p key={paragraph}>{paragraph}</p>
+              ))}
+            </div>
+          </div>
+        </section>
+      ))}
+
       {page.decisionGuide ? (
         <section
           aria-labelledby={`${page.slug}-selection-guide`}

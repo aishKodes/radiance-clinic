@@ -9,6 +9,7 @@
     "lint": "eslint",
     "typecheck": "tsc --noEmit",
     "seo:audit": "node scripts/seo-audit.mjs",
+    "seo:regression": "node --test scripts/seo-regression.test.mjs && node scripts/seo-regression.mjs",
     "seo:gsc-sync": "node scripts/gsc-sync.mjs",
     "seo:gsc-inspect": "node scripts/gsc-inspect.mjs",
     "seo:gsc-submit-sitemap": "node scripts/gsc-submit-sitemap.mjs",

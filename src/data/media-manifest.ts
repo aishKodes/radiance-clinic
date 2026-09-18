@@ -19,6 +19,7 @@ const tinyBlur =
 
 type VariantKey =
   | "heroDesktop"
+  | "uncropped"
   | "heroMobile"
   | "landscape"
   | "portrait"
@@ -426,6 +427,7 @@ function cmsImage(item: ManifestItem, variant: VariantKey = "landscape"): CmsIma
     src: selectVariant(item, variant),
     alt: altText,
     desktopUrl: selectVariant(item, "heroDesktop"),
+    uncroppedUrl: pathWithBase(item.generated?.uncropped?.webp) || undefined,
     mobileUrl: selectVariant(item, "heroMobile"),
     thumbnailUrl: selectVariant(item, "thumb"),
     fallbackUrl: selectVariant(item, "landscape"),

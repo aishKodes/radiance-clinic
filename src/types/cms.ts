@@ -14,6 +14,7 @@ export type CmsImage = {
   category?: string;
   role?: string;
   desktopUrl: string;
+  uncroppedUrl?: string;
   mobileUrl?: string;
   thumbnailUrl?: string;
   fallbackUrl?: string;

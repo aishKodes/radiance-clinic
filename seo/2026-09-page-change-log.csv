@@ -1,0 +1,4 @@
+date,page,protected_status,change,reason,guardrail
+2026-09-18,/skin-clinic-bhubaneswar,PROTECTED,Clarify first introduction paragraph and link anchors; retain title H1 canonical and structure,Current page clicks improved 5 to 24; dermatologist and skin specialist queries still rank homepage,No URL title H1 or major structure change
+2026-09-18,/non-surgical-hair-replacement-bhubaneswar,RECOVERY_TARGET,Add Hair Patch to title and substantive patch wig attachment maintenance and comparison sections,Hair patch query lost 3 clicks and position 5.5 to 20.9; hair wig query lost 1 click; current canonical has no clicks,One commercial owner; no fake wig shop page or guaranteed results
+2026-09-18,/hair-wig/,HISTORICAL_WINNER,One-hop permanent redirect to substantial replacement coverage page,Legacy URL lost 6 page clicks and 367 impressions; no current impressions,Redirect directly to indexable self-canonical 200 destination
