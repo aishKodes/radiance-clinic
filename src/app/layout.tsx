@@ -40,6 +40,9 @@ const fraunces = Fraunces({
 
 export const metadata: Metadata = {
   metadataBase: new URL(canonicalOrigin),
+  verification: {
+    google: "ij_K80AdENETIUwU-aGsVvf0nUue052w6HNz_nzxcn0",
+  },
   title: {
     default: "Radiance Clinics Bhubaneswar | Hair, Skin & Aesthetic Care",
     template: "%s | Radiance Clinics Bhubaneswar",
