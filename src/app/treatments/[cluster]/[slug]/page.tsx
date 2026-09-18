@@ -4,6 +4,7 @@ import { CheckCircle2 } from "lucide-react";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ClinicalContentSections } from "@/components/ClinicalContentSections";
 import { JsonLd } from "@/components/JsonLd";
+import { MedicalReview } from "@/components/MedicalReview";
 import { PremiumButton } from "@/components/PremiumButton";
 import { RelatedContent } from "@/components/RelatedContent";
 import { RelatedVideos } from "@/components/RelatedVideos";
@@ -87,6 +88,7 @@ export default async function TreatmentDetailPage({ params }: Props) {
           title: treatment.title,
           description: treatment.summary,
           path,
+          medicalReview: true,
         })}
       />
       {videos.map((video) => <JsonLd key={video.videoId} data={videoObjectJsonLd(video)} />)}
@@ -120,6 +122,7 @@ export default async function TreatmentDetailPage({ params }: Props) {
                 View treatment results
               </PremiumButton>
             </div>
+            <MedicalReview compact className="mt-8 max-w-3xl" />
           </div>
           <StickyConsultationCard />
         </div>

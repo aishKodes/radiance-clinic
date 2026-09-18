@@ -11,6 +11,7 @@ import {
 } from "@/components/BackgroundEffects";
 import { ClinicAmbienceGallery } from "@/components/ClinicAmbienceGallery";
 import { DoctorAuthority } from "@/components/DoctorAuthority";
+import { MediaCoverageStrip } from "@/components/MediaCoverageStrip";
 import { FAQAccordion } from "@/components/FAQAccordion";
 import { JsonLd } from "@/components/JsonLd";
 import { LuxuryHero } from "@/components/LuxuryHero";
@@ -363,6 +364,8 @@ export default async function Home() {
       </section>
 
       <DoctorAuthority doctor={doctor} />
+
+      <MediaCoverageStrip />
 
       <section className="relative isolate overflow-hidden bg-[var(--mist)] px-4 py-16 sm:px-8 sm:py-20 lg:py-32">
         <SectionGlowMask className="z-0 opacity-70" />

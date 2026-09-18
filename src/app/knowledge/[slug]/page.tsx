@@ -5,6 +5,7 @@ import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { JsonLd } from "@/components/JsonLd";
+import { MedicalReview } from "@/components/MedicalReview";
 import { PremiumButton } from "@/components/PremiumButton";
 import { RelatedVideos } from "@/components/RelatedVideos";
 import { StickyConsultationCard } from "@/components/StickyConsultationCard";
@@ -144,6 +145,7 @@ export default async function ArticlePage({ params }: Props) {
           title: article.title,
           description: article.excerpt,
           path,
+          medicalReview: true,
         })}
       />
       {videos.map((video) => <JsonLd key={video.videoId} data={videoObjectJsonLd(video)} />)}
@@ -160,25 +162,22 @@ export default async function ArticlePage({ params }: Props) {
             <p className="mt-8 max-w-3xl text-xl leading-9 text-[#151515]/68">
               {article.excerpt}
             </p>
-            {article.authorName || article.publishedAt || article.updatedAt || article.reviewedAt ? (
+            {article.publishedAt || article.updatedAt ? (
               <dl className="mt-7 flex flex-wrap gap-x-7 gap-y-2 text-sm text-[#151515]/58">
-                {article.authorName ? (
-                  <div className="flex gap-2"><dt>By</dt><dd className="font-bold text-[#151515]">{article.authorName}</dd></div>
-                ) : null}
                 {article.publishedAt ? (
                   <div className="flex gap-2"><dt>Published</dt><dd><time dateTime={article.publishedAt}>{article.publishedAt}</time></dd></div>
                 ) : null}
                 {article.updatedAt ? (
                   <div className="flex gap-2"><dt>Updated</dt><dd><time dateTime={article.updatedAt}>{article.updatedAt}</time></dd></div>
                 ) : null}
-                {article.reviewedAt ? (
-                  <div className="flex gap-2"><dt>Reviewed</dt><dd><time dateTime={article.reviewedAt}>{article.reviewedAt}</time></dd></div>
-                ) : null}
-                {article.reviewedBy ? (
-                  <div className="flex gap-2"><dt>Medically reviewed by</dt><dd className="font-bold text-[#151515]">{article.reviewedBy}</dd></div>
-                ) : null}
               </dl>
             ) : null}
+            <MedicalReview
+              authorName={article.authorName || "Radiance Editorial Team"}
+              authorType={article.authorType}
+              reviewedAt={article.reviewedAt}
+              className="mt-8 max-w-3xl"
+            />
           </article>
           <StickyConsultationCard />
         </div>

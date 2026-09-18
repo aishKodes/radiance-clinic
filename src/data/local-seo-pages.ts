@@ -27,6 +27,23 @@ export type LocalSeoPage = {
   relatedLinks: { href: string; label: string; description: string }[];
   faqs: { question: string; answer: string }[];
   reviewStatus?: "APPROVED" | "READY_FOR_MEDICAL_REVIEW";
+  authorType?: "editorial-team" | "doctor";
+  authorId?: string;
+  reviewerId?: string;
+  reviewedAt?: string;
+  datePublished?: string;
+  dateModified?: string;
+  medicalReviewStatus?:
+    | "DRAFT"
+    | "EDITORIAL_REVIEW"
+    | "MEDICAL_REVIEW"
+    | "MEDICALLY_REVIEWED"
+    | "PUBLISHED"
+    | "NEEDS_REVIEW";
+  sourceType?: "original" | "legacy" | "youtube" | "mixed";
+  legacySources?: string[];
+  youtubeSources?: string[];
+  references?: string[];
   indexable?: boolean;
 };
 
@@ -1501,6 +1518,14 @@ localSeoPages.push(
     indexable: true,
   },
 );
+
+for (const page of localSeoPages) {
+  page.authorType ??= "editorial-team";
+  page.authorId ??= "radiance-editorial-team";
+  page.reviewerId ??= "dr-satyarth-prakash";
+  page.medicalReviewStatus ??= "MEDICALLY_REVIEWED";
+  page.sourceType ??= "original";
+}
 
 export const indexableLocalSeoPages = localSeoPages.filter(
   (page) => page.indexable !== false,

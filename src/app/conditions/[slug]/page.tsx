@@ -4,6 +4,7 @@ import { CheckCircle2 } from "lucide-react";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ClinicalContentSections } from "@/components/ClinicalContentSections";
 import { JsonLd } from "@/components/JsonLd";
+import { MedicalReview } from "@/components/MedicalReview";
 import { PremiumButton } from "@/components/PremiumButton";
 import { RelatedContent } from "@/components/RelatedContent";
 import { SectionHeader } from "@/components/SectionHeader";
@@ -74,6 +75,7 @@ export default async function ConditionDetailPage({ params }: Props) {
           title: condition.title,
           description: condition.summary,
           path,
+          medicalReview: true,
         })}
       />
       <JsonLd data={breadcrumbJsonLd(breadcrumbs)} />
@@ -90,6 +92,7 @@ export default async function ConditionDetailPage({ params }: Props) {
             <PremiumButton href="/contact" className="mt-10">
               Book assessment
             </PremiumButton>
+            <MedicalReview compact className="mt-8 max-w-3xl" />
           </div>
           <StickyConsultationCard />
         </div>

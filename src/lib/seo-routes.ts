@@ -11,6 +11,8 @@ export const coreIndexableRoutes = [
   "/results",
   "/locations",
   "/reviews",
+  "/media",
+  "/editorial-policy",
   "/contact",
   "/privacy-policy",
 ] as const;

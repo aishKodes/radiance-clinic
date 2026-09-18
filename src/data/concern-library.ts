@@ -4,6 +4,12 @@ import type {
   DoctorAnswer,
 } from "@/types/concern";
 
+// Stable IDs mirror the public entity records in src/data/doctor.ts. They are
+// kept as literals here so the standalone content audit can evaluate this
+// source file without loading browser-facing media dependencies.
+const doctorEntityId = "dr-satyarth-prakash";
+const editorialTeamId = "radiance-editorial-team";
+
 const updatedAt = "2026-08-15";
 const preparedBy = "Radiance Editorial Team";
 
@@ -430,8 +436,13 @@ function buildConcern(seed: ConcernSeed): Concern {
     relatedArticles: category.usefulGuides,
     references: [],
     preparedBy,
+    authorType: "editorial-team",
+    authorId: editorialTeamId,
     reviewedBy: medicalReviewer.name,
+    reviewerId: doctorEntityId,
     reviewedAt: medicalReviewer.reviewedAt,
+    medicalReviewStatus: "MEDICALLY_REVIEWED",
+    sourceType: "original",
     publishedAt: medicalReviewer.reviewedAt,
     updatedAt,
     seoTitle: `${seed.title}: Signs, Causes & Assessment | Radiance Clinics`,
@@ -472,6 +483,11 @@ export function getConcernCategory(slug: string) {
 
 const approvedAnswerDefaults = {
   preparedBy,
+  authorType: "editorial-team" as const,
+  authorId: editorialTeamId,
+  reviewerId: doctorEntityId,
+  medicalReviewStatus: "MEDICALLY_REVIEWED" as const,
+  sourceType: "original" as const,
   updatedAt,
   status: "APPROVED" as const,
   indexable: true,
@@ -1158,8 +1174,13 @@ const doctorAnswerDrafts: DoctorAnswer[] = [
   },
 ].map((answer) => ({
   ...answer,
+  authorType: "editorial-team" as const,
+  authorId: editorialTeamId,
   reviewedBy: medicalReviewer.name,
+  reviewerId: doctorEntityId,
   reviewedAt: medicalReviewer.reviewedAt,
+  medicalReviewStatus: "MEDICALLY_REVIEWED" as const,
+  sourceType: "original" as const,
   status: "APPROVED",
   indexable: true,
 }));

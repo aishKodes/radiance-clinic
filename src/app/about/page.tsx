@@ -1,17 +1,23 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Award, Microscope, ShieldCheck, Sparkles } from "lucide-react";
 import { DoctorAuthority } from "@/components/DoctorAuthority";
 import { JsonLd } from "@/components/JsonLd";
+import { MediaCoverageStrip } from "@/components/MediaCoverageStrip";
 import { PremiumButton } from "@/components/PremiumButton";
 import { RelatedContent } from "@/components/RelatedContent";
+import { RelatedVideos } from "@/components/RelatedVideos";
 import { SectionHeader } from "@/components/SectionHeader";
 import { StickyConsultationCard } from "@/components/StickyConsultationCard";
+import { satyarthPrakash } from "@/data/doctor";
 import { fallbackData } from "@/data/fallback";
 import { clinicFacts } from "@/data/clinic-facts";
-import { getDoctorProfile } from "@/data/site";
-import { webPageJsonLd } from "@/lib/schema";
+import { featuredMediaCoverage } from "@/data/media-coverage";
+import { doctorAnswers } from "@/data/concern-library";
+import { getArticles, getDoctorProfile } from "@/data/site";
+import { videosForPath } from "@/data/video-library";
+import { doctorProfilePageJsonLd } from "@/lib/schema";
 import { pageMetadata } from "@/lib/metadata";
-import { physicianJsonLd } from "@/lib/schema";
 
 export const metadata: Metadata = pageMetadata({
   title: `About ${fallbackData.siteSettings.doctor} | Radiance Clinics`,
@@ -21,19 +27,14 @@ export const metadata: Metadata = pageMetadata({
 });
 
 export default async function AboutPage() {
-  const doctor = await getDoctorProfile();
+  const [doctor, articles] = await Promise.all([getDoctorProfile(), getArticles()]);
+  const profileVideos = videosForPath("/about", 2);
+  const reviewedArticles = articles.slice(0, 3);
+  const relatedAnswers = doctorAnswers.slice(0, 4);
 
   return (
     <>
-      <JsonLd
-        data={webPageJsonLd({
-          title: `About ${fallbackData.siteSettings.doctor}`,
-          description:
-            "Doctor-led aesthetic, skin, laser and hair restoration care at Radiance Clinics.",
-          path: "/about",
-        })}
-      />
-      <JsonLd data={physicianJsonLd()} />
+      <JsonLd data={doctorProfilePageJsonLd()} />
       <section className="bg-[#F7F1E8] px-5 pb-20 pt-36 sm:px-8 lg:pb-28 lg:pt-44">
         <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[1fr_0.72fr] lg:items-start">
           <div>
@@ -95,6 +96,141 @@ export default async function AboutPage() {
       </section>
 
       <DoctorAuthority doctor={doctor} />
+
+      <MediaCoverageStrip className="bg-[#FBF7EF]" />
+
+      <section className="bg-[var(--ivory)] px-5 py-20 sm:px-8 lg:py-28">
+        <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.72fr_1.28fr]">
+          <div>
+            <p className="text-xs font-extrabold uppercase tracking-[0.22em] text-[var(--bronze)]">
+              Clinical focus
+            </p>
+            <h2 className="mt-4 font-serif text-5xl leading-none text-[var(--ink)]">
+              Care areas connected to the doctor profile.
+            </h2>
+            <p className="mt-6 max-w-xl text-base leading-8 text-[var(--ink)]/68">
+              {satyarthPrakash.bio}
+            </p>
+          </div>
+          <div className="grid gap-4 sm:grid-cols-2">
+            {satyarthPrakash.clinicalAreas.map((area) => (
+              <Link
+                key={area.href}
+                href={area.href}
+                className="group border-t border-[var(--ink)]/14 py-5 transition hover:border-[var(--bronze)]"
+              >
+                <h3 className="text-xl font-extrabold text-[var(--ink)]">
+                  {area.label}
+                </h3>
+                <p className="mt-3 text-sm leading-7 text-[var(--ink)]/62">
+                  {area.description}
+                </p>
+                <span className="mt-5 inline-flex text-xs font-extrabold uppercase tracking-[0.14em] text-[var(--aqua)]">
+                  Explore care
+                </span>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-[var(--mist)] px-5 py-20 sm:px-8 lg:py-28">
+        <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-2">
+          <div>
+            <p className="text-xs font-extrabold uppercase tracking-[0.22em] text-[var(--bronze)]">
+              Reviewed clinical education
+            </p>
+            <h2 className="mt-4 font-serif text-5xl leading-none text-[var(--ink)]">
+              Patient information with visible medical oversight.
+            </h2>
+            <p className="mt-6 max-w-xl text-base leading-8 text-[var(--ink)]/68">
+              Radiance Editorial Team prepares patient education using clinic knowledge and relevant sources. Substantive medical content is reviewed by Dr. Satyarth Prakash before publication or update.
+            </p>
+            <Link
+              href="/editorial-policy"
+              className="mt-7 inline-flex text-sm font-extrabold text-[var(--aqua)] underline decoration-[var(--aqua)]/35 underline-offset-4 hover:decoration-[var(--aqua)]"
+            >
+              Read the editorial policy
+            </Link>
+          </div>
+          <div className="grid gap-3">
+            {reviewedArticles.map((article) => (
+              <Link
+                key={article.slug}
+                href={`/knowledge/${article.slug}`}
+                className="group flex items-start justify-between gap-5 border-t border-[var(--ink)]/14 py-5"
+              >
+                <span>
+                  <span className="block text-xs font-extrabold uppercase tracking-[0.14em] text-[var(--bronze)]">
+                    Knowledge guide
+                  </span>
+                  <span className="mt-2 block text-lg font-extrabold leading-7 text-[var(--ink)]">
+                    {article.title}
+                  </span>
+                </span>
+                <span className="text-[var(--aqua)]">&rarr;</span>
+              </Link>
+            ))}
+            {relatedAnswers.map((answer) => (
+              <Link
+                key={answer.slug}
+                href={`/doctor-answers/${answer.slug}`}
+                className="group flex items-start justify-between gap-5 border-t border-[var(--ink)]/14 py-5"
+              >
+                <span>
+                  <span className="block text-xs font-extrabold uppercase tracking-[0.14em] text-[var(--bronze)]">
+                    Doctor answer
+                  </span>
+                  <span className="mt-2 block text-lg font-extrabold leading-7 text-[var(--ink)]">
+                    {answer.question}
+                  </span>
+                </span>
+                <span className="text-[var(--aqua)]">&rarr;</span>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <RelatedVideos
+        videos={profileVideos}
+        title="Watch relevant explanations from Radiance."
+      />
+
+      <section className="bg-[var(--ivory)] px-5 py-20 sm:px-8 lg:py-24">
+        <div className="mx-auto max-w-7xl">
+          <p className="text-xs font-extrabold uppercase tracking-[0.22em] text-[var(--bronze)]">
+            External coverage
+          </p>
+          <h2 className="mt-4 font-serif text-5xl leading-none text-[var(--ink)]">
+            Media references connected to Radiance Clinics.
+          </h2>
+          <div className="mt-10 grid gap-4 md:grid-cols-2">
+            {featuredMediaCoverage.map((item) => (
+              <a
+                key={item.id}
+                href={item.originalArticleUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="group border-t border-[var(--ink)]/14 py-5"
+              >
+                <span className="text-xs font-extrabold uppercase tracking-[0.14em] text-[var(--bronze)]">
+                  {item.outletName} · {item.topicLabel}
+                </span>
+                <span className="mt-3 block text-xl font-extrabold leading-7 text-[var(--ink)]">
+                  {item.articleTitle}
+                </span>
+              </a>
+            ))}
+          </div>
+          <Link
+            href="/media"
+            className="mt-8 inline-flex text-sm font-extrabold text-[var(--aqua)] underline decoration-[var(--aqua)]/35 underline-offset-4 hover:decoration-[var(--aqua)]"
+          >
+            View all selected media coverage
+          </Link>
+        </div>
+      </section>
 
       <RelatedContent
         eyebrow="Treatment areas and patient guides"

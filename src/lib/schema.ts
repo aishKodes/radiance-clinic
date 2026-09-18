@@ -8,7 +8,8 @@ import {
 } from "@/lib/seo-config";
 import type { Article, ClinicSettings } from "@/types/cms";
 import type { YouTubeVideo } from "@/types/video-library";
-import { clinicFacts } from "@/data/clinic-facts";
+import type { MediaCoverageItem } from "@/data/media-coverage";
+import { radianceEditorialTeam, satyarthPrakash } from "@/data/doctor";
 
 type JsonLd = Record<string, unknown>;
 
@@ -89,13 +90,45 @@ export function physicianJsonLd(
 ): JsonLd {
   return {
     "@context": "https://schema.org",
-    "@type": "Physician",
-    "@id": schemaIds.physician,
-    name: settings.doctor,
-    url: absoluteUrl("/about"),
-    description: `Founder and lead doctor at Radiance Clinics with more than ${clinicFacts.clinicalExperience.value.replace("+", "")} years of clinical experience.`,
+    "@type": ["Person", "Physician"],
+    "@id": schemaIds.doctor,
+    name: satyarthPrakash.name,
+    url: absoluteUrl(satyarthPrakash.profilePath),
+    image: absoluteUrl(
+      satyarthPrakash.profileImage.src ||
+        satyarthPrakash.profileImage.desktopUrl,
+    ),
+    jobTitle: satyarthPrakash.role,
+    description: satyarthPrakash.bio,
+    knowsAbout: satyarthPrakash.clinicalAreas.map((area) => area.label),
     worksFor: { "@id": schemaIds.clinic },
     address: postalAddress(settings),
+  };
+}
+
+export function editorialTeamJsonLd(): JsonLd {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": schemaIds.editorialTeam,
+    name: radianceEditorialTeam.name,
+    url: absoluteUrl(radianceEditorialTeam.policyPath),
+    parentOrganization: { "@id": schemaIds.organization },
+  };
+}
+
+export function doctorProfilePageJsonLd(): JsonLd {
+  const url = absoluteUrl(satyarthPrakash.profilePath);
+  return {
+    "@context": "https://schema.org",
+    "@type": "ProfilePage",
+    "@id": `${url}#webpage`,
+    name: `${satyarthPrakash.name} at Radiance Clinics`,
+    url,
+    isPartOf: { "@id": schemaIds.website },
+    mainEntity: { "@id": schemaIds.doctor },
+    about: [{ "@id": schemaIds.doctor }, { "@id": schemaIds.clinic }],
+    inLanguage: "en-IN",
   };
 }
 
@@ -103,22 +136,24 @@ export function webPageJsonLd({
   title,
   description,
   path,
+  medicalReview = false,
 }: {
   title: string;
   description: string;
   path: string;
+  medicalReview?: boolean;
 }): JsonLd {
   const url = absoluteUrl(path);
   return {
     "@context": "https://schema.org",
-    "@type": "WebPage",
+    "@type": medicalReview ? "MedicalWebPage" : "WebPage",
     "@id": `${url}#webpage`,
     name: title,
     description,
     url,
     isPartOf: { "@id": schemaIds.website },
     about: { "@id": schemaIds.clinic },
-    reviewedBy: { "@id": schemaIds.physician },
+    ...(medicalReview ? { reviewedBy: { "@id": schemaIds.doctor } } : {}),
     inLanguage: "en-IN",
   };
 }
@@ -144,13 +179,51 @@ export function collectionPageJsonLd({
     url,
     isPartOf: { "@id": schemaIds.website },
     about: { "@id": schemaIds.clinic },
-    reviewedBy: { "@id": schemaIds.physician },
     mainEntity: {
       "@type": "ItemList",
       itemListElement: itemPaths.map((itemPath, index) => ({
         "@type": "ListItem",
         position: index + 1,
         url: absoluteUrl(itemPath),
+      })),
+    },
+    inLanguage: "en-IN",
+  };
+}
+
+export function mediaCoverageCollectionJsonLd(
+  items: MediaCoverageItem[],
+): JsonLd {
+  const path = "/media";
+  const url = absoluteUrl(path);
+
+  return {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "@id": `${url}#webpage`,
+    name: "Radiance in the Media",
+    description:
+      "Verified external coverage of Dr. Satyarth Prakash and Radiance Clinics.",
+    url,
+    isPartOf: { "@id": schemaIds.website },
+    about: [{ "@id": schemaIds.clinic }, { "@id": schemaIds.doctor }],
+    mainEntity: {
+      "@type": "ItemList",
+      itemListElement: items.map((item, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        name: `${item.outletName}: ${item.articleTitle}`,
+        url: item.originalArticleUrl,
+        item: {
+          "@type": "CreativeWork",
+          name: item.articleTitle,
+          url: item.originalArticleUrl,
+          datePublished: item.publicationDate,
+          publisher: {
+            "@type": "Organization",
+            name: item.outletName,
+          },
+        },
       })),
     },
     inLanguage: "en-IN",
@@ -186,6 +259,7 @@ export function medicalServiceJsonLd({
 
 export function articleJsonLd(article: Article): JsonLd {
   const url = absoluteUrl(`/knowledge/${article.slug}`);
+  const authoredByDoctor = article.authorType === "doctor";
   return {
     "@context": "https://schema.org",
     "@type": "Article",
@@ -196,12 +270,15 @@ export function articleJsonLd(article: Article): JsonLd {
     image: article.image
       ? absoluteUrl(article.image.src || article.image.desktopUrl)
       : undefined,
-    author: article.authorName
-      ? { "@type": "Person", name: article.authorName }
-      : { "@id": schemaIds.organization },
-    reviewedBy: article.reviewedBy
-      ? { "@type": "Person", name: article.reviewedBy, url: absoluteUrl("/about") }
-      : { "@id": schemaIds.physician },
+    author: authoredByDoctor
+      ? { "@id": schemaIds.doctor }
+      : {
+          "@id": schemaIds.editorialTeam,
+          "@type": "Organization",
+          name: article.authorName || radianceEditorialTeam.name,
+          url: absoluteUrl(radianceEditorialTeam.policyPath),
+        },
+    reviewedBy: { "@id": schemaIds.doctor },
     publisher: { "@id": schemaIds.organization },
     datePublished: article.publishedAt,
     dateModified: article.updatedAt || article.reviewedAt,

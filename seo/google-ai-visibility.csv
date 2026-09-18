@@ -1,0 +1,4 @@
+checked_at,platform,property_or_endpoint,status,clicks,impressions,note,next_action
+2026-09-18,Google AI,https://www.radianceclinics.com/,AUTHENTICATED_GSC_UI_BASELINE,,659,Google Search Console Generative AI report showed 659 total impressions for 9-15 September 2026; the UI exposes impressions only for this view.,Monitor the same report after the medical-authority release and compare page-level impressions without claiming an AI ranking.
+2026-09-18,ChatGPT Search,OAI-SearchBot,ALLOWED_BY_ROBOTS,,,OAI-SearchBot is explicitly allowed in the production robots policy; no ChatGPT referral-performance export is available locally.,Monitor GA4 traffic with utm_source=chatgpt.com and keep OAI-SearchBot policy separate from GPTBot.
+2026-09-18,Bing and Copilot,IndexNow,NOT_CONFIGURED,,,No Bing Webmaster Tools credential or INDEXNOW_KEY is configured in the repository.,Verify Bing ownership and supply an IndexNow key before submitting changed canonical URLs.

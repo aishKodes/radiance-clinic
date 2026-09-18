@@ -20,6 +20,8 @@ const clinicLinks = [
   { label: "Patient results", href: "/results" },
   { label: "Interactive comparisons", href: "/before-after" },
   { label: "Patient reviews", href: "/reviews" },
+  { label: "Radiance in the media", href: "/media" },
+  { label: "Editorial policy", href: "/editorial-policy" },
   { label: "Knowledge library", href: "/knowledge" },
   { label: "Video library", href: "/videos" },
   { label: "Contact and directions", href: "/contact" },

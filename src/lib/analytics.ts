@@ -25,6 +25,7 @@ export type ConversionEventParameters = {
   path: string;
   page_type: string;
   topic?: string;
+  referral_source?: string;
 };
 
 declare global {
@@ -50,11 +51,36 @@ export function trackConversionEvent(
   name: RadianceConversionEvent,
   parameters: ConversionEventParameters,
 ) {
+  const referralSource =
+    parameters.referral_source ?? getAttributionSource();
+
   trackEvent(name, {
     path: parameters.path,
     page_type: parameters.page_type,
     topic: parameters.topic,
+    referral_source: referralSource,
   });
+}
+
+function getAttributionSource() {
+  if (typeof window === "undefined") return undefined;
+
+  const utmSource = new URLSearchParams(window.location.search)
+    .get("utm_source")
+    ?.trim()
+    .toLowerCase();
+
+  if (utmSource) return utmSource.slice(0, 100);
+
+  try {
+    const referringHost = document.referrer
+      ? new URL(document.referrer).hostname.toLowerCase()
+      : undefined;
+
+    return referringHost?.slice(0, 100);
+  } catch {
+    return undefined;
+  }
 }
 
 export function privateQueryMetrics(query: string) {

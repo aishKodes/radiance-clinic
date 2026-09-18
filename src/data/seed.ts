@@ -570,8 +570,14 @@ export const articles: Article[] = [
   },
 ].map((article) => ({
   ...article,
+  authorName: article.authorName || "Radiance Editorial Team",
+  authorType: "editorial-team" as const,
+  authorId: "radiance-editorial-team",
   reviewedBy: "Dr. Satyarth Prakash",
+  reviewerId: "dr-satyarth-prakash",
   reviewedAt: "2026-08-15",
+  medicalReviewStatus: "MEDICALLY_REVIEWED" as const,
+  sourceType: "original" as const,
   updatedAt: article.updatedAt || "2026-08-15",
 }));
 

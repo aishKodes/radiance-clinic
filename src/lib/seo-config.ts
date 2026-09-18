@@ -45,7 +45,11 @@ export const schemaIds = {
   organization: `${canonicalOrigin}/#organization`,
   clinic: `${canonicalOrigin}/#clinic`,
   website: `${canonicalOrigin}/#website`,
-  physician: `${canonicalOrigin}/about#physician`,
+  doctor: `${canonicalOrigin}/about#person`,
+  // Keep the historical property name as an alias while all structured data
+  // moves to one stable person entity.
+  physician: `${canonicalOrigin}/about#person`,
+  editorialTeam: `${canonicalOrigin}/editorial-policy#editorial-team`,
 } as const;
 
 export type LegacyRedirect = {

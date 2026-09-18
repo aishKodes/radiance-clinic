@@ -5,6 +5,14 @@ export type EditorialStatus =
   | "PUBLISHED"
   | "NEEDS_UPDATE";
 
+export type MedicalReviewStatus =
+  | "DRAFT"
+  | "EDITORIAL_REVIEW"
+  | "MEDICAL_REVIEW"
+  | "MEDICALLY_REVIEWED"
+  | "PUBLISHED"
+  | "NEEDS_REVIEW";
+
 export type ConcernFaq = {
   question: string;
   answer: string;
@@ -48,8 +56,15 @@ export type Concern = {
   relatedArticles: { href: string; label: string }[];
   references: string[];
   preparedBy: string;
+  authorType?: "editorial-team" | "doctor";
+  authorId?: string;
   reviewedBy?: string;
+  reviewerId?: string;
   reviewedAt?: string;
+  medicalReviewStatus?: MedicalReviewStatus;
+  sourceType?: "original" | "legacy" | "youtube" | "mixed";
+  legacySources?: string[];
+  youtubeSources?: string[];
   publishedAt?: string;
   updatedAt: string;
   seoTitle: string;
@@ -74,8 +89,17 @@ export type DoctorAnswer = {
   relatedQuestions: string[];
   similarQuestionCount?: number;
   preparedBy: string;
+  authorType?: "editorial-team" | "doctor";
+  authorId?: string;
   reviewedBy?: string;
+  reviewerId?: string;
   reviewedAt?: string;
+  medicalReviewStatus?: MedicalReviewStatus;
+  sourceType?: "original" | "legacy" | "youtube" | "mixed";
+  legacySources?: string[];
+  youtubeSources?: string[];
+  references?: string[];
+  publishedAt?: string;
   updatedAt: string;
   status: EditorialStatus;
   indexable: boolean;

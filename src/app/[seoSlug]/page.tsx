@@ -86,6 +86,7 @@ export default async function LocalServicePage({ params }: Props) {
           title: page!.metaTitle,
           description: page!.metaDescription,
           path,
+          medicalReview: true,
         })}
       />
       <JsonLd

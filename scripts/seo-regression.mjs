@@ -12,6 +12,8 @@ const baselineFile = new URL(
 const protectedPaths = [
   "/",
   "/about",
+  "/media",
+  "/editorial-policy",
   "/skin-clinic-bhubaneswar",
   "/hair-loss-clinic-bhubaneswar",
   "/hair-transplant-bhubaneswar",

@@ -1,14 +1,15 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { AlertCircle, ArrowUpRight, CheckCircle2, ClipboardCheck, ShieldCheck } from "lucide-react";
+import { AlertCircle, ArrowUpRight, CheckCircle2, ShieldCheck } from "lucide-react";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { FAQAccordion } from "@/components/FAQAccordion";
 import { JsonLd } from "@/components/JsonLd";
+import { MedicalReview } from "@/components/MedicalReview";
 import { OpenBookingButton } from "@/components/OpenBookingButton";
 import { RelatedVideos } from "@/components/RelatedVideos";
 import { TrackedLink } from "@/components/TrackedLink";
-import { concerns, doctorAnswers, getConcern, getConcernCategory, medicalReviewer } from "@/data/concern-library";
+import { concerns, doctorAnswers, getConcern, getConcernCategory } from "@/data/concern-library";
 import { videosForPath } from "@/data/video-library";
 import { pageMetadata } from "@/lib/metadata";
 import { breadcrumbJsonLd, videoObjectJsonLd, webPageJsonLd } from "@/lib/schema";
@@ -53,7 +54,7 @@ export default async function ConcernDetailPage({ params }: Props) {
 
   return (
     <>
-      <JsonLd data={webPageJsonLd({ title: concern.title, description: concern.summary, path })} />
+      <JsonLd data={webPageJsonLd({ title: concern.title, description: concern.summary, path, medicalReview: true })} />
       <JsonLd data={breadcrumbJsonLd(breadcrumbs)} />
       {videos.map((video) => <JsonLd key={video.videoId} data={videoObjectJsonLd(video)} />)}
       <section className="bg-[var(--ivory)] px-5 pb-20 pt-36 sm:px-8 lg:pb-28 lg:pt-44">
@@ -65,13 +66,12 @@ export default async function ConcernDetailPage({ params }: Props) {
             <p className="mt-8 max-w-3xl text-xl leading-9 text-[var(--ink)]/68">{concern.summary}</p>
             <OpenBookingButton source="cta" className="mt-9">Book an assessment</OpenBookingButton>
           </div>
-          <aside className="h-fit rounded-[2rem] border border-[var(--bronze)]/20 bg-white/64 p-6 shadow-[0_24px_80px_rgba(15,16,22,0.08)]">
-            <ClipboardCheck className="h-7 w-7 text-[var(--bronze)]" />
-            <p className="mt-7 text-xs font-extrabold uppercase tracking-[0.18em] text-[var(--bronze)]">Medical review</p>
-            <p className="mt-3 font-serif text-3xl leading-none text-[var(--ink)]">Reviewed by {concern.reviewedBy}</p>
-            <p className="mt-4 text-sm leading-7 text-[var(--ink)]/62">{medicalReviewer.experience}. Prepared by {concern.preparedBy}; reviewed for clinical clarity, safety and realistic expectations.</p>
-            <p className="mt-5 text-xs font-semibold text-[var(--ink)]/48">Last reviewed {concern.reviewedAt}</p>
-          </aside>
+          <MedicalReview
+            authorName={concern.preparedBy}
+            authorType={concern.authorType}
+            reviewedAt={concern.reviewedAt}
+            className="h-fit"
+          />
         </div>
       </section>
 

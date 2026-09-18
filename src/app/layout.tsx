@@ -13,8 +13,10 @@ import { fallbackData } from "@/data/fallback";
 import { getAssistantSettings, getClinicSettings } from "@/data/site";
 import { canonicalOrigin, defaultSocialImage } from "@/lib/seo-config";
 import {
+  editorialTeamJsonLd,
   medicalClinicJsonLd,
   organizationJsonLd,
+  physicianJsonLd,
   websiteJsonLd,
 } from "@/lib/schema";
 import { googleAnalyticsId } from "@/lib/analytics-config";
@@ -132,6 +134,8 @@ export default async function RootLayout({
       <body className="flex min-h-full flex-col bg-[var(--ivory)] text-[var(--ink)]">
         <JsonLd data={organizationJsonLd(clinicSettings)} />
         <JsonLd data={medicalClinicJsonLd(clinicSettings)} />
+        <JsonLd data={physicianJsonLd(clinicSettings)} />
+        <JsonLd data={editorialTeamJsonLd()} />
         <JsonLd data={websiteJsonLd()} />
         <SiteHeader
           settings={clinicSettings}

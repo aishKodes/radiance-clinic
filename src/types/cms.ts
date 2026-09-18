@@ -1,5 +1,17 @@
 import type { LucideIcon } from "lucide-react";
 
+export type ContentAuthorType = "editorial-team" | "doctor";
+
+export type ContentSourceType = "original" | "legacy" | "youtube" | "mixed";
+
+export type MedicalReviewStatus =
+  | "DRAFT"
+  | "EDITORIAL_REVIEW"
+  | "MEDICAL_REVIEW"
+  | "MEDICALLY_REVIEWED"
+  | "PUBLISHED"
+  | "NEEDS_REVIEW";
+
 export type CmsFocalPoint = {
   x: number;
   y: number;
@@ -89,6 +101,17 @@ export type CmsTreatment = {
   status?: "draft" | "published" | string;
   lastReviewedAt?: string;
   reviewedBy?: string;
+  datePublished?: string;
+  dateModified?: string;
+  authorType?: ContentAuthorType;
+  authorId?: string;
+  reviewerId?: string;
+  reviewedAt?: string;
+  medicalReviewStatus?: MedicalReviewStatus;
+  sourceType?: ContentSourceType;
+  legacySources?: string[];
+  youtubeSources?: string[];
+  references?: string[];
 };
 
 export type CmsCondition = {
@@ -114,6 +137,17 @@ export type CmsCondition = {
   status?: "draft" | "published" | string;
   lastReviewedAt?: string;
   reviewedBy?: string;
+  datePublished?: string;
+  dateModified?: string;
+  authorType?: ContentAuthorType;
+  authorId?: string;
+  reviewerId?: string;
+  reviewedAt?: string;
+  medicalReviewStatus?: MedicalReviewStatus;
+  sourceType?: ContentSourceType;
+  legacySources?: string[];
+  youtubeSources?: string[];
+  references?: string[];
 };
 
 export type CmsArticle = {
@@ -127,10 +161,18 @@ export type CmsArticle = {
   seoTitle?: string;
   seoDescription?: string;
   authorName?: string;
+  authorType?: ContentAuthorType;
+  authorId?: string;
   publishedAt?: string;
   updatedAt?: string;
   reviewedAt?: string;
   reviewedBy?: string;
+  reviewerId?: string;
+  medicalReviewStatus?: MedicalReviewStatus;
+  sourceType?: ContentSourceType;
+  legacySources?: string[];
+  youtubeSources?: string[];
+  references?: string[];
   relatedTreatments?: string[];
   relatedConditions?: string[];
   relatedArticles?: string[];

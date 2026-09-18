@@ -9,6 +9,7 @@ import {
   Stethoscope,
 } from "lucide-react";
 import { FAQAccordion } from "@/components/FAQAccordion";
+import { MedicalReview } from "@/components/MedicalReview";
 import { OpenBookingButton } from "@/components/OpenBookingButton";
 import { PremiumButton } from "@/components/PremiumButton";
 import type { LocalSeoPage } from "@/data/local-seo-pages";
@@ -138,6 +139,13 @@ export function LocalSeoLandingPage({
               {clinic.address}
             </p>
           </aside>
+          <MedicalReview
+            authorName="Radiance Editorial Team"
+            authorType={page.authorType}
+            reviewedAt={page.reviewedAt}
+            compact
+            className="lg:col-start-2"
+          />
         </div>
       </section>
 

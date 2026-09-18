@@ -182,6 +182,46 @@ function firstBoolean(
   return fallback;
 }
 
+function contentAuthorType(
+  value: string | undefined,
+  fallback?: "editorial-team" | "doctor",
+) {
+  if (value === "doctor") return "doctor" as const;
+  if (value === "editorial-team") return "editorial-team" as const;
+  return fallback;
+}
+
+function contentReviewStatus(
+  value: string | undefined,
+  fallback?:
+    | "DRAFT"
+    | "EDITORIAL_REVIEW"
+    | "MEDICAL_REVIEW"
+    | "MEDICALLY_REVIEWED"
+    | "PUBLISHED"
+    | "NEEDS_REVIEW",
+) {
+  return [
+    "DRAFT",
+    "EDITORIAL_REVIEW",
+    "MEDICAL_REVIEW",
+    "MEDICALLY_REVIEWED",
+    "PUBLISHED",
+    "NEEDS_REVIEW",
+  ].includes(value || "")
+    ? (value as NonNullable<typeof fallback>)
+    : fallback;
+}
+
+function contentSourceType(
+  value: string | undefined,
+  fallback?: "original" | "legacy" | "youtube" | "mixed",
+) {
+  return ["original", "legacy", "youtube", "mixed"].includes(value || "")
+    ? (value as NonNullable<typeof fallback>)
+    : fallback;
+}
+
 function firstNumber(record: ApiRecord, keys: string[]): number | undefined {
   for (const key of keys) {
     const value = record[key];
@@ -484,6 +524,30 @@ function normalizeTreatment(value: unknown, fallback?: Treatment): Treatment | n
     status: firstString(record, ["status"]) || fallback?.status,
     lastReviewedAt: firstString(record, ["lastReviewedAt", "last_reviewed_at"]) || fallback?.lastReviewedAt,
     reviewedBy: firstString(record, ["reviewedBy", "reviewed_by"]) || fallback?.reviewedBy,
+    authorType: contentAuthorType(
+      firstString(record, ["authorType", "author_type"]),
+      fallback?.authorType,
+    ),
+    authorId: firstString(record, ["authorId", "author_id"]) || fallback?.authorId,
+    reviewerId: firstString(record, ["reviewerId", "reviewer_id"]) || fallback?.reviewerId,
+    reviewedAt: firstString(record, ["reviewedAt", "reviewed_at"]) || fallback?.reviewedAt,
+    medicalReviewStatus: contentReviewStatus(
+      firstString(record, ["medicalReviewStatus", "medical_review_status"]),
+      fallback?.medicalReviewStatus,
+    ),
+    sourceType: contentSourceType(
+      firstString(record, ["sourceType", "source_type"]),
+      fallback?.sourceType,
+    ),
+    legacySources: toStringArray(record.legacySources ?? record.legacy_sources).length
+      ? toStringArray(record.legacySources ?? record.legacy_sources)
+      : fallback?.legacySources,
+    youtubeSources: toStringArray(record.youtubeSources ?? record.youtube_sources).length
+      ? toStringArray(record.youtubeSources ?? record.youtube_sources)
+      : fallback?.youtubeSources,
+    references: toStringArray(record.references).length
+      ? toStringArray(record.references)
+      : fallback?.references,
   };
 }
 
@@ -531,6 +595,30 @@ function normalizeCondition(value: unknown, fallback?: Condition): Condition | n
     status: firstString(record, ["status"]) || fallback?.status,
     lastReviewedAt: firstString(record, ["lastReviewedAt", "last_reviewed_at"]) || fallback?.lastReviewedAt,
     reviewedBy: firstString(record, ["reviewedBy", "reviewed_by"]) || fallback?.reviewedBy,
+    authorType: contentAuthorType(
+      firstString(record, ["authorType", "author_type"]),
+      fallback?.authorType,
+    ),
+    authorId: firstString(record, ["authorId", "author_id"]) || fallback?.authorId,
+    reviewerId: firstString(record, ["reviewerId", "reviewer_id"]) || fallback?.reviewerId,
+    reviewedAt: firstString(record, ["reviewedAt", "reviewed_at"]) || fallback?.reviewedAt,
+    medicalReviewStatus: contentReviewStatus(
+      firstString(record, ["medicalReviewStatus", "medical_review_status"]),
+      fallback?.medicalReviewStatus,
+    ),
+    sourceType: contentSourceType(
+      firstString(record, ["sourceType", "source_type"]),
+      fallback?.sourceType,
+    ),
+    legacySources: toStringArray(record.legacySources ?? record.legacy_sources).length
+      ? toStringArray(record.legacySources ?? record.legacy_sources)
+      : fallback?.legacySources,
+    youtubeSources: toStringArray(record.youtubeSources ?? record.youtube_sources).length
+      ? toStringArray(record.youtubeSources ?? record.youtube_sources)
+      : fallback?.youtubeSources,
+    references: toStringArray(record.references).length
+      ? toStringArray(record.references)
+      : fallback?.references,
   };
 }
 
@@ -576,6 +664,29 @@ function normalizeArticle(value: unknown, fallback?: Article): Article | null {
     reviewedBy:
       firstString(record, ["reviewedBy", "reviewed_by", "medicalReviewer"]) ||
       fallback?.reviewedBy,
+    authorType: contentAuthorType(
+      firstString(record, ["authorType", "author_type"]),
+      fallback?.authorType || "editorial-team",
+    ),
+    authorId: firstString(record, ["authorId", "author_id"]) || fallback?.authorId,
+    reviewerId: firstString(record, ["reviewerId", "reviewer_id"]) || fallback?.reviewerId,
+    medicalReviewStatus: contentReviewStatus(
+      firstString(record, ["medicalReviewStatus", "medical_review_status"]),
+      fallback?.medicalReviewStatus || "MEDICALLY_REVIEWED",
+    ),
+    sourceType: contentSourceType(
+      firstString(record, ["sourceType", "source_type"]),
+      fallback?.sourceType || "original",
+    ),
+    legacySources: toStringArray(record.legacySources ?? record.legacy_sources).length
+      ? toStringArray(record.legacySources ?? record.legacy_sources)
+      : fallback?.legacySources,
+    youtubeSources: toStringArray(record.youtubeSources ?? record.youtube_sources).length
+      ? toStringArray(record.youtubeSources ?? record.youtube_sources)
+      : fallback?.youtubeSources,
+    references: toStringArray(record.references).length
+      ? toStringArray(record.references)
+      : fallback?.references,
     relatedTreatments: toStringArray(record.relatedTreatments ?? record.related_treatments).length ? toStringArray(record.relatedTreatments ?? record.related_treatments) : fallback?.relatedTreatments,
     relatedConditions: toStringArray(record.relatedConditions ?? record.related_conditions).length ? toStringArray(record.relatedConditions ?? record.related_conditions) : fallback?.relatedConditions,
     relatedArticles: toStringArray(record.relatedArticles ?? record.related_articles).length ? toStringArray(record.relatedArticles ?? record.related_articles) : fallback?.relatedArticles,
