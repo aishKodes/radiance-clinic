@@ -260,5 +260,106 @@
     "Page mappings only recorded when inspected with an exact query regex. Query-aggregate position is not the position of an individual page.",
     "Current and previous 28-day windows overlap migration activity; they are not a clean causal pre/post experiment.",
     "Site totals include anonymised queries absent from query tables. Missing queries and positions with zero impressions are unknown, not position zero."
+  ],
+  "monitoringHistory": [
+    {
+      "checkedAt": "2026-09-20",
+      "property": "https://www.radianceclinics.com/",
+      "source": "Authenticated Google Search Console performance UI; Web; all devices/countries; metrics read from the rendered report.",
+      "window": "Last 28 days (2026-08-21 to 2026-09-17) compared with previous 28 days (2026-07-24 to 2026-08-20); Search Console last update: 5 hours ago.",
+      "siteTotals": {
+        "clicks": 486,
+        "previousClicks": 525,
+        "impressions": 48100,
+        "previousImpressions": 51800,
+        "averagePosition": 17.2,
+        "previousAveragePosition": 13.2
+      },
+      "protectedQueryMetrics": [
+        {
+          "query": "hair transplant bhubaneswar",
+          "clicks": 9,
+          "previousClicks": 11,
+          "impressions": 374,
+          "previousImpressions": 353,
+          "position": 4.8,
+          "previousPosition": 6.6,
+          "status": "GREEN"
+        },
+        {
+          "query": "hair transplant in bhubaneswar",
+          "clicks": 5,
+          "previousClicks": 17,
+          "impressions": 627,
+          "previousImpressions": 610,
+          "position": 6.1,
+          "previousPosition": 8,
+          "status": "GREEN",
+          "note": "Clicks fell while average position improved; retain the protected homepage owner and do not change its title."
+        },
+        {
+          "query": "hair patch in bhubaneswar",
+          "clicks": 0,
+          "previousClicks": 3,
+          "impressions": 21,
+          "previousImpressions": 117,
+          "position": 21.2,
+          "previousPosition": 5.6,
+          "status": "WATCH",
+          "note": "Second comparable observation. Exact-query Pages shows the legacy /hair-patch/ URL in the previous window, homepage 16 impressions/position 18.4 in the current window, transplant page 5 impressions/position 30.4, and no canonical non-surgical replacement row."
+        },
+        {
+          "query": "hair wig in bhubaneswar",
+          "clicks": 0,
+          "previousClicks": 1,
+          "impressions": 2,
+          "previousImpressions": 25,
+          "position": 17,
+          "previousPosition": 6.2,
+          "status": "WATCH",
+          "note": "Second comparable observation; no deindexing conclusion is drawn from low-volume query data."
+        },
+        {
+          "query": "hair transplant in rourkela",
+          "clicks": 0,
+          "previousClicks": 0,
+          "impressions": 18,
+          "previousImpressions": 13,
+          "position": 7.6,
+          "previousPosition": 12,
+          "status": "GREEN"
+        }
+      ],
+      "protectedPageMetrics": [
+        {
+          "path": "/skin-clinic-bhubaneswar",
+          "clicks": 23,
+          "previousClicks": 6,
+          "impressions": 4301,
+          "previousImpressions": 1717,
+          "position": 16.7,
+          "previousPosition": 20.1,
+          "status": "GREEN"
+        },
+        {
+          "path": "/hair-loss-clinic-bhubaneswar",
+          "clicks": 3,
+          "previousClicks": 0,
+          "impressions": 1217,
+          "previousImpressions": 0,
+          "position": 24.8,
+          "previousPosition": null,
+          "status": "GREEN",
+          "note": "New page visibility; a missing previous-period position is not position zero or an index-loss signal."
+        }
+      ],
+      "technicalChecks": {
+        "protectedRouteRegression": "PASS: 24 routes; production sitemap, robots, redirects, canonical tags, Search Console verification token, H1 and JSON-LD checks.",
+        "legacyRedirects": "/hair-patch/ and /hair-wig/ return 308 to /non-surgical-hair-replacement-bhubaneswar.",
+        "robots": "OAI-SearchBot is explicitly allowed; /studio/ and /api/ remain disallowed.",
+        "status": "GREEN"
+      },
+      "assessment": "No unexpected noindex, 404, canonical failure, redirect failure or greater-than-20 position drop was found. The patch and wig migration-intent gap remains under watch and has only two comparable observations, so no content or title rewrite is supported today."
+    }
   ]
 }
