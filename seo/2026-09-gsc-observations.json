@@ -392,6 +392,38 @@
         "status": "GREEN"
       },
       "assessment": "No unexpected noindex, 404, canonical loss, redirect failure or sitemap leak was found in production. Search Console data was unavailable, so no ranking status was advanced and no action is supported today."
+    },
+    {
+      "checkedAt": "2026-09-23",
+      "property": "https://www.radianceclinics.com/",
+      "source": "No authenticated Google Search Console report was available in this check; the active Chrome profile did not contain a Search Console tab or authenticated property. Production technical checks were run instead.",
+      "window": "No new authenticated Search Console report window. The 2026-09-20 metrics remain the most recent comparable observation and are not duplicated as new data.",
+      "protectedQueryMetrics": [
+        {
+          "query": "hair patch in bhubaneswar",
+          "status": "WATCH",
+          "note": "No new comparable query data. Keep the 2026-09-20 second-observation count; do not escalate or rewrite based on unavailable data."
+        },
+        {
+          "query": "hair wig in bhubaneswar",
+          "status": "WATCH",
+          "note": "No new comparable query data. Keep the 2026-09-20 second-observation count; low-volume data is not an index-status verdict."
+        },
+        {
+          "query": "hair transplant in rourkela",
+          "status": "GREEN",
+          "note": "No new comparable query data and no production technical regression."
+        }
+      ],
+      "technicalChecks": {
+        "protectedRouteRegression": "PASS: production regression passed for 24 protected routes, including robots, sitemap, canonical tags, Search Console verification token, H1 and JSON-LD checks.",
+        "sitemap": "PASS: /sitemap.xml returned 200 with 190 URLs; protected routes are present.",
+        "protectedRoutes": "PASS: skin clinic, hair loss clinic, hair transplant and non-surgical hair replacement routes each returned 200, index/follow and their self-canonical URL.",
+        "legacyRedirects": "PASS: all 181 registered legacy redirects returned 301/308 to the expected destination, whose final response was 200; none of the legacy sources appeared in the sitemap.",
+        "robots": "PASS: OAI-SearchBot and PerplexityBot are allowed; /studio/ and /api/ remain disallowed.",
+        "status": "GREEN"
+      },
+      "assessment": "No unexpected noindex, 404, canonical loss, redirect failure or sitemap leak was found in production. Search Console data was unavailable, so no ranking status was advanced and no action is supported today."
     }
   ]
 }
