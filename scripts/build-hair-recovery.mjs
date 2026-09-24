@@ -8,6 +8,8 @@ import {
 const checkedAt = "2026-09-24";
 const gscSourceWindow =
   "Authenticated Google Search Console Performance UI: last 7 days and last 28 complete days compared with previous 28 complete days. Exact migration-period API export is unavailable in the current property session.";
+const gscVideoReportObservation =
+  "Authenticated GSC Video Indexing report, last updated 2026-09-21 before the watch-page deployment: 140 videos excluded for 'Video isn't on a watch page' and 1 video indexed.";
 const hairQueryPattern = /\b(hair|fue|gfc|prp|alopecia|scalp|dandruff|tricholog|hairline|beard|wig|patch|minoxidil)\b/i;
 const freshQueryOverrides = {
   "hair patch in bhubaneswar": {
@@ -361,6 +363,7 @@ async function build() {
       "video_indexed",
       "reason_or_next_action",
       "sitemap",
+      "gsc_video_report_observation",
       "checked_at",
     ],
     hairVideoWatchPages.map((page) => ({
@@ -373,6 +376,7 @@ async function build() {
       video_indexed: "PENDING_VIDEO_INDEXING_REPORT",
       reason_or_next_action: "Live in the public video sitemap; inspect selected P0 pages in Search Console. Do not infer video index status from an embedded player.",
       sitemap: "https://www.radianceclinics.com/video-sitemap.xml",
+      gsc_video_report_observation: gscVideoReportObservation,
       checked_at: checkedAt,
     })),
   );
