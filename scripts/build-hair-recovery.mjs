@@ -225,7 +225,6 @@ const hairIndexationRows = [
 ];
 
 const freshlyInspectedHairPaths = new Set([
-  "/",
   "/treatments/hair-restoration",
   "/hair-loss-clinic-bhubaneswar",
   "/hair-transplant-bhubaneswar",
