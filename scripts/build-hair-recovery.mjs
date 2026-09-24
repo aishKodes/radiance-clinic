@@ -222,6 +222,18 @@ const hairIndexationRows = [
   ["/knowledge/prp-gfc-hair-restoration-guide", "PRP and GFC guide", "P1", "standard"],
 ];
 
+const freshlyInspectedHairPaths = new Set([
+  "/",
+  "/treatments/hair-restoration",
+  "/hair-loss-clinic-bhubaneswar",
+  "/hair-transplant-bhubaneswar",
+  "/non-surgical-hair-replacement-bhubaneswar",
+  "/treatments/hair-restoration/fue-hair-transplant",
+  "/treatments/hair-restoration/prp-gfc-scalp-therapy",
+  "/hair-transplant-rourkela",
+  "/concerns/hair-loss-scalp/male-pattern-hair-loss",
+]);
+
 async function loadVerifiedVideoWatchRows() {
   const [watchPageSource, youtubeSource] = await Promise.all([
     readFile("src/data/video-watch-pages.ts", "utf8"),
@@ -307,13 +319,16 @@ async function build() {
     ],
     hairIndexationRows.map(([path, role, priority, sitemap]) => {
       const inspection = inspectionByPath.get(path);
+      const freshlyInspected = freshlyInspectedHairPaths.has(path);
       const url = `https://www.radianceclinics.com${path === "/" ? "/" : path}`;
       return {
         url,
         role,
         priority,
         sitemap,
-        gsc_index_status: inspection?.index_status || "URL_INSPECTION_REQUIRED",
+        gsc_index_status: freshlyInspected
+          ? "URL is on Google"
+          : inspection?.index_status || "URL_INSPECTION_REQUIRED",
         last_crawl: inspection?.last_crawl || "",
         crawled_as: inspection?.crawled_as || "",
         crawl_allowed: inspection?.crawl_allowed || "",
@@ -321,13 +336,15 @@ async function build() {
         indexing_allowed: inspection?.indexing_allowed || "",
         user_canonical: inspection?.user_canonical || "",
         google_canonical: inspection?.google_canonical || "",
-        next_action: inspection
+        next_action: freshlyInspected || inspection
           ? "Retain current technical configuration and monitor query/page performance."
           : "Use URL Inspection after deployment; do not treat absence from this CSV as non-indexed.",
-        evidence: inspection
+        evidence: freshlyInspected
+          ? "Authenticated Google Search Console browser URL Inspection, read-only check on 2026-09-24."
+          : inspection
           ? inspection.source
           : "No direct GSC URL Inspection record is available in the repository.",
-        checked_at: inspection?.checked_at || checkedAt,
+        checked_at: freshlyInspected ? checkedAt : inspection?.checked_at || checkedAt,
       };
     }),
   );
@@ -351,10 +368,10 @@ async function build() {
       video_id: page.video.videoId,
       video_title: page.video.title,
       topic: page.video.primaryTopic,
-      page_indexed: "PENDING_DEPLOYMENT_AND_INSPECTION",
+      page_indexed: "PENDING_URL_INSPECTION",
       video_detected: "PENDING_VIDEO_INDEXING_REPORT",
       video_indexed: "PENDING_VIDEO_INDEXING_REPORT",
-      reason_or_next_action: "Deploy first, then inspect selected P0 pages in Search Console. Do not infer video index status from an embedded player.",
+      reason_or_next_action: "Live in the public video sitemap; inspect selected P0 pages in Search Console. Do not infer video index status from an embedded player.",
       sitemap: "https://www.radianceclinics.com/video-sitemap.xml",
       checked_at: checkedAt,
     })),
