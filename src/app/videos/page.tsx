@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { JsonLd } from "@/components/JsonLd";
 import { VideoLibraryBrowser } from "@/components/VideoLibraryBrowser";
 import { medicalReviewer } from "@/data/concern-library";
 import { videoLibraryVideos, videoTopics } from "@/data/video-library";
+import { hairVideoWatchPages } from "@/data/video-watch-pages";
 import { pageMetadata } from "@/lib/metadata";
 import { videoObjectJsonLd, webPageJsonLd } from "@/lib/schema";
 
@@ -39,7 +41,48 @@ export default function VideosPage() {
           </p>
         </div>
       </section>
-      <VideoLibraryBrowser videos={videoLibraryVideos} topics={videoTopics} />
+      <section
+        id="hair-restoration-video-guides"
+        className="bg-[var(--ivory)] px-5 py-16 sm:px-8 sm:py-20 lg:py-24"
+      >
+        <div className="mx-auto max-w-7xl">
+          <p className="text-xs font-extrabold uppercase tracking-[0.22em] text-[var(--bronze)]">
+            Hair restoration video guides
+          </p>
+          <h2 className="mt-4 max-w-4xl font-serif text-4xl leading-tight text-[var(--ink)] sm:text-5xl">
+            Doctor-led answers to the hair questions patients ask most.
+          </h2>
+          <p className="mt-5 max-w-3xl text-base leading-8 text-[var(--ink)]/68">
+            These dedicated pages add clinical context, related guidance and a direct route to consultation around selected official videos.
+          </p>
+          <div className="mt-10 grid gap-x-8 sm:grid-cols-2 lg:grid-cols-3">
+            {hairVideoWatchPages.map((page) => (
+              <Link
+                key={page.slug}
+                href={`/videos/${page.slug}`}
+                className="group border-t border-[var(--ink)]/14 py-5"
+              >
+                <p className="text-xs font-extrabold uppercase tracking-[0.14em] text-[var(--bronze)]">
+                  {page.video.primaryTopic}
+                </p>
+                <h3 className="mt-3 text-xl font-extrabold leading-7 text-[var(--ink)] transition group-hover:text-[var(--aqua)]">
+                  {page.pageTitle}
+                </h3>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+      <VideoLibraryBrowser
+        videos={videoLibraryVideos}
+        topics={videoTopics}
+        watchHrefs={Object.fromEntries(
+          hairVideoWatchPages.map((page) => [
+            page.video.videoId,
+            `/videos/${page.slug}`,
+          ]),
+        )}
+      />
     </>
   );
 }

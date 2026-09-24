@@ -57,6 +57,7 @@ export async function GET() {
     "## Official Media",
     `- [Radiance Clinics YouTube channel](https://www.youtube.com/@RadianceClinics)`,
     `- [Official video library](${siteUrl}/videos)`,
+    `- [Hair restoration video guides](${siteUrl}/videos#hair-restoration-video-guides)`,
     "",
     `Clinic: ${clinic.name}, ${clinic.city}, ${clinic.region}`,
     `Doctor: ${clinic.doctor}`,

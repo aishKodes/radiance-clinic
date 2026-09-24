@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { ExternalLink, Play } from "lucide-react";
 import { useState } from "react";
 import { formatVideoDuration } from "@/data/video-library";
@@ -9,7 +10,13 @@ import { usePathname } from "next/navigation";
 import { pageTypeFromPath } from "@/lib/contact-links";
 import type { YouTubeVideo } from "@/types/video-library";
 
-export function LiteYouTubeVideo({ video }: { video: YouTubeVideo }) {
+export function LiteYouTubeVideo({
+  video,
+  watchHref,
+}: {
+  video: YouTubeVideo;
+  watchHref?: string;
+}) {
   const [playing, setPlaying] = useState(false);
   const pathname = usePathname() || "/videos";
 
@@ -67,14 +74,24 @@ export function LiteYouTubeVideo({ video }: { video: YouTubeVideo }) {
         {video.description ? (
           <p className="mt-4 line-clamp-3 text-sm leading-7 text-[var(--ink)]/62">{video.description}</p>
         ) : null}
-        <a
-          href={video.url}
-          target="_blank"
-          rel="noreferrer"
-          className="mt-5 inline-flex items-center gap-2 text-xs font-extrabold uppercase tracking-[0.12em] text-[var(--aqua)]"
-        >
-          Watch on YouTube <ExternalLink className="h-3.5 w-3.5" />
-        </a>
+        <div className="mt-5 flex flex-wrap items-center gap-x-5 gap-y-3">
+          {watchHref ? (
+            <Link
+              href={watchHref}
+              className="inline-flex items-center gap-2 text-xs font-extrabold uppercase tracking-[0.12em] text-[var(--ink)]"
+            >
+              Watch with clinical context
+            </Link>
+          ) : null}
+          <a
+            href={video.url}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center gap-2 text-xs font-extrabold uppercase tracking-[0.12em] text-[var(--aqua)]"
+          >
+            Watch on YouTube <ExternalLink className="h-3.5 w-3.5" />
+          </a>
+        </div>
       </div>
     </article>
   );

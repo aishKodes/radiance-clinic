@@ -289,11 +289,14 @@ export function articleJsonLd(article: Article): JsonLd {
   };
 }
 
-export function videoObjectJsonLd(video: YouTubeVideo): JsonLd {
+export function videoObjectJsonLd(
+  video: YouTubeVideo,
+  path = "/videos",
+): JsonLd {
   return {
     "@context": "https://schema.org",
     "@type": "VideoObject",
-    "@id": `${absoluteUrl("/videos")}#video-${video.videoId}`,
+    "@id": `${absoluteUrl(path)}#video`,
     name: video.title,
     description: video.description || `${video.primaryTopic} video from Radiance Clinics.`,
     thumbnailUrl: [video.thumbnail],

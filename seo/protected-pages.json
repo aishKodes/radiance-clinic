@@ -1,0 +1,18 @@
+{
+  "version": 1,
+  "description": "High-value hair routes protected by the SEO regression suite. Standard sitemap routes must remain in sitemap.xml; dedicated watch pages must remain in video-sitemap.xml.",
+  "pages": [
+    { "path": "/", "sitemap": "standard", "purpose": "Protected commercial query owner" },
+    { "path": "/treatments/hair-restoration", "sitemap": "standard", "purpose": "Hair authority hub" },
+    { "path": "/hair-loss-clinic-bhubaneswar", "sitemap": "standard", "purpose": "Hair loss clinic owner" },
+    { "path": "/hair-transplant-bhubaneswar", "sitemap": "standard", "purpose": "Hair transplant commercial page" },
+    { "path": "/non-surgical-hair-replacement-bhubaneswar", "sitemap": "standard", "purpose": "Hair patch and wig canonical owner" },
+    { "path": "/treatments/hair-restoration/fue-hair-transplant", "sitemap": "standard", "purpose": "FUE planning page" },
+    { "path": "/treatments/hair-restoration/prp-gfc-scalp-therapy", "sitemap": "standard", "purpose": "PRP and GFC treatment page" },
+    { "path": "/hair-transplant-rourkela", "sitemap": "standard", "purpose": "Verified Rourkela travel page" },
+    { "path": "/videos/hair-transplant-aftercare-day-by-day", "sitemap": "video", "purpose": "Hair transplant aftercare video page" },
+    { "path": "/videos/hair-patch-vs-hair-transplant", "sitemap": "video", "purpose": "Hair patch and transplant comparison video" },
+    { "path": "/videos/choosing-a-hair-transplant-clinic", "sitemap": "video", "purpose": "Hair transplant clinic decision video" },
+    { "path": "/videos/hair-transplant-graft-planning", "sitemap": "video", "purpose": "Hair transplant graft planning video" }
+  ]
+}

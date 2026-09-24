@@ -24,7 +24,10 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ["/studio/", "/api/"],
       },
     ],
-    sitemap: `${canonicalOrigin}/sitemap.xml`,
+    sitemap: [
+      `${canonicalOrigin}/sitemap.xml`,
+      `${canonicalOrigin}/video-sitemap.xml`,
+    ],
     host: canonicalOrigin,
   };
 }

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { LiteYouTubeVideo } from "@/components/LiteYouTubeVideo";
+import { videoWatchHrefByVideoId } from "@/data/video-watch-pages";
 import type { YouTubeVideo } from "@/types/video-library";
 
 export function RelatedVideos({
@@ -24,7 +25,13 @@ export function RelatedVideos({
           </Link>
         </div>
         <div className="mt-10 grid gap-6 lg:grid-cols-2">
-          {videos.map((video) => <LiteYouTubeVideo key={video.videoId} video={video} />)}
+          {videos.map((video) => (
+            <LiteYouTubeVideo
+              key={video.videoId}
+              video={video}
+              watchHref={videoWatchHrefByVideoId.get(video.videoId)}
+            />
+          ))}
         </div>
       </div>
     </section>

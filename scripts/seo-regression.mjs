@@ -9,6 +9,10 @@ const baselineFile = new URL(
   "../seo/protected-route-baseline.json",
   import.meta.url,
 );
+const protectedPagesFile = new URL(
+  "../seo/protected-pages.json",
+  import.meta.url,
+);
 const protectedPaths = [
   "/",
   "/about",
@@ -85,10 +89,16 @@ async function main() {
           "Regression server did not start; build the project first.",
         );
     }
-    const sitemapResponse = await fetch(`${base}/sitemap.xml`);
+    const [sitemapResponse, videoSitemapResponse] = await Promise.all([
+      fetch(`${base}/sitemap.xml`),
+      fetch(`${base}/video-sitemap.xml`),
+    ]);
     if (!sitemapResponse.ok)
       throw new Error(`Sitemap HTTP ${sitemapResponse.status}`);
+    if (!videoSitemapResponse.ok)
+      throw new Error(`Video sitemap HTTP ${videoSitemapResponse.status}`);
     const sitemap = await sitemapResponse.text();
+    const videoSitemap = await videoSitemapResponse.text();
     const discovery = [
       "/",
       "/about",
@@ -100,6 +110,7 @@ async function main() {
       "/treatments/aesthetic-dermatology",
       "/knowledge",
       "/doctor-answers",
+      "/videos",
     ];
     const links = new Set(["/"]);
     for (const path of discovery) {
@@ -114,7 +125,16 @@ async function main() {
     const baseline = capture
       ? { pages: protectedPaths.map((path) => ({ path })) }
       : JSON.parse(await readFile(baselineFile, "utf8"));
+    const protectedPageConfig = JSON.parse(
+      await readFile(protectedPagesFile, "utf8"),
+    );
     const failures = [];
+    const baselinePathSet = new Set(baseline.pages.map((page) => page.path));
+    for (const protectedPage of protectedPageConfig.pages) {
+      if (!baselinePathSet.has(protectedPage.path)) {
+        failures.push(`${protectedPage.path}: missing from protected route baseline`);
+      }
+    }
     for (const expected of baseline.pages) {
       const response = await fetch(`${base}${expected.path}`, {
         redirect: "manual",
@@ -140,7 +160,10 @@ async function main() {
           sitemap.includes(
             `<loc>${origin}${expected.path === "/" ? "" : expected.path}</loc>`,
           ) ||
-          (expected.path === "/" && sitemap.includes(`<loc>${origin}/</loc>`)),
+          (expected.path === "/" && sitemap.includes(`<loc>${origin}/</loc>`)) ||
+          videoSitemap.includes(
+            `<loc>${origin}${expected.path === "/" ? "" : expected.path}</loc>`,
+          ),
         inboundLink: links.has(expected.path),
         schemaValid,
       };

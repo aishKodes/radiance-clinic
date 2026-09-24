@@ -48,7 +48,13 @@ export const treatmentHubs: TreatmentHub[] = [
       "/treatments/hair-restoration/advanced-hair-fall-solutions",
     ],
     conditionPaths: ["/conditions/hair-fall-thinning"],
-    articlePaths: ["/knowledge/how-to-plan-hair-restoration"],
+    articlePaths: [
+      "/knowledge/how-to-plan-hair-restoration",
+      "/knowledge/hair-loss-causes-and-assessment",
+      "/knowledge/hair-transplant-aftercare",
+      "/knowledge/hair-transplant-cost-factors",
+      "/knowledge/prp-gfc-hair-restoration-guide",
+    ],
     commercialPaths: [
       "/hair-transplant-bhubaneswar",
       "/hair-loss-clinic-bhubaneswar",

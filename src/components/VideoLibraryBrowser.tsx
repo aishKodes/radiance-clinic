@@ -10,9 +10,11 @@ const pageSize = 24;
 export function VideoLibraryBrowser({
   videos,
   topics,
+  watchHrefs,
 }: {
   videos: YouTubeVideo[];
   topics: string[];
+  watchHrefs: Record<string, string>;
 }) {
   const [query, setQuery] = useState("");
   const [topic, setTopic] = useState("All topics");
@@ -64,7 +66,13 @@ export function VideoLibraryBrowser({
           Showing {Math.min(visible.length, filtered.length)} of {filtered.length} public videos
         </p>
         <div className="mt-10 grid gap-6 lg:grid-cols-2">
-          {visible.map((video) => <LiteYouTubeVideo key={video.videoId} video={video} />)}
+          {visible.map((video) => (
+            <LiteYouTubeVideo
+              key={video.videoId}
+              video={video}
+              watchHref={watchHrefs[video.videoId]}
+            />
+          ))}
         </div>
         {visibleCount < filtered.length ? (
           <div className="mt-12 text-center">
