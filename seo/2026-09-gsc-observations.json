@@ -424,6 +424,113 @@
         "status": "GREEN"
       },
       "assessment": "No unexpected noindex, 404, canonical loss, redirect failure or sitemap leak was found in production. Search Console data was unavailable, so no ranking status was advanced and no action is supported today."
+    },
+    {
+      "checkedAt": "2026-09-24",
+      "property": "https://www.radianceclinics.com/",
+      "source": "Authenticated Google Search Console performance UI under the Radiance Clinic account; Web; all devices/countries; metrics read from the rendered report.",
+      "window": "Last 28 days (2026-08-25 to 2026-09-21) compared with previous 28 days (2026-07-28 to 2026-08-24); Search Console last update: 4.5 hours ago.",
+      "siteTotals": {
+        "clicks": 476,
+        "previousClicks": 518,
+        "impressions": 48400,
+        "previousImpressions": 50300,
+        "averagePosition": 15.6,
+        "previousAveragePosition": 13.9
+      },
+      "protectedQueryMetrics": [
+        {
+          "query": "hair transplant in bhubaneswar",
+          "clicks": 5,
+          "previousClicks": 15,
+          "impressions": 601,
+          "previousImpressions": 631,
+          "position": 5.4,
+          "previousPosition": 8.2,
+          "status": "GREEN",
+          "note": "Average position improved. Exact-query Pages confirms the homepage remains the current protected owner (580 impressions, position 3.8); retain its URL and title."
+        },
+        {
+          "query": "hair patch in bhubaneswar",
+          "clicks": 0,
+          "previousClicks": 2,
+          "impressions": 35,
+          "previousImpressions": 92,
+          "position": 15.7,
+          "previousPosition": 6.2,
+          "status": "ORANGE",
+          "note": "Third comparable decline. Exact-query Pages shows legacy /hair-patch/ only in the previous window, while the canonical non-surgical replacement page now has 13 current impressions at position 10.2. The target is 200, indexable, self-canonical and linked from the homepage and hair hub; preserve URLs and titles while migration consolidation is monitored."
+        },
+        {
+          "query": "hair wig in bhubaneswar",
+          "clicks": 0,
+          "previousClicks": 1,
+          "impressions": 4,
+          "previousImpressions": 18,
+          "position": 12,
+          "previousPosition": 6.8,
+          "status": "WATCH",
+          "note": "Third comparable observation, but the query remains too low-volume for a reliable escalation. The shared canonical target is unchanged and technically healthy."
+        },
+        {
+          "query": "hair transplant in rourkela",
+          "clicks": 0,
+          "previousClicks": 0,
+          "impressions": 18,
+          "previousImpressions": 9,
+          "position": 7.8,
+          "previousPosition": 12.2,
+          "status": "GREEN"
+        }
+      ],
+      "protectedPageMetrics": [
+        {
+          "path": "/skin-clinic-bhubaneswar",
+          "clicks": 21,
+          "previousClicks": 9,
+          "impressions": 4260,
+          "previousImpressions": 2360,
+          "position": 15.6,
+          "previousPosition": 19.3,
+          "status": "GREEN"
+        },
+        {
+          "path": "/hair-loss-clinic-bhubaneswar",
+          "clicks": 3,
+          "previousClicks": 0,
+          "impressions": 1460,
+          "previousImpressions": 1,
+          "position": 22.2,
+          "previousPosition": 18,
+          "status": "GREEN",
+          "note": "New visibility; the near-zero previous period is not a comparable loss signal."
+        },
+        {
+          "path": "/hair-transplant-bhubaneswar",
+          "clicks": 1,
+          "previousClicks": 2,
+          "impressions": 800,
+          "previousImpressions": 630,
+          "position": 39.2,
+          "previousPosition": 37.2,
+          "status": "GREEN",
+          "note": "The primary exact-query owner remains the protected homepage, so this page-level aggregate is not treated as an ownership or index-loss regression."
+        },
+        {
+          "path": "/non-surgical-hair-replacement-bhubaneswar",
+          "queryEvidence": "hair patch in bhubaneswar: 13 current impressions, position 10.2; no previous-period row",
+          "status": "GREEN",
+          "note": "The intended canonical replacement has begun receiving the migrated hair-patch query signal."
+        }
+      ],
+      "technicalChecks": {
+        "protectedRouteRegression": "PASS: 24 production routes; sitemap, robots, self-canonical tags, H1, JSON-LD, discovery links, legacy redirects and the Search Console verification token passed.",
+        "sitemap": "PASS: Search Console reports /sitemap.xml status Success with 190 discovered pages; the obsolete /sitemap_index.xml remains historical and is not the submitted current sitemap.",
+        "legacyRedirects": "PASS: /hair-patch/ and /hair-wig/ retain permanent redirects to /non-surgical-hair-replacement-bhubaneswar; legacy sources are absent from the sitemap.",
+        "robots": "PASS: OAI-SearchBot and PerplexityBot are allowed; /studio/ and /api/ remain disallowed.",
+        "status": "GREEN"
+      },
+      "assessment": "No unexpected noindex, 404, canonical failure, redirect failure or sitemap failure was found. Hair-patch query performance meets the three-comparable-observation threshold for ORANGE, but the canonical replacement is now appearing for the query at position 10.2. No protected URL or title should be rewritten in this daily pass; monitor the redirect consolidation and the existing contextual links."
     }
   ]
 }
