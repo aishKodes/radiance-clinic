@@ -592,6 +592,47 @@
         "status": "GREEN"
       },
       "assessment": "No unexpected noindex, 404, canonical failure, redirect failure, sitemap failure or material comparable position loss was found. The available Search Console comparison is incomplete, so it cannot advance a ranking-decline diagnosis. The canonical patch and wig page is now the predominant current owner for those exact queries; homepage-led hair-transplant ownership remains an existing monitored condition. No protected URL, title or daily content rewrite is supported by this check."
+    },
+    {
+      "checkedAt": "2026-09-30",
+      "property": "https://www.radianceclinics.com/",
+      "source": "No authenticated Search Console report was captured. The local Mac was locked and the available Chrome session contained no Search Console tab, so exact query metrics could not be read.",
+      "window": "No new authenticated Search Console report window. The 2026-09-28 short-window metrics remain the most recent observation and are not duplicated as new data.",
+      "protectedQueryMetrics": [
+        {
+          "query": "hair patch in bhubaneswar",
+          "status": "ORANGE",
+          "note": "Retain the 2026-09-24 third comparable decline. No new authenticated metrics were available; the canonical replacement and legacy redirect remain technically healthy."
+        },
+        {
+          "query": "hair wig in bhubaneswar",
+          "status": "WATCH",
+          "note": "Retain the low-volume assessment. No new authenticated metrics were available; the shared canonical replacement and legacy redirect remain technically healthy."
+        },
+        {
+          "query": "hair transplant in rourkela",
+          "status": "GREEN",
+          "note": "No new authenticated metrics or production technical regression."
+        },
+        {
+          "query": "skin clinic bhubaneswar",
+          "status": "GREEN",
+          "note": "No new authenticated metrics or production technical regression."
+        },
+        {
+          "query": "hair loss clinic bhubaneswar",
+          "status": "GREEN",
+          "note": "No new authenticated metrics or production technical regression."
+        }
+      ],
+      "technicalChecks": {
+        "protectedRouteRegression": "PASS: 31 production routes; verification token, sitemap, discovery links, robots, self-canonical tags, H1, JSON-LD and legacy recovery redirects passed.",
+        "sitemap": "PASS: /sitemap.xml returned 190 URLs.",
+        "legacyRedirects": "PASS: /hair-patch/ and /hair-wig/ each return a 308 one-hop redirect to /non-surgical-hair-replacement-bhubaneswar.",
+        "robots": "PASS: OAI-SearchBot and PerplexityBot are allowed; /studio/ and /api/ remain disallowed.",
+        "status": "GREEN"
+      },
+      "assessment": "No unexpected noindex, 404, canonical failure, redirect failure, sitemap failure or verification-token failure was found in production. Search Console data was unavailable, so no ranking status was advanced and no daily protected-page change is supported."
     }
   ]
 }
