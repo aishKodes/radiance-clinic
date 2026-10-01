@@ -633,6 +633,67 @@
         "status": "GREEN"
       },
       "assessment": "No unexpected noindex, 404, canonical failure, redirect failure, sitemap failure or verification-token failure was found in production. Search Console data was unavailable, so no ranking status was advanced and no daily protected-page change is supported."
+    },
+    {
+      "checkedAt": "2026-10-01",
+      "property": "radianceclinics.com",
+      "source": "Authenticated Google Search Console Performance UI under the Radiance Clinic account; Web; all devices/countries; exact-query filters and the Pages dimension.",
+      "window": "The UI's selected 28-day preset rendered a chart from 2026-09-17 to 2026-09-28 and did not expose a valid prior-period comparison. These current metrics are not used as a comparable ranking baseline.",
+      "protectedQueryMetrics": [
+        {
+          "query": "hair patch in bhubaneswar",
+          "clicks": 0,
+          "impressions": 51,
+          "position": 10.1,
+          "status": "ORANGE",
+          "note": "Retain the 2026-09-24 third comparable decline. The intended canonical replacement received 45 current impressions and the homepage six; do not infer a trend from this incomplete reporting window."
+        },
+        {
+          "query": "hair wig in bhubaneswar",
+          "clicks": 0,
+          "impressions": 12,
+          "position": 9.5,
+          "status": "WATCH",
+          "note": "Low-volume query. All current impressions were assigned to /non-surgical-hair-replacement-bhubaneswar; this incomplete reporting window does not support escalation."
+        },
+        {
+          "query": "hair transplant in rourkela",
+          "clicks": 0,
+          "impressions": 3,
+          "position": 9.3,
+          "status": "GREEN",
+          "note": "All current impressions were assigned to /hair-transplant-rourkela. The small, incomplete window does not establish a trend."
+        },
+        {
+          "query": "skin clinic bhubaneswar",
+          "clicks": 0,
+          "impressions": 111,
+          "position": 8.5,
+          "status": "GREEN",
+          "note": "The intended /skin-clinic-bhubaneswar owner received 73 impressions, the homepage 38 and /contact two. This is not enough evidence of harmful cannibalisation."
+        },
+        {
+          "query": "hair loss clinic bhubaneswar",
+          "status": "GREEN",
+          "note": "The exact-query report returned No data. Missing query data is not recorded as zero and is not an index-status verdict."
+        },
+        {
+          "query": "hair transplant in bhubaneswar",
+          "clicks": 3,
+          "impressions": 236,
+          "position": 6.7,
+          "status": "WATCH",
+          "note": "The homepage received 222 impressions and three clicks; the commercial owner received five impressions. This matches the existing homepage-led ownership pattern and does not support a daily URL or title change."
+        }
+      ],
+      "technicalChecks": {
+        "protectedRouteRegression": "PASS: 31 production routes; verification token, sitemap, discovery links, robots, self-canonical tags, H1, JSON-LD and legacy recovery redirects passed.",
+        "sitemap": "PASS: /sitemap.xml returned 190 URLs.",
+        "legacyRedirects": "PASS: /hair-patch/ and /hair-wig/ each return a 308 one-hop redirect to /non-surgical-hair-replacement-bhubaneswar.",
+        "robots": "PASS: OAI-SearchBot and PerplexityBot are allowed; /studio/ and /api/ remain disallowed.",
+        "status": "GREEN"
+      },
+      "assessment": "No unexpected noindex, 404, canonical failure, redirect failure, sitemap failure or verification-token failure was found. The intended non-surgical page remains the dominant owner for patch and wig queries, while the homepage remains the dominant owner for the primary hair-transplant query. Because this Search Console view is incomplete and non-comparable, no protected URL, title or content rewrite is supported."
     }
   ]
 }
