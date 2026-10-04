@@ -1825,7 +1825,6 @@ export async function getSeoIndex(): Promise<SeoIndex> {
       "/treatments",
       "/concerns",
       "/doctor-answers",
-      "/conditions",
       "/knowledge",
       "/before-after",
       "/reviews",

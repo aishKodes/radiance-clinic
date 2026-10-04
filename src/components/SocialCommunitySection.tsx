@@ -194,7 +194,7 @@ export function SocialCommunitySection({
                   key={video.title}
                   href={
                     video.href ||
-                    "https://youtube.com/@radianceclinics?si=MwbMHVfdlLk2C95l"
+                    "https://youtube.com/@radianceclinics"
                   }
                   target="_blank"
                   rel="noreferrer"

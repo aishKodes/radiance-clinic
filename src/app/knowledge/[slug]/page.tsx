@@ -142,7 +142,7 @@ export default async function ArticlePage({ params }: Props) {
             label: "Injectables and fillers planning",
             href: "/treatments/aesthetic-dermatology/injectable-aesthetics",
           },
-          { label: "Skin ageing and laxity", href: "/conditions/skin-ageing-laxity" },
+          { label: "Skin ageing and laxity", href: "/concerns/aging-aesthetics" },
         ];
 
   return (

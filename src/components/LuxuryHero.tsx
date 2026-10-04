@@ -94,7 +94,7 @@ export function LuxuryHero({
                 eventName="call_click"
                 className="transition hover:text-[var(--ink)]"
               >
-                {settings.phone}
+                Primary: {settings.phone}
               </ConversionLink>
               {settings.secondaryPhone ? (
                 <>
@@ -106,7 +106,7 @@ export function LuxuryHero({
                     eventName="call_click"
                     className="transition hover:text-[var(--ink)]"
                   >
-                    {settings.secondaryPhone}
+                    Secondary: {settings.secondaryPhone}
                   </ConversionLink>
                 </>
               ) : null}

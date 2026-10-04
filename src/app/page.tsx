@@ -29,10 +29,10 @@ import { WhyChooseRadiance } from "@/components/WhyChooseRadiance";
 import {
   anilKapoorRecognitionImage,
   doctorPatientHeroImage,
-  hairTransformationExamples,
+  homepageHairTransformationExamples,
+  homepageSkinTransformationExamples,
   premiumHeroSupportImages,
   premiumServiceCards,
-  skinTransformationExamples,
 } from "@/data/homepage-media";
 import { localLandingByTreatmentSlug } from "@/data/local-seo-pages";
 import { getGoogleReviewsFeed } from "@/lib/google-reviews";
@@ -238,7 +238,7 @@ export default async function Home() {
               title="Hair Transplant Results & Hair Restoration Examples"
               description="Selected hair restoration examples shared with consent. Results vary by individual and consultation is required."
               category="hair"
-              transformations={hairTransformationExamples}
+              transformations={homepageHairTransformationExamples}
             />
           </Reveal>
 
@@ -248,15 +248,27 @@ export default async function Home() {
               title="Skin Improvement Examples"
               description="Selected examples for skin concerns such as acne scars, pigmentation, melasma and rejuvenation, shared with consent."
               category="skin"
-              transformations={skinTransformationExamples}
+              transformations={homepageSkinTransformationExamples}
             />
+          </Reveal>
+          <Reveal delay={0.14} className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:justify-center">
+            <PremiumButton href="/before-after" variant="ivory">
+              View all interactive comparisons
+            </PremiumButton>
+            <PremiumButton
+              href="/results"
+              variant="outline"
+              className="border-white/20 bg-white/5 text-[var(--ivory)] hover:bg-white/10"
+            >
+              Browse results by concern
+            </PremiumButton>
           </Reveal>
         </div>
       </section>
 
       <section
         id="signature-treatments"
-        className="relative isolate overflow-hidden bg-[var(--ivory)] px-4 py-16 sm:px-8 sm:py-20 lg:py-32"
+        className="homepage-deferred-section relative isolate overflow-hidden bg-[var(--ivory)] px-4 py-16 sm:px-8 sm:py-20 lg:py-32"
       >
         <SciencePatternOverlay className="z-0" />
         <LuxuryNoiseOverlay className="z-0" />
@@ -291,7 +303,7 @@ export default async function Home() {
         </div>
       </section>
 
-      <section className="relative isolate overflow-hidden bg-[var(--mist)] px-4 py-16 sm:px-8 sm:py-20 lg:py-32">
+      <section className="homepage-deferred-section relative isolate overflow-hidden bg-[var(--mist)] px-4 py-16 sm:px-8 sm:py-20 lg:py-32">
         <SectionGlowMask className="z-0" />
         <ContourMeshOverlay className="z-0 opacity-28" />
         <div className="relative z-10 mx-auto max-w-7xl">
@@ -367,7 +379,7 @@ export default async function Home() {
 
       <MediaCoverageStrip />
 
-      <section className="relative isolate overflow-hidden bg-[var(--mist)] px-4 py-16 sm:px-8 sm:py-20 lg:py-32">
+      <section className="homepage-deferred-section relative isolate overflow-hidden bg-[var(--mist)] px-4 py-16 sm:px-8 sm:py-20 lg:py-32">
         <SectionGlowMask className="z-0 opacity-70" />
         <LuxuryNoiseOverlay className="z-0" />
         <div className="relative z-10 mx-auto max-w-7xl">
@@ -384,7 +396,7 @@ export default async function Home() {
         </div>
       </section>
 
-      <section className="relative isolate overflow-hidden bg-[var(--ivory)] px-4 py-16 sm:px-8 sm:py-20 lg:py-32">
+      <section className="homepage-deferred-section relative isolate overflow-hidden bg-[var(--ivory)] px-4 py-16 sm:px-8 sm:py-20 lg:py-32">
         <AnimatedAuroraBackground className="z-0 opacity-38" />
         <LuxuryNoiseOverlay className="z-0" />
         <div className="relative z-10 mx-auto max-w-7xl">
@@ -405,7 +417,7 @@ export default async function Home() {
         </div>
       </section>
 
-      <section className="relative isolate overflow-hidden bg-[var(--mist)] px-4 py-16 sm:px-8 sm:py-20 lg:py-32">
+      <section className="homepage-deferred-section relative isolate overflow-hidden bg-[var(--mist)] px-4 py-16 sm:px-8 sm:py-20 lg:py-32">
         <SciencePatternOverlay className="z-0 opacity-34" />
         <div className="relative z-10 mx-auto max-w-7xl">
           <Reveal>
@@ -422,7 +434,7 @@ export default async function Home() {
         </div>
       </section>
 
-      <section className="relative isolate overflow-hidden bg-[var(--ivory)] px-4 py-16 sm:px-8 sm:py-20 lg:py-32">
+      <section className="homepage-deferred-section relative isolate overflow-hidden bg-[var(--ivory)] px-4 py-16 sm:px-8 sm:py-20 lg:py-32">
         <SectionGlowMask className="z-0 opacity-80" />
         <div className="relative z-10 mx-auto max-w-7xl">
           <div className="mb-9 grid min-w-0 gap-6 sm:mb-14 sm:gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
@@ -473,7 +485,7 @@ export default async function Home() {
 
       <section
         id="clinic-gallery"
-        className="relative isolate scroll-mt-28 overflow-hidden bg-[var(--mist)] px-4 py-16 sm:px-8 sm:py-20 lg:py-32"
+        className="homepage-deferred-section relative isolate scroll-mt-28 overflow-hidden bg-[var(--mist)] px-4 py-16 sm:px-8 sm:py-20 lg:py-32"
       >
         <ContourMeshOverlay className="z-0 opacity-30" />
         <LuxuryNoiseOverlay className="z-0" />
@@ -489,7 +501,7 @@ export default async function Home() {
         </div>
       </section>
 
-      <section className="relative isolate overflow-hidden bg-[var(--ivory)] px-4 py-16 sm:px-8 sm:py-20 lg:py-32">
+      <section className="homepage-deferred-section relative isolate overflow-hidden bg-[var(--ivory)] px-4 py-16 sm:px-8 sm:py-20 lg:py-32">
         <div className="relative z-10 mx-auto grid min-w-0 max-w-7xl gap-9 sm:gap-10 lg:grid-cols-2 lg:items-start">
           <Reveal>
             <SectionHeader
@@ -504,7 +516,7 @@ export default async function Home() {
         </div>
       </section>
 
-      <section className="relative isolate overflow-hidden bg-[var(--ink)] px-4 py-16 text-center text-[var(--ivory)] sm:px-8 sm:py-20 lg:py-32">
+      <section className="homepage-deferred-section relative isolate overflow-hidden bg-[var(--ink)] px-4 py-16 text-center text-[var(--ivory)] sm:px-8 sm:py-20 lg:py-32">
         <AnimatedAuroraBackground className="z-0 opacity-80" />
         <FloatingSkinCells className="z-0 opacity-60" />
         <ContourMeshOverlay className="z-0 opacity-24" />

@@ -59,11 +59,16 @@ export function BookingModal({ settings }: { settings: ClinicSettings }) {
       setStatus("idle");
       setError("");
       setOpen(true);
+      trackConversionEvent("booking_start", {
+        path: pathname,
+        page_type: pageTypeFromPath(pathname),
+        topic: topicFromPath(pathname),
+      });
     };
 
     window.addEventListener("radiance:open-booking", openBooking);
     return () => window.removeEventListener("radiance:open-booking", openBooking);
-  }, []);
+  }, [pathname]);
 
   if (!open) return null;
 
@@ -109,6 +114,7 @@ export function BookingModal({ settings }: { settings: ClinicSettings }) {
 
       setStatus("success");
       setFields(initialFields);
+      trackConversionEvent("booking_submission", eventParameters);
     } catch {
       setStatus("error");
       setError("We could not send the request right now. Please use WhatsApp or Call Now.");

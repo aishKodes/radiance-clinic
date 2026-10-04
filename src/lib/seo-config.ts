@@ -153,7 +153,7 @@ export const treatmentNavigationGroups = [
       { label: "Dermal fillers", href: "/dermal-fillers-bhubaneswar" },
       {
         label: "Skin ageing and laxity",
-        href: "/conditions/skin-ageing-laxity",
+        href: "/concerns/aging-aesthetics",
       },
     ],
   },

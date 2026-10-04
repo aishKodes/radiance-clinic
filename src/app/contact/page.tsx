@@ -26,7 +26,7 @@ export default async function ContactPage() {
   const clinic = await getClinicSettings();
   const contactCards = [
     {
-      label: "Call clinic",
+      label: "Primary clinic number",
       value: clinic.phone,
       href: `tel:${normalizedTel(clinic.phone)}`,
       icon: Phone,
@@ -34,7 +34,7 @@ export default async function ContactPage() {
     ...(clinic.secondaryPhone
       ? [
           {
-            label: "Alternate number",
+            label: "Secondary clinic number",
             value: clinic.secondaryPhone,
             href: `tel:${normalizedTel(clinic.secondaryPhone)}`,
             icon: Phone,

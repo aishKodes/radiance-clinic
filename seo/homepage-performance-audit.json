@@ -1,0 +1,76 @@
+{
+  "version": 1,
+  "checkedAt": "2026-10-04",
+  "baseline": {
+    "environment": "production before this sprint",
+    "url": "https://www.radianceclinics.com",
+    "mobile": {
+      "performanceScore": 84,
+      "accessibilityScore": 100,
+      "seoScore": 100,
+      "lcpMs": 4192,
+      "tbtMs": 118,
+      "cls": 0,
+      "networkRequests": 93,
+      "totalBytes": 727830,
+      "scriptBytes": 357054,
+      "imageBytes": 78810,
+      "lcpElement": "doctor hero image",
+      "lcpElementBytes": 22027,
+      "lcpBreakdownMs": {
+        "ttfb": 203,
+        "resourceDelay": 42,
+        "resourceLoadDuration": 125,
+        "elementRenderDelay": 1200
+      }
+    },
+    "desktop": {
+      "performanceScore": 99,
+      "accessibilityScore": 100,
+      "seoScore": 100,
+      "lcpMs": 880,
+      "tbtMs": 0
+    },
+    "initialImages": {
+      "count": 9,
+      "resultExampleCount": 6,
+      "certificateOrMediaCount": 0,
+      "notes": "The doctor image was the LCP element. The Anil Kapoor image was the secondary hero slide. The manual claim that 30+ result and certificate images loaded initially was not reproduced."
+    }
+  },
+  "postChange": {
+    "environment": "optimized production build served locally",
+    "url": "http://127.0.0.1:4322",
+    "mobile": {
+      "performanceScore": 82,
+      "accessibilityScore": 100,
+      "seoScore": 100,
+      "lcpMs": 4828,
+      "tbtMs": 76,
+      "cls": 0,
+      "networkRequests": 32,
+      "totalBytes": 731457,
+      "scriptBytes": 359202,
+      "imageBytes": 94021,
+      "lcpElement": "doctor hero image",
+      "lcpElementBytes": 24059
+    },
+    "desktop": {
+      "performanceScore": 99,
+      "accessibilityScore": 100,
+      "seoScore": 100,
+      "lcpMs": 987,
+      "tbtMs": 0
+    },
+    "initialImages": {
+      "count": 9,
+      "resultExampleCount": 6,
+      "certificateOrMediaCount": 0
+    },
+    "comparison": {
+      "requestReduction": 61,
+      "requestReductionPercent": 65.6,
+      "notes": "Below-fold homepage sections now defer rendering and the homepage result selector is limited to four hair and four skin examples while full archives remain available. Local Lighthouse uses a different delivery environment from Vercel, so its simulated mobile LCP is recorded but not treated as a production regression verdict."
+    }
+  }
+}

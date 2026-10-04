@@ -21,7 +21,6 @@
     { "path": "/concerns/scars-stretch-marks", "type": "concern-hub", "sitemap": true, "primaryIntent": "scar and stretch mark concern discovery", "parent": "/concerns", "breadcrumb": true, "eligible": true },
     { "path": "/concerns/other-skin-concerns", "type": "concern-hub", "sitemap": true, "primaryIntent": "other skin concern discovery", "parent": "/concerns", "breadcrumb": true, "eligible": true },
     { "path": "/doctor-answers", "type": "answer-index", "sitemap": true, "primaryIntent": "patient hair and skin question discovery", "parent": "/", "breadcrumb": false, "eligible": true },
-    { "path": "/conditions", "type": "condition-index", "sitemap": true, "primaryIntent": "condition discovery", "parent": "/", "breadcrumb": false, "eligible": true },
     { "path": "/knowledge", "type": "article-index", "sitemap": true, "primaryIntent": "patient education discovery", "parent": "/", "breadcrumb": false, "eligible": true },
     { "path": "/before-after", "type": "results-viewer", "sitemap": true, "primaryIntent": "interactive before after comparisons", "parent": "/results", "breadcrumb": false, "eligible": true },
     { "path": "/results", "type": "results-index", "sitemap": true, "primaryIntent": "treatment result research", "parent": "/", "breadcrumb": true, "eligible": true },
@@ -56,10 +55,6 @@
     { "path": "/treatments/skin-laser/acne-scar-revision", "type": "treatment", "sitemap": true, "primaryIntent": "acne scar revision research", "parent": "/treatments/skin", "breadcrumb": true, "eligible": true },
     { "path": "/treatments/aesthetic-dermatology/injectable-aesthetics", "type": "treatment", "sitemap": true, "primaryIntent": "injectable aesthetic planning research", "parent": "/treatments/aesthetic-dermatology", "breadcrumb": true, "eligible": true },
     { "path": "/treatments/skin-wellness/bridal-glow-protocol", "type": "treatment", "sitemap": true, "primaryIntent": "event skin protocol research", "parent": "/treatments/skin", "breadcrumb": true, "eligible": true },
-    { "path": "/conditions/hair-fall-thinning", "type": "condition", "sitemap": true, "primaryIntent": "hair fall and thinning guidance", "parent": "/conditions", "breadcrumb": true, "eligible": true },
-    { "path": "/conditions/acne-acne-scars", "type": "condition", "sitemap": true, "primaryIntent": "acne and acne scar guidance", "parent": "/conditions", "breadcrumb": true, "eligible": true },
-    { "path": "/conditions/pigmentation-melasma", "type": "condition", "sitemap": true, "primaryIntent": "pigmentation and melasma guidance", "parent": "/conditions", "breadcrumb": true, "eligible": true },
-    { "path": "/conditions/skin-ageing-laxity", "type": "condition", "sitemap": true, "primaryIntent": "skin ageing and laxity guidance", "parent": "/conditions", "breadcrumb": true, "eligible": true },
     { "path": "/knowledge/how-to-plan-hair-restoration", "type": "article", "sitemap": true, "primaryIntent": "hair restoration planning education", "parent": "/knowledge", "breadcrumb": true, "eligible": true },
     { "path": "/knowledge/laser-skin-treatments-safety", "type": "article", "sitemap": true, "primaryIntent": "laser treatment safety education", "parent": "/knowledge", "breadcrumb": true, "eligible": true },
     { "path": "/knowledge/premium-aesthetic-consultation", "type": "article", "sitemap": true, "primaryIntent": "aesthetic consultation education", "parent": "/knowledge", "breadcrumb": true, "eligible": true },
@@ -75,14 +70,19 @@
     "/treatments/",
     "/concerns/",
     "/doctor-answers/",
-    "/conditions/",
     "/knowledge/",
     "/reviews/",
-    "/results/"
+    "/results/",
+    "/videos/"
   ],
   "nonIndexableRoutes": [
     { "path": "/api/*", "reason": "Machine endpoint" },
     { "path": "/studio/*", "reason": "Private administration interface" },
+    { "path": "/conditions", "reason": "Redirected to the current concern taxonomy" },
+    { "path": "/conditions/hair-fall-thinning", "reason": "Redirected to /concerns/hair-loss-scalp" },
+    { "path": "/conditions/acne-acne-scars", "reason": "Redirected to /concerns/acne-scars" },
+    { "path": "/conditions/pigmentation-melasma", "reason": "Redirected to /concerns/pigmentation" },
+    { "path": "/conditions/skin-ageing-laxity", "reason": "Redirected to /concerns/aging-aesthetics" },
     { "path": "/results/*/*", "reason": "Case details require verified clinical context and timeline before indexation" }
   ]
 }

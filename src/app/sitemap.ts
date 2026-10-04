@@ -1,7 +1,6 @@
 import type { MetadataRoute } from "next";
 import {
   getArticleStaticParams,
-  getConditionStaticParams,
   getReviewStaticParams,
   getSeoIndex,
   getTreatmentStaticParams,
@@ -16,6 +15,7 @@ import {
 import { approvedConcerns, doctorAnswers } from "@/data/concern-library";
 import { indexableLocationPages } from "@/data/location-pages";
 import { indexableResultCases } from "@/data/result-cases";
+import { hairVideoWatchPages } from "@/data/video-watch-pages";
 import { absoluteUrl } from "@/lib/seo-config";
 import { isIndexableRoute, normalizeRoutePath } from "@/lib/indexability";
 
@@ -27,16 +27,15 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const answerRoutes = doctorAnswers
     .filter((answer) => answer.indexable && answer.status === "APPROVED" && answer.reviewedBy && answer.reviewedAt)
     .map((answer) => `/doctor-answers/${answer.slug}`);
+  const videoRoutes = hairVideoWatchPages.map((page) => `/videos/${page.slug}`);
 
   const [
     treatmentParams,
-    conditionParams,
     articleParams,
     reviewParams,
     seoIndex,
   ] = await Promise.all([
     getTreatmentStaticParams(),
-    getConditionStaticParams(),
     getArticleStaticParams(),
     getReviewStaticParams(),
     getSeoIndex(),
@@ -45,17 +44,15 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const treatmentRoutes = treatmentParams.map(
     (treatment) => `/treatments/${treatment.cluster}/${treatment.slug}`,
   );
-  const conditionRoutes = conditionParams.map(
-    (condition) => `/conditions/${condition.slug}`,
-  );
   const articleRoutes = articleParams.map(
     (article) => `/knowledge/${article.slug}`,
   );
   const reviewRoutes = reviewParams.map((review) => `/reviews/${review.slug}`);
   const seoRoutes = [
-    ...(seoIndex.staticRoutes || []),
+    ...(seoIndex.staticRoutes || []).filter(
+      (route) => normalizeRoutePath(route) !== "/conditions" && !normalizeRoutePath(route).startsWith("/conditions/"),
+    ),
     ...seoIndex.treatments.map((item) => item.url),
-    ...seoIndex.conditions.map((item) => item.url),
     ...seoIndex.articles.map((item) => item.url),
     ...seoIndex.reviews.map((item) => item.url),
     ...seoIndex.reviews.map((item) => item.categoryUrl).filter(Boolean),
@@ -69,8 +66,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         ...resultRoutes,
         ...concernRoutes,
         ...answerRoutes,
+        ...videoRoutes,
         ...treatmentRoutes,
-        ...conditionRoutes,
         ...articleRoutes,
         ...reviewRoutes,
         ...seoRoutes,

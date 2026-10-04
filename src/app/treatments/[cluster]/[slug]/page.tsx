@@ -224,7 +224,7 @@ export default async function TreatmentDetailPage({ params }: Props) {
           title="Continue with related clinical information."
           items={[
             { href: relationships.hub, label: `${treatment.clusterLabel} overview`, description: "Compare related care pathways and the concerns they address." },
-            ...relationships.conditions.map((href) => ({ href, label: href.includes("hair-fall") ? "Hair fall and thinning" : href.includes("acne") ? "Acne and acne scars" : href.includes("pigmentation") ? "Pigmentation and melasma" : "Skin ageing and laxity", description: "Review concern-led guidance before selecting treatment." })),
+            ...relationships.conditions.map((href) => ({ href, label: href.includes("hair-loss") ? "Hair loss and scalp concerns" : href.includes("acne-scars") ? "Acne scar concerns" : href.endsWith("/acne") ? "Active acne concerns" : href.includes("pigmentation") ? "Pigmentation and melasma" : href.includes("laser-hair") ? "Laser hair reduction questions" : "Skin ageing and aesthetic concerns", description: "Review concern-led guidance before selecting treatment." })),
             ...relationships.articles.map((href) => ({ href, label: "Related patient guide", description: "Read practical preparation and decision-making guidance." })),
             { href: relationships.results, label: "Consent-confirmed treatment results", description: "Review individual comparisons with outcome variability stated clearly." },
             { href: "/locations", label: "Visiting from elsewhere in Odisha", description: "Plan an appointment at the verified Bhubaneswar clinic." },

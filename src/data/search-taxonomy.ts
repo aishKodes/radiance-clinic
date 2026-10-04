@@ -47,7 +47,7 @@ export const treatmentHubs: TreatmentHub[] = [
       "/treatments/hair-restoration/prp-gfc-scalp-therapy",
       "/treatments/hair-restoration/advanced-hair-fall-solutions",
     ],
-    conditionPaths: ["/conditions/hair-fall-thinning"],
+    conditionPaths: ["/concerns/hair-loss-scalp"],
     articlePaths: [
       "/knowledge/how-to-plan-hair-restoration",
       "/knowledge/hair-loss-causes-and-assessment",
@@ -88,8 +88,9 @@ export const treatmentHubs: TreatmentHub[] = [
       "/treatments/skin-wellness/bridal-glow-protocol",
     ],
     conditionPaths: [
-      "/conditions/acne-acne-scars",
-      "/conditions/pigmentation-melasma",
+      "/concerns/acne",
+      "/concerns/acne-scars",
+      "/concerns/pigmentation",
     ],
     articlePaths: ["/knowledge/laser-skin-treatments-safety"],
     commercialPaths: [
@@ -125,7 +126,7 @@ export const treatmentHubs: TreatmentHub[] = [
       "/treatments/skin-laser/laser-hair-reduction",
       "/treatments/skin-laser/laser-pigmentation-program",
     ],
-    conditionPaths: ["/conditions/pigmentation-melasma"],
+    conditionPaths: ["/concerns/pigmentation", "/concerns/laser-hair-reduction"],
     articlePaths: ["/knowledge/laser-skin-treatments-safety"],
     commercialPaths: [
       "/laser-hair-removal-bhubaneswar",
@@ -157,7 +158,7 @@ export const treatmentHubs: TreatmentHub[] = [
     treatmentPaths: [
       "/treatments/aesthetic-dermatology/injectable-aesthetics",
     ],
-    conditionPaths: ["/conditions/skin-ageing-laxity"],
+    conditionPaths: ["/concerns/aging-aesthetics"],
     articlePaths: ["/knowledge/premium-aesthetic-consultation"],
     commercialPaths: [
       "/botox-treatment-bhubaneswar",
@@ -187,7 +188,7 @@ type ContentRelationships = {
 
 const hairRelationships: ContentRelationships = {
   hub: "/treatments/hair-restoration",
-  conditions: ["/conditions/hair-fall-thinning"],
+  conditions: ["/concerns/hair-loss-scalp"],
   treatments: treatmentHubs[0].treatmentPaths,
   articles: treatmentHubs[0].articlePaths,
   results: treatmentHubs[0].resultsHref,
@@ -197,8 +198,9 @@ const hairRelationships: ContentRelationships = {
 const skinRelationships: ContentRelationships = {
   hub: "/treatments/skin",
   conditions: [
-    "/conditions/acne-acne-scars",
-    "/conditions/pigmentation-melasma",
+    "/concerns/acne",
+    "/concerns/acne-scars",
+    "/concerns/pigmentation",
   ],
   treatments: treatmentHubs[1].treatmentPaths,
   articles: treatmentHubs[1].articlePaths,
@@ -208,7 +210,7 @@ const skinRelationships: ContentRelationships = {
 
 const laserRelationships: ContentRelationships = {
   hub: "/treatments/laser",
-  conditions: ["/conditions/pigmentation-melasma"],
+  conditions: ["/concerns/pigmentation", "/concerns/laser-hair-reduction"],
   treatments: treatmentHubs[2].treatmentPaths,
   articles: treatmentHubs[2].articlePaths,
   results: treatmentHubs[2].resultsHref,
@@ -217,7 +219,7 @@ const laserRelationships: ContentRelationships = {
 
 const aestheticRelationships: ContentRelationships = {
   hub: "/treatments/aesthetic-dermatology",
-  conditions: ["/conditions/skin-ageing-laxity"],
+  conditions: ["/concerns/aging-aesthetics"],
   treatments: treatmentHubs[3].treatmentPaths,
   articles: treatmentHubs[3].articlePaths,
   results: treatmentHubs[3].resultsHref,
@@ -228,7 +230,7 @@ export const relationshipByPath: Record<string, ContentRelationships> = {
   "/treatments/hair-restoration/fue-hair-transplant": hairRelationships,
   "/treatments/hair-restoration/prp-gfc-scalp-therapy": hairRelationships,
   "/treatments/hair-restoration/advanced-hair-fall-solutions": hairRelationships,
-  "/conditions/hair-fall-thinning": hairRelationships,
+  "/concerns/hair-loss-scalp": hairRelationships,
   "/knowledge/how-to-plan-hair-restoration": hairRelationships,
   "/hair-transplant-bhubaneswar": hairRelationships,
   "/hair-loss-clinic-bhubaneswar": hairRelationships,
@@ -236,20 +238,22 @@ export const relationshipByPath: Record<string, ContentRelationships> = {
   "/non-surgical-hair-replacement-bhubaneswar": hairRelationships,
   "/treatments/skin-laser/acne-scar-revision": skinRelationships,
   "/treatments/skin-wellness/bridal-glow-protocol": skinRelationships,
-  "/conditions/acne-acne-scars": skinRelationships,
+  "/concerns/acne": skinRelationships,
+  "/concerns/acne-scars": skinRelationships,
   "/acne-scar-treatment-bhubaneswar": skinRelationships,
   "/acne-treatment-bhubaneswar": skinRelationships,
   "/skin-clinic-bhubaneswar": skinRelationships,
   "/wart-removal-bhubaneswar": skinRelationships,
   "/treatments/skin-laser/laser-hair-reduction": laserRelationships,
   "/treatments/skin-laser/laser-pigmentation-program": laserRelationships,
-  "/conditions/pigmentation-melasma": laserRelationships,
+  "/concerns/pigmentation": laserRelationships,
+  "/concerns/laser-hair-reduction": laserRelationships,
   "/knowledge/laser-skin-treatments-safety": laserRelationships,
   "/laser-hair-removal-bhubaneswar": laserRelationships,
   "/pigmentation-treatment-bhubaneswar": laserRelationships,
   "/tattoo-removal-bhubaneswar": laserRelationships,
   "/treatments/aesthetic-dermatology/injectable-aesthetics": aestheticRelationships,
-  "/conditions/skin-ageing-laxity": aestheticRelationships,
+  "/concerns/aging-aesthetics": aestheticRelationships,
   "/knowledge/premium-aesthetic-consultation": aestheticRelationships,
   "/botox-treatment-bhubaneswar": aestheticRelationships,
   "/dermal-fillers-bhubaneswar": aestheticRelationships,

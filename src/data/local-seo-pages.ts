@@ -140,7 +140,7 @@ export const localSeoPages: LocalSeoPage[] = [
           "Read about donor strategy, hairline planning and suitability.",
       },
       {
-        href: "/conditions/hair-fall-thinning",
+        href: "/concerns/hair-loss-scalp",
         label: "Hair fall and thinning",
         description:
           "Understand common signs and diagnosis-led treatment pathways.",
@@ -535,7 +535,7 @@ export const localSeoPages: LocalSeoPage[] = [
         description: "Read about staged treatment planning for scar texture.",
       },
       {
-        href: "/conditions/acne-acne-scars",
+        href: "/concerns/acne-scars",
         label: "Acne and acne scars",
         description: "Understand common signs and related treatment pathways.",
       },
@@ -636,7 +636,7 @@ export const localSeoPages: LocalSeoPage[] = [
           "Review the clinic's calibrated pigmentation treatment pathway.",
       },
       {
-        href: "/conditions/pigmentation-melasma",
+        href: "/concerns/pigmentation",
         label: "Pigmentation and melasma",
         description: "Learn about common signs and related treatment options.",
       },
@@ -847,7 +847,7 @@ export const localSeoPages: LocalSeoPage[] = [
     ],
     relatedLinks: [
       {
-        href: "/conditions/hair-fall-thinning",
+        href: "/concerns/hair-loss-scalp",
         label: "Hair fall and thinning",
         description: "Understand common signs and assessment pathways.",
       },
@@ -1481,7 +1481,7 @@ localSeoPages.push(
           "Compare patchy loss with shedding, pattern thinning and scalp concerns.",
       },
       {
-        href: "/conditions/hair-fall-thinning",
+        href: "/concerns/hair-loss-scalp",
         label: "Hair fall and thinning",
         description: "Review common signs and diagnosis-led care pathways.",
       },

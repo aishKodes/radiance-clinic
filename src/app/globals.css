@@ -239,6 +239,13 @@ p {
   display: none;
 }
 
+@supports (content-visibility: auto) {
+  .homepage-deferred-section {
+    content-visibility: auto;
+    contain-intrinsic-block-size: auto 56rem;
+  }
+}
+
 .aurora-orb {
   position: absolute;
   width: 34rem;
@@ -362,5 +369,13 @@ p {
   .section-glow {
     width: 20rem;
     height: 20rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .aurora-orb,
+  .section-glow,
+  .skin-cell {
+    animation: none;
   }
 }

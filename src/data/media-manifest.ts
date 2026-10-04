@@ -412,7 +412,21 @@ function selectVariant(item: ManifestItem, variant: VariantKey) {
 
 function cmsImage(item: ManifestItem, variant: VariantKey = "landscape"): CmsImage {
   const role = normalize(item.role || item.usage || item.subject || item.id);
+  const identity = normalize(
+    [item.id, item.subject, item.role, item.usage, item.filename].filter(Boolean).join(" "),
+  );
+  const verifiedDoctorAlt =
+    canonicalCategory(item.category) === "doctor" && /satyarth|doctor/.test(identity)
+      ? /with-patient|patient/.test(identity)
+        ? "Dr. Satyarth Prakash with a patient at Radiance Clinics"
+        : /award|recognition|anil-kapoor/.test(identity)
+          ? "Dr. Satyarth Prakash at a Radiance Clinics recognition event"
+          : /consultation/.test(identity)
+            ? "Dr. Satyarth Prakash during a consultation at Radiance Clinics"
+            : "Dr. Satyarth Prakash at Radiance Clinics"
+      : "";
   const altText =
+    verifiedDoctorAlt ||
     item.altText ||
     item.alt_text ||
     `${titleFromSlug(role || item.id)} - Radiance Clinics`;
@@ -751,7 +765,7 @@ function strictBeforeAfterCases() {
         patientLabel: exampleLabel,
         treatment: treatmentTitle,
         treatmentCategory: pair.treatmentCategory || (category === "skin" ? "skin-treatment" : "hair-transplant"),
-        timeGap: pair.timeGap || "Timeline discussed during consultation",
+        timeGap: pair.timeGap?.trim() || undefined,
         note:
           category === "skin"
             ? "A consent-confirmed skin improvement example shown with context."
@@ -1361,7 +1375,6 @@ const legacyCases: BeforeAfterCase[] = [
     patientLabel: "Hair Transplant Transformation",
     treatment: "Hair Transplant",
     treatmentCategory: "hair-transplant",
-    timeGap: "Timeline reviewed during consultation",
     note:
       "A consent-aware multi-angle transformation layout prepared for matched front, angle and crown review.",
     resultSummary:
@@ -1388,7 +1401,6 @@ const legacyCases: BeforeAfterCase[] = [
     patientLabel: "Hair Transplant Transformation",
     treatment: "Hair Transplant",
     treatmentCategory: "hair-transplant",
-    timeGap: "Timeline reviewed during consultation",
     note:
       "Crown and portrait angles are shown with consent and consultation context.",
     resultSummary:
@@ -1421,7 +1433,6 @@ const legacyCases: BeforeAfterCase[] = [
     patientLabel: "Hair Transplant Transformation",
     treatment: "Hair Restoration",
     treatmentCategory: "hair-transplant",
-    timeGap: "Timeline reviewed during consultation",
     note: "A clinic-provided anonymized set for hairline and density review.",
     resultSummary: "Front and side views prepared for consultation discussion.",
     disclaimer: "Results vary. Public visuals require consent and clinical interpretation.",
@@ -1441,7 +1452,6 @@ const legacyCases: BeforeAfterCase[] = [
     patientLabel: "Hair Transplant Transformation",
     treatment: "Hair Transplant",
     treatmentCategory: "hair-transplant",
-    timeGap: "Timeline reviewed during consultation",
     note: "A multi-view transformation prepared for front, side and top-view browsing.",
     resultSummary: "Images are organized to avoid misleading single-image comparison.",
     disclaimer: "Outcomes differ by biology, planning, aftercare and timeline.",
@@ -1461,7 +1471,6 @@ const legacyCases: BeforeAfterCase[] = [
     patientLabel: "Hair Transplant Transformation",
     treatment: "Hair Restoration",
     treatmentCategory: "hair-transplant",
-    timeGap: "Timeline reviewed during consultation",
     note: "A privacy-aware set for hair restoration discussion.",
     resultSummary: "Multiple angles help avoid over-reading a single view.",
     disclaimer: "No website image can replace diagnosis or doctor-led expectation setting.",
@@ -1481,7 +1490,6 @@ const legacyCases: BeforeAfterCase[] = [
     patientLabel: "Hair Transplant Transformation",
     treatment: "Hair Transplant",
     treatmentCategory: "hair-transplant",
-    timeGap: "Timeline reviewed during consultation",
     note: "A transformation set prepared for crown and front pattern discussion.",
     resultSummary: "Additional image views can support consultation discussion.",
     disclaimer: "Results vary and cannot be guaranteed from image viewing.",
@@ -1560,7 +1568,7 @@ export const realSocialLinks: SocialLink[] = [
     platform: "youtube",
     label: "YouTube video library",
     handle: "@RadianceClinics",
-    url: "https://youtube.com/@radianceclinics?si=MwbMHVfdlLk2C95l",
+    url: "https://youtube.com/@radianceclinics",
     ctaLabel: "Watch YouTube",
     image: realSocialAssets.youtube || radianceMedia.doctorConsultation,
     sortOrder: 20,
@@ -1583,9 +1591,9 @@ export const realSocialLinks: SocialLink[] = [
   },
   {
     platform: "linkedin",
-    label: "LinkedIn profile",
+    label: "Dr. Satyarth Prakash professional profile",
     url: "https://linkedin.com/in/radiance-skin-and-hair-clinic-231124131",
-    ctaLabel: "View LinkedIn",
+    ctaLabel: "View professional profile",
     image: realSocialAssets.linkedin || radianceMedia.badge2025,
     sortOrder: 50,
   },

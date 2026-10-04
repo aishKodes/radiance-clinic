@@ -1,7 +1,6 @@
 import {
   getArticles,
   getClinicSettings,
-  getConditions,
   getTreatments,
 } from "@/data/site";
 import { siteUrl } from "@/lib/utils";
@@ -9,10 +8,9 @@ import { siteUrl } from "@/lib/utils";
 export const revalidate = 3600;
 
 export async function GET() {
-  const [clinic, treatments, conditions, articles] = await Promise.all([
+  const [clinic, treatments, articles] = await Promise.all([
     getClinicSettings(),
     getTreatments(),
-    getConditions(),
     getArticles(),
   ]);
 
@@ -50,9 +48,6 @@ export async function GET() {
     "",
     "## Patient Guides",
     ...articles.map((item) => `- [${item.title}](${siteUrl}/knowledge/${item.slug})`),
-    "",
-    "## Conditions",
-    ...conditions.map((item) => `- [${item.title}](${siteUrl}/conditions/${item.slug})`),
     "",
     "## Official Media",
     `- [Radiance Clinics YouTube channel](https://www.youtube.com/@RadianceClinics)`,

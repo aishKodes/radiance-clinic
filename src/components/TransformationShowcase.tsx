@@ -294,10 +294,9 @@ export function TransformationShowcase({
               </p>
               <div className="grid gap-2 rounded-3xl border border-white/12 bg-white/[0.07] p-4 text-sm text-white/70 sm:min-w-56">
                 <InfoLine label="Treatment" value={current.treatment} />
-                <InfoLine
-                  label="Timeline"
-                  value={current.timeGap || "Discussed during consultation"}
-                />
+                {current.timeGap ? (
+                  <InfoLine label="Timeline" value={current.timeGap} />
+                ) : null}
               </div>
             </div>
           </div>
@@ -369,9 +368,11 @@ function SelectorCard({
         <span className="mt-2 block truncate text-sm font-extrabold text-white">
           {displayTitle(item, category, index)}
         </span>
-        <span className="mt-1 block truncate text-xs text-white/46">
-          {item.timeGap || "Consultation timeline"}
-        </span>
+        {item.timeGap ? (
+          <span className="mt-1 block truncate text-xs text-white/46">
+            {item.timeGap}
+          </span>
+        ) : null}
       </span>
     </button>
   );

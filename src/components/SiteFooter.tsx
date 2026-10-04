@@ -16,7 +16,6 @@ const clinicLinks = [
   { label: "Treatments", href: "/treatments" },
   { label: "Concern library", href: "/concerns" },
   { label: "Doctor answers", href: "/doctor-answers" },
-  { label: "Legacy conditions", href: "/conditions" },
   { label: "Patient results", href: "/results" },
   { label: "Interactive comparisons", href: "/before-after" },
   { label: "Patient reviews", href: "/reviews" },
@@ -58,17 +57,17 @@ export function SiteFooter({ settings }: { settings: ClinicSettings }) {
             <div className="flex gap-3">
               <Phone aria-hidden="true" className="mt-0.5 h-4 w-4 shrink-0 text-[var(--champagne)]" />
               <div className="flex flex-col gap-1">
-                {settings.landline ? (
-                  <ConversionLink href={`tel:${clinicIdentity.landlineTel}`} eventName="call_click" className="hover:text-white">
-                    {settings.landline}
-                  </ConversionLink>
-                ) : null}
                 <ConversionLink href={`tel:${clinicIdentity.primaryPhoneTel}`} eventName="call_click" className="hover:text-white">
-                  {settings.phone}
+                  Primary: {settings.phone}
                 </ConversionLink>
                 {settings.secondaryPhone ? (
                   <ConversionLink href={`tel:${clinicIdentity.secondaryPhoneTel}`} eventName="call_click" className="hover:text-white">
-                    {settings.secondaryPhone}
+                    Secondary: {settings.secondaryPhone}
+                  </ConversionLink>
+                ) : null}
+                {settings.landline ? (
+                  <ConversionLink href={`tel:${clinicIdentity.landlineTel}`} eventName="call_click" className="hover:text-white">
+                    Landline: {settings.landline}
                   </ConversionLink>
                 ) : null}
               </div>

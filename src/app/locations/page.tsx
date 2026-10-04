@@ -40,7 +40,7 @@ export default function LocationsPage() {
           <h2 className="font-serif text-4xl text-[var(--ink)] sm:text-5xl">The verified Bhubaneswar clinic</h2>
           <address className="mt-7 space-y-5 not-italic text-base leading-8 text-[var(--ink)]/68">
             <p className="flex gap-3"><MapPin className="mt-1 h-5 w-5 shrink-0 text-[var(--bronze)]" />{clinicIdentity.address}</p>
-            <p className="flex gap-3"><Phone className="mt-1 h-5 w-5 shrink-0 text-[var(--bronze)]" /><span>{clinicIdentity.primaryPhone}<br />{clinicIdentity.secondaryPhone}</span></p>
+            <p className="flex gap-3"><Phone className="mt-1 h-5 w-5 shrink-0 text-[var(--bronze)]" /><span>Primary: {clinicIdentity.primaryPhone}<br />Secondary: {clinicIdentity.secondaryPhone}</span></p>
           </address>
           <PremiumButton href={directionsUrl(clinicIdentity.address)} className="mt-8">Get directions</PremiumButton>
         </div>

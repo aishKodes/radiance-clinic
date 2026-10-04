@@ -128,33 +128,49 @@ export function HeroMediaCollage({
               const recognition = isAnilKapoorImage(image);
 
               return (
-                <Image
+                <div
                   key={image.id || image.src || image.desktopUrl}
-                  src={image.src || image.desktopUrl}
-                  alt={active ? image.altText || image.alt : ""}
-                  aria-hidden={!active}
-                  fill
-                  preload={index === 0}
-                  fetchPriority={index === 0 ? "high" : "auto"}
-                  loading={index === 0 ? undefined : "lazy"}
-                  sizes="(min-width: 1024px) 560px, (min-width: 640px) 576px, calc(100vw - 32px)"
-                  placeholder={image.blurDataUrl ? "blur" : "empty"}
-                  blurDataURL={image.blurDataUrl}
-                  className={`absolute ${index === 0 ? "z-0" : "z-[1]"} ${
-                    recognition
-                      ? "object-cover bg-[#10142b]"
-                      : "object-cover"
-                  } transition-[opacity,transform] duration-700 ease-out ${
+                  className={`absolute overflow-hidden ${
+                    index === 0 ? "inset-0 z-0" : "inset-px z-[1]"
+                  } ${
+                    index === 0
+                      ? "opacity-100"
+                      : "transition-[opacity,transform] duration-700 ease-out"
+                  } ${
                     index === 0 || active
                       ? "scale-100 opacity-100"
                       : "scale-[1.015] opacity-0"
                   }`}
-                  style={{
-                    objectPosition: recognition
-                      ? "center center"
-                      : imagePosition(image),
-                  }}
-                />
+                >
+                  <Image
+                    src={image.src || image.desktopUrl}
+                    alt={index === 0 || active ? image.altText || image.alt : ""}
+                    aria-hidden={index === 0 ? undefined : !active}
+                    fill
+                    preload={index === 0}
+                    fetchPriority={index === 0 ? "high" : "auto"}
+                    loading={index === 0 ? undefined : "lazy"}
+                    sizes="(min-width: 1024px) 560px, (min-width: 640px) 576px, calc(100vw - 32px)"
+                    placeholder={
+                      index === 0
+                        ? "empty"
+                        : image.blurDataUrl
+                          ? "blur"
+                          : "empty"
+                    }
+                    blurDataURL={index === 0 ? undefined : image.blurDataUrl}
+                    className={
+                      recognition
+                        ? "object-cover bg-[#10142b]"
+                        : "object-cover"
+                    }
+                    style={{
+                      objectPosition: recognition
+                        ? "center center"
+                        : imagePosition(image),
+                    }}
+                  />
+                </div>
               );
             })
           ) : (

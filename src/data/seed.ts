@@ -98,7 +98,7 @@ export const stats: Stat[] = [
     value: "YouTube",
     label: "YouTube Community",
     description: "Treatment explainers, patient stories and clinic updates.",
-    href: "https://youtube.com/@radianceclinics?si=MwbMHVfdlLk2C95l",
+    href: "https://youtube.com/@radianceclinics",
     external: true,
     icon: "youtube",
   },
@@ -392,7 +392,7 @@ const editorialArticles: Article[] = [
     seoDescription:
       "Learn what makes a trusted skin clinic stand out and how personalised assessment supports acne, pigmentation, scar and skin-quality care.",
     relatedTreatments: ["/skin-clinic-bhubaneswar", "/treatments/skin"],
-    relatedConditions: ["/conditions/acne-acne-scars", "/conditions/pigmentation-melasma"],
+    relatedConditions: ["/concerns/acne", "/concerns/pigmentation"],
   },
   {
     slug: "skin-care-doctor-bhubaneswar",
@@ -417,7 +417,7 @@ const editorialArticles: Article[] = [
     seoDescription:
       "See how a skin-care doctor can assess acne, pigmentation, scars, ageing and persistent skin changes using personalised planning.",
     relatedTreatments: ["/skin-clinic-bhubaneswar", "/treatments/skin"],
-    relatedConditions: ["/conditions/acne-acne-scars", "/conditions/pigmentation-melasma"],
+    relatedConditions: ["/concerns/acne", "/concerns/pigmentation"],
   },
   {
     slug: "hair-loss-causes-and-assessment",
@@ -702,7 +702,7 @@ export const videoItems: VideoItem[] = [
     label: "Our Videos",
     description:
       "A patient-friendly video space for safety, preparation and aftercare guidance.",
-    href: "https://youtube.com/@radianceclinics?si=MwbMHVfdlLk2C95l",
+    href: "https://youtube.com/@radianceclinics",
     thumbnail: radianceMedia.equipmentRoomTwo,
   },
   {
@@ -710,7 +710,7 @@ export const videoItems: VideoItem[] = [
     label: "Patient Education",
     description:
       "Doctor-led guidance on consultation, treatment selection and realistic expectations.",
-    href: "https://youtube.com/@radianceclinics?si=MwbMHVfdlLk2C95l",
+    href: "https://youtube.com/@radianceclinics",
     thumbnail: radianceMedia.doctorProfile,
   },
   {
@@ -718,7 +718,7 @@ export const videoItems: VideoItem[] = [
     label: "Community",
     description:
       "Videos explaining assessment, planning and aftercare for aesthetic treatments.",
-    href: "https://youtube.com/@radianceclinics?si=MwbMHVfdlLk2C95l",
+    href: "https://youtube.com/@radianceclinics",
     thumbnail: radianceMedia.clinicReception,
   },
 ];

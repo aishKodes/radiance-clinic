@@ -1694,7 +1694,21 @@ async function processImage({ filePath, inputRoot, outRoot, usedSlugs, metadataI
       : info.transformationCategory === "hair" && info.beforeAfterPhase === "before"
         ? "Hair transplant example before treatment at Radiance Clinics Bhubaneswar"
         : "";
+  const doctorIdentity = slugify(
+    [slug, subject, role, info.originalFilename].filter(Boolean).join(" "),
+  );
+  const verifiedDoctorAlt =
+    category === "doctor" && /satyarth|doctor/.test(doctorIdentity)
+      ? /with-patient|patient/.test(doctorIdentity)
+        ? "Dr. Satyarth Prakash with a patient at Radiance Clinics"
+        : /award|recognition|anil-kapoor/.test(doctorIdentity)
+          ? "Dr. Satyarth Prakash at a Radiance Clinics recognition event"
+          : /consultation/.test(doctorIdentity)
+            ? "Dr. Satyarth Prakash during a consultation at Radiance Clinics"
+            : "Dr. Satyarth Prakash at Radiance Clinics"
+      : "";
   const altText =
+    verifiedDoctorAlt ||
     manifestMeta.alt_text ||
     manifestMeta.alt ||
     transformationAlt ||

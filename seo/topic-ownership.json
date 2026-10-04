@@ -1,0 +1,221 @@
+{
+  "version": 1,
+  "updatedAt": "2026-10-04",
+  "evidence": {
+    "source": "Authenticated Google Search Console performance report",
+    "period": "2026-06-30 to 2026-09-29",
+    "property": "https://www.radianceclinics.com/"
+  },
+  "roles": [
+    "COMMERCIAL_LOCAL",
+    "TREATMENT_PROCEDURE",
+    "CONCERN",
+    "KNOWLEDGE",
+    "DOCTOR_ANSWER",
+    "VIDEO",
+    "RESULT"
+  ],
+  "topics": [
+    {
+      "id": "hair-transplant",
+      "label": "Hair transplant",
+      "canonicalOwner": "/hair-transplant-bhubaneswar",
+      "canonicalRole": "COMMERCIAL_LOCAL",
+      "commercialOwner": "/hair-transplant-bhubaneswar",
+      "treatmentPages": ["/treatments/hair-restoration/fue-hair-transplant"],
+      "concernPages": ["/concerns/hair-transplant", "/concerns/hair-transplant/hair-transplant-suitability"],
+      "knowledgePages": ["/knowledge/how-to-plan-hair-restoration"],
+      "doctorAnswers": ["/doctor-answers/how-many-grafts-receding-hairline"],
+      "videos": ["/videos/hair-transplant-procedure-explained"],
+      "results": ["/before-after", "/results"],
+      "queries": [
+        "hair transplant in bhubaneswar",
+        "hair transplant clinic bhubaneswar",
+        "best hair transplant clinic bhubaneswar"
+      ],
+      "supportingPages": [
+        { "path": "/treatments/hair-restoration/fue-hair-transplant", "role": "TREATMENT_PROCEDURE" },
+        { "path": "/concerns/hair-transplant/hair-transplant-suitability", "role": "CONCERN" },
+        { "path": "/knowledge/how-to-plan-hair-restoration", "role": "KNOWLEDGE" },
+        { "path": "/doctor-answers/how-many-grafts-receding-hairline", "role": "DOCTOR_ANSWER" },
+        { "path": "/videos/hair-transplant-procedure-explained", "role": "VIDEO" },
+        { "path": "/before-after", "role": "RESULT" }
+      ]
+    },
+    {
+      "id": "hair-loss-restoration",
+      "label": "Hair loss and restoration",
+      "canonicalOwner": "/hair-loss-clinic-bhubaneswar",
+      "canonicalRole": "COMMERCIAL_LOCAL",
+      "commercialOwner": "/hair-loss-clinic-bhubaneswar",
+      "treatmentPages": ["/treatments/hair-restoration/advanced-hair-fall-solutions"],
+      "concernPages": ["/concerns/hair-loss-scalp", "/concerns/hair-loss-scalp/hair-loss"],
+      "knowledgePages": ["/knowledge/hair-loss-causes-and-assessment"],
+      "doctorAnswers": ["/doctor-answers/hair-thinning-vs-hair-fall"],
+      "videos": ["/videos/hair-loss-treatment-options"],
+      "results": ["/results"],
+      "queries": [
+        "hair loss treatment in bhubaneswar",
+        "hair clinic bhubaneswar",
+        "hair doctor bhubaneswar",
+        "hair specialist bhubaneswar"
+      ],
+      "supportingPages": [
+        { "path": "/treatments/hair-restoration/advanced-hair-fall-solutions", "role": "TREATMENT_PROCEDURE" },
+        { "path": "/concerns/hair-loss-scalp/hair-loss", "role": "CONCERN" },
+        { "path": "/knowledge/hair-loss-causes-and-assessment", "role": "KNOWLEDGE" },
+        { "path": "/doctor-answers/hair-thinning-vs-hair-fall", "role": "DOCTOR_ANSWER" },
+        { "path": "/videos/hair-loss-treatment-options", "role": "VIDEO" },
+        { "path": "/results", "role": "RESULT" }
+      ]
+    },
+    {
+      "id": "prp-gfc-hair-restoration",
+      "label": "PRP and GFC hair restoration",
+      "canonicalOwner": "/treatments/hair-restoration/prp-gfc-scalp-therapy",
+      "canonicalRole": "TREATMENT_PROCEDURE",
+      "commercialOwner": "/hair-loss-clinic-bhubaneswar",
+      "treatmentPages": ["/treatments/hair-restoration/prp-gfc-scalp-therapy"],
+      "concernPages": ["/concerns/hair-loss-scalp/hair-thinning"],
+      "knowledgePages": ["/knowledge/prp-gfc-hair-restoration-guide"],
+      "doctorAnswers": ["/doctor-answers/hair-thinning-vs-hair-fall"],
+      "videos": ["/videos/hair-loss-treatment-options"],
+      "results": ["/results"],
+      "queries": [
+        "gfc treatment in bhubaneswar",
+        "prp treatment in bhubaneswar",
+        "prp hair treatment bhubaneswar"
+      ],
+      "supportingPages": [
+        { "path": "/hair-loss-clinic-bhubaneswar", "role": "COMMERCIAL_LOCAL" },
+        { "path": "/concerns/hair-loss-scalp/hair-thinning", "role": "CONCERN" },
+        { "path": "/knowledge/prp-gfc-hair-restoration-guide", "role": "KNOWLEDGE" },
+        { "path": "/doctor-answers/hair-thinning-vs-hair-fall", "role": "DOCTOR_ANSWER" },
+        { "path": "/videos/hair-loss-treatment-options", "role": "VIDEO" },
+        { "path": "/results", "role": "RESULT" }
+      ]
+    },
+    {
+      "id": "hair-patch-replacement",
+      "label": "Hair patch and non-surgical replacement",
+      "canonicalOwner": "/non-surgical-hair-replacement-bhubaneswar",
+      "canonicalRole": "COMMERCIAL_LOCAL",
+      "commercialOwner": "/non-surgical-hair-replacement-bhubaneswar",
+      "treatmentPages": [],
+      "concernPages": ["/concerns/hair-loss-scalp/hair-loss"],
+      "knowledgePages": ["/knowledge/how-to-plan-hair-restoration"],
+      "doctorAnswers": ["/doctor-answers/can-hair-transplant-work-weak-donor"],
+      "videos": ["/videos/hair-patch-vs-hair-transplant"],
+      "results": ["/results"],
+      "queries": [
+        "hair patch in bhubaneswar",
+        "hair wig in bhubaneswar",
+        "non surgical hair replacement bhubaneswar"
+      ],
+      "supportingPages": [
+        { "path": "/concerns/hair-loss-scalp/hair-loss", "role": "CONCERN" },
+        { "path": "/knowledge/how-to-plan-hair-restoration", "role": "KNOWLEDGE" },
+        { "path": "/doctor-answers/can-hair-transplant-work-weak-donor", "role": "DOCTOR_ANSWER" },
+        { "path": "/videos/hair-patch-vs-hair-transplant", "role": "VIDEO" },
+        { "path": "/results", "role": "RESULT" }
+      ]
+    },
+    {
+      "id": "active-acne",
+      "label": "Active acne",
+      "canonicalOwner": "/acne-treatment-bhubaneswar",
+      "canonicalRole": "COMMERCIAL_LOCAL",
+      "commercialOwner": "/acne-treatment-bhubaneswar",
+      "treatmentPages": [],
+      "concernPages": ["/concerns/acne", "/concerns/acne/acne"],
+      "knowledgePages": ["/knowledge/adult-acne-women-causes-and-treatment"],
+      "doctorAnswers": ["/doctor-answers/why-acne-keeps-returning"],
+      "videos": [],
+      "results": ["/results"],
+      "queries": [
+        "acne treatment in bhubaneswar",
+        "pimple treatment bhubaneswar"
+      ],
+      "supportingPages": [
+        { "path": "/concerns/acne/acne", "role": "CONCERN" },
+        { "path": "/knowledge/adult-acne-women-causes-and-treatment", "role": "KNOWLEDGE" },
+        { "path": "/doctor-answers/why-acne-keeps-returning", "role": "DOCTOR_ANSWER" },
+        { "path": "/results", "role": "RESULT" }
+      ]
+    },
+    {
+      "id": "acne-scars",
+      "label": "Acne scars",
+      "canonicalOwner": "/acne-scar-treatment-bhubaneswar",
+      "canonicalRole": "COMMERCIAL_LOCAL",
+      "commercialOwner": "/acne-scar-treatment-bhubaneswar",
+      "treatmentPages": ["/treatments/skin-laser/acne-scar-revision"],
+      "concernPages": ["/concerns/acne-scars", "/concerns/acne-scars/acne-scars"],
+      "knowledgePages": ["/knowledge/acne-scar-types-and-treatment-planning", "/knowledge/acne-scar-treatment-bhubaneswar"],
+      "doctorAnswers": ["/doctor-answers/which-acne-scar-treatment-is-best"],
+      "videos": [],
+      "results": ["/before-after", "/results"],
+      "queries": [
+        "acne scar treatment in bhubaneswar",
+        "acne scar clinic bhubaneswar"
+      ],
+      "supportingPages": [
+        { "path": "/treatments/skin-laser/acne-scar-revision", "role": "TREATMENT_PROCEDURE" },
+        { "path": "/concerns/acne-scars/acne-scars", "role": "CONCERN" },
+        { "path": "/knowledge/acne-scar-types-and-treatment-planning", "role": "KNOWLEDGE" },
+        { "path": "/knowledge/acne-scar-treatment-bhubaneswar", "role": "KNOWLEDGE" },
+        { "path": "/doctor-answers/which-acne-scar-treatment-is-best", "role": "DOCTOR_ANSWER" },
+        { "path": "/before-after", "role": "RESULT" }
+      ]
+    },
+    {
+      "id": "pigmentation-melasma",
+      "label": "Pigmentation and melasma",
+      "canonicalOwner": "/pigmentation-treatment-bhubaneswar",
+      "canonicalRole": "COMMERCIAL_LOCAL",
+      "commercialOwner": "/pigmentation-treatment-bhubaneswar",
+      "treatmentPages": ["/treatments/skin-laser/laser-pigmentation-program"],
+      "concernPages": ["/concerns/pigmentation", "/concerns/pigmentation/pigmentation", "/concerns/pigmentation/melasma"],
+      "knowledgePages": ["/knowledge/laser-skin-treatments-safety"],
+      "doctorAnswers": ["/doctor-answers/why-melasma-returns"],
+      "videos": [],
+      "results": ["/before-after", "/results"],
+      "queries": [
+        "pigmentation treatment in bhubaneswar",
+        "melasma treatment in bhubaneswar",
+        "skin pigmentation clinic bhubaneswar"
+      ],
+      "supportingPages": [
+        { "path": "/treatments/skin-laser/laser-pigmentation-program", "role": "TREATMENT_PROCEDURE" },
+        { "path": "/concerns/pigmentation/pigmentation", "role": "CONCERN" },
+        { "path": "/concerns/pigmentation/melasma", "role": "CONCERN" },
+        { "path": "/knowledge/laser-skin-treatments-safety", "role": "KNOWLEDGE" },
+        { "path": "/doctor-answers/why-melasma-returns", "role": "DOCTOR_ANSWER" },
+        { "path": "/before-after", "role": "RESULT" }
+      ]
+    },
+    {
+      "id": "laser-hair-reduction",
+      "label": "Laser hair reduction",
+      "canonicalOwner": "/laser-hair-removal-bhubaneswar",
+      "canonicalRole": "COMMERCIAL_LOCAL",
+      "commercialOwner": "/laser-hair-removal-bhubaneswar",
+      "treatmentPages": ["/treatments/skin-laser/laser-hair-reduction"],
+      "concernPages": ["/concerns/laser-hair-reduction", "/concerns/laser-hair-reduction/laser-hair-removal-dark-skin"],
+      "knowledgePages": ["/knowledge/laser-hair-reduction-expectations"],
+      "doctorAnswers": ["/doctor-answers/laser-hair-reduction-safe-darker-skin"],
+      "videos": [],
+      "results": [],
+      "queries": [
+        "laser hair removal in bhubaneswar",
+        "laser hair reduction bhubaneswar"
+      ],
+      "supportingPages": [
+        { "path": "/treatments/skin-laser/laser-hair-reduction", "role": "TREATMENT_PROCEDURE" },
+        { "path": "/concerns/laser-hair-reduction/laser-hair-removal-dark-skin", "role": "CONCERN" },
+        { "path": "/knowledge/laser-hair-reduction-expectations", "role": "KNOWLEDGE" },
+        { "path": "/doctor-answers/laser-hair-reduction-safe-darker-skin", "role": "DOCTOR_ANSWER" }
+      ]
+    }
+  ]
+}

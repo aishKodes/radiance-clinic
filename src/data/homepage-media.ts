@@ -318,3 +318,44 @@ export const hairTransformationExamples: Transformation[] =
 
 export const skinTransformationExamples: Transformation[] =
   transformationExamples.filter((item) => item.category === "skin");
+
+function curatedTransformations(
+  transformations: Transformation[],
+  preferredConditions: string[],
+  limit = 6,
+) {
+  const byCondition = new Map(
+    transformations.map((item) => [item.conditionName?.toLowerCase(), item]),
+  );
+  const selected = preferredConditions
+    .map((condition) => byCondition.get(condition.toLowerCase()))
+    .filter((item): item is Transformation => Boolean(item));
+  const selectedIds = new Set(selected.map((item) => item.id));
+
+  return [
+    ...selected,
+    ...transformations.filter((item) => !selectedIds.has(item.id)),
+  ].slice(0, limit);
+}
+
+export const homepageHairTransformationExamples = curatedTransformations(
+  hairTransformationExamples,
+  [
+    "Advanced Male Pattern Baldness",
+    "Receding Hairline",
+    "Female Pattern Hair Loss",
+    "Beard Transplant",
+  ],
+  4,
+);
+
+export const homepageSkinTransformationExamples = curatedTransformations(
+  skinTransformationExamples,
+  [
+    "Acne",
+    "Acne Scars",
+    "Pigmentation",
+    "Melasma",
+  ],
+  4,
+);

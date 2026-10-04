@@ -811,7 +811,7 @@ export const doctorArticles: Article[] = [
     ],
     "relatedConditions": [
       "/concerns/acne/adult-acne",
-      "/conditions/acne-acne-scars"
+      "/concerns/acne-scars"
     ],
     "relatedArticles": [
       "acne-scar-types-and-treatment-planning",
@@ -1396,7 +1396,7 @@ export const doctorArticles: Article[] = [
     ],
     "relatedConditions": [
       "/concerns/hair-loss-scalp/hair-loss",
-      "/conditions/hair-fall-thinning"
+      "/concerns/hair-loss-scalp"
     ],
     "relatedArticles": [
       "hair-loss-causes-and-assessment",
@@ -2299,8 +2299,8 @@ export const doctorArticles: Article[] = [
       "/skin-clinic-bhubaneswar"
     ],
     "relatedConditions": [
-      "/conditions/skin-ageing-laxity",
-      "/conditions/acne-acne-scars"
+      "/concerns/aging-aesthetics",
+      "/concerns/acne-scars"
     ],
     "relatedArticles": [
       "laser-skin-treatments-safety",
@@ -2970,7 +2970,7 @@ export const doctorArticles: Article[] = [
     ],
     "relatedConditions": [
       "/concerns/pigmentation/tanning",
-      "/conditions/pigmentation-melasma"
+      "/concerns/pigmentation"
     ],
     "relatedArticles": [
       "laser-skin-treatments-safety",
@@ -3608,7 +3608,7 @@ export const doctorArticles: Article[] = [
     ],
     "relatedConditions": [
       "/concerns/acne-scars/acne-scars",
-      "/conditions/acne-acne-scars"
+      "/concerns/acne-scars"
     ],
     "relatedArticles": [
       "acne-scar-types-and-treatment-planning",

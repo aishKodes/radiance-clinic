@@ -69,7 +69,7 @@ export function beforeAfterCaseToTransformation(
       item.note ||
       "Consent-confirmed treatment images for consultation discussion.",
     treatment: item.treatment || "Hair Restoration",
-    timeGap: item.timeGap || "Timeline discussed during consultation",
+    timeGap: item.timeGap?.trim() || undefined,
     disclaimer:
       item.disclaimer ||
       "Results vary by individual. Images are shared with consent. A consultation is required.",

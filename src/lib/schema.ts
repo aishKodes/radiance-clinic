@@ -29,7 +29,7 @@ function postalAddress(settings: ClinicSettings): JsonLd {
 }
 
 function telephoneNumbers(settings: ClinicSettings) {
-  return [settings.landline, settings.phone, settings.secondaryPhone].filter(
+  return [settings.phone, settings.secondaryPhone, settings.landline].filter(
     Boolean,
   );
 }

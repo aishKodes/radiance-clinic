@@ -54,7 +54,7 @@ const configs: ResultConfig[] = [
     summary:
       "A consent-confirmed front-view comparison associated with hair transplant care for advanced male pattern baldness.",
     treatmentHref: "/treatments/hair-restoration/fue-hair-transplant",
-    conditionHref: "/conditions/hair-fall-thinning",
+    conditionHref: "/concerns/hair-loss-scalp/hair-loss",
     guideHref: "/knowledge/how-to-plan-hair-restoration",
   },
   ...[
@@ -77,7 +77,7 @@ const configs: ResultConfig[] = [
     metaDescription: `View a consent-confirmed hair restoration comparison for ${conditionName.toLowerCase()} at Radiance Clinics Bhubaneswar. Individual results vary.`,
     summary: `A consent-confirmed comparison associated with hair restoration care for ${conditionName.toLowerCase()}.`,
     treatmentHref: "/treatments/hair-restoration/fue-hair-transplant",
-    conditionHref: "/conditions/hair-fall-thinning",
+    conditionHref: "/concerns/hair-loss-scalp/hair-loss",
     guideHref: "/knowledge/how-to-plan-hair-restoration",
   })),
   ...[
@@ -100,8 +100,8 @@ const configs: ResultConfig[] = [
         : "/treatments/skin-laser/laser-pigmentation-program",
     conditionHref:
       conditionName === "Acne" || conditionName === "Acne Scars"
-        ? "/conditions/acne-acne-scars"
-        : "/conditions/pigmentation-melasma",
+        ? "/concerns/acne-scars/acne-scars"
+        : "/concerns/pigmentation/pigmentation",
     guideHref: "/knowledge/laser-skin-treatments-safety",
   })),
 ];

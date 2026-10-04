@@ -4,7 +4,6 @@ export const coreIndexableRoutes = [
   "/treatments",
   "/concerns",
   "/doctor-answers",
-  "/conditions",
   "/knowledge",
   "/videos",
   "/before-after",

@@ -14,7 +14,7 @@ import {
   treatmentHubs,
 } from "@/data/search-taxonomy";
 import { hairVideoWatchPages } from "@/data/video-watch-pages";
-import { getArticles, getConditions, getTreatments } from "@/data/site";
+import { getArticles, getTreatments } from "@/data/site";
 import { pageMetadata } from "@/lib/metadata";
 import {
   breadcrumbJsonLd,
@@ -22,6 +22,33 @@ import {
 } from "@/lib/schema";
 
 type Props = { params: Promise<{ cluster: string }> };
+
+const concernDetails: Record<string, { label: string; description: string }> = {
+  "/concerns/hair-loss-scalp": {
+    label: "Hair loss and scalp concerns",
+    description: "Understand shedding, thinning and scalp changes before comparing treatment options.",
+  },
+  "/concerns/acne": {
+    label: "Active acne concerns",
+    description: "Review acne signs, possible triggers and the role of a professional assessment.",
+  },
+  "/concerns/acne-scars": {
+    label: "Acne scar concerns",
+    description: "Compare scar patterns and why treatment selection depends on scar type and depth.",
+  },
+  "/concerns/pigmentation": {
+    label: "Pigmentation and melasma concerns",
+    description: "Understand different pigmentation patterns, triggers and recurrence considerations.",
+  },
+  "/concerns/laser-hair-reduction": {
+    label: "Laser hair reduction questions",
+    description: "Review suitability, skin-type considerations and realistic reduction expectations.",
+  },
+  "/concerns/aging-aesthetics": {
+    label: "Skin ageing and aesthetic concerns",
+    description: "Understand changes in skin quality, volume and movement before treatment planning.",
+  },
+};
 
 export const dynamicParams = false;
 
@@ -45,9 +72,8 @@ export default async function TreatmentCategoryPage({ params }: Props) {
   const hub = treatmentHubBySlug.get(cluster as never);
   if (!hub) notFound();
 
-  const [treatments, conditions, articles] = await Promise.all([
+  const [treatments, articles] = await Promise.all([
     getTreatments(),
-    getConditions(),
     getArticles(),
   ]);
   const path = `/treatments/${hub.slug}`;
@@ -55,13 +81,13 @@ export default async function TreatmentCategoryPage({ params }: Props) {
     hub.treatmentPaths.includes(`/treatments/${item.cluster}/${item.slug}`),
   );
   const relatedItems = [
-    ...conditions
-      .filter((item) => hub.conditionPaths.includes(`/conditions/${item.slug}`))
-      .map((item) => ({
-        href: `/conditions/${item.slug}`,
-        label: item.title,
-        description: item.summary,
-      })),
+    ...hub.conditionPaths.map((href) => ({
+      href,
+      label: concernDetails[href]?.label || "Related concern guidance",
+      description:
+        concernDetails[href]?.description ||
+        "Review concern-led guidance before selecting a treatment pathway.",
+    })),
     ...articles
       .filter((item) => hub.articlePaths.includes(`/knowledge/${item.slug}`))
       .map((item) => ({

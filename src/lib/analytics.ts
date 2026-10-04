@@ -16,6 +16,8 @@ export type RadianceConversionEvent =
   | "call_click"
   | "whatsapp_click"
   | "book_appointment_click"
+  | "booking_start"
+  | "booking_submission"
   | "treatment_cta_click"
   | "doctor_answer_click"
   | "video_play"

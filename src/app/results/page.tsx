@@ -58,7 +58,7 @@ export default function ResultsPage() {
           <div className="mt-10"><ResultPreviewGrid cases={hairCases} limit={6} /></div>
           <div className="mt-9 flex flex-col gap-3 sm:flex-row">
             <PremiumButton href="/hair-transplant-bhubaneswar">Hair transplant planning</PremiumButton>
-            <PremiumButton href="/conditions/hair-fall-thinning" variant="outline">Hair loss guidance</PremiumButton>
+            <PremiumButton href="/concerns/hair-loss-scalp" variant="outline">Hair loss guidance</PremiumButton>
           </div>
         </div>
       </section>
