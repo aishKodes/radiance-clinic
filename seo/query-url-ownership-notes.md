@@ -10,6 +10,13 @@ Updated: 2026-10-04
 
 Missing query rows are recorded as unavailable or no rows returned for that report window. They are not treated as zero demand or an indexation verdict.
 
+## Deployment verification
+
+- Production deployment verified on 2026-10-04 after commit `d0ec72b`.
+- `https://www.radianceclinics.com/sitemap.xml` was resubmitted successfully in the authenticated Search Console property `https://www.radianceclinics.com/` on 2026-10-04.
+- Selective URL Inspection confirmed that `/hair-transplant-bhubaneswar`, `/hair-loss-clinic-bhubaneswar` and `/non-surgical-hair-replacement-bhubaneswar` are on Google and indexed.
+- The live sitemap contains the dedicated hair video watch pages and no longer contains the retired `/conditions` gateways.
+
 ## Confirmed overlaps
 
 - Hair transplant: the homepage still receives most clicks for the local query while the intended service page is weak. Preserve the homepage signal and strengthen the service-page relationship instead of forcing an immediate rewrite.
