@@ -14,6 +14,7 @@ Missing query rows are recorded as unavailable or no rows returned for that repo
 
 - Production deployment verified on 2026-10-04 after commit `d0ec72b`.
 - `https://www.radianceclinics.com/sitemap.xml` was resubmitted successfully in the authenticated Search Console property `https://www.radianceclinics.com/` on 2026-10-04.
+- The obsolete failing `/sitemap_index.xml` submission was removed from Search Console; the valid `/sitemap.xml` is now the only submitted sitemap.
 - Selective URL Inspection confirmed that `/hair-transplant-bhubaneswar`, `/hair-loss-clinic-bhubaneswar` and `/non-surgical-hair-replacement-bhubaneswar` are on Google and indexed.
 - The live sitemap contains the dedicated hair video watch pages and no longer contains the retired `/conditions` gateways.
 
