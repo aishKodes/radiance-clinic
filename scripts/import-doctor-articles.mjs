@@ -1,7 +1,6 @@
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 import process from "node:process";
-import sharp from "sharp";
 
 const root = process.cwd();
 const sourceDirectory = path.resolve(
@@ -21,7 +20,7 @@ const articleConfig = [
     image: "/radiance-media-processed/landscape/radiance-acne-condition.webp",
     imageAlt: "Adult acne with inflamed breakouts on the cheek",
     relatedTreatments: ["/acne-treatment-bhubaneswar", "/skin-clinic-bhubaneswar"],
-    relatedConditions: ["/concerns/acne/adult-acne", "/conditions/acne-acne-scars"],
+    relatedConditions: ["/concerns/acne/adult-acne", "/concerns/acne-scars"],
     relatedArticles: ["acne-scar-types-and-treatment-planning", "acne-scar-treatment-bhubaneswar"],
     references: [
       {
@@ -44,7 +43,7 @@ const articleConfig = [
     image: "/radiance-media-processed/articles/bhubaneswar-water-hair-fall-hard-water.webp",
     imageAlt: "Person examining wet hair and scalp after washing",
     relatedTreatments: ["/hair-loss-clinic-bhubaneswar", "/treatments/hair-restoration/advanced-hair-fall-solutions"],
-    relatedConditions: ["/concerns/hair-loss-scalp/hair-loss", "/conditions/hair-fall-thinning"],
+    relatedConditions: ["/concerns/hair-loss-scalp/hair-loss", "/concerns/hair-loss-scalp"],
     relatedArticles: ["hair-loss-causes-and-assessment", "how-to-plan-hair-restoration"],
     references: [
       {
@@ -67,7 +66,7 @@ const articleConfig = [
     image: "/radiance-media-processed/articles/exosome-skin-treatment-bhubaneswar.webp",
     imageAlt: "Illustration of a patient in a clinical skin-care setting with cellular science imagery",
     relatedTreatments: ["/treatments/aesthetic-dermatology", "/skin-clinic-bhubaneswar"],
-    relatedConditions: ["/conditions/skin-ageing-laxity", "/conditions/acne-acne-scars"],
+    relatedConditions: ["/concerns/aging-aesthetics", "/concerns/acne-scars"],
     relatedArticles: ["laser-skin-treatments-safety", "premium-aesthetic-consultation"],
     references: [
       {
@@ -90,7 +89,7 @@ const articleConfig = [
     image: "/radiance-media-processed/articles/why-tanning-despite-sunscreen-bhubaneswar.webp",
     imageAlt: "Woman applying sunscreen outdoors in Bhubaneswar sun",
     relatedTreatments: ["/pigmentation-treatment-bhubaneswar", "/treatments/skin-laser/laser-pigmentation-program"],
-    relatedConditions: ["/concerns/pigmentation/tanning", "/conditions/pigmentation-melasma"],
+    relatedConditions: ["/concerns/pigmentation/tanning", "/concerns/pigmentation"],
     relatedArticles: ["laser-skin-treatments-safety", "best-skin-clinic-bhubaneswar"],
     references: [
       {
@@ -113,7 +112,7 @@ const articleConfig = [
     image: "/radiance-media-processed/articles/acne-scar-treatment-bhubaneswar.webp",
     imageAlt: "Person examining acne scars and active acne in a mirror",
     relatedTreatments: ["/acne-scar-treatment-bhubaneswar", "/treatments/skin-laser/acne-scar-revision"],
-    relatedConditions: ["/concerns/acne-scars/acne-scars", "/conditions/acne-acne-scars"],
+    relatedConditions: ["/concerns/acne-scars/acne-scars", "/concerns/acne-scars"],
     relatedArticles: ["acne-scar-types-and-treatment-planning", "adult-acne-hormones-pcos-insulin-resistance-bhubaneswar"],
     references: [
       {
@@ -123,6 +122,131 @@ const articleConfig = [
       {
         label: "American Academy of Dermatology: Acne scars signs and symptoms",
         href: "https://www.aad.org/public/diseases/acne/derm-treat/scars/symptoms",
+      },
+    ],
+  },
+  {
+    file: "acne-keeps-coming-back-understanding-acne-care.md",
+    sourceFile: "content/doctor-articles/acne-keeps-coming-back-understanding-acne-care.md",
+    slug: "acne-keeps-coming-back-understanding-acne-care",
+    category: "Acne & Skin Health",
+    excerpt:
+      "Recurring acne can have different priorities, triggers and practical barriers. Learn why a clear, individual plan matters more than adding another product.",
+    image: "/radiance-media-processed/landscape/radiance-acne-condition.webp",
+    imageAlt: "Person with active acne examining their skin",
+    seoTitle: "Recurring Acne Care: What to Review First | Radiance Clinics",
+    publishedAt: "2026-10-05",
+    relatedTreatments: ["/acne-treatment-bhubaneswar", "/skin-clinic-bhubaneswar"],
+    relatedConditions: ["/concerns/acne/adult-acne", "/conditions/acne-acne-scars"],
+    relatedArticles: ["adult-acne-hormones-pcos-insulin-resistance-bhubaneswar", "acne-scar-treatment-bhubaneswar"],
+    references: [
+      {
+        label: "Treatment adherence in acne vulgaris: systematic review and narrative synthesis",
+        href: "https://doi.org/10.1093/skinhd/vzag084",
+      },
+      {
+        label: "Maintenance therapy for acne vulgaris after oral isotretinoin",
+        href: "https://doi.org/10.1159/000350820",
+      },
+    ],
+  },
+  {
+    file: "hair-getting-thinner-what-to-check-first.md",
+    sourceFile: "content/doctor-articles/hair-getting-thinner-what-to-check-first.md",
+    slug: "hair-getting-thinner-what-to-check-first",
+    category: "Hair & Scalp Health",
+    excerpt:
+      "Hair shedding and progressive thinning are not always the same concern. Learn what patterns and contributing factors are worth assessing first.",
+    image: "/radiance-media-processed/landscape/radiance-hair-fall-condition.webp",
+    imageAlt: "Visible scalp and thinning hair being examined",
+    seoTitle: "Hair Getting Thinner? What to Check First | Radiance Clinics",
+    publishedAt: "2026-10-05",
+    relatedTreatments: ["/hair-loss-clinic-bhubaneswar", "/treatments/hair-restoration/advanced-hair-fall-solutions"],
+    relatedConditions: ["/concerns/hair-loss-scalp/hair-thinning", "/concerns/hair-loss-scalp/hair-loss"],
+    relatedArticles: ["hair-loss-causes-and-assessment", "bhubaneswar-water-hair-fall-hard-water"],
+    references: [
+      {
+        label: "Telogen effluvium: a review of the literature",
+        href: "https://pubmed.ncbi.nlm.nih.gov/32607303/",
+      },
+      {
+        label: "Micronutrients and androgenetic alopecia: a systematic review",
+        href: "https://pubmed.ncbi.nlm.nih.gov/39440586/",
+      },
+    ],
+  },
+  {
+    file: "dandruff-frizzy-oily-hair.md",
+    sourceFile: "content/doctor-articles/dandruff-frizzy-oily-hair.md",
+    slug: "dandruff-frizzy-oily-hair",
+    category: "Hair & Scalp Health",
+    excerpt:
+      "An oily, flaky scalp and dry or frizzy lengths can occur together. Learn how dandruff, hair-fibre damage and shedding may differ.",
+    image: "/radiance-media-processed/landscape/radiance-hair-fall-condition.webp",
+    imageAlt: "Person checking an oily, flaky scalp and dry hair lengths",
+    seoTitle: "Dandruff, Frizzy Hair and an Oily Scalp | Radiance Clinics",
+    publishedAt: "2026-10-05",
+    relatedTreatments: ["/hair-loss-clinic-bhubaneswar", "/treatments/hair-restoration/advanced-hair-fall-solutions"],
+    relatedConditions: ["/concerns/hair-loss-scalp/dandruff", "/concerns/hair-loss-scalp/hair-loss"],
+    relatedArticles: ["bhubaneswar-water-hair-fall-hard-water", "hair-loss-causes-and-assessment"],
+    references: [
+      {
+        label: "Scalp seborrheic dermatitis: what we know so far",
+        href: "https://pubmed.ncbi.nlm.nih.gov/37325288/",
+      },
+      {
+        label: "Effects of hard water on hair",
+        href: "https://pubmed.ncbi.nlm.nih.gov/24574692/",
+      },
+    ],
+  },
+  {
+    file: "hair-fall-visible-scalp-understanding-the-problem.md",
+    sourceFile: "content/doctor-articles/hair-fall-visible-scalp-understanding-the-problem.md",
+    slug: "hair-fall-visible-scalp-understanding-the-problem",
+    category: "Hair & Scalp Health",
+    excerpt:
+      "Hair fall, thinning and a more visible scalp can have different causes. Start by understanding the pattern before choosing a treatment.",
+    image: "/radiance-media-processed/landscape/radiance-hair-fall-condition.webp",
+    imageAlt: "Person assessing hair thinning and a visible scalp",
+    seoTitle: "Hair Fall, Thinning or a Visible Scalp? | Radiance Clinics",
+    publishedAt: "2026-10-05",
+    relatedTreatments: ["/hair-loss-clinic-bhubaneswar", "/treatments/hair-restoration/advanced-hair-fall-solutions"],
+    relatedConditions: ["/concerns/hair-loss-scalp/hair-loss", "/concerns/hair-loss-scalp/hair-thinning"],
+    relatedArticles: ["hair-loss-causes-and-assessment", "hair-getting-thinner-what-to-check-first"],
+    references: [
+      {
+        label: "Trichoscopy of androgenetic alopecia: a systematic review",
+        href: "https://pmc.ncbi.nlm.nih.gov/articles/PMC11012765/",
+      },
+      {
+        label: "The role of vitamins and minerals in hair loss: a review",
+        href: "https://doi.org/10.1007/s13555-018-0278-6",
+      },
+    ],
+  },
+  {
+    file: "hair-fall-is-a-symptom-understanding-the-cause.md",
+    sourceFile: "content/doctor-articles/hair-fall-is-a-symptom-understanding-the-cause.md",
+    slug: "hair-fall-is-a-symptom-understanding-the-cause",
+    category: "Hair & Scalp Health",
+    excerpt:
+      "Hair fall is a symptom, not a diagnosis. Learn why identifying the pattern and likely cause should come before treatment choices.",
+    image: "/radiance-media-processed/landscape/radiance-hair-fall-condition.webp",
+    imageAlt: "Hair and scalp assessment for increased shedding and thinning",
+    seoTitle: "Hair Fall Is a Symptom: Understand the Cause First | Radiance Clinics",
+    publishedAt: "2026-10-05",
+    relatedTreatments: ["/hair-loss-clinic-bhubaneswar", "/treatments/hair-restoration/advanced-hair-fall-solutions"],
+    relatedConditions: ["/concerns/hair-loss-scalp/hair-loss", "/concerns/hair-loss-scalp/dandruff"],
+    relatedArticles: ["hair-loss-causes-and-assessment", "hair-fall-visible-scalp-understanding-the-problem"],
+    references: [
+      {
+        label: "Expert consensus on the management of telogen effluvium in India",
+        href: "https://doi.org/10.4103/ijt.ijt_23_19",
+      },
+      {
+        label: "Androgenetic alopecia: therapy update",
+        href: "https://doi.org/10.1007/s40265-023-01880-x",
       },
     ],
   },
@@ -162,8 +286,14 @@ function parseMarkdown(markdown) {
 
     const h1 = line.match(/^#\s+(.+)$/);
     if (h1) {
-      title = cleanTitle(h1[1]);
-      started = true;
+      if (!started) {
+        title = cleanTitle(h1[1]);
+        started = true;
+      } else {
+        flushParagraph();
+        flushList();
+        blocks.push({ type: "heading", level: 2, text: cleanTitle(h1[1]) });
+      }
       continue;
     }
 
@@ -224,7 +354,8 @@ function estimateReadTime(blocks) {
 }
 
 async function optimizeMedia(config) {
-  if (!config.sourceImage) return;
+  if (!config.sourceImage || process.env.SKIP_DOCTOR_ARTICLE_MEDIA === "1") return;
+  const { default: sharp } = await import("sharp");
   const source = path.join(sourceDirectory, config.sourceImage);
   const destination = path.join(root, "public", config.image);
   await mkdir(path.dirname(destination), { recursive: true });
@@ -240,7 +371,10 @@ async function main() {
 
   const articles = await Promise.all(
     articleConfig.map(async (config) => {
-      const markdown = await readFile(path.join(sourceDirectory, config.file), "utf8");
+      const markdown = await readFile(
+        config.sourceFile ? path.join(root, config.sourceFile) : path.join(sourceDirectory, config.file),
+        "utf8",
+      );
       const { title, blocks } = parseMarkdown(markdown);
       if (!title || !blocks.length) throw new Error(`Could not parse ${config.file}`);
       await optimizeMedia(config);
@@ -265,7 +399,8 @@ async function main() {
           displayMode: "cover",
         },
         seoTitle:
-          config.slug === "adult-acne-hormones-pcos-insulin-resistance-bhubaneswar"
+          config.seoTitle ??
+          (config.slug === "adult-acne-hormones-pcos-insulin-resistance-bhubaneswar"
             ? "Adult Acne, Hormones & PCOS in Bhubaneswar | Radiance Clinics"
             : config.slug === "bhubaneswar-water-hair-fall-hard-water"
               ? "Is Bhubaneswar Water Causing Hair Fall? | Radiance Clinics"
@@ -273,13 +408,13 @@ async function main() {
                 ? "Exosome Skin Treatment in Bhubaneswar: Evidence & Safety | Radiance Clinics"
                 : config.slug === "why-tanning-despite-sunscreen-bhubaneswar"
                   ? "Why Am I Still Tanning Despite Sunscreen? | Radiance Clinics"
-                  : "Acne Scar Treatment in Bhubaneswar: A Doctor's Guide | Radiance Clinics",
+                : "Acne Scar Treatment in Bhubaneswar: A Doctor's Guide | Radiance Clinics"),
         seoDescription: config.excerpt,
         authorName: "Dr. Satyarth Prakash",
         authorType: "doctor",
         authorId: "dr-satyarth-prakash",
-        publishedAt,
-        updatedAt: publishedAt,
+        publishedAt: config.publishedAt ?? publishedAt,
+        updatedAt: config.publishedAt ?? publishedAt,
         medicalReviewStatus: "PUBLISHED",
         sourceType: "original",
         references: config.references,
