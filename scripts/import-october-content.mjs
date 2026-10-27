@@ -133,9 +133,9 @@ await writeCsv(path.join(root, "seo/new-content-cannibalisation-check.csv"), ["s
 
 const queries = await readCsv(path.join(root, "seo/gsc-raw/hair-2026-10-27/28d-vs-previous/Queries.csv"));
 const opportunities = [
-  ["Can I get a hair transplant while my hair is still falling?", "transplant.*(active|still|falling|shedding)|(?:fall|loss).*before.*transplant", "can-transplant-while-hair-still-falling", "hair-transplant-consultation-checklist"],
+  ["Can I get a hair transplant while my hair is still falling?", "transplant.*(?:active hair loss|still losing|still falling|ongoing hair loss)|(?:fall|loss).*before.*transplant", "can-transplant-while-hair-still-falling", "hair-transplant-consultation-checklist"],
   ["Is three months too early to judge a hair transplant?", "3 month|three month", "when-transplanted-hair-start-growing", "hair-transplant-aftercare"],
-  ["Why is one side of my hair transplant growing slower?", "one side|uneven growth", "when-transplanted-hair-start-growing", "hair-transplant-aftercare"],
+  ["Why is one side of my hair transplant growing slower?", "transplant.*(?:one side|uneven|slower)|(?:one side|uneven).*(?:transplant|growing)", "when-transplanted-hair-start-growing", "hair-transplant-aftercare"],
   ["Can hair transplant be done between existing thinning hairs?", "diffuse|thinning hair transplant", "", "hair-transplant-diffuse-thinning"],
   ["Does donor hair grow back after FUE extraction?", "what happens to donor area", "", "fue-hair-transplant-scars"],
   ["Can I get a second hair transplant?", "second|repeat transplant|another transplant", "can-i-get-second-hair-transplant", "second-hair-transplant"],
@@ -143,7 +143,7 @@ const opportunities = [
   ["Can a hair transplant make the donor area look thin?", "what happens to donor area|low donor area", "can-fue-make-donor-area-thin", "fue-hair-transplant-scars"],
   ["Why does a crown transplant appear slower than the hairline?", "crown.*growth|crown.*slow", "when-transplanted-hair-start-growing", "crown-vs-hairline-graft-priority"],
   ["Can I transplant only the temples?", "hairline edges and temples", "", "natural-hairline-design-hair-transplant"],
-  ["Can transplanted hair be cut and styled normally later?", "transplant.*cut|transplant.*style", "", "hair-transplant-aftercare"],
+  ["Can transplanted hair be cut and styled normally later?", "transplant.*\\b(?:cut|cutting|style|styled|styling)\\b", "", "hair-transplant-aftercare"],
   ["Can I wear my hair very short after FUE?", "fue.*short|fue.*scar", "", "fue-hair-transplant-scars"],
   ["Can a previous unnatural hairline be repaired?", "unnatural|repair", "", "second-hair-transplant"],
   ["Can hair transplant fix diffuse frontal thinning?", "diffuse.*frontal", "", "hair-transplant-diffuse-thinning"],

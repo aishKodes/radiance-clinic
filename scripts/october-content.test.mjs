@@ -76,6 +76,24 @@ test("question opportunities never represent missing exported rows as zero deman
     assert.equal(row.impressions, "NOT_OBSERVED");
     assert.equal(row.clicks, "NOT_OBSERVED");
   }
+  assert.ok(!rows.find((row) => row.question.includes("cut and styled")).matching_queries.includes("cuttack"));
+  assert.ok(!rows.find((row) => row.question.includes("growing slower")).matching_queries.includes("receding"));
+  assert.ok(!rows.find((row) => row.question.includes("still falling")).matching_queries.includes("shedding after"));
+});
+
+test("new article evidence excludes replacement, unpublished and unverified image sources", async () => {
+  const { originalComparisonSourceIds } = await loadTs("src/lib/result-evidence.ts");
+  const manifest = JSON.parse(await readFile("public/radiance-media-processed/manifest.json", "utf8"));
+  const originals = originalComparisonSourceIds(manifest.items);
+  assert.ok(originals.size > 0);
+  for (const source of manifest.items.filter((item) => item.replacementAfter)) {
+    assert.ok(!originals.has(source.id));
+  }
+  assert.deepEqual([...originalComparisonSourceIds([
+    { id: "original", category: "before-after", replacementAfter: false },
+    { id: "unknown", category: "before-after" },
+    { id: "unpublished", category: "before-after", replacementAfter: false, publish: false },
+  ])], ["original"]);
 });
 
 test("first Hair CTA is queued before analytics loads and keeps landing attribution", async () => {

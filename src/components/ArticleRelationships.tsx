@@ -2,11 +2,18 @@ import Image from "next/image";
 import Link from "next/link";
 import { doctorAnswers } from "@/data/concern-library";
 import { hairTransformationExamples } from "@/data/homepage-media";
+import mediaManifest from "../../public/radiance-media-processed/manifest.json";
+import { originalComparisonSourceIds } from "@/lib/result-evidence";
 import type { Article } from "@/types/cms";
+
+const originalResultImages = originalComparisonSourceIds(mediaManifest.items);
 
 export function ArticleRelationships({ article }: { article: Pick<Article, "relatedAnswers" | "resultConditions"> }) {
   const answers = (article.relatedAnswers || []).map((slug) => doctorAnswers.find((answer) => answer.slug === slug)).filter((answer) => Boolean(answer));
-  const result = hairTransformationExamples.find((item) => item.consentConfirmed === true && article.resultConditions?.includes(item.conditionName || "") && item.beforeAfterPairs?.[0]?.before && item.beforeAfterPairs?.[0]?.after);
+  const result = hairTransformationExamples.find((item) => {
+    const comparison = item.beforeAfterPairs?.[0];
+    return item.consentConfirmed === true && article.resultConditions?.includes(item.conditionName || "") && comparison?.before.id && comparison?.after.id && originalResultImages.has(comparison.before.id) && originalResultImages.has(comparison.after.id);
+  });
   const pair = result?.beforeAfterPairs?.[0];
   if (!answers.length && !pair) return null;
   return <div className="mt-12 border-t border-[var(--ink)]/12 pt-8">
