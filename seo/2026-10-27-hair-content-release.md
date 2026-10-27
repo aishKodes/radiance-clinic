@@ -96,7 +96,9 @@ Article author uses the genuine doctor Person or editorial Organization as appro
 
 Production HTTP checks passed for 28 affected destinations and 42 internal destinations after the evidence safeguard deployed: HTTP 200, self-canonicals, indexable robots, one H1, Article metadata where applicable, valid JSON-LD, visible author/reviewer, sitemap and audited internal discovery. Protected-route regression passed all 37 routes, verification token, sitemap, discovery and legacy recovery redirects.
 
-Authenticated URL Inspection on `sc-domain:radianceclinics.com` reports the new consultation, density and early-age hair-fall guides as "URL is unknown to Google" on 27 October. Their historical last crawl and Google canonical are unavailable, not zero. A live consultation-URL test at 21:38:47 IST confirms "URL is available to Google" and "Page can be indexed". This live test is not an indexing confirmation. Details are in `seo/october-gsc-inspections.csv`. A one-time consultation-guide indexing request awaits action-time user confirmation; no repeated requests were submitted.
+Authenticated URL Inspection on `sc-domain:radianceclinics.com` reports the new consultation, density and early-age hair-fall guides as "URL is unknown to Google" on 27 October. Their historical last crawl and Google canonical are unavailable, not zero. A live consultation-URL test at 21:38:47 IST confirms "URL is available to Google" and "Page can be indexed". This live test is not an indexing confirmation. Details are in `seo/october-gsc-inspections.csv`. The user subsequently approved one consultation-guide indexing request. Browser control was disabled in Work settings before submission, so the request has not been sent. Re-enable browser control or submit that single request manually; no repeated requests were submitted.
+
+The final metadata update from `54a37b2` is confirmed on production: HTTP 200, correct canonical, stable video-specific entity ID and actual YouTube publication DateTime. This HTTP verification does not claim that Google has already rerun its enhancement report or removed the earlier optional warnings.
 
 ## Tests
 
