@@ -37,6 +37,23 @@ const protectedPaths = [
   ),
 ];
 
+async function fetchWithRetry(input, init, attempts = 3) {
+  let lastError;
+
+  for (let attempt = 1; attempt <= attempts; attempt += 1) {
+    try {
+      return await fetch(input, init);
+    } catch (error) {
+      lastError = error;
+      if (attempt < attempts) {
+        await new Promise((resolve) => setTimeout(resolve, attempt * 500));
+      }
+    }
+  }
+
+  throw lastError;
+}
+
 export function validatePage(expected, actual) {
   const errors = [];
   if (actual.status !== 200) errors.push(`HTTP ${actual.status}`);
@@ -77,7 +94,7 @@ async function main() {
       let ready = false;
       for (let attempt = 0; attempt < 60; attempt++) {
         try {
-          if ((await fetch(`${base}/robots.txt`)).ok) {
+          if ((await fetchWithRetry(`${base}/robots.txt`)).ok) {
             ready = true;
             break;
           }
@@ -90,8 +107,8 @@ async function main() {
         );
     }
     const [sitemapResponse, videoSitemapResponse] = await Promise.all([
-      fetch(`${base}/sitemap.xml`),
-      fetch(`${base}/video-sitemap.xml`),
+      fetchWithRetry(`${base}/sitemap.xml`),
+      fetchWithRetry(`${base}/video-sitemap.xml`),
     ]);
     if (!sitemapResponse.ok)
       throw new Error(`Sitemap HTTP ${sitemapResponse.status}`);
@@ -114,7 +131,7 @@ async function main() {
     ];
     const links = new Set(["/"]);
     for (const path of discovery) {
-      const response = await fetch(`${base}${path}`);
+      const response = await fetchWithRetry(`${base}${path}`);
       const $ = load(await response.text());
       $("a[href]").each((_, element) => {
         const url = new URL($(element).attr("href"), base);
@@ -136,7 +153,7 @@ async function main() {
       }
     }
     for (const expected of baseline.pages) {
-      const response = await fetch(`${base}${expected.path}`, {
+      const response = await fetchWithRetry(`${base}${expected.path}`, {
         redirect: "manual",
       });
       const $ = load(await response.text());
@@ -191,7 +208,9 @@ async function main() {
         row.source,
       ),
     )) {
-      const response = await fetch(`${base}${source}`, { redirect: "manual" });
+      const response = await fetchWithRetry(`${base}${source}`, {
+        redirect: "manual",
+      });
       const location = response.headers.get("location");
       if (
         ![301, 308].includes(response.status) ||
@@ -200,7 +219,7 @@ async function main() {
       )
         failures.push(`${source}: permanent redirect changed`);
       else if (
-        (await fetch(new URL(location, base), { redirect: "manual" }))
+        (await fetchWithRetry(new URL(location, base), { redirect: "manual" }))
           .status !== 200
       )
         failures.push(`${source}: redirect chain or broken destination`);
