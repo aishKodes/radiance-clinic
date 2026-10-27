@@ -35,6 +35,12 @@
     { "path": "/pigmentation-treatment-bhubaneswar", "type": "local-service", "sitemap": true, "primaryIntent": "pigmentation treatment Bhubaneswar", "parent": "/treatments/skin", "breadcrumb": true, "eligible": true },
     { "path": "/acne-treatment-bhubaneswar", "type": "local-service", "sitemap": true, "primaryIntent": "active acne treatment Bhubaneswar", "parent": "/treatments/skin", "breadcrumb": true, "eligible": true },
     { "path": "/hair-loss-clinic-bhubaneswar", "type": "local-service", "sitemap": true, "primaryIntent": "hair loss clinic Bhubaneswar", "parent": "/treatments/hair-restoration", "breadcrumb": true, "eligible": true },
+    { "path": "/male-pattern-hair-loss-treatment-bhubaneswar", "type": "local-service", "sitemap": true, "primaryIntent": "male pattern hair loss treatment Bhubaneswar", "parent": "/treatments/hair-restoration", "breadcrumb": true, "eligible": true },
+    { "path": "/female-hair-loss-treatment-bhubaneswar", "type": "local-service", "sitemap": true, "primaryIntent": "female hair loss treatment Bhubaneswar", "parent": "/treatments/hair-restoration", "breadcrumb": true, "eligible": true },
+    { "path": "/crown-hair-transplant-bhubaneswar", "type": "local-service", "sitemap": true, "primaryIntent": "crown hair transplant Bhubaneswar", "parent": "/treatments/hair-restoration", "breadcrumb": true, "eligible": true },
+    { "path": "/hairline-correction-bhubaneswar", "type": "local-service", "sitemap": true, "primaryIntent": "hairline correction Bhubaneswar", "parent": "/treatments/hair-restoration", "breadcrumb": true, "eligible": true },
+    { "path": "/hair-transplant-repair-bhubaneswar", "type": "local-service", "sitemap": true, "primaryIntent": "hair transplant repair Bhubaneswar", "parent": "/treatments/hair-restoration", "breadcrumb": true, "eligible": true },
+    { "path": "/beard-moustache-transplant-bhubaneswar", "type": "local-service", "sitemap": true, "primaryIntent": "beard and moustache transplant Bhubaneswar", "parent": "/treatments/hair-restoration", "breadcrumb": true, "eligible": true },
     { "path": "/alopecia-areata-treatment-bhubaneswar", "type": "local-service", "sitemap": true, "primaryIntent": "alopecia areata treatment Bhubaneswar", "parent": "/treatments/hair-restoration", "breadcrumb": true, "eligible": true },
     { "path": "/non-surgical-hair-replacement-bhubaneswar", "type": "local-service", "sitemap": true, "primaryIntent": "non-surgical hair replacement Bhubaneswar", "parent": "/treatments/hair-restoration", "breadcrumb": true, "eligible": true },
     { "path": "/wart-removal-bhubaneswar", "type": "local-service", "sitemap": true, "primaryIntent": "wart removal Bhubaneswar", "parent": "/treatments/skin", "breadcrumb": true, "eligible": true },
@@ -64,7 +70,10 @@
     { "path": "/knowledge/acne-scar-types-and-treatment-planning", "type": "article", "sitemap": true, "primaryIntent": "acne scar treatment planning", "parent": "/knowledge", "breadcrumb": true, "eligible": true },
     { "path": "/knowledge/laser-hair-reduction-expectations", "type": "article", "sitemap": true, "primaryIntent": "laser hair reduction expectations", "parent": "/knowledge", "breadcrumb": true, "eligible": true },
     { "path": "/knowledge/hair-transplant-cost-factors", "type": "article", "sitemap": true, "primaryIntent": "hair transplant cost factors", "parent": "/knowledge", "breadcrumb": true, "eligible": true },
-    { "path": "/knowledge/prp-gfc-hair-restoration-guide", "type": "article", "sitemap": true, "primaryIntent": "PRP and GFC treatment questions", "parent": "/knowledge", "breadcrumb": true, "eligible": true }
+    { "path": "/knowledge/prp-gfc-hair-restoration-guide", "type": "article", "sitemap": true, "primaryIntent": "PRP versus GFC for hair loss", "parent": "/knowledge", "breadcrumb": true, "eligible": true },
+    { "path": "/knowledge/hair-transplant-vs-hair-patch-vs-hair-wig", "type": "article", "sitemap": true, "primaryIntent": "hair transplant versus non-surgical hair replacement", "parent": "/knowledge", "breadcrumb": true, "eligible": true },
+    { "path": "/knowledge/crown-vs-hairline-graft-priority", "type": "article", "sitemap": true, "primaryIntent": "crown versus hairline graft planning", "parent": "/knowledge", "breadcrumb": true, "eligible": true },
+    { "path": "/knowledge/fue-vs-fut-hair-transplant", "type": "article", "sitemap": true, "primaryIntent": "FUE versus FUT comparison", "parent": "/knowledge", "breadcrumb": true, "eligible": true }
   ],
   "dynamicIndexablePrefixes": [
     "/treatments/",

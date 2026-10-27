@@ -330,17 +330,33 @@ export const conditions: Condition[] = [
 const editorialArticles: Article[] = [
   {
     slug: "how-to-plan-hair-restoration",
-    title: "How to Think About Hair Restoration Before Booking a Procedure",
+    title: "Hair Transplant vs PRP vs GFC: Which Problem Does Each Address?",
     category: "Hair Restoration",
-    readTime: "5 min read",
+    readTime: "7 min read",
     excerpt:
-      "A practical guide to diagnosis, donor planning and realistic expectations before hair restoration.",
+      "Compare surgical restoration with platelet-derived scalp support, including what each approach can and cannot address.",
     body: [
-      "Hair restoration planning should begin with diagnosis, not procedure selection. Pattern, pace, age, donor quality and medical history all influence the right pathway.",
-      "A strong plan also includes maintenance. For many patients, non-surgical support and scalp-health review are part of protecting existing hair over time.",
-      "The goal is proportion and naturalness. Good hairline planning respects age, facial structure and future density needs.",
+      "Hair transplant, PRP and GFC are often discussed together, but they do not solve the same problem. The correct starting point is a diagnosis-led assessment of the pattern, pace of loss, scalp health and follicles that remain. Choosing a procedure before that assessment can lead to unrealistic expectations or delay more appropriate care.",
+      "A hair transplant redistributes suitable follicles from a donor area to selected areas of loss. It may be considered for stable patterned loss when donor supply, scalp health and long-term planning are favourable. It cannot create unlimited hair, stop future loss elsewhere or guarantee a particular density.",
+      "PRP and GFC are platelet-derived scalp procedures used as supportive options for selected patterns with existing follicles. They are not substitutes for a transplant when an area has advanced loss, and they should not be presented as a universal way to restore a bald area. Protocols, response and maintenance vary.",
+      "The practical distinction is between redistribution and support. Transplantation changes where donor follicles grow; PRP or GFC aims to support suitable existing follicles. Some patients may discuss one pathway, some may discuss a staged combination and others may need treatment of a scalp or medical cause before either option is considered.",
+      "Donor quality, age, future progression and the size of the target area matter when surgery is being discussed. For non-surgical support, the diagnosis, remaining follicle activity, medical history and a measurable review plan matter. Standardised photographs and realistic intervals are more useful than package promises.",
+      "Ask what problem the proposed treatment is intended to address, what change is realistic, how response will be measured and what would make the plan change. A responsible consultation should also explain limitations, aftercare, maintenance and alternatives rather than presenting every option as interchangeable.",
     ],
     image: radianceMedia.doctorConsultation,
+    seoTitle: "Hair Transplant vs PRP vs GFC | Radiance Clinics",
+    seoDescription:
+      "Compare hair transplant, PRP and GFC for hair loss, including suitability, limitations, donor planning and when each pathway may be discussed.",
+    relatedTreatments: [
+      "/hair-transplant-bhubaneswar",
+      "/treatments/hair-restoration/prp-gfc-scalp-therapy",
+      "/hair-loss-clinic-bhubaneswar",
+    ],
+    relatedConditions: ["/concerns/hair-loss-scalp/hair-loss"],
+    relatedArticles: [
+      "prp-gfc-hair-restoration-guide",
+      "fue-vs-fut-hair-transplant",
+    ],
   },
   {
     slug: "laser-skin-treatments-safety",
@@ -520,12 +536,97 @@ const editorialArticles: Article[] = [
     relatedConditions: ["/concerns/laser-hair-reduction/laser-hair-reduction-suitability"],
   },
   {
-    slug: "hair-transplant-cost-factors",
-    title: "What Affects Hair Transplant Cost? A Planning Checklist",
+    slug: "hair-transplant-vs-hair-patch-vs-hair-wig",
+    title: "Hair Transplant vs Hair Patch vs Hair Wig: How the Options Differ",
+    category: "Hair Restoration",
+    readTime: "7 min read",
+    excerpt:
+      "A decision guide to surgical restoration, non-surgical hair systems and wigs, with practical differences in suitability and upkeep.",
+    body: [
+      "Hair transplant, a hair patch or hair system, and a wig can all change the appearance of hair loss, but they do so in fundamentally different ways. The appropriate choice depends on the diagnosis, donor supply, area of loss, desired look, maintenance expectations and whether a surgical procedure is suitable.",
+      "A hair transplant moves suitable follicles from a donor area to selected areas of loss. It requires adequate donor hair and careful long-term planning. It cannot provide unlimited density, and it may not be appropriate when loss is unstable, the donor area is weak or the target area is too extensive for available supply.",
+      "A hair patch or bonded hair system provides non-surgical coverage over a selected area. It does not use donor follicles and can offer immediate cosmetic coverage, including for people who are not transplant candidates. It requires fitting, attachment care, cleaning and periodic maintenance, and the experience depends on the system and daily routine.",
+      "A wig generally covers a broader portion of the scalp and may be chosen for extensive or diffuse loss, temporary shedding, medical hair loss or personal preference. Construction, base, hair material, ventilation, fit and maintenance affect comfort and appearance. A wig is not a medical treatment for the cause of hair loss.",
+      "The consultation should separate two questions: whether the underlying hair or scalp condition needs medical evaluation, and which coverage or restoration option suits the person's goals. A patient may prefer a non-surgical option even when surgery is technically possible, while another may need a hair system because donor limitations make surgery unrealistic.",
+      "Before deciding, compare reversibility, maintenance, cost over time, recovery, donor requirements, styling flexibility and realistic appearance. Radiance Clinics assesses hair loss and transplant suitability and can discuss non-surgical hair-replacement pathways without presenting one option as best for everyone.",
+    ],
+    image: radianceMedia.doctorConsultation,
+    authorName: "Radiance Clinics Content Team",
+    publishedAt: "2026-10-27",
+    seoTitle: "Hair Transplant vs Hair Patch vs Hair Wig | Radiance",
+    seoDescription:
+      "Compare hair transplant, hair patch and hair wig options by donor needs, maintenance, recovery, coverage and suitability.",
+    relatedTreatments: [
+      "/hair-transplant-bhubaneswar",
+      "/non-surgical-hair-replacement-bhubaneswar",
+    ],
+    relatedConditions: ["/concerns/hair-loss-scalp/hair-loss"],
+    relatedArticles: ["how-to-plan-hair-restoration"],
+  },
+  {
+    slug: "crown-vs-hairline-graft-priority",
+    title: "Crown vs Hairline: Where Should Hair Transplant Grafts Be Prioritised?",
     category: "Hair Transplant",
     readTime: "7 min read",
     excerpt:
-      "The clinical and practical factors behind a hair transplant estimate—and why graft price alone cannot describe the full plan.",
+      "How visible impact, crown surface area, whorl design, donor limits and future loss influence graft-allocation decisions.",
+    body: [
+      "Patients with both a receding hairline and crown thinning often ask which area should be restored first. There is no universal answer. The decision depends on donor supply, the size and visibility of each area, age, progression, hair characteristics and the pattern likely to develop over time.",
+      "The frontal hairline frames the face and is visible in most social interactions. A conservative design can therefore create a strong visual change with a carefully planned area, but an overly low or dense hairline can consume donor grafts needed later and may look less natural as surrounding hair loss progresses.",
+      "The crown can involve a large circular surface area. Its whorl changes hair direction around the vertex, so graft distribution must follow the natural pattern. Attempting uniformly high crown density can use substantial donor supply while still leaving limited reserves for future frontal or mid-scalp loss.",
+      "Priority is not decided by a calculator or a fixed graft ratio. The doctor assesses the safe donor reserve, hair calibre, colour contrast, existing miniaturised hair, the expected visual benefit and whether non-transplanted hair needs a preservation plan. Some patients may be suited to a staged approach rather than treating every area at once.",
+      "Future progression is central to the decision. A strong-looking crown with an untreated, advancing frontal area can create an imbalanced result, while ignoring a highly visible crown concern may not meet the patient's main objective. The plan should explain what is being prioritised, what will remain untreated and why.",
+      "A useful consultation includes standardised photographs, examination of the donor area, discussion of alternative coverage strategies and honest limits. The goal is not maximum graft use; it is a natural distribution that respects the patient's finite donor supply over the long term.",
+    ],
+    image: radianceMedia.doctorConsultation,
+    authorName: "Radiance Clinics Content Team",
+    publishedAt: "2026-10-27",
+    seoTitle: "Crown vs Hairline Graft Priority | Radiance Clinics",
+    seoDescription:
+      "Learn how donor limits, crown area, hairline visibility, future loss and staged planning affect hair transplant graft priorities.",
+    relatedTreatments: [
+      "/crown-hair-transplant-bhubaneswar",
+      "/hairline-correction-bhubaneswar",
+      "/hair-transplant-bhubaneswar",
+    ],
+    relatedConditions: ["/concerns/hair-transplant/hair-transplant-suitability"],
+    relatedArticles: ["how-to-plan-hair-restoration"],
+  },
+  {
+    slug: "fue-vs-fut-hair-transplant",
+    title: "FUE vs FUT Hair Transplant: Technique, Donor Area and Scarring",
+    category: "Hair Transplant",
+    readTime: "7 min read",
+    excerpt:
+      "A practical comparison of follicular unit extraction and strip-based transplantation without declaring one technique best for every patient.",
+    body: [
+      "FUE and FUT describe different ways of obtaining follicular units from the donor area. They do not by themselves determine whether a hairline will look natural or how well grafts are distributed. Diagnosis, design, donor management, handling and long-term planning remain important whichever technique is discussed.",
+      "In FUE, follicular units are removed individually with small extraction sites spread through the donor area. This avoids a single linear donor scar, but it does not mean scar-free surgery. Extraction marks, donor thinning or visible depletion can occur, especially if harvesting is too aggressive or the hair is worn very short.",
+      "In FUT, a strip of donor-bearing scalp is removed and the area is closed, leaving a linear scar. Follicular units are then prepared from the strip. The technique can preserve some characteristics of the surrounding donor area, but scar appearance, scalp laxity and future hairstyle preferences need careful discussion.",
+      "Suitability depends on donor density and stability, scalp laxity, previous procedures, scarring tendency, the number and distribution of grafts being considered and the patient's preferences. A person with previous overharvesting or a tight donor scalp may need a different discussion from a first-time patient with a strong donor zone.",
+      "Recovery questions should cover donor discomfort, washing, activity, haircut options, follow-up and how healing will be reviewed. Neither method guarantees graft survival, a specific density or an invisible donor area. The clinical team should also explain who performs each stage and how graft quality is protected.",
+      "Radiance Clinics currently plans FUE pathways where suitable. A consultation should still explain why that approach fits the individual donor area, what its limitations are and whether a non-surgical or staged alternative deserves consideration.",
+    ],
+    image: radianceMedia.doctorConsultation,
+    authorName: "Radiance Clinics Content Team",
+    publishedAt: "2026-10-27",
+    seoTitle: "FUE vs FUT Hair Transplant: Key Differences | Radiance",
+    seoDescription:
+      "Compare FUE and FUT donor harvesting, scars, recovery and suitability, with realistic guidance on what technique names do not guarantee.",
+    relatedTreatments: [
+      "/hair-transplant-bhubaneswar",
+      "/treatments/hair-restoration/fue-hair-transplant",
+    ],
+    relatedConditions: ["/concerns/hair-transplant/hair-transplant-suitability"],
+    relatedArticles: ["how-to-plan-hair-restoration", "hair-transplant-aftercare"],
+  },
+  {
+    slug: "hair-transplant-cost-factors",
+    title: "Hair Transplant Cost in Bhubaneswar: What Affects the Price?",
+    category: "Hair Transplant",
+    readTime: "7 min read",
+    excerpt:
+      "Understand the clinical and practical factors behind a hair transplant estimate in Bhubaneswar, and why graft price alone cannot describe the full plan.",
     body: [
       "A hair transplant estimate is meaningful only after the area of loss, donor supply and long-term objective are assessed. A low headline price may exclude important parts of planning or may assume a graft number before the scalp has been examined. A high number is not automatically evidence of a better plan either.",
       "The size and location of the target area influence the amount of work, but density goals must be balanced against donor capacity. Hair calibre, colour contrast, curl, existing miniaturised hair and the design of the hairline affect how visual coverage is created. Two people with a similar-looking hairline may therefore need different strategies.",
@@ -538,7 +639,8 @@ const editorialArticles: Article[] = [
     image: radianceMedia.doctorConsultation,
     authorName: "Radiance Clinics Content Team",
     publishedAt: "2026-01-30",
-    seoTitle: "Hair Transplant Cost Factors & Planning Checklist | Radiance",
+    seoTitle:
+      "Hair Transplant Cost in Bhubaneswar: Price Factors | Radiance",
     seoDescription:
       "See what influences a hair transplant estimate, including donor supply, graft planning, team, follow-up, travel and long-term hair care.",
     relatedTreatments: ["/hair-transplant-bhubaneswar", "/treatments/hair-restoration/fue-hair-transplant"],
@@ -546,11 +648,11 @@ const editorialArticles: Article[] = [
   },
   {
     slug: "prp-gfc-hair-restoration-guide",
-    title: "PRP and GFC for Hair Loss: Questions to Ask Before Treatment",
+    title: "PRP vs GFC for Hair Loss: How the Approaches Differ",
     category: "Hair & Scalp",
     readTime: "7 min read",
     excerpt:
-      "A diagnosis-first guide to platelet-derived scalp therapies, patient selection, session planning and evidence-aware expectations.",
+      "A diagnosis-first comparison of platelet-derived scalp therapies, including preparation, patient selection, session planning and limitations.",
     body: [
       "PRP and growth-factor concentrate, often shortened to GFC, are platelet-derived scalp procedures discussed as supportive options for selected hair-loss patterns. They are not substitutes for identifying why hair is thinning, and they should not be described as a universal cure or a guaranteed way to regrow hair.",
       "The consultation should first clarify whether the pattern is compatible with a treatment that aims to support existing follicles. Progressive pattern thinning may be approached differently from sudden shedding, alopecia areata, active scalp inflammation, scarring hair loss or breakage. When the diagnosis is uncertain, adding procedures can delay more appropriate evaluation.",
@@ -563,11 +665,12 @@ const editorialArticles: Article[] = [
     image: radianceMedia.doctorCabin,
     authorName: "Radiance Clinics Content Team",
     publishedAt: "2025-10-31",
-    seoTitle: "PRP & GFC Hair Treatment Questions | Radiance Clinics",
+    seoTitle: "PRP vs GFC for Hair Loss | Radiance Clinics",
     seoDescription:
-      "Learn how PRP and GFC scalp therapies are assessed, what the procedures involve, likely limitations, risks and questions to ask.",
-    relatedTreatments: ["/treatments/hair-restoration/prp-gfc-scalp-therapy", "/treatments/hair-restoration/advanced-hair-fall-solutions"],
+      "Compare PRP and GFC scalp therapies, including preparation, suitability, session planning, limitations and questions to ask.",
+    relatedTreatments: ["/treatments/hair-restoration/prp-gfc-scalp-therapy", "/treatments/hair-restoration/advanced-hair-fall-solutions", "/hair-loss-clinic-bhubaneswar"],
     relatedConditions: ["/concerns/hair-loss-scalp/hair-loss"],
+    relatedArticles: ["how-to-plan-hair-restoration"],
   },
 ].map((article) => ({
   ...article,

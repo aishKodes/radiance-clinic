@@ -1,0 +1,13 @@
+target,source_reference_count,high_value_sources,anchor_relevance,priority,action
+/hair-transplant-bhubaneswar,183,"Homepage; Hair hub; About; Results; Reviews; Media; Knowledge; locations",strong,P0,Protect the owner and retain descriptive links from evidence and decision guides
+/hair-loss-clinic-bhubaneswar,39,"Homepage; Hair hub; Hair intake; hair-loss guides and videos",strong,P0,Retain broad hair clinic and hair-loss anchors without creating synonym pages
+/male-pattern-hair-loss-treatment-bhubaneswar,4,"Hair hub; hair-loss owner",relevant,P1,Monitor crawl discovery; add only contextually relevant concern or guide links
+/female-hair-loss-treatment-bhubaneswar,3,"Hair hub; hair-loss owner",relevant,P1,Monitor crawl discovery; keep female-pattern and widening-part support distinct
+/crown-hair-transplant-bhubaneswar,5,"Hair hub; transplant owner; crown-versus-hairline guide; Hair intake",strong,P1,Maintain crown-specific anchors and avoid broad transplant-title cannibalisation
+/hairline-correction-bhubaneswar,5,"Hair hub; transplant owner; crown-versus-hairline guide; Hair intake",strong,P1,Maintain hairline-specific anchors from recession guidance
+/hair-transplant-repair-bhubaneswar,4,"Hair hub; transplant owner; Hair intake; donor-planning guide",strong,P1,Keep limitation-led repair anchors; do not attach generic result claims
+/beard-moustache-transplant-bhubaneswar,4,"Hair hub; transplant owner; beard concern; legacy redirect",relevant,P1,Keep beard and moustache intent on one commercial owner
+/non-surgical-hair-replacement-bhubaneswar,19,"Hair hub; Hair intake; comparison guide; comparison video; legacy redirects",strong,P0,Preserve direct hair-patch and hair-wig redirects and monitor CTR recovery
+/treatments/hair-restoration,246,"Homepage; About; Treatments; concerns; results; guides; videos",strong,P0,Keep as the family hub and avoid converting it into the local commercial owner
+/treatments/hair-restoration/fue-hair-transplant,166,"Hair hub; commercial transplant pages; concerns; guides; videos",strong,P1,Keep as procedure-detail support for /hair-transplant-bhubaneswar
+/treatments/hair-restoration/prp-gfc-scalp-therapy,12,"Hair hub; hair-loss owner; PRP/GFC guide; concerns",strong,P0,Keep as the PRP/GFC procedure owner and preserve existing query performance

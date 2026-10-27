@@ -15,6 +15,7 @@
     "seo:gsc-submit-sitemap": "node scripts/gsc-submit-sitemap.mjs",
     "seo:query-queue": "node scripts/build-query-action-queue.mjs",
     "seo:hair-recovery": "node scripts/build-hair-recovery.mjs",
+    "seo:hair-revenue": "node scripts/build-hair-revenue-sprint.mjs",
     "media:authority-audit": "node scripts/build-media-authority-audit.mjs",
     "reviews:sync": "node scripts/reviews-sync.mjs",
     "indexnow:submit": "node scripts/indexnow-submit.mjs",

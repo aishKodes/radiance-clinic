@@ -15,6 +15,10 @@ export type RadianceAnalyticsEvent =
 export type RadianceConversionEvent =
   | "call_click"
   | "whatsapp_click"
+  | "hair_call_click"
+  | "hair_whatsapp_click"
+  | "hair_booking_start"
+  | "hair_booking_complete"
   | "book_appointment_click"
   | "booking_start"
   | "booking_submission"

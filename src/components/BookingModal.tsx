@@ -64,6 +64,13 @@ export function BookingModal({ settings }: { settings: ClinicSettings }) {
         page_type: pageTypeFromPath(pathname),
         topic: topicFromPath(pathname),
       });
+      if (topicFromPath(pathname)?.startsWith("hair")) {
+        trackConversionEvent("hair_booking_start", {
+          path: pathname,
+          page_type: pageTypeFromPath(pathname),
+          topic: topicFromPath(pathname),
+        });
+      }
     };
 
     window.addEventListener("radiance:open-booking", openBooking);
@@ -115,6 +122,9 @@ export function BookingModal({ settings }: { settings: ClinicSettings }) {
       setStatus("success");
       setFields(initialFields);
       trackConversionEvent("booking_submission", eventParameters);
+      if (topicFromPath(pathname)?.startsWith("hair")) {
+        trackConversionEvent("hair_booking_complete", eventParameters);
+      }
     } catch {
       setStatus("error");
       setError("We could not send the request right now. Please use WhatsApp or Call Now.");
@@ -211,7 +221,14 @@ export function BookingModal({ settings }: { settings: ClinicSettings }) {
               href={messageHref}
               target="_blank"
               rel="noreferrer"
-              onClick={() => trackConversionEvent("whatsapp_click", eventParameters)}
+              onClick={() =>
+                trackConversionEvent(
+                  topicFromPath(pathname)?.startsWith("hair")
+                    ? "hair_whatsapp_click"
+                    : "whatsapp_click",
+                  eventParameters,
+                )
+              }
               className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-[var(--ink)]/10 bg-white/72 px-5 py-3 text-xs font-extrabold uppercase tracking-[0.14em] text-[var(--ink)] transition hover:bg-white"
             >
               <MessageCircle className="h-4 w-4" />
@@ -219,7 +236,14 @@ export function BookingModal({ settings }: { settings: ClinicSettings }) {
             </a>
             <a
               href={phoneHref}
-              onClick={() => trackConversionEvent("call_click", eventParameters)}
+              onClick={() =>
+                trackConversionEvent(
+                  topicFromPath(pathname)?.startsWith("hair")
+                    ? "hair_call_click"
+                    : "call_click",
+                  eventParameters,
+                )
+              }
               className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-[var(--ink)]/10 bg-white/72 px-5 py-3 text-xs font-extrabold uppercase tracking-[0.14em] text-[var(--ink)] transition hover:bg-white"
             >
               <Phone className="h-4 w-4" />

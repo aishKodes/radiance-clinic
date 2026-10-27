@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import { ArrowUpRight, CalendarCheck, ShieldCheck } from "lucide-react";
 import {
   AnimatedAuroraBackground,
@@ -101,6 +102,13 @@ const priorityLocalCarePages = [
   { href: "/laser-hair-removal-bhubaneswar", label: "Laser hair removal in Bhubaneswar" },
   { href: "/acne-scar-treatment-bhubaneswar", label: "Acne scar treatment in Bhubaneswar" },
   { href: "/pigmentation-treatment-bhubaneswar", label: "Pigmentation treatment in Bhubaneswar" },
+] as const;
+
+const priorityHairPaths = [
+  { href: "/hair-transplant-bhubaneswar", label: "Hair Transplant" },
+  { href: "/hair-loss-clinic-bhubaneswar", label: "Hair Loss Clinic" },
+  { href: "/treatments/hair-restoration", label: "Hair Restoration" },
+  { href: "/results#hair-transplant-results", label: "Hair Results" },
 ] as const;
 
 export default async function Home() {
@@ -224,6 +232,43 @@ export default async function Home() {
               </div>
             </Reveal>
           ))}
+        </div>
+      </section>
+
+      <section
+        aria-labelledby="hair-care-priority-title"
+        className="border-y border-[var(--ink)]/10 bg-white px-5 py-10 sm:px-8"
+      >
+        <div className="mx-auto grid max-w-7xl gap-6 lg:grid-cols-[0.55fr_1.45fr] lg:items-center">
+          <div>
+            <p className="text-xs font-extrabold uppercase tracking-[0.22em] text-[var(--aqua)]">
+              Hair and scalp care
+            </p>
+            <h2
+              id="hair-care-priority-title"
+              className="mt-3 font-serif text-3xl leading-tight text-[var(--ink)]"
+            >
+              Start with the right hair pathway.
+            </h2>
+          </div>
+          <nav
+            aria-label="Priority hair services"
+            className="grid gap-3 sm:grid-cols-2 xl:grid-cols-5"
+          >
+            {priorityHairPaths.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="inline-flex min-h-12 items-center justify-between gap-3 rounded-[0.85rem] border border-[var(--ink)]/10 bg-[var(--ivory)] px-4 py-3 text-sm font-extrabold text-[var(--ink)] transition hover:border-[var(--bronze)]/45 hover:bg-white"
+              >
+                {item.label}
+                <ArrowUpRight className="h-4 w-4 shrink-0 text-[var(--bronze)]" />
+              </Link>
+            ))}
+            <OpenBookingButton source="cta" className="w-full xl:px-4">
+              Book Hair Assessment
+            </OpenBookingButton>
+          </nav>
         </div>
       </section>
 

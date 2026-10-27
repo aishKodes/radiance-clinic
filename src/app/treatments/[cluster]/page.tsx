@@ -121,6 +121,36 @@ export default async function TreatmentCategoryPage({ params }: Props) {
           description: "Understand how progressive thinning and shedding are assessed before a treatment pathway is recommended.",
         },
         {
+          href: "/male-pattern-hair-loss-treatment-bhubaneswar",
+          label: "Male pattern hair loss treatment",
+          description: "Review temple, frontal and crown thinning with medical, regenerative and transplant suitability in context.",
+        },
+        {
+          href: "/female-hair-loss-treatment-bhubaneswar",
+          label: "Female hair loss treatment",
+          description: "Understand widening-part, diffuse-thinning and shedding assessment before treatment is selected.",
+        },
+        {
+          href: "/crown-hair-transplant-bhubaneswar",
+          label: "Crown hair transplant planning",
+          description: "Review whorl direction, surface area, donor limits and front-versus-crown priorities.",
+        },
+        {
+          href: "/hairline-correction-bhubaneswar",
+          label: "Hairline correction",
+          description: "Explore conservative hairline design, temple recession and long-term donor planning.",
+        },
+        {
+          href: "/hair-transplant-repair-bhubaneswar",
+          label: "Hair transplant repair assessment",
+          description: "Understand what can and cannot be corrected after a previous transplant concern.",
+        },
+        {
+          href: "/beard-moustache-transplant-bhubaneswar",
+          label: "Beard and moustache transplant",
+          description: "Review direction, donor selection, design and realistic facial-hair density planning.",
+        },
+        {
           href: "/non-surgical-hair-replacement-bhubaneswar",
           label: "Hair patch and non-surgical replacement",
           description: "Explore hair-system and hair-patch options, maintenance needs and how they compare with other approaches.",

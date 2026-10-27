@@ -1,9 +1,9 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-04",
+  "updatedAt": "2026-10-27",
   "evidence": {
     "source": "Authenticated Google Search Console performance report",
-    "period": "2026-06-30 to 2026-09-29",
+    "period": "2026-04-26 to 2026-10-25; current 28 days compared with strongest pre-migration 28-day window",
     "property": "https://www.radianceclinics.com/"
   },
   "roles": [
@@ -24,7 +24,7 @@
       "commercialOwner": "/hair-transplant-bhubaneswar",
       "treatmentPages": ["/treatments/hair-restoration/fue-hair-transplant"],
       "concernPages": ["/concerns/hair-transplant", "/concerns/hair-transplant/hair-transplant-suitability"],
-      "knowledgePages": ["/knowledge/how-to-plan-hair-restoration"],
+      "knowledgePages": ["/knowledge/hair-transplant-vs-hair-patch-vs-hair-wig"],
       "doctorAnswers": ["/doctor-answers/how-many-grafts-receding-hairline"],
       "videos": ["/videos/hair-transplant-procedure-explained"],
       "results": ["/before-after", "/results"],
@@ -36,7 +36,7 @@
       "supportingPages": [
         { "path": "/treatments/hair-restoration/fue-hair-transplant", "role": "TREATMENT_PROCEDURE" },
         { "path": "/concerns/hair-transplant/hair-transplant-suitability", "role": "CONCERN" },
-        { "path": "/knowledge/how-to-plan-hair-restoration", "role": "KNOWLEDGE" },
+        { "path": "/knowledge/hair-transplant-vs-hair-patch-vs-hair-wig", "role": "KNOWLEDGE" },
         { "path": "/doctor-answers/how-many-grafts-receding-hairline", "role": "DOCTOR_ANSWER" },
         { "path": "/videos/hair-transplant-procedure-explained", "role": "VIDEO" },
         { "path": "/before-after", "role": "RESULT" }
@@ -117,6 +117,145 @@
         { "path": "/knowledge/how-to-plan-hair-restoration", "role": "KNOWLEDGE" },
         { "path": "/doctor-answers/can-hair-transplant-work-weak-donor", "role": "DOCTOR_ANSWER" },
         { "path": "/videos/hair-patch-vs-hair-transplant", "role": "VIDEO" },
+        { "path": "/results", "role": "RESULT" }
+      ]
+    },
+    {
+      "id": "male-pattern-hair-loss",
+      "label": "Male pattern hair loss treatment",
+      "canonicalOwner": "/male-pattern-hair-loss-treatment-bhubaneswar",
+      "canonicalRole": "COMMERCIAL_LOCAL",
+      "commercialOwner": "/male-pattern-hair-loss-treatment-bhubaneswar",
+      "treatmentPages": ["/treatments/hair-restoration/advanced-hair-fall-solutions"],
+      "concernPages": ["/concerns/hair-loss-scalp/male-pattern-hair-loss"],
+      "knowledgePages": ["/knowledge/hair-loss-causes-and-assessment"],
+      "doctorAnswers": ["/doctor-answers/hair-thinning-vs-hair-fall"],
+      "videos": ["/videos/hair-loss-treatment-options"],
+      "results": ["/results"],
+      "queries": [
+        "male pattern baldness treatment bhubaneswar",
+        "male pattern hair loss treatment bhubaneswar"
+      ],
+      "supportingPages": [
+        { "path": "/concerns/hair-loss-scalp/male-pattern-hair-loss", "role": "CONCERN" },
+        { "path": "/knowledge/hair-loss-causes-and-assessment", "role": "KNOWLEDGE" },
+        { "path": "/videos/hair-loss-treatment-options", "role": "VIDEO" },
+        { "path": "/results", "role": "RESULT" }
+      ]
+    },
+    {
+      "id": "female-hair-loss",
+      "label": "Female hair loss treatment",
+      "canonicalOwner": "/female-hair-loss-treatment-bhubaneswar",
+      "canonicalRole": "COMMERCIAL_LOCAL",
+      "commercialOwner": "/female-hair-loss-treatment-bhubaneswar",
+      "treatmentPages": ["/treatments/hair-restoration/advanced-hair-fall-solutions"],
+      "concernPages": ["/concerns/hair-loss-scalp/female-pattern-hair-loss"],
+      "knowledgePages": ["/knowledge/hair-loss-causes-and-assessment"],
+      "doctorAnswers": ["/doctor-answers/when-widening-part-needs-assessment"],
+      "videos": ["/videos/female-hair-loss-causes"],
+      "results": ["/results"],
+      "queries": [
+        "female hair loss treatment bhubaneswar",
+        "female pattern hair loss treatment bhubaneswar"
+      ],
+      "supportingPages": [
+        { "path": "/concerns/hair-loss-scalp/female-pattern-hair-loss", "role": "CONCERN" },
+        { "path": "/knowledge/hair-loss-causes-and-assessment", "role": "KNOWLEDGE" },
+        { "path": "/videos/female-hair-loss-causes", "role": "VIDEO" },
+        { "path": "/results", "role": "RESULT" }
+      ]
+    },
+    {
+      "id": "crown-hair-transplant",
+      "label": "Crown hair transplant",
+      "canonicalOwner": "/crown-hair-transplant-bhubaneswar",
+      "canonicalRole": "COMMERCIAL_LOCAL",
+      "commercialOwner": "/crown-hair-transplant-bhubaneswar",
+      "treatmentPages": ["/treatments/hair-restoration/fue-hair-transplant"],
+      "concernPages": ["/concerns/hair-loss-scalp/male-pattern-hair-loss"],
+      "knowledgePages": ["/knowledge/crown-vs-hairline-graft-priority"],
+      "doctorAnswers": ["/doctor-answers/how-many-grafts-receding-hairline"],
+      "videos": ["/videos/hair-transplant-graft-planning"],
+      "results": ["/results"],
+      "queries": [
+        "crown hair transplant bhubaneswar",
+        "crown baldness transplant bhubaneswar"
+      ],
+      "supportingPages": [
+        { "path": "/treatments/hair-restoration/fue-hair-transplant", "role": "TREATMENT_PROCEDURE" },
+        { "path": "/knowledge/crown-vs-hairline-graft-priority", "role": "KNOWLEDGE" },
+        { "path": "/videos/hair-transplant-graft-planning", "role": "VIDEO" },
+        { "path": "/results", "role": "RESULT" }
+      ]
+    },
+    {
+      "id": "hairline-correction",
+      "label": "Hairline correction",
+      "canonicalOwner": "/hairline-correction-bhubaneswar",
+      "canonicalRole": "COMMERCIAL_LOCAL",
+      "commercialOwner": "/hairline-correction-bhubaneswar",
+      "treatmentPages": ["/treatments/hair-restoration/fue-hair-transplant"],
+      "concernPages": ["/concerns/hair-loss-scalp/receding-hairline"],
+      "knowledgePages": ["/knowledge/crown-vs-hairline-graft-priority"],
+      "doctorAnswers": ["/doctor-answers/how-many-grafts-receding-hairline"],
+      "videos": ["/videos/receding-hairline-options"],
+      "results": ["/results"],
+      "queries": [
+        "hairline correction bhubaneswar",
+        "hairline transplant bhubaneswar",
+        "receding hairline treatment bhubaneswar"
+      ],
+      "supportingPages": [
+        { "path": "/concerns/hair-loss-scalp/receding-hairline", "role": "CONCERN" },
+        { "path": "/knowledge/crown-vs-hairline-graft-priority", "role": "KNOWLEDGE" },
+        { "path": "/doctor-answers/how-many-grafts-receding-hairline", "role": "DOCTOR_ANSWER" },
+        { "path": "/videos/receding-hairline-options", "role": "VIDEO" }
+      ]
+    },
+    {
+      "id": "hair-transplant-repair",
+      "label": "Hair transplant repair",
+      "canonicalOwner": "/hair-transplant-repair-bhubaneswar",
+      "canonicalRole": "COMMERCIAL_LOCAL",
+      "commercialOwner": "/hair-transplant-repair-bhubaneswar",
+      "treatmentPages": ["/treatments/hair-restoration/fue-hair-transplant"],
+      "concernPages": ["/concerns/hair-transplant/donor-area-thinning"],
+      "knowledgePages": ["/knowledge/fue-vs-fut-hair-transplant"],
+      "doctorAnswers": ["/doctor-answers/can-hair-transplant-work-weak-donor"],
+      "videos": ["/videos/hair-transplant-safety"],
+      "results": [],
+      "queries": [
+        "hair transplant repair bhubaneswar",
+        "failed hair transplant repair bhubaneswar"
+      ],
+      "supportingPages": [
+        { "path": "/concerns/hair-transplant/donor-area-thinning", "role": "CONCERN" },
+        { "path": "/knowledge/fue-vs-fut-hair-transplant", "role": "KNOWLEDGE" },
+        { "path": "/doctor-answers/can-hair-transplant-work-weak-donor", "role": "DOCTOR_ANSWER" },
+        { "path": "/videos/hair-transplant-safety", "role": "VIDEO" }
+      ]
+    },
+    {
+      "id": "beard-moustache-transplant",
+      "label": "Beard and moustache transplant",
+      "canonicalOwner": "/beard-moustache-transplant-bhubaneswar",
+      "canonicalRole": "COMMERCIAL_LOCAL",
+      "commercialOwner": "/beard-moustache-transplant-bhubaneswar",
+      "treatmentPages": ["/treatments/hair-restoration/fue-hair-transplant"],
+      "concernPages": ["/concerns/hair-transplant/beard-transplant"],
+      "knowledgePages": ["/knowledge/how-to-plan-hair-restoration"],
+      "doctorAnswers": [],
+      "videos": ["/videos/hair-transplant-procedure-explained"],
+      "results": ["/results"],
+      "queries": [
+        "beard transplant bhubaneswar",
+        "moustache transplant bhubaneswar"
+      ],
+      "supportingPages": [
+        { "path": "/concerns/hair-transplant/beard-transplant", "role": "CONCERN" },
+        { "path": "/knowledge/how-to-plan-hair-restoration", "role": "KNOWLEDGE" },
+        { "path": "/videos/hair-transplant-procedure-explained", "role": "VIDEO" },
         { "path": "/results", "role": "RESULT" }
       ]
     },

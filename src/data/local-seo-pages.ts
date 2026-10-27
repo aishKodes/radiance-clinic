@@ -1,3 +1,5 @@
+import { hairCommercialPages } from "@/data/hair-commercial-pages";
+
 export type LocalSeoPage = {
   slug: string;
   serviceName: string;
@@ -138,6 +140,30 @@ export const localSeoPages: LocalSeoPage[] = [
         label: "FUE hair transplant planning",
         description:
           "Read about donor strategy, hairline planning and suitability.",
+      },
+      {
+        href: "/hairline-correction-bhubaneswar",
+        label: "Hairline correction",
+        description:
+          "Review conservative design for recession, temples and facial proportion.",
+      },
+      {
+        href: "/crown-hair-transplant-bhubaneswar",
+        label: "Crown hair transplant",
+        description:
+          "Understand whorl design, donor allocation and crown coverage limits.",
+      },
+      {
+        href: "/hair-transplant-repair-bhubaneswar",
+        label: "Hair transplant repair assessment",
+        description:
+          "Discuss a previous hairline, density, scarring or donor concern.",
+      },
+      {
+        href: "/beard-moustache-transplant-bhubaneswar",
+        label: "Beard and moustache transplant",
+        description:
+          "Review facial-hair design, direction and donor suitability.",
       },
       {
         href: "/concerns/hair-loss-scalp",
@@ -852,6 +878,18 @@ export const localSeoPages: LocalSeoPage[] = [
         description: "Understand common signs and assessment pathways.",
       },
       {
+        href: "/male-pattern-hair-loss-treatment-bhubaneswar",
+        label: "Male pattern hair loss treatment",
+        description:
+          "Review temple, frontal and crown thinning pathways for men.",
+      },
+      {
+        href: "/female-hair-loss-treatment-bhubaneswar",
+        label: "Female hair loss treatment",
+        description:
+          "Understand widening-part, diffuse-thinning and shedding assessment.",
+      },
+      {
         href: "/treatments/hair-restoration/prp-gfc-scalp-therapy",
         label: "PRP and GFC scalp therapy",
         description: "Review suitability, limitations and session planning.",
@@ -1518,6 +1556,8 @@ localSeoPages.push(
     indexable: true,
   },
 );
+
+localSeoPages.push(...hairCommercialPages);
 
 for (const page of localSeoPages) {
   page.authorType ??= "editorial-team";

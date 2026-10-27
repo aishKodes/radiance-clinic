@@ -9,6 +9,8 @@ import {
   Stethoscope,
 } from "lucide-react";
 import { FAQAccordion } from "@/components/FAQAccordion";
+import { HairEvidence } from "@/components/HairEvidence";
+import { HairIntakeWidget } from "@/components/HairIntakeWidget";
 import { MedicalReview } from "@/components/MedicalReview";
 import { OpenBookingButton } from "@/components/OpenBookingButton";
 import { PremiumButton } from "@/components/PremiumButton";
@@ -18,6 +20,7 @@ import { relationshipsFor } from "@/data/search-taxonomy";
 import { ConversionLink } from "@/components/ConversionLink";
 import { normalizedTel } from "@/lib/seo-config";
 import { whatsappHref } from "@/lib/contact-links";
+import { hairPageExperienceBySlug } from "@/data/hair-page-experience";
 
 export function LocalSeoLandingPage({
   page,
@@ -26,6 +29,7 @@ export function LocalSeoLandingPage({
   page: LocalSeoPage;
   clinic: ClinicSettings;
 }) {
+  const hairExperience = hairPageExperienceBySlug[page.slug];
   const relationships = relationshipsFor(`/${page.slug}`);
   const contextualLinks = [
     ...page.relatedLinks,
@@ -89,16 +93,20 @@ export function LocalSeoLandingPage({
               source="cta"
               className="bg-white bg-none text-[var(--ink)] hover:bg-white"
             >
-              Book Appointment
+              {hairExperience
+                ? "Book Hair & Scalp Assessment"
+                : "Book Appointment"}
             </OpenBookingButton>
             <ConversionLink
               href={whatsappHref(
                 clinic.whatsapp,
                 `/${page.slug}`,
-                page.serviceName,
+                hairExperience?.leadTopic || page.serviceName,
               )}
-              eventName="whatsapp_click"
-              topic={page.serviceName}
+              eventName={
+                hairExperience ? "hair_whatsapp_click" : "whatsapp_click"
+              }
+              topic={hairExperience?.leadTopic || page.serviceName}
               className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-white/28 bg-white/10 px-6 py-3 text-sm font-extrabold uppercase tracking-[0.1em] text-white transition hover:bg-white/18"
             >
               <MessageCircle className="h-4 w-4" />
@@ -207,6 +215,10 @@ export function LocalSeoLandingPage({
           </div>
         </div>
       </section>
+
+      {hairExperience ? <HairIntakeWidget /> : null}
+
+      {hairExperience ? <HairEvidence experience={hairExperience} /> : null}
 
       {page.informationSections?.map((section, index) => (
         <section
@@ -387,12 +399,14 @@ export function LocalSeoLandingPage({
               source="cta"
               className="bg-white bg-none text-[var(--ink)] hover:bg-white"
             >
-              Book Appointment
+              {hairExperience
+                ? "Book Hair & Scalp Assessment"
+                : "Book Appointment"}
             </OpenBookingButton>
             <ConversionLink
               href={`tel:${normalizedTel(clinic.phone)}`}
-              eventName="call_click"
-              topic={page.serviceName}
+              eventName={hairExperience ? "hair_call_click" : "call_click"}
+              topic={hairExperience?.leadTopic || page.serviceName}
               className="inline-flex min-h-12 items-center justify-center rounded-full border border-white/22 px-6 py-3 text-sm font-extrabold uppercase tracking-[0.1em] transition hover:bg-white/10"
             >
               Call {clinic.phone}
