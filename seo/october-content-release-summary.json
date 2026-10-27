@@ -1,0 +1,7 @@
+{
+  "base": "http://localhost:4324",
+  "routes": 28,
+  "uniqueArticles": 15,
+  "checkedInternalLinks": 43,
+  "failures": []
+}

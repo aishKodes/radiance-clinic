@@ -657,6 +657,14 @@ function normalizeArticle(value: unknown, fallback?: Article): Article | null {
     excerpt: firstString(record, ["excerpt", "summary", "description"]) || fallback?.excerpt || "",
     body: hasItems(body) ? body : fallback?.body || [],
     content: fallback?.content,
+    primaryCommercialOwner: fallback?.primaryCommercialOwner,
+    topicCluster: fallback?.topicCluster,
+    relatedAnswers: fallback?.relatedAnswers,
+    videoWatchSlugs: fallback?.videoWatchSlugs,
+    resultConditions: fallback?.resultConditions,
+    sourceFiles: fallback?.sourceFiles,
+    contributorIds: fallback?.contributorIds,
+    reviewEvidence: fallback?.reviewEvidence,
     image: normalizeImage(
       firstRecord(record, ["featuredImage", "featured_image", "image", "heroImage", "hero_image"]) ||
         firstString(record, ["image_url", "featured_image_url"]),

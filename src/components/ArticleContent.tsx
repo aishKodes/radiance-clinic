@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 import type { CmsArticleContentBlock } from "@/types/cms";
+import { articleInlineTokens } from "@/lib/article-inline";
 
 type ArticleContentProps = {
   body: string[];
@@ -7,16 +8,14 @@ type ArticleContentProps = {
 };
 
 function renderInline(value: string): ReactNode[] {
-  return value.split(/(\*\*[^*]+\*\*|\*[^*]+\*)/g).map((part, index) => {
-    if (part.startsWith("**") && part.endsWith("**")) {
-      return <strong key={index} className="font-extrabold text-[#151515]">{part.slice(2, -2)}</strong>;
+  return articleInlineTokens(value).map((part, index) => {
+    if (part.type === "link") {
+      const external = part.href.startsWith("http");
+      return <a key={index} href={part.href} {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})} className="break-words font-bold text-[var(--aqua)] underline underline-offset-4 [overflow-wrap:anywhere]">{part.text}</a>;
     }
-
-    if (part.startsWith("*") && part.endsWith("*")) {
-      return <em key={index}>{part.slice(1, -1)}</em>;
-    }
-
-    return part;
+    if (part.type === "strong") return <strong key={index} className="font-extrabold text-[#151515]">{part.text}</strong>;
+    if (part.type === "em") return <em key={index}>{part.text}</em>;
+    return part.text;
   });
 }
 
@@ -25,7 +24,7 @@ export function ArticleContent({ body, content }: ArticleContentProps) {
     return (
       <div className="space-y-7 text-xl leading-9 text-[#151515]/72">
         {body.map((paragraph) => (
-          <p key={paragraph}>{paragraph}</p>
+          <p key={paragraph}>{renderInline(paragraph)}</p>
         ))}
       </div>
     );

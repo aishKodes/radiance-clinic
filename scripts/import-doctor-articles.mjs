@@ -1,6 +1,7 @@
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 import process from "node:process";
+import { pathToFileURL } from "node:url";
 
 const root = process.cwd();
 const sourceDirectory = path.resolve(
@@ -256,7 +257,7 @@ function cleanTitle(value) {
   return value.replace(/^\*\*|\*\*$/g, "").trim();
 }
 
-function parseMarkdown(markdown) {
+export function parseMarkdown(markdown) {
   const blocks = [];
   const lines = markdown.replace(/\r\n/g, "\n").split("\n");
   let title = "";
@@ -278,7 +279,11 @@ function parseMarkdown(markdown) {
 
   for (const rawLine of lines) {
     const line = rawLine.trim();
-    if (!line || line === "---") {
+    if (!line) {
+      flushParagraph();
+      continue;
+    }
+    if (line === "---") {
       flushParagraph();
       flushList();
       continue;
@@ -432,7 +437,9 @@ async function main() {
   console.log(`Imported ${articles.length} doctor-authored articles and optimized source images.`);
 }
 
-main().catch((error) => {
-  console.error(error);
-  process.exitCode = 1;
-});
+if (process.argv[1] && import.meta.url === pathToFileURL(path.resolve(process.argv[1])).href) {
+  main().catch((error) => {
+    console.error(error);
+    process.exitCode = 1;
+  });
+}

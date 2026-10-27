@@ -55,6 +55,7 @@ import { clinicIdentity } from "@/lib/seo-config";
 import { clinicFacts } from "@/data/clinic-facts";
 import { whatsappHref } from "@/lib/contact-links";
 import { doctorArticles } from "@/data/doctor-articles.generated";
+import { octoberArticles, octoberArticleSupplements } from "@/data/october-articles.generated";
 
 export const clinic: ClinicSettings = {
   name: clinicIdentity.name,
@@ -685,7 +686,24 @@ const editorialArticles: Article[] = [
   updatedAt: article.updatedAt || "2026-08-15",
 }));
 
-export const articles: Article[] = [...editorialArticles, ...doctorArticles];
+export const articles: Article[] = [...editorialArticles, ...doctorArticles, ...octoberArticles].map((article) => {
+  const supplement = octoberArticleSupplements[article.slug];
+  if (!supplement) return article;
+  const { additionalContent = [], replacementContent, ...metadata } = supplement;
+  const content = [
+    ...(replacementContent || article.content || article.body.map((text) => ({ type: "paragraph" as const, text }))),
+    ...additionalContent,
+  ];
+  return {
+    ...article,
+    ...metadata,
+    sourceFiles: [...new Set([...(article.sourceFiles || []), ...(metadata.sourceFiles || [])])],
+    // A historical review date is not the date of this newly approved update.
+    reviewedAt: undefined,
+    content,
+    readTime: `${Math.max(4, Math.ceil(content.flatMap((block) => block.type === "list" ? block.items : [block.text]).join(" ").split(/\s+/).length / 220))} min read`,
+  };
+});
 
 export const testimonials: Testimonial[] = [
   {

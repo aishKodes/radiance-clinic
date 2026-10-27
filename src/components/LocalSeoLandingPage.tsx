@@ -11,6 +11,7 @@ import {
 import { FAQAccordion } from "@/components/FAQAccordion";
 import { HairEvidence } from "@/components/HairEvidence";
 import { HairIntakeWidget } from "@/components/HairIntakeWidget";
+import { HairPlanningLibrary } from "@/components/HairPlanningLibrary";
 import { MedicalReview } from "@/components/MedicalReview";
 import { OpenBookingButton } from "@/components/OpenBookingButton";
 import { PremiumButton } from "@/components/PremiumButton";
@@ -21,6 +22,8 @@ import { ConversionLink } from "@/components/ConversionLink";
 import { normalizedTel } from "@/lib/seo-config";
 import { whatsappHref } from "@/lib/contact-links";
 import { hairPageExperienceBySlug } from "@/data/hair-page-experience";
+import { octoberArticleSupplements } from "@/data/october-articles.generated";
+import { ArticleContent } from "@/components/ArticleContent";
 
 export function LocalSeoLandingPage({
   page,
@@ -30,6 +33,7 @@ export function LocalSeoLandingPage({
   clinic: ClinicSettings;
 }) {
   const hairExperience = hairPageExperienceBySlug[page.slug];
+  const doctorContribution = octoberArticleSupplements[page.slug];
   const relationships = relationshipsFor(`/${page.slug}`);
   const contextualLinks = [
     ...page.relatedLinks,
@@ -217,6 +221,7 @@ export function LocalSeoLandingPage({
       </section>
 
       {hairExperience ? <HairIntakeWidget /> : null}
+      {page.slug === "hair-transplant-bhubaneswar" ? <HairPlanningLibrary decisions /> : null}
 
       {hairExperience ? <HairEvidence experience={hairExperience} /> : null}
 
@@ -241,6 +246,13 @@ export function LocalSeoLandingPage({
           </div>
         </section>
       ))}
+      {doctorContribution?.additionalContent?.length ? <section className="border-t border-[var(--ink)]/10 bg-white px-5 py-14 sm:px-8 sm:py-20">
+        <div className="mx-auto max-w-3xl">
+          <h2 className="font-serif text-3xl leading-tight text-[var(--ink)] sm:text-4xl">Clinical perspective from Dr. Satyarth Prakash</h2>
+          <p className="mt-4 text-sm leading-7 text-[var(--ink)]/65">Doctor-authored guidance on assessment, treatment decisions and follow-up. <Link className="font-bold text-[var(--aqua)] underline" href="/about">Meet the doctor</Link></p>
+          <ArticleContent body={[]} content={doctorContribution.additionalContent} />
+        </div>
+      </section> : null}
 
       {page.decisionGuide ? (
         <section

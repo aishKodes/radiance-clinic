@@ -1185,7 +1185,75 @@ const doctorAnswerDrafts: DoctorAnswer[] = [
   indexable: true,
 }));
 
-export const doctorAnswers: DoctorAnswer[] = doctorAnswerDrafts;
+const octoberHairAnswers: DoctorAnswer[] = [
+  {
+    slug: "can-fue-make-donor-area-thin",
+    question: "Can FUE make the donor area look thin?",
+    conciseAnswer: "Overharvesting means removing enough follicles that the donor area begins to look visibly depleted. This is not only a scar issue. It is a density issue. Visibility can increase when too many grafts are removed from a small zone, donor density is low, extraction is uneven, or previous procedures have already reduced density.",
+    explanation: ["In FUE, follicular units are removed individually from the donor area. Each extraction creates a small circular wound that heals with a tiny scar.", "When these sites are distributed appropriately across a strong donor area, the marks can be difficult to notice under surrounding hair.", "Before surgery, ask how extraction will be distributed, how much donor reserve will remain and what donor appearance is realistic after healing."],
+    whenEvaluationMayHelp: "At Radiance Clinics, donor assessment is part of planning before a graft number is finalised.",
+    relatedConcern: "/concerns/hair-transplant/donor-area-thinning",
+    relatedGuide: { href: "/knowledge/fue-hair-transplant-scars", label: "FUE scars and donor visibility" },
+    relatedQuestions: ["can-hair-transplant-work-weak-donor", "can-i-get-second-hair-transplant"],
+    videoWatchSlug: "hair-transplant-safety",
+    references: ["content/hair-query-expansion/Radiance_Hair_Transplant_Query_Expansion_Pack_Oct2026.md#article-9"],
+  },
+  {
+    slug: "why-same-graft-count-different-results",
+    question: "Why do the same graft counts produce different-looking results?",
+    conciseAnswer: "Hair calibre, curl or wave, hair-to-scalp colour contrast, size of the recipient area, existing native hair and direction of placement can all change the final visual effect. Two patients can therefore have similar graft counts and very different-looking results. The doctor plans visual coverage, not simply a numerical target.",
+    explanation: ["A normal scalp contains follicles distributed in patterns that developed naturally. A transplant redistributes follicles from a donor zone. Trying to recreate original natural density across a very large bald area may be impossible or unsafe.", "A higher graft count is useful only when those grafts can be harvested safely, the recipient plan can use them appropriately, the donor area remains acceptable and the long-term pattern has been considered.", "At Radiance Clinics, graft planning follows donor and recipient assessment rather than a generic online formula."],
+    whenEvaluationMayHelp: "Book a Hair & Scalp Assessment to discuss donor capacity and realistic coverage.",
+    relatedConcern: "/concerns/hair-transplant/graft-number-planning",
+    relatedGuide: { href: "/knowledge/hair-transplant-density-graft-planning", label: "Density and graft planning" },
+    relatedQuestions: ["how-many-grafts-receding-hairline", "can-fue-make-donor-area-thin"],
+    videoWatchSlug: "hair-transplant-graft-planning",
+    references: ["content/hair-query-expansion/Radiance_Hair_Transplant_Query_Expansion_Pack_Oct2026.md#article-3"],
+  },
+  {
+    slug: "can-transplant-while-hair-still-falling",
+    question: "Can I get a hair transplant while my hair is still falling?",
+    conciseAnswer: "If recession or thinning is progressing rapidly, the appearance around transplanted hair may continue to change. In some people, the better first step is to understand and manage active loss before deciding how much permanent restoration is appropriate. A transplant should not be used as a shortcut around diagnosis.",
+    explanation: ["Sudden shedding, patchy hair loss, scalp inflammation, scarring conditions and diffuse thinning can require a different medical approach. Moving follicles does not treat the underlying cause.", "Some patients are mainly concerned about early thinning or active shedding rather than a permanently bald area. Depending on diagnosis, medical management, scalp treatment, PRP/GFC support or non-surgical replacement may be discussed instead of transplantation.", "The decision depends on diagnosis, donor area, progression of hair loss, scalp condition, health history and what the patient expects the procedure to achieve."],
+    whenEvaluationMayHelp: "Unsure whether you are a transplant candidate? Book a Hair & Scalp Assessment.",
+    relatedConcern: "/concerns/hair-transplant/hair-transplant-suitability",
+    relatedGuide: { href: "/knowledge/when-hair-transplant-may-not-be-right", label: "When transplantation may not be right" },
+    relatedQuestions: ["can-hair-transplant-work-weak-donor", "can-transplanted-hair-fall-out-years-later"],
+    videoWatchSlug: "right-time-for-hair-transplant",
+    references: ["content/hair-query-expansion/Radiance_Hair_Transplant_Query_Expansion_Pack_Oct2026.md#article-2"],
+  },
+  {
+    slug: "can-i-get-second-hair-transplant",
+    question: "Can I get a second hair transplant?",
+    conciseAnswer: "A second hair transplant is not unusual, but it should not be planned automatically. Some patients return because natural hair loss has progressed. Others want additional density, crown coverage or correction of a previous procedure. In every case, the remaining donor area and the outcome of the first transplant matter.",
+    explanation: ["Before another procedure, the doctor should review the original treatment area, donor extraction pattern, remaining donor density, scars, recipient growth, current progression, hairline design and scalp health.", "Hair growth after transplantation is gradual, so judging the final need too early can lead to unnecessary surgery.", "Some problems can be improved more easily than others. A repair plan must begin with what remains possible rather than a promise to erase the previous procedure."],
+    whenEvaluationMayHelp: "At Radiance Clinics, second-procedure planning begins with assessment of the previous transplant and remaining donor reserve.",
+    relatedConcern: "/concerns/hair-transplant/donor-area-thinning",
+    relatedGuide: { href: "/knowledge/second-hair-transplant", label: "Planning a second transplant" },
+    relatedQuestions: ["can-fue-make-donor-area-thin", "can-transplanted-hair-fall-out-years-later"],
+    videoWatchSlug: "hair-transplant-safety",
+    references: ["content/hair-query-expansion/Radiance_Hair_Transplant_Query_Expansion_Pack_Oct2026.md#article-4"],
+  },
+].map((answer) => ({
+  ...answer,
+  categorySlug: "hair-transplant",
+  relatedTreatment: { href: "/hair-transplant-bhubaneswar", label: "Hair transplant assessment in Bhubaneswar" },
+  preparedBy: "Radiance Editorial Team",
+  authorType: "editorial-team" as const,
+  authorId: editorialTeamId,
+  reviewedBy: medicalReviewer.name,
+  reviewerId: doctorEntityId,
+  // Answers are excerpts of the newly approved articles, not a new doctor Q&A.
+  reviewEvidence: "Extracted from the ten articles explicitly confirmed medically approved by the clinic representative in this chat; exact review date unavailable.",
+  medicalReviewStatus: "MEDICALLY_REVIEWED" as const,
+  sourceType: "mixed" as const,
+  publishedAt: "2026-10-27",
+  updatedAt: "2026-10-27",
+  status: "APPROVED" as const,
+  indexable: true,
+}));
+
+export const doctorAnswers: DoctorAnswer[] = [...doctorAnswerDrafts, ...octoberHairAnswers];
 
 export function getDoctorAnswer(slug: string) {
   return doctorAnswers.find((answer) => answer.slug === slug);

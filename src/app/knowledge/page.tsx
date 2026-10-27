@@ -5,6 +5,7 @@ import { ArrowUpRight } from "lucide-react";
 import { JsonLd } from "@/components/JsonLd";
 import { SectionHeader } from "@/components/SectionHeader";
 import { StickyConsultationCard } from "@/components/StickyConsultationCard";
+import { HairPlanningLibrary } from "@/components/HairPlanningLibrary";
 import { getArticles } from "@/data/site";
 import { webPageJsonLd } from "@/lib/schema";
 import { pageMetadata } from "@/lib/metadata";
@@ -50,6 +51,7 @@ export default async function KnowledgePage() {
           ))}
         </div>
       </nav>
+      <HairPlanningLibrary articles={articles} />
       <section className="bg-[#FBF7EF] px-5 py-20 sm:px-8 lg:py-28">
         <div className="mx-auto grid max-w-7xl gap-5 md:grid-cols-3">
           {articles.map((article) => (
@@ -70,12 +72,12 @@ export default async function KnowledgePage() {
                 </div>
               ) : null}
               <div className="mb-12 flex items-center justify-between">
-                <span className="rounded-full border border-[#151515]/10 px-3 py-1.5 text-xs font-bold uppercase tracking-[0.18em] text-[#151515]/52">
+                <span className="min-w-0 text-xs font-bold uppercase tracking-normal text-[#151515]/52">
                   {article.category}
                 </span>
                 <ArrowUpRight className="h-5 w-5 text-[#B78A4A] transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
               </div>
-              <h2 className="font-serif text-4xl leading-none text-[#151515]">
+              <h2 className="font-serif text-2xl leading-tight text-[#151515]">
                 {article.title}
               </h2>
               <p className="mt-5 flex-1 text-sm leading-7 text-[#151515]/62">

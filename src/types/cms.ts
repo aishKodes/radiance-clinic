@@ -177,6 +177,14 @@ export type CmsArticle = {
   relatedTreatments?: string[];
   relatedConditions?: string[];
   relatedArticles?: string[];
+  primaryCommercialOwner?: string;
+  topicCluster?: string;
+  relatedAnswers?: string[];
+  videoWatchSlugs?: string[];
+  resultConditions?: string[];
+  sourceFiles?: string[];
+  contributorIds?: string[];
+  reviewEvidence?: string;
 };
 
 export type CmsArticleReference = {

@@ -7,6 +7,8 @@ import { JsonLd } from "@/components/JsonLd";
 import { MedicalReview } from "@/components/MedicalReview";
 import { RelatedVideos } from "@/components/RelatedVideos";
 import { TrackedLink } from "@/components/TrackedLink";
+import { OpenBookingButton } from "@/components/OpenBookingButton";
+import { videoWatchPageBySlug } from "@/data/video-watch-pages";
 import { concernCategories, doctorAnswers, getDoctorAnswer } from "@/data/concern-library";
 import { videosForPath } from "@/data/video-library";
 import { pageMetadata } from "@/lib/metadata";
@@ -35,7 +37,8 @@ export default async function DoctorAnswerPage({ params }: Props) {
   if (!answer) notFound();
   const category = concernCategories.find((item) => item.slug === answer.categorySlug);
   const path = `/doctor-answers/${slug}`;
-  const videos = videosForPath(path, 2);
+  const mappedVideo = answer.videoWatchSlug ? videoWatchPageBySlug.get(answer.videoWatchSlug)?.video : undefined;
+  const videos = mappedVideo ? [mappedVideo] : videosForPath(path, 2);
   const breadcrumbs = [
     { name: "Home", path: "/" },
     { name: "Doctor Answers", path: "/doctor-answers" },
@@ -70,6 +73,7 @@ export default async function DoctorAnswerPage({ params }: Props) {
           <div className="mt-12 space-y-7 border-t border-[var(--ink)]/12 pt-10 text-lg leading-9 text-[var(--ink)]/68">
             {answer.explanation.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
           </div>
+          {answer.categorySlug.startsWith("hair-") ? <div className="mt-8"><OpenBookingButton source="cta">Book Hair &amp; Scalp Assessment</OpenBookingButton></div> : null}
           <div className="mt-12 rounded-[2rem] bg-[var(--ink)] p-7 text-white sm:p-9">
             <Stethoscope className="h-7 w-7 text-[var(--aqua)]" />
             <h2 className="mt-6 font-serif text-4xl leading-none">When evaluation may help</h2>

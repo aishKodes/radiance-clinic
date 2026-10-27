@@ -25,7 +25,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const resultRoutes = indexableResultCases.map((item) => `/results/${item.category}/${item.slug}`);
   const concernRoutes = approvedConcerns.map((item) => `/concerns/${item.categorySlug}/${item.slug}`);
   const answerRoutes = doctorAnswers
-    .filter((answer) => answer.indexable && answer.status === "APPROVED" && answer.reviewedBy && answer.reviewedAt)
+    .filter((answer) => answer.indexable && answer.status === "APPROVED" && answer.reviewedBy && (answer.reviewedAt || answer.reviewEvidence))
     .map((answer) => `/doctor-answers/${answer.slug}`);
   const videoRoutes = hairVideoWatchPages.map((page) => `/videos/${page.slug}`);
 

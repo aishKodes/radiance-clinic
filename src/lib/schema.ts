@@ -278,11 +278,11 @@ export function articleJsonLd(article: Article): JsonLd {
           name: article.authorName || radianceEditorialTeam.name,
           url: absoluteUrl(radianceEditorialTeam.policyPath),
         },
-    ...(article.reviewerId || article.reviewedBy
-      ? { reviewedBy: { "@id": schemaIds.doctor } }
-      : {}),
     publisher: { "@id": schemaIds.organization },
     datePublished: article.publishedAt,
+    ...(article.contributorIds?.includes("dr-satyarth-prakash") && !authoredByDoctor
+      ? { contributor: { "@id": schemaIds.doctor } }
+      : {}),
     dateModified: article.updatedAt || article.reviewedAt,
     mainEntityOfPage: { "@id": `${url}#webpage` },
     inLanguage: "en-IN",

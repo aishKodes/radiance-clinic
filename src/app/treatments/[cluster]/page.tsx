@@ -5,6 +5,7 @@ import { ArrowUpRight, CheckCircle2 } from "lucide-react";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { JsonLd } from "@/components/JsonLd";
 import { HairPlanningEstimator } from "@/components/HairPlanningEstimator";
+import { HairPlanningLibrary } from "@/components/HairPlanningLibrary";
 import { PremiumButton } from "@/components/PremiumButton";
 import { RelatedContent } from "@/components/RelatedContent";
 import { StickyConsultationCard } from "@/components/StickyConsultationCard";
@@ -270,6 +271,7 @@ export default async function TreatmentCategoryPage({ params }: Props) {
       </section>
 
       {hub.slug === "hair-restoration" ? <HairPlanningEstimator /> : null}
+      {hub.slug === "hair-restoration" ? <HairPlanningLibrary articles={articles} /> : null}
 
       {hairResearchItems.length ? (
         <section className="bg-[var(--ivory)] px-5 py-16 sm:px-8 sm:py-20 lg:py-24">

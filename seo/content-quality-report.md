@@ -1,13 +1,13 @@
 # Concern Content Quality Report
 
-Generated: 2026-10-04T14:12:29.519Z
+Generated: 2026-10-27T15:46:32.192Z
 
 - Concern pages audited: 62
 - Category hubs audited: 10
-- Doctor answers audited: 53
+- Doctor answers audited: 57
 - Indexable concern pages: 62
 - Approved concern pages: 62
-- Approved Doctor Answer pages: 53
+- Approved Doctor Answer pages: 57
 - Errors: 0
 - Warnings: 0
 

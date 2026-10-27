@@ -33,7 +33,7 @@ export default async function AboutPage() {
     (article) => article.authorId === "dr-satyarth-prakash" || article.authorType === "doctor",
   );
   const reviewedArticles = doctorAuthoredArticles.length
-    ? doctorAuthoredArticles.slice(0, 3)
+    ? [...doctorAuthoredArticles].sort((a, b) => (b.publishedAt || "").localeCompare(a.publishedAt || "")).slice(0, 7)
     : articles.slice(0, 3);
   const relatedAnswers = doctorAnswers.slice(0, 4);
 

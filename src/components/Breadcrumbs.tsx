@@ -25,7 +25,7 @@ export function Breadcrumbs({
         {items.map((item, index) => {
           const current = index === items.length - 1;
           return (
-            <li key={item.path} className="flex min-w-0 items-center gap-1.5">
+            <li key={item.path} className="flex min-w-0 max-w-full items-center gap-1.5">
               {index ? (
                 <ChevronRight aria-hidden="true" className="h-3.5 w-3.5 shrink-0 opacity-50" />
               ) : null}

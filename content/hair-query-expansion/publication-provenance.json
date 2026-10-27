@@ -1,0 +1,232 @@
+{
+  "releaseDate": "2026-10-27",
+  "reviewEvidence": "Human clinic representative explicitly confirmed doctor approval of all ten drafts in this chat; exact medical review date not supplied.",
+  "sources": [
+    {
+      "file": "content/doctor-articles/2026-10-27/Round Bald Patch on Your Scalp Understanding the Possible Causes, Hair Regrowth and Treatment Options.md",
+      "sha256": "4e931d5e8bf13ba5998acd875919728a938c7e821a732e63561b61bc1ea83597",
+      "author": "Dr. Satyarth Prakash",
+      "target": "/knowledge/round-bald-patch-scalp-causes",
+      "action": "PUBLISH_DISTINCT_EDUCATIONAL_GUIDE"
+    },
+    {
+      "file": "content/doctor-articles/2026-10-27/Tiny Facial Bumps, Blackheads and Acne Marks Understanding What May Be Happening to Your Skin.md",
+      "sha256": "b56ca491d5fec4d65908dec7f133df73a5516e34ae0e33fe428de61171006a09",
+      "author": "Dr. Satyarth Prakash",
+      "target": "/knowledge/tiny-facial-bumps-blackheads",
+      "action": "PUBLISH_DISTINCT_EDUCATIONAL_GUIDE"
+    },
+    {
+      "file": "content/doctor-articles/2026-10-27/Hair Fall, Receding Hairline, or Thinning Hair Understanding the Possible Causes Before Starting Treatment.md",
+      "sha256": "48c85e536062f50d25e5a22e4bc785e9ba402435824ce3df826cd3be6e3880c1",
+      "author": "Dr. Satyarth Prakash",
+      "target": "/knowledge/hair-fall-visible-scalp-understanding-the-problem",
+      "action": "MERGE_SELECTED_DOCTOR_SECTIONS"
+    },
+    {
+      "file": "content/doctor-articles/2026-10-27/Dark Circles Even After 8 Hours of Sleep Understanding the Possible Causes.md",
+      "sha256": "06bb371b2f88df5a2f48f4c83717837322ac88a984f655d09a1c139715d99d20",
+      "author": "Dr. Satyarth Prakash",
+      "target": "/knowledge/dark-circles-despite-sleep",
+      "action": "PUBLISH_DISTINCT_EDUCATIONAL_GUIDE"
+    },
+    {
+      "file": "content/doctor-articles/2026-10-27/Oily Scalp, Dandruff and Hair Fall Understanding the Causes and What May Help.md",
+      "sha256": "0ab66e7138d2e401644c0f3c93e35cf6989dddec121f46711702d6f5b06adcd7",
+      "author": "Dr. Satyarth Prakash",
+      "target": "/knowledge/dandruff-frizzy-oily-hair",
+      "action": "MERGE_SELECTED_DOCTOR_SECTIONS"
+    },
+    {
+      "file": "content/doctor-articles/2026-10-27/Understanding Your Skin Before Treatment Why Proper Assessment Matters.md",
+      "sha256": "0d309b24620321d93978948bf4c1d75ca489b3d182d4162f13677315a8b67329",
+      "author": "Dr. Satyarth Prakash",
+      "target": "/skin-clinic-bhubaneswar",
+      "action": "MERGE_ATTRIBUTED_DOCTOR_CONTRIBUTION"
+    },
+    {
+      "file": "content/doctor-articles/2026-10-27/Receding Hairline.md",
+      "sha256": "64db2935a22b9060f15e30a5a697b4c0e72ddbb8ca7b7776fccdb81851b4739c",
+      "author": "Dr. Satyarth Prakash",
+      "target": "/knowledge/receding-hairline-early-thinning",
+      "action": "PUBLISH_DISTINCT_EDUCATIONAL_GUIDE"
+    },
+    {
+      "file": "content/doctor-articles/2026-10-27/Why Does Sunscreen Feel Sticky on Oily and Sweaty Skin Understanding Skincare in Hot and Humid Weather.md",
+      "sha256": "1fe23396386b76753e7b3fcc495493a47c5ac05e95850f5085611dbe2955a990",
+      "author": "Dr. Satyarth Prakash",
+      "target": "/knowledge/sunscreen-sticky-oily-sweaty-skin",
+      "action": "PUBLISH_DISTINCT_EDUCATIONAL_GUIDE"
+    },
+    {
+      "file": "content/doctor-articles/2026-10-27/Hair Transplant in Bhubaneswar Why Understanding Hair Loss Matters Before Choosing Surgery.md",
+      "sha256": "908671ecf6ebb6ae506bf0b8d46c20930a82870e03e2a643a3fbf6cf4e91365f",
+      "author": "Dr. Satyarth Prakash",
+      "target": "/knowledge/hair-transplant-consultation-checklist",
+      "action": "MERGE_ATTRIBUTED_DOCTOR_CONTRIBUTION"
+    },
+    {
+      "file": "content/doctor-articles/2026-10-27/Tried Multiple Hair Fall and Dandruff Treatments but Still Struggling Understanding the Root Cause May Be the Missing Step.md",
+      "sha256": "49527b58c3f5f2126efb66133e0caaf8d28dee469f8886dc5ea9f178ec9e525b",
+      "author": "Dr. Satyarth Prakash",
+      "target": "/knowledge/hair-getting-thinner-what-to-check-first",
+      "action": "MERGE_SELECTED_DOCTOR_SECTIONS"
+    },
+    {
+      "file": "content/doctor-articles/2026-10-27/Why Does Your Skin React to Skincare Products Understanding Acne, Burning, Itching and Sensitive Skin.md",
+      "sha256": "b5ff7f9b5b12b5c892940d1f68cee75962a146e8130cc4b037258fbf5f94bcf3",
+      "author": "Dr. Satyarth Prakash",
+      "target": "/knowledge/skincare-products-burning-itching-reactions",
+      "action": "PUBLISH_DISTINCT_EDUCATIONAL_GUIDE"
+    },
+    {
+      "file": "content/doctor-articles/2026-10-27/Hair Fall in Bhubaneswar Is It the Water, Stress, or Something Else.md",
+      "sha256": "2b11b07ec046c36f0aa1353322baf68a1ff7812dbe863913f65de48d8e502f6a",
+      "author": "Dr. Satyarth Prakash",
+      "target": "/knowledge/bhubaneswar-water-hair-fall-hard-water",
+      "action": "MERGE_SELECTED_DOCTOR_SECTIONS"
+    },
+    {
+      "file": "content/doctor-articles/2026-10-27/Oily Skin, Dark Spots, Tanning, Rough Skin or Wrinkles Understand What Your Skin Really Needs.md",
+      "sha256": "2c0c1f3598ab4872721481df3ac62205771dd7bfd00513b103626d8fc43907d1",
+      "author": "Dr. Satyarth Prakash",
+      "target": "/skin-clinic-bhubaneswar",
+      "action": "MERGE_ATTRIBUTED_DOCTOR_CONTRIBUTION"
+    },
+    {
+      "file": "content/doctor-articles/2026-10-27/Early-Age Hair Fall in Bhubaneswar Water Concerns, Disappointing Treatments, Rising Costs and Confidence.md",
+      "sha256": "34d0e521b35d82bf15a495100006d5c97cf969c92446fdfcfd5631f2ce29832a",
+      "author": "Dr. Satyarth Prakash",
+      "target": "/knowledge/early-age-hair-fall-treatment-decisions",
+      "action": "PUBLISH_DISTINCT_DECISION_GUIDE"
+    },
+    {
+      "file": "content/doctor-articles/2026-10-27/Struggling With Skin Problems Understand the Root Cause Before Starting Treatment..md",
+      "sha256": "8a74f9eb58615b15b06b102ca7e2fee19fd80c502319d079cacbacd09a2366fc",
+      "author": "Dr. Satyarth Prakash",
+      "target": "/skin-clinic-bhubaneswar",
+      "action": "MERGE_ATTRIBUTED_DOCTOR_CONTRIBUTION"
+    },
+    {
+      "file": "content/doctor-articles/2026-10-27/Why Does Your Skin Problem Keep Coming Back_ Understanding Recurring Skin Concerns.md",
+      "sha256": "5a949ab4aea366c22bf6018c16d2e78dc67e69c50c38bbc7a6771a4c446b9a9c",
+      "author": "Dr. Satyarth Prakash",
+      "target": "/knowledge/why-tanning-despite-sunscreen-bhubaneswar",
+      "action": "MERGE_SELECTED_DOCTOR_SECTIONS"
+    },
+    {
+      "file": "content/doctor-articles/2026-10-27/Hair Loss and Hair Transplantation_ What to Understand Before Choosing Treatment.md",
+      "sha256": "211ea31a75be56060d6d53a01436bffd76536b8ab990782bc810e40cf369c3c9",
+      "author": "Dr. Satyarth Prakash",
+      "target": "/knowledge/hair-transplant-consultation-checklist",
+      "action": "MERGE_ATTRIBUTED_DOCTOR_CONTRIBUTION"
+    },
+    {
+      "file": "content/doctor-articles/2026-10-27/Acne Marks, Scars, Pigmentation and Sensitive Skin_ Why Your Skin May Not Be Improving.md",
+      "sha256": "d6b4c976e05e407d75cdc861ab3a5c6f897af005c2f5dc9dd10dabace9e049ad",
+      "author": "Dr. Satyarth Prakash",
+      "target": "/knowledge/acne-scar-treatment-bhubaneswar",
+      "action": "MERGE_SELECTED_DOCTOR_SECTIONS"
+    },
+    {
+      "file": "content/hair-query-expansion/Radiance_Hair_Transplant_Query_Expansion_Pack_Oct2026.md#article-1",
+      "sha256": "320176a82aaa3d93b6913ff8e7e6793a76946530755842a661e476a0f94527ba",
+      "author": "Radiance Editorial Team",
+      "reviewer": "Dr. Satyarth Prakash",
+      "reviewedAt": null,
+      "reviewEvidence": "Human clinic representative explicitly confirmed doctor approval of all ten drafts in this chat; exact medical review date not supplied.",
+      "target": "/knowledge/hair-transplant-consultation-checklist",
+      "action": "PUBLISH_REVIEWED_UNIQUE_GUIDE"
+    },
+    {
+      "file": "content/hair-query-expansion/Radiance_Hair_Transplant_Query_Expansion_Pack_Oct2026.md#article-3",
+      "sha256": "f6c6d7ec4dfa5ac8767afab790bd6d6a5ed75abf0e0e8d20d15f6cff8122afa1",
+      "author": "Radiance Editorial Team",
+      "reviewer": "Dr. Satyarth Prakash",
+      "reviewedAt": null,
+      "reviewEvidence": "Human clinic representative explicitly confirmed doctor approval of all ten drafts in this chat; exact medical review date not supplied.",
+      "target": "/knowledge/hair-transplant-density-graft-planning",
+      "action": "PUBLISH_REVIEWED_UNIQUE_GUIDE"
+    },
+    {
+      "file": "content/hair-query-expansion/Radiance_Hair_Transplant_Query_Expansion_Pack_Oct2026.md#article-6",
+      "sha256": "2876fe31daa9da6d1253d94468452e664bf6e760c7369c355d6550174fd27868",
+      "author": "Radiance Editorial Team",
+      "reviewer": "Dr. Satyarth Prakash",
+      "reviewedAt": null,
+      "reviewEvidence": "Human clinic representative explicitly confirmed doctor approval of all ten drafts in this chat; exact medical review date not supplied.",
+      "target": "/knowledge/crown-vs-hairline-graft-priority",
+      "action": "MERGE_INTO_EXISTING_CANONICAL"
+    },
+    {
+      "file": "content/hair-query-expansion/Radiance_Hair_Transplant_Query_Expansion_Pack_Oct2026.md#article-2",
+      "sha256": "7b3953ba994e3d1fd51b23748228272c6e49455249996e5adbdf53d3427b924b",
+      "author": "Radiance Editorial Team",
+      "reviewer": "Dr. Satyarth Prakash",
+      "reviewedAt": null,
+      "reviewEvidence": "Human clinic representative explicitly confirmed doctor approval of all ten drafts in this chat; exact medical review date not supplied.",
+      "target": "/knowledge/when-hair-transplant-may-not-be-right",
+      "action": "PUBLISH_REVIEWED_UNIQUE_GUIDE"
+    },
+    {
+      "file": "content/hair-query-expansion/Radiance_Hair_Transplant_Query_Expansion_Pack_Oct2026.md#article-4",
+      "sha256": "8bfb2ea90d028f6c100789e2d0cdcea1c0ce454d5261d02ed6e393eceb4b9c14",
+      "author": "Radiance Editorial Team",
+      "reviewer": "Dr. Satyarth Prakash",
+      "reviewedAt": null,
+      "reviewEvidence": "Human clinic representative explicitly confirmed doctor approval of all ten drafts in this chat; exact medical review date not supplied.",
+      "target": "/knowledge/second-hair-transplant",
+      "action": "PUBLISH_REVIEWED_UNIQUE_GUIDE"
+    },
+    {
+      "file": "content/hair-query-expansion/Radiance_Hair_Transplant_Query_Expansion_Pack_Oct2026.md#article-9",
+      "sha256": "20fc96c2f9d87315d83d6068a360b0c75e66ffd45cf68ccbe3f33d69740a9f9f",
+      "author": "Radiance Editorial Team",
+      "reviewer": "Dr. Satyarth Prakash",
+      "reviewedAt": null,
+      "reviewEvidence": "Human clinic representative explicitly confirmed doctor approval of all ten drafts in this chat; exact medical review date not supplied.",
+      "target": "/knowledge/fue-hair-transplant-scars",
+      "action": "PUBLISH_REVIEWED_UNIQUE_GUIDE"
+    },
+    {
+      "file": "content/hair-query-expansion/Radiance_Hair_Transplant_Query_Expansion_Pack_Oct2026.md#article-10",
+      "sha256": "7acbe0a44388859173aea81d6734837904f65c1a70ea6af9ce032999a91048ec",
+      "author": "Radiance Editorial Team",
+      "reviewer": "Dr. Satyarth Prakash",
+      "reviewedAt": null,
+      "reviewEvidence": "Human clinic representative explicitly confirmed doctor approval of all ten drafts in this chat; exact medical review date not supplied.",
+      "target": "/knowledge/hair-transplant-advanced-baldness",
+      "action": "PUBLISH_REVIEWED_UNIQUE_GUIDE"
+    },
+    {
+      "file": "content/hair-query-expansion/Radiance_Hair_Transplant_Query_Expansion_Pack_Oct2026.md#article-5",
+      "sha256": "45d71c53e5ced8b5b6445096b1d4771a322b2f596dd6b1ecf021d6cdc6360a2b",
+      "author": "Radiance Editorial Team",
+      "reviewer": "Dr. Satyarth Prakash",
+      "reviewedAt": null,
+      "reviewEvidence": "Human clinic representative explicitly confirmed doctor approval of all ten drafts in this chat; exact medical review date not supplied.",
+      "target": "/knowledge/hair-transplant-diffuse-thinning",
+      "action": "PUBLISH_REVIEWED_UNIQUE_GUIDE"
+    },
+    {
+      "file": "content/hair-query-expansion/Radiance_Hair_Transplant_Query_Expansion_Pack_Oct2026.md#article-7",
+      "sha256": "f98aae98fb9cfb667cceda9c5c9271cd8579596e7351c18a43a5d68433a50f8b",
+      "author": "Radiance Editorial Team",
+      "reviewer": "Dr. Satyarth Prakash",
+      "reviewedAt": null,
+      "reviewEvidence": "Human clinic representative explicitly confirmed doctor approval of all ten drafts in this chat; exact medical review date not supplied.",
+      "target": "/concerns/hair-transplant/hairline-design",
+      "action": "MERGE_INTO_EXISTING_CONCERN"
+    },
+    {
+      "file": "content/hair-query-expansion/Radiance_Hair_Transplant_Query_Expansion_Pack_Oct2026.md#article-8",
+      "sha256": "7b5b2bc48b9f60b1ec19f1caf01dd53f1fdec0848a2ea5ab1fdd73cdad79b4c4",
+      "author": "Radiance Editorial Team",
+      "reviewer": "Dr. Satyarth Prakash",
+      "reviewedAt": null,
+      "reviewEvidence": "Human clinic representative explicitly confirmed doctor approval of all ten drafts in this chat; exact medical review date not supplied.",
+      "target": "/knowledge/why-hair-transplant-results-vary",
+      "action": "PUBLISH_REVIEWED_UNIQUE_GUIDE"
+    }
+  ]
+}

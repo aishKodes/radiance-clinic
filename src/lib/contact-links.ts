@@ -32,7 +32,7 @@ const pageTopics: { pattern: RegExp; topic: string }[] = [
     topic: "hair patch or non-surgical hair replacement",
   },
   { pattern: /alopecia/, topic: "patchy hair loss and alopecia assessment" },
-  { pattern: /hair-loss|hair-fall|scalp|prp-gfc/, topic: "hair and scalp treatment" },
+  { pattern: /hair-loss|hair-fall|scalp|prp-gfc|hair-thinning|hair-getting-thinner|dandruff|bald-patch/, topic: "hair and scalp treatment" },
   { pattern: /laser-hair/, topic: "laser hair reduction" },
   { pattern: /acne-scar/, topic: "acne scar treatment" },
   { pattern: /acne/, topic: "acne treatment" },

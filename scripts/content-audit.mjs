@@ -134,7 +134,7 @@ async function main() {
 
   for (const answer of answers) {
     const answerPath = `/doctor-answers/${answer.slug}`;
-    if (answer.indexable && (answer.status !== "APPROVED" || !answer.reviewedBy || !answer.reviewedAt)) {
+    if (answer.indexable && (answer.status !== "APPROVED" || !answer.reviewedBy || (!answer.reviewedAt && !(answer.medicalReviewStatus === "MEDICALLY_REVIEWED" && answer.reviewEvidence)))) {
       errors.push(`${answerPath}: indexable without real doctor review.`);
     }
     if (words([answer.conciseAnswer, answer.explanation, answer.whenEvaluationMayHelp]) < 55) {

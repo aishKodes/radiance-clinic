@@ -6,11 +6,16 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { FAQAccordion } from "@/components/FAQAccordion";
 import { JsonLd } from "@/components/JsonLd";
 import { MedicalReview } from "@/components/MedicalReview";
+import { ArticleContent } from "@/components/ArticleContent";
+import { ArticleRelationships } from "@/components/ArticleRelationships";
+import { octoberArticleSupplements } from "@/data/october-articles.generated";
+import { videoWatchPageBySlug } from "@/data/video-watch-pages";
 import { OpenBookingButton } from "@/components/OpenBookingButton";
 import { RelatedVideos } from "@/components/RelatedVideos";
 import { TrackedLink } from "@/components/TrackedLink";
 import { concerns, doctorAnswers, getConcern, getConcernCategory } from "@/data/concern-library";
 import { videosForPath } from "@/data/video-library";
+import { getArticles } from "@/data/site";
 import { pageMetadata } from "@/lib/metadata";
 import { breadcrumbJsonLd, videoObjectJsonLd, webPageJsonLd } from "@/lib/schema";
 
@@ -38,7 +43,12 @@ export default async function ConcernDetailPage({ params }: Props) {
   const category = getConcernCategory(categorySlug);
   if (!concern || !category) notFound();
   const path = `/concerns/${categorySlug}/${slug}`;
-  const videos = videosForPath(path, 2);
+  const approvedSupplement = octoberArticleSupplements[path];
+  const mappedVideo = approvedSupplement?.videoWatchSlugs?.[0] ? videoWatchPageBySlug.get(approvedSupplement.videoWatchSlugs[0])?.video : undefined;
+  const videos = mappedVideo ? [mappedVideo] : videosForPath(path, 2);
+  const linkedGuides = (await getArticles())
+    .filter((article) => article.relatedConditions?.includes(path))
+    .map((article) => ({ href: `/knowledge/${article.slug}`, label: article.title }));
   const breadcrumbs = [
     { name: "Home", path: "/" },
     { name: "Concerns", path: "/concerns" },
@@ -69,11 +79,20 @@ export default async function ConcernDetailPage({ params }: Props) {
           <MedicalReview
             authorName={concern.preparedBy}
             authorType={concern.authorType}
-            reviewedAt={concern.reviewedAt}
+            reviewedAt={approvedSupplement ? undefined : concern.reviewedAt}
             className="h-fit"
           />
         </div>
       </section>
+
+      {approvedSupplement?.additionalContent?.length ? <section className="bg-white px-5 py-16 sm:px-8 sm:py-20">
+        <article className="mx-auto max-w-3xl">
+          <h2 className="font-serif text-3xl leading-tight text-[var(--ink)]">What Makes a Transplanted Hairline Look Natural?</h2>
+          <ArticleContent body={[]} content={approvedSupplement.additionalContent} />
+          <ArticleRelationships article={approvedSupplement} />
+          <Link href="/hairline-correction-bhubaneswar" className="mt-7 inline-block font-bold text-[var(--aqua)] underline underline-offset-4">Hairline correction assessment in Bhubaneswar</Link>
+        </article>
+      </section> : null}
 
       <section className="bg-[var(--mist)] px-5 py-20 sm:px-8 lg:py-24">
         <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.7fr_1.3fr]">
@@ -133,7 +152,7 @@ export default async function ConcernDetailPage({ params }: Props) {
           <div>
             <p className="text-xs font-extrabold uppercase tracking-[0.22em] text-[var(--bronze)]">Related treatments and guides</p>
             <div className="mt-6 grid gap-3">
-              {[...concern.clinicTreatments, ...concern.relatedArticles].map((item) => <TrackedLink key={item.href} href={item.href} eventName={item.href.startsWith("/treatments") ? "treatment_clicked" : "search_result_clicked"} eventParameters={{ destination_path: item.href, source: "concern_detail" }} className="flex items-center justify-between border-t border-[var(--ink)]/12 py-4 text-sm font-extrabold text-[var(--ink)]">{item.label}<ArrowUpRight className="h-4 w-4 text-[var(--aqua)]" /></TrackedLink>)}
+              {[...concern.clinicTreatments, ...concern.relatedArticles, ...linkedGuides].filter((item, index, items) => items.findIndex((other) => other.href === item.href) === index).map((item) => <TrackedLink key={item.href} href={item.href} eventName={item.href.startsWith("/treatments") ? "treatment_clicked" : "search_result_clicked"} eventParameters={{ destination_path: item.href, source: "concern_detail" }} className="flex items-center justify-between border-t border-[var(--ink)]/12 py-4 text-sm font-extrabold text-[var(--ink)]">{item.label}<ArrowUpRight className="h-4 w-4 shrink-0 text-[var(--aqua)]" /></TrackedLink>)}
             </div>
           </div>
           <div>

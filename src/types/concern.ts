@@ -94,6 +94,8 @@ export type DoctorAnswer = {
   reviewedBy?: string;
   reviewerId?: string;
   reviewedAt?: string;
+  reviewEvidence?: string;
+  videoWatchSlug?: string;
   medicalReviewStatus?: MedicalReviewStatus;
   sourceType?: "original" | "legacy" | "youtube" | "mixed";
   legacySources?: string[];

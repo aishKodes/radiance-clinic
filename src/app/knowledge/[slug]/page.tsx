@@ -5,16 +5,23 @@ import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ArticleContent } from "@/components/ArticleContent";
+import { ArticleRelationships } from "@/components/ArticleRelationships";
 import { JsonLd } from "@/components/JsonLd";
 import { MedicalReview } from "@/components/MedicalReview";
 import { PremiumButton } from "@/components/PremiumButton";
+import { OpenBookingButton } from "@/components/OpenBookingButton";
 import { RelatedVideos } from "@/components/RelatedVideos";
 import { StickyConsultationCard } from "@/components/StickyConsultationCard";
 import {
   getArticle,
   getArticles,
   getArticleStaticParams,
+  getClinicSettings,
 } from "@/data/site";
+import { videoWatchPageBySlug } from "@/data/video-watch-pages";
+import { medicalEducationDisclaimer } from "@/data/doctor";
+import { whatsappHref } from "@/lib/contact-links";
+import { normalizedTel } from "@/lib/seo-config";
 import { pageMetadata } from "@/lib/metadata";
 import { relationshipsFor } from "@/data/search-taxonomy";
 import { videosForPath } from "@/data/video-library";
@@ -48,9 +55,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function ArticlePage({ params }: Props) {
   const { slug } = await params;
-  const [article, articles] = await Promise.all([
+  const [article, articles, clinic] = await Promise.all([
     getArticle(slug),
     getArticles(),
+    getClinicSettings(),
   ]);
 
   if (!article) {
@@ -58,7 +66,10 @@ export default async function ArticlePage({ params }: Props) {
   }
   const path = `/knowledge/${slug}`;
   const relationships = relationshipsFor(path);
-  const videos = videosForPath(path, 2);
+  const videos = article.videoWatchSlugs
+    ? article.videoWatchSlugs.map((slug) => videoWatchPageBySlug.get(slug)?.video).filter((video): video is NonNullable<typeof video> => Boolean(video)).slice(0, 2)
+    : videosForPath(path, 2);
+  const isHair = article.category.includes("Hair");
   const breadcrumbs = [
     { name: "Home", path: "/" },
     { name: "Knowledge", path: "/knowledge" },
@@ -161,13 +172,13 @@ export default async function ArticlePage({ params }: Props) {
       />
       {videos.map((video) => <JsonLd key={video.videoId} data={videoObjectJsonLd(video)} />)}
       <section className="bg-[#F7F1E8] px-5 pb-20 pt-36 sm:px-8 lg:pb-28 lg:pt-44">
-        <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[1fr_0.36fr]">
-          <article>
+        <div className="mx-auto grid min-w-0 max-w-7xl grid-cols-1 gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,0.36fr)]">
+          <article className="min-w-0">
             <Breadcrumbs items={breadcrumbs} />
             <p className="mb-5 text-xs font-bold uppercase tracking-[0.34em] text-[#1E6F86]">
               {article.category} - {article.readTime}
             </p>
-            <h1 className="max-w-5xl font-serif text-[clamp(4rem,9vw,8rem)] leading-[0.88] tracking-normal text-[#151515]">
+            <h1 className="max-w-5xl break-words font-serif text-4xl leading-tight tracking-normal text-[#151515] sm:text-5xl lg:text-6xl">
               {article.title}
             </h1>
             <p className="mt-8 max-w-3xl text-xl leading-9 text-[#151515]/68">
@@ -189,8 +200,10 @@ export default async function ArticlePage({ params }: Props) {
               reviewedAt={article.reviewedAt}
               className="mt-8 max-w-3xl"
             />
+            {article.contributorIds?.includes("dr-satyarth-prakash") && article.authorType !== "doctor" ? <p className="mt-4 text-sm leading-7 text-[var(--ink)]/65">Includes clinical contributions by <Link href="/about" className="font-bold text-[var(--aqua)] underline underline-offset-4">Dr. Satyarth Prakash</Link>. The article remains authored by Radiance Editorial Team.</p> : null}
+            {article.primaryCommercialOwner ? <Link href={article.primaryCommercialOwner} className="mt-6 inline-flex items-center gap-2 text-sm font-bold text-[var(--aqua)] underline underline-offset-4">{article.primaryCommercialOwner.includes("hairline") ? "Hairline correction assessment" : article.primaryCommercialOwner.includes("hair-transplant") ? "Hair transplant consultation in Bhubaneswar" : article.primaryCommercialOwner.includes("alopecia") ? "Patchy hair-loss assessment" : isHair ? "Hair loss and scalp assessment in Bhubaneswar" : "Skin assessment and treatment in Bhubaneswar"}<ArrowUpRight className="h-4 w-4 shrink-0" /></Link> : null}
           </article>
-          <StickyConsultationCard />
+          <StickyConsultationCard hair={isHair} />
         </div>
       </section>
 
@@ -208,6 +221,7 @@ export default async function ArticlePage({ params }: Props) {
             </div>
           ) : null}
           <ArticleContent body={article.body} content={article.content} />
+          <ArticleRelationships article={article} />
           {article.references?.length ? (
             <section className="mt-14 border-t border-[#151515]/12 pt-9" aria-labelledby="article-references">
               <h2 id="article-references" className="font-serif text-4xl leading-none text-[#151515]">
@@ -229,19 +243,20 @@ export default async function ArticlePage({ params }: Props) {
               </ol>
             </section>
           ) : null}
-          <div className="mt-12 rounded-[2rem] border border-[#151515]/10 bg-[#F7F1E8] p-7">
+          <div className="mt-12 border-t border-[#151515]/10 pt-7">
             <p className="text-sm leading-7 text-[#151515]/66">
-              This article is educational and does not replace consultation. A
-              treatment plan should be selected after doctor-led assessment.
+              {medicalEducationDisclaimer}
             </p>
-            <PremiumButton href="/contact" className="mt-7">
-              Book consultation
-            </PremiumButton>
+            <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+              <OpenBookingButton source="cta">{isHair ? "Book Hair & Scalp Assessment" : "Book Consultation"}</OpenBookingButton>
+              <PremiumButton href={whatsappHref(clinic.whatsapp, path)} eventName={isHair ? "hair_whatsapp_click" : "whatsapp_click"} variant="outline">WhatsApp</PremiumButton>
+              <PremiumButton href={`tel:${normalizedTel(clinic.phone)}`} eventName={isHair ? "hair_call_click" : "call_click"} variant="outline">Call Now</PremiumButton>
+            </div>
           </div>
         </article>
       </section>
 
-      <RelatedVideos videos={videos} title="Continue with official video guidance." />
+      <RelatedVideos videos={videos} title="Watch the doctor explain" />
 
       {relatedArticles.length ? (
         <section className="bg-[#F7F1E8] px-5 py-16 sm:px-8 lg:py-20">
