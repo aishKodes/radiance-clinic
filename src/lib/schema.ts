@@ -296,14 +296,15 @@ export function videoObjectJsonLd(
   return {
     "@context": "https://schema.org",
     "@type": "VideoObject",
-    "@id": `${absoluteUrl(path)}#video`,
+    "@id": `${absoluteUrl("/videos")}#video-${video.videoId}`,
     name: video.title,
     description: video.description || `${video.primaryTopic} video from Radiance Clinics.`,
     thumbnailUrl: [video.thumbnail],
-    uploadDate: video.publishedAt,
+    uploadDate: video.publishedAtDateTime || video.publishedAt,
     duration: video.duration,
-    contentUrl: video.url,
+    url: video.url,
     embedUrl: `https://www.youtube-nocookie.com/embed/${video.videoId}`,
+    ...(path !== "/videos" ? { mainEntityOfPage: { "@id": `${absoluteUrl(path)}#webpage` } } : {}),
     publisher: { "@id": schemaIds.organization },
     inLanguage: "en-IN",
   };

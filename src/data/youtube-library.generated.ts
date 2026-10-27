@@ -1459,6 +1459,7 @@ export const youtubeVideos = [
     "title": "Find Your Perfect Hair Transplant Clinic: Radiance Clinics With Dr. Satyartha Prakash",
     "description": "Hair transplant basics explained by Dr. Satyartha Prakash from Radiance Clinics Bhubaneswar. For more information and appointments call 9238321888, 9238122550. \"Learn the essential factors to consider when selecting the perfect hair transplant clinic for your needs. From expertise and technology to patient testimonials, uncover the key aspects that ensure a successful and satisfying procedure. Make an informed decisi",
     "publishedAt": "2024-04-18",
+    "publishedAtDateTime": "2024-04-18T03:53:27.000Z",
     "duration": "PT3M15S",
     "durationSeconds": 195,
     "thumbnail": "https://i.ytimg.com/vi/8qYMw935MF8/maxresdefault.jpg",

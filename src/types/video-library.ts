@@ -24,6 +24,7 @@ export type YouTubeVideo = {
   title: string;
   description: string;
   publishedAt?: string;
+  publishedAtDateTime?: string;
   duration?: string;
   durationSeconds?: number;
   thumbnail: string;

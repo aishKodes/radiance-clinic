@@ -83,7 +83,7 @@ export default async function KnowledgePage() {
               <p className="mt-5 flex-1 text-sm leading-7 text-[#151515]/62">
                 {article.excerpt}
               </p>
-              <p className="mt-8 text-xs font-bold uppercase tracking-[0.18em] text-[#151515]/45">
+              <p className="mt-8 text-xs font-bold uppercase tracking-normal text-[#151515]/45">
                 {article.authorType === "doctor"
                   ? `Written by Dr. Satyarth Prakash · ${article.readTime}`
                   : article.readTime}

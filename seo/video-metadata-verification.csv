@@ -1,0 +1,2 @@
+verified_on,video_id,source_url,field,verified_value,verification_method,notes
+2026-10-27,8qYMw935MF8,https://www.youtube.com/watch?v=8qYMw935MF8,publishedAtDateTime,2024-04-18T03:53:27.000Z,yt-dlp official YouTube metadata timestamp 1713412407,Actual source timestamp; not a midnight estimate; visible calendar date retained

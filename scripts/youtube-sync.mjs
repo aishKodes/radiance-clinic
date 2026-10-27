@@ -42,6 +42,16 @@ function isoDate(value) {
   return Number.isNaN(parsed.getTime()) ? undefined : parsed.toISOString().slice(0, 10);
 }
 
+function isoDateTime(value) {
+  if (typeof value === "number" && Number.isFinite(value) && value > 0) {
+    return new Date(value * 1000).toISOString();
+  }
+  const text = String(value || "");
+  if (!/^\d{4}-\d{2}-\d{2}T.*(?:Z|[+-]\d{2}:\d{2})$/.test(text)) return undefined;
+  const date = new Date(text);
+  return Number.isNaN(date.getTime()) ? undefined : date.toISOString();
+}
+
 function isoDuration(seconds) {
   if (!Number.isFinite(seconds) || seconds < 0) return undefined;
   const rounded = Math.round(seconds);
@@ -131,6 +141,7 @@ function classify(raw) {
     description: (description || `${topic} video from Radiance Clinics.`).slice(0, 420),
     fullDescription: description,
     publishedAt: isoDate(raw.upload_date || raw.release_date || raw.timestamp),
+    publishedAtDateTime: isoDateTime(raw.timestamp) || isoDateTime(raw.publishedAtDateTime),
     duration: isoDuration(durationSeconds),
     durationSeconds,
     thumbnail: raw.thumbnail || `https://i.ytimg.com/vi/${raw.id}/hqdefault.jpg`,
@@ -201,6 +212,7 @@ async function fetchFeed() {
       title: text(entry, "title"),
       description: text(entry, "media:description"),
       upload_date: text(entry, "published")?.replace(/\D/g, "").slice(0, 8),
+      publishedAtDateTime: text(entry, "published"),
       webpage_url: `https://www.youtube.com/watch?v=${id}`,
       thumbnail: entry.match(/<media:thumbnail[^>]+url="([^"]+)"/)?.[1],
       channel_id: channelId,

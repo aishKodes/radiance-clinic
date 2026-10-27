@@ -9,6 +9,10 @@ import { readCsv } from "./seo-utils.mjs";
 
 async function loadTs(file) {
   const source = await readFile(file, "utf8");
+  return loadTsSource(source);
+}
+
+function loadTsSource(source) {
   const output = ts.transpileModule(source, { compilerOptions: { module: ts.ModuleKind.ES2022, target: ts.ScriptTarget.ES2022 } }).outputText;
   return import(`data:text/javascript;base64,${Buffer.from(output).toString("base64")}`);
 }
@@ -94,6 +98,24 @@ test("new article evidence excludes replacement, unpublished and unverified imag
     { id: "unknown", category: "before-after" },
     { id: "unpublished", category: "before-after", replacementAfter: false, publish: false },
   ])], ["original"]);
+});
+
+test("videos have distinct stable identities and use verified timestamps without inventing missing times", async () => {
+  const source = await readFile("src/lib/schema.ts", "utf8");
+  const ast = ts.createSourceFile("schema.ts", source, ts.ScriptTarget.Latest, true);
+  const declaration = ast.statements.find((statement) => ts.isFunctionDeclaration(statement) && statement.name?.text === "videoObjectJsonLd");
+  assert.ok(declaration);
+  const code = ts.createPrinter().printNode(ts.EmitHint.Unspecified, declaration, ast);
+  const { videoObjectJsonLd } = await loadTsSource(`const absoluteUrl = path => 'https://www.radianceclinics.com' + path; const schemaIds = { organization: 'https://www.radianceclinics.com/#organization' }; ${code}`);
+  const videos = JSON.parse(await readFile("content/platform/youtube-source.json", "utf8"));
+  const video = videos.find((item) => item.videoId === "8qYMw935MF8");
+  const metadata = videoObjectJsonLd(video);
+  assert.equal(metadata.uploadDate, "2024-04-18T03:53:27.000Z");
+  assert.equal(metadata.contentUrl, undefined);
+  assert.equal(metadata.embedUrl, "https://www.youtube-nocookie.com/embed/8qYMw935MF8");
+  assert.equal(metadata["@id"], videoObjectJsonLd(video, "/videos/choosing-a-hair-transplant-clinic")["@id"]);
+  assert.notEqual(metadata["@id"], videoObjectJsonLd(videos.find((item) => item.videoId !== video.videoId))["@id"]);
+  assert.equal(videoObjectJsonLd({ ...video, publishedAtDateTime: undefined }).uploadDate, "2024-04-18");
 });
 
 test("first Hair CTA is queued before analytics loads and keeps landing attribution", async () => {

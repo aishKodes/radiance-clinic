@@ -32,7 +32,7 @@ export async function HairPlanningLibrary({
   return (
     <section aria-labelledby={decisions ? "hair-decision-title" : "hair-library-title"} className="border-y border-[var(--ink)]/10 bg-white px-5 py-14 sm:px-8 sm:py-20">
       <div className="mx-auto max-w-7xl">
-        <p className="text-xs font-bold uppercase tracking-[0.18em] text-[var(--aqua)]">Hair Transplant Planning Library</p>
+        <p className="text-xs font-bold uppercase tracking-normal text-[var(--aqua)]">Hair Transplant Planning Library</p>
         <h2 id={decisions ? "hair-decision-title" : "hair-library-title"} className="mt-4 max-w-3xl scroll-mt-28 font-serif text-3xl leading-tight text-[var(--ink)] sm:text-4xl">
           {decisions ? "Before You Decide on a Hair Transplant" : "Clear answers for each stage of the decision"}
         </h2>
